@@ -4463,3 +4463,1595 @@ lottie-player {
         font-size: 1.8rem;
     }
 }
+
+/* Trip Tracking Animation Section */
+.trip-tracking-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #000, #111);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.trip-tracking-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+    z-index: 1;
+}
+
+.trip-tracking-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.animation-container {
+    margin-top: 60px;
+    position: relative;
+}
+
+.animation-stage {
+    position: relative;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Journey Progress Bar */
+.journey-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0 30px;
+}
+
+.progress-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #ff3300);
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: width 0.5s ease;
+}
+
+.journey-stage {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stage-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(20, 20, 20, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stage-icon i {
+    color: #ccc;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.stage-label {
+    font-size: 14px;
+    color: #ccc;
+    transition: all 0.3s ease;
+    text-align: center;
+    max-width: 100px;
+}
+
+.journey-stage.active .stage-icon {
+    background: linear-gradient(135deg, #ff0000, #ff3300);
+    border-color: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.journey-stage.active .stage-icon i {
+    color: #fff;
+}
+
+.journey-stage.active .stage-label {
+    color: #fff;
+    font-weight: 600;
+}
+
+.journey-stage.completed .stage-icon {
+    background: #00aa00;
+    border-color: #fff;
+}
+
+.journey-stage.completed .stage-icon i {
+    color: #fff;
+}
+
+/* Animation Viewport */
+.animation-viewport {
+    position: relative;
+    min-height: 400px;
+    margin-bottom: 30px;
+}
+
+.animation-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    transform: translateX(50px);
+}
+
+.animation-scene.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.scene-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.mobile-device,
+.dispatch-animation,
+.transit-animation,
+.checkpoint-animation,
+.delivery-animation,
+.payment-animation {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.mobile-device {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    background: #000;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.scene-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.scene-info h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.scene-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0000, transparent);
+}
+
+.scene-info p {
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Moving Truck Animation */
+.moving-truck {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    font-size: 30px;
+    color: #ff0000;
+    z-index: 10;
+    transition: left 0.5s ease;
+}
+
+.moving-truck i {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    animation: truckBounce 1s infinite alternate;
+}
+
+@keyframes truckBounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Animation Controls */
+.animation-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-btn:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.control-btn.play-btn {
+    background: linear-gradient(135deg, #ff0000, #ff3300);
+    border: none;
+}
+
+.control-btn.play-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.control-btn.play-btn.playing i {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .journey-progress {
+        overflow-x: auto;
+        padding-bottom: 20px;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+    
+    .progress-track, .progress-fill {
+        width: 100%;
+    }
+    
+    .scene-content {
+        flex-direction: column;
+    }
+    
+    .mobile-device {
+        width: 250px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .trip-tracking-section {
+        padding: 80px 0;
+    }
+    
+    .animation-stage {
+        padding: 20px;
+    }
+    
+    .stage-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .stage-icon i {
+        font-size: 16px;
+    }
+    
+    .stage-label {
+        font-size: 12px;
+    }
+    
+    .scene-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .scene-info p {
+        font-size: 1rem;
+    }
+    
+    .control-btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Trip Tracking Motion Graphics Section */
+.trip-tracking-section {
+    padding: 120px 0;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.trip-tracking-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1), transparent 70%);
+    z-index: 1;
+}
+
+.trip-tracking-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Motion Graphics Container */
+.motion-graphics-container {
+    margin-top: 60px;
+    position: relative;
+}
+
+.animation-canvas {
+    position: relative;
+    height: 600px;
+    background: #0a0a0a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+/* Background Elements */
+.map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/JXgwTYs.png'); /* World map image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    filter: grayscale(100%) brightness(50%);
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 30px 30px;
+    }
+}
+
+.glow-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.glow-effects::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.2), transparent 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(50px);
+    animation: glowPulse 10s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* Timeline Progress */
+.timeline-progress {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    right: 50px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff3300);
+    z-index: 2;
+    transition: width 0.5s ease;
+    animation: progressFill 30s linear forwards;
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.timeline-marker {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marker-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #333;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 8px;
+    transition: all 0.5s ease;
+}
+
+.marker-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.5s ease;
+}
+
+.timeline-marker.active .marker-dot {
+    background: #ff0000;
+    border-color: #fff;
+    transform: scale(1.5);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+.timeline-marker.active .marker-label {
+    color: #fff;
+    font-weight: 600;
+}
+
+.timeline-marker.completed .marker-dot {
+    background: #ff3300;
+    border-color: #fff;
+}
+
+/* Central Animation Area */
+.central-animation {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    right: 50px;
+    height: 300px;
+    z-index: 5;
+}
+
+.truck-container {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    top: 120px;
+    left: 0;
+    z-index: 10;
+    animation: truckMove 30s linear forwards;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+}
+
+@keyframes truckMove {
+    0% {
+        left: 0;
+        transform: translateY(0) rotateY(0);
+    }
+    20% {
+        left: 20%;
+        transform: translateY(-20px) rotateY(0);
+    }
+    40% {
+        left: 40%;
+        transform: translateY(0) rotateY(0);
+    }
+    60% {
+        left: 60%;
+        transform: translateY(-20px) rotateY(0);
+    }
+    80% {
+        left: 80%;
+        transform: translateY(0) rotateY(0);
+    }
+    100% {
+        left: 100%;
+        transform: translateY(-20px) rotateY(0);
+    }
+}
+
+.route-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.route-line {
+    fill: none;
+    stroke: rgba(255, 0, 0, 0.3);
+    stroke-width: 3;
+    stroke-dasharray: 10;
+    stroke-linecap: round;
+    animation: routeAnimate 30s linear infinite;
+}
+
+@keyframes routeAnimate {
+    to {
+        stroke-dashoffset: -500;
+    }
+}
+
+.route-point {
+    fill: rgba(255, 0, 0, 0.5);
+    stroke: #fff;
+    stroke-width: 2;
+    opacity: 0;
+    animation: pointAppear 30s linear forwards;
+}
+
+.route-point.point-1 {
+    animation-delay: 0s;
+}
+
+.route-point.point-2 {
+    animation-delay: 6s;
+}
+
+.route-point.point-3 {
+    animation-delay: 12s;
+}
+
+.route-point.point-4 {
+    animation-delay: 18s;
+}
+
+.route-point.point-5 {
+    animation-delay: 24s;
+}
+
+@keyframes pointAppear {
+    0%, 5% {
+        opacity: 0;
+        r: 0;
+    }
+    10%, 100% {
+        opacity: 1;
+        r: 5;
+    }
+}
+
+.location-pin {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -100%);
+    z-index: 4;
+    opacity: 0;
+}
+
+.location-pin i {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff0000;
+    font-size: 30px;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.7));
+}
+
+.pin-pulse {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    animation: pinPulse 2s infinite;
+}
+
+@keyframes pinPulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.pin-label {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.pin-1 {
+    top: 150px;
+    left: 100px;
+    animation: pinFadeIn 1s forwards 1s;
+}
+
+.pin-2 {
+    top: 100px;
+    left: 500px;
+    animation: pinFadeIn 1s forwards 12s;
+}
+
+.pin-3 {
+    top: 150px;
+    left: 900px;
+    animation: pinFadeIn 1s forwards 24s;
+}
+
+@keyframes pinFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -80%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -100%);
+    }
+}
+
+/* Stage Information Panels */
+.stage-info-container {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 300px;
+    z-index: 6;
+}
+
+.stage-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.stage-info.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stage-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff0000, #ff3300);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.stage-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.stage-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.stage-info p {
+    color: #ccc;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Digital Elements */
+.digital-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.data-stream {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+    opacity: 0.5;
+    animation: dataStreamMove 5s linear infinite;
+}
+
+.stream-1 {
+    top: 30%;
+    left: 0;
+    width: 100%;
+    animation-delay: 0s;
+}
+
+.stream-2 {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    animation-delay: 1s;
+}
+
+.stream-3 {
+    top: 70%;
+    left: 0;
+    width: 100%;
+    animation-delay: 2s;
+}
+
+@keyframes dataStreamMove {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.data-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    animation: dataPointPulse 3s infinite;
+}
+
+.point-1 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.point-2 {
+    top: 60%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.point-3 {
+    top: 30%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes dataPointPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+/* Mobile Device Overlay */
+.mobile-overlay {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    z-index: 7;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: mobileAppear 1s forwards 2s, mobileFloat 5s ease-in-out infinite 3s;
+}
+
+@keyframes mobileAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.device-frame {
+    width: 220px;
+    height: 440px;
+    background: #111;
+    border-radius: 30px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.device-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.app-interface {
+    padding: 15px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.app-logo {
+    color: #ff0000;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.app-menu {
+    color: #fff;
+}
+
+.trip-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.trip-status {
+    display: inline-block;
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.trip-route {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.trip-id {
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.trip-progress {
+    margin-top: 10px;
+}
+
+.trip-progress .progress-bar {
+    position: relative;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.trip-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff3300);
+    width: 68%;
+    animation: none;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #ccc;
+    text-align: right;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .animation-canvas {
+        height: 700px;
+    }
+    
+    .central-animation {
+        top: 200px;
+    }
+    
+    .stage-info-container {
+        top: 30px;
+        right: 30px;
+        left: 30px;
+        width: auto;
+    }
+    
+    .mobile-overlay {
+        top: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .trip-tracking-section {
+        padding: 80px 0;
+    }
+    
+    .animation-canvas {
+        height: 800px;
+    }
+    
+    .central-animation {
+        top: 300px;
+    }
+    
+    .timeline-progress {
+        left: 20px;
+        right: 20px;
+    }
+    
+    .marker-label {
+        font-size: 10px;
+    }
+    
+    .stage-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .stage-info p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation Overlay Section */
+.animation-overlay-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #000, #111);
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Background Elements */
+.overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center center;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 30px 30px;
+    }
+}
+
+.glow-orbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    animation: orbFloat 15s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    left: -100px;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.3), transparent 70%);
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -250px;
+    right: -150px;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.2), transparent 70%);
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 60%;
+    background: radial-gradient(circle at center, rgba(255, 0, 0, 0.15), transparent 70%);
+    animation-delay: -10s;
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(20px, 40px) scale(0.9);
+    }
+    75% {
+        transform: translate(-30px, 20px) scale(1.05);
+    }
+}
+
+.animation-overlay-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Content Styles */
+.overlay-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+.left-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.left-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.left-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, transparent);
+    border-radius: 2px;
+}
+
+.left-content p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.overlay-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff0000;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.stat-number::after {
+    content: '+';
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: -15px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.right-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.animation-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    position: relative;
+}
+
+.animation-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), transparent);
+    pointer-events: none;
+}
+
+/* Connection Elements */
+.connection-elements {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 3;
+}
+
+.connection-line {
+    position: absolute;
+    bottom: 50px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}
+
+.connection-dot {
+    position: absolute;
+    bottom: 46px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    animation: dotPulse 2s infinite;
+}
+
+.dot-1 {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.dot-2 {
+    left: 50%;
+    animation-delay: 0.7s;
+}
+
+.dot-3 {
+    left: 80%;
+    animation-delay: 1.4s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .animation-overlay-section {
+        padding: 80px 0;
+    }
+    
+    .left-content h2 {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .animation-overlay-section {
+        padding: 60px 0;
+    }
+    
+    .left-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .left-content p {
+        font-size: 1rem;
+    }
+    
+    .overlay-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Typewriter Animation Styles */
+.typewriter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.typewriter-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ff0000;
+    animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #ff0000; }
+}
+
+/* For responsive design */
+@media (max-width: 992px) {
+    .typewriter-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .typewriter-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .typewriter-text {
+        font-size: 1.2rem;
+        white-space: normal;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+/* Simple Typewriter Animation */
+.typewriter-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 4s steps(50, end) forwards;
+}
+
+.highlight {
+    color: #ff0000;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff0000;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underline 1s ease forwards 4s;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes underline {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* For responsive design */
+@media (max-width: 992px) {
+    .typewriter-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .typewriter-heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .typewriter-heading {
+        font-size: 1.2rem;
+    }
+    
+    .typewriter-text {
+        white-space: normal;
+    }
+}
+
+/* Typewriter effect for the main heading */
+.typewriter-heading {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  font-weight: 700;
+}
+
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  animation: typing 3s steps(40, end) forwards;
+}
+
+.highlight {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: spotTyping 2s steps(12, end) forwards;
+  animation-delay: 3.2s; /* Start after the first text finishes */
+}
+
+/* Animation for the main text */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Animation specifically for "Spot Market" */
+@keyframes spotTyping {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Add a blinking cursor effect after the highlight */
+.highlight::after {
+  content: '|';
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: var(--primary-color);
+  animation: blink 1s step-end infinite;
+  animation-delay: 5.2s; /* Start after both texts are typed */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .typewriter-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-heading {
+    font-size: 1.5rem;
+  }
+}
