@@ -462,3 +462,835 @@ window.addEventListener('scroll', function() {
 if (benefitsSectionElement) {
     createDataVisualization();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Trip Tracking Motion Graphics Animation
+    const initMotionGraphics = () => {
+        const timelineMarkers = document.querySelectorAll('.timeline-marker');
+        const stageInfos = document.querySelectorAll('.stage-info');
+        const progressFill = document.querySelector('.timeline-progress .progress-fill');
+        
+        // Animation timeline
+        const animationDuration = 30; // seconds
+        const stages = [
+            { id: 1, startTime: 0, endTime: 5 },
+            { id: 2, startTime: 5, endTime: 10 },
+            { id: 3, startTime: 10, endTime: 15 },
+            { id: 4, startTime: 15, endTime: 20 },
+            { id: 5, startTime: 20, endTime: 25 },
+            { id: 6, startTime: 25, endTime: 30 }
+        ];
+        
+        let currentStage = 1;
+        let animationStartTime = null;
+        let animationFrame;
+        let isPlaying = false;
+        
+        // Update stage based on elapsed time
+        function updateStage(elapsedTime) {
+            // Find current stage based on elapsed time
+            const stage = stages.find(s => elapsedTime >= s.startTime && elapsedTime < s.endTime);
+            
+            if (stage && stage.id !== currentStage) {
+                currentStage = stage.id;
+                
+                // Update timeline markers
+                timelineMarkers.forEach((marker, index) => {
+                    const markerStage = index + 1;
+                    
+                    if (markerStage < currentStage) {
+                        marker.classList.add('completed');
+                        marker.classList.remove('active');
+                    } else if (markerStage === currentStage) {
+                        marker.classList.add('active');
+                        marker.classList.remove('completed');
+                    } else {
+                        marker.classList.remove('active', 'completed');
+                    }
+                });
+                
+                // Update stage info panels
+                stageInfos.forEach((info, index) => {
+                    const infoStage = index + 1;
+                    
+                    if (infoStage === currentStage) {
+                        info.classList.add('active');
+                    } else {
+                        info.classList.remove('active');
+                    }
+                });
+            }
+        }
+        
+        // Animation loop
+        function animateMotionGraphics(timestamp) {
+            if (!animationStartTime) animationStartTime = timestamp;
+            
+            const elapsedTime = (timestamp - animationStartTime) / 1000; // convert to seconds
+            
+            if (elapsedTime < animationDuration) {
+                // Update progress fill
+                const progressPercentage = (elapsedTime / animationDuration) * 100;
+                if (progressFill) {
+                    progressFill.style.width = `${progressPercentage}%`;
+                }
+                
+                // Update current stage
+                updateStage(elapsedTime);
+                
+                // Continue animation loop
+                animationFrame = requestAnimationFrame(animateMotionGraphics);
+            } else {
+                // Animation complete, reset or loop
+                resetAnimation();
+                startAnimation(); // Loop the animation
+            }
+        }
+        
+        // Start animation
+        function startAnimation() {
+            if (!isPlaying) {
+                isPlaying = true;
+                animationStartTime = null;
+                animationFrame = requestAnimationFrame(animateMotionGraphics);
+            }
+        }
+        
+        // Reset animation
+        function resetAnimation() {
+            isPlaying = false;
+            cancelAnimationFrame(animationFrame);
+            animationStartTime = null;
+            
+            // Reset progress fill
+            if (progressFill) {
+                progressFill.style.width = '0%';
+            }
+            
+            // Reset timeline markers
+            timelineMarkers.forEach((marker) => {
+                marker.classList.remove('active', 'completed');
+            });
+            
+            // Reset stage info panels
+            stageInfos.forEach((info) => {
+                info.classList.remove('active');
+            });
+            
+            // Set first stage as active
+            if (timelineMarkers.length > 0) {
+                timelineMarkers[0].classList.add('active');
+            }
+            
+            if (stageInfos.length > 0) {
+                stageInfos[0].classList.add('active');
+            }
+            
+            currentStage = 1;
+        }
+        
+        // Pause animation
+        function pauseAnimation() {
+            if (isPlaying) {
+                isPlaying = false;
+                cancelAnimationFrame(animationFrame);
+            }
+        }
+        
+        // Initialize animation when section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startAnimation();
+                } else {
+                    pauseAnimation();
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const trackingSection = document.querySelector('.trip-tracking-section');
+        if (trackingSection) {
+            observer.observe(trackingSection);
+            
+            // Set initial state
+            resetAnimation();
+        }
+        
+        // Add manual controls for testing/debugging
+        const animationCanvas = document.querySelector('.animation-canvas');
+        if (animationCanvas) {
+            // Add click event to restart animation
+            animationCanvas.addEventListener('click', function() {
+                resetAnimation();
+                startAnimation();
+            });
+        }
+        
+        // Add truck animation controls
+        const truckAnimation = document.getElementById('truck-animation');
+        if (truckAnimation) {
+            // Adjust truck animation speed
+            truckAnimation.addEventListener('load', function() {
+                truckAnimation.setSpeed(1.2); // Slightly faster than default
+            });
+        }
+        
+        // Add dynamic data points
+        const centralAnimation = document.querySelector('.central-animation');
+        if (centralAnimation) {
+            // Create random data points
+            for (let i = 0; i < 10; i++) {
+                const dataPoint = document.createElement('div');
+                dataPoint.className = 'data-point';
+                dataPoint.style.top = `${10 + Math.random() * 80}%`;
+                dataPoint.style.left = `${10 + Math.random() * 80}%`;
+                dataPoint.style.animationDelay = `${Math.random() * 3}s`;
+                
+                centralAnimation.appendChild(dataPoint);
+            }
+        }
+        
+        // Add mobile app interface updates
+        const tripProgress = document.querySelector('.trip-progress .progress-fill');
+        const tripStatus = document.querySelector('.trip-status');
+        const progressText = document.querySelector('.progress-text');
+        
+        if (tripProgress && tripStatus && progressText) {
+            // Update mobile app interface based on current stage
+            setInterval(() => {
+                const stagePercentage = (currentStage - 1) / 5; // 0 to 1
+                const displayPercentage = Math.round(stagePercentage * 100);
+                
+                tripProgress.style.width = `${displayPercentage}%`;
+                progressText.textContent = `${displayPercentage}% Complete`;
+                
+                // Update status text based on stage
+                const statusTexts = ['Order Created', 'Matched', 'Dispatched', 'In Transit', 'Arriving', 'Delivered'];
+                tripStatus.textContent = statusTexts[currentStage - 1] || 'In Progress';
+                
+                // Add color change based on stage
+                const stageColors = ['#ff9900', '#ff6600', '#ff3300', '#ff0066', '#9900ff', '#00cc00'];
+                tripStatus.style.backgroundColor = `${stageColors[currentStage - 1]}20`; // 20 = 12% opacity
+                tripStatus.style.color = stageColors[currentStage - 1];
+            }, 1000);
+        }
+        
+        // Add glow effects animation
+        const glowEffects = document.querySelector('.glow-effects');
+        if (glowEffects) {
+            // Create additional glow orbs
+            for (let i = 0; i < 3; i++) {
+                const glowOrb = document.createElement('div');
+                glowOrb.className = 'glow-orb';
+                glowOrb.style.position = 'absolute';
+                glowOrb.style.width = `${100 + Math.random() * 200}px`;
+                glowOrb.style.height = glowOrb.style.width;
+                glowOrb.style.borderRadius = '50%';
+                glowOrb.style.background = `radial-gradient(circle at center, rgba(255, ${Math.random() * 50}, 0, 0.2), transparent 70%)`;
+                glowOrb.style.top = `${Math.random() * 100}%`;
+                glowOrb.style.left = `${Math.random() * 100}%`;
+                glowOrb.style.filter = 'blur(30px)';
+                glowOrb.style.opacity = '0.3';
+                glowOrb.style.animation = `glowPulse ${5 + Math.random() * 5}s infinite alternate ${Math.random() * 5}s`;
+                
+                glowEffects.appendChild(glowOrb);
+            }
+        }
+        
+        // Add route path animation
+        const routePath = document.querySelector('.route-path');
+        if (routePath) {
+            // Make route path responsive to animation progress
+            setInterval(() => {
+                const routeLine = routePath.querySelector('.route-line');
+                if (routeLine) {
+                    const dashOffset = 500 - ((currentStage - 1) / 5) * 500;
+                    routeLine.style.strokeDashoffset = dashOffset;
+                }
+            }, 100);
+        }
+    };
+    
+    // Initialize the motion graphics animation
+    initMotionGraphics();
+    
+    // Add scroll-triggered animations for the section
+    const animateOnScroll = () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const elements = document.querySelectorAll('.trip-tracking-section .section-header, .motion-graphics-container');
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    };
+    
+    animateOnScroll();
+    
+    // Initialize AOS with enhanced settings
+    AOS.init({
+        duration: 1200,
+        once: false,
+        offset: 100,
+        easing: 'ease-out-cubic',
+        delay: 100,
+        mirror: true
+    });
+    
+    // Add 3D tilt effect to dashboard
+    const dashboardPreview = document.querySelector('.dashboard-preview');
+    if (dashboardPreview) {
+        dashboardPreview.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateY = ((x - centerX) / centerX) * 10;
+            const rotateX = ((centerY - y) / centerY) * 5;
+            
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        dashboardPreview.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1000px) rotateX(5deg) rotateY(0)';
+            this.style.transition = 'transform 0.5s ease';
+        });
+    }
+    
+    // Animate feature progress bars on scroll
+    const featureItems = document.querySelectorAll('.feature-item');
+    
+    const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target.querySelector('.progress-bar');
+                if (progressBar) {
+                    progressBar.style.transform = 'scaleX(1)';
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    featureItems.forEach(item => {
+        progressObserver.observe(item);
+    });
+    
+    // Add icon particle effects
+    featureItems.forEach(item => {
+        const icon = item.querySelector('.feature-icon');
+        
+        if (icon) {
+            // Create particles
+            const particles = document.createElement('div');
+            particles.className = 'icon-particles';
+            icon.appendChild(particles);
+            
+            // Add hover effect
+            item.addEventListener('mouseenter', function() {
+                const iconElement = this.querySelector('.feature-icon i');
+                if (iconElement) {
+                    iconElement.style.transform = 'scale(1.2)';
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const iconElement = this.querySelector('.feature-icon i');
+                if (iconElement) {
+                    iconElement.style.transform = 'scale(1)';
+                }
+            });
+        }
+    });
+    
+    // Add interactive tabs for feature showcase
+    const tabs = document.querySelectorAll('.showcase-tabs .tab');
+    const panels = document.querySelectorAll('.showcase-panel');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all panels
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Show the corresponding panel
+            const tabId = this.getAttribute('data-tab');
+            const panel = document.getElementById(`${tabId}-panel`);
+            if (panel) {
+                panel.classList.add('active');
+            }
+        });
+    });
+    
+    // Add parallax effect to orbs
+    const featuresSection = document.querySelector('.features-section');
+    const orbs = document.querySelectorAll('.glow-orb');
+    
+    if (featuresSection && orbs.length) {
+        window.addEventListener('mousemove', function(e) {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            orbs.forEach((orb, index) => {
+                const speed = (index % 3 + 1) * 30;
+                const moveX = (mouseX - 0.5) * speed;
+                const moveY = (mouseY - 0.5) * speed;
+                
+                orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    }
+    
+    // Add data point hover effects
+    const dataPoints = document.querySelectorAll('.data-point');
+    
+    dataPoints.forEach(point => {
+        point.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.5)';
+            this.style.boxShadow = '0 0 20px rgba(255, 0, 0, 0.5)';
+            this.style.zIndex = '10';
+        });
+        
+        point.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = 'none';
+            this.style.zIndex = '3';
+        });
+    });
+    
+    // Create animated tech grid
+    const techGrid = document.querySelector('.tech-grid');
+    if (techGrid) {
+        // Add random data points to the grid
+        for (let i = 0; i < 10; i++) {
+            const dataNode = document.createElement('div');
+            dataNode.className = 'grid-node';
+            dataNode.style.position = 'absolute';
+            dataNode.style.width = '8px';
+            dataNode.style.height = '8px';
+            dataNode.style.borderRadius = '50%';
+            dataNode.style.background = '#ff0000';
+            dataNode.style.top = `${10 + Math.random() * 80}%`;
+            dataNode.style.left = `${10 + Math.random() * 80}%`;
+            dataNode.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.7)';
+            dataNode.style.zIndex = '2';
+            dataNode.style.animation = `nodePulse ${2 + Math.random() * 3}s infinite ${Math.random() * 2}s`;
+            
+            techGrid.appendChild(dataNode);
+        }
+    }
+    
+    // Add animated typing effect to feature descriptions
+    const featureDescriptions = document.querySelectorAll('.feature-description');
+    
+    const typingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const description = entry.target;
+                const text = description.textContent;
+                description.textContent = '';
+                description.style.opacity = '1';
+                
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        description.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 20);
+                    }
+                };
+                
+                typeWriter();
+                typingObserver.unobserve(description);
+            }
+        });
+    }, { threshold: 0.8 });
+    
+    featureDescriptions.forEach(description => {
+        description.style.opacity = '0';
+        typingObserver.observe(description);
+    });
+    
+    // Add floating animation to notification
+    const notification = document.querySelector('.dashboard-notification');
+    if (notification) {
+        // Add click event to dismiss notification
+        notification.addEventListener('click', function() {
+            this.style.animation = 'notificationDismiss 0.5s forwards';
+        });
+        
+        // Add CSS for dismiss animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes notificationDismiss {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-20px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Add animated circuit lines
+    const circuitLines = document.querySelector('.circuit-lines');
+    if (circuitLines) {
+        // Create data flow animation
+        const dataFlow = document.createElement('div');
+        dataFlow.className = 'data-flow';
+        dataFlow.style.position = 'absolute';
+        dataFlow.style.width = '10px';
+        dataFlow.style.height = '10px';
+        dataFlow.style.borderRadius = '50%';
+        dataFlow.style.background = '#ff0000';
+        dataFlow.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.7)';
+        dataFlow.style.zIndex = '2';
+        dataFlow.style.top = '20%';
+        dataFlow.style.left = '0';
+        dataFlow.style.animation = 'dataFlowAnimation 8s linear infinite';
+        
+        circuitLines.appendChild(dataFlow);
+        
+        // Add CSS for data flow animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes dataFlowAnimation {
+                0% {
+                    left: 0;
+                    top: 20%;
+                }
+                25% {
+                    left: 30%;
+                    top: 20%;
+                }
+                30% {
+                    left: 30%;
+                    top: 20%;
+                }
+                50% {
+                    left: 30%;
+                    top: 70%;
+                }
+                55% {
+                    left: 30%;
+                    top: 70%;
+                }
+                75% {
+                    left: 80%;
+                    top: 70%;
+                }
+                80% {
+                    left: 80%;
+                    top: 70%;
+                }
+                100% {
+                    left: 80%;
+                    top: 20%;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Add scroll-triggered animations for feature items
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('feature-animated');
+                
+                // Add CSS for the animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    .feature-animated {
+                        animation: featureAppear 0.8s forwards;
+                    }
+                    
+                    @keyframes featureAppear {
+                        0% {
+                            transform: translateX(-20px);
+                            opacity: 0;
+                        }
+                        100% {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                featureObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    featureItems.forEach(item => {
+        featureObserver.observe(item);
+    });
+    
+    // Add animated gradient background to section
+    const featuresBackground = document.querySelector('.features-section');
+    if (featuresBackground) {
+        featuresBackground.style.background = 'linear-gradient(135deg, #000, #111)';
+        featuresBackground.style.backgroundSize = '400% 400%';
+        featuresBackground.style.animation = 'gradientAnimation 15s ease infinite';
+        
+        // Add CSS for gradient animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes gradientAnimation {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Add animated underline to feature titles
+    const featureTitles = document.querySelectorAll('.feature-title');
+    
+    featureTitles.forEach(title => {
+        title.addEventListener('mouseenter', function() {
+            const divider = this.parentNode.querySelector('.feature-divider');
+            if (divider) {
+                divider.style.width = '80px';
+                divider.style.background = 'linear-gradient(90deg, #ff0000, #ff3300)';
+            }
+        });
+        
+        title.addEventListener('mouseleave', function() {
+            const divider = this.parentNode.querySelector('.feature-divider');
+            if (divider) {
+                divider.style.width = '40px';
+                divider.style.background = 'linear-gradient(90deg, #ff0000, transparent)';
+            }
+        });
+    });
+    
+    // Add particle effect to features section
+    const featuresSectionElement = document.getElementById('features-section');
+    
+    if (featuresSectionElement && typeof particlesJS !== 'undefined') {
+        // Create a container for particles
+        const particlesContainer = document.createElement('div');
+        particlesContainer.id = 'features-particles';
+        particlesContainer.style.position = 'absolute';
+        particlesContainer.style.top = '0';
+        particlesContainer.style.left = '0';
+        particlesContainer.style.width = '100%';
+        particlesContainer.style.height = '100%';
+        particlesContainer.style.zIndex = '1';
+        
+        // Insert the container at the beginning of the section
+        featuresSectionElement.insertBefore(particlesContainer, featuresSectionElement.firstChild);
+        
+        // Initialize particles
+        particlesJS('features-particles', {
+            "particles": {
+                "number": {
+                    "value": 40,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ff0000"
+                },
+                "shape": {
+                    "type": "circle",
+                },
+                "opacity": {
+                    "value": 0.2,
+                    "random": true,
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ff0000",
+                    "opacity": 0.1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.4
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    }
+
+    // Animation Overlay Section
+    const initAnimationOverlay = () => {
+        // Animate stats counter
+        const animateCounters = () => {
+            const statNumbers = document.querySelectorAll('.overlay-stats .stat-number');
+            
+            statNumbers.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000; // 2 seconds
+                
+                let start = 0;
+                const increment = target / (duration / 16); // 60fps
+                
+                const updateCounter = () => {
+                    start += increment;
+                    if (start < target) {
+                        counter.textContent = Math.floor(start);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        };
+        
+        // Start counter animation when stats section is in view
+        const overlayStats = document.querySelector('.overlay-stats');
+        if (overlayStats) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(overlayStats);
+        }
+        
+        // Add parallax effect to glow orbs
+        const overlaySection = document.querySelector('.animation-overlay-section');
+        const glowOrbs = document.querySelectorAll('.glow-orb');
+        
+        if (overlaySection && glowOrbs.length) {
+            window.addEventListener('mousemove', function(e) {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                glowOrbs.forEach((orb, index) => {
+                    const speed = (index % 3 + 1) * 30;
+                    const moveX = (mouseX - 0.5) * speed;
+                    const moveY = (mouseY - 0.5) * speed;
+                    
+                    orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+            });
+        }
+    };
+    
+    // Initialize the animation overlay
+    initAnimationOverlay();
+
+    // Enhanced typewriter effect
+    const typewriterText = document.getElementById('typewriter-text');
+    const text = "ek(one) – India's 1st Unified Trucking Platform for the ";
+    const highlightText = "Spot Market";
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < text.length) {
+            typewriterText.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        } else {
+            // Add the enhanced highlighted text
+            const highlightSpan = document.createElement('span');
+            highlightSpan.className = 'highlight';
+            
+            // Type out the highlighted text letter by letter with a different speed
+            let j = 0;
+            function typeHighlight() {
+                if (j < highlightText.length) {
+                    const letter = document.createElement('span');
+                    letter.className = 'highlight-letter';
+                    letter.textContent = highlightText.charAt(j);
+                    letter.style.animationDelay = `${j * 0.1}s`;
+                    highlightSpan.appendChild(letter);
+                    j++;
+                    setTimeout(typeHighlight, 100);
+                } else {
+                    // Add the enhanced underline with a delay
+                    setTimeout(() => {
+                        const underline = document.createElement('span');
+                        underline.className = 'highlight-underline';
+                        highlightSpan.appendChild(underline);
+                        
+                        // Add the glow effect after underline appears
+                        setTimeout(() => {
+                            highlightSpan.classList.add('glow-active');
+                        }, 500);
+                    }, 300);
+                }
+            }
+            
+            typewriterText.appendChild(highlightSpan);
+            typeHighlight();
+        }
+    }
+    
+    // Start typing
+    typeWriter();
+});
