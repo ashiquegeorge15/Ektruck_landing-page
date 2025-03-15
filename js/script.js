@@ -211,11 +211,14 @@ document.addEventListener('DOMContentLoaded', () => {
         truckContainer.style.position = 'absolute';
         truckContainer.style.left = '100vw';
         truckContainer.style.bottom = '10px';
+        truckContainer.style.fontFamily = "'Poppins', sans-serif";
         
         // Add truck text
         truckText.style.display = 'block';
         truckText.style.position = 'relative';
         truckText.style.left = '0';
+        truckText.style.fontFamily = "'Poppins', sans-serif";
+        truckText.style.fontWeight = '600';
         
         // Create registered symbol and add it to truck text
         const regSymbol = document.createElement('span');
@@ -225,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
         regSymbol.style.right = '-15px';
         regSymbol.style.top = '0';
         regSymbol.style.fontSize = '12px';
+        regSymbol.style.fontFamily = "'Poppins', sans-serif";
         truckText.appendChild(regSymbol);
         
         // Add elements to container
@@ -263,20 +267,75 @@ document.addEventListener('DOMContentLoaded', () => {
                     const tagline = document.querySelector('.ektruck-tagline');
                     tagline.classList.add('show');
                     
-                    // Wait longer before starting exit animations
+                    // Wait longer before starting morphic transition
                     setTimeout(() => {
-                        // Add exit animation to tagline
-                        tagline.classList.add('exit');
-                        
-                        // Start ektruck exit after tagline animation starts
-                        setTimeout(() => {
-                            document.querySelector('.ektruck-container').classList.add('exit');
-                            setTimeout(showStackingText, 2000);
-                        }, 500);
-                    }, 2000); // Wait 2 seconds before exit animations
+                        // Instead of exit animation, start morphic transition
+                        startMorphicTransition();
+                    }, 2000); // Wait 2 seconds before transition
                 }, 1000);
             }, 400);
         }, 1800);
+    }
+
+    // Modify the startMorphicTransition function for a cleaner transition
+    function startMorphicTransition() {
+        // Get elements needed for transition
+        const ektruckContainer = document.querySelector('.ektruck-container');
+        const splashLogo = document.querySelector('.logo');
+        const tagline = document.querySelector('.ektruck-tagline');
+        const frontTire = document.querySelector('.front-tire');
+        const rearTire1 = document.querySelector('.rear-tire-1');
+        const rearTire2 = document.querySelector('.rear-tire-2');
+        const changingText = document.querySelector('.changing-text');
+        const truckText = document.querySelector('.truck-text');
+        const splash = document.querySelector('.splash');
+        
+        // Store the current position of the logo for the transition
+        const logoRect = splashLogo.getBoundingClientRect();
+        sessionStorage.setItem('comingFromSplash', 'true');
+        sessionStorage.setItem('splashLogoPosition', JSON.stringify({
+            top: logoRect.top,
+            left: logoRect.left,
+            width: logoRect.width,
+            height: logoRect.height
+        }));
+        
+        // Create a loading overlay for smooth transition
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'loading-overlay';
+        loadingOverlay.style.position = 'fixed';
+        loadingOverlay.style.top = '0';
+        loadingOverlay.style.left = '0';
+        loadingOverlay.style.width = '100%';
+        loadingOverlay.style.height = '100%';
+        loadingOverlay.style.backgroundColor = '#1a1a1a';
+        loadingOverlay.style.zIndex = '900';
+        loadingOverlay.style.opacity = '0';
+        loadingOverlay.style.transition = 'opacity 0.5s ease';
+        loadingOverlay.style.fontFamily = "'Poppins', sans-serif";
+        document.body.appendChild(loadingOverlay);
+        
+        // Preserve the "ek" text but hide the truck text
+        changingText.style.opacity = '1';
+        truckText.classList.add('truck-text-shrink');
+        
+        // Hide the tires with animation
+        frontTire.classList.add('shrinking-tires');
+        rearTire1.classList.add('shrinking-tires');
+        rearTire2.classList.add('shrinking-tires');
+        
+        // Fade out the tagline
+        tagline.classList.add('fading-out');
+        
+        // After a short delay, start fading in the overlay
+        setTimeout(() => {
+            loadingOverlay.style.opacity = '1';
+            
+            // After the overlay is visible, navigate to index.html
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 500);
+        }, 800);
     }
 
     // Add typewriter function with cursor animation
@@ -297,4 +356,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start with stacking text only
     setTimeout(showStackingText, 1000);
+});
+
+// Add this at the end of your script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Add a skip button that doesn't interfere with existing elements
+    const skipButton = document.createElement('button');
+    skipButton.textContent = 'Skip';
+    skipButton.className = 'skip-button';
+    skipButton.style.position = 'fixed';
+    skipButton.style.bottom = '20px';
+    skipButton.style.right = '20px';
+    skipButton.style.padding = '10px 20px';
+    skipButton.style.background = 'rgba(255, 0, 0, 0.7)';
+    skipButton.style.color = 'white';
+    skipButton.style.border = 'none';
+    skipButton.style.borderRadius = '5px';
+    skipButton.style.cursor = 'pointer';
+    skipButton.style.zIndex = '999';
+    skipButton.style.fontFamily = "'Poppins', sans-serif";
+    skipButton.style.fontWeight = '500';
+    skipButton.style.fontSize = '14px';
+    skipButton.onclick = function() {
+        window.location.href = 'index.html';
+    };
+    document.body.appendChild(skipButton);
+    
+    // Disable particles animation without removing elements
+    window.onload = function() {
+        // Store the original Particles.init function
+        const originalParticlesInit = window.Particles && window.Particles.init;
+        
+        // Override the Particles.init function to do nothing
+        if (window.Particles) {
+            window.Particles.init = function() {
+                console.log('Particles animation disabled');
+                return {
+                    destroy: function() {}
+                };
+            };
+        }
+        
+        // Call any existing onload functions that might be defined elsewhere
+        if (typeof originalOnload === 'function') {
+            originalOnload();
+        }
+    };
 });
