@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create truck text with registered symbol after 'k'
     const truckText = document.createElement('div');
     truckText.className = 'truck-text';
-    truckText.innerHTML = '<sub style="font-size: 170px">truck</sub><sup style="font-size: 30px">®</sup>';
+    truckText.innerHTML = '<sub style="font-size: 130px">truck</sub><sup style="font-size: 30px">®</sup>';
     
     // Add to logo
     logo.appendChild(truckText);
@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     logo.style.display = 'none';
 
     function fitText(element, text) {
-        const logoWidth = logo.offsetWidth - 20;
-        const logoHeight = logo.offsetHeight - 20;
+        const logoWidth = logo.offsetWidth - 30; // Increased padding for better fit
+        const logoHeight = logo.offsetHeight - 40; // Increased padding for better fit
         let fontSize = 100;
         
         // Create temporary span to measure text
@@ -110,8 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
         temp.style.visibility = 'hidden';
         temp.style.position = 'absolute';
         temp.style.whiteSpace = 'nowrap';
-        temp.style.fontFamily = "Inter";
-        temp.style.letterSpacing = '2px';
+        temp.style.fontFamily = "'Poppins', sans-serif";
+        temp.style.fontWeight = '600';
+        temp.style.letterSpacing = '0px';
         temp.innerHTML = text;
         document.body.appendChild(temp);
 
@@ -130,18 +131,39 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Set the calculated font size
-        const finalSize = fontSize - 5;
+        // Set the calculated font size with a slightly smaller value for safety
+        const finalSize = Math.max(fontSize - 15, 30); // Ensure minimum size of 30px, increased safety margin
         element.style.fontSize = finalSize + 'px';
+        
         // Update truck text size to match
-        truckText.style.fontSize = finalSize + 'px';
+        if (truckText) {
+            truckText.style.fontSize = finalSize + 'px';
+        }
+        
         document.body.removeChild(temp);
+        
+        // Position the text at the bottom of the red box
+        element.style.fontFamily = "'Poppins', sans-serif";
+        element.style.fontWeight = '600';
+        element.style.letterSpacing = '0px';
+        element.style.lineHeight = '1';
+        element.style.position = 'absolute';
+        element.style.bottom = '20px'; // Position at the bottom with some padding
+        element.style.left = '50%';
+        element.style.transform = 'translateX(-50%)';
+        element.style.textAlign = 'center';
+        element.style.width = 'auto';
+        element.style.padding = '0 10px';
+        
+        // Ensure the text is visible
+        element.style.opacity = '1';
     }
 
     function changeText() {
         if (currentIndex < texts.length) {
             changingText.textContent = texts[currentIndex];
             fitText(changingText, texts[currentIndex]);
+            positionTextAtBottom(); // Ensure text is positioned at the bottom after each change
             currentIndex++;
             
             if (currentIndex < texts.length) {
@@ -182,8 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
             logo.style.animation = 'boxGrowFromTop 1s ease-out forwards';
             
             // Start text changes after box grows
-            setTimeout(changeText, 1000);
-            setTimeout(addTruck, 5000);
+            setTimeout(() => {
+                changeText();
+                updateTextStyles(); // Update text styles after text changes
+                positionTextAtBottom(); // Position the text at the bottom
+                setTimeout(addTruck, 5000);
+            }, 1000);
         }, 2000);
     }
 
@@ -356,6 +382,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start with stacking text only
     setTimeout(showStackingText, 1000);
+
+    // Add this function to update existing text styles
+    function updateTextStyles() {
+        // Update changing text styles
+        const changingText = document.querySelector('.changing-text');
+        if (changingText) {
+            changingText.style.fontFamily = "'Poppins', sans-serif";
+            changingText.style.fontWeight = '600';
+            changingText.style.letterSpacing = '0px';
+            changingText.style.background = 'linear-gradient(180deg, #fff 0%, #d4d4d4 100%)';
+            changingText.style.backgroundClip = 'text';
+            changingText.style.webkitBackgroundClip = 'text';
+            changingText.style.webkitTextFillColor = 'transparent';
+        }
+        
+        // Update truck text styles
+        const truckText = document.querySelector('.truck-text');
+        if (truckText) {
+            truckText.style.fontFamily = "'Poppins', sans-serif";
+            truckText.style.fontWeight = '600';
+            truckText.style.letterSpacing = '0px';
+            truckText.style.background = 'linear-gradient(180deg, #fff 0%, #d4d4d4 100%)';
+            truckText.style.backgroundClip = 'text';
+            truckText.style.webkitBackgroundClip = 'text';
+            truckText.style.webkitTextFillColor = 'transparent';
+        }
+        
+        // Update tagline styles
+        const tagline = document.querySelector('.ektruck-tagline');
+        if (tagline) {
+            tagline.style.fontFamily = "'Poppins', sans-serif";
+            tagline.style.fontWeight = '500';
+            tagline.style.letterSpacing = '1px';
+        }
+    }
+
+    // Call the updateTextStyles function when the DOM is loaded
+    updateTextStyles();
+
+    // Add this function to ensure the text is positioned at the bottom of the red box
+    function positionTextAtBottom() {
+        const changingText = document.querySelector('.changing-text');
+        const logo = document.querySelector('.logo');
+        
+        if (changingText && logo) {
+            // Get the logo dimensions
+            const logoHeight = logo.offsetHeight;
+            
+            // Position the text at the bottom with some padding
+            changingText.style.bottom = '25px';
+            changingText.style.left = '50%';
+            changingText.style.transform = 'translateX(-50%)';
+            
+            // Ensure the truck text is also positioned correctly
+            const truckText = document.querySelector('.truck-text');
+            if (truckText) {
+                truckText.style.bottom = '20px';
+            }
+        }
+    }
+
+    // Also call it when the window is resized
+    window.addEventListener('resize', positionTextAtBottom);
 });
 
 // Add this at the end of your script.js file
