@@ -386,24 +386,24 @@ window.addEventListener('scroll', function() {
 });
 
 // Add animated data visualization to the benefits section
-// const createDataVisualization = () => {
-//     const container = document.createElement('div');
-//     container.className = 'data-visualization';
-//     container.style.position = 'absolute';
-//     container.style.bottom = '50px';
-//     container.style.left = '50px';
-//     container.style.zIndex = '2';
-//     container.style.width = '200px';
-//     container.style.height = '100px';
-//     container.style.background = 'rgba(0, 0, 0, 0.5)';
-//     container.style.borderRadius = '10px';
-//     container.style.padding = '15px';
-//     container.style.backdropFilter = 'blur(10px)';
-//     container.style.border = '1px solid rgba(255, 0, 0, 0.3)';
-//     container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-//     container.style.opacity = '0';
-//     container.style.transform = 'translateY(20px)';
-//     container.style.transition = 'all 0.5s ease';
+const createDataVisualization = () => {
+    const container = document.createElement('div');
+    container.className = 'data-visualization';
+    container.style.position = 'absolute';
+    container.style.bottom = '50px';
+    container.style.left = '50px';
+    container.style.zIndex = '2';
+    container.style.width = '200px';
+    container.style.height = '100px';
+    container.style.background = 'rgba(0, 0, 0, 0.5)';
+    container.style.borderRadius = '10px';
+    container.style.padding = '15px';
+    container.style.backdropFilter = 'blur(10px)';
+    container.style.border = '1px solid rgba(255, 0, 0, 0.3)';
+    container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+    container.style.opacity = '0';
+    container.style.transform = 'translateY(20px)';
+    container.style.transition = 'all 0.5s ease';
     
     // Create chart bars
     for (let i = 0; i < 5; i++) {
@@ -435,33 +435,124 @@ window.addEventListener('scroll', function() {
     container.insertBefore(title, container.firstChild);
     
     // Add to the benefits section
-    benefitsSectionElement.appendChild(container);
+    if (benefitsSectionElement) {
+        benefitsSectionElement.appendChild(container);
+        
+        // Animate in when scrolled into view
+        const vizObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                    
+                    // Animate bars
+                    const bars = container.querySelectorAll('.chart-bar');
+                    bars.forEach(bar => {
+                        bar.style.transform = 'scaleY(1)';
+                    });
+                    
+                    vizObserver.unobserve(container);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        vizObserver.observe(container);
+    }
     
-    // Animate in when scrolled into view
-    const vizObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                container.style.opacity = '1';
-                container.style.transform = 'translateY(0)';
-                
-                // Animate bars
-                const bars = container.querySelectorAll('.chart-bar');
-                bars.forEach(bar => {
-                    bar.style.transform = 'scaleY(1)';
-                });
-                
-                vizObserver.unobserve(container);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    vizObserver.observe(container);
+    return container; // Return the container for potential future use
 };
 
 // Create data visualization if benefits section exists
 if (benefitsSectionElement) {
     createDataVisualization();
 }
+
+// Add proper Lottie initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if Lottie library exists
+    if (typeof lottie === 'undefined') {
+        console.error('Lottie library is not loaded. Please include the Lottie script in your HTML.');
+        
+        // Try to load Lottie dynamically
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js';
+        script.onload = initLottieAnimations;
+        script.onerror = () => console.error('Failed to load Lottie library dynamically');
+        document.head.appendChild(script);
+    } else {
+        // Initialize Lottie animations if library is already loaded
+        initLottieAnimations();
+    }
+    
+    function initLottieAnimations() {
+        // Find all elements with data-lottie attribute
+        const lottieElements = document.querySelectorAll('[data-lottie]');
+        
+        lottieElements.forEach(element => {
+            const animationPath = element.getAttribute('data-lottie');
+            if (!animationPath) return;
+            
+            try {
+                const anim = lottie.loadAnimation({
+                    container: element,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: animationPath
+                });
+                
+                // Store animation instance on the element for future reference
+                element.lottieInstance = anim;
+                
+                // Add error handling
+                anim.addEventListener('data_failed', () => {
+                    console.error(`Failed to load Lottie animation: ${animationPath}`);
+                    element.innerHTML = '<div class="animation-error">Animation failed to load</div>';
+                });
+            } catch (error) {
+                console.error('Error initializing Lottie animation:', error);
+                element.innerHTML = '<div class="animation-error">Animation error</div>';
+            }
+        });
+        
+        // Initialize specific animations
+        const truckAnimation = document.getElementById('truck-animation');
+        if (truckAnimation) {
+            try {
+                const truckAnim = lottie.loadAnimation({
+                    container: truckAnimation,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: truckAnimation.getAttribute('data-lottie') || 'animations/truck.json'
+                });
+                
+                // Adjust speed if animation loaded successfully
+                if (truckAnim) {
+                    truckAnim.setSpeed(1.2);
+                }
+            } catch (error) {
+                console.error('Error initializing truck animation:', error);
+            }
+        }
+    }
+});
+
+// Add CSS for error states
+const errorStyle = document.createElement('style');
+errorStyle.textContent = `
+    .animation-error {
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        background: rgba(255, 0, 0, 0.5);
+        border-radius: 5px;
+    }
+`;
+
+document.head.appendChild(errorStyle);
 
 document.addEventListener('DOMContentLoaded', function() {
     // Trip Tracking Motion Graphics Animation

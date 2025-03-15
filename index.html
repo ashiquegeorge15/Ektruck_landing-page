@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ek(one) - Transform Your Logistics</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -329,15 +329,7 @@
                     <div class="central-animation">
                         <!-- Truck Animation -->
                         <div class="truck-container">
-                            <lottie-player 
-                                id="truck-animation"
-                                src="https://assets2.lottiefiles.com/packages/lf20_yvzobeog.json"
-                                background="transparent"
-                                speed="1"
-                                style="width: 100%; height: 100%;"
-                                loop
-                                autoplay>
-                            </lottie-player>
+                            <div id="truck-animation" data-lottie="animations/truck.json" class="lottie-container"></div>
                         </div>
                         
                         <!-- Route Path -->
@@ -932,6 +924,6 @@
     });
   });
 </script>
-<script src="index.js"></script>
+<script src="js/index.js"></script>
 
 </html>
