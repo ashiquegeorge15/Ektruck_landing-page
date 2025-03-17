@@ -386,86 +386,86 @@ window.addEventListener('scroll', function() {
 });
 
 // Add animated data visualization to the benefits section
-const createDataVisualization = () => {
-    const container = document.createElement('div');
-    container.className = 'data-visualization';
-    container.style.position = 'absolute';
-    container.style.bottom = '50px';
-    container.style.left = '50px';
-    container.style.zIndex = '2';
-    container.style.width = '200px';
-    container.style.height = '100px';
-    container.style.background = 'rgba(0, 0, 0, 0.5)';
-    container.style.borderRadius = '10px';
-    container.style.padding = '15px';
-    container.style.backdropFilter = 'blur(10px)';
-    container.style.border = '1px solid rgba(255, 0, 0, 0.3)';
-    container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
-    container.style.opacity = '0';
-    container.style.transform = 'translateY(20px)';
-    container.style.transition = 'all 0.5s ease';
+// const createDataVisualization = () => {
+//     const container = document.createElement('div');
+//     container.className = 'data-visualization';
+//     container.style.position = 'absolute';
+//     container.style.bottom = '50px';
+//     container.style.left = '50px';
+//     container.style.zIndex = '2';
+//     container.style.width = '200px';
+//     container.style.height = '100px';
+//     container.style.background = 'rgba(0, 0, 0, 0.5)';
+//     container.style.borderRadius = '10px';
+//     container.style.padding = '15px';
+//     container.style.backdropFilter = 'blur(10px)';
+//     container.style.border = '1px solid rgba(255, 0, 0, 0.3)';
+//     container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+//     container.style.opacity = '0';
+//     container.style.transform = 'translateY(20px)';
+//     container.style.transition = 'all 0.5s ease';
     
-    // Create chart bars
-    for (let i = 0; i < 5; i++) {
-        const bar = document.createElement('div');
-        bar.className = 'chart-bar';
-        bar.style.height = `${20 + Math.random() * 60}%`;
-        bar.style.width = '15%';
-        bar.style.background = 'linear-gradient(to top, #ff0000, #ff3300)';
-        bar.style.borderRadius = '3px';
-        bar.style.position = 'absolute';
-        bar.style.bottom = '15px';
-        bar.style.left = `${15 + i * 20}%`;
-        bar.style.transformOrigin = 'bottom';
-        bar.style.transform = 'scaleY(0)';
-        bar.style.transition = 'transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        bar.style.transitionDelay = `${i * 0.1}s`;
+//     // Create chart bars
+//     for (let i = 0; i < 5; i++) {
+//         const bar = document.createElement('div');
+//         bar.className = 'chart-bar';
+//         bar.style.height = `${20 + Math.random() * 60}%`;
+//         bar.style.width = '15%';
+//         bar.style.background = 'linear-gradient(to top, #ff0000, #ff3300)';
+//         bar.style.borderRadius = '3px';
+//         bar.style.position = 'absolute';
+//         bar.style.bottom = '15px';
+//         bar.style.left = `${15 + i * 20}%`;
+//         bar.style.transformOrigin = 'bottom';
+//         bar.style.transform = 'scaleY(0)';
+//         bar.style.transition = 'transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+//         bar.style.transitionDelay = `${i * 0.1}s`;
         
-        container.appendChild(bar);
-    }
+//         container.appendChild(bar);
+//     }
     
-    // Add title
-    const title = document.createElement('div');
-    title.textContent = 'Efficiency Gains';
-    title.style.color = '#fff';
-    title.style.fontSize = '12px';
-    title.style.fontWeight = 'bold';
-    title.style.marginBottom = '10px';
+//     // Add title
+//     const title = document.createElement('div');
+//     title.textContent = 'Efficiency Gains';
+//     title.style.color = '#fff';
+//     title.style.fontSize = '12px';
+//     title.style.fontWeight = 'bold';
+//     title.style.marginBottom = '10px';
     
-    container.insertBefore(title, container.firstChild);
+//     container.insertBefore(title, container.firstChild);
     
-    // Add to the benefits section
-    if (benefitsSectionElement) {
-        benefitsSectionElement.appendChild(container);
+//     // Add to the benefits section
+//     if (benefitsSectionElement) {
+//         benefitsSectionElement.appendChild(container);
         
-        // Animate in when scrolled into view
-        const vizObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    container.style.opacity = '1';
-                    container.style.transform = 'translateY(0)';
+//         // Animate in when scrolled into view
+//         const vizObserver = new IntersectionObserver((entries) => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     container.style.opacity = '1';
+//                     container.style.transform = 'translateY(0)';
                     
-                    // Animate bars
-                    const bars = container.querySelectorAll('.chart-bar');
-                    bars.forEach(bar => {
-                        bar.style.transform = 'scaleY(1)';
-                    });
+//                     // Animate bars
+//                     const bars = container.querySelectorAll('.chart-bar');
+//                     bars.forEach(bar => {
+//                         bar.style.transform = 'scaleY(1)';
+//                     });
                     
-                    vizObserver.unobserve(container);
-                }
-            });
-        }, { threshold: 0.5 });
+//                     vizObserver.unobserve(container);
+//                 }
+//             });
+//         }, { threshold: 0.5 });
         
-        vizObserver.observe(container);
-    }
+//         vizObserver.observe(container);
+//     }
     
-    return container; // Return the container for potential future use
-};
+//     return container; // Return the container for potential future use
+// };
 
-// Create data visualization if benefits section exists
-if (benefitsSectionElement) {
-    createDataVisualization();
-}
+// // Create data visualization if benefits section exists
+// if (benefitsSectionElement) {
+//     createDataVisualization();
+// }
 
 // Add proper Lottie initialization
 document.addEventListener('DOMContentLoaded', function() {
