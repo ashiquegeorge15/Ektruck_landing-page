@@ -357,9 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             loadingOverlay.style.opacity = '1';
             
-            // After the overlay is visible, navigate to index.html
+            // After the overlay is visible, navigate to landing-page.html
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'landing-page.html';
             }, 500);
         }, 800);
     }
@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
     skipButton.style.fontWeight = '500';
     skipButton.style.fontSize = '14px';
     skipButton.onclick = function() {
-        window.location.href = 'index.html';
+        window.location.href = 'landing-page.html';
     };
     document.body.appendChild(skipButton);
     
