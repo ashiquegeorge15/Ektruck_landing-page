@@ -60,7 +60,7 @@ body::before {
 }
 
 /* Ensure all sections have dark backgrounds */
-section, article, aside, header, footer, nav {
+section, article, aside, header, footer{
     background-color: #0a0a0a !important;
 }
 

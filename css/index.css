@@ -6949,6 +6949,282 @@ lottie-player {
     }
 }
 
+/* ======== MARQUEE SECTION ======== */
+.marquee-section {
+    position: relative;
+    padding: 5rem 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.marquee-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(230, 0, 0, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(230, 0, 0, 0.08) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.marquee-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.marquee-title-container {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.marquee-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.marquee-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-color), var(--primary-dark));
+    border-radius: 2px;
+}
+
+.marquee-title span {
+    position: relative;
+    z-index: 1;
+}
+
+.marquee-title-badge {
+    position: absolute;
+    top: -15px;
+    right: -30px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    transform: rotate(15deg);
+    box-shadow: 0 4px 10px rgba(230, 0, 0, 0.3);
+}
+
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1.5rem 0;
+    --mask-gradient-color: rgba(13, 13, 13, 1);
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--mask-gradient-color) 10%,
+        var(--mask-gradient-color) 90%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        var(--mask-gradient-color) 10%,
+        var(--mask-gradient-color) 90%,
+        transparent 100%
+    );
+}
+
+.partners-track {
+    display: flex;
+    animation: marqueeRightToLeft 50s linear infinite;
+    width: fit-content;
+}
+
+.clients-track {
+    display: flex;
+    animation: marqueeLeftToRight 50s linear infinite;
+    width: fit-content;
+}
+
+@keyframes marqueeRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marqueeLeftToRight {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    padding: 0 2rem;
+}
+
+.marquee-card {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    background: rgba(26, 26, 26, 0.7);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem; /* Increased padding from 1.5rem to 2.5rem */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+.marquee-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    z-index: 2;
+    transition: var(--transition-fast);
+    animation: shimmerEffect 3s infinite;
+}
+
+@keyframes shimmerEffect {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.marquee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(230, 0, 0, 0.1);
+    border-color: rgba(230, 0, 0, 0.2);
+}
+
+.marquee-logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-medium);
+}
+
+.marquee-logo img {
+    max-width: 90%; /* Adjusted from 80% to 90% */
+    max-height: 90%; /* Adjusted from 80% to 90% */
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.5);
+    opacity: 0.7;
+    transition: var(--transition-medium);
+}
+
+.marquee-card:hover .marquee-logo img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+}
+
+.marquee-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.marquee-card:hover .marquee-info {
+    transform: translateY(0);
+}
+
+.marquee-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 3rem 0;
+    opacity: 0.3;
+}
+
+.marquee-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0.75rem; /* Increased top/bottom padding from 0.75rem to 1rem */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments with preserved padding */
+@media screen and (max-width: 768px) {
+    .marquee-card {
+        width: 180px;
+        height: 120px;
+        padding: 2rem; /* Slightly reduced but still generous padding */
+    }
+    
+    .marquee-logo {
+        padding: 0.75rem; /* Adjusted padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .marquee-card {
+        width: 160px;
+        height: 100px;
+        padding: 1.5rem; /* Further reduced but still adequate padding */
+    }
+    
+    .marquee-logo {
+        padding: 0.5rem; /* Smaller padding for mobile */
+    }
+    
+    .marquee-info {
+        padding: 0.75rem 0.5rem; /* Reduced padding for info section on mobile */
+    }
+}
+
 /* Industries Section Styles */
 .industries-section {
     position: relative;
