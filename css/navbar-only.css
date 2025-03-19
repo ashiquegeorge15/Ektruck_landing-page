@@ -21,6 +21,7 @@
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+    padding: 0.8rem 0;
 }
 
 .navbar.scrolled {

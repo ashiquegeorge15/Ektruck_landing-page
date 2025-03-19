@@ -211,3 +211,79 @@
     font-family: 'Poppins', sans-serif !important;
     font-weight: 600;
 }
+
+/* Transition effects for page elements 
+   ========================================================================== */
+   
+.page-transition {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Element transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.scale-in {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Staggered animations for multiple elements */
+.stagger-item {
+    opacity: 0;
+}
+
+.stagger-item:nth-child(1) { animation: fadeIn 0.5s ease forwards 0.1s; }
+.stagger-item:nth-child(2) { animation: fadeIn 0.5s ease forwards 0.2s; }
+.stagger-item:nth-child(3) { animation: fadeIn 0.5s ease forwards 0.3s; }
+.stagger-item:nth-child(4) { animation: fadeIn 0.5s ease forwards 0.4s; }
+.stagger-item:nth-child(5) { animation: fadeIn 0.5s ease forwards 0.5s; }
+.stagger-item:nth-child(6) { animation: fadeIn 0.5s ease forwards 0.6s; }
