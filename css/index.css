@@ -5790,8 +5790,13 @@ lottie-player {
 
 .connection-line {
     position: absolute;
+<<<<<<< HEAD:css/index.css
     bottom: 13px;
     
+=======
+    bottom: 50px;
+    left: 10%;
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     width: 80%;
     height: 2px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
@@ -5799,7 +5804,11 @@ lottie-player {
 
 .connection-dot {
     position: absolute;
+<<<<<<< HEAD:css/index.css
     bottom: 10px;
+=======
+    bottom: 46px;
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -5809,17 +5818,29 @@ lottie-player {
 }
 
 .dot-1 {
+<<<<<<< HEAD:css/index.css
     left: 2%;
+=======
+    left: 20%;
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 0s;
 }
 
 .dot-2 {
+<<<<<<< HEAD:css/index.css
     left: 18%;
+=======
+    left: 50%;
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 0.7s;
 }
 
 .dot-3 {
+<<<<<<< HEAD:css/index.css
     left: 35%;
+=======
+    left: 80%;
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 1.4s;
 }
 
@@ -6018,12 +6039,15 @@ lottie-player {
   width: 0;
   animation: spotTyping 2s steps(12, end) forwards;
   animation-delay: 3.2s; /* Start after the first text finishes */
+<<<<<<< HEAD:css/index.css
   font-weight: 800;
   text-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
   background: linear-gradient(120deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.2));
   padding: 0 6px;
   border-radius: 4px;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+=======
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
 }
 
 /* Animation for the main text */
@@ -6049,6 +6073,7 @@ lottie-player {
   animation-delay: 5.2s; /* Start after both texts are typed */
 }
 
+<<<<<<< HEAD:css/index.css
 /* Add a pulsing glow effect to the highlight */
 @keyframes pulse {
   0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
@@ -6063,6 +6088,8 @@ lottie-player {
   animation-delay: 3.2s, 5.2s; /* Start typing first, then pulsing after typing is complete */
 }
 
+=======
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -6079,6 +6106,7 @@ lottie-player {
   .typewriter-heading {
     font-size: 1.5rem;
   }
+<<<<<<< HEAD:css/index.css
 }
 
 /* Footer Styles */
@@ -7646,3 +7674,6 @@ lottie-player {
     }
 }
 
+=======
+}
+>>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
