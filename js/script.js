@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // After the overlay is visible, navigate to landing-page.html
             setTimeout(() => {
-                window.location.href = 'landing-page.html';
+                window.location.href = '/ek(one)platform/';
             }, 500);
         }, 800);
     }
@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
     skipButton.style.fontWeight = '500';
     skipButton.style.fontSize = '14px';
     skipButton.onclick = function() {
-        window.location.href = 'landing-page.html';
+        window.location.href = '/ek(one)platform/';
     };
     document.body.appendChild(skipButton);
     
