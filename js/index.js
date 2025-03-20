@@ -1335,53 +1335,74 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the animation overlay
     initAnimationOverlay();
 
-    // Enhanced typewriter effect
+    // Enhanced typewriter effect with highlighted sections
     const typewriterText = document.getElementById('typewriter-text');
-    const text = "ek(one) – India's 1st Unified Trucking Platform for the ";
-    const highlightText = "Spot Market";
-    let i = 0;
-    
-    function typeWriter() {
-        if (i < text.length) {
-            typewriterText.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-        } else {
-            // Add the enhanced highlighted text
-            const highlightSpan = document.createElement('span');
-            highlightSpan.className = 'highlight';
-            
-            // Type out the highlighted text letter by letter with a different speed
-            let j = 0;
-            function typeHighlight() {
-                if (j < highlightText.length) {
-                    const letter = document.createElement('span');
-                    letter.className = 'highlight-letter';
-                    letter.textContent = highlightText.charAt(j);
-                    letter.style.animationDelay = `${j * 0.1}s`;
-                    highlightSpan.appendChild(letter);
-                    j++;
-                    setTimeout(typeHighlight, 100);
-                } else {
-                    // Add the enhanced underline with a delay
-                    setTimeout(() => {
-                        const underline = document.createElement('span');
-                        underline.className = 'highlight-underline';
-                        highlightSpan.appendChild(underline);
-                        
-                        // Add the glow effect after underline appears
-                        setTimeout(() => {
-                            highlightSpan.classList.add('glow-active');
-                        }, 500);
-                    }, 300);
-                }
-            }
-            
-            typewriterText.appendChild(highlightSpan);
-            typeHighlight();
+    if (typewriterText) {
+        // Clear any existing content first
+        typewriterText.innerHTML = '';
+        
+        // The full text with parts that need highlighting
+        const fullText = "ek(one) is India's first unified trucking platform designed to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks with real-time visibility, digital payments, and AI-driven load matching.";
+        
+        // Sections to highlight
+        const highlight1 = "India's first unified trucking platform";
+        const highlight2 = "to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks";
+        
+        // Find positions of highlights in the text
+        const pos1Start = fullText.indexOf(highlight1);
+        const pos1End = pos1Start + highlight1.length;
+        const pos2Start = fullText.indexOf(highlight2);
+        const pos2End = pos2Start + highlight2.length;
+        
+        // Break the text into parts
+        const part1 = fullText.substring(0, pos1Start);
+        const part2 = highlight1;
+        const part3 = fullText.substring(pos1End, pos2Start);
+        const part4 = highlight2;
+        const part5 = fullText.substring(pos2End);
+        
+        // Create DOM structure with highlighted parts
+        const span1 = document.createElement('span');
+        span1.textContent = part1;
+        
+        const highlight1Span = document.createElement('span');
+        highlight1Span.className = 'highlight-text';
+        highlight1Span.textContent = part2;
+        
+        const span2 = document.createElement('span');
+        span2.textContent = part3;
+        
+        const highlight2Span = document.createElement('span');
+        highlight2Span.className = 'highlight-text';
+        highlight2Span.textContent = part4;
+        
+        const span3 = document.createElement('span');
+        span3.textContent = part5;
+        
+        // Set initial visibility
+        [span1, highlight1Span, span2, highlight2Span, span3].forEach(el => {
+            el.style.opacity = '0';
+            typewriterText.appendChild(el);
+        });
+        
+        // Animate each section with a delay
+        setTimeout(() => animateElement(span1), 300);
+        setTimeout(() => animateElement(highlight1Span), 1500);
+        setTimeout(() => animateElement(span2), 3000);
+        setTimeout(() => animateElement(highlight2Span), 3500);
+        setTimeout(() => animateElement(span3), 5500);
+        
+        function animateElement(el) {
+            el.style.transition = 'opacity 1s ease';
+            el.style.opacity = '1';
         }
+        
+        // Add cursor at the end
+        setTimeout(() => {
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            cursor.innerHTML = '|';
+            typewriterText.appendChild(cursor);
+        }, 6500);
     }
-    
-    // Start typing
-    typeWriter();
 });

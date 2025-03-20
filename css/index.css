@@ -619,26 +619,36 @@ a:hover {
 
 /* Enhanced Hero Badge with Animated Border */
 .hero-badge-container {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
 }
 
 .hero-badge {
-    position: relative;
+    background: rgba(20, 20, 20, 0.7);
+    border: 2px solid rgba(220, 20, 20, 0.7);
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 0, 0, 0.15);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    border-radius: 50px;
-    padding: 0.8rem 2rem;
-    color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
     font-weight: 600;
-    font-size: 0.9rem;
-    z-index: 2;
-    backdrop-filter: blur(5px);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(220, 20, 20, 0.3);
+    transform: scale(1.2); /* Increased size by 20% */
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .hero-badge::before {
@@ -648,10 +658,11 @@ a:hover {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.7), transparent);
     border-radius: 50px;
+    background: linear-gradient(45deg, #ff0000, #ff6600, #ff0000);
     z-index: -1;
-    animation: borderGlow 3s linear infinite;
+    opacity: 0.7;
+    animation: borderGlow 3s ease-in-out infinite;
 }
 
 @keyframes borderGlow {
@@ -799,6 +810,7 @@ a:hover {
 .hero-buttons {
     display: flex;
     gap: 1.2rem;
+    margin-left: 20px;
     margin-bottom: 3rem;
     opacity: 0;
     animation: fadeIn 1s 1.8s forwards;
@@ -2042,7 +2054,7 @@ lottie-player {
 /* Enhanced Hero Badge with Particle Effect */
 .hero-badge-container {
     position: relative;
-    display: inline-block;
+  
     margin-bottom: 1.8rem;
     border-radius: 50px;
     overflow: hidden;
@@ -5790,13 +5802,8 @@ lottie-player {
 
 .connection-line {
     position: absolute;
-<<<<<<< HEAD:css/index.css
-    bottom: 13px;
-    
-=======
     bottom: 50px;
     left: 10%;
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     width: 80%;
     height: 2px;
     background: linear-gradient(90deg, transparent, #ff0000, transparent);
@@ -5804,11 +5811,7 @@ lottie-player {
 
 .connection-dot {
     position: absolute;
-<<<<<<< HEAD:css/index.css
-    bottom: 10px;
-=======
     bottom: 46px;
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -5818,29 +5821,17 @@ lottie-player {
 }
 
 .dot-1 {
-<<<<<<< HEAD:css/index.css
-    left: 2%;
-=======
     left: 20%;
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 0s;
 }
 
 .dot-2 {
-<<<<<<< HEAD:css/index.css
-    left: 18%;
-=======
     left: 50%;
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 0.7s;
 }
 
 .dot-3 {
-<<<<<<< HEAD:css/index.css
-    left: 35%;
-=======
     left: 80%;
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
     animation-delay: 1.4s;
 }
 
@@ -5898,27 +5889,83 @@ lottie-player {
 
 /* Typewriter Animation Styles */
 .typewriter-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
+    display: block;
+        width: 100%;
+    position: relative;
+    text-align: left;
 }
 
-.typewriter-text {
-    font-size: 2.5rem;
-    font-weight: 700;
+    .typewriter-heading {
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 2rem 0;
     color: #fff;
     position: relative;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #ff0000;
-    animation: blinkCursor 0.75s step-end infinite;
+    max-width: 60%;
+    text-align: left !important; /* Force left alignment */
+    overflow: visible;
+    padding: 1rem 0;
+    transition: all 0.5s ease;
+    display: inline-block; /* Ensures the heading takes only the width it needs */
 }
 
-@keyframes blinkCursor {
-    from, to { border-color: transparent; }
-    50% { border-color: #ff0000; }
+/* If there are any parent elements that might be centering the content, override them */
+.typewriter-heading-section,
+.typewriter-heading-section > div,
+.typewriter-heading-section > div > div {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.highlight-text {
+    color: #ff0000;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+    position: relative;
+    display: inline;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 0, 0, 0.7);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.typewriter-heading:hover .highlight-text::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@media (max-width: 992px) {
+    .typewriter-heading {
+        font-size: 1.6rem;
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .typewriter-heading {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .typewriter-heading {
+        font-size: 1.2rem;
+        max-width: 100%;
+        margin: 1.5rem 0;
+    }
 }
 
 /* For responsive design */
@@ -6039,15 +6086,6 @@ lottie-player {
   width: 0;
   animation: spotTyping 2s steps(12, end) forwards;
   animation-delay: 3.2s; /* Start after the first text finishes */
-<<<<<<< HEAD:css/index.css
-  font-weight: 800;
-  text-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
-  background: linear-gradient(120deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.2));
-  padding: 0 6px;
-  border-radius: 4px;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
-=======
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
 }
 
 /* Animation for the main text */
@@ -6073,23 +6111,6 @@ lottie-player {
   animation-delay: 5.2s; /* Start after both texts are typed */
 }
 
-<<<<<<< HEAD:css/index.css
-/* Add a pulsing glow effect to the highlight */
-@keyframes pulse {
-  0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
-  100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); }
-}
-
-.highlight {
-  animation: 
-    spotTyping 2s steps(12, end) forwards,
-    pulse 2s infinite;
-  animation-delay: 3.2s, 5.2s; /* Start typing first, then pulsing after typing is complete */
-}
-
-=======
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -6106,7 +6127,6 @@ lottie-player {
   .typewriter-heading {
     font-size: 1.5rem;
   }
-<<<<<<< HEAD:css/index.css
 }
 
 /* Footer Styles */
@@ -7674,6 +7694,112 @@ lottie-player {
     }
 }
 
-=======
+.typewriter-heading {
+    font-size: 1.5rem; /* Decreased font size */
+    font-weight: 700;
+    line-height: 1.4;
+    /* margin: 3rem auto; */
+    color: #fff;
+    position: relative;
+    max-width: 900px;
+    text-align: center;
+    overflow: hidden;
+    padding: 1.5rem;
+    /* Removed: background: rgba(0, 0, 0, 0.5); */
+    /* Removed: border-radius: 10px; */
+    /* Removed: box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(220, 20, 20, 0.3); */
+    /* Removed: border-left: 4px solid #ff0000; */
+    /* Removed: border-right: 4px solid #ff0000; */
+    /* Removed: backdrop-filter: blur(5px); */
+    transition: all 0.5s ease;
 }
->>>>>>> c8965cc99d7f8d15a89f5e367d5fdd391b05d5ff:index.css
+
+.highlight-text {
+    color: #ff0000;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+    position: relative;
+    display: inline;
+}
+
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 0, 0, 0.7);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+.typewriter-heading:hover .highlight-text::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@media (max-width: 992px) {
+    .typewriter-heading {
+        font-size: 1.8rem;
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .typewriter-heading {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .typewriter-heading {
+        font-size: 1.3rem;
+        padding: 1rem;
+        margin: 2rem auto;
+    }
+}
+
+/* Add this to your CSS for a simple fade-in animation */
+.typewriter-heading {
+    /* Existing styles */
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add sequential animations for the text parts */
+.typewriter-heading > span:nth-of-type(1) {
+    animation: fadeInText 0.5s ease forwards 0.5s;
+    opacity: 0;
+}
+
+.typewriter-heading > span:nth-of-type(2) {
+    animation: fadeInText 0.5s ease forwards 1s;
+    opacity: 0;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        color: #fff;
+    }
+    to {
+        opacity: 1;
+        color: #ff0000;
+    }
+}
