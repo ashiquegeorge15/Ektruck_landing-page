@@ -21,7 +21,8 @@
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 0, 0, 0.1);
-    padding: 0.8rem 0;
+    padding: 0px 0px;
+    transform: translateY(-15px);
 }
 
 .navbar.scrolled {
@@ -40,8 +41,9 @@
 }
 
 .logo img {
-    height: 60px;
+    height: 80px;
     transition: var(--transition);
+    /* transform: translateY(-15px); */
 }
 
 .logo:hover img {
