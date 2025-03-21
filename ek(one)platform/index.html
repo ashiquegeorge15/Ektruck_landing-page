@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="../css/key-features.css">
+    <link rel="stylesheet" href="../css/sos-management.css">
+    <link rel="stylesheet" href="../css/rating-system.css">
+    <link rel="stylesheet" href="../css/why-choose.css">
     
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -76,208 +80,146 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container" style="margin-top: 100px;">
-            <div class="hero-content" data-aos="fade-right">
-                <!-- Hero Badge First -->
-                <div class="hero-badge-container">
-                    <div id="particles-js"></div>
-                    <div class="hero-badge">
-                        <span>India's 1st Unified Trucking Platform</span>
-                    </div>
-                </div>
-                
-                <!-- Heading Second (Now Under the Badge) -->   <div class="typewriter-heading-section">
-                    <div class="typewriter-container">
-                        <h2 class="typewriter-heading">
-                            ek(one) is <span class="highlight-text">India's first unified trucking platform</span> designed 
-                            <span class="highlight-text">to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks</span> 
-                            with real-time visibility, digital payments, and AI-driven load matching.
-                        </h2>
-                    </div>
-                </div>
-             
-                
-                <p class="hero-description">
-                    <!-- EkTruck is India's first unified trucking platform designed to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks with real-time visibility, digital payments, and AI-driven load matching. -->
-                </p>
-                
-                <div class="hero-buttons">
-                    <!-- <button class="btn btn-primary">
-                        <span>Start your free trial</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button> -->
-                    <button class="btn btn-outline">
-                        <span>Book Demo</span>
-                        <i class="fas fa-play"></i>
-                    </button>
-                </div>
-                
-                <div class="hero-stats">
-                    <!-- <div class="stat-item">
-                        <span class="stat-number" data-count="500">0</span>
-                        <span class="stat-label">Active Clients</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="10000">0</span>
-                        <span class="stat-label">Trucks Managed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-count="30">0</span>
-                        <span class="stat-label">% Cost Reduction</span>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </section>
+    <!-- Enhanced Hero Section -->
+    <section id="hero-section" class="hero">
+      <div class="hero-bg-elements">
+        <div class="gradient-overlay"></div>
+        <div class="grid-pattern"></div>
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        <div class="particles-container" id="hero-particles"></div>
+      </div>
 
-    <!-- Logistics Animation Section -->
-    <section class="logistics-animation-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Transforming India's Logistics Landscape</h2>
-                <p class="section-subtitle">Seamlessly connecting shippers, brokers, and truck owners across the country</p>
-            </div>
-            
-            <div class="connection-lines">
-                <div class="connection-line" style="top: 30%; left: 25%; width: 50%; transform: rotate(15deg);"></div>
-                <div class="connection-line" style="top: 45%; right: 25%; width: 40%; transform: rotate(-10deg);"></div>
-                <div class="connection-line" style="top: 65%; left: 30%; width: 45%; transform: rotate(5deg);"></div>
-            </div>
-            
-            <div class="logistics-floating-element logistics-icon-1">
-                <i class="fas fa-truck-moving"></i>
-            </div>
-            <div class="logistics-floating-element logistics-icon-2">
-                <i class="fas fa-route"></i>
-            </div>
-            <div class="logistics-floating-element logistics-icon-3">
-                <i class="fas fa-warehouse"></i>
-            </div>
-            
-            <div class="logistics-animations-grid">
-                <!-- Truck Animation -->
-                <div class="animation-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="animation-container">
-                        <img src="/assets/img/transport.png" alt="Nationwide Coverage">
-                    </div>
-                    <h3>Nationwide Coverage</h3>
-                    <p>Connect with trucks and shippers across all major routes in India</p>
-                </div>
-                
-                <!-- Logistics Network Animation -->
-                <div class="animation-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="animation-container">
-                        <img src="/assets/img/global-network.png" alt="Smart Network">
-                    </div>
-                    <h3>Smart Network</h3>
-                    <p>AI-powered matching algorithm finds the perfect truck for every shipment</p>
-                </div>
-                
-                <!-- Tracking Animation -->
-                <div class="animation-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="animation-container">
-                        <img src="/assets/img/real-time-tracking.png" alt="Real-time Tracking">
-                    </div>
-                    <h3>Real-time Tracking</h3>
-                    <p>Monitor your shipments with precision GPS tracking and status updates</p>
-                </div>
-                
-                <!-- Payment Animation -->
-                <div class="animation-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="animation-container">
-                        <img src="/assets/img/data-analytics.png" alt="Live Analytics">
-                    </div>
-                    <h3>Live Analytics</h3>
-                    <p>Track your shipments in real-time with our analytics dashboard</p>
-                </div>
-            </div>
-            
-            <!-- Central Logistics Animation -->
-            <!-- <div class="central-animation" data-aos="zoom-in" data-aos-delay="500">
-                <lottie-player 
-                    src="https://assets2.lottiefiles.com/packages/lf20_yvzobeog.json"
-                    background="transparent"
-                    speed="1"
-                    style="width: 100%; max-width: 600px;"
-                    loop
-                    autoplay>
-                </lottie-player>
+      <div class="container">
+        <!-- Left side - text content -->
+        <div class="hero-content">
+          <div class="badge-container">
+            <span class="badge">India's first unified trucking platform</span>
+          </div>
+          
+          <h1 class="animated-heading">
+            <span class="text-line">Future of </span>
+            <span class="text-line accent-text">Transperent <span class="highlight">Trucking</span></span>
+          </h1>
+          
+          <p class="hero-description">
+            ek(one) is India's first unified trucking platform designed to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks with real-time visibility, digital payments, and AI-driven load matching.
+          </p>
+          
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">
+              Demo
+              <span class="btn-shine"></span>
+            </a>
+<!--             
+            <div class="no-card-note">
+              <svg class="arrow-sketch" width="60" height="40" viewBox="0 0 60 40">
+                <path d="M5,20 Q15,10 25,18 T45,15" stroke="#888" fill="none" stroke-width="2" stroke-dasharray="5,2" />
+                <path d="M40,12 L48,15 L42,20" stroke="#888" fill="none" stroke-width="2" />
+              </svg>
+              <span>No credit<br>card required</span>
             </div> -->
-        </div>
-    </section>
-
-    <!-- Animation Overlay Section -->
-    <section class="animation-overlay-section">
-        <div class="overlay-background">
-            <div class="grid-lines"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-                <div class="glow-orb orb-3"></div>
-            </div>
+          </div>
         </div>
         
+        <!-- Right side - your image -->
+        <div class="hero-image">
+          <div class="dashboard-mockup">
+            <!-- Left sidebar -->
+            <div class="sidebar">
+              <div class="sidebar-icon active"><i class="fa fa-home"></i></div>
+              <div class="sidebar-icon"><i class="fa fa-file-text"></i></div>
+              <div class="sidebar-icon"><i class="fa fa-user"></i></div>
+              <div class="sidebar-icon"><i class="fa fa-chart-bar"></i></div>
+              <div class="sidebar-icon"><i class="fa fa-truck"></i></div>
+              <div class="sidebar-icon"><i class="fa fa-cog"></i></div>
+            </div>
+            
+            <!-- Main dashboard content with image -->
+            <div class="dashboard-content">
+              <img src="/assets/img/dashboard.png" alt="Dashboard Interface" class="dashboard-img">
+              <!-- Darkening overlay -->
+              <div class="dark-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this code after line 111, between the closing </div> of hero-buttons and before line 112 -->
+    <!-- <div class="hero-image-showcase">
+      <div class="showcase-image showcase-image-1">
+        <img src="/assets/img/market indices.png" alt="Truck Dashboard" />
+        <div class="image-overlay"></div>
+      </div>
+      
+      <div class="showcase-image showcase-image-2">
+        <img src="/assets/img/trip made.png" alt="Logistics Map" />
+        <div class="image-overlay"></div>
+      </div>
+      
+      <div class="showcase-image showcase-image-3">
+        <img src="/assets/img/trips.png" alt="Fleet Management" />
+        <div class="image-overlay"></div>
+      </div> -->
+      
+      <!-- Data points and connection lines will be added via JavaScript -->
+    </div>
+
+     <!-- Logistics Showcase Section (renamed from hero-section to avoid conflicts) -->
+    <section class="logistics-showcase">
         <div class="container">
-            <div class="overlay-content">
-                <div class="left-content" data-aos="fade-right">
-                    <h2>Connecting Every Step of the Journey</h2>
-                    <p>From order placement to final delivery, ek(one) provides a seamless digital experience that transforms logistics operations.</p>
-                    <div class="overlay-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="40">0</span>
-                            <span class="stat-label">% Faster Deliveries</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="30">0</span>
-                            <span class="stat-label">% Cost Reduction</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="100">0</span>
-                            <span class="stat-label">% Digital Tracking</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="right-content" data-aos="fade-left">
-                    <div class="animation-container" style="width: 100%; aspect-ratio: 3/2;">
-                        <lottie-player 
-                            src="/assets/animations/delhivery.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 100%;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
+            <div class="showcase-content" data-aos="fade-up">
+                <h1>SAAS Based ERP platform for Management of Market Trucks</h1>
+                <p class="showcase-subtitle">No more worries for trip rates. Define your rates and list your vehicles in the market. We empower you to do the business your way, digitally</p>
+                <div class="showcase-cta">
+                    <a href="#get-started" class="btn btn-primary">Get Started</a>
+                    <a href="#learn-more" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
             
-            <div class="connection-elements">
-                <div class="connection-line"></div>
-                <div class="connection-dot dot-1"></div>
-                <div class="connection-dot dot-2"></div>
-                <div class="connection-dot dot-3"></div>
-            </div>
+            <!-- <div class="showcase-image-grid">
+                <div class="showcase-image showcase-image-1" data-aos="fade-right" data-aos-delay="200">
+                    <img src="/assets/img/market indices.png" alt="Market Indices Dashboard" />
+                    <div class="image-caption">Real-time Market Analytics</div>
+                </div>
+                
+                <div class="showcase-image showcase-image-2" data-aos="fade-up" data-aos-delay="400">
+                    <img src="/assets/img/trip made.png" alt="Trip Visualization" />
+                    <div class="image-caption">Efficient Trip Management</div>
+                </div>
+                
+                <div class="showcase-image showcase-image-3" data-aos="fade-left" data-aos-delay="600">
+                    <img src="/assets/img/trips.png" alt="Fleet Management" />
+                    <div class="image-caption">Smart Fleet Tracking</div>
+                </div>
+                
+                <div class="connection-lines">
+                    <div class="connection-line line-1"></div>
+                    <div class="connection-line line-2"></div>
+                    <div class="connection-line line-3"></div>
+                </div>
+                
+                <div class="floating-elements">
+                    <div class="floating-icon icon-1">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <div class="floating-icon icon-2">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="floating-icon icon-3">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </section>
 
     <section id="trip-tracking-animation" class="trip-tracking-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>The Complete Logistics Journey</h2>
+                <h2>Who Benefits from ek<span class="highlight-text">(one)</span>?</h2>
                 <p class="section-subtitle">Follow the seamless flow from order to delivery with ek(one)</p>
             </div>
             
@@ -296,27 +238,19 @@
                         </div>
                         <div class="timeline-marker" data-stage="1">
                             <div class="marker-dot"></div>
-                            <div class="marker-label">Order</div>
+                            <div class="marker-label">Small Truck Owners</div>
                         </div>
                         <div class="timeline-marker" data-stage="2">
                             <div class="marker-dot"></div>
-                            <div class="marker-label">Match</div>
+                            <div class="marker-label">Shippers</div>
                         </div>
                         <div class="timeline-marker" data-stage="3">
                             <div class="marker-dot"></div>
-                            <div class="marker-label">Dispatch</div>
+                            <div class="marker-label">Brokers & Aggregators</div>
                         </div>
                         <div class="timeline-marker" data-stage="4">
                             <div class="marker-dot"></div>
-                            <div class="marker-label">Track</div>
-                        </div>
-                        <div class="timeline-marker" data-stage="5">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Deliver</div>
-                        </div>
-                        <div class="timeline-marker" data-stage="6">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Pay</div>
+                            <div class="marker-label">Drivers</div>
                         </div>
                     </div>
                     
@@ -361,22 +295,22 @@
                             <div class="stage-icon">
                                 <i class="fas fa-file-signature"></i>
                             </div>
-                            <h3>Order Creation</h3>
-                            <p>Shippers place orders with detailed cargo information and delivery requirements</p>
+                            <h3>Small Truck Owners</h3>
+                            <p>Get better load opportunities, faster payments, and reduced empty miles.d delivery requirements</p>
                         </div>
                         <div class="stage-info stage-2">
                             <div class="stage-icon">
                                 <i class="fas fa-random"></i>
                             </div>
-                            <h3>AI Matching</h3>
-                            <p>Our AI algorithm finds the perfect truck based on location, capacity, and timing</p>
+                            <h3>Shippers</h3>
+                            <p>Access reliable trucks instantly, optimize freight costs, and ensure on-time deliveries.</p>
                         </div>
                         <div class="stage-info stage-3">
                             <div class="stage-icon">
                                 <i class="fas fa-truck-loading"></i>
                             </div>
-                            <h3>Dispatch & Loading</h3>
-                            <p>Truck is dispatched to pickup location and cargo is loaded with digital verification</p>
+                            <h3>Brokers & Aggregators</h3>
+                            <p>Digitalize operations, match trucks with loads efficiently, and manage settlements effortlessly.</p>
                         </div>
                         <div class="stage-info stage-4">
                             <div class="stage-icon">
@@ -389,16 +323,10 @@
                             <div class="stage-icon">
                                 <i class="fas fa-box-open"></i>
                             </div>
-                            <h3>Delivery Confirmation</h3>
+                            <h3>Drivers</h3>
                             <p>Digital proof of delivery with signature and photo confirmation ensures transparency</p>
                         </div>
-                        <div class="stage-info stage-6">
-                            <div class="stage-icon">
-                                <i class="fas fa-file-invoice-dollar"></i>
-                            </div>
-                            <h3>Digital Payment</h3>
-                            <p>Automated invoicing and instant payments ensure quick settlements</p>
-                        </div>
+                 
                     </div>
                     
                     <!-- Digital Elements -->
@@ -444,1170 +372,585 @@
         </div>
     </section>
 
-    <section id="benefits-section" class="benefits-section">
-        <!-- Animated Background Elements -->
-        <div class="animated-bg">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="floating-shape shape-4"></div>
-            <div class="floating-shape shape-5"></div>
-            <div class="floating-shape shape-6"></div>
+    <!-- Key Features Section -->
+    <section id="key-features" class="key-features-section">
+        <div class="key-features-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orb orb1"></div>
+            <div class="glow-orb orb2"></div>
+            <div class="circuit-lines"></div>
         </div>
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="glowing-text">Who Benefits from ek<span class="highlight-text">(one)</span>?</h2>
-                <p class="section-subtitle typewriter">Empowering every stakeholder in India's logistics ecosystem</p>
+                <h2>Key Features of <span class="highlight-text">ek(one)</span></h2>
+                <p class="section-subtitle">Transforming logistics with cutting-edge technology and seamless integration</p>
             </div>
             
-            <div class="benefits-grid">
-                <!-- Truck Owners Card -->
-                <div class="benefit-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="card-glow"></div>
-                    <div class="benefit-icon pulse-animation">
-                        <lottie-player 
-                            src="https://assets5.lottiefiles.com/packages/lf20_kkflmtur.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 120px;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
-                    <h3 class="slide-up-text">Small Truck Owners</h3>
-                    <ul class="benefit-list stagger-animation">
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Better load opportunities</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Faster payments</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Reduced empty miles</li>
-                    </ul>
-                    <div class="benefit-cta">
-                        <a href="#" class="btn btn-outline btn-animated">Learn More</a>
-                    </div>
-                    <div class="corner-fold"></div>
-                </div>
-                
-                <!-- Shippers Card -->
-                <div class="benefit-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="card-glow"></div>
-                    <div class="benefit-icon pulse-animation">
-                        <lottie-player 
-                            src="https://assets9.lottiefiles.com/packages/lf20_ksahd5rx.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 120px;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
-                    <h3 class="slide-up-text">Shippers</h3>
-                    <ul class="benefit-list stagger-animation">
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Access reliable trucks instantly</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Optimize freight costs</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Ensure on-time deliveries</li>
-                    </ul>
-                    <div class="benefit-cta">
-                        <a href="#" class="btn btn-outline btn-animated">Learn More</a>
-                    </div>
-                    <div class="corner-fold"></div>
-                </div>
-                
-                <!-- Brokers Card -->
-                <div class="benefit-card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="card-glow"></div>
-                    <div class="benefit-icon pulse-animation">
-                        <lottie-player 
-                            src="https://assets3.lottiefiles.com/packages/lf20_oc9peor1.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 120px;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
-                    <h3 class="slide-up-text">Brokers & Aggregators</h3>
-                    <ul class="benefit-list stagger-animation">
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Digitalize operations</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Match trucks with loads efficiently</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Manage settlements effortlessly</li>
-                    </ul>
-                    <div class="benefit-cta">
-                        <a href="#" class="btn btn-outline btn-animated">Learn More</a>
-                    </div>
-                    <div class="corner-fold"></div>
-                </div>
-                
-                <!-- Drivers Card -->
-                <div class="benefit-card" data-aos="flip-left" data-aos-delay="400">
-                    <div class="card-glow"></div>
-                    <div class="benefit-icon pulse-animation">
-                        <lottie-player 
-                            src="https://assets10.lottiefiles.com/packages/lf20_khzniaya.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 120px;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
-                    <h3 class="slide-up-text">Drivers</h3>
-                    <ul class="benefit-list stagger-animation">
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Optimized routes</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Reduced waiting times</li>
-                        <li class="animate-item"><i class="fas fa-check-circle"></i> Better work conditions</li>
-                    </ul>
-                    <div class="benefit-cta">
-                        <a href="#" class="btn btn-outline btn-animated">Learn More</a>
-                    </div>
-                    <div class="corner-fold"></div>
-                </div>
-            </div>
-            
-            <!-- Animated Connection Lines -->
-            <div class="connection-lines">
-                <svg class="connections-svg" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none">
-                    <path class="connection-path" d="M300,300 C400,100 800,500 900,300" />
-                    <path class="connection-path" d="M300,400 C500,600 700,200 900,400" />
-                    <path class="connection-path" d="M400,200 C600,300 600,300 800,200" />
-                </svg>
-            </div>
-            
-            <!-- Animated CTA -->
-            <div class="benefits-cta" data-aos="zoom-in">
-                <div class="cta-pulse"></div>
-                <h3>Ready to transform your logistics experience?</h3>
-                <a href="#" class="btn btn-primary btn-glow">Get Started Today</a>
-            </div>
-        </div>
-        
-        <!-- Animated Truck -->
-        <div class="animated-truck">
-            <lottie-player 
-                src="assets/animations/truck.json"
-                background="transparent"
-                speed="1"
-                style="width: 200px; height: 200px;"
-                loop
-                autoplay>
-            </lottie-player>
-        </div>
-    </section>
-
-    <section id="features-section" class="features-section">
-        <!-- Animated Background Elements -->
-        <div class="features-bg">
-            <div class="tech-grid"></div>
-            <div class="glow-orb orb-1"></div>
-            <div class="glow-orb orb-2"></div>
-            <div class="glow-orb orb-3"></div>
-        </div>
-        
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Key Features of <span class="text-gradient">ek(one)</span></h2>
-                <p class="section-subtitle reveal-text">Transforming logistics with cutting-edge technology</p>
-                <div class="header-underline"><span class="underline-fill"></span></div>
-            </div>
-            
-            <div class="features-container">
-                <div class="features-visual" data-aos="fade-right">
-                    <div class="dashboard-wrapper">
-                        <div class="dashboard-preview">
-                            <div class="dashboard-screen">
-                                <lottie-player 
-                                    src="https://assets5.lottiefiles.com/packages/lf20_jvxwtjtr.json"
-                                    background="transparent"
-                                    speed="1"
-                                    style="width: 100%; height: 100%;"
-                                    loop
-                                    autoplay
-                                    class="dashboard-lottie">
-                                </lottie-player>
-                                
-                                <!-- Animated Data Points -->
-                                <div class="data-point point-1">
-                                    <div class="point-pulse"></div>
-                                    <div class="point-label">Real-time Data</div>
-                                </div>
-                                <div class="data-point point-2">
-                                    <div class="point-pulse"></div>
-                                    <div class="point-label">AI Matching</div>
-                                </div>
-                                <div class="data-point point-3">
-                                    <div class="point-pulse"></div>
-                                    <div class="point-label">GPS Tracking</div>
-                                </div>
-                            </div>
-                            <div class="dashboard-reflection"></div>
-                            
-                            <!-- Animated Notification -->
-                            <div class="dashboard-notification">
-                                <div class="notification-icon">
-                                    <i class="fas fa-bell"></i>
-                                </div>
-                                <div class="notification-content">
-                                    <div class="notification-title">New Match Found</div>
-                                    <div class="notification-text">Truck #TK-421 matched with Load #L-138</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Floating Elements -->
-                        <div class="floating-element truck-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <div class="floating-element location-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="floating-element payment-icon">
-                            <i class="fas fa-rupee-sign"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features-list" data-aos="fade-left">
+            <div class="features-grid" data-aos="fade-up" data-aos-delay="200">
                     <!-- Feature 1 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="100">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-icon">
-                            <i class="fas fa-random"></i>
-                            <div class="icon-particles"></div>
+                        <i class="fas fa-sync-alt"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">Real-Time Load & Truck Matching</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">AI-powered algorithms connect shippers with the right trucks instantly.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 95%">
-                                    <span class="progress-text">95% Match Rate</span>
+                        <h3>Real-Time Load & Truck Matching</h3>
+                        <p>AI-powered algorithms connect shippers with the right trucks instantly.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">01</div>
                     </div>
                     
                     <!-- Feature 2 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="200">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="feature-icon">
-                            <i class="fas fa-file-signature"></i>
-                            <div class="icon-particles"></div>
+                        <i class="fas fa-file-contract"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">Instant Booking & Digital Contracts</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">Automate negotiations and agreements for faster deals.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 80%">
-                                    <span class="progress-text">80% Time Saved</span>
+                        <h3>Instant Booking & Digital Contracts</h3>
+                        <p>Automate negotiations and agreements for faster deals.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">02</div>
+            
                     </div>
                     
                     <!-- Feature 3 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="300">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-icon">
                             <i class="fas fa-map-marked-alt"></i>
-                            <div class="icon-particles"></div>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">GPS-Enabled Live Tracking</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">Get complete visibility of truck movements in real time.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 100%">
-                                    <span class="progress-text">100% Visibility</span>
+                        <h3>GPS-Enabled Live Tracking</h3>
+                        <p>Get complete visibility of truck movements in real time.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">03</div>
+             
                     </div>
                     
                     <!-- Feature 4 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="400">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-icon">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <div class="icon-particles"></div>
+                        <i class="fas fa-coins"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">Seamless Payment & Settlements</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">Digital invoicing and instant payments for faster cash flow.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 90%">
-                                    <span class="progress-text">90% Faster Payments</span>
+                        <h3>Seamless Payment & Settlements</h3>
+                        <p>Digital invoicing and instant payments for faster cash flow.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">04</div>
+         
                     </div>
                     
                     <!-- Feature 5 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="500">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="feature-icon">
                             <i class="fas fa-chart-line"></i>
-                            <div class="icon-particles"></div>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">Smart Freight Pricing & Analytics</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">Optimize load pricing based on market demand and truck availability.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 85%">
-                                    <span class="progress-text">85% Price Optimization</span>
+                        <h3>Smart Freight Pricing & Analytics</h3>
+                        <p>Optimize load pricing based on market demand and truck availability.</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">05</div>
+            
                     </div>
                     
                     <!-- Feature 6 -->
-                    <div class="feature-item" data-aos="zoom-in-left" data-aos-delay="600">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-icon">
-                            <i class="fas fa-tasks"></i>
-                            <div class="icon-particles"></div>
+                        <i class="fas fa-route"></i>
                         </div>
                         <div class="feature-content">
-                            <h3 class="feature-title">End-to-End Trip Management</h3>
-                            <div class="feature-divider"></div>
-                            <p class="feature-description">From truck booking to delivery and POD submission, manage everything in one place.</p>
-                            <div class="feature-progress">
-                                <div class="progress-bar" style="--progress: 100%">
-                                    <span class="progress-text">100% Coverage</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="feature-number">06</div>
-                    </div>
-                </div>
+                        <h3>End-to-End Trip Management</h3>
+                        <p>From truck booking to delivery and POD submission, manage everything in one place.</p>
             </div>
             
-            <!-- Interactive Feature Showcase -->
-            <div class="feature-showcase" data-aos="fade-up">
-                <div class="showcase-tabs">
-                    <div class="tab active" data-tab="matching">
-                        <i class="fas fa-random"></i>
-                        <span>Matching</span>
-                    </div>
-                    <div class="tab" data-tab="tracking">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <span>Tracking</span>
-                    </div>
-                    <div class="tab" data-tab="payment">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <span>Payment</span>
-                    </div>
-                    <div class="tab" data-tab="analytics">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Analytics</span>
                     </div>
                 </div>
                 
-                <div class="showcase-content">
-                    <div class="showcase-panel active" id="matching-panel">
-                        <div class="panel-visual">
-                            <lottie-player 
-                                src="https://assets3.lottiefiles.com/packages/lf20_kcsr6fcp.json"
-                                background="transparent"
-                                speed="1"
-                                style="width: 100%; height: 300px;"
-                                loop
-                                autoplay>
-                            </lottie-player>
+            <div class="features-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="#contact" class="btn btn-primary">Explore All Features <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="panel-info">
-                            <h3>AI-Powered Matching</h3>
-                            <p>Our advanced algorithms analyze multiple factors including location, capacity, timing, and historical performance to find the perfect match between shippers and trucks.</p>
-                            <ul class="feature-benefits">
-                                <li><i class="fas fa-check-circle"></i> Reduces empty miles by 40%</li>
-                                <li><i class="fas fa-check-circle"></i> Increases fleet utilization by 35%</li>
-                                <li><i class="fas fa-check-circle"></i> Matches trucks within 2 minutes</li>
-                            </ul>
                         </div>
+    </section>
+
+    <!-- SOS Management Section -->
+    <section class="sos-management-section">
+        <div class="sos-bg">
+            <div class="sos-grid-pattern"></div>
+            <div class="glow-orb orb1"></div>
+            <div class="glow-orb orb2"></div>
+            <div class="pulse-ring"></div>
+            <div class="alert-waves"></div>
                     </div>
                     
-                    <div class="showcase-panel" id="tracking-panel">
-                        <div class="panel-visual">
-                            <lottie-player 
-                                src="https://assets3.lottiefiles.com/packages/lf20_bXFLtk.json"
-                                background="transparent"
-                                speed="1"
-                                style="width: 100%; height: 300px;"
-                                loop
-                                autoplay>
-                            </lottie-player>
-                        </div>
-                        <div class="panel-info">
-                            <h3>Real-Time GPS Tracking</h3>
-                            <p>Monitor your shipments with precision GPS tracking that provides real-time location updates, estimated arrival times, and status notifications.</p>
-                            <ul class="feature-benefits">
-                                <li><i class="fas fa-check-circle"></i> Live location updates every 30 seconds</li>
-                                <li><i class="fas fa-check-circle"></i> Accurate ETA predictions</li>
-                                <li><i class="fas fa-check-circle"></i> Instant delay notifications</li>
-                            </ul>
-                        </div>
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>SOS <span class="highlight-text">Management</span></h2>
+                <p class="section-subtitle">Immediate emergency response system for driver safety and incident management</p>
                     </div>
                     
-                    <div class="showcase-panel" id="payment-panel">
-                        <div class="panel-visual">
-                            <lottie-player 
-                                src="https://assets10.lottiefiles.com/packages/lf20_ry2uhxny.json"
-                                background="transparent"
-                                speed="1"
-                                style="width: 100%; height: 300px;"
-                                loop
-                                autoplay>
-                            </lottie-player>
+            <div class="sos-how-it-works" data-aos="fade-up">
+                <h3>How It Works</h3>
+                <div class="sos-process-container">
+                    <div class="sos-process-visual">
+                        <div class="sos-button-animation">
+                            <div class="sos-button">
+                                <span>SOS</span>
                         </div>
-                        <div class="panel-info">
-                            <h3>Digital Payments & Settlements</h3>
-                            <p>Streamline your payment process with digital invoicing, instant settlements, and complete financial transparency.</p>
-                            <ul class="feature-benefits">
-                                <li><i class="fas fa-check-circle"></i> Reduces payment cycles by 80%</li>
-                                <li><i class="fas fa-check-circle"></i> Eliminates paperwork and manual errors</li>
-                                <li><i class="fas fa-check-circle"></i> Provides complete audit trail</li>
-                            </ul>
+                            <div class="pulse-rings">
+                                <div class="ring ring1"></div>
+                                <div class="ring ring2"></div>
+                                <div class="ring ring3"></div>
                         </div>
                     </div>
-                    
-                    <div class="showcase-panel" id="analytics-panel">
-                        <div class="panel-visual">
-                            <lottie-player 
-                                src="https://assets5.lottiefiles.com/packages/lf20_l4xxtgfk.json"
-                                background="transparent"
-                                speed="1"
-                                style="width: 100%; height: 300px;"
-                                loop
-                                autoplay>
-                            </lottie-player>
-                        </div>
-                        <div class="panel-info">
-                            <h3>Advanced Analytics & Insights</h3>
-                            <p>Gain valuable insights into your logistics operations with comprehensive analytics dashboards and customizable reports.</p>
-                            <ul class="feature-benefits">
-                                <li><i class="fas fa-check-circle"></i> Identifies cost-saving opportunities</li>
-                                <li><i class="fas fa-check-circle"></i> Predicts market trends and pricing</li>
-                                <li><i class="fas fa-check-circle"></i> Optimizes routes and schedules</li>
-                            </ul>
-                        </div>
-                    </div>
+                        <div class="sos-image-container">
+                            <div class="sos-image-placeholder" data-aos="fade-up">
+                                <!-- Image placeholder -->
+                                <div class="image-shine"></div>
                 </div>
             </div>
         </div>
         
-        <!-- Animated Circuit Lines -->
-        <div class="circuit-lines">
-            <div class="circuit-line line-1"></div>
-            <div class="circuit-line line-2"></div>
-            <div class="circuit-line line-3"></div>
-            <div class="circuit-line line-4"></div>
-            <div class="circuit-node node-1"></div>
-            <div class="circuit-node node-2"></div>
-            <div class="circuit-node node-3"></div>
+                    <div class="sos-features-grid">
+                        <!-- Feature 1 -->
+                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="100">
+                            <div class="sos-feature-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
         </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section class="marquee-section">
-        <div class="marquee-container">
-            <div class="marquee-title-container">
-                <h2 class="marquee-title">
-                    <span>Partnered With Us</span>
-                    <div class="marquee-title-badge">20+</div>
-                </h2>
+                            <div class="sos-feature-content">
+                                <h4>Instant SOS Trigger</h4>
+                                <p>Truck Owner/Drivers can activate the SOS button in case of an emergency, alerting the fleet manager/shipper instantly.</p>
+                                </div>
         </div>
         
-            <div class="marquee-wrapper">
-                    <div class="partners-track">
-                        <!-- First set of partners -->
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="800" width="1200" xml:space="preserve" y="0" x="0" id="Layer_1" version="1.1" viewBox="-45.10065 -44.95 390.8723 269.7"><style id="style1855" type="text/css">.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#f90}</style><g transform="translate(-1.668 -1.1)" id="g1865"><path id="path1857" d="M86.4 66.4c0 3.7.4 6.7 1.1 8.9.8 2.2 1.8 4.6 3.2 7.2.5.8.7 1.6.7 2.3 0 1-.6 2-1.9 3L83.2 92c-.9.6-1.8.9-2.6.9-1 0-2-.5-3-1.4-1.4-1.5-2.6-3.1-3.6-4.7-1-1.7-2-3.6-3.1-5.9-7.8 9.2-17.6 13.8-29.4 13.8-8.4 0-15.1-2.4-20-7.2-4.9-4.8-7.4-11.2-7.4-19.2 0-8.5 3-15.4 9.1-20.6 6.1-5.2 14.2-7.8 24.5-7.8 3.4 0 6.9.3 10.6.8 3.7.5 7.5 1.3 11.5 2.2v-7.3c0-7.6-1.6-12.9-4.7-16-3.2-3.1-8.6-4.6-16.3-4.6-3.5 0-7.1.4-10.8 1.3-3.7.9-7.3 2-10.8 3.4-1.6.7-2.8 1.1-3.5 1.3-.7.2-1.2.3-1.6.3-1.4 0-2.1-1-2.1-3.1v-4.9c0-1.6.2-2.8.7-3.5.5-.7 1.4-1.4 2.8-2.1 3.5-1.8 7.7-3.3 12.6-4.5C41 1.9 46.2 1.3 51.7 1.3c11.9 0 20.6 2.7 26.2 8.1 5.5 5.4 8.3 13.6 8.3 24.6v32.4zM45.8 81.6c3.3 0 6.7-.6 10.3-1.8 3.6-1.2 6.8-3.4 9.5-6.4 1.6-1.9 2.8-4 3.4-6.4.6-2.4 1-5.3 1-8.7v-4.2c-2.9-.7-6-1.3-9.2-1.7-3.2-.4-6.3-.6-9.4-.6-6.7 0-11.6 1.3-14.9 4-3.3 2.7-4.9 6.5-4.9 11.5 0 4.7 1.2 8.2 3.7 10.6 2.4 2.5 5.9 3.7 10.5 3.7zm80.3 10.8c-1.8 0-3-.3-3.8-1-.8-.6-1.5-2-2.1-3.9L96.7 10.2c-.6-2-.9-3.3-.9-4 0-1.6.8-2.5 2.4-2.5h9.8c1.9 0 3.2.3 3.9 1 .8.6 1.4 2 2 3.9l16.8 66.2 15.6-66.2c.5-2 1.1-3.3 1.9-3.9.8-.6 2.2-1 4-1h8c1.9 0 3.2.3 4 1 .8.6 1.5 2 1.9 3.9l15.8 67 17.3-67c.6-2 1.3-3.3 2-3.9.8-.6 2.1-1 3.9-1h9.3c1.6 0 2.5.8 2.5 2.5 0 .5-.1 1-.2 1.6-.1.6-.3 1.4-.7 2.5l-24.1 77.3c-.6 2-1.3 3.3-2.1 3.9-.8.6-2.1 1-3.8 1h-8.6c-1.9 0-3.2-.3-4-1-.8-.7-1.5-2-1.9-4L156 23l-15.4 64.4c-.5 2-1.1 3.3-1.9 4-.8.7-2.2 1-4 1zm128.5 2.7c-5.2 0-10.4-.6-15.4-1.8-5-1.2-8.9-2.5-11.5-4-1.6-.9-2.7-1.9-3.1-2.8-.4-.9-.6-1.9-.6-2.8v-5.1c0-2.1.8-3.1 2.3-3.1.6 0 1.2.1 1.8.3.6.2 1.5.6 2.5 1 3.4 1.5 7.1 2.7 11 3.5 4 .8 7.9 1.2 11.9 1.2 6.3 0 11.2-1.1 14.6-3.3 3.4-2.2 5.2-5.4 5.2-9.5 0-2.8-.9-5.1-2.7-7-1.8-1.9-5.2-3.6-10.1-5.2L246 52c-7.3-2.3-12.7-5.7-16-10.2-3.3-4.4-5-9.3-5-14.5 0-4.2.9-7.9 2.7-11.1 1.8-3.2 4.2-6 7.2-8.2 3-2.3 6.4-4 10.4-5.2 4-1.2 8.2-1.7 12.6-1.7 2.2 0 4.5.1 6.7.4 2.3.3 4.4.7 6.5 1.1 2 .5 3.9 1 5.7 1.6 1.8.6 3.2 1.2 4.2 1.8 1.4.8 2.4 1.6 3 2.5.6.8.9 1.9.9 3.3v4.7c0 2.1-.8 3.2-2.3 3.2-.8 0-2.1-.4-3.8-1.2-5.7-2.6-12.1-3.9-19.2-3.9-5.7 0-10.2.9-13.3 2.8-3.1 1.9-4.7 4.8-4.7 8.9 0 2.8 1 5.2 3 7.1 2 1.9 5.7 3.8 11 5.5l14.2 4.5c7.2 2.3 12.4 5.5 15.5 9.6 3.1 4.1 4.6 8.8 4.6 14 0 4.3-.9 8.2-2.6 11.6-1.8 3.4-4.2 6.4-7.3 8.8-3.1 2.5-6.8 4.3-11.1 5.6-4.5 1.4-9.2 2.1-14.3 2.1z" fill="#252f3e"/><g id="g1863"><path id="path1859" d="M273.5 143.7c-32.9 24.3-80.7 37.2-121.8 37.2-57.6 0-109.5-21.3-148.7-56.7-3.1-2.8-.3-6.6 3.4-4.4 42.4 24.6 94.7 39.5 148.8 39.5 36.5 0 76.6-7.6 113.5-23.2 5.5-2.5 10.2 3.6 4.8 7.6z" class="st1"/><path id="path1861" d="M287.2 128.1c-4.2-5.4-27.8-2.6-38.5-1.3-3.2.4-3.7-2.4-.8-4.5 18.8-13.2 49.7-9.4 53.3-5 3.6 4.5-1 35.4-18.6 50.2-2.7 2.3-5.3 1.1-4.1-1.9 4-9.9 12.9-32.2 8.7-37.5z" class="st1"/></g></g></svg>
+                        <!-- Feature 2 -->
+                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="200">
+                            <div class="sos-feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                            <div class="marquee-info">
-                                <span>Amazon Web Services</span>
-                                </div>
+                            <div class="sos-feature-content">
+                                <h4>Live Location Tracking</h4>
+                                <p>Get real-time location updates of the distressed vehicle for quick assistance.</p>
                             </div>
                         </div>
                         
-                        <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <img src="assets/ULIP.png" alt="Partner Logo">
+                        <!-- Feature 3 -->
+                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="300">
+                            <div class="sos-feature-icon">
+                                    <i class="fas fa-bell"></i>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>ULIP</span>
-                                </div>
+                            <div class="sos-feature-content">
+                                <h4>Automated Alerts & Notifications</h4>
+                                <p>Immediate alerts are sent to fleet operators and emergency contacts via SMS, app notifications, and email.</p>
                             </div>
                         </div>
                         
-                        <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <svg width="132" height="48" viewBox="0 0 132 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M86.4711 0L100.294 7.91449L86.4711 15.829V0Z" fill="#4B75E8"/>
-                                        <path d="M116.072 48.0001L119.342 39.8899L110.57 18.4473H114.659L121.178 34.844H121.399L127.916 18.4473H132.005L120.158 48.0001H116.072Z" fill="#101854"/>
-                                        <path d="M99.7658 18.4471L99.7374 14.8098L103.649 12.4861V18.4488H108.952V22.0861H103.649V33.8282C103.619 34.4678 103.828 35.0958 104.237 35.5913C104.628 36.0391 105.176 36.263 105.882 36.263H108.952V39.9003H105.487C103.771 39.9003 102.389 39.3714 101.341 38.3135C100.293 37.2557 99.7682 35.8916 99.7658 34.2214V22.0843" fill="#101854"/>
-                                        <path d="M22.0631 40.29C18.9661 40.29 16.4907 39.305 14.637 37.335C12.7833 35.3651 11.8565 32.6399 11.8565 29.1596C11.8565 25.6816 12.7667 22.9577 14.5873 20.9877C16.4078 19.0177 18.8345 18.0322 21.8675 18.031C24.9373 18.031 27.367 19.0554 29.1567 21.1041C30.9464 23.1528 31.8431 25.5036 31.8466 28.1564L31.6457 30.3867H15.9029C16.0095 32.3849 16.6211 33.9299 17.7376 35.0219C18.8541 36.1138 20.2959 36.658 22.0631 36.6545C24.2961 36.6545 25.9975 35.7776 27.1673 34.024H31.4519C30.7579 35.8615 29.5181 37.447 27.8962 38.571C26.2677 39.717 24.3234 40.29 22.0631 40.29ZM15.9029 27.1514H27.8642C27.6272 25.4248 26.9753 24.0807 25.9086 23.1193C24.8419 22.1578 23.4949 21.6741 21.8675 21.6683C20.2343 21.6683 18.8855 22.1496 17.8212 23.1122C16.7568 24.0749 16.1174 25.4213 15.9029 27.1514Z" fill="#101854"/>
-                                        <path d="M35.429 39.895V11.5464H39.3154V39.895H35.429Z" fill="#101854"/>
-                                        <path d="M53.035 40.29C49.938 40.29 47.4621 39.305 45.6072 37.335C43.7523 35.3651 42.8254 32.6399 42.8266 29.1596C42.8266 25.6816 43.7369 22.9577 45.5574 20.9877C47.3779 19.0177 49.8035 18.0322 52.8341 18.031C55.9039 18.031 58.3336 19.0554 60.1233 21.1041C61.913 23.1528 62.8102 25.5036 62.815 28.1564L62.6159 30.3902H46.8748C46.9791 32.3884 47.5901 33.9335 48.7078 35.0254C49.8254 36.1173 51.2679 36.6615 53.035 36.658C55.2656 36.658 56.9665 35.7812 58.1375 34.0275H62.4221C61.7297 35.8634 60.4933 37.4486 58.8753 38.5745C57.2397 39.7181 55.2929 40.29 53.035 40.29ZM46.8748 27.1514H58.8362C58.5991 25.4248 57.9472 24.0807 56.8805 23.1193C55.8138 22.1578 54.465 21.6765 52.8341 21.6753C51.1997 21.6753 49.8509 22.1566 48.7878 23.1193C47.7246 24.0819 47.087 25.426 46.8748 27.1514Z" fill="#101854"/>
-                                        <path d="M66.7387 39.8952V18.4473H69.809L70.4082 21.2682H70.6269C71.9555 19.1066 73.9953 18.0259 76.7462 18.0259C79.1167 18.0259 81.0338 18.8234 82.4975 20.4184C83.9613 22.0134 84.6956 24.1156 84.7003 26.7249V39.8899H80.8335V26.9471C80.8335 25.2733 80.3849 23.9751 79.4876 23.0524C78.5904 22.1298 77.4052 21.6684 75.932 21.6684C75.2271 21.6526 74.5268 21.7834 73.8761 22.0525C73.2254 22.3215 72.6388 22.7228 72.154 23.2305C71.6622 23.7174 71.2737 24.2972 71.0117 24.9356C70.7497 25.5739 70.6195 26.2579 70.6286 26.9471V39.8952H66.7387Z" fill="#101854"/>
-                                        <path d="M90.2365 39.8951V20.3248L94.1247 18.0698V39.8951H90.2365Z" fill="#101854"/>
-                                        <path d="M0.0320013 18.4471L0 14.8099L3.91127 12.4844V18.4471H9.22171V22.0844H3.91127V33.8265C3.88125 34.4661 4.09085 35.0941 4.49974 35.5896C4.89205 36.0374 5.44022 36.2613 6.14425 36.2613H9.22171V39.8986H5.75312C4.03809 39.8986 2.65611 39.3697 1.60718 38.3118C0.558245 37.254 0.0331865 35.8905 0.0320013 34.2215V22.0844" fill="#101854"/>
-                                        </svg>                                        
+                        <!-- Feature 4 -->
+                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="400">
+                            <div class="sos-feature-icon">
+                                <i class="fas fa-clipboard-list"></i>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>Telenity</span>
+                            <div class="sos-feature-content">
+                                <h4>Incident Reporting & Analysis</h4>
+                                <p>Log and analyze SOS incidents to improve safety measures and response efficiency.</p>
                                 </div>
                             </div>
                         </div>
+                                </div>
+                                </div>
                         
-                        <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"><g fill-rule="nonzero"><path d="M52.091 10.225h40.684L50.541 135.361a6.5 6.5 0 01-6.146 4.412H12.732c-3.553 0-6.477-2.923-6.477-6.476 0-.704.115-1.403.34-2.07L45.944 14.638a6.501 6.501 0 016.147-4.415v.002z" fill="url(#prefix___Linear1)" transform="translate(2.076 1.626) scale(3.37462)"/><path d="M377.371 319.374H159.644c-5.527 0-10.076 4.549-10.076 10.077 0 2.794 1.164 5.466 3.206 7.37l139.901 130.577a21.986 21.986 0 0015.004 5.91H430.96l-53.589-153.934z" fill="#0078d4"/><path d="M52.091 10.225a6.447 6.447 0 00-6.161 4.498L6.644 131.12a6.457 6.457 0 00-.38 2.185c0 3.548 2.92 6.468 6.469 6.468H45.23a6.95 6.95 0 005.328-4.531l7.834-23.089 27.985 26.102a6.622 6.622 0 004.165 1.518h36.395l-15.962-45.615-46.533.011 28.48-83.944H52.091z" fill="url(#prefix___Linear2)" transform="translate(2.076 1.626) scale(3.37462)"/><path d="M104.055 14.631a6.492 6.492 0 00-6.138-4.406H52.575a6.493 6.493 0 016.138 4.406l39.35 116.594c.225.668.34 1.367.34 2.072 0 3.554-2.924 6.478-6.478 6.478h45.344c3.553-.001 6.476-2.925 6.476-6.478 0-.705-.115-1.404-.34-2.072l-39.35-116.594z" fill="url(#prefix___Linear3)" transform="translate(2.076 1.626) scale(3.37462)"/></g><defs><linearGradient id="prefix___Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(108.701 26.35 33.911) scale(131.7791)"><stop offset="0" stop-color="#114a8b"/><stop offset="1" stop-color="#0669bc"/></linearGradient><linearGradient id="prefix___Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(161.318 33.644 45.587) scale(10.31703)"><stop offset="0" stop-opacity=".3"/><stop offset=".07" stop-opacity=".2"/><stop offset=".32" stop-opacity=".1"/><stop offset=".62" stop-opacity=".05"/><stop offset="1" stop-opacity="0"/></linearGradient><linearGradient id="prefix___Linear3" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="rotate(69.426 25.69 62.036) scale(131.9816)"><stop offset="0" stop-color="#3ccbf4"/><stop offset="1" stop-color="#2892df"/></linearGradient></defs></svg>
+            <div class="sos-why-choose" data-aos="fade-up">
+                <h3>Why Choose EkTruck SOS Management?</h3>
+                <div class="sos-benefits-container">
+                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                            </div>
+                        <h4>24/7 Emergency Monitoring</h4>
+                        <p>Continuous support to handle any crisis.</p>
+                        </div>
+                        
+                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cogs"></i>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>Microsoft Azure</span>
+                        <h4>Seamless Integration</h4>
+                        <p>Works with GPS tracking, geofencing, and vehicle health monitoring.</p>
                                 </div>
+                    
+                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                                </div>
+                        <h4>Driver Safety First</h4>
+                        <p>Ensures quick intervention in case of accidents, breakdowns, or security threats.</p>
                             </div>
                         </div>
                         
-                        <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <img src="assets/streamax.png" alt="Partner Logo">
+                <div class="sos-cta" data-aos="fade-up">
+                    <a href="#contact" class="btn btn-primary">Learn More About SOS <i class="fas fa-arrow-right"></i></a>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>Streamax</span>
                                 </div>
                             </div>
-                        </div>  <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 652 652" style="enable-background:new 0 0 652 652;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#0C0407;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#ED1C24;}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#231F20;}
-	.st3{fill:none;stroke:#231F20;stroke-width:5.9055;stroke-miterlimit:22.926;}
-</style>
-<g id="Layer_1">
-	<g>
-		<path class="st0" d="M240,670.9l1.6-0.1c0.1,0.6,0.3,1.2,0.5,1.6c0.3,0.4,0.7,0.7,1.3,1c0.6,0.3,1.2,0.4,2,0.4
-			c0.7,0,1.2-0.1,1.7-0.3s0.9-0.5,1.1-0.8s0.4-0.7,0.4-1.1c0-0.4-0.1-0.8-0.4-1.1s-0.6-0.6-1.2-0.8c-0.3-0.1-1.1-0.3-2.3-0.6
-			s-2-0.6-2.5-0.8c-0.6-0.3-1.1-0.7-1.4-1.2c-0.3-0.5-0.5-1-0.5-1.6c0-0.7,0.2-1.3,0.6-1.8s0.9-1,1.6-1.3s1.5-0.4,2.4-0.4
-			c1,0,1.8,0.2,2.5,0.5c0.7,0.3,1.3,0.8,1.7,1.4s0.6,1.3,0.6,2l-1.6,0.1c-0.1-0.8-0.4-1.4-0.9-1.8c-0.5-0.4-1.3-0.6-2.2-0.6
-			c-1,0-1.8,0.2-2.3,0.6c-0.5,0.4-0.7,0.8-0.7,1.4c0,0.5,0.2,0.8,0.5,1.1c0.3,0.3,1.2,0.6,2.6,0.9c1.4,0.3,2.3,0.6,2.9,0.8
-			c0.8,0.3,1.3,0.8,1.7,1.3s0.5,1.1,0.5,1.8c0,0.7-0.2,1.3-0.6,1.9c-0.4,0.6-1,1.1-1.7,1.4c-0.7,0.3-1.6,0.5-2.5,0.5
-			c-1.2,0-2.1-0.2-2.9-0.5c-0.8-0.3-1.4-0.9-1.9-1.5C240.3,672.6,240,671.8,240,670.9z"/>
-		<path class="st0" d="M258.8,672.1l1.6,0.2c-0.3,1-0.7,1.7-1.4,2.2s-1.6,0.8-2.7,0.8c-1.4,0-2.4-0.4-3.2-1.3
-			c-0.8-0.8-1.2-2-1.2-3.5c0-1.6,0.4-2.8,1.2-3.7s1.9-1.3,3.1-1.3c1.2,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.6c0,0.1,0,0.2,0,0.4h-7
-			c0.1,1,0.3,1.8,0.9,2.4s1.2,0.8,2,0.8c0.6,0,1.1-0.2,1.5-0.5S258.6,672.7,258.8,672.1z M253.6,669.5h5.2c-0.1-0.8-0.3-1.4-0.6-1.8
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.7,0-1.3,0.2-1.8,0.7S253.6,668.7,253.6,669.5z"/>
-		<path class="st0" d="M268.8,672.1l1.6,0.2c-0.3,1-0.7,1.7-1.4,2.2s-1.6,0.8-2.7,0.8c-1.4,0-2.4-0.4-3.2-1.3
-			c-0.8-0.8-1.2-2-1.2-3.5c0-1.6,0.4-2.8,1.2-3.7s1.9-1.3,3.1-1.3c1.2,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.6c0,0.1,0,0.2,0,0.4h-7
-			c0.1,1,0.3,1.8,0.9,2.4s1.2,0.8,2,0.8c0.6,0,1.1-0.2,1.5-0.5S268.6,672.7,268.8,672.1z M263.6,669.5h5.2c-0.1-0.8-0.3-1.4-0.6-1.8
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.7,0-1.3,0.2-1.8,0.7S263.7,668.7,263.6,669.5z"/>
-		<path class="st0" d="M272.4,675.1v-12.9h1.6v7.3l3.7-3.8h2l-3.6,3.5l3.9,5.9h-2l-3.1-4.8l-1.1,1.1v3.7H272.4z"/>
-		<path class="st0" d="M285.3,675.1l-5-12.9h1.8l3.3,9.4c0.3,0.8,0.5,1.5,0.7,2.1c0.2-0.7,0.4-1.4,0.7-2.1l3.5-9.4h1.7l-5,12.9
-			H285.3z"/>
-		<path class="st0" d="M298.8,672.1l1.6,0.2c-0.3,1-0.7,1.7-1.4,2.2s-1.6,0.8-2.7,0.8c-1.4,0-2.4-0.4-3.2-1.3
-			c-0.8-0.8-1.2-2-1.2-3.5c0-1.6,0.4-2.8,1.2-3.7s1.9-1.3,3.1-1.3c1.2,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.6c0,0.1,0,0.2,0,0.4h-7
-			c0.1,1,0.3,1.8,0.9,2.4s1.2,0.8,2,0.8c0.6,0,1.1-0.2,1.5-0.5S298.6,672.7,298.8,672.1z M293.6,669.5h5.2c-0.1-0.8-0.3-1.4-0.6-1.8
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.7,0-1.3,0.2-1.8,0.7S293.7,668.7,293.6,669.5z"/>
-		<path class="st0" d="M308.5,671.7l1.6,0.2c-0.2,1.1-0.6,1.9-1.3,2.5c-0.7,0.6-1.6,0.9-2.6,0.9c-1.3,0-2.3-0.4-3.1-1.3
-			c-0.8-0.8-1.2-2-1.2-3.6c0-1,0.2-1.9,0.5-2.6s0.8-1.3,1.5-1.7c0.7-0.4,1.4-0.6,2.2-0.6c1,0,1.8,0.3,2.5,0.8s1.1,1.2,1.2,2.2
-			l-1.5,0.2c-0.1-0.6-0.4-1.1-0.8-1.4s-0.8-0.5-1.3-0.5c-0.8,0-1.4,0.3-1.9,0.9c-0.5,0.6-0.7,1.5-0.7,2.7c0,1.3,0.2,2.2,0.7,2.7
-			s1.1,0.9,1.9,0.9c0.6,0,1.1-0.2,1.6-0.6S308.4,672.4,308.5,671.7z"/>
-		<path class="st0" d="M314.9,673.7l0.2,1.4c-0.4,0.1-0.8,0.1-1.2,0.1c-0.6,0-1-0.1-1.3-0.3s-0.5-0.4-0.7-0.7s-0.2-0.9-0.2-1.9V667
-			h-1.2v-1.2h1.2v-2.3l1.6-0.9v3.3h1.6v1.2h-1.6v5.5c0,0.5,0,0.7,0.1,0.9s0.1,0.2,0.3,0.3c0.1,0.1,0.3,0.1,0.5,0.1
-			C314.4,673.7,314.6,673.7,314.9,673.7z"/>
-		<path class="st0" d="M315.9,670.4c0-1.7,0.5-3,1.4-3.8c0.8-0.7,1.8-1,2.9-1c1.3,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.5
-			c0,1.2-0.2,2.1-0.5,2.8c-0.4,0.7-0.9,1.2-1.6,1.6s-1.4,0.6-2.3,0.6c-1.3,0-2.4-0.4-3.2-1.3C316.3,673.2,315.9,672,315.9,670.4z
-			 M317.5,670.4c0,1.2,0.3,2.1,0.8,2.7c0.5,0.6,1.2,0.9,2,0.9c0.8,0,1.4-0.3,2-0.9s0.8-1.5,0.8-2.7c0-1.2-0.3-2-0.8-2.6
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.8,0-1.4,0.3-2,0.9S317.5,669.2,317.5,670.4z"/>
-		<path class="st0" d="M326.4,675.1v-9.3h1.4v1.4c0.4-0.7,0.7-1.1,1-1.3c0.3-0.2,0.6-0.3,1-0.3c0.5,0,1.1,0.2,1.6,0.5l-0.5,1.5
-			c-0.4-0.2-0.8-0.3-1.2-0.3c-0.3,0-0.7,0.1-0.9,0.3s-0.5,0.5-0.6,0.9c-0.2,0.6-0.3,1.2-0.3,1.8v4.9H326.4z"/>
-		<path class="st0" d="M332.6,675.1v-12.9h1.7v11.4h6.3v1.5H332.6z"/>
-		<path class="st0" d="M341.9,670.4c0-1.7,0.5-3,1.4-3.8c0.8-0.7,1.8-1,2.9-1c1.3,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.5
-			c0,1.2-0.2,2.1-0.5,2.8c-0.4,0.7-0.9,1.2-1.6,1.6s-1.4,0.6-2.3,0.6c-1.3,0-2.4-0.4-3.2-1.3C342.3,673.2,341.9,672,341.9,670.4z
-			 M343.5,670.4c0,1.2,0.3,2.1,0.8,2.7c0.5,0.6,1.2,0.9,2,0.9c0.8,0,1.4-0.3,2-0.9s0.8-1.5,0.8-2.7c0-1.2-0.3-2-0.8-2.6
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.8,0-1.4,0.3-2,0.9S343.5,669.2,343.5,670.4z"/>
-		<path class="st0" d="M352.2,675.8l1.5,0.2c0.1,0.5,0.2,0.8,0.5,1c0.4,0.3,0.9,0.4,1.6,0.4c0.7,0,1.3-0.1,1.7-0.4s0.7-0.7,0.8-1.2
-			c0.1-0.3,0.1-1,0.1-2c-0.7,0.8-1.6,1.2-2.6,1.2c-1.3,0-2.3-0.5-3-1.4s-1.1-2-1.1-3.3c0-0.9,0.2-1.7,0.5-2.5
-			c0.3-0.8,0.8-1.3,1.4-1.7s1.3-0.6,2.2-0.6c1.1,0,2,0.4,2.7,1.3v-1.1h1.5v8.1c0,1.5-0.1,2.5-0.4,3.1c-0.3,0.6-0.8,1.1-1.4,1.4
-			c-0.6,0.4-1.4,0.5-2.4,0.5c-1.1,0-2-0.3-2.7-0.8C352.5,677.6,352.2,676.9,352.2,675.8z M353.5,670.2c0,1.2,0.2,2.1,0.7,2.7
-			s1.1,0.8,1.8,0.8c0.7,0,1.3-0.3,1.8-0.8s0.7-1.4,0.7-2.6c0-1.1-0.3-2-0.8-2.6c-0.5-0.6-1.1-0.9-1.8-0.9c-0.7,0-1.3,0.3-1.8,0.9
-			C353.7,668.3,353.5,669.1,353.5,670.2z"/>
-		<path class="st0" d="M361.9,670.4c0-1.7,0.5-3,1.4-3.8c0.8-0.7,1.8-1,2.9-1c1.3,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.5
-			c0,1.2-0.2,2.1-0.5,2.8c-0.4,0.7-0.9,1.2-1.6,1.6s-1.4,0.6-2.3,0.6c-1.3,0-2.4-0.4-3.2-1.3C362.3,673.2,361.9,672,361.9,670.4z
-			 M363.5,670.4c0,1.2,0.3,2.1,0.8,2.7c0.5,0.6,1.2,0.9,2,0.9c0.8,0,1.4-0.3,2-0.9s0.8-1.5,0.8-2.7c0-1.2-0.3-2-0.8-2.6
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.8,0-1.4,0.3-2,0.9S363.5,669.2,363.5,670.4z"/>
-		<path class="st0" d="M372.9,675.1v-1.8h1.8v1.8H372.9z"/>
-		<path class="st0" d="M386.9,670.6l1.7,0.4c-0.4,1.4-1,2.5-1.9,3.2s-2.1,1.1-3.4,1.1c-1.4,0-2.5-0.3-3.4-0.8
-			c-0.9-0.6-1.5-1.4-2-2.5c-0.5-1.1-0.7-2.2-0.7-3.5c0-1.3,0.3-2.5,0.8-3.5c0.5-1,1.2-1.8,2.2-2.3c0.9-0.5,2-0.8,3.1-0.8
-			c1.3,0,2.4,0.3,3.3,1s1.5,1.6,1.8,2.8l-1.7,0.4c-0.3-0.9-0.7-1.6-1.3-2s-1.3-0.6-2.1-0.6c-1,0-1.8,0.2-2.5,0.7
-			c-0.7,0.5-1.1,1.1-1.4,1.9c-0.3,0.8-0.4,1.6-0.4,2.5c0,1.1,0.2,2.1,0.5,2.9c0.3,0.8,0.8,1.4,1.5,1.8s1.4,0.6,2.2,0.6
-			c1,0,1.8-0.3,2.4-0.8S386.7,671.6,386.9,670.6z"/>
-		<path class="st0" d="M389.9,670.4c0-1.7,0.5-3,1.4-3.8c0.8-0.7,1.8-1,2.9-1c1.3,0,2.3,0.4,3.1,1.3s1.2,2,1.2,3.5
-			c0,1.2-0.2,2.1-0.5,2.8c-0.4,0.7-0.9,1.2-1.6,1.6s-1.4,0.6-2.3,0.6c-1.3,0-2.4-0.4-3.2-1.3C390.3,673.2,389.9,672,389.9,670.4z
-			 M391.5,670.4c0,1.2,0.3,2.1,0.8,2.7c0.5,0.6,1.2,0.9,2,0.9c0.8,0,1.4-0.3,2-0.9s0.8-1.5,0.8-2.7c0-1.2-0.3-2-0.8-2.6
-			c-0.5-0.6-1.2-0.9-2-0.9c-0.8,0-1.4,0.3-2,0.9S391.5,669.2,391.5,670.4z"/>
-		<path class="st0" d="M400.5,675.1v-9.3h1.4v1.3c0.3-0.5,0.7-0.8,1.2-1.1s1-0.4,1.7-0.4c0.7,0,1.3,0.1,1.7,0.4
-			c0.4,0.3,0.8,0.7,0.9,1.2c0.7-1.1,1.7-1.6,2.9-1.6c0.9,0,1.6,0.3,2.1,0.8s0.7,1.3,0.7,2.4v6.4h-1.6v-5.9c0-0.6-0.1-1.1-0.2-1.4
-			c-0.1-0.3-0.3-0.5-0.6-0.7s-0.6-0.3-0.9-0.3c-0.7,0-1.2,0.2-1.6,0.7c-0.4,0.4-0.7,1.1-0.7,2.1v5.4h-1.6V669c0-0.7-0.1-1.2-0.4-1.6
-			s-0.7-0.5-1.3-0.5c-0.4,0-0.9,0.1-1.2,0.4c-0.4,0.2-0.7,0.6-0.8,1s-0.3,1.1-0.3,2v4.8H400.5z"/>
-	</g>
-</g>
-<g id="Layer_2">
-	<g>
-		<path class="st1" d="M424.1,291.8H551l-73.5,127.6c0,0-12.1,25.6-29.2,32c-4.7,1.8-8.8,8.1-60.8,6.3c-5.4-0.2-118.6-1-118.6-1
-			s-33.9,2.8-51.5-8.4c-9.9-6.3-26.5-30.6-33.4-45.5c-6.4-13.6-68.3-120.3-68.3-120.3s-14.8-25.8-11.6-41.3
-			c2.5-11.9,4.8-22.9,13.5-35.3c3.6-5.1,71.1-123,71.1-123c0,0,18.1-30,26.1-34.9c8-4.9,19.7-11.7,38-11.7h159.9
-			c0,0,45.5,0.1,65,37.3c16.8,32.1,72.7,130,72.7,130l-125.2-0.6c0,0-39.6-72.1-115.8-51.4c-13.3,3.6-42.4,20.2-45.5,27.9
-			c-2,5.1-2.1,19,11.7,20.2c13.8,1.2,36.5,0,36.5,0s22.4,0.9,24.5,20.5c1.1,10.4,0,49.4,0,49.4s-0.3,22.1-28.5,21.8
-			c-9.4-0.1-38,0-38,0s-12.6,5.5-10.4,14.7c2.1,9.2,22.4,36.8,71.8,40.2c17.1,1.2,58.6-2.2,89.2-48.2
-			C423.3,293.7,424.1,291.8,424.1,291.8"/>
-		<polyline class="st2" points="15.4,506.5 77.6,506.5 77.6,525.5 38,525.5 38,547.2 77.6,547.2 77.6,566.4 38,566.4 38,592.9 
-			77.6,592.9 77.6,612.1 15.4,612.1 		"/>
-		<polygon class="st3" points="15.4,506.5 77.6,506.5 77.6,525.5 38,525.5 38,547.2 77.6,547.2 77.6,566.4 38,566.4 38,592.9 
-			77.6,592.9 77.6,612.1 15.4,612.1 		"/>
-		<path class="st2" d="M101.8,584.5c3.2,7.8,10.8,12.6,19.5,12.6c10.9,0,17.1-5.6,17.1-13.9c0-9.3-8.7-11.2-23.2-18.8
-			c-15.5-8.1-24.5-15.8-24.5-30.6c0-16.7,14.3-29.8,37.2-29.8c12.7,0,21.7,4.3,28.8,13.9l-13.3,12.7c-3.2-6.2-8.6-9.2-15.8-9.2
-			c-9.2,0-14.9,5.2-14.9,12.1c0,9.7,9.4,12.1,21.3,17.4c17.7,8.1,26.3,18.2,26.3,31.5c0,19.1-13.7,32.5-37.4,32.5
-			c-16.4,0-28.1-5.9-33.7-16.2"/>
-		<path class="st3" d="M101.8,584.5c3.2,7.8,10.8,12.6,19.5,12.6c10.9,0,17.1-5.6,17.1-13.9c0-9.3-8.7-11.2-23.2-18.8
-			c-15.5-8.1-24.5-15.8-24.5-30.6c0-16.7,14.3-29.8,37.2-29.8c12.7,0,21.7,4.3,28.8,13.9l-13.3,12.7c-3.2-6.2-8.6-9.2-15.8-9.2
-			c-9.2,0-14.9,5.2-14.9,12.1c0,9.7,9.4,12.1,21.3,17.4c17.7,8.1,26.3,18.2,26.3,31.5c0,19.1-13.7,32.5-37.4,32.5
-			c-16.4,0-28.1-5.9-33.7-16.2L101.8,584.5z"/>
-		<path class="st2" d="M230.6,522.1c-22.6,0-36.9,14.6-36.9,37.2c0,21.8,12.8,36.2,34.7,36.2c12.1,0,22.6-4,31.6-12.3l-0.1,23.2
-			c-9.6,5.6-20.1,8.4-31.8,8.4c-34.1,0-57.6-23.8-57.6-55.5c0-31.2,22.9-55.4,58-55.4c13.3,0,23.8,3.2,32.3,7.4l-0.7,22.6
-			C252.3,527,243.1,522.1,230.6,522.1"/>
-		<path class="st3" d="M230.6,522.1c-22.6,0-36.9,14.6-36.9,37.2c0,21.8,12.8,36.2,34.7,36.2c12.1,0,22.6-4,31.6-12.3l-0.1,23.2
-			c-9.6,5.6-20.1,8.4-31.8,8.4c-34.1,0-57.6-23.8-57.6-55.5c0-31.2,22.9-55.4,58-55.4c13.3,0,23.8,3.2,32.3,7.4l-0.7,22.6
-			C252.3,527,243.1,522.1,230.6,522.1z"/>
-		<path class="st2" d="M362.3,559.5c0-19.5-13.7-35.5-33.1-35.5c-19.6,0-33.2,16-33.2,35.5c0,19.6,13,35.3,33.2,35.3
-			C348.9,594.8,362.3,579.1,362.3,559.5 M369.1,598.6c-10.9,10.5-25.1,16.2-39.9,16.2c-13,0-25.7-4.6-35.9-12.7
-			c-13.3-10.6-20.5-25.8-20.5-42.7c0-15.1,5.6-28.7,16.4-39.1c10.6-10.3,25.3-16.2,40-16.2c14.8,0,29.2,5.9,39.9,16.2
-			c10.8,10.5,16.4,24.2,16.4,39.1C385.5,574.6,379.7,588.4,369.1,598.6"/>
-		<path class="st3" d="M369.1,598.6c-10.9,10.5-25.1,16.2-39.9,16.2c-13,0-25.7-4.6-35.9-12.7c-13.3-10.6-20.5-25.8-20.5-42.7
-			c0-15.1,5.6-28.7,16.4-39.1c10.6-10.3,25.3-16.2,40-16.2c14.8,0,29.2,5.9,39.9,16.2c10.8,10.5,16.4,24.2,16.4,39.1
-			C385.5,574.6,379.7,588.4,369.1,598.6z"/>
-		<path class="st3" d="M362.3,559.5c0-19.5-13.7-35.5-33.1-35.5c-19.6,0-33.2,16-33.2,35.5c0,19.6,13,35.3,33.2,35.3
-			C348.9,594.8,362.3,579.1,362.3,559.5z"/>
-		<path class="st2" d="M426.8,551.5c14,0,22.4-1.2,22.4-13.4c0-12.3-8.1-14.3-22.4-14.3h-3.4v27.7 M451.2,612.1l-27.8-49.3v49.3
-			h-22.6V506.5h32.3c25.7,0,38.4,10,38.4,30c0,14.6-9.7,25.8-23.5,27.6l29.1,48H451.2z"/>
-		<path class="st3" d="M451.2,612.1l-27.8-49.3v49.3h-22.6V506.5h32.3c25.7,0,38.4,10,38.4,30c0,14.6-9.7,25.8-23.5,27.6l29.1,48
-			H451.2z"/>
-		<path class="st3" d="M426.8,551.5c14,0,22.4-1.2,22.4-13.4c0-12.3-8.1-14.3-22.4-14.3h-3.4v27.7H426.8z"/>
-		<polyline class="st2" points="532,612.1 509.4,612.1 509.4,525.7 483.6,525.7 483.6,506.5 558,506.5 558,525.7 532,525.7 		"/>
-		<polygon class="st3" points="532,612.1 509.4,612.1 509.4,525.7 483.6,525.7 483.6,506.5 558,506.5 558,525.7 532,525.7 		"/>
-		<path class="st2" d="M580.6,584.5c3.2,7.8,10.8,12.6,19.5,12.6c10.9,0,17.1-5.6,17.1-13.9c0-9.3-8.7-11.2-23.2-18.8
-			c-15.5-8.1-24.5-15.8-24.5-30.6c0-16.7,14.3-29.8,37.2-29.8c12.7,0,21.7,4.3,28.8,13.9l-13.3,12.7c-3.2-6.2-8.6-9.2-15.8-9.2
-			c-9.2,0-14.9,5.2-14.9,12.1c0,9.7,9.4,12.1,21.3,17.4c17.7,8.1,26.3,18.2,26.3,31.5c0,19.1-13.7,32.5-37.4,32.5
-			c-16.4,0-28.1-5.9-33.7-16.2"/>
-		<path class="st3" d="M580.6,584.5c3.2,7.8,10.8,12.6,19.5,12.6c10.9,0,17.1-5.6,17.1-13.9c0-9.3-8.7-11.2-23.2-18.8
-			c-15.5-8.1-24.5-15.8-24.5-30.6c0-16.7,14.3-29.8,37.2-29.8c12.7,0,21.7,4.3,28.8,13.9l-13.3,12.7c-3.2-6.2-8.6-9.2-15.8-9.2
-			c-9.2,0-14.9,5.2-14.9,12.1c0,9.7,9.4,12.1,21.3,17.4c17.7,8.1,26.3,18.2,26.3,31.5c0,19.1-13.7,32.5-37.4,32.5
-			c-16.4,0-28.1-5.9-33.7-16.2L580.6,584.5z"/>
-	</g>
-</g>
-</svg>
+    </section>
 
+    <!-- User Rating Management Section -->
+    <section class="rating-system-section">
+        <div class="rating-bg">
+            <div class="rating-grid-pattern"></div>
+            <div class="glow-orb orb1"></div>
+            <div class="glow-orb orb2"></div>
+            <div class="rating-circuit-lines">
+                <div class="circuit-line line1"></div>
+                <div class="circuit-line line2"></div>
+                <div class="circuit-node node1"></div>
+                <div class="circuit-node node2"></div>
+                        </div>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>Escorts</span>
+                    
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>User <span class="highlight-text">Rating Management</span></h2>
+                <p class="section-subtitle">Two-Way Rating System: Building Trust & Transparency</p>
+                        </div>
+                        
+            <div class="rating-intro" data-aos="fade-up">
+                <p>At EkTruck, we believe in fostering a fair and transparent logistics ecosystem. Our Two-Way Rating System allows both truck owners and shippers to rate each other based on their experience, ensuring accountability and improved service quality.</p>
+                        </div>
+                        
+            <div class="rating-how-it-works" data-aos="fade-up">
+                <h3>How It Works</h3>
+                <div class="rating-process-container">
+                    <div class="rating-visualization">
+                        <div class="rating-image-placeholder" data-aos="fade-up">
+                            <!-- Image placeholder -->
+                            <div class="image-shine"></div>
+                                </div>
+                        
+                        <div class="rating-animation">
+                            <div class="rating-stars">
+                                <div class="star star1"><i class="fas fa-star"></i></div>
+                                <div class="star star2"><i class="fas fa-star"></i></div>
+                                <div class="star star3"><i class="fas fa-star"></i></div>
+                                <div class="star star4"><i class="fas fa-star"></i></div>
+                                <div class="star star5"><i class="fas fa-star"></i></div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 652 652" style="enable-background:new 0 0 652 652;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#273869;}
-</style>
-<path class="st0" d="M100.8,332.4l0,0.2c-0.1,0.2-0.2,0.5-0.3,0.7c0,0.1-0.1,0.3-0.2,0.5c-0.1,0.1-0.1,0.3-0.2,0.5
-	c-0.1,0.2-0.2,0.5-0.3,0.7c0,0,0,0.1-0.1,0.2c-2.3,4.8-6.2,8.6-11,11l-0.2,0.1c-0.2,0.1-0.5,0.2-0.7,0.3l-0.5,0.2l-0.5,0.2
-	c-0.2,0.1-0.5,0.2-0.7,0.3l-0.2,0c-5.1,1.7-10.5,1.7-15.6,0l-0.2,0c-0.2-0.1-0.5-0.2-0.7-0.3l-0.5-0.2l-0.5-0.2
-	c-0.2-0.1-0.5-0.2-0.7-0.3l-0.2-0.1c-4.1-2-7.5-5.2-9.9-9.1l0,0c-0.2-0.3-0.4-0.6-0.6-0.9l-0.1-0.2c-0.1-0.3-0.3-0.5-0.4-0.8
-	c-1.8-3.8-2.6-8-2.3-12.2c0.3-3.6,1.4-7.1,3.2-10.2c0.1-0.2,0.3-0.5,0.5-0.7c0.2-0.2,0.2-0.4,0.3-0.5l0.3-0.4c0.3-0.5,0.7-0.9,1-1.3
-	l0.2-0.2c0.2-0.3,0.4-0.5,0.7-0.7l0,0c2-2.2,4.4-4,7.2-5.4l0.2-0.1c0.2-0.1,0.5-0.2,0.7-0.3l0.5-0.2c0.1,0,0.3-0.1,0.5-0.2
-	c0.2-0.1,0.5-0.2,0.7-0.3l0.2,0c4.3-1.5,9-1.7,13.5-0.6h0c0.4,0.1,0.7,0.2,1,0.3l0.2,0c0.3,0.1,0.6,0.2,0.9,0.3
-	c4,1.4,7.5,3.8,10.3,7.1C101.9,315.5,103.6,324.4,100.8,332.4z M313.3,318.3H263v19.2h20.6c-7.1,11.1-21.9,14.4-33.1,7.3
-	c-11.1-7.1-14.4-21.9-7.3-33c7.1-11.1,21.9-14.4,33.1-7.3c2,1.3,3.8,2.8,5.3,4.6h29.7c-8.6-26.5-37-40.9-63.5-32.3
-	c-9.6,3.1-18.1,9.1-24.2,17v-17.1h-25.4l-27.4,39.4l-27.4-39.4H118v17.1c-17-22-48.6-25.9-70.6-8.9c-22,17-26,48.7-8.9,70.6
-	c17,22,48.7,25.9,70.7,8.9c3.3-2.6,6.3-5.6,8.9-8.9v17.1h26.3v-53.3l26.4,37.1l26.4-37.1v53.2h26.3v-17.1c17,22,48.6,26,70.6,9
-	c12.3-9.5,19.6-24.3,19.6-39.9C313.7,322.5,313.6,320.4,313.3,318.3z M379.1,300.1c0-2.8-0.7-5.6-2.1-8c-1.4-2.4-3.3-4.5-5.7-5.9
-	c-2.4-1.5-5.2-2.2-8-2.2c-2.8,0-5.5,0.7-7.8,2.2c-7.7,4.7-10.1,14.7-5.5,22.4c1.4,2.2,3.2,4.1,5.4,5.4c2.4,1.4,5.1,2.2,7.9,2.2
-	c2.8,0,5.6-0.7,8-2.2c2.3-1.4,4.3-3.5,5.6-5.9C378.4,305.5,379.1,302.8,379.1,300.1z M363.4,324.1c-4.2,0-8.3-1.1-11.9-3.1
-	c-3.7-2.1-6.8-5-9-8.6c-2.2-3.7-3.4-7.9-3.4-12.2c0-8.6,4.5-16.5,11.8-20.9c7.6-4.4,17-4.5,24.6-0.1c7.5,4.3,12.1,12.3,12,21
-	c0,4.2-1.1,8.4-3.3,12c-2.2,3.6-5.1,6.6-8.8,8.8C371.9,323,367.7,324.1,363.4,324.1z M434,297.1c1.1,1.5,1.6,3.7,1.6,6.5v19.4h8.3
-	v-20.9c0-3.4-0.7-6.2-1.9-8.5c-1.1-2.1-2.9-3.8-5.1-5c-2.2-1.1-4.6-1.6-7.1-1.6c-2.2,0-4.4,0.4-6.4,1.3c-1.9,0.9-3.6,2.4-4.8,4.2
-	c-1.1-1.7-2.6-3.1-4.3-4c-1.8-0.9-3.7-1.4-5.8-1.4c-1.9,0-3.7,0.3-5.5,1.1c-1.5,0.7-2.8,1.7-3.6,3.1h-0.1v-2.9h-7.6v34.7h8.3v-17.7
-	c0-3.8,0.6-6.5,1.6-8.1c1.1-1.6,2.8-2.4,5.1-2.4c2.2,0,3.9,0.8,5.1,2.4c1.2,1.6,1.8,3.7,1.8,6.4v19.5h8.4v-19c0-3.2,0.7-5.5,2-7
-	c1.3-1.5,3.2-2.3,5.2-2.2C431.2,294.9,432.8,295.6,434,297.1z M471.6,305.7v17.5h8.3v-20.5c0-3.8-0.7-6.9-2.3-9.2
-	c-1.5-2.3-3.3-3.9-5.4-4.8c-1.9-0.9-3.9-1.4-5.9-1.4c-1.8,0-3.5,0.3-5.1,1c-1.6,0.8-3.1,1.9-4.4,3.2v-3H449v34.7h8.3v-19
-	c0-2.3,0.4-4.2,1.2-5.6c0.6-1.2,1.6-2.2,2.8-2.9c1-0.5,2.1-0.8,3.2-0.8C469.1,294.8,471.5,298.5,471.6,305.7z M493.2,288.4v34.7
-	h-8.3v-34.7L493.2,288.4z M493.2,276.8v7.6h-8.3v-7.6H493.2z M526.6,321.1c3-2.2,5.3-5.2,6.8-9.2h-9.4c-2,3.2-4.6,4.8-7.7,4.8
-	c-1.9,0-3.7-0.5-5.3-1.4c-1.6-1-2.9-2.3-3.7-3.9c-0.9-1.7-1.4-3.6-1.4-5.6c0-2,0.4-3.8,1.3-5.6c0.8-1.6,2.1-3,3.6-3.9
-	c1.5-1,3.4-1.4,5.2-1.4c1.6,0,3.3,0.4,4.7,1.3c1.4,1,2.6,2.3,3.4,3.8h9.4c-1.2-3.8-3.6-7.1-6.8-9.3c-3.1-2.2-6.9-3.4-10.7-3.4
-	c-3.3,0-6.5,0.8-9.3,2.5c-2.8,1.6-5.1,3.9-6.7,6.7c-1.6,2.8-2.5,5.9-2.5,9.2c0,3.3,0.8,6.5,2.5,9.3c1.6,2.8,3.9,5.2,6.7,6.8
-	c2.8,1.7,6,2.5,9.3,2.5C519.6,324.3,523.3,323.2,526.6,321.1z M563.8,305.9c0-1.9-0.5-3.7-1.3-5.4c-0.8-1.7-2.1-3.1-3.6-4.1
-	c-1.5-1-3.4-1.5-5.2-1.5c-1.8,0-3.6,0.5-5.1,1.5c-1.5,1-2.8,2.4-3.7,4c-0.9,1.6-1.4,3.5-1.4,5.4c0,1.9,0.4,3.7,1.3,5.4
-	c0.8,1.6,2.1,3,3.6,4c1.5,1,3.4,1.5,5.2,1.4c1.8,0,3.6-0.5,5.1-1.4c1.5-1,2.8-2.3,3.6-3.9C563.3,309.5,563.8,307.7,563.8,305.9z
-	 M535.1,305.8c0-3.2,0.8-6.4,2.5-9.3c1.6-2.8,3.9-5.2,6.7-6.8c2.8-1.7,6.1-2.6,9.4-2.5c6.6,0,12.8,3.5,16,9.3c1.6,2.8,2.4,6,2.4,9.2
-	c0,3.3-0.8,6.5-2.4,9.4c-1.5,2.8-3.8,5.1-6.6,6.7c-2.9,1.7-6.1,2.5-9.4,2.5c-3.3,0-6.5-0.8-9.3-2.5c-2.8-1.6-5.1-4-6.8-6.8
-	C536,312.2,535.1,309,535.1,305.8z M617.9,297.1c1.1,1.5,1.6,3.7,1.6,6.5v19.4h8.3v-20.9c0-3.4-0.7-6.2-1.9-8.5
-	c-1.2-2.1-2.9-3.8-5.1-5c-2.2-1.1-4.6-1.6-7.1-1.6c-2.2,0-4.4,0.4-6.4,1.3c-1.9,0.9-3.6,2.4-4.8,4.2c-1.1-1.7-2.6-3.1-4.3-4
-	c-1.8-0.9-3.7-1.4-5.8-1.4c-1.9,0-3.7,0.3-5.5,1.1c-1.5,0.7-2.8,1.7-3.6,3.1h-0.1v-2.9h-7.6v34.7h8.3v-17.7c0-3.8,0.6-6.5,1.6-8.1
-	c1.1-1.6,2.8-2.4,5.1-2.4c2.2,0,3.9,0.8,5.1,2.4c1.2,1.6,1.8,3.7,1.8,6.4v19.5h8.3v-19c0-3.2,0.7-5.5,2-7c1.3-1.5,3.2-2.3,5.2-2.2
-	C615.1,294.8,616.7,295.6,617.9,297.1z M378.2,340.2v31.5h3.6v-35.4h-5.5l-12.9,30.1l-12.9-30.1H345v35.4h3.6v-31.5h0.1l13.1,31.5h3
-	L378.2,340.2L378.2,340.2z M399.6,347.9c-1.6,0-3.2,0.4-4.6,1.1c-1.4,0.7-2.7,1.8-3.6,3.2c-1,1.4-1.6,3-1.9,4.7h20.4
-	c-0.4-2.5-1.7-4.8-3.6-6.4C404.4,348.8,402.1,347.9,399.6,347.9z M399.6,369.4c2,0,4-0.6,5.7-1.7c1.7-1,3-2.6,3.6-4.5h3.6
-	c-0.9,2.7-2.7,5-5.1,6.7c-4.3,3.1-10.1,3.4-14.6,0.7c-4.3-2.4-6.8-7-6.8-11.9c0-2.4,0.6-4.8,1.9-6.9c1.2-2.1,2.9-3.8,5-5
-	c4.2-2.5,9.5-2.5,13.7,0.1c2.1,1.3,3.8,3.1,5,5.2c1.2,2.1,1.8,4.4,1.8,6.8l0,1h-23.9c0.1,1.7,0.7,3.3,1.6,4.7
-	c0.9,1.4,2.2,2.6,3.7,3.5C396.3,368.9,397.9,369.4,399.6,369.4z M440.5,358.7c0-1.9-0.5-3.7-1.4-5.4c-0.9-1.6-2.2-3-3.8-3.9
-	c-1.6-1-3.5-1.5-5.3-1.4c-1.9,0-3.8,0.5-5.5,1.4c-1.6,0.9-2.9,2.2-3.8,3.9c-0.9,1.7-1.5,3.6-1.4,5.5c0,1.9,0.5,3.7,1.4,5.4
-	c0.9,1.6,2.2,2.9,3.8,3.8c1.7,0.9,3.6,1.4,5.5,1.4c1.9,0,3.7-0.5,5.3-1.4c1.6-0.9,2.9-2.3,3.8-3.9
-	C440,362.4,440.6,360.6,440.5,358.7z M440.2,367.2c-1.1,1.6-2.6,3-4.4,3.8c-1.8,0.9-3.8,1.4-5.8,1.4c-2.5,0-5-0.6-7.1-1.8
-	c-2.1-1.2-3.9-2.9-5.1-5c-1.3-2.1-1.9-4.5-1.9-7c0-2.4,0.7-4.9,1.9-7c1.3-2.1,3-3.8,5.1-4.9c2.2-1.2,4.6-1.8,7-1.8
-	c2,0,4,0.5,5.8,1.4c1.8,0.9,3.3,2.2,4.4,3.8h0.1v-13.7h3.4v35.4h-3.4L440.2,367.2L440.2,367.2z M452.2,345.6v26.2h-3.4v-26.2H452.2z
-	 M452.2,336.4v6h-3.4v-6H452.2z M480.6,358.7c0-1.9-0.5-3.7-1.4-5.4c-0.9-1.6-2.2-3-3.8-3.9c-1.6-1-3.5-1.5-5.3-1.4
-	c-1.9,0-3.8,0.5-5.4,1.4c-1.6,0.9-2.9,2.2-3.8,3.9c-0.9,1.7-1.5,3.6-1.4,5.5c0,1.9,0.5,3.7,1.4,5.4c0.9,1.6,2.2,2.9,3.8,3.8
-	c1.7,0.9,3.6,1.4,5.5,1.4c1.9,0,3.7-0.5,5.3-1.4c1.6-0.9,2.9-2.3,3.8-3.9C480.2,362.4,480.7,360.6,480.6,358.7z M480.4,367.2
-	c-1.1,1.6-2.6,2.9-4.3,3.8c-1.8,0.9-3.8,1.4-5.9,1.4c-2.5,0-5-0.6-7.1-1.8c-2.1-1.2-3.9-2.9-5.1-5c-1.3-2.1-1.9-4.5-1.9-7
-	c0-2.4,0.7-4.9,1.9-7c1.3-2.1,3-3.8,5.1-4.9c2.2-1.2,4.6-1.8,7-1.8c2.1,0,4.1,0.5,5.9,1.4c1.7,0.9,3.2,2.2,4.3,3.9h0.1v-4.6h3.4
-	v26.2h-3.4L480.4,367.2L480.4,367.2z M501.2,355.5v3.2H521c-0.5,2-1.5,3.9-2.9,5.4c-1.5,1.6-3.2,2.9-5.1,3.7c-1.9,0.9-4,1.4-6.2,1.4
-	c-2.7,0-5.4-0.7-7.8-2c-2.3-1.3-4.3-3.2-5.7-5.5c-2.8-4.7-2.8-10.6,0-15.3c1.4-2.3,3.3-4.2,5.7-5.5c4.6-2.7,10.3-2.7,15-0.2
-	c2.2,1.1,4,2.9,5.3,5h4.1c-0.8-1.9-2.1-3.5-3.6-4.9c-1.7-1.6-3.7-2.9-5.9-3.7c-8.7-3.6-18.7-0.3-23.7,7.7c-1.7,2.8-2.6,6-2.6,9.2
-	c0,3.3,0.9,6.5,2.7,9.3c3.6,5.6,9.7,8.9,16.3,9c3.1,0,6.2-0.7,9-2.2c2.7-1.4,5.1-3.6,6.7-6.1c1.7-2.5,2.7-5.5,2.9-8.6H501.2z
-	 M529.2,345.6v26.2h3.4v-15.5c0-2,0.7-3.9,2-5.4c1.3-1.4,3.1-2.2,5.5-2.5h0v-3.6c-2.1,0.1-3.6,0.6-4.8,1.3c-1.2,0.7-2.1,1.9-2.6,3.2
-	h-0.1v-3.8L529.2,345.6z M565.1,358.5c0-1.8-0.5-3.6-1.4-5.2c-0.9-1.6-2.2-2.9-3.8-3.9c-1.6-1-3.4-1.5-5.2-1.4
-	c-1.8,0-3.6,0.5-5.1,1.5c-3.2,2-5.1,5.6-5.1,9.4c0,3.7,2,7.2,5.2,9.2c1.5,0.9,3.4,1.4,5.2,1.4c1.9,0,3.6-0.5,5.2-1.4
-	c1.6-1,2.9-2.3,3.7-3.9C564.6,362.3,565.1,360.4,565.1,358.5z M541,358.9c0-2.4,0.6-4.9,1.9-7c1.2-2.1,2.9-3.8,5-5.1
-	c2.1-1.2,4.4-1.9,6.8-1.9c2.4,0,4.8,0.7,6.9,1.9c2.1,1.2,3.8,2.9,5,5c2.5,4.3,2.5,9.5,0,13.7c-1.2,2.1-2.9,3.8-5.1,5
-	c-2.1,1.2-4.4,1.9-6.8,1.9c-2.4,0-4.7-0.7-6.8-1.9c-2.1-1.2-3.8-2.9-5-5C541.7,363.5,541,361.2,541,358.9z M592,367.7v4.1h3.2v-26.2
-	h-3.4V360c0,1.8-0.3,3.6-1.1,5.1c-0.7,1.4-1.7,2.5-2.9,3.2c-1.3,0.7-2.7,1.1-4.2,1.1c-5.3,0-8-3.1-8-9.2v-14.6h-3.4v15
-	c0,2.8,0.5,5.1,1.6,6.8c1,1.6,2.4,3,4.2,3.8c1.7,0.8,3.6,1.2,5.6,1.2c1.8,0,3.5-0.4,5.1-1.2c1.4-0.8,2.6-2,3.3-3.5L592,367.7z
-	 M613.8,347.9c-1.8,0-3.6,0.5-5.2,1.4c-1.6,0.9-2.9,2.3-3.8,3.9c-1.9,3.3-1.9,7.4,0,10.7c0.9,1.6,2.2,2.9,3.8,3.9
-	c1.6,0.9,3.5,1.4,5.3,1.4c1.9,0,3.8-0.5,5.5-1.4c1.6-0.9,2.9-2.2,3.8-3.8c0.9-1.6,1.4-3.5,1.4-5.4c0-1.9-0.5-3.8-1.4-5.5
-	c-0.9-1.6-2.2-3-3.8-3.9C617.7,348.4,615.7,347.9,613.8,347.9z M603.5,345.6v4.6h0.1c1.1-1.6,2.7-3,4.4-3.9c1.8-0.9,3.8-1.4,5.8-1.4
-	c2.5,0,5,0.6,7.1,1.8c2.1,1.2,3.8,2.9,5.1,5c1.3,2.1,1.9,4.5,1.9,6.9c0,5-2.6,9.5-6.9,11.9c-2.2,1.3-4.7,1.9-7.2,1.9
-	c-2,0-4-0.5-5.8-1.4c-1.8-0.9-3.3-2.2-4.4-3.9h-0.1v13.8h-3.4v-35.4L603.5,345.6L603.5,345.6z"/>
-</svg>
-
+                    <div class="rating-features-grid">
+                        <!-- Feature 1 -->
+                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="100">
+                            <div class="rating-feature-icon">
+                                <i class="fas fa-exchange-alt"></i>
                                 </div>
-                                <div class="marquee-info">
-                                    <span>Omnicom</span>
+                            <div class="rating-feature-content">
+                                <h4>Mutual Rating & Feedback</h4>
+                                <p>After each completed trip, both the truck owner and the shipper can rate each other on key parameters such as reliability, communication, and professionalism.</p>
                                 </div>
                             </div>
-                        </div>  <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <img src="assets/Teltonika-logo-04BBC3C445-seeklogo.com.png" alt="">
-                        </div>
-                                <div class="marquee-info">
-                                    <span>Teltonika</span>
-                                </div>
-                                </div>
-                        </div>  <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 123.79"><defs><style>.cls-1{fill:#ed1d24;}</style></defs><title>airtel</title><path class="cls-1" d="M68.09.1a6.16,6.16,0,0,1-1.24.15,41.48,41.48,0,0,0-9.53,2.4l-1.19.49a43.68,43.68,0,0,0-5,2.41,3.57,3.57,0,0,1-.89.41c-.25.06-.45.18-.45.25s-.14.17-.29.24a4.26,4.26,0,0,0-.82.44,7.92,7.92,0,0,1-.9.51,4.68,4.68,0,0,0-.95.59,2.88,2.88,0,0,1-.66.43,60.55,60.55,0,0,0-7.39,5.36,30.85,30.85,0,0,0-3.58,3.81,1.82,1.82,0,0,1-.36.51A30.7,30.7,0,0,0,32.34,22c-.18.42-.56,1.17-.8,1.68a11.49,11.49,0,0,0-1.08,5.7,6.08,6.08,0,0,0,2,4.68,7.81,7.81,0,0,0,5.66,2.31,13.61,13.61,0,0,0,4.76-.54c.55-.16,1.3-.34,1.66-.45a4.11,4.11,0,0,0,.93-.32c.39-.2,2.58-1.19,2.68-1.19a65,65,0,0,0,7.2-4.39c2.18-1.46,4.1-2.73,4.27-2.82s1.19-.71,2.29-1.37,2.46-1.43,3-1.71l1.78-.94c.43-.2,1.22-.57,1.78-.78s1.26-.51,1.53-.63.7-.3.93-.4a14.41,14.41,0,0,1,3.62-.65,6,6,0,0,1,6.5,4.11,8.52,8.52,0,0,1,.32,3.31A12.77,12.77,0,0,1,80.53,33l-.43,1a38.38,38.38,0,0,1-4.6,7.6,65.43,65.43,0,0,1-8.68,9l-2.29,1.9c-.72.59-1.55,1.18-2.46,1.8-.38.23-1,.64-1.36.91a45.69,45.69,0,0,1-5.43,2.89l-1.39.61A2.68,2.68,0,0,1,53,59a3.67,3.67,0,0,0-.86.19,1.62,1.62,0,0,1-2.22-1.49c0-1.39.66-2.28,4.83-6.42,4.51-4.47,5-5.14,5-6.83s-.83-2.94-2.7-3.89a4.28,4.28,0,0,0-2.55-.47,6.48,6.48,0,0,0-3.83,1c-.27.17-.7.39-.93.51a2.87,2.87,0,0,0-.51.31s-.39.3-.77.59a22.74,22.74,0,0,0-3.37,3.46A23.84,23.84,0,0,0,43,49.47,17.39,17.39,0,0,0,41.28,56c0,3.65,1.9,6.57,4.84,7.4a22.7,22.7,0,0,0,5.72,0A32.26,32.26,0,0,0,56.45,62a.73.73,0,0,1,.41-.15,52,52,0,0,0,7.21-3.68c.39-.26.83-.55,1-.65s1-.57,1.78-1.08,1.53-1,1.58-1a14.7,14.7,0,0,1,1.27-.93l1.7-1.17c.29-.21,1.08-.82,1.78-1.38A68,68,0,0,0,83.77,41.75c.37-.45.71-.88.76-.93a35.5,35.5,0,0,0,2.09-3,22.9,22.9,0,0,0,1.2-2.07c.32-.61.77-1.44,1-1.87s.69-1.52,1.06-2.46.72-1.85.78-2a38.46,38.46,0,0,0,1.53-6.53,25,25,0,0,0-.61-8.91,15.54,15.54,0,0,0-1-2.46,18.56,18.56,0,0,0-6-7.3,9.1,9.1,0,0,1-1-.74A23.19,23.19,0,0,0,78.08,1a27.86,27.86,0,0,0-3.2-.72C73.79.11,71.82,0,70.27,0h-.79a6.8,6.8,0,0,0-1.39.1ZM36.45,92.74a15.57,15.57,0,0,1-1.7.32c-.64.08-1.83.25-2.63.37a8.81,8.81,0,0,0-1.58.31c-.15.13-.17,29,0,29.21a20.27,20.27,0,0,0,3.56.16c3.46,0,3.48,0,3.57-.39,0-.21.06-7.06,0-15.22,0-14.71,0-14.85-.39-14.88a2.58,2.58,0,0,0-.85.12ZM32.29,80.49a4.72,4.72,0,0,0-2.24,1.81c-.54.83-.56.9-.56,2.63v1.8l.65.88a4.19,4.19,0,0,0,2.39,1.8,4.75,4.75,0,0,0,4.33-.64c1.81-1.16,2.44-4.11,1.34-6.28a3.92,3.92,0,0,0-1.75-1.76,5.52,5.52,0,0,0-4.16-.24Zm62.1,17.34c.71.18,2.2,1.39,2.2,1.76a2.15,2.15,0,0,0,.26.66c.39.77.69,3.28.42,3.6s-.83.25-4.26.25H89l-.1-.42a7,7,0,0,1,1-4.09,4.31,4.31,0,0,1,2.39-1.8,4.5,4.5,0,0,1,1.19-.22c.1,0,.51.16.9.26Zm-3.65-5.4a3.87,3.87,0,0,0-1.17.32.67.67,0,0,1-.41.16,5.73,5.73,0,0,0-1.34.54,12.84,12.84,0,0,0-4.16,3.87A17.08,17.08,0,0,0,81.92,101a5.62,5.62,0,0,1-.26.84c-.06.19-.27.92-.44,1.62a33,33,0,0,0,0,9.41,17,17,0,0,0,1.5,4,.17.17,0,0,1,.15.19c0,.64,2,3.2,3.44,4.36A12.72,12.72,0,0,0,89.38,123a20.56,20.56,0,0,0,4.77.82c2.41,0,6.75-1,8.19-2a5.32,5.32,0,0,1,1-.5,5.32,5.32,0,0,0,1.76-1.09,14.4,14.4,0,0,0-2-4.09,1.57,1.57,0,0,0-.66.34,1.52,1.52,0,0,1-.66.34,1.22,1.22,0,0,0-.56.24,17.24,17.24,0,0,1-2,.78,8.94,8.94,0,0,1-4,.57c-2.1,0-2.46,0-3.14-.35-2.37-1.14-3.73-4-3.73-7.87a12,12,0,0,1,0-1.55s3.78-.08,8.35-.13l8.31-.09,0-1.7c-.1-3.32-1-7.8-1.75-8.82-.07-.1-.3-.52-.52-1a9,9,0,0,0-5.14-4.14,17.22,17.22,0,0,0-7-.39Zm-36.9,0a18.87,18.87,0,0,0-8.79,4.71l-.71.65v25.06c0,.27.25.29,3.7.25l3.68,0,.05-11.82,0-11.81.65-.51a5.63,5.63,0,0,1,2.12-1.14A11.67,11.67,0,0,1,59,97.32a6.14,6.14,0,0,0,1.42.05,3.94,3.94,0,0,0,.7-1.29c.25-.68.66-1.56.86-2,.56-1.07.51-1.34-.24-1.51l-1.46-.34a20.94,20.94,0,0,0-6.39.14ZM16.51,108.35a32.6,32.6,0,0,1,.17,4.59c0,4.82.07,4.52-1.19,5.18a5.82,5.82,0,0,1-2.64.32H10.79l-.84-.58a5,5,0,0,1-1.19-1.1A6.31,6.31,0,0,1,8.91,110a6.88,6.88,0,0,1,2.16-1.52.72.72,0,0,0,.45-.16c.24-.25,1-.32,3-.29,1.42,0,1.86.07,2,.28ZM11.51,92a27,27,0,0,0-5.26,1.26c-.19.08-.53.2-.77.27a14,14,0,0,0-3.22,1.61,5.69,5.69,0,0,0,.32.88,22.72,22.72,0,0,0,1.63,3.34,1.34,1.34,0,0,0,.39-.15,19.4,19.4,0,0,1,2.75-1.12c.51-.15,1.12-.35,1.36-.44a13.41,13.41,0,0,1,4.65-.32c2.3.37,3.15,1.44,3.29,4.17.07,1.51.07,1.55-.32,1.65a30.09,30.09,0,0,1-3.47.12c-4,0-5.27.23-7.88,1.51a9.16,9.16,0,0,0-4.7,5.78A11.46,11.46,0,0,0,.38,116c1.52,4.62,5.16,7.31,10.21,7.58A18.79,18.79,0,0,0,23,120l1.1-.9.05-9c.05-10.4,0-10.76-1.22-13.3a9.62,9.62,0,0,0-3.61-3.5c-.54-.25-1.14-.51-1.33-.59A17.09,17.09,0,0,0,11.51,92ZM70.3,84.34c-3.77.56-5,.8-5.18,1S65,90.87,65,101.22c.08,14.46.11,15.76.39,16.46a7.31,7.31,0,0,0,1.85,3.09c1.78,1.78,4,2.51,7.78,2.51,2.07,0,2.36,0,2.5-.31a16.73,16.73,0,0,0,.12-4c-.11-.43-.17-.44-1.45-.55A3.5,3.5,0,0,1,73,116.66l-.42-.76-.06-8.79c0-6.55,0-8.86.16-9s.73-.23,2.54-.23c2.8,0,2.56.27,2.5-3l0-2.21-2.38-.08a17.43,17.43,0,0,1-2.58-.22c-.17-.1-.22-1.14-.22-4.21V84.08l-.37,0c-.22,0-1,.12-1.83.24Zm47-.34s-.83.19-1.76.34-2.46.39-3.39.56l-1.7.29V100.8c0,17,0,16.23,1,18.35a6.15,6.15,0,0,0,1.54,2c1.8,1.65,3.48,2.16,7.06,2.17,3.05,0,2.93.12,2.87-2.69l0-2-1.31-.12c-2.32-.2-3.44-1.14-3.7-3.07-.07-.58-.12-7.84-.1-16.12,0-14.33,0-15.71-.43-15.3Z"/></svg>
-                                </div>
-                                <div class="marquee-info">
-                                    <span>Airtel</span>
-                                </div>
-                            </div>
-                        </div>  <div class="marquee-item">
-                            <div class="marquee-card">
-                                <div class="marquee-logo">
-                                    <svg height="380pt" viewBox="-.398 -4.59 378.918 388.633" width="504" xmlns="http://www.w3.org/2000/svg"><path d="m119.441 14.328c47.465-18.918 102.754-17.61 148.954 4.363-13.165-2-26.555-.492-39.586 1.711-35.391 6.684-69.024 23.336-95.313 48.075-25.207 24.777-42.871 57.652-47.86 92.824-3.3 24.922-.241 51.062 10.942 73.746 11.524 23.8 31.809 43.32 56.258 53.394 23.559 9.97 50.887 9.86 74.75.961 35.805-13.14 61.531-48.62 64.473-86.527 1.851-24.844-4.192-51.273-20.883-70.328-15.934-18.652-39.238-28.926-62.559-34.774-1.25-23 9.586-45.722 26.77-60.68 9.543-8.605 21.386-14.09 33.633-17.6l.93-.321c35.058 16.812 64.847 44.539 83.827 78.578 16.262 28.98 24.743 62.375 23.903 95.64-.16 43.016-16.239 85.606-43.801 118.497-26.063 31.367-62.516 53.93-102.246 62.965-39.836 9.191-82.695 5.226-119.977-11.704-36.48-16.293-67.386-44.617-87.047-79.457-16.355-28.953-25.007-62.336-24.289-95.64.078-41.496 14.813-82.672 40.54-115.121 20.55-25.91 47.812-46.512 78.581-58.602zm0 0" fill="#e60000"/><path d="m228.809 20.402c13.03-2.203 26.421-3.71 39.586-1.71l1.89.32-1.265.48c-12.247 3.512-24.09 8.996-33.633 17.602-17.184 14.957-28.02 37.68-26.77 60.68 23.32 5.847 46.625 16.12 62.559 34.773 16.691 19.055 22.734 45.484 20.883 70.328-2.942 37.906-28.668 73.387-64.473 86.527-23.863 8.899-51.191 9.008-74.75-.96-24.45-10.075-44.734-29.594-56.258-53.395-11.183-22.684-14.242-48.824-10.941-73.746 4.988-35.172 22.652-68.047 47.86-92.824 26.288-24.739 59.921-41.391 95.312-48.075zm0 0" fill="#fff"/></svg>
-                                </div>
-                                <div class="marquee-info">
-                                    <span>Vodafone</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <?xml version="1.0" ?><svg id="Capa_1" style="enable-background:new 0 0 150 150;" version="1.1" viewBox="0 0 150 150" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
-                                    .st0{fill:#1A73E8;}
-                                    .st1{fill:#EA4335;}
-                                    .st2{fill:#4285F4;}
-                                    .st3{fill:#FBBC04;}
-                                    .st4{fill:#34A853;}
-                                    .st5{fill:#4CAF50;}
-                                    .st6{fill:#1E88E5;}
-                                    .st7{fill:#E53935;}
-                                    .st8{fill:#C62828;}
-                                    .st9{fill:#FBC02D;}
-                                    .st10{fill:#1565C0;}
-                                    .st11{fill:#2E7D32;}
-                                    .st12{fill:#F6B704;}
-                                    .st13{fill:#E54335;}
-                                    .st14{fill:#4280EF;}
-                                    .st15{fill:#34A353;}
-                                    .st16{clip-path:url(#SVGID_2_);}
-                                    .st17{fill:#188038;}
-                                    .st18{opacity:0.2;fill:#FFFFFF;enable-background:new    ;}
-                                    .st19{opacity:0.3;fill:#0D652D;enable-background:new    ;}
-                                    .st20{clip-path:url(#SVGID_4_);}
-                                    .st21{opacity:0.3;fill:url(#_45_shadow_1_);enable-background:new    ;}
-                                    .st22{clip-path:url(#SVGID_6_);}
-                                    .st23{fill:#FA7B17;}
-                                    .st24{opacity:0.3;fill:#174EA6;enable-background:new    ;}
-                                    .st25{opacity:0.3;fill:#A50E0E;enable-background:new    ;}
-                                    .st26{opacity:0.3;fill:#E37400;enable-background:new    ;}
-                                    .st27{fill:url(#Finish_mask_1_);}
-                                    .st28{fill:#FFFFFF;}
-                                    .st29{fill:#0C9D58;}
-                                    .st30{opacity:0.2;fill:#004D40;enable-background:new    ;}
-                                    .st31{opacity:0.2;fill:#3E2723;enable-background:new    ;}
-                                    .st32{fill:#FFC107;}
-                                    .st33{opacity:0.2;fill:#1A237E;enable-background:new    ;}
-                                    .st34{opacity:0.2;}
-                                    .st35{fill:#1A237E;}
-                                    .st36{fill:url(#SVGID_7_);}
-                                    .st37{fill:#FBBC05;}
-                                    .st38{clip-path:url(#SVGID_9_);fill:#E53935;}
-                                    .st39{clip-path:url(#SVGID_11_);fill:#FBC02D;}
-                                    .st40{clip-path:url(#SVGID_13_);fill:#E53935;}
-                                    .st41{clip-path:url(#SVGID_15_);fill:#FBC02D;}
-                                </style><g><path class="st14" d="M120,76.1c0-3.1-0.3-6.3-0.8-9.3H75.9v17.7h24.8c-1,5.7-4.3,10.7-9.2,13.9l14.8,11.5   C115,101.8,120,90,120,76.1L120,76.1z"/><path class="st15" d="M75.9,120.9c12.4,0,22.8-4.1,30.4-11.1L91.5,98.4c-4.1,2.8-9.4,4.4-15.6,4.4c-12,0-22.1-8.1-25.8-18.9   L34.9,95.6C42.7,111.1,58.5,120.9,75.9,120.9z"/><path class="st12" d="M50.1,83.8c-1.9-5.7-1.9-11.9,0-17.6L34.9,54.4c-6.5,13-6.5,28.3,0,41.2L50.1,83.8z"/><path class="st13" d="M75.9,47.3c6.5-0.1,12.9,2.4,17.6,6.9L106.6,41C98.3,33.2,87.3,29,75.9,29.1c-17.4,0-33.2,9.8-41,25.3   l15.2,11.8C53.8,55.3,63.9,47.3,75.9,47.3z"/></g></svg>
-                                </div>
-                            <div class="marquee-info">
-                                <span>Google</span>
-                                </div>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-            <div class="marquee-divider"></div>
             
-            <div class="marquee-title-container">
-                <h2 class="marquee-title">
-                    <span>Clients We Serve</span>
-                    <div class="marquee-title-badge">100+</div>
-                </h2>
-                                </div>
-                        
-            <div class="marquee-wrapper">
-                <div class="clients-track">
-                    <!-- First set of clients -->
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
-                                </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
-                                </div>
-                            </div>
+                        <!-- Feature 2 -->
+                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="200">
+                            <div class="rating-feature-icon">
+                                <i class="fas fa-check-circle"></i>
                         </div>
-                        
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
-                                </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
+                            <div class="rating-feature-content">
+                                <h4>Verified Reviews</h4>
+                                <p>Only users who have successfully completed a transaction can leave ratings, ensuring authenticity and credibility.</p>
                     </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
+                                </div>
+                    
+                    <!-- Feature 3 -->
+                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="300">
+                            <div class="rating-feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="rating-feature-content">
+                                <h4>Continuous Improvement</h4>
+                                <p>Higher ratings help users build a strong reputation, while constructive feedback allows for service enhancements.</p>
+                        </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
+                    
+            <div class="rating-benefits" data-aos="fade-up">
+                <h3>Benefits of Two-Way Rating</h3>
+                <div class="benefits-container">
+                    <div class="benefit-group">
+                        <div class="benefit-card truck-owners" data-aos="fade-up" data-aos-delay="100">
+                            <div class="benefit-icon">
+                                <i class="fas fa-truck"></i>
                                 </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
+                            <h4>For Truck Owners</h4>
+                            <p>Work with reliable shippers who offer fair payments and clear communication.</p>
+                            <div class="benefit-glow"></div>
+                                </div>
+                    
+                        <div class="benefit-card shippers" data-aos="fade-up" data-aos-delay="200">
+                            <div class="benefit-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>For Shippers</h4>
+                            <p>Partner with trustworthy truck owners who deliver on time and maintain vehicle standards.</p>
+                            <div class="benefit-glow"></div>
+                        </div>
+                    
+                        <div class="benefit-card industry" data-aos="fade-up" data-aos-delay="300">
+                            <div class="benefit-icon">
+                                <i class="fas fa-industry"></i>
+                                </div>
+                            <h4>For the Industry</h4>
+                            <p>A transparent rating system encourages professionalism, safety, and efficiency.</p>
+                            <div class="benefit-glow"></div>
                                 </div>
                             </div>
                         </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
+                    
+                <div class="rating-conclusion" data-aos="fade-up">
+                    <p>At EkTruck, we empower our users to make informed decisions, ensuring trust, accountability, and better business relationships.</p>
                                 </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
-                                </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
+        
+                <div class="rating-cta" data-aos="fade-up">
+                    <a href="#contact" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
+    </section>
+
+    <!-- Why Choose ek(one) Section -->
+    <section class="why-choose-section">
+        <div class="why-choose-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orb orb1"></div>
+            <div class="glow-orb orb2"></div>
+            <div class="circuit-lines">
+                <div class="circuit-line line1"></div>
+                <div class="circuit-line line2"></div>
+                <div class="circuit-node node1"></div>
+                <div class="circuit-node node2"></div>
+                <div class="circuit-node node3"></div>
                                 </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
                                 </div>
+                    
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span class="highlight-text">ek(one)?</span></h2>
+                            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fa fa-truck"></i>
+                        </div>
+                    <h4>Instant Access to Market Trucks</h4>
+                    <p>Get immediate access to thousands of verified trucks across India, eliminating long wait times and delays in finding transport.</p>
+                                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fa fa-money-bill"></i>
+                                </div>
+                    <h4>Lower Costs</h4>
+                    <p>Reduce logistics expenses by up to 20% through transparent pricing, optimized routes, and elimination of middlemen costs.</p>
+                            </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fa fa-chart-line"></i>
+                        </div>
+                    <h4>Data-Driven Insights</h4>
+                    <p>Make informed decisions with comprehensive analytics on transport performance, costs, and market rates in real-time.</p>
+                                </div>
+            
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fa fa-cogs"></i>
+                                </div>
+                    <h4>Complete Control</h4>
+                    <p>Manage your entire logistics operation from a single dashboard with full visibility and control over every shipment.</p>
                             </div>
                         </div>
-                    <div class="marquee-item">
-                        <div class="marquee-card">
-                            <div class="marquee-logo">
-                                <img src="assets/images/clients/client-1.png" alt="Client Logo">
+            
+            <div class="join-message">
+                <p>Join the thousands of businesses that have transformed their logistics operations with ek(one), India's most comprehensive digital trucking platform.</p>
                                 </div>
-                            <div class="marquee-info">
-                                <span>Global Manufacturing</span>
+            
+            <div class="business-benefits">
+                <h3>Benefits for Your Business</h3>
+                <div class="business-benefits-grid">
+                    <div class="business-benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fa fa-clock"></i>
                                 </div>
+                        <h4>Save Time & Resources</h4>
+                        <p>Automate manual processes and reduce the time spent on logistics management by up to 60%. Our platform handles everything from truck booking to payment settlements.</p>
+                        <div class="benefit-indicator"></div>
                             </div>
+                
+                    <div class="business-benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fa fa-shield-alt"></i>
                         </div>
-                    <!-- Repeat for all clients -->
-                    <!-- Then duplicate the entire set to create a seamless loop -->
+                        <h4>Enhanced Reliability</h4>
+                        <p>Work with verified transport partners and access real-time tracking to ensure your goods reach their destination safely and on time, every time.</p>
+                        <div class="benefit-indicator"></div>
+                                </div>
+                    
+                    <div class="business-benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fa fa-expand-arrows-alt"></i>
+                                </div>
+                        <h4>Scale With Confidence</h4>
+                        <p>Whether you move 10 or 10,000 trucks monthly, our platform scales with your business needs, providing consistent service quality at any volume.</p>
+                        <div class="benefit-indicator"></div>
+                            </div>
+                    
+                    <div class="business-benefit-card">
+                        <div class="benefit-card-icon">
+                            <i class="fa fa-sync-alt"></i>
+                        </div>
+                        <h4>Seamless Integration</h4>
+                        <p>Easily integrate with your existing ERP, WMS, or other business systems through our robust API to create a unified logistics ecosystem.</p>
+                        <div class="benefit-indicator"></div>
                 </div>
             </div>
         </div>
         
-        <div class="partners-cta" data-aos="fade-up">
-            <p>Want to become our technology or business partner?</p>
-            <a href="#contact" class="btn btn-primary">Partner With Us <i class="fas fa-arrow-right"></i></a>
+            <div class="conclusion-message">
+                <p>Experience the future of logistics with ek(one) - where technology meets transportation to deliver exceptional results for your business.</p>
+                        </div>
         </div>
     </section>
 
-    <!-- Industries We Serve Section -->
-    <section id="industries-section" class="industries-section">
-        <div class="industries-bg">
-            <div class="particle-network"></div>
-            <div class="diagonal-stripes"></div>
-            <div class="gradient-overlay"></div>
-            <div class="red-glow"></div>
-            <div class="accent-line accent-line-1"></div>
-            <div class="accent-line accent-line-2"></div>
+    <!-- Real-Time Market Indices Section -->
+    <section class="market-indices-section">
+        <div class="market-indices-bg">
+            <div class="indices-grid-pattern"></div>
+            <div class="data-particles"></div>
+            <div class="glow-orb orb1"></div>
+            <div class="glow-orb orb2"></div>
+            <div class="indices-lines">
+                <div class="index-line line1"></div>
+                <div class="index-line line2"></div>
+                <div class="index-line line3"></div>
+                <div class="data-point point1"></div>
+                <div class="data-point point2"></div>
+                <div class="data-point point3"></div>
+                        </div>
         </div>
         
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="glowing-text">Industries We <span class="highlight-text">Serve</span></h2>
-                <p class="section-subtitle typewriter">Transforming logistics across diverse sectors with tailored solutions</p>
+            <div class="section-header">
+                <h2>Real-Time <span class="highlight-text">Market Indices</span></h2>
+                <div class="section-subtitle">Transparent Freight Rate Information</div>
             </div>
             
-            <div class="industries-grid">
-                <!-- Transport & Logistics -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="100">
-                    <div class="industry-icon">
-                        <i class="fas fa-truck-moving"></i>
+            <div class="indices-intro">
+                <p>Our proprietary market indices provide unprecedented transparency into freight rates across various routes, vehicle types, and seasons - enabling smarter decisions for shippers and truck owners alike.</p>
                     </div>
-                    <div class="industry-content">
-                        <h3>Transport & Logistics</h3>
-                        <p>Optimizing fleet operations, route planning, and delivery management for logistics companies.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">30%</span>
-                                <span class="stat-label">Cost Reduction</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">40%</span>
-                                <span class="stat-label">Efficiency Gain</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#transport" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Mining & Heavy Equipment -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="200">
-                    <div class="industry-icon">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Mining & Heavy Equipment</h3>
-                        <p>Tracking and managing heavy machinery, optimizing utilization and maintenance schedules.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">45%</span>
-                                <span class="stat-label">Downtime Reduction</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">25%</span>
-                                <span class="stat-label">Fuel Savings</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#mining" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Infrastructure Projects -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="300">
-                    <div class="industry-icon">
-                        <i class="fas fa-city"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Infrastructure Projects</h3>
-                        <p>Streamlining material movement, equipment tracking, and project logistics management.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">35%</span>
-                                <span class="stat-label">Project Efficiency</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">20%</span>
-                                <span class="stat-label">Time Savings</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#infrastructure" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Government Authorities -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="400">
-                    <div class="industry-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Government Authorities</h3>
-                        <p>Enabling digital transformation of public transport and logistics infrastructure management.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">50%</span>
-                                <span class="stat-label">Paperwork Reduction</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">60%</span>
-                                <span class="stat-label">Process Automation</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#government" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Small & Medium Businesses -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="500">
-                    <div class="industry-icon">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Small & Medium Businesses</h3>
-                        <p>Affordable logistics solutions for SMBs to compete effectively with larger enterprises.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">40%</span>
-                                <span class="stat-label">Cost Savings</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">70%</span>
-                                <span class="stat-label">Delivery Accuracy</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#smb" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Oil & Gas Distribution -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="600">
-                    <div class="industry-icon">
-                        <i class="fas fa-gas-pump"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Oil & Gas Distribution</h3>
-                        <p>Specialized solutions for tracking fuel tankers, managing distribution, and ensuring safety.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">55%</span>
-                                <span class="stat-label">Safety Improvement</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">30%</span>
-                                <span class="stat-label">Distribution Efficiency</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#oil-gas" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <!-- Manufacturers & Traders -->
-                <div class="industry-card" data-aos="flip-up" data-aos-delay="700">
-                    <div class="industry-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <div class="industry-content">
-                        <h3>Manufacturers & Traders</h3>
-                        <p>End-to-end supply chain visibility from production to delivery for manufacturers and traders.</p>
-                        <div class="industry-stats">
-                            <div class="stat">
-                                <span class="stat-value">45%</span>
-                                <span class="stat-label">Inventory Optimization</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">35%</span>
-                                <span class="stat-label">Lead Time Reduction</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="industry-hover">
-                        <a href="#manufacturing" class="btn btn-outline">Learn More</a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-            </div>
             
-            <div class="industries-cta" data-aos="zoom-in">
-                <div class="cta-pulse"></div>
-                <h3>Ready to transform logistics in your industry?</h3>
-                <a href="#contact" class="btn btn-primary btn-glow">Request Industry-Specific Demo</a>
-            </div>
-        </div>
-        
-        <div class="floating-elements">
-            <div class="floating-element element-1"></div>
-            <div class="floating-element element-2"></div>
-            <div class="floating-element element-3"></div>
-        </div>
+            <div class="indices-content-container">
+                <div class="indices-visual">
+                    <div class="indices-image-container">
+                        <div class="indices-image-placeholder">
+                            <div class="image-shine"></div>
+                            <div class="market-chart-animation">
+                                <div class="chart-line"></div>
+                                <div class="chart-indicator"></div>
+                                <div class="data-point-pulse dp1"></div>
+                                <div class="data-point-pulse dp2"></div>
+                                <div class="data-point-pulse dp3"></div>
+                            </div>
+                            <!-- Image of market indices chart will be placed here -->
+                            <img src="../assets/market-indices.svg" alt="Real-Time Freight Rate Index" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="indices-content">
+                    <div class="indices-how-it-works">
+                        <h3>How Real-Time Indices Work</h3>
+                        <div class="indices-features-grid">
+                            <div class="indices-feature">
+                                <div class="indices-feature-icon">
+                                    <i class="fa fa-database"></i>
+                    </div>
+                                <div class="indices-feature-content">
+                                    <h4>Data Aggregation</h4>
+                                    <p>We aggregate millions of data points from actual transactions on our platform to create accurate, real-time freight rate indices.</p>
+                            </div>
+                            </div>
+                            
+                            <div class="indices-feature">
+                                <div class="indices-feature-icon">
+                                    <i class="fa fa-route"></i>
+                        </div>
+                                <div class="indices-feature-content">
+                                    <h4>Route-Specific Rates</h4>
+                                    <p>Access freight rates for specific routes, with historical trends and future projections based on market dynamics.</p>
+                    </div>
+                </div>
+                
+                            <div class="indices-feature">
+                                <div class="indices-feature-icon">
+                                    <i class="fa fa-truck-loading"></i>
+                    </div>
+                                <div class="indices-feature-content">
+                                    <h4>Vehicle Type Analysis</h4>
+                                    <p>Compare rates across different vehicle types and capacities to optimize your transport mix for maximum efficiency.</p>
+                            </div>
+                </div>
+                
+                            <div class="indices-feature">
+                                <div class="indices-feature-icon">
+                                    <i class="fa fa-calendar-alt"></i>
+                    </div>
+                                <div class="indices-feature-content">
+                                    <h4>Seasonal Patterns</h4>
+                                    <p>Understand seasonal rate fluctuations and plan your logistics operations to take advantage of favorable pricing periods.</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indices-transparency">
+                        <h3>The Power of Market Transparency</h3>
+                        <div class="transparency-benefits-grid">
+                            <div class="transparency-benefit">
+                                <div class="transparency-icon">
+                                    <i class="fa fa-handshake"></i>
+                    </div>
+                                <h4>Fair Pricing</h4>
+                                <p>Access fair market rates based on actual transactions, eliminating price gouging and ensuring competitive pricing.</p>
+                </div>
+                
+                            <div class="transparency-benefit">
+                                <div class="transparency-icon">
+                                    <i class="fa fa-calculator"></i>
+                    </div>
+                                <h4>Better Forecasting</h4>
+                                <p>Use historical trends and future projections to budget more accurately and plan logistics operations with confidence.</p>
+                            </div>
+                            
+                            <div class="transparency-benefit">
+                                <div class="transparency-icon">
+                                    <i class="fa fa-balance-scale"></i>
+                            </div>
+                                <h4>Market Equilibrium</h4>
+                                <p>Contribute to a more efficient market where rates reflect true supply and demand, benefiting both shippers and transporters.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="indices-conclusion">
+                        <p>With ek(one)'s real-time market indices, both shippers and truck owners can make data-driven decisions, reducing price uncertainty and creating a more transparent and efficient trucking marketplace.</p>
+                </div>
+                
+                    <div class="indices-cta">
+                        <a href="#contact" class="btn btn-primary">Learn More About Market Indices</a>
+                    </div>
+                            </div>
+                            </div>
+                        </div>
     </section>
+
+   
+
 
     <!-- Footer Section -->
     <footer class="site-footer">

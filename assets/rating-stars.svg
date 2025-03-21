@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <style>
+    .star-outline {
+      fill: none;
+      stroke: #ff0000;
+      stroke-width: 2;
+    }
+    .star-fill {
+      fill: #ff0000;
+    }
+    .star-glow {
+      fill: #ff0000;
+      filter: blur(5px);
+    }
+    .rating-line {
+      stroke: #ff0000;
+      stroke-width: 1;
+      fill: none;
+      opacity: 0.5;
+    }
+    .rating-circle {
+      fill: #ff0000;
+      opacity: 0.8;
+    }
+    @keyframes starPulse {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.3; transform: scale(0.9); }
+    }
+    @keyframes starFill {
+      0% { fill-opacity: 0.3; }
+      50% { fill-opacity: 1; }
+      100% { fill-opacity: 0.3; }
+    }
+    .pulse-star {
+      animation: starPulse 2s infinite;
+    }
+    .fill-pulse {
+      animation: starFill 3s infinite;
+    }
+    .line-pulse {
+      animation: starFill 4s infinite;
+    }
+  </style>
+
+  <!-- Background Elements -->
+  <rect width="600" height="300" fill="#0c0c0c" />
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid-pattern" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ff0000" stroke-width="0.2" />
+  </pattern>
+  <rect width="600" height="300" fill="url(#grid-pattern)" opacity="0.1" />
+  
+  <!-- Rating Stars Layout -->
+  <g transform="translate(300, 150)">
+    <!-- Connecting Lines -->
+    <line class="rating-line line-pulse" x1="-250" y1="0" x2="250" y2="0" />
+    <line class="rating-line line-pulse" x1="-175" y1="-50" x2="-175" y2="50" />
+    <line class="rating-line line-pulse" x1="-87.5" y1="-50" x2="-87.5" y2="50" />
+    <line class="rating-line line-pulse" x1="0" y1="-50" x2="0" y2="50" />
+    <line class="rating-line line-pulse" x1="87.5" y1="-50" x2="87.5" y2="50" />
+    <line class="rating-line line-pulse" x1="175" y1="-50" x2="175" y2="50" />
+    
+    <!-- Star Points -->
+    <circle class="rating-circle" cx="-175" cy="0" r="3" />
+    <circle class="rating-circle" cx="-87.5" cy="0" r="3" />
+    <circle class="rating-circle" cx="0" cy="0" r="3" />
+    <circle class="rating-circle" cx="87.5" cy="0" r="3" />
+    <circle class="rating-circle" cx="175" cy="0" r="3" />
+    
+    <!-- Star 1 (Empty) -->
+    <g transform="translate(-175, 0)">
+      <polygon class="star-outline" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+    </g>
+    
+    <!-- Star 2 (25% Filled) -->
+    <g transform="translate(-87.5, 0)">
+      <polygon class="star-outline" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+      <clipPath id="star-25">
+        <rect x="-29.5" y="-30" width="15" height="60" />
+      </clipPath>
+      <polygon class="star-fill fill-pulse" clip-path="url(#star-25)" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+    </g>
+    
+    <!-- Star 3 (50% Filled) -->
+    <g transform="translate(0, 0)">
+      <polygon class="star-outline" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+      <clipPath id="star-50">
+        <rect x="-29.5" y="-30" width="30" height="60" />
+      </clipPath>
+      <polygon class="star-fill fill-pulse" clip-path="url(#star-50)" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+    </g>
+    
+    <!-- Star 4 (75% Filled) -->
+    <g transform="translate(87.5, 0)">
+      <polygon class="star-outline" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+      <clipPath id="star-75">
+        <rect x="-29.5" y="-30" width="45" height="60" />
+      </clipPath>
+      <polygon class="star-fill fill-pulse" clip-path="url(#star-75)" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+    </g>
+    
+    <!-- Star 5 (Fully Filled) -->
+    <g transform="translate(175, 0)" class="pulse-star">
+      <polygon class="star-outline" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+      <polygon class="star-fill" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" />
+      <polygon class="star-glow" points="0,-30 8.5,-9.5 29.5,-9.5 12.5,3.5 18.5,24.5 0,12.5 -18.5,24.5 -12.5,3.5 -29.5,-9.5 -8.5,-9.5" opacity="0.3" />
+    </g>
+  </g>
+  
+  <!-- Rating Text -->
+  <g transform="translate(300, 220)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">Two-Way Rating System</text>
+    <rect x="-100" y="10" width="200" height="2" fill="#ff0000" opacity="0.7" />
+  </g>
+  
+  <!-- Small glowing orbs -->
+  <circle cx="150" cy="50" r="10" fill="#ff0000" opacity="0.2" filter="blur(5px)" />
+  <circle cx="450" cy="250" r="15" fill="#ff0000" opacity="0.15" filter="blur(8px)" />
+  <circle cx="500" cy="100" r="8" fill="#ff0000" opacity="0.25" filter="blur(4px)" />
+  <circle cx="100" cy="200" r="12" fill="#ff0000" opacity="0.2" filter="blur(6px)" />
+</svg> 

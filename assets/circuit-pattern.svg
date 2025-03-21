@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <style>
+    .circuit {
+      stroke: #ff0000;
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .node {
+      fill: #ff0000;
+    }
+  </style>
+  
+  <!-- Circuit Pattern Group -->
+  <g opacity="0.6">
+    <!-- Horizontal Lines -->
+    <path class="circuit" d="M100,100 H900" />
+    <path class="circuit" d="M200,200 H800" />
+    <path class="circuit" d="M150,300 H850" />
+    <path class="circuit" d="M250,400 H750" />
+    <path class="circuit" d="M100,500 H900" />
+    <path class="circuit" d="M300,600 H700" />
+    <path class="circuit" d="M200,700 H800" />
+    <path class="circuit" d="M150,800 H850" />
+    <path class="circuit" d="M250,900 H750" />
+    
+    <!-- Vertical Lines -->
+    <path class="circuit" d="M100,100 V900" />
+    <path class="circuit" d="M300,200 V800" />
+    <path class="circuit" d="M500,100 V900" />
+    <path class="circuit" d="M700,200 V800" />
+    <path class="circuit" d="M900,100 V900" />
+    
+    <!-- Diagonal Lines -->
+    <path class="circuit" d="M100,100 L300,300" />
+    <path class="circuit" d="M700,100 L900,300" />
+    <path class="circuit" d="M100,700 L300,900" />
+    <path class="circuit" d="M700,700 L900,900" />
+    
+    <!-- Curves -->
+    <path class="circuit" d="M300,300 Q400,350 500,300" />
+    <path class="circuit" d="M500,300 Q600,250 700,300" />
+    <path class="circuit" d="M300,700 Q400,650 500,700" />
+    <path class="circuit" d="M500,700 Q600,750 700,700" />
+    
+    <!-- Connector Nodes -->
+    <circle class="node" cx="100" cy="100" r="4" />
+    <circle class="node" cx="300" cy="300" r="4" />
+    <circle class="node" cx="500" cy="300" r="4" />
+    <circle class="node" cx="700" cy="300" r="4" />
+    <circle class="node" cx="900" cy="300" r="4" />
+    <circle class="node" cx="100" cy="500" r="4" />
+    <circle class="node" cx="300" cy="500" r="4" />
+    <circle class="node" cx="500" cy="500" r="4" />
+    <circle class="node" cx="700" cy="500" r="4" />
+    <circle class="node" cx="900" cy="500" r="4" />
+    <circle class="node" cx="100" cy="700" r="4" />
+    <circle class="node" cx="300" cy="700" r="4" />
+    <circle class="node" cx="500" cy="700" r="4" />
+    <circle class="node" cx="700" cy="700" r="4" />
+    <circle class="node" cx="900" cy="700" r="4" />
+    <circle class="node" cx="100" cy="900" r="4" />
+    <circle class="node" cx="300" cy="900" r="4" />
+    <circle class="node" cx="500" cy="900" r="4" />
+    <circle class="node" cx="700" cy="900" r="4" />
+    <circle class="node" cx="900" cy="900" r="4" />
+    
+    <!-- Microchip Patterns -->
+    <rect class="circuit" x="400" y="400" width="200" height="200" rx="10" />
+    <path class="circuit" d="M450,400 V380" />
+    <path class="circuit" d="M500,400 V380" />
+    <path class="circuit" d="M550,400 V380" />
+    <path class="circuit" d="M450,600 V620" />
+    <path class="circuit" d="M500,600 V620" />
+    <path class="circuit" d="M550,600 V620" />
+    <path class="circuit" d="M400,450 H380" />
+    <path class="circuit" d="M400,500 H380" />
+    <path class="circuit" d="M400,550 H380" />
+    <path class="circuit" d="M600,450 H620" />
+    <path class="circuit" d="M600,500 H620" />
+    <path class="circuit" d="M600,550 H620" />
+    
+    <!-- Additional Circuit Elements -->
+    <circle class="circuit" cx="200" cy="200" r="20" />
+    <circle class="circuit" cx="800" cy="200" r="20" />
+    <circle class="circuit" cx="200" cy="800" r="20" />
+    <circle class="circuit" cx="800" cy="800" r="20" />
+  </g>
+</svg> 

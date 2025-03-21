@@ -1405,4 +1405,106 @@ document.addEventListener('DOMContentLoaded', function() {
             typewriterText.appendChild(cursor);
         }, 6500);
     }
+
+    // Run this code as early as possible
+    (function() {
+        // Function to initialize highlight animation
+        function initHighlightAnimation() {
+            // Get the highlight element
+            const highlight = document.querySelector('.highlight');
+            
+            if (highlight) {
+                // Get the text content
+                const text = highlight.textContent || '60sec';
+                
+                // Clear the element's content
+                highlight.textContent = '';
+                
+                // Add each character with its own span
+                Array.from(text).forEach((char, index) => {
+                    const charSpan = document.createElement('span');
+                    charSpan.className = 'char';
+                    charSpan.style.setProperty('--char-index', index);
+                    charSpan.textContent = char;
+                    highlight.appendChild(charSpan);
+                });
+                
+                // Add glow effect on hover
+                highlight.addEventListener('mouseover', function() {
+                    this.style.textShadow = '0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6)';
+                });
+                
+                highlight.addEventListener('mouseout', function() {
+                    this.style.textShadow = '0 0 15px rgba(255, 0, 0, 0.4)';
+                });
+            }
+        }
+        
+        // Run immediately
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHighlightAnimation);
+        } else {
+            initHighlightAnimation();
+        }
+        
+        // Also run on window load to ensure it works even if the DOM is already loaded
+        window.addEventListener('load', initHighlightAnimation);
+    })();
+
+    // Add this JavaScript to make the showcase more interactive
+    const heroImageShowcase = document.querySelector('.hero-image-showcase');
+    
+    if (heroImageShowcase) {
+        // Add data points and connection lines
+        const dataPoint1 = document.createElement('div');
+        dataPoint1.className = 'image-data-point data-point-1';
+        
+        const dataPoint2 = document.createElement('div');
+        dataPoint2.className = 'image-data-point data-point-2';
+        
+        const dataPoint3 = document.createElement('div');
+        dataPoint3.className = 'image-data-point data-point-3';
+        
+        const connectionLine1 = document.createElement('div');
+        connectionLine1.className = 'connection-line connection-line-1';
+        
+        const connectionLine2 = document.createElement('div');
+        connectionLine2.className = 'connection-line connection-line-2';
+        
+        heroImageShowcase.appendChild(dataPoint1);
+        heroImageShowcase.appendChild(dataPoint2);
+        heroImageShowcase.appendChild(dataPoint3);
+        heroImageShowcase.appendChild(connectionLine1);
+        heroImageShowcase.appendChild(connectionLine2);
+        
+        // Add 3D perspective effect on mouse move
+        heroImageShowcase.addEventListener('mousemove', function(e) {
+            if (window.innerWidth > 768) { // Only on desktop
+                const rect = this.getBoundingClientRect();
+                const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+                const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+                
+                const image1 = document.querySelector('.showcase-image-1');
+                const image2 = document.querySelector('.showcase-image-2');
+                const image3 = document.querySelector('.showcase-image-3');
+                
+                image1.style.transform = `translateX(-50%) translateZ(40px) rotateX(${mouseY * -10}deg) rotateY(${mouseX * 10}deg)`;
+                image2.style.transform = `translateZ(20px) translateX(${mouseX * -30}px) rotateY(${10 + mouseX * 15}deg)`;
+                image3.style.transform = `translateZ(30px) translateX(${mouseX * 30}px) rotateY(${-15 + mouseX * -15}deg)`;
+            }
+        });
+        
+        // Reset on mouse leave
+        heroImageShowcase.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 768) {
+                const image1 = document.querySelector('.showcase-image-1');
+                const image2 = document.querySelector('.showcase-image-2');
+                const image3 = document.querySelector('.showcase-image-3');
+                
+                image1.style.transform = 'translateX(-50%) translateZ(40px) rotateX(5deg)';
+                image2.style.transform = 'translateZ(20px) rotateY(10deg)';
+                image3.style.transform = 'translateZ(30px) rotateY(-15deg)';
+            }
+        });
+    }
 });
