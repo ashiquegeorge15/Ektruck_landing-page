@@ -1,0 +1,877 @@
+/* ERP Integration Section Styles */
+.erp-integration-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: #0c0c0c;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Background Elements */
+.erp-integration-section .section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.erp-integration-section .grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 0, 0, 0.03) 2px, transparent 2px);
+    background-size: 30px 30px, 60px 60px;
+    opacity: 0.3;
+}
+
+.erp-integration-section .glow-orbs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.erp-integration-section .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
+.erp-integration-section .orb-1 {
+    top: 20%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 0, 0, 0.1);
+    animation: orbFloat 16s ease-in-out infinite alternate;
+}
+
+.erp-integration-section .orb-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 0, 0, 0.08);
+    animation: orbFloat 14s ease-in-out infinite alternate-reverse;
+}
+
+.erp-integration-section .circuit-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.erp-integration-section .circuit-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.3), transparent);
+    height: 1px;
+}
+
+.erp-integration-section .line-1 {
+    top: 30%;
+    left: 0;
+    width: 100%;
+    animation: circuitGlow 7s infinite alternate;
+}
+
+.erp-integration-section .line-2 {
+    top: 70%;
+    left: 0;
+    width: 100%;
+    animation: circuitGlow 9s infinite alternate-reverse;
+}
+
+.erp-integration-section .circuit-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    animation: nodeFlash 4s infinite;
+}
+
+.erp-integration-section .node-1 {
+    top: 30%;
+    left: 25%;
+    animation-delay: 0.5s;
+}
+
+.erp-integration-section .node-2 {
+    top: 70%;
+    right: 35%;
+    animation-delay: 1.5s;
+}
+
+/* Section Header */
+.erp-integration-section .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.erp-integration-section .animated-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.erp-integration-section .animated-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0000, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: headerUnderline 1.5s 0.5s forwards ease-out;
+}
+
+.erp-integration-section .highlight-text {
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.erp-integration-section .section-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1s 0.8s both;
+}
+
+/* Introduction */
+.erp-integration-section .erp-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.erp-integration-section .erp-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ERP Visual */
+.erp-integration-section .erp-visual-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 80px;
+}
+
+.erp-integration-section .erp-visual {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.erp-integration-section .integration-animation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    height: 200px;
+}
+
+.erp-integration-section .erp-system, 
+.erp-integration-section .control-tower {
+    width: 200px;
+    height: 200px;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.erp-integration-section .erp-system:hover, 
+.erp-integration-section .control-tower:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.1);
+}
+
+.erp-integration-section .erp-system h3, 
+.erp-integration-section .control-tower h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.erp-integration-section .system-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.erp-integration-section .system-icon i {
+    font-size: 1.8rem;
+    color: #ff0000;
+}
+
+.erp-integration-section .data-points {
+    display: flex;
+    gap: 10px;
+}
+
+.erp-integration-section .data-point {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: dataPulse 2s infinite;
+}
+
+.erp-integration-section .data-point:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.erp-integration-section .data-point:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.erp-integration-section .connection-path {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 0, 0, 0.2);
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.erp-integration-section .data-packet {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #ff0000;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: dataTransfer 4s infinite linear;
+}
+
+.erp-integration-section .data-packet.packet-1 {
+    left: -20px;
+}
+
+.erp-integration-section .data-packet.packet-2 {
+    left: -20px;
+    animation-delay: 1.3s;
+}
+
+.erp-integration-section .data-packet.packet-3 {
+    left: -20px;
+    animation-delay: 2.6s;
+}
+
+.erp-integration-section .integration-dashboard {
+    width: 100%;
+    height: 400px;
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.erp-integration-section .dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+    transform-origin: center;
+    animation: dashboardPulse 10s infinite alternate ease-in-out;
+}
+
+.erp-integration-section .integration-dashboard:hover .dashboard-img {
+    opacity: 1;
+    animation-play-state: paused;
+}
+
+.erp-integration-section .pulse-point {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.erp-integration-section .pulse-point.point-1 {
+    top: 25%;
+    left: 20%;
+}
+
+.erp-integration-section .pulse-point.point-2 {
+    top: 60%;
+    left: 70%;
+}
+
+.erp-integration-section .pulse-point.point-3 {
+    top: 40%;
+    left: 50%;
+}
+
+.erp-integration-section .pulse-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+    animation: pulseRipple 2s infinite;
+}
+
+.erp-integration-section .point-label {
+    position: absolute;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.erp-integration-section .pulse-point:hover .point-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Benefits */
+.erp-integration-section .benefits-container {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 80px;
+}
+
+.erp-integration-section .benefits-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.erp-integration-section .benefits-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}
+
+.erp-integration-section .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.erp-integration-section .benefit-card {
+    background: rgba(20, 20, 20, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.erp-integration-section .benefit-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.erp-integration-section .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.erp-integration-section .benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.erp-integration-section .benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.erp-integration-section .benefit-icon i {
+    font-size: 1.5rem;
+    color: #ff0000;
+    transition: all 0.3s ease;
+}
+
+.erp-integration-section .benefit-card:hover .benefit-icon {
+    background: rgba(255, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.erp-integration-section .benefit-content {
+    margin-bottom: 20px;
+}
+
+.erp-integration-section .benefit-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.erp-integration-section .benefit-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.erp-integration-section .benefit-image {
+    margin-top: auto;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.erp-integration-section .image-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    position: relative;
+    overflow: hidden;
+}
+
+.erp-integration-section .image-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: imageShine 3s infinite;
+}
+
+/* CTA */
+.erp-integration-section .erp-cta {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 60px;
+    background: rgba(20, 20, 20, 0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.erp-integration-section .cta-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: ctaPulse 3s infinite ease-in-out;
+}
+
+.erp-integration-section .erp-cta h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.erp-integration-section .btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.erp-integration-section .btn-glow::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.erp-integration-section .btn-glow:hover::after {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes orbFloat {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes circuitGlow {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+@keyframes nodeFlash {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+@keyframes headerUnderline {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dataPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes dataTransfer {
+    0% {
+        left: -20px;
+    }
+    100% {
+        left: calc(100% + 20px);
+    }
+}
+
+@keyframes pulseRipple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes dashboardPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes ctaPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+}
+
+@keyframes imageShine {
+    0% {
+        left: -100%;
+    }
+    20%, 100% {
+        left: 100%;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .erp-integration-section .animated-heading {
+        font-size: 2.4rem;
+    }
+    
+    .erp-integration-section .erp-system, 
+    .erp-integration-section .control-tower {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .erp-integration-section .animated-heading {
+        font-size: 2.2rem;
+    }
+    
+    .erp-integration-section .integration-animation {
+        height: 180px;
+    }
+    
+    .erp-integration-section .erp-system, 
+    .erp-integration-section .control-tower {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .erp-integration-section .system-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .erp-integration-section .system-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .erp-integration-section .integration-dashboard {
+        height: 350px;
+    }
+    
+    .erp-integration-section .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .erp-integration-section {
+        padding: 80px 0;
+    }
+    
+    .erp-integration-section .animated-heading {
+        font-size: 1.8rem;
+    }
+    
+    .erp-integration-section .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .erp-integration-section .erp-intro p {
+        font-size: 1rem;
+    }
+    
+    .erp-integration-section .integration-animation {
+        height: 150px;
+    }
+    
+    .erp-integration-section .erp-system, 
+    .erp-integration-section .control-tower {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .erp-integration-section .erp-system h3, 
+    .erp-integration-section .control-tower h3 {
+        font-size: 1rem;
+    }
+    
+    .erp-integration-section .system-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .erp-integration-section .system-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .erp-integration-section .integration-dashboard {
+        height: 300px;
+    }
+    
+    .erp-integration-section .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .erp-integration-section .benefit-card {
+        padding: 20px;
+    }
+    
+    .erp-integration-section .benefit-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .erp-integration-section .erp-cta {
+        padding: 40px 20px;
+    }
+    
+    .erp-integration-section .erp-cta h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .erp-integration-section {
+        padding: 60px 0;
+    }
+    
+    .erp-integration-section .animated-heading {
+        font-size: 1.6rem;
+    }
+    
+    .erp-integration-section .integration-animation {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+    
+    .erp-integration-section .erp-system, 
+    .erp-integration-section .control-tower {
+        width: 100%;
+        height: 120px;
+    }
+    
+    .erp-integration-section .connection-path {
+        width: 4px;
+        height: 80px;
+        margin: 0;
+        transform: rotate(90deg);
+    }
+    
+    .erp-integration-section .integration-dashboard {
+        height: 250px;
+    }
+    
+    .erp-integration-section .pulse-point.point-1 {
+        top: 20%;
+        left: 15%;
+    }
+    
+    .erp-integration-section .pulse-point.point-2 {
+        top: 50%;
+        left: 65%;
+    }
+    
+    .erp-integration-section .pulse-point.point-3 {
+        top: 75%;
+        left: 30%;
+    }
+    
+    .erp-integration-section .benefit-image {
+        height: 120px;
+    }
+    
+    .erp-integration-section .erp-cta h3 {
+        font-size: 1.2rem;
+    }
+} 

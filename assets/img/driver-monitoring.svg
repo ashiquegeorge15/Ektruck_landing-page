@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1a1a" />
+  
+  <!-- Grid Pattern -->
+  <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e50914" stroke-width="0.5" opacity="0.2" />
+  </pattern>
+  <rect width="800" height="600" fill="url(#grid-pattern)" />
+  
+  <!-- Camera Frame -->
+  <rect x="100" y="50" width="600" height="500" rx="20" ry="20" fill="none" stroke="#e50914" stroke-width="3" />
+  
+  <!-- Camera Status -->
+  <circle cx="125" cy="75" r="10" fill="#e50914">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="145" y="80" font-family="Arial" font-size="14" fill="#e50914">Recording</text>
+  
+  <text x="650" y="80" font-family="Arial" font-size="14" fill="#e50914" text-anchor="end">Driver Monitoring Active</text>
+  
+  <!-- Driver Silhouette -->
+  <g id="driver">
+    <!-- Head -->
+    <ellipse cx="400" cy="230" rx="80" ry="100" fill="#333" />
+    
+    <!-- Neck -->
+    <rect x="375" y="320" width="50" height="40" fill="#333" />
+    
+    <!-- Shoulders -->
+    <rect x="300" y="350" width="200" height="60" rx="30" ry="30" fill="#333" />
+    
+    <!-- Main Outline -->
+    <ellipse cx="400" cy="230" rx="80" ry="100" fill="none" stroke="#e50914" stroke-width="2" />
+    <rect x="375" y="320" width="50" height="40" fill="none" stroke="#e50914" stroke-width="2" />
+    <rect x="300" y="350" width="200" height="60" rx="30" ry="30" fill="none" stroke="#e50914" stroke-width="2" />
+    
+    <!-- Eyes Region -->
+    <ellipse cx="370" cy="210" rx="15" ry="10" fill="#222" />
+    <ellipse cx="430" cy="210" rx="15" ry="10" fill="#222" />
+    
+    <!-- Mouth Region -->
+    <path d="M370,270 Q400,290 430,270" fill="none" stroke="#e50914" stroke-width="1.5" />
+    
+    <!-- Nose -->
+    <path d="M400,230 L400,250 L390,250" fill="none" stroke="#e50914" stroke-width="1.5" />
+    
+    <!-- Facial Tracking Points -->
+    <circle cx="370" cy="210" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="430" cy="210" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="250" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="370" cy="270" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="430" cy="270" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="175" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="285" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="340" cy="230" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="460" cy="230" r="3" fill="#e50914">
+      <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Face Recognition Box -->
+  <rect x="320" y="130" width="160" height="200" rx="80" ry="100" fill="none" stroke="#e50914" stroke-width="1" stroke-dasharray="5,5">
+    <animate attributeName="stroke-dashoffset" from="0" to="20" dur="3s" repeatCount="indefinite" />
+  </rect>
+  
+  <!-- Status Metrics -->
+  <g id="status-metrics">
+    <!-- Attention Level -->
+    <text x="150" y="430" font-family="Arial" font-size="14" fill="#ffffff">Attention Level:</text>
+    <rect x="150" y="440" width="150" height="10" rx="5" ry="5" fill="#333" />
+    <rect x="150" y="440" width="120" height="10" rx="5" ry="5" fill="#e50914">
+      <animate attributeName="width" values="120;130;125;120" dur="5s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Fatigue Status -->
+    <text x="150" y="480" font-family="Arial" font-size="14" fill="#ffffff">Fatigue Status:</text>
+    <rect x="150" y="490" width="150" height="10" rx="5" ry="5" fill="#333" />
+    <rect x="150" y="490" width="30" height="10" rx="5" ry="5" fill="#00cc00">
+      <animate attributeName="width" values="30;40;35;30" dur="6s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Distraction Metrics -->
+    <text x="500" y="430" font-family="Arial" font-size="14" fill="#ffffff">Distraction Score:</text>
+    <rect x="500" y="440" width="150" height="10" rx="5" ry="5" fill="#333" />
+    <rect x="500" y="440" width="20" height="10" rx="5" ry="5" fill="#00cc00">
+      <animate attributeName="width" values="20;30;25;20" dur="7s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Compliance Status -->
+    <text x="500" y="480" font-family="Arial" font-size="14" fill="#ffffff">Compliance Status:</text>
+    <text x="650" y="480" font-family="Arial" font-size="14" fill="#00cc00">Verified</text>
+  </g>
+  
+  <!-- Data Points and Lines -->
+  <g id="data-visuals" opacity="0.6">
+    <!-- Head Tracking Line -->
+    <path d="M320,230 L280,230" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <path d="M280,230 L280,400" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <path d="M280,400 L250,400" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <text x="220" y="405" font-family="Arial" font-size="12" fill="#e50914">Head Position</text>
+    
+    <!-- Eye Tracking Lines -->
+    <path d="M370,210 L340,180" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <path d="M340,180 L320,180" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <text x="280" y="185" font-family="Arial" font-size="12" fill="#e50914">Eye L</text>
+    
+    <path d="M430,210 L460,180" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <path d="M460,180 L480,180" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <text x="490" y="185" font-family="Arial" font-size="12" fill="#e50914">Eye R</text>
+    
+    <!-- Mouth Tracking Line -->
+    <path d="M400,270 L460,310" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <path d="M460,310 L480,310" stroke="#e50914" stroke-width="1" stroke-dasharray="2,2" />
+    <text x="490" y="315" font-family="Arial" font-size="12" fill="#e50914">Mouth</text>
+  </g>
+  
+  <!-- AI Processing Visualization -->
+  <g id="ai-processing">
+    <text x="400" y="540" font-family="Arial" font-size="14" fill="#e50914" text-anchor="middle">AI Processing</text>
+    <rect x="300" y="550" width="200" height="10" rx="5" ry="5" fill="#333" />
+    <rect x="300" y="550" width="0" height="10" rx="5" ry="5" fill="#e50914">
+      <animate attributeName="width" from="0" to="200" dur="3s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Warning Notification -->
+  <g id="warning-notification" opacity="0">
+    <rect x="620" y="350" width="150" height="60" rx="10" ry="10" fill="#e50914" />
+    <text x="695" y="380" font-family="Arial" font-size="12" fill="#ffffff" text-anchor="middle">Drowsiness Warning</text>
+    <text x="695" y="395" font-family="Arial" font-size="10" fill="#ffffff" text-anchor="middle">Take a break soon</text>
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="10s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- Camera Lens Effect -->
+  <circle cx="400" cy="50" r="20" fill="none" stroke="#e50914" stroke-width="2" />
+  <circle cx="400" cy="50" r="10" fill="#e50914" opacity="0.5" />
+  
+  <!-- Scanning Effect -->
+  <rect id="scanning-line" x="100" y="50" width="600" height="2" fill="#e50914" opacity="0.7">
+    <animate attributeName="y" from="50" to="550" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="5s" repeatCount="indefinite" />
+  </rect>
+</svg> 

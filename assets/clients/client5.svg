@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .st0 { fill: #FF0000; }
+    .st1 { fill: #FFFFFF; }
+  </style>
+  <rect width="200" height="200" fill="none"/>
+  <circle cx="100" cy="90" r="40" class="st0" opacity="0.7"/>
+  <path class="st1" d="M90,70 h20 v10 h10 v20 h-10 v10 h-20 v-10 h-10 v-20 h10 Z" opacity="0.9"/>
+  <text x="45" y="160" class="logo-text st1" font-size="18">HEALTH</text>
+  <text x="60" y="180" class="logo-text st1" font-size="16">CARE</text>
+</svg> 

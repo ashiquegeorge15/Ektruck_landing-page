@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transport Management Solution - Ektruck</title>
+    <title>Transport Management Solution | ek(one)</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/navbar-only.css">
+    <link rel="stylesheet" href="/css/footer-only.css">
     <link rel="stylesheet" href="/css/tms.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Add Lottie Player library -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+     <!-- Navigation -->
+     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="/assets/logo.png" alt="ek(one) Logo">
+                <img src="../assets/logo.png" alt="ek(one) Logo">
             </div>
             
             <div class="nav-menu">
@@ -27,12 +25,13 @@
                     <li class="nav-item">
                         <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
                     </li>
+
                     <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas/dms-solutions/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/" class="active">Transport Management Solution (TMS) </a>
+                            <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
+                            <a href="/TMS/">Transport Management Solution (TMS) </a>
                             <a href="/TPMS/">Temperature Monitoring Solutions</a>
                             <a href="/Fuel-managment/">Fuel Management</a>
                             <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
@@ -61,8 +60,7 @@
                 </ul>
                 
                 <div class="nav-buttons">
-                    <button class="btn btn-login">Login</button>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary">Login</button>
                 </div>
             </div>
 
@@ -73,7 +71,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="tms-hero">
         <div class="tms-hero-bg">
@@ -89,55 +86,31 @@
                 <div class="circuit-node node-2"></div>
             </div>
         </div>
-        
         <div class="container">
-            <div class="tms-hero-content" data-aos="fade-right">
-                <div class="hero-badge">
-                    <span>Ektruck Solution</span>
-                </div>
-                
+            <div class="tms-hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-badge">Smart Logistics Solution</div>
                 <h1 class="tms-title">Transport Management Solution</h1>
                 <h2 class="tms-subtitle">Smart Logistics, Seamless Operations</h2>
-                
-                <p class="tms-description">
-                    Our Transport Management Solution (TMS) is a powerful, AI-driven platform designed to streamline logistics, enhance visibility, and optimize fleet efficiency. Whether you manage a small fleet or a large-scale transportation network, our TMS ensures seamless coordination, cost savings, and improved decision-making through automation and real-time insights for all stake-holders in the eco-system.
-                </p>
-                
+                <p class="tms-description">Our Transport Management Solution (TMS) is a powerful, AI-driven platform designed to streamline logistics, enhance visibility, and optimize fleet efficiency. Whether you manage a small fleet or a large-scale transportation network, our TMS ensures seamless coordination, cost savings, and improved decision-making through automation and real-time insights for all stake-holders in the eco-system.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <span>Request Demo</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <button class="btn btn-outline">
-                        <span>Download Brochure</span>
-                        <i class="fas fa-download"></i>
-                    </button>
+                    <a href="#" class="btn btn-primary">Schedule Demo <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
-            
-            <div class="tms-hero-visual" data-aos="fade-left">
+            <div class="tms-hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                 <div class="dashboard-wrapper">
                     <div class="dashboard-preview">
-                        <lottie-player 
-                            src=""
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 100%;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                        
                         <div class="data-point point-1">
                             <div class="point-pulse"></div>
-                            <div class="point-label">Route Optimization</div>
+                            <div class="point-label">Vehicle Tracking</div>
                         </div>
                         <div class="data-point point-2">
                             <div class="point-pulse"></div>
-                            <div class="point-label">Real-Time Tracking</div>
+                            <div class="point-label">Route Analytics</div>
                         </div>
                         <div class="data-point point-3">
                             <div class="point-pulse"></div>
-                            <div class="point-label">Cost Management</div>
+                            <div class="point-label">Fleet Performance</div>
                         </div>
                     </div>
                 </div>
@@ -148,155 +121,146 @@
     <!-- Features Section -->
     <section class="tms-features">
         <div class="features-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
+            <div class="floating-elements">
+                <div class="floating-element element-1"></div>
+                <div class="floating-element element-2"></div>
+                <div class="floating-element element-3"></div>
             </div>
         </div>
-        
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Key Features of <span class="text-gradient">TMS</span></h2>
-                <p class="section-subtitle reveal-text">Comprehensive logistics management powered by AI technology</p>
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="animated-heading text-gradient">Key Features</h2>
                 <div class="header-underline"><span class="underline-fill"></span></div>
+                <p class="section-intro">Our Transport Management Solution offers a comprehensive suite of features to streamline your logistics operations</p>
             </div>
-            
             <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="100">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" data-feature="route-optimization">
                     <div class="feature-icon">
                         <i class="fas fa-route"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Route Optimization & Planning</h3>
-                        <p>AI-driven algorithms reduce transit time and fuel costs by calculating the most efficient routes based on traffic, weather, and vehicle constraints.</p>
+                        <p>AI-driven algorithms reduce transit time and fuel costs by calculating the most efficient routes based on multiple factors.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">15%</span>
-                                <span class="stat-label">Fuel Savings</span>
+                                <h4>Up to 30% reduction in fuel costs</h4>
+                                <p>Advanced algorithms consider traffic, weather, and delivery constraints</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="200">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" data-feature="real-time-tracking">
                     <div class="feature-icon">
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Real-Time Tracking</h3>
-                        <p>Monitor shipments, fleet movement, and delivery status in a single dashboard with live updates and predictive ETA calculations.</p>
+                        <p>Monitor shipments, fleet movement, and delivery status in a single dashboard for complete visibility.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">99.9%</span>
-                                <span class="stat-label">Tracking Accuracy</span>
+                                <h4>100% fleet visibility</h4>
+                                <p>Real-time GPS tracking with second-by-second updates</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 3 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="300">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300" data-feature="automated-dispatch">
                     <div class="feature-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Automated Dispatch & Scheduling</h3>
-                        <p>Optimize load distribution and driver assignments with intelligent algorithms that consider driver availability, vehicle capacity, and delivery priorities.</p>
+                        <p>Optimize load distribution and driver assignments automatically based on availability and constraints.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">40%</span>
-                                <span class="stat-label">Faster Dispatching</span>
+                                <h4>85% reduction in scheduling errors</h4>
+                                <p>Intelligent assignment algorithms that consider driver hours and qualifications</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 4 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="400">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400" data-feature="freight-cost">
                     <div class="feature-icon">
-                        <i class="fas fa-money-bill-wave"></i>
+                        <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Freight Cost Management</h3>
-                        <p>Reduce expenses through intelligent carrier selection and load optimization, with automated invoicing and cost tracking for complete financial visibility.</p>
+                        <p>Reduce expenses through intelligent carrier selection and load optimization for maximum efficiency.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">20%</span>
-                                <span class="stat-label">Cost Reduction</span>
+                                <h4>20-25% reduction in overall logistics costs</h4>
+                                <p>Automated carrier selection and load consolidation</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 5 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="500">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500" data-feature="compliance">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Compliance & Safety Monitoring</h3>
-                        <p>Ensure regulatory adherence with driver behavior analytics and vehicle health tracking, automatically logging hours of service and maintenance requirements.</p>
+                        <p>Ensure regulatory adherence with driver behavior analytics and vehicle health tracking.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">100%</span>
-                                <span class="stat-label">Compliance Rate</span>
+                                <h4>50% fewer compliance violations</h4>
+                                <p>Automated compliance checks and driver hours management</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 6 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="600">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600" data-feature="integration">
                     <div class="feature-icon">
                         <i class="fas fa-plug"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Seamless ERP & IoT Integration</h3>
-                        <p>Connect with your existing enterprise systems for unified logistics management, with APIs for easy integration with warehouse, inventory, and accounting systems.</p>
+                        <p>Connect with your existing enterprise systems for unified logistics management and data flow.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">50+</span>
-                                <span class="stat-label">Integration Options</span>
+                                <h4>200+ pre-built integrations</h4>
+                                <p>APIs and connectors for all major ERP, WMS, and IoT systems</p>
                             </div>
                         </div>
                     </div>
                     <div class="card-glow"></div>
                 </div>
                 
-                <!-- Feature 7 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="700">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="700" data-feature="analytics">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Advanced Analytics & Reporting</h3>
-                        <p>Gain insights to improve efficiency and enhance decision-making with customizable dashboards, KPI tracking, and predictive analytics.</p>
+                        <p>Gain insights to improve efficiency and enhance decision-making through comprehensive data analysis.</p>
                     </div>
                     <div class="feature-hover">
                         <div class="hover-content">
                             <div class="feature-stat">
-                                <span class="stat-value">30+</span>
-                                <span class="stat-label">Report Templates</span>
+                                <h4>40+ customizable reports</h4>
+                                <p>AI-powered insights and predictive analytics</p>
                             </div>
                         </div>
                     </div>
@@ -304,57 +268,52 @@
                 </div>
             </div>
         </div>
-        
-        <div class="floating-elements">
-            <div class="floating-element element-1"></div>
-            <div class="floating-element element-2"></div>
-            <div class="floating-element element-3"></div>
+    </section>
+
+    <!-- Visualization Section -->
+    <section class="tms-visualization">
+        <div class="container">
+            <div class="visualization-wrapper" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <object data="../assets/img/route-optimization.svg" type="image/svg+xml" class="route-optimization-visual"></object>
+            </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
     <section class="tms-benefits">
         <div class="benefits-bg">
-            <div class="particle-network"></div>
             <div class="gradient-overlay"></div>
         </div>
-        
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="glowing-text">Why Choose <span class="highlight-text">ektruck TMS?</span></h2>
-                <p class="section-subtitle">Transform your logistics operations with our intelligent solution</p>
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2 class="animated-heading text-gradient">Why Choose ektruck TMS?</h2>
+                <div class="header-underline"><span class="underline-fill"></span></div>
+                <p class="section-intro">Our Transport Management Solution delivers tangible business benefits through smart automation and data-driven insights</p>
             </div>
-            
             <div class="benefits-container">
                 <div class="benefits-visual" data-aos="fade-right">
-                    <lottie-player 
-                        src="https://assets8.lottiefiles.com/packages/lf20_ksahd5rx.json"
-                        background="transparent"
-                        speed="1"
-                        style="width: 100%; height: 400px;"
-                        loop
-                        autoplay>
-                    </lottie-player>
+                    <svg width="400" height="400" viewBox="0 0 400 400" id="benefits-animation">
+                        <!-- This will be populated by JavaScript -->
+                    </svg>
                 </div>
-                
-                <div class="benefits-list" data-aos="fade-left">
+                <div class="benefits-list">
                     <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="benefit-icon">
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <div class="benefit-content">
                             <h3>Increased Efficiency</h3>
-                            <p>Reduce manual work and optimize transport operations with automation and intelligent workflows.</p>
+                            <p>Reduce manual work and optimize transport operations through automation, ensuring smoother workflows and reduced bottlenecks.</p>
                         </div>
                     </div>
                     
                     <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="benefit-icon">
-                            <i class="fas fa-coins"></i>
+                            <i class="fas fa-piggy-bank"></i>
                         </div>
                         <div class="benefit-content">
                             <h3>Cost Savings</h3>
-                            <p>Lower fuel, maintenance, and logistics costs through optimization and preventive measures.</p>
+                            <p>Lower fuel, maintenance, and logistics costs through optimized routes, better vehicle utilization, and reduced empty miles.</p>
                         </div>
                     </div>
                     
@@ -364,7 +323,7 @@
                         </div>
                         <div class="benefit-content">
                             <h3>Improved Visibility</h3>
-                            <p>Get real-time data for proactive decision-making across your entire logistics network.</p>
+                            <p>Get real-time data for proactive decision-making, allowing you to address issues before they impact service or costs.</p>
                         </div>
                     </div>
                     
@@ -374,7 +333,7 @@
                         </div>
                         <div class="benefit-content">
                             <h3>Scalability & Customization</h3>
-                            <p>Tailored to fit your business needs and growth with flexible configuration options.</p>
+                            <p>Tailored to fit your business needs and growth, with modular features that allow you to scale as your operations expand.</p>
                         </div>
                     </div>
                 </div>
@@ -382,114 +341,24 @@
         </div>
     </section>
 
-    <!-- Workflow Section -->
-    <section class="tms-workflow">
-        <div class="workflow-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">How <span class="text-gradient">TMS Works</span></h2>
-                <p class="section-subtitle reveal-text">A seamless end-to-end logistics management process</p>
-                <div class="header-underline"><span class="underline-fill"></span></div>
-            </div>
-            
-            <div class="workflow-container" data-aos="fade-up">
-                <div class="workflow-steps">
-                    <div class="workflow-step active" data-step="1">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Order Management</h3>
-                            <p>Receive and process transportation requests from multiple channels into a centralized system.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-step" data-step="2">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Planning & Optimization</h3>
-                            <p>AI algorithms create optimal routes and schedules based on constraints and priorities.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-step" data-step="3">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Dispatch & Execution</h3>
-                            <p>Assign loads to drivers and vehicles with automated notifications and instructions.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-step" data-step="4">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Real-Time Monitoring</h3>
-                            <p>Track shipments and fleet performance with live updates and exception alerts.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-step" data-step="5">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h3>Documentation & Billing</h3>
-                            <p>Generate and process required documents and invoices with automated workflows.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="workflow-step" data-step="6">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <h3>Analytics & Optimization</h3>
-                            <p>Analyze performance data to continuously improve operations and reduce costs.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="workflow-visual">
-                    <div class="workflow-animation">
-                        <lottie-player 
-                            id="workflow-lottie"
-                            src="https://assets10.lottiefiles.com/packages/lf20_oc9peor1.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 100%;"
-                            loop
-                            autoplay>
-                        </lottie-player>
-                    </div>
-                    <div class="workflow-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- CTA Section -->
     <section class="tms-cta">
         <div class="cta-bg">
-            <div class="particle-network"></div>
-            <div class="gradient-overlay"></div>
             <div class="glow-orbs">
                 <div class="glow-orb orb-1"></div>
                 <div class="glow-orb orb-2"></div>
             </div>
+            <div class="gradient-overlay"></div>
         </div>
-        
         <div class="container">
-            <div class="cta-content" data-aos="fade-up">
+            <div class="cta-content" data-aos="zoom-in">
                 <h2>Revolutionize Your Logistics Operations</h2>
-                <p>Transform your transportation management with our smart, automated, and data-driven TMS, ensuring efficiency, transparency, and profitability. 🚀</p>
+                <p>Experience the power of our smart, automated, and data-driven TMS to ensure efficiency, transparency, and profitability in your transportation operations.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary btn-glow">Schedule a Demo</a>
-                    <a href="#contact" class="btn btn-outline">Contact Sales</a>
+                    <a href="#" class="btn btn-primary btn-glow"><span>Schedule Demo</span> <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -497,297 +366,391 @@
 
     <!-- Footer Section -->
     <footer class="site-footer">
-        <div class="footer-waves">
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
-        </div>
-        
-        <!-- Floating Elements -->
-        <div class="footer-floating-element float-1"></div>
-        <div class="footer-floating-element float-2"></div>
-        <div class="footer-floating-element float-3"></div>
-        
-        <div class="container">
+        <div class="footer-background"></div>
+        <div class="footer-container">
             <div class="footer-grid">
-                <!-- Company Info -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/assets/logo-transparent-mono-light-jpeg.png" alt="ek(one) Logo" class="footer-logo">
+                <!-- Company Information -->
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                        <div class="logo-decoration"></div>
+                    </a>
                     <p class="company-description">
-                        Revolutionizing India's logistics ecosystem with cutting-edge technology and seamless connectivity for a more efficient future.
+                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
                     </p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
+             
                 </div>
 
-                <!-- Quick Links -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Quick Links</h3>
+                <!-- Solutions -->
+                <div class="footer-col">
+                    <h4>Solutions</h4>
                     <ul class="footer-links">
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#industries">Industries</a></li>
-                        <li><a href="#case-studies">Case Studies</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#blog">Blog & News</a></li>
-                    </ul>
-                </div>
-
-                <!-- Industries -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Industries We Serve</h3>
-                    <ul class="footer-links">
-                        <li><a href="#transport">Transport & Logistics</a></li>
-                        <li><a href="#mining">Mining & Equipment</a></li>
-                        <li><a href="#infrastructure">Infrastructure</a></li>
-                        <li><a href="#government">Government</a></li>
-                        <li><a href="#ecommerce">E-commerce</a></li>
-                        <li><a href="#manufacturing">Manufacturing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone-alt"></i> +91 (000) 000-0000</p>
-                        <p><i class="fas fa-envelope"></i> contact@ekone.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
-                        <p><i class="far fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                      <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
+                        <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                        <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
+                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                        <li> <a href="/Fuel-managment/">Fuel Management</a></li>
+                        <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                        <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
+                        </ul>
                     </div>
-                    <div class="footer-cta">
-                        <a href="#contact" class="btn">Schedule a Demo</a>
+    
+                    <!-- Industries -->
+                <div class="footer-col">
+                    <h4>Industries</h4>
+                        <ul class="footer-links">
+                       <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                        <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                        <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                        <li><a href="/government-authorities/">Government Authorities</a></li>
+                        <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                        <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                        <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                        </ul>
+                    </div>
+    
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                        <p><i class="fas fa-phone-alt"></i>080-68976911</p>
+                        <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+                        </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 ek(one). All rights reserved. Transforming logistics across India.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                        <a href="#cookies">Cookie Policy</a>
-                        <a href="#sitemap">Sitemap</a>
-                    </div>
+    
+            <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                <div class="copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>ektruck. All rights reserved.</span>
+                        </div>
+                <div class="footer-policies">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/sitemap">Sitemap</a>
                 </div>
             </div>
         </div>
-    </footer>
+        
+        <!-- Scroll to top button -->
+        <div class="scroll-top" id="scrollToTop">
+            <i class="fas fa-chevron-up"></i>
+            </div>
+        </footer>
+    
+    <!-- Simple JavaScript for scroll to top functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        </script>
+    
+        
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize footer components
+        initScrollToTop();
+        initNewsletterForm();
+        initAnimations();
+        initMobileOptimizations();
+    });
+    
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+                    });
+                });
+            }
+            
+    /**
+     * Newsletter form validation and submission
+     */
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button');
+            
+            // Basic form validation
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                if (!isValidEmail(email)) {
+                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                    emailInput.focus();
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with timeout
+                setTimeout(function() {
+                    emailInput.value = '';
+                    submitBtn.innerHTML = 'Subscribe';
+                    submitBtn.disabled = false;
+                    
+                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+                }, 1500);
+            });
+        }
+    }
+    
+    /**
+     * Check if email is valid
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    /**
+     * Show success or error message after form submission
+     */
+    function showFormMessage(form, message, type) {
+        // Remove any existing messages
+        const existingMessage = form.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+        
+        // Add message to form
+        form.appendChild(messageElement);
+        
+        // Remove message after delay
+        setTimeout(function() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.remove();
+            }, 300);
+        }, 5000);
+    }
+    
+    /**
+     * Initialize animations for footer elements
+     */
+    function initAnimations() {
+        // Detect when elements enter viewport
+        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('visible'));
+        }
+        
+        // Animate stats numbers
+        animateStatCounters();
+    }
+    
+    /**
+     * Animate the stat counter numbers with counting effect
+     */
+    function animateStatCounters() {
+        const statValues = document.querySelectorAll('.stat-value');
+        
+        statValues.forEach(stat => {
+            const value = stat.innerText;
+            
+            // Skip if not a purely numeric value (e.g., "24/7")
+            if (value.match(/[^0-9%]/)) return;
+            
+            const hasPercent = value.includes('%');
+            const numericValue = parseInt(value.replace(/\D/g, ''));
+            
+            // Set starting value to 0
+            stat.innerText = hasPercent ? '0%' : '0';
+            
+            // Animate to final value
+            let current = 0;
+            const increment = Math.max(1, Math.floor(numericValue / 50));
+            const duration = 1500; // 1.5 seconds
+            const interval = Math.floor(duration / (numericValue / increment));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= numericValue) {
+                    clearInterval(timer);
+                    current = numericValue;
+                }
+                
+                stat.innerText = hasPercent ? `${current}%` : current;
+            }, interval);
+        });
+    }
+    
+    /**
+     * Mobile-specific optimizations for better UX
+     */
+    function initMobileOptimizations() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Improve tap targets for mobile
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+                
+                link.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
+                });
+            });
+            
+            // Add extra styling for form inputs on mobile
+            const inputs = document.querySelectorAll('.newsletter-form input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focus');
+                });
+            });
+        }
+    }
+    </script>
+
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
+            // Initialize AOS animations
             AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: true,
+                offset: 100,
+                delay: 100,
+                anchorPlacement: 'top-bottom'
             });
             
-            // Add interactive hover effect to feature cards
-            document.querySelectorAll('.feature-card').forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    // Update glow position
-                    const glow = card.querySelector('.card-glow');
-                    if (glow) {
-                        glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(239, 68, 68, 0.4) 0%, transparent 70%)`;
-                        glow.style.opacity = '1';
-                    }
-                    
-                    // Subtle tilt effect
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / 30;
-                    const rotateY = (centerX - x) / 30;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    // Reset effects on mouse leave
-                    const glow = card.querySelector('.card-glow');
-                    if (glow) {
-                        glow.style.opacity = '0';
-                    }
-                    
-                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-                });
-            });
+            // Initialize other interactive elements
+            initializeMobileNavigation();
+            initializeScrollToTop();
             
-            // Workflow steps interaction
-            const workflowSteps = document.querySelectorAll('.workflow-step');
-            const progressFill = document.querySelector('.progress-fill');
-            
-            workflowSteps.forEach((step, index) => {
-                step.addEventListener('click', function() {
-                    // Remove active class from all steps
-                    workflowSteps.forEach(s => s.classList.remove('active'));
-                    
-                    // Add active class to current step
-                    this.classList.add('active');
-                    
-                    // Update progress bar
-                    const progress = ((index + 1) / workflowSteps.length) * 100;
-                    progressFill.style.width = `${progress}%`;
-                    
-                    // Update animation (in a real implementation, you would have different animations for each step)
-                    // For this example, we'll just restart the animation
-                    const lottiePlayer = document.getElementById('workflow-lottie');
-                    if (lottiePlayer) {
-                        lottiePlayer.seek(0);
-                        lottiePlayer.play();
-                    }
-                });
-            });
-            
-            // Mobile menu toggle
+            // Load TMS specific JavaScript
+            const script = document.createElement('script');
+            script.src = '/js/tms.js';
+            script.onload = function() {
+                // Refresh AOS after all resources are loaded
+                setTimeout(function() {
+                    AOS.refresh();
+                }, 500);
+            };
+            document.body.appendChild(script);
+        });
+        
+        function initializeMobileNavigation() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             if (menuToggle) {
                 menuToggle.addEventListener('click', function() {
-                    this.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
                     navMenu.classList.toggle('active');
                 });
             }
             
-            // Dropdown menu for mobile
-            const dropdownItems = document.querySelectorAll('.dropdown');
-            
-            dropdownItems.forEach(item => {
-                const link = item.querySelector('.nav-link');
-                
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('.nav-link');
                 link.addEventListener('click', function(e) {
                     if (window.innerWidth < 992) {
                         e.preventDefault();
-                        item.classList.toggle('active');
+                        dropdown.classList.toggle('active');
                     }
                 });
             });
+        }
+        
+        function initializeScrollToTop() {
+            const scrollToTopBtn = document.getElementById('scrollToTop');
             
-            // Particle network animation
-            function createParticleNetwork() {
-                const particleContainers = document.querySelectorAll('.particle-network');
-                
-                particleContainers.forEach(container => {
-                    const width = container.offsetWidth;
-                    const height = container.offsetHeight;
-                    const particleCount = Math.floor((width * height) / 10000);
-                    
-                    for (let i = 0; i < particleCount; i++) {
-                        const particle = document.createElement('div');
-                        particle.classList.add('particle');
-                        
-                        // Random position
-                        const x = Math.random() * 100;
-                        const y = Math.random() * 100;
-                        
-                        // Random size
-                        const size = Math.random() * 3 + 1;
-                        
-                        // Random opacity
-                        const opacity = Math.random() * 0.5 + 0.1;
-                        
-                        // Set styles
-                        particle.style.left = `${x}%`;
-                        particle.style.top = `${y}%`;
-                        particle.style.width = `${size}px`;
-                        particle.style.height = `${size}px`;
-                        particle.style.opacity = opacity;
-                        
-                        container.appendChild(particle);
-                    }
-                });
-            }
-            
-            // Initialize particle network
-            createParticleNetwork();
-            
-            // Animate stats counters
-            function animateStats() {
-                const statValues = document.querySelectorAll('.stat-value');
-                
-                statValues.forEach(stat => {
-                    const target = parseFloat(stat.textContent);
-                    const suffix = stat.textContent.replace(/[0-9.]/g, '');
-                    let current = 0;
-                    const increment = target / 50;
-                    const duration = 1500;
-                    const interval = duration / 50;
-                    
-                    const counter = setInterval(() => {
-                        current += increment;
-                        
-                        if (current >= target) {
-                            clearInterval(counter);
-                            current = target;
-                        }
-                        
-                        stat.textContent = current.toFixed(0) + suffix;
-                    }, interval);
-                });
-            }
-            
-            // Initialize stats animation when in viewport
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateStats();
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            const statsContainers = document.querySelectorAll('.stats-container, .feature-hover');
-            statsContainers.forEach(container => {
-                statsObserver.observe(container);
-            });
-            
-            // Add hover effect to benefit items
-            document.querySelectorAll('.benefit-item').forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('.benefit-icon');
-                    icon.classList.add('pulse');
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.benefit-icon');
-                    icon.classList.remove('pulse');
-                });
-            });
-            
-            // Initialize workflow steps
-            const initWorkflow = () => {
-                const firstStep = document.querySelector('.workflow-step');
-                if (firstStep) {
-                    firstStep.classList.add('active');
-                    const progressFill = document.querySelector('.progress-fill');
-                    if (progressFill) {
-                        progressFill.style.width = `${(1 / document.querySelectorAll('.workflow-step').length) * 100}%`;
-                    }
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
                 }
-            };
+            });
             
-            initWorkflow();
-        });
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
     </script>
 </body>
 </html>
-           

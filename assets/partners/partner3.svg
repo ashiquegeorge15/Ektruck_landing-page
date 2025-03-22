@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .st0 { fill: #FF0000; }
+    .st1 { fill: #FFFFFF; }
+  </style>
+  <rect width="200" height="200" fill="none"/>
+  <circle cx="100" cy="100" r="50" class="st0" opacity="0.7"/>
+  <path class="st1" d="M80,80 l40,0 l0,40 l-40,0 Z" transform="rotate(45 100 100)" opacity="0.9"/>
+  <text x="60" y="150" class="logo-text st1" font-size="20">DIGI</text>
+  <text x="55" y="170" class="logo-text st1" font-size="16">SYSTEMS</text>
+</svg> 

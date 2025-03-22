@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .st0 { fill: #FF0000; }
+    .st1 { fill: #FFFFFF; }
+  </style>
+  <rect width="200" height="200" fill="none"/>
+  <path class="st0" d="M40,80 h120 v60 h-120 Z" opacity="0.8"/>
+  <path class="st1" d="M50,90 h20 v10 h-20 Z M90,90 h20 v10 h-20 Z M130,90 h20 v10 h-20 Z" opacity="0.9"/>
+  <path class="st1" d="M50,110 h20 v10 h-20 Z M90,110 h20 v10 h-20 Z M130,110 h20 v10 h-20 Z" opacity="0.9"/>
+  <text x="50" y="150" class="logo-text st1" font-size="18">MANU</text>
+  <text x="60" y="170" class="logo-text st1" font-size="16">TECH</text>
+</svg> 

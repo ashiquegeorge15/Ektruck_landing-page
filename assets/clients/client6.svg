@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .st0 { fill: #FF0000; }
+    .st1 { fill: #FFFFFF; }
+  </style>
+  <rect width="200" height="200" fill="none"/>
+  <circle cx="100" cy="80" r="30" class="st0" opacity="0.8"/>
+  <path class="st1" d="M100,50 l0,60 M85,60 l30,0 M85,100 l30,0" stroke="#FFFFFF" stroke-width="5" opacity="0.9"/>
+  <path class="st1" d="M80,75 l10,-15 l10,15 l-10,15 Z M110,75 l10,-15 l10,15 l-10,15 Z" opacity="0.6"/>
+  <text x="50" y="160" class="logo-text st1" font-size="18">POWER</text>
+  <text x="45" y="180" class="logo-text st1" font-size="16">ENERGY</text>
+</svg> 

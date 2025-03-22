@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .st0 { fill: #FF0000; }
+    .st1 { fill: #FFFFFF; }
+  </style>
+  <rect width="200" height="200" fill="none"/>
+  <circle cx="100" cy="90" r="40" class="st0" opacity="0.8"/>
+  <path class="st1" d="M80,85 h40 l-20,25 Z" opacity="0.9"/>
+  <path class="st1" d="M75,75 h50 v10 h-50 Z" opacity="0.9"/>
+  <text x="65" y="150" class="logo-text st1" font-size="20">SHOP</text>
+  <text x="52" y="170" class="logo-text st1" font-size="16">EXPRESS</text>
+</svg> 

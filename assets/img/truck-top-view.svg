@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <!-- Main Truck Body -->
+  <g id="truck-body">
+    <!-- Truck Cab -->
+    <rect x="300" y="100" width="200" height="120" rx="20" ry="20" fill="#333" stroke="#e50914" stroke-width="3" />
+    
+    <!-- Truck Front Windshield -->
+    <rect x="330" y="120" width="140" height="30" rx="5" ry="5" fill="#666" stroke="#e50914" stroke-width="1" />
+    
+    <!-- Truck Container -->
+    <rect x="200" y="220" width="400" height="160" rx="5" ry="5" fill="#222" stroke="#e50914" stroke-width="3" />
+    
+    <!-- Connecting Element -->
+    <rect x="350" y="220" width="100" height="20" fill="#333" stroke="#e50914" stroke-width="2" />
+    
+    <!-- Wheels -->
+    <circle cx="250" cy="250" r="25" fill="#111" stroke="#e50914" stroke-width="2" />
+    <circle cx="250" cy="350" r="25" fill="#111" stroke="#e50914" stroke-width="2" />
+    <circle cx="550" cy="250" r="25" fill="#111" stroke="#e50914" stroke-width="2" />
+    <circle cx="550" cy="350" r="25" fill="#111" stroke="#e50914" stroke-width="2" />
+    
+    <!-- Headlights -->
+    <circle cx="320" cy="100" r="15" fill="#e50914" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="480" cy="100" r="15" fill="#e50914" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- ADAS Sensors -->
+    <circle cx="400" cy="80" r="8" fill="#e50914" opacity="0.6">
+      <animate attributeName="r" values="6;8;6" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Side Sensors -->
+    <circle cx="180" cy="300" r="5" fill="#e50914" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="620" cy="300" r="5" fill="#e50914" opacity="0.6">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Rear Sensors -->
+    <circle cx="400" cy="400" r="8" fill="#e50914" opacity="0.6">
+      <animate attributeName="r" values="6;8;6" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Radar Lines Animation -->
+  <g id="radar-lines" opacity="0.3">
+    <!-- Front Radar -->
+    <path d="M400,80 L400,40" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M400,80 L370,30" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M400,80 L430,30" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Side Radars -->
+    <path d="M180,300 L130,270" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M180,300 L130,300" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M180,300 L130,330" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <path d="M620,300 L670,270" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M620,300 L670,300" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M620,300 L670,330" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Rear Radar -->
+    <path d="M400,400 L400,440" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M400,400 L370,450" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M400,400 L430,450" stroke="#e50914" stroke-width="1.5" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Digital Circuit Background -->
+  <g id="circuit-background" opacity="0.15">
+    <path d="M100,50 L700,50" stroke="#e50914" stroke-width="1" />
+    <path d="M100,450 L700,450" stroke="#e50914" stroke-width="1" />
+    <path d="M100,50 L100,450" stroke="#e50914" stroke-width="1" />
+    <path d="M700,50 L700,450" stroke="#e50914" stroke-width="1" />
+    
+    <path d="M100,150 L300,150" stroke="#e50914" stroke-width="1" />
+    <path d="M500,150 L700,150" stroke="#e50914" stroke-width="1" />
+    <path d="M100,350 L300,350" stroke="#e50914" stroke-width="1" />
+    <path d="M500,350 L700,350" stroke="#e50914" stroke-width="1" />
+    
+    <circle cx="100" cy="50" r="3" fill="#e50914" />
+    <circle cx="100" cy="150" r="3" fill="#e50914" />
+    <circle cx="100" cy="350" r="3" fill="#e50914" />
+    <circle cx="100" cy="450" r="3" fill="#e50914" />
+    
+    <circle cx="300" cy="150" r="3" fill="#e50914" />
+    <circle cx="300" cy="350" r="3" fill="#e50914" />
+    <circle cx="500" cy="150" r="3" fill="#e50914" />
+    <circle cx="500" cy="350" r="3" fill="#e50914" />
+    
+    <circle cx="700" cy="50" r="3" fill="#e50914" />
+    <circle cx="700" cy="150" r="3" fill="#e50914" />
+    <circle cx="700" cy="350" r="3" fill="#e50914" />
+    <circle cx="700" cy="450" r="3" fill="#e50914" />
+  </g>
+  
+  <!-- Pulse Effect -->
+  <g id="pulse-effects">
+    <circle cx="400" cy="80" r="15" fill="none" stroke="#e50914" stroke-width="2" opacity="0">
+      <animate attributeName="r" from="10" to="30" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.8" to="0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="180" cy="300" r="15" fill="none" stroke="#e50914" stroke-width="2" opacity="0">
+      <animate attributeName="r" from="10" to="30" dur="2s" repeatCount="indefinite" begin="0.5s" />
+      <animate attributeName="opacity" from="0.8" to="0" dur="2s" repeatCount="indefinite" begin="0.5s" />
+    </circle>
+    
+    <circle cx="620" cy="300" r="15" fill="none" stroke="#e50914" stroke-width="2" opacity="0">
+      <animate attributeName="r" from="10" to="30" dur="2s" repeatCount="indefinite" begin="1s" />
+      <animate attributeName="opacity" from="0.8" to="0" dur="2s" repeatCount="indefinite" begin="1s" />
+    </circle>
+    
+    <circle cx="400" cy="400" r="15" fill="none" stroke="#e50914" stroke-width="2" opacity="0">
+      <animate attributeName="r" from="10" to="30" dur="2s" repeatCount="indefinite" begin="1.5s" />
+      <animate attributeName="opacity" from="0.8" to="0" dur="2s" repeatCount="indefinite" begin="1.5s" />
+    </circle>
+  </g>
+</svg> 

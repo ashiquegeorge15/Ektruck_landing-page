@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+  
+  <!-- Eye Icon -->
+  <g transform="translate(14, 30)">
+    <!-- Eye -->
+    <path d="M26,0C12,0,0.2,12.9,0,20c0.2,7.1,12,20,26,20s25.8-12.9,26-20C51.8,12.9,40,0,26,0z" 
+          fill="none" stroke="#e60000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dasharray" from="120" to="0" dur="1.5s" fill="freeze" />
+    </path>
+    
+    <!-- Iris -->
+    <circle cx="26" cy="20" r="10" fill="none" stroke="#e60000" stroke-width="2.5">
+      <animate attributeName="r" values="0;10" dur="0.7s" fill="freeze" />
+    </circle>
+    
+    <!-- Pupil -->
+    <circle cx="26" cy="20" r="4" fill="#e60000">
+      <animate attributeName="r" values="0;4" dur="0.7s" fill="freeze" />
+    </circle>
+    
+    <!-- Connection Lines for Network Visibility -->
+    <g stroke="#e60000" stroke-width="1.5" stroke-linecap="round">
+      <!-- Radiating Lines -->
+      <line x1="26" y1="0" x2="26" y2="8" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6" dur="1s" fill="freeze" />
+      </line>
+      <line x1="14" y1="6" x2="18" y2="12" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6" dur="1s" fill="freeze" />
+      </line>
+      <line x1="6" y1="18" x2="14" y2="19" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6" dur="1s" fill="freeze" />
+      </line>
+      <line x1="46" y1="18" x2="38" y2="19" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6" dur="1s" fill="freeze" />
+      </line>
+      <line x1="38" y1="6" x2="34" y2="12" opacity="0.6">
+        <animate attributeName="opacity" values="0;0.6" dur="1s" fill="freeze" />
+      </line>
+    </g>
+  </g>
+
+  <!-- Pulse animation over the entire icon -->
+  <circle cx="40" cy="40" r="32" fill="none" stroke="#e60000" stroke-width="0.8" opacity="0">
+    <animate attributeName="r" values="32;40" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Radar-like scan effect -->
+  <path d="M40,40 L40,8 A32,32 0 0,1 72,40 Z" fill="#e60000" opacity="0.15">
+    <animateTransform attributeName="transform" attributeType="XML" 
+                      type="rotate" from="0 40 40" to="360 40 40" 
+                      dur="4s" repeatCount="indefinite" />
+  </path>
+</svg> 

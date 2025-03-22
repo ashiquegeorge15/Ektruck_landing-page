@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         animateOnScroll();
     });
+    
+    // Partners & Clients Marquee Animation
+    setupMarquee();
 });
 
 // Partners Section Animations
@@ -327,4 +330,101 @@ function initAdditionalFunctionality() {
 }
 
 // Call additional initialization if needed
-// initAdditionalFunctionality(); 
+// initAdditionalFunctionality();
+
+// Partners & Clients Marquee Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to duplicate items for seamless loop
+    function setupMarquee(trackSelector) {
+        const track = document.querySelector(trackSelector);
+        
+        if (!track) return;
+        
+        // Get all original items
+        const items = track.querySelectorAll('.marquee-item');
+        
+        // Clone each item and append to track for seamless loop
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
+        
+        // Calculate total width to adjust animation speed
+        const totalItems = track.querySelectorAll('.marquee-item').length;
+        const originalItemsCount = items.length;
+        
+        // Adjust animation duration based on number of items to ensure smooth transition
+        const baseSpeed = 35; // Base speed in seconds
+        const adjustedSpeed = baseSpeed * (totalItems / originalItemsCount) * 0.5;
+        
+        // Set animation duration dynamically
+        track.style.animationDuration = `${adjustedSpeed}s`;
+    }
+    
+    // Setup both marquees
+    setupMarquee('.partners-marquee .marquee-track');
+    setupMarquee('.clients-marquee .marquee-track');
+    
+    // Handle pause on hover for better user interaction
+    const tracks = document.querySelectorAll('.marquee-track');
+    
+    tracks.forEach(track => {
+        track.addEventListener('mouseenter', () => {
+            track.style.animationPlayState = 'paused';
+        });
+        
+        track.addEventListener('mouseleave', () => {
+            track.style.animationPlayState = 'running';
+        });
+    });
+    
+    // Pause animations when not in viewport to save resources
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const track = entry.target.querySelector('.marquee-track');
+                if (track) {
+                    if (entry.isIntersecting) {
+                        track.style.animationPlayState = 'running';
+                    } else {
+                        track.style.animationPlayState = 'paused';
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        const marqueeWrappers = document.querySelectorAll('.marquee-wrapper');
+        marqueeWrappers.forEach(wrapper => {
+            observer.observe(wrapper);
+        });
+    }
+    
+    // Adjust speed based on screen size for better mobile experience
+    function handleResize() {
+        const windowWidth = window.innerWidth;
+        tracks.forEach(track => {
+            // Get current duration
+            const currentDuration = parseFloat(track.style.animationDuration);
+            
+            // Adjust based on screen width
+            let multiplier = 1;
+            if (windowWidth <= 576) {
+                multiplier = 0.5; // Faster on mobile
+            } else if (windowWidth <= 768) {
+                multiplier = 0.625;
+            } else if (windowWidth <= 992) {
+                multiplier = 0.75;
+            }
+            
+            // Apply new duration
+            const baseDuration = currentDuration / multiplier;
+            track.style.animationDuration = `${baseDuration * multiplier}s`;
+        });
+    }
+    
+    // Listen for window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Initial resize handling
+    setTimeout(handleResize, 100);
+}); 
