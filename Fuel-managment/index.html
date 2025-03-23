@@ -3,164 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Management Solutions - Ektruck</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/fm.css">
-    <link rel="stylesheet" href="/css/navbar-only.css">
-    <link rel="stylesheet" href="/css/footer-only.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Add Lottie Player library -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Fuel Management Solutions - EkTruck</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/footer-only.css">
+    <link rel="stylesheet" href="../css/fm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="/assets/logo.png" alt="ek(one) Logo">
-            </div>
-            
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas/dms-solutions/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS)</a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/" class="active">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                            <a href="/government-authorities/">Government Authorities</a>
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-login">Login</button>
-                    <button class="btn btn-primary">Get Started</button>
-                </div>
-            </div>
-
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="fm-hero">
-        <div class="fm-hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-                <div class="glow-orb orb-3"></div>
-            </div>
-            <div class="circuit-lines">
-                <div class="circuit-line line-1"></div>
-                <div class="circuit-line line-2"></div>
-                <div class="circuit-node node-1"></div>
-                <div class="circuit-node node-2"></div>
-            </div>
-            <div class="fuel-drops">
-                <div class="fuel-drop drop-1"></div>
-                <div class="fuel-drop drop-2"></div>
-                <div class="fuel-drop drop-3"></div>
-            </div>
+    <!-- Progress Indicator -->
+    <div class="progress-indicator"></div>
+    
+    <!-- Cursor Tracker -->
+    <div class="cursor-tracker"></div>
+    
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <img src="../assets/logo.png" alt="ek(one) Logo">
         </div>
         
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
+                        <a href="/TMS/">Transport Management Solution (TMS) </a>
+                        <a href="/TPMS/">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
+                    </div>
+                </li>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/">Infrastructure Projects</a>
+                        <a href="/government-authorities/">Government Authorities</a>
+                        <a href="/small&medium-business/">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <button class="btn btn-primary">Login</button>
+            </div>
+        </div>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <!-- Mobile menu content will be here -->
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero fm-hero">
+        <div class="hero-bg-elements">
+            <div class="gradient-overlay"></div>
+            <div class="grid-pattern"></div>
+            <div class="floating-shape shape1"></div>
+            <div class="floating-shape shape2"></div>
+            <div class="floating-shape shape3"></div>
+            <div class="particles-container" id="hero-particles"></div>
+            <!-- Dynamic Wave Background -->
+            <div class="bg-wave">
+                <div class="wave wave-1"></div>
+                <div class="wave wave-2"></div>
+            </div>
+        </div>
+
         <div class="container">
-            <div class="fm-hero-content" data-aos="fade-right">
-                <div class="hero-badge">
-                    <span>Ektruck Solution</span>
+            <!-- Left side - text content -->
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="badge">Smart Fleet Solutions</span>
                 </div>
                 
-                <h1 class="fm-title">Fuel Management Solutions</h1>
-                <h2 class="fm-subtitle">Optimize Consumption, Reduce Costs</h2>
+                <h1 class="animated-heading">
+                    <span class="text-line">Fuel </span>
+                    <span class="text-line accent-text">Management <span class="highlight">Solutions</span></span>
+                </h1>
                 
-                <p class="fm-description">
+                <p class="hero-description">
                     Our Fuel Management Solution is designed to monitor, control, and optimize fuel usage across fleets, ensuring maximum efficiency, cost savings, and reduced fuel theft. By integrating IoT sensors, GPS tracking, and AI-powered analytics, businesses gain real-time insights into fuel consumption, refuelling patterns, and operational inefficiencies.
                 </p>
                 
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">
-                        <span>Request Demo</span>
+                    <a href="#features" class="btn btn-primary">
+                        Explore Features
                         <i class="fas fa-arrow-right"></i>
-                    </button>
-                    <button class="btn btn-outline">
-                        <span>Download Brochure</span>
-                        <i class="fas fa-download"></i>
-                    </button>
+                        <span class="btn-shine"></span>
+                    </a>
+                    <a href="../demo.html" class="btn btn-outline">Request Demo</a>
                 </div>
             </div>
             
-            <div class="fm-hero-visual" data-aos="fade-left">
-                <div class="dashboard-wrapper">
-                    <div class="dashboard-preview">
-                        <lottie-player 
-                            src="https://assets5.lottiefiles.com/packages/lf20_ystsffqy.json"
-                            background="transparent"
-                            speed="1"
-                            style="width: 100%; height: 100%;"
-                            loop
-                            autoplay>
-                        </lottie-player>
+            <!-- Right side - image -->
+            <div class="hero-image">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-content">
+                        <img src="../assets/images/fuel-dashboard.jpg" class="dashboard-img" alt="Fuel Management Dashboard">
                         
-                        <div class="data-point point-1">
-                            <div class="point-pulse"></div>
-                            <div class="point-label">Fuel Level</div>
-                        </div>
-                        <div class="data-point point-2">
-                            <div class="point-pulse"></div>
-                            <div class="point-label">Consumption Rate</div>
-                        </div>
-                        <div class="data-point point-3">
-                            <div class="point-pulse"></div>
-                            <div class="point-label">Refueling Event</div>
+                        <!-- Fuel gauges -->
+                        <div class="fuel-gauge fuel-gauge-1">
+                            <svg class="gauge-animation" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e62e2e" />
+                                        <stop offset="100%" stop-color="#ff5c5c" />
+                                    </linearGradient>
+                                    <filter id="gaugeGlow">
+                                        <feGaussianBlur stdDeviation="2" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                <!-- Gauge background -->
+                                <circle cx="60" cy="60" r="50" fill="#222" stroke="#333" stroke-width="2" />
+                                <!-- Gauge meter -->
+                                <path d="M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z" fill="url(#gaugeGradient)" filter="url(#gaugeGlow)">
+                                    <animate attributeName="d" 
+                                        values="M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z"
+                                        dur="8s" repeatCount="indefinite" />
+                                </path>
+                                <!-- Center point -->
+                                <circle cx="60" cy="60" r="5" fill="#444" stroke="#555" stroke-width="1" />
+                                <!-- Gauge value -->
+                                <text x="60" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
+                                    <tspan id="gaugeValue1">72%</tspan>
+                                    <animate attributeName="textContent" 
+                                        values="65%;72%;80%;65%" 
+                                        dur="8s" repeatCount="indefinite" />
+                                </text>
+                            </svg>
                         </div>
                         
-                        <div class="fuel-indicator level">
-                            <div class="fuel-value">78%</div>
-                            <div class="fuel-status">Normal</div>
+                        <div class="fuel-gauge fuel-gauge-2">
+                            <svg class="gauge-animation" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gaugeGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#e62e2e" />
+                                        <stop offset="100%" stop-color="#ff5c5c" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Gauge background -->
+                                <circle cx="60" cy="60" r="50" fill="#222" stroke="#333" stroke-width="2" />
+                                <!-- Gauge meter -->
+                                <path d="M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z" fill="url(#gaugeGradient2)" filter="url(#gaugeGlow)">
+                                    <animate attributeName="d" 
+                                        values="M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z; 
+                                                M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z"
+                                        dur="8s" repeatCount="indefinite" />
+                                </path>
+                                <!-- Center point -->
+                                <circle cx="60" cy="60" r="5" fill="#444" stroke="#555" stroke-width="1" />
+                                <!-- Gauge value -->
+                                <text x="60" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
+                                    <tspan id="gaugeValue2">85%</tspan>
+                                    <animate attributeName="textContent" 
+                                        values="85%;78%;90%;85%" 
+                                        dur="8s" repeatCount="indefinite" />
+                                </text>
+                            </svg>
                         </div>
                         
-                        <div class="fuel-indicator efficiency">
-                            <div class="fuel-value">4.8 km/L</div>
-                            <div class="fuel-status">Good</div>
+                        <!-- Fuel level indicator -->
+                        <div class="fuel-level-indicator" data-level="75%"></div>
+                        
+                        <!-- Dashboard elements -->
+                        <div class="dashboard-element fuel-consumption">
+                            <div class="dashboard-value">5.6 L/100km</div>
+                            <div class="dashboard-label">AVG CONSUMPTION</div>
                         </div>
                         
-                        <div class="fuel-indicator savings">
-                            <div class="fuel-value">₹12,500</div>
-                            <div class="fuel-status">Monthly Savings</div>
+                        <div class="dashboard-element fuel-savings">
+                            <div class="dashboard-value">-15%</div>
+                            <div class="dashboard-label">COST REDUCTION</div>
                         </div>
+                        
+                        <!-- Route and vehicle animation -->
+                        <div class="route-path"></div>
+                        <div class="route-vehicle"></div>
+                        
+                        <!-- Fuel droplets animation -->
+                        <div class="fuel-droplet droplet-1"></div>
+                        <div class="fuel-droplet droplet-2"></div>
+                        <div class="fuel-droplet droplet-3"></div>
                     </div>
                 </div>
             </div>
@@ -168,713 +228,655 @@
     </section>
 
     <!-- Features Section -->
-    <section class="fm-features">
-        <div class="features-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-        </div>
-        
+    <section id="features" class="features-section scroll-reveal">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Key Features of <span class="text-gradient">Fuel Management</span></h2>
-                <p class="section-subtitle reveal-text">Comprehensive fuel monitoring and optimization powered by IoT technology</p>
-                <div class="header-underline"><span class="underline-fill"></span></div>
+                <h2 class="section-heading">Key Features</h2>
+                <p class="section-subheading">Comprehensive fuel management capabilities for your fleet</p>
             </div>
-            
             <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="100">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
-                        <i class="fas fa-gas-pump"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Real-Time Fuel Monitoring</h3>
-                        <p>Track fuel levels, consumption rates, and refuelling activities with precision, ensuring complete visibility of your fleet's fuel usage patterns.</p>
+                        <p>Track fuel levels, consumption rates, and refuelling activities in real-time with high-precision IoT sensors.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">±0.5%</span>
-                                <span class="stat-label">Accuracy</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
                 
-                <!-- Feature 2 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="200">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Fuel Theft & Pilferage Detection</h3>
-                        <p>Get instant alerts for unauthorized fuel withdrawals or leaks, protecting your assets and preventing revenue loss from theft or misuse.</p>
+                        <p>Get instant alerts for unauthorized fuel withdrawals or leaks, ensuring your assets are protected 24/7.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">&lt;2 min</span>
-                                <span class="stat-label">Alert Time</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
                 
-                <!-- Feature 3 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="300">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-route"></i>
                     </div>
                     <div class="feature-content">
                         <h3>GPS & Route Optimization</h3>
-                        <p>Reduce fuel wastage with AI-powered route planning that considers traffic, terrain, vehicle load, and other factors affecting fuel efficiency.</p>
+                        <p>Reduce fuel wastage with AI-powered route planning that considers traffic, distance, and vehicle load factors.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">15%</span>
-                                <span class="stat-label">Avg. Fuel Savings</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
                 
-                <!-- Feature 4 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="400">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Automated Fuel Reports & Analytics</h3>
-                        <p>Gain insights into fuel efficiency, trends, and cost analysis with comprehensive reports that highlight opportunities for optimization.</p>
+                        <p>Gain insights into fuel efficiency, consumption trends, and cost analysis with automated reports and dashboards.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">20+</span>
-                                <span class="stat-label">Report Types</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
                 
-                <!-- Feature 5 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="500">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
-                        <i class="fas fa-plug"></i>
+                        <i class="fas fa-sync-alt"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Seamless Integration with TMS & ERP</h3>
-                        <p>Connect with existing fleet management systems for unified operations, ensuring data consistency across your business applications.</p>
+                        <p>Connect with existing fleet management systems for unified operations and centralized data management.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">30+</span>
-                                <span class="stat-label">Integration Options</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
                 
-                <!-- Feature 6 -->
-                <div class="feature-card" data-aos="flip-up" data-aos-delay="600">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
                     <div class="feature-content">
                         <h3>Fuel Card & Expense Management</h3>
-                        <p>Control fuel spending and eliminate fraud with integrated fuel card management, transaction verification, and expense tracking.</p>
+                        <p>Control fuel spending and eliminate fraud with integrated fuel card management and expense tracking.</p>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <span class="stat-value">100%</span>
-                                <span class="stat-label">Transaction Verification</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <div class="feature-hover"></div>
                 </div>
             </div>
         </div>
-        
-        <div class="floating-elements">
-            <div class="floating-element element-1"></div>
-            <div class="floating-element element-2"></div>
-            <div class="floating-element element-3"></div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="fm-how-it-works">
-        <div class="how-it-works-bg">
-            <div class="particle-network"></div>
-            <div class="gradient-overlay"></div>
-        </div>
-        
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="glowing-text">How Our <span class="highlight-text">Solution Works</span></h2>
-                <p class="section-subtitle">End-to-end fuel monitoring and management</p>
-            </div>
-            
-            <div class="process-flow" data-aos="fade-up">
-                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Sensor Installation</h3>
-                    <p>IoT fuel sensors are installed in vehicles to monitor fuel levels and consumption in real-time.</p>
-                </div>
-                
-                <div class="process-connector"></div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Data Transmission</h3>
-                    <p>Sensors transmit fuel data in real-time via cellular connectivity to our secure cloud platform.</p>
-                </div>
-                
-                <div class="process-connector"></div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI Analysis</h3>
-                    <p>Our AI algorithms analyze fuel data to identify patterns, anomalies, and optimization opportunities.</p>
-                </div>
-                
-                <div class="process-connector"></div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
-                    <div class="step-number">4</div>
-                    <div class="step-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Monitoring & Alerts</h3>
-                    <p>Fleet managers monitor fuel metrics via web or mobile app and receive instant alerts for anomalies.</p>
-                </div>
-                
-                <div class="process-connector"></div>
-                
-                <div class="process-step" data-aos="fade-up" data-aos-delay="500">
-                    <div class="step-number">5</div>
-                    <div class="step-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3>Reporting & Optimization</h3>
-                    <p>Automated reports provide insights for continuous improvement and cost reduction strategies.</p>
-                </div>
-            </div>
-        </div>
+        <div class="section-transition"></div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="fm-benefits">
-        <div class="benefits-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-        </div>
-        
+    <section class="benefits-section scroll-reveal">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Benefits of Our <span class="text-gradient">Fuel Management Solution</span></h2>
-                <p class="section-subtitle reveal-text">Maximize efficiency and ensure cost control</p>
-                <div class="header-underline"><span class="underline-fill"></span></div>
+                <h2 class="section-heading">Benefits of Our Fuel Management Solution</h2>
+                <p class="section-subheading">Drive operational excellence and cost efficiency with our comprehensive solution</p>
             </div>
-            
-            <div class="benefits-grid" data-aos="fade-up">
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="benefit-icon">
-                        <i class="fas fa-coins"></i>
+                        <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <h3>Reduce Fuel Costs</h3>
-                    <p>Optimize usage and minimize wastage through real-time monitoring and intelligent route planning.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">Up to 20%</span>
-                        <span class="stat-label">Cost Reduction</span>
+                    <div class="benefit-content">
+                        <h3>Reduce Fuel Costs</h3>
+                        <p>Optimize usage and minimize wastage, leading to significant cost savings across your fleet operations.</p>
                     </div>
                 </div>
                 
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="benefit-icon">
-                        <i class="fas fa-user-shield"></i>
+                        <i class="fas fa-lock"></i>
                     </div>
-                    <h3>Prevent Theft & Fraud</h3>
-                    <p>Detect anomalies in real-time with precise fuel level monitoring and transaction verification.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">95%</span>
-                        <span class="stat-label">Theft Reduction</span>
+                    <div class="benefit-content">
+                        <h3>Prevent Theft & Fraud</h3>
+                        <p>Detect anomalies in real-time and prevent unauthorized access to fuel resources with advanced monitoring.</p>
                     </div>
                 </div>
                 
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="benefit-icon">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <h3>Improve Fleet Efficiency</h3>
-                    <p>Enhance route planning and fuel economy with data-driven insights and driver behavior analysis.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">15%</span>
-                        <span class="stat-label">Efficiency Gain</span>
+                    <div class="benefit-content">
+                        <h3>Improve Fleet Efficiency</h3>
+                        <p>Enhance route planning and fuel economy through data-driven insights and AI-powered optimization.</p>
                     </div>
                 </div>
                 
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="benefit-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h3>Ensure Regulatory Compliance</h3>
-                    <p>Maintain accurate fuel logs for audits and compliance with transportation regulations.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">100%</span>
-                        <span class="stat-label">Audit Readiness</span>
+                    <div class="benefit-content">
+                        <h3>Ensure Regulatory Compliance</h3>
+                        <p>Maintain accurate fuel logs for audits and compliance requirements with automated record-keeping.</p>
                     </div>
                 </div>
                 
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="benefit-icon">
-                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Boost Profitability</h3>
-                    <p>Lower operational expenses and maximize savings with comprehensive fuel management.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">ROI</span>
-                        <span class="stat-label">Within 6 Months</span>
-                    </div>
-                </div>
-                
-                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="benefit-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Reduce Carbon Footprint</h3>
-                    <p>Minimize environmental impact through optimized fuel consumption and reduced emissions.</p>
-                    <div class="benefit-stat">
-                        <span class="stat-value">18%</span>
-                        <span class="stat-label">CO₂ Reduction</span>
+                    <div class="benefit-content">
+                        <h3>Boost Profitability</h3>
+                        <p>Lower operational expenses and maximize savings, directly impacting your bottom line positively.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI Calculator Section -->
-    <!-- <section class="fm-roi-calculator">
-        <div class="roi-bg">
-            <div class="particle-network"></div>
-            <div class="gradient-overlay"></div>
-        </div>
-        
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="glowing-text">Calculate Your <span class="highlight-text">Potential Savings</span></h2>
-                <p class="section-subtitle">See how much you could save with our Fuel Management Solution</p>
-            </div>
-            
-            <div class="roi-calculator" data-aos="fade-up">
-                <div class="calculator-form">
-                    <div class="form-group">
-                        <label for="fleet-size">Fleet Size (Vehicles)</label>
-                        <input type="range" id="fleet-size" min="5" max="500" value="50" step="5">
-                        <div class="range-value"><span id="fleet-size-value">50</span> vehicles</div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="monthly-fuel">Monthly Fuel Expense (₹)</label>
-                        <input type="range" id="monthly-fuel" min="50000" max="5000000" value="500000" step="50000">
-                        <div class="range-value">₹<span id="monthly-fuel-value">500,000</span></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="theft-estimate">Estimated Fuel Theft/Wastage (%)</label>
-                        <input type="range" id="theft-estimate" min="5" max="30" value="15" step="1">
-                        <div class="range-value"><span id="theft-estimate-value">15</span>%</div>
-                    </div>
-                </div>
-                
-                <div class="calculator-results">
-                    <div class="result-card">
-                        <h3>Monthly Savings</h3>
-                        <div class="result-value" id="monthly-savings">₹75,000</div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <h3>Annual Savings</h3>
-                        <div class="result-value" id="annual-savings">₹900,000</div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <h3>ROI Timeline</h3>
-                        <div class="result-value" id="roi-timeline">5 months</div>
-                    </div>
-                </div>
-                
-                <div class="calculator-cta">
-                    <p>These are estimated savings based on industry averages. Contact us for a detailed analysis specific to your fleet.</p>
-                    <button class="btn btn-primary">Get Custom ROI Analysis</button>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!-- CTA Section -->
-    <section class="fm-cta">
-        <div class="cta-bg">
-            <div class="particle-network"></div>
-            <div class="gradient-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2>Optimize Your Fleet's Fuel Efficiency</h2>
+    <section class="cta-section scroll-reveal">
+        <div class="container cta-container">
+            <div class="cta-content" data-aos="fade-right">
+                <h2 data-text="Enhance Your Fleet's Fuel Efficiency Today">Enhance Your Fleet's Fuel Efficiency Today</h2>
                 <p>Enhance your fleet's fuel efficiency with our intelligent, real-time fuel management system, ensuring cost control, transparency, and optimized performance.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary btn-glow">Schedule a Demo</a>
-                    <a href="#contact" class="btn btn-outline">Contact Sales</a>
+                    <a href="../demo.html" class="btn btn-glow">Request a Demo <i class="fas fa-arrow-right"></i></a>
+                    <a href="../contact.html" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+            <div class="cta-image" data-aos="fade-left">
+                <img src="../assets/images/fuel-dashboard.jpg" alt="Fuel Dashboard">
+                <div class="loading-spinner"></div>
+                <div class="cta-overlay"></div>
+            </div>
+            <div class="cta-bg-elements">
+                <div class="circuit-lines">
+                    <div class="circuit-line line-1"></div>
+                    <div class="circuit-line line-2"></div>
+                </div>
+                <div class="data-flow data-flow-horizontal" style="bottom: 30%; left: 10%; width: 400px;">
+                    <div class="data-point" style="left: 5%; animation-delay: 0s;"></div>
+                    <div class="data-point" style="left: 25%; animation-delay: 2s;"></div>
+                    <div class="data-point" style="left: 45%; animation-delay: 4s;"></div>
+                    <div class="data-point" style="left: 65%; animation-delay: 6s;"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="site-footer">
-        <div class="footer-waves">
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
+      <!-- Footer Section -->
+      <footer class="site-footer">
+        <div class="footer-background"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Company Information -->
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                        <div class="logo-decoration"></div>
+                    </a>
+                    <p class="company-description">
+                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                    </p>
+             
+                </div>
+                
+                <!-- Solutions -->
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                      <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
+                        <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                        <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
+                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                        <li> <a href="/Fuel-managment/">Fuel Management</a></li>
+                        <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                        <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Industries -->
+                <div class="footer-col">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                       <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                        <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                        <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                        <li><a href="/government-authorities/">Government Authorities</a></li>
+                        <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                        <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                        <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                        <p><i class="fas fa-phone-alt"></i>080-68976911</p>
+                        <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>ektruck. All rights reserved.</span>
+                </div>
+                <div class="footer-policies">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/sitemap">Sitemap</a>
+                </div>
+            </div>
         </div>
         
-        <!-- Floating Elements -->
-        <div class="footer-floating-element float-1"></div>
-        <div class="footer-floating-element float-2"></div>
-        <div class="footer-floating-element float-3"></div>
-        
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Company Info -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                    <img src="/assets/logo-transparent-mono-light-jpeg.png" alt="ek(one) Logo" class="footer-logo">
-                    <p class="company-description">
-                        Revolutionizing India's logistics ecosystem with cutting-edge technology and seamless connectivity for a more efficient future.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#solutions">Solutions</a></li>
-                        <li><a href="#industries">Industries</a></li>
-                        <li><a href="#case-studies">Case Studies</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#blog">Blog & News</a></li>
-                    </ul>
-                </div>
-
-                <!-- Industries -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Industries We Serve</h3>
-                    <ul class="footer-links">
-                        <li><a href="#transport">Transport & Logistics</a></li>
-                        <li><a href="#mining">Mining & Equipment</a></li>
-                        <li><a href="#infrastructure">Infrastructure</a></li>
-                        <li><a href="#government">Government</a></li>
-                        <li><a href="#ecommerce">E-commerce</a></li>
-                        <li><a href="#manufacturing">Manufacturing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-section" data-aos="fade-up" data-aos-delay="400">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone-alt"></i> +91 (000) 000-0000</p>
-                        <p><i class="fas fa-envelope"></i> contact@ekone.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
-                        <p><i class="far fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
-                    </div>
-                    <div class="footer-cta">
-                        <a href="#contact" class="btn">Schedule a Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 ek(one). All rights reserved. Transforming logistics across India.</p>
-                    <div class="footer-bottom-links">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                        <a href="#cookies">Cookie Policy</a>
-                        <a href="#sitemap">Sitemap</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Scroll to top button -->
+        <div class="scroll-top">
+            <i class="fas fa-chevron-up"></i>
         </div>
     </footer>
+    
+    <!-- Simple JavaScript for scroll to top functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        </script>
+    
+        
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize footer components
+        initScrollToTop();
+        initNewsletterForm();
+        initAnimations();
+        initMobileOptimizations();
+    });
+    
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    /**
+     * Newsletter form validation and submission
+     */
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button');
+            
+            // Basic form validation
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                if (!isValidEmail(email)) {
+                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                    emailInput.focus();
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with timeout
+                setTimeout(function() {
+                    emailInput.value = '';
+                    submitBtn.innerHTML = 'Subscribe';
+                    submitBtn.disabled = false;
+                    
+                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+                }, 1500);
+            });
+        }
+    }
+    
+    /**
+     * Check if email is valid
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    /**
+     * Show success or error message after form submission
+     */
+    function showFormMessage(form, message, type) {
+        // Remove any existing messages
+        const existingMessage = form.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+        
+        // Add message to form
+        form.appendChild(messageElement);
+        
+        // Remove message after delay
+        setTimeout(function() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.remove();
+            }, 300);
+        }, 5000);
+    }
+    
+    /**
+     * Initialize animations for footer elements
+     */
+    function initAnimations() {
+        // Detect when elements enter viewport
+        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('visible'));
+        }
+        
+        // Animate stats numbers
+        animateStatCounters();
+    }
+    
+    /**
+     * Animate the stat counter numbers with counting effect
+     */
+    function animateStatCounters() {
+        const statValues = document.querySelectorAll('.stat-value');
+        
+        statValues.forEach(stat => {
+            const value = stat.innerText;
+            
+            // Skip if not a purely numeric value (e.g., "24/7")
+            if (value.match(/[^0-9%]/)) return;
+            
+            const hasPercent = value.includes('%');
+            const numericValue = parseInt(value.replace(/\D/g, ''));
+            
+            // Set starting value to 0
+            stat.innerText = hasPercent ? '0%' : '0';
+            
+            // Animate to final value
+            let current = 0;
+            const increment = Math.max(1, Math.floor(numericValue / 50));
+            const duration = 1500; // 1.5 seconds
+            const interval = Math.floor(duration / (numericValue / increment));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= numericValue) {
+                    clearInterval(timer);
+                    current = numericValue;
+                }
+                
+                stat.innerText = hasPercent ? `${current}%` : current;
+            }, interval);
+        });
+    }
+    
+    /**
+     * Mobile-specific optimizations for better UX
+     */
+    function initMobileOptimizations() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Improve tap targets for mobile
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+                
+                link.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
+                });
+            });
+            
+            // Add extra styling for form inputs on mobile
+            const inputs = document.querySelectorAll('.newsletter-form input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focus');
+                });
+            });
+        }
+    }
+    </script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
             AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
             });
             
-            // Add interactive hover effect to feature cards
-            document.querySelectorAll('.feature-card').forEach(card => {
-                card.addEventListener('mousemove', function(e) {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    // Update glow position
-                    const glow = card.querySelector('.card-glow');
-                    if (glow) {
-                        glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(239, 68, 68, 0.4) 0%, transparent 70%)`;
-                        glow.style.opacity = '1';
-                    }
-                    
-                    // Subtle tilt effect
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) / 30;
-                    const rotateY = (centerX - x) / 30;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
-                });
+            // Create dynamic particles for hero section
+            const particlesContainer = document.getElementById('hero-particles');
+            if (particlesContainer) {
+                const particleCount = 30;
                 
-                card.addEventListener('mouseleave', function() {
-                    // Reset effects on mouse leave
-                    const glow = card.querySelector('.card-glow');
-                    if (glow) {
-                        glow.style.opacity = '0';
-                    }
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
                     
-                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-                });
-            });
+                    // Random position
+                    const posX = Math.random() * 100;
+                    const posY = Math.random() * 100;
+                    
+                    // Random size
+                    const size = Math.random() * 3 + 1;
+                    
+                    // Random animation delay
+                    const delay = Math.random() * 5;
+                    
+                    particle.style.left = `${posX}%`;
+                    particle.style.top = `${posY}%`;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.animationDelay = `${delay}s`;
+                    
+                    particlesContainer.appendChild(particle);
+                }
+            }
             
-            // Add hover effect to benefit cards
-            document.querySelectorAll('.benefit-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.classList.add('active');
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.classList.remove('active');
-                });
-            });
+            // Mobile Menu Toggle
+            const menuIcon = document.querySelector('.menu-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
             
-            // Add hover effect to process steps
-            document.querySelectorAll('.process-step').forEach(step => {
-                step.addEventListener('mouseenter', function() {
-                    this.classList.add('active');
-                });
-                
-                step.addEventListener('mouseleave', function() {
-                    this.classList.remove('active');
-                });
-            });
-            
-            // Simulate fuel level fluctuations
-            function simulateFuelFluctuations() {
-                const fuelIndicators = document.querySelectorAll('.fuel-indicator');
-                
-                fuelIndicators.forEach(indicator => {
-                    if (indicator.classList.contains('level')) {
-                        const fuelValue = indicator.querySelector('.fuel-value');
-                        const fuelStatus = indicator.querySelector('.fuel-status');
-                        const baseLevel = 78;
-                        
-                        // Simulate small fluctuations
-                        setInterval(() => {
-                            const fluctuation = (Math.random() * 2) - 1; // -1 to +1
-                            const newLevel = Math.min(100, Math.max(0, baseLevel + fluctuation)).toFixed(0);
-                            fuelValue.textContent = `${newLevel}%`;
-                            
-                            // Check if fuel level is low
-                            if (newLevel < 20) {
-                                fuelStatus.textContent = 'Low';
-                                fuelStatus.style.color = '#f59e0b';
-                            } else {
-                                fuelStatus.textContent = 'Normal';
-                                fuelStatus.style.color = '#10b981';
-                            }
-                        }, 3000);
-                    } else if (indicator.classList.contains('efficiency')) {
-                        const fuelValue = indicator.querySelector('.fuel-value');
-                        const fuelStatus = indicator.querySelector('.fuel-status');
-                        const baseEfficiency = 4.8;
-                        
-                        // Simulate small fluctuations
-                        setInterval(() => {
-                            const fluctuation = (Math.random() * 0.4) - 0.2; // -0.2 to +0.2
-                            const newEfficiency = (baseEfficiency + fluctuation).toFixed(1);
-                            fuelValue.textContent = `${newEfficiency} km/L`;
-                            
-                            // Check efficiency rating
-                            if (newEfficiency < 4.0) {
-                                fuelStatus.textContent = 'Poor';
-                                fuelStatus.style.color = '#ef4444';
-                            } else if (newEfficiency < 4.5) {
-                                fuelStatus.textContent = 'Average';
-                                fuelStatus.style.color = '#f59e0b';
-                            } else {
-                                fuelStatus.textContent = 'Good';
-                                fuelStatus.style.color = '#10b981';
-                            }
-                        }, 4000);
-                    }
+            if (menuIcon) {
+                menuIcon.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
                 });
             }
             
-            // Initialize fuel simulation
-            simulateFuelFluctuations();
-            
-            // ROI Calculator functionality
-            const fleetSizeInput = document.getElementById('fleet-size');
-            const fleetSizeValue = document.getElementById('fleet-size-value');
-            const monthlyFuelInput = document.getElementById('monthly-fuel');
-            const monthlyFuelValue = document.getElementById('monthly-fuel-value');
-            const theftEstimateInput = document.getElementById('theft-estimate');
-            const theftEstimateValue = document.getElementById('theft-estimate-value');
-            const monthlySavings = document.getElementById('monthly-savings');
-            const annualSavings = document.getElementById('annual-savings');
-            const roiTimeline = document.getElementById('roi-timeline');
-            
-            function updateCalculator() {
-                const fleetSize = parseInt(fleetSizeInput.value);
-                const monthlyFuel = parseInt(monthlyFuelInput.value);
-                const theftEstimate = parseInt(theftEstimateInput.value);
-                
-                // Update display values
-                fleetSizeValue.textContent = fleetSize;
-                monthlyFuelValue.textContent = monthlyFuel.toLocaleString();
-                theftEstimateValue.textContent = theftEstimate;
-                
-                // Calculate savings
-                const potentialSavingsRate = theftEstimate / 100 * 0.8; // Assuming 80% of theft/wastage can be prevented
-                const monthlySavingsAmount = Math.round(monthlyFuel * potentialSavingsRate);
-                const annualSavingsAmount = monthlySavingsAmount * 12;
-                
-                // Calculate ROI timeline (assuming implementation cost is roughly 5x monthly savings)
-                const implementationCost = monthlySavingsAmount * 5;
-                const roiMonths = Math.ceil(implementationCost / monthlySavingsAmount);
-                
-                // Update results
-                monthlySavings.textContent = `₹${monthlySavingsAmount.toLocaleString()}`;
-                annualSavings.textContent = `₹${annualSavingsAmount.toLocaleString()}`;
-                roiTimeline.textContent = `${roiMonths} months`;
+            if (closeMenu) {
+                closeMenu.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
             }
             
-            // Add event listeners to calculator inputs
-            if (fleetSizeInput && monthlyFuelInput && theftEstimateInput) {
-                fleetSizeInput.addEventListener('input', updateCalculator);
-                monthlyFuelInput.addEventListener('input', updateCalculator);
-                theftEstimateInput.addEventListener('input', updateCalculator);
-                
-                // Initialize calculator
-                updateCalculator();
-            }
+            // Mobile Dropdown Toggle
+            const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
             
-            // Mobile menu toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
+            mobileDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function() {
                     this.classList.toggle('active');
-                    navMenu.classList.toggle('active');
                 });
-            }
+            });
             
-            // Dropdown menu for mobile
-            const dropdownItems = document.querySelectorAll('.dropdown');
-            
-            dropdownItems.forEach(item => {
-                const link = item.querySelector('.nav-link');
-                
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth < 992) {
-                        e.preventDefault();
-                        item.classList.toggle('active');
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                        }
                     }
                 });
             });
             
-            // Particle network animation
-            function createParticleNetwork() {
-                const particleContainers = document.querySelectorAll('.particle-network');
-                
-                particleContainers.forEach(container => {
-                    const width = container.offsetWidth;
-                    const height = container.offsetHeight;
-                    const particleCount = Math.floor((width * height) / 10000);
+            // Scroll Reveal Animation
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            
+            function checkScroll() {
+                scrollRevealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
                     
-                    for (let i = 0; i < particleCount; i++) {
-                        const particle = document.createElement('div');
-                        particle.classList.add('particle');
-                        
-                        // Random position
-                        const x = Math.random() * 100;
-                        const y = Math.random() * 100;
-                        
-                        // Random size
-                        const size = Math.random() * 3 + 1;
-                        
-                        // Random opacity
-                        const opacity = Math.random() * 0.5 + 0.1;
-                        
-                        // Set styles
-                        particle.style.left = `${x}%`;
-                        particle.style.top = `${y}%`;
-                        particle.style.width = `${size}px`;
-                        particle.style.height = `${size}px`;
-                        particle.style.opacity = opacity;
-                        
-                        container.appendChild(particle);
+                    if (elementTop < windowHeight * 0.85) {
+                        element.classList.add('active');
                     }
                 });
+                
+                // Update progress indicator
+                const scrollPosition = window.scrollY;
+                const docHeight = document.body.offsetHeight - window.innerHeight;
+                const scrollProgress = (scrollPosition / docHeight) * 100;
+                document.querySelector('.progress-indicator').style.width = `${scrollProgress}%`;
             }
             
-            // Initialize particle network
-            createParticleNetwork();
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Check on initial load
+            
+            // Cursor tracker effect
+            const cursorTracker = document.querySelector('.cursor-tracker');
+            
+            document.addEventListener('mousemove', function(e) {
+                if (cursorTracker) {
+                    cursorTracker.style.opacity = '1';
+                    cursorTracker.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+                }
+            });
+            
+            document.addEventListener('mouseleave', function() {
+                if (cursorTracker) {
+                    cursorTracker.style.opacity = '0';
+                }
+            });
+            
+            // Add hover animation to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .feature-card, .benefit-card');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    if (cursorTracker) {
+                        cursorTracker.style.transform = `translate(${this.getBoundingClientRect().left + this.offsetWidth/2}px, ${this.getBoundingClientRect().top + this.offsetHeight/2}px) translate(-50%, -50%) scale(1.5)`;
+                        cursorTracker.style.background = 'radial-gradient(circle at center, rgba(230, 46, 46, 0.3), transparent 70%)';
+                    }
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    if (cursorTracker) {
+                        cursorTracker.style.background = 'radial-gradient(circle at center, rgba(230, 46, 46, 0.2), transparent 70%)';
+                    }
+                });
+            });
+            
+            // Add 3D hover effect to dashboard mockup
+            const dashboardMockup = document.querySelector('.dashboard-mockup');
+            document.addEventListener('mousemove', function(e) {
+                if (dashboardMockup) {
+                    const mockupRect = dashboardMockup.getBoundingClientRect();
+                    const mockupCenterX = mockupRect.left + mockupRect.width / 2;
+                    const mockupCenterY = mockupRect.top + mockupRect.height / 2;
+                    
+                    const deltaX = (e.clientX - mockupCenterX) / 30;
+                    const deltaY = (e.clientY - mockupCenterY) / 30;
+                    
+                    dashboardMockup.style.transform = `perspective(1000px) rotateY(${-deltaX}deg) rotateX(${deltaY}deg) translateZ(10px)`;
+                }
+            });
+            
+            document.addEventListener('mouseleave', function() {
+                if (dashboardMockup) {
+                    dashboardMockup.style.transform = 'perspective(1000px) rotateY(-5deg) rotateX(5deg)';
+                }
+            });
         });
     </script>
 </body>

@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Temperature Monitoring Solutions | ek(one)</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/navbar-only.css">
-    <link rel="stylesheet" href="/css/footer-only.css">
-    <link rel="stylesheet" href="/css/tpms.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Temperature Monitoring Solutions | TPMS</title>
+    <meta name="description" content="Smart temperature monitoring solutions for your supply chain with real-time tracking and instant alerts">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/tpms.css">
+    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/footer-only.css">
+    
 </head>
 <body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Cursor Tracker -->
+    <div class="cursor-tracker" id="cursorTracker"></div>
+
      <!-- Navigation -->
      <nav class="navbar">
         <div class="container nav-container">
@@ -30,12 +49,12 @@
                         <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS)</a>
-                            <a href="/TPMS/" class="active">Temperature Monitoring Solutions</a>
+                            <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
+                            <a href="/TMS/">Transport Management Solution (TMS) </a>
+                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
                             <a href="/Fuel-managment/">Fuel Management</a>
                             <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions</a>
+                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
                         </div>
                     </li>
                     </li>
@@ -71,298 +90,268 @@
             </div>
         </div>
     </nav>
+
     <!-- Hero Section -->
-    <section class="tpms-hero">
-        <div class="tpms-hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-            <div class="circuit-lines">
-                <div class="circuit-line line-1"></div>
-                <div class="circuit-line line-2"></div>
-                <div class="circuit-node node-1"></div>
-                <div class="circuit-node node-2"></div>
-            </div>
-        </div>
+    <section class="hero">
         <div class="container">
-            <div class="tpms-hero-content" data-aos="fade-right" data-aos-duration="1000">
-                <div class="hero-badge">Cold Chain & Logistics Solution</div>
-                <h1 class="tpms-title">Smart Temperature <span class="text-gradient">Monitoring Solutions</span></h1>
-                <h2 class="tpms-subtitle">For Cold Chain & Logistics</h2>
-                <p class="tpms-description">Ensure precision, compliance, and real-time visibility with our Temperature Monitoring Solutions designed for industries like pharmaceuticals, food & beverage, and logistics. Our IoT-powered sensors provide continuous monitoring, instant alerts, and automated reporting to protect temperature-sensitive goods throughout the supply chain.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Schedule Demo <i class="fas fa-arrow-right"></i></a>
-                    <a href="#" class="btn btn-outline">Learn More</a>
-                </div>
-            </div>
-            <div class="tpms-hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="dashboard-wrapper">
-                    <div class="dashboard-preview">
-                        <div class="temperature-display">
-                            <div class="temp-reading">
-                                <div class="current-temp">2.8°C</div>
-                                <div class="temp-range">Range: 2.0°C - 8.0°C</div>
-                            </div>
-                            <div class="temp-graph">
-                                <div class="graph-line"></div>
-                                <div class="graph-point p1"></div>
-                                <div class="graph-point p2"></div>
-                                <div class="graph-point p3"></div>
-                                <div class="graph-point p4"></div>
-                                <div class="graph-point p5"></div>
-                                <div class="threshold-line high"></div>
-                                <div class="threshold-line low"></div>
-                            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-up">
+                        <div class="hero-badge">
+                            <i class="fas fa-temperature-high"></i> Smart Temperature Monitoring
                         </div>
-                        <div class="device-status">
-                            <div class="status-item">
-                                <div class="status-icon"><i class="fas fa-signal"></i></div>
-                                <div class="status-label">Signal</div>
-                            </div>
-                            <div class="status-item">
-                                <div class="status-icon"><i class="fas fa-battery-three-quarters"></i></div>
-                                <div class="status-label">Battery</div>
-                            </div>
-                            <div class="status-item">
-                                <div class="status-icon active"><i class="fas fa-wifi"></i></div>
-                                <div class="status-label">Connected</div>
-                            </div>
+                        <h1 class="hero-title">
+                            Protect Your <span>Temperature</span> Sensitive Cargo
+                        </h1>
+                        <p class="hero-description">
+                            Our smart temperature monitoring solutions provide real-time tracking, instant alerts, and automated reporting to ensure your products maintain optimal temperature throughout the supply chain.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">
+                                Request Demo <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#features" class="btn btn-secondary">
+                                Explore Features <i class="fas fa-angle-down"></i>
+                            </a>
                         </div>
-                    </div>
-                </div>
-            </div>
+                        
+                    
+        
+        <!-- Background Elements -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="bg-pattern"></div>
+        <div class="data-stream">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <g class="data-lines">
+                    <path d="M0,50 Q25,20 50,50 T100,50" stroke="rgba(230, 46, 46, 0.5)" stroke-width="0.5" fill="none" />
+                    <path d="M0,30 Q25,70 50,30 T100,30" stroke="rgba(230, 46, 46, 0.3)" stroke-width="0.3" fill="none" />
+                    <path d="M0,70 Q25,40 50,70 T100,70" stroke="rgba(230, 46, 46, 0.2)" stroke-width="0.2" fill="none" />
+                </g>
+            </svg>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="tpms-features">
-        <div class="features-bg">
-            <div class="floating-elements">
-                <div class="floating-element element-1"></div>
-                <div class="floating-element element-2"></div>
-                <div class="floating-element element-3"></div>
-            </div>
-        </div>
+    <section class="features section" id="features">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <h2 class="animated-heading text-gradient">Key Features</h2>
-                <div class="header-underline"><span class="underline-fill"></span></div>
-                <p class="section-intro">Advanced temperature monitoring capabilities for your cold chain operations</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" data-feature="real-time-tracking">
+            <h2 class="section-title" data-aos="fade-up">Key Features</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Our temperature monitoring solution offers advanced features designed to protect your temperature-sensitive products throughout the supply chain.
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>Real-Time Temperature Tracking</h3>
-                        <p>Monitor temperature fluctuations 24/7 with live data.</p>
-                    </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>±0.2°C accuracy</h4>
-                                <p>Industry-leading precision sensors</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <h3 class="feature-title">Real-Time Tracking</h3>
+                    <p class="feature-description">
+                        Monitor temperature conditions in real-time with continuous data streams and customizable dashboards.
+                    </p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" data-feature="instant-alerts">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-bell"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>Instant Alerts & Notifications</h3>
-                        <p>Get notified of deviations via SMS, email, or mobile app.</p>
-                    </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>Under 30 seconds</h4>
-                                <p>Alert delivery for critical breaches</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <h3 class="feature-title">Instant Alerts</h3>
+                    <p class="feature-description">
+                        Receive immediate notifications when temperatures deviate from your preset thresholds.
+                    </p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300" data-feature="automated-reporting">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>Automated Reporting & Compliance</h3>
-                        <p>Generate audit-ready reports for regulatory adherence.</p>
-                    </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>100% audit compliant</h4>
-                                <p>Tamper-proof temperature records</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
+                    <h3 class="feature-title">Automated Reporting</h3>
+                    <p class="feature-description">
+                        Generate comprehensive temperature reports automatically for regulatory compliance and quality assurance.
+                    </p>
                 </div>
                 
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400" data-feature="seamless-integration">
-                    <div class="feature-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Seamless IoT & ERP Integration</h3>
-                        <p>Connect with existing fleet management and inventory systems.</p>
-                    </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>50+ platforms</h4>
-                                <p>API integration with major ERPs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="500" data-feature="battery-life">
-                    <div class="feature-icon">
-                        <i class="fas fa-battery-full"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Long Battery Life & Wireless Connectivity</h3>
-                        <p>Reliable performance with minimal maintenance.</p>
-                    </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>Up to 5 years</h4>
-                                <p>Battery life with standard usage</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="600" data-feature="multi-zone">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                    <div class="feature-content">
-                        <h3>Multi-Zone Monitoring</h3>
-                        <p>Track multiple temperature zones in a single vehicle or storage unit.</p>
+                    <h3 class="feature-title">Multi-Zone Monitoring</h3>
+                    <p class="feature-description">
+                        Track temperature across multiple zones, warehouses, and transportation vehicles from a single platform.
+                    </p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
                     </div>
-                    <div class="feature-hover">
-                        <div class="hover-content">
-                            <div class="feature-stat">
-                                <h4>Up to 16 zones</h4>
-                                <p>Simultaneous monitoring per system</p>
-                            </div>
-                        </div>
+                    <h3 class="feature-title">Historical Data Analysis</h3>
+                    <p class="feature-description">
+                        Access historical temperature data to identify patterns, trends, and opportunities for improvement.
+                    </p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <div class="card-glow"></div>
+                    <h3 class="feature-title">Mobile Access</h3>
+                    <p class="feature-description">
+                        Monitor temperatures and receive alerts on-the-go with our mobile app for iOS and Android.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Visualization Section -->
-    <section class="tpms-visualization">
-        <div class="container">
-            <div class="visualization-wrapper" data-aos="zoom-in" data-aos-duration="1000">
-                <object data="../assets/img/temperature-monitoring.svg" type="image/svg+xml" class="temperature-monitoring-visual"></object>
+            
+            <!-- Feature Highlight -->
+            <div class="feature-highlight" data-aos="fade-up" data-aos-delay="700">
+                <object type="image/svg+xml" data="../assets/svg/multi-zone.svg" class="img-fluid feature-highlight-svg"></object>
+                <div class="feature-highlight-content">
+                    <h3>Advanced Multi-Zone Monitoring</h3>
+                    <p>Our centralized hub connects to an unlimited number of temperature sensors placed across your facilities and vehicles, providing real-time visibility into all your temperature-controlled environments from a single dashboard.</p>
+                    <ul class="feature-highlight-list">
+                        <li><i class="fas fa-check-circle"></i> Monitor unlimited zones simultaneously</li>
+                        <li><i class="fas fa-check-circle"></i> Set different temperature thresholds for each zone</li>
+                        <li><i class="fas fa-check-circle"></i> View all critical data from our mobile app</li>
+                        <li><i class="fas fa-check-circle"></i> Receive zone-specific alerts and notifications</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="tpms-benefits">
-        <div class="benefits-bg">
-            <div class="gradient-overlay"></div>
-        </div>
+    <section class="benefits section">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <h2 class="animated-heading text-gradient">Benefits of Our Temperature Monitoring Solution</h2>
-                <div class="header-underline"><span class="underline-fill"></span></div>
-                <p class="section-intro">Our temperature monitoring system delivers tangible value across your cold chain operations</p>
-            </div>
-            <div class="benefits-container">
-                <div class="benefits-visual" data-aos="fade-right">
-                    <svg width="400" height="400" viewBox="0 0 400 400" id="benefits-animation">
-                        <!-- This will be populated by JavaScript -->
-                    </svg>
+            <h2 class="section-title" data-aos="fade-up">Why Choose Our Solution?</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Our temperature monitoring system provides significant benefits that protect your products and enhance your operations.
+            </p>
+            
+            <div class="benefit-row">
+                <div class="benefit-content" data-aos="fade-right">
+                    <h3 class="benefit-title">Reduce Product Losses</h3>
+                    <p class="benefit-text">
+                        By continuously monitoring temperature conditions, our solution helps prevent spoilage and damage, significantly reducing product losses by up to 68%.
+                    </p>
+                    <ul class="benefit-list">
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Detect temperature excursions before damage occurs
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Take corrective action immediately with real-time alerts
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Identify and address recurring issues in your cold chain
+                        </li>
+                    </ul>
                 </div>
-                <div class="benefits-list">
-                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="benefit-icon">
-                            <i class="fas fa-archive"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Reduce Product Losses</h3>
-                            <p>Prevent spoilage with proactive alerts.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="benefit-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Ensure Regulatory Compliance</h3>
-                            <p>Meet industry standards (GMP, HACCP, FDA, etc.).</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="benefit-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Enhance Supply Chain Visibility</h3>
-                            <p>Monitor shipments from warehouse to last-mile delivery.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="benefit-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Improve Customer Trust</h3>
-                            <p>Deliver goods in optimal condition with verified temperature logs.</p>
-                        </div>
-                    </div>
+                <div class="benefit-image" data-aos="fade-left">
+                    <object type="image/svg+xml" data="../assets/svg/reduce-losses.svg" class="img-fluid"></object>
+                </div>
+            </div>
+            
+            <div class="benefit-row">
+                <div class="benefit-content" data-aos="fade-left">
+                    <h3 class="benefit-title">Ensure Regulatory Compliance</h3>
+                    <p class="benefit-text">
+                        Meet and exceed regulatory requirements with automated temperature documentation that satisfies FDA, GMP, and HACCP standards.
+                    </p>
+                    <ul class="benefit-list">
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Maintain comprehensive temperature records
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Generate audit-ready reports with a single click
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Demonstrate due diligence with continuous monitoring
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefit-image" data-aos="fade-right">
+                    <object type="image/svg+xml" data="../assets/svg/compliance.svg" class="img-fluid"></object>
+                </div>
+            </div>
+            
+            <div class="benefit-row">
+                <div class="benefit-content" data-aos="fade-right">
+                    <h3 class="benefit-title">Enhance Supply Chain Visibility</h3>
+                    <p class="benefit-text">
+                        Gain complete visibility into temperature conditions throughout your supply chain, from production to final delivery.
+                    </p>
+                    <ul class="benefit-list">
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Track temperatures across multiple locations
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Monitor conditions during transportation
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Identify weaknesses in your cold chain
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefit-image" data-aos="fade-left">
+                    <object type="image/svg+xml" data="../assets/svg/supply-chain.svg" class="img-fluid"></object>
+                </div>
+            </div>
+            
+            <div class="benefit-row">
+                <div class="benefit-content" data-aos="fade-left">
+                    <h3 class="benefit-title">Improve Customer Trust</h3>
+                    <p class="benefit-text">
+                        Build confidence with your customers by providing verifiable temperature data that demonstrates your commitment to product quality.
+                    </p>
+                    <ul class="benefit-list">
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Share temperature records with customers
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Provide proof of temperature compliance
+                        </li>
+                        <li class="benefit-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            Reduce customer complaints and returns
+                        </li>
+                    </ul>
+                </div>
+                <div class="benefit-image" data-aos="fade-right">
+                    <object type="image/svg+xml" data="../assets/svg/customer-trust.svg" class="img-fluid"></object>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="tpms-cta">
-        <div class="cta-bg">
-            <div class="glow-orbs">
-                <div class="glow-orb orb-1"></div>
-                <div class="glow-orb orb-2"></div>
-            </div>
-            <div class="gradient-overlay"></div>
-        </div>
+    <section class="cta section">
         <div class="container">
-            <div class="cta-content" data-aos="zoom-in">
-                <h2>Protect Your Temperature-Sensitive Cargo</h2>
-                <p>Protect your temperature-sensitive cargo with an intelligent, real-time monitoring system that ensures quality, safety, and compliance at every stage of the supply chain.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary btn-glow">Get Started <i class="fas fa-arrow-right"></i></a>
-                    <a href="#" class="btn btn-outline">Contact Sales</a>
-                </div>
+            <div class="cta-container" data-aos="fade-up">
+                <h2 class="cta-title">Protect Your Temperature-Sensitive Cargo Today</h2>
+                <p class="cta-description">
+                    Join thousands of companies that rely on our temperature monitoring solutions to protect their products and ensure quality.
+                </p>
+                <a href="#" class="btn btn-primary">Schedule a Free Demo <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
+        
+        <!-- Background Elements -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="bg-pattern"></div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="site-footer">
+     <!-- Footer Section -->
+     <footer class="site-footer">
         <div class="footer-background"></div>
         <div class="footer-container">
             <div class="footer-grid">
@@ -373,28 +362,29 @@
                         <div class="logo-decoration"></div>
                     </a>
                     <p class="company-description">
-                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users.
+                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
                     </p>
+             
                 </div>
-
+                
                 <!-- Solutions -->
                 <div class="footer-col">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                       <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
-                        <li> <a href="/adas-dms/">ADAS/DMS Solutions</a></li>
+                        <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
                         <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
-                        <li> <a href="/TPMS/" class="active">Temperature Monitoring Solutions</a></li>
+                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
                         <li> <a href="/Fuel-managment/">Fuel Management</a></li>
                         <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
                         <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
-                        </ul>
-                    </div>
-    
-                    <!-- Industries -->
+                    </ul>
+                </div>
+                
+                <!-- Industries -->
                 <div class="footer-col">
                     <h4>Industries</h4>
-                        <ul class="footer-links">
+                    <ul class="footer-links">
                        <li><a href="/transport&logistics/">Transport & Logistics</a></li>
                         <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
                         <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
@@ -402,9 +392,9 @@
                         <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
                         <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
                         <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
-                        </ul>
-                    </div>
-    
+                    </ul>
+                </div>
+                
                 <!-- Contact -->
                 <div class="footer-col">
                     <h4>Contact Us</h4>
@@ -413,7 +403,7 @@
                         <p><i class="fas fa-phone-alt"></i>080-68976911</p>
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
-                        </div>
+                    </div>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -421,15 +411,15 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
-                    </div>
                 </div>
-    
+            </div>
+            
             <!-- Footer Bottom -->
-                <div class="footer-bottom">
+            <div class="footer-bottom">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
-                        </div>
+                </div>
                 <div class="footer-policies">
                     <a href="/privacy-policy">Privacy Policy</a>
                     <a href="/terms-of-service">Terms of Service</a>
@@ -439,82 +429,305 @@
         </div>
         
         <!-- Scroll to top button -->
-        <div class="scroll-top" id="scrollToTop">
+        <div class="scroll-top">
             <i class="fas fa-chevron-up"></i>
-            </div>
-        </footer>
+        </div>
+    </footer>
     
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Simple JavaScript for scroll to top functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animations
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: false,
-                mirror: true,
-                offset: 100,
-                delay: 100,
-                anchorPlacement: 'top-bottom'
-            });
-            
-            // Initialize other interactive elements
-            initializeMobileNavigation();
-            initializeScrollToTop();
-            
-            // Load TPMS specific JavaScript
-            const script = document.createElement('script');
-            script.src = '/js/tpms.js';
-            script.onload = function() {
-                // Refresh AOS after all resources are loaded
-                setTimeout(function() {
-                    AOS.refresh();
-                }, 500);
-            };
-            document.body.appendChild(script);
-        });
-        
-        function initializeMobileNavigation() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                    menuToggle.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                });
-            }
-            
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                const link = dropdown.querySelector('.nav-link');
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth < 992) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
-                });
-            });
-        }
-        
-        function initializeScrollToTop() {
-            const scrollToTopBtn = document.getElementById('scrollToTop');
+            const scrollTopBtn = document.querySelector('.scroll-top');
             
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.add('show');
+                    scrollTopBtn.classList.add('active');
                 } else {
-                    scrollToTopBtn.classList.remove('show');
+                    scrollTopBtn.classList.remove('active');
                 }
             });
             
-            scrollToTopBtn.addEventListener('click', function() {
+            scrollTopBtn.addEventListener('click', function() {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
+        });
+        </script>
+    
+        
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize footer components
+        initScrollToTop();
+        initNewsletterForm();
+        initAnimations();
+        initMobileOptimizations();
+    });
+    
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    /**
+     * Newsletter form validation and submission
+     */
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button');
+            
+            // Basic form validation
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                if (!isValidEmail(email)) {
+                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                    emailInput.focus();
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with timeout
+                setTimeout(function() {
+                    emailInput.value = '';
+                    submitBtn.innerHTML = 'Subscribe';
+                    submitBtn.disabled = false;
+                    
+                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+                }, 1500);
+            });
         }
+    }
+    
+    /**
+     * Check if email is valid
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    /**
+     * Show success or error message after form submission
+     */
+    function showFormMessage(form, message, type) {
+        // Remove any existing messages
+        const existingMessage = form.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+        
+        // Add message to form
+        form.appendChild(messageElement);
+        
+        // Remove message after delay
+        setTimeout(function() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.remove();
+            }, 300);
+        }, 5000);
+    }
+    
+    /**
+     * Initialize animations for footer elements
+     */
+    function initAnimations() {
+        // Detect when elements enter viewport
+        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('visible'));
+        }
+        
+        // Animate stats numbers
+        animateStatCounters();
+    }
+    
+    /**
+     * Animate the stat counter numbers with counting effect
+     */
+    function animateStatCounters() {
+        const statValues = document.querySelectorAll('.stat-value');
+        
+        statValues.forEach(stat => {
+            const value = stat.innerText;
+            
+            // Skip if not a purely numeric value (e.g., "24/7")
+            if (value.match(/[^0-9%]/)) return;
+            
+            const hasPercent = value.includes('%');
+            const numericValue = parseInt(value.replace(/\D/g, ''));
+            
+            // Set starting value to 0
+            stat.innerText = hasPercent ? '0%' : '0';
+            
+            // Animate to final value
+            let current = 0;
+            const increment = Math.max(1, Math.floor(numericValue / 50));
+            const duration = 1500; // 1.5 seconds
+            const interval = Math.floor(duration / (numericValue / increment));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= numericValue) {
+                    clearInterval(timer);
+                    current = numericValue;
+                }
+                
+                stat.innerText = hasPercent ? `${current}%` : current;
+            }, interval);
+        });
+    }
+    
+    /**
+     * Mobile-specific optimizations for better UX
+     */
+    function initMobileOptimizations() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Improve tap targets for mobile
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+                
+                link.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
+                });
+            });
+            
+            // Add extra styling for form inputs on mobile
+            const inputs = document.querySelectorAll('.newsletter-form input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focus');
+                });
+            });
+        }
+    }
+    </script>
+
+    <!-- AOS Animation Init -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+        
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+        
+        // Cursor tracker
+        document.addEventListener('mousemove', (e) => {
+            const tracker = document.getElementById('cursorTracker');
+            tracker.style.opacity = '1';
+            tracker.style.left = e.clientX + 'px';
+            tracker.style.top = e.clientY + 'px';
+            
+            // Hide tracker when mouse is inactive
+            clearTimeout(window.cursorTimeout);
+            window.cursorTimeout = setTimeout(() => {
+                tracker.style.opacity = '0';
+            }, 2000);
+        });
+        
+        // Animate temperature values
+        function animateTemperature(elementId, targetTemp, variance = 0.3) {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+            
+            let currentTemp = parseFloat(element.innerText);
+            
+            setInterval(() => {
+                // Random fluctuation within variance range
+                const fluctuation = (Math.random() * variance * 2) - variance;
+                const newTemp = (targetTemp + fluctuation).toFixed(1);
+                
+                // Update display with animation
+                element.innerHTML = newTemp + '<span class="unit">°C</span>';
+                
+                // Add warning class if temperature exceeds threshold
+                if (elementId === 'transport-temp' && parseFloat(newTemp) > 5.5) {
+                    element.parentElement.querySelector('.temp-card-status').classList.add('warning');
+                    element.parentElement.querySelector('.temp-card-status').innerHTML = '<i class="fas fa-exclamation-circle"></i> Alert: Rising';
+                } else if (elementId === 'transport-temp') {
+                    element.parentElement.querySelector('.temp-card-status').classList.remove('warning');
+                    element.parentElement.querySelector('.temp-card-status').innerHTML = '<i class="fas fa-check-circle"></i> Normal Range';
+                }
+            }, 3000 + Math.random() * 2000); // Random interval between 3-5 seconds
+        }
+        
+        // Initialize temperature animations
+        window.addEventListener('load', () => {
+            animateTemperature('ambient-temp', 25.2);
+            animateTemperature('cold-temp', 2.4, 0.2);
+            animateTemperature('transport-temp', 5.8, 0.5);
+        });
     </script>
 </body>
 </html>

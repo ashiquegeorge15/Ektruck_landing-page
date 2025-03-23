@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions -->
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e62e2e" />
+            <stop offset="100%" stop-color="#c41e1e" />
+        </linearGradient>
+        
+        <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#141414" />
+            <stop offset="100%" stop-color="#0c0c0c" />
+        </linearGradient>
+        
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#1e40af" />
+        </linearGradient>
+        
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#34d399" />
+            <stop offset="100%" stop-color="#059669" />
+        </linearGradient>
+        
+        <!-- Filters -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.3" />
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="400" height="300" rx="15" fill="url(#darkGradient)" filter="url(#shadow)" />
+    
+    <!-- Grid Pattern -->
+    <g opacity="0.1">
+        <path d="M0 50H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 100H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 150H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 200H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 250H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M80 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M160 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M240 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M320 0V300" stroke="#ffffff" stroke-width="1" />
+    </g>
+    
+    <!-- Title -->
+    <text x="200" y="40" fill="#ffffff" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Improve Customer Trust</text>
+    
+    <!-- Customer Satisfaction Meter -->
+    <g transform="translate(60, 80)">
+        <!-- Satisfaction Meter Arc -->
+        <path d="M30,60 A60,60 0 0,1 150,60" stroke="#3a3a3a" stroke-width="8" stroke-linecap="round" fill="none" />
+        
+        <!-- Satisfaction Level Arc (animates to fill) -->
+        <path d="M30,60 A60,60 0 0,1 150,60" stroke="url(#greenGradient)" stroke-width="8" stroke-linecap="round" fill="none" stroke-dasharray="188.5 188.5" stroke-dashoffset="188.5">
+            <animate attributeName="stroke-dashoffset" from="188.5" to="37.7" dur="2s" begin="0.5s" fill="freeze" />
+        </path>
+        
+        <!-- Meter Needle -->
+        <g transform="translate(90, 60)">
+            <line x1="0" y1="0" x2="0" y2="-50" stroke="#ffffff" stroke-width="2" transform="rotate(0)">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="120" dur="2s" begin="0.5s" fill="freeze" />
+            </line>
+            <circle cx="0" cy="0" r="5" fill="#e62e2e" />
+        </g>
+        
+        <!-- Satisfaction Labels -->
+        <text x="30" y="80" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">Low</text>
+        <text x="90" y="80" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">Medium</text>
+        <text x="150" y="80" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">High</text>
+        
+        <!-- Percentage Display -->
+        <g transform="translate(90, 110)">
+            <rect x="-30" y="-15" width="60" height="30" rx="15" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1" />
+            <text x="0" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="14" font-weight="600" text-anchor="middle">
+                <animate attributeName="textContent" from="0%" to="80%" dur="2s" begin="0.5s" fill="freeze" />
+                80%
+            </text>
+            <text x="0" y="15" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle">CUSTOMER SATISFACTION</text>
+        </g>
+    </g>
+    
+    <!-- Customer and Delivery Illustration -->
+    <g transform="translate(250, 80)">
+        <!-- Delivery Vehicle -->
+        <rect x="-25" y="10" width="50" height="30" rx="5" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <rect x="-35" y="25" width="10" height="15" rx="2" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <circle cx="-20" cy="40" r="5" fill="#3a3a3a" />
+        <circle cx="20" cy="40" r="5" fill="#3a3a3a" />
+        
+        <!-- Temperature Monitor -->
+        <rect x="-15" y="20" width="10" height="10" rx="2" fill="#141414" stroke="#e62e2e" stroke-width="1" />
+        <circle cx="-10" cy="25" r="3" fill="url(#redGradient)" filter="url(#glow)" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+        
+        <!-- Temperature Data Connection -->
+        <path d="M-10,25 C0,20 10,30 20,25" stroke="#e62e2e" stroke-width="1" stroke-dasharray="2 2">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </path>
+        
+        <!-- Mobile Device -->
+        <rect x="20" y="15" width="20" height="30" rx="3" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <rect x="22" y="18" width="16" height="22" rx="1" fill="#141414" />
+        
+        <!-- Device Screen - Temperature Info -->
+        <rect x="24" y="20" width="12" height="8" rx="1" fill="rgba(230, 46, 46, 0.2)" stroke="#e62e2e" stroke-width="0.5" />
+        <text x="30" y="26" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" text-anchor="middle">4.2°C</text>
+        
+        <!-- Device Screen - Status -->
+        <rect x="24" y="30" width="12" height="8" rx="1" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="0.5" />
+        <text x="30" y="36" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" text-anchor="middle">Optimal</text>
+        
+        <!-- Customer Figure -->
+        <circle cx="50" cy="25" r="8" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <path d="M42,40 L58,40 L54,25 L46,25 Z" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        
+        <!-- Trust Connection -->
+        <path d="M50,30 C40,40 20,50 0,30" stroke="#34d399" stroke-width="1" stroke-dasharray="3 2">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2.5s" repeatCount="indefinite" />
+        </path>
+    </g>
+    
+    <!-- Verified Temperature Logs -->
+    <g transform="translate(60, 170)">
+        <!-- Log Document -->
+        <rect x="0" y="0" width="120" height="80" rx="5" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <rect x="0" y="0" width="120" height="15" rx="5" fill="#141414" />
+        
+        <!-- Document Title -->
+        <text x="60" y="10" fill="#ffffff" font-family="Poppins, sans-serif" font-size="8" font-weight="500" text-anchor="middle">TEMPERATURE LOG</text>
+        
+        <!-- Log Data -->
+        <g transform="translate(10, 25)">
+            <!-- Row 1 -->
+            <text x="0" y="0" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6">Date</text>
+            <text x="35" y="0" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6">Time</text>
+            <text x="70" y="0" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6">Temperature</text>
+            
+            <!-- Row 2 -->
+            <rect x="-5" y="5" width="110" height="10" rx="2" fill="#141414" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+            </rect>
+            <text x="0" y="12" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">05/15/23</text>
+            <text x="35" y="12" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">09:00</text>
+            <text x="70" y="12" fill="#34d399" font-family="Poppins, sans-serif" font-size="6">4.2°C</text>
+            
+            <!-- Row 3 -->
+            <rect x="-5" y="18" width="110" height="10" rx="2" fill="#141414" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze" />
+            </rect>
+            <text x="0" y="25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">05/15/23</text>
+            <text x="35" y="25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">12:00</text>
+            <text x="70" y="25" fill="#34d399" font-family="Poppins, sans-serif" font-size="6">3.9°C</text>
+            
+            <!-- Row 4 -->
+            <rect x="-5" y="31" width="110" height="10" rx="2" fill="#141414" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.4s" fill="freeze" />
+            </rect>
+            <text x="0" y="38" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">05/15/23</text>
+            <text x="35" y="38" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">15:00</text>
+            <text x="70" y="38" fill="#34d399" font-family="Poppins, sans-serif" font-size="6">4.1°C</text>
+            
+            <!-- Row 5 -->
+            <rect x="-5" y="44" width="110" height="10" rx="2" fill="#141414" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.6s" fill="freeze" />
+            </rect>
+            <text x="0" y="51" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">05/15/23</text>
+            <text x="35" y="51" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">18:00</text>
+            <text x="70" y="51" fill="#34d399" font-family="Poppins, sans-serif" font-size="6">4.0°C</text>
+        </g>
+        
+        <!-- Verification Stamp -->
+        <g transform="translate(100, 70)">
+            <circle cx="0" cy="0" r="10" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="1" />
+            <path d="M-4,0 L-1,3 L4,-3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2s" fill="freeze" />
+            </path>
+            <text x="0" y="15" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="5" text-anchor="middle">VERIFIED</text>
+        </g>
+    </g>
+    
+    <!-- Customer Reviews Section -->
+    <g transform="translate(220, 170)">
+        <!-- Review Card -->
+        <rect x="0" y="0" width="140" height="90" rx="5" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        
+        <!-- Card Title -->
+        <text x="70" y="15" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="500" text-anchor="middle">Customer Feedback</text>
+        
+        <!-- Star Ratings -->
+        <g transform="translate(20, 30)">
+            <!-- Before Temperature Monitoring -->
+            <text x="0" y="0" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6">Before:</text>
+            <text x="30" y="0" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6">★★★☆☆</text>
+            
+            <!-- After Temperature Monitoring -->
+            <text x="0" y="15" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6">After:</text>
+            <text x="30" y="15" fill="#34d399" font-family="Poppins, sans-serif" font-size="6">★★★★★</text>
+            <text x="60" y="15" fill="#34d399" font-family="Poppins, sans-serif" font-size="6" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.5s" fill="freeze" />
+                +67%
+            </text>
+        </g>
+        
+        <!-- Customer Quote -->
+        <rect x="10" y="40" width="120" height="40" rx="3" fill="#141414" />
+        <text x="70" y="55" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.2s" fill="freeze" />
+            "I can now verify the temperature"
+        </text>
+        <text x="70" y="65" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.4s" fill="freeze" />
+            "of my shipment at every stage."
+        </text>
+        <text x="70" y="75" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.6s" fill="freeze" />
+            "Complete peace of mind!"
+        </text>
+    </g>
+    
+    <!-- Trust Key Metrics -->
+    <g transform="translate(50, 260)">
+        <!-- Metric 1: Product Quality -->
+        <g transform="translate(0, 0)">
+            <circle cx="0" cy="0" r="12" fill="rgba(230, 46, 46, 0.2)" stroke="#e62e2e" stroke-width="1" />
+            <text x="0" y="3" fill="#ffffff" font-family="Poppins, sans-serif" font-size="8" font-weight="500" text-anchor="middle">92%</text>
+            <text x="0" y="20" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle">Quality</text>
+        </g>
+        
+        <!-- Metric 2: On-Time Delivery -->
+        <g transform="translate(60, 0)">
+            <circle cx="0" cy="0" r="12" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="1" />
+            <text x="0" y="3" fill="#ffffff" font-family="Poppins, sans-serif" font-size="8" font-weight="500" text-anchor="middle">95%</text>
+            <text x="0" y="20" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle">On-Time</text>
+        </g>
+        
+        <!-- Metric 3: Customer Retention -->
+        <g transform="translate(120, 0)">
+            <circle cx="0" cy="0" r="12" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1" />
+            <text x="0" y="3" fill="#ffffff" font-family="Poppins, sans-serif" font-size="8" font-weight="500" text-anchor="middle">88%</text>
+            <text x="0" y="20" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle">Retention</text>
+        </g>
+        
+        <!-- Metric 4: Trust Score -->
+        <g transform="translate(180, 0)">
+            <circle cx="0" cy="0" r="15" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1" />
+            <text x="0" y="3" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="600" text-anchor="middle">A+</text>
+            <text x="0" y="20" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="6" text-anchor="middle">Trust Score</text>
+        </g>
+        
+        <!-- Connecting Lines -->
+        <path d="M12,0 H48" stroke="#3a3a3a" stroke-width="1" stroke-dasharray="2 2" />
+        <path d="M72,0 H108" stroke="#3a3a3a" stroke-width="1" stroke-dasharray="2 2" />
+        <path d="M132,0 H165" stroke="#3a3a3a" stroke-width="1" stroke-dasharray="2 2" />
+    </g>
+    
+    <!-- Animated Elements -->
+    <!-- Pulse Effect for Trust -->
+    <circle cx="295" cy="105" r="20" fill="none" stroke="#34d399" stroke-width="2" opacity="0.1">
+        <animate attributeName="r" from="20" to="35" dur="3s" begin="0s" repeatCount="indefinite" />
+        <animate attributeName="opacity" from="0.2" to="0" dur="3s" begin="0s" repeatCount="indefinite" />
+    </circle>
+</svg> 

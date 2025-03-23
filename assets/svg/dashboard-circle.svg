@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#212529" />
+      <stop offset="100%" stop-color="#111111" />
+    </linearGradient>
+    
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5c5c" />
+      <stop offset="100%" stop-color="#c51e1e" />
+    </linearGradient>
+    
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur" />
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="url(#bgGradient)" stroke="#333333" stroke-width="2" />
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#333333" stroke-width="1" stroke-dasharray="2 4" />
+  
+  <!-- Grid lines -->
+  <line x1="20" y1="100" x2="180" y2="100" stroke="#333333" stroke-width="1" stroke-dasharray="2 4" />
+  <line x1="100" y1="20" x2="100" y2="180" stroke="#333333" stroke-width="1" stroke-dasharray="2 4" />
+  
+  <!-- Decorative elements -->
+  <path d="M30,100 A70,70 0 0,1 100,30" stroke="#444444" stroke-width="1" fill="none" />
+  <path d="M100,170 A70,70 0 0,1 170,100" stroke="#444444" stroke-width="1" fill="none" />
+  
+  <!-- Circular gauges -->
+  <g class="efficiency-gauge">
+    <circle cx="100" cy="100" r="75" fill="none" stroke="#444444" stroke-width="6" />
+    <circle cx="100" cy="100" r="75" fill="none" stroke="url(#redGradient)" stroke-width="6" stroke-dasharray="471 471" stroke-dashoffset="117" class="gauge-progress" />
+    <text x="100" y="105" fill="#ffffff" font-family="Arial" font-size="16" text-anchor="middle" class="efficiency-text">75%</text>
+    <text x="100" y="130" fill="#aaaaaa" font-family="Arial" font-size="8" text-anchor="middle">EFFICIENCY</text>
+  </g>
+  
+  <!-- Fuel level gauge -->
+  <g class="fuel-level-gauge" transform="translate(50, 70)">
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#444444" stroke-width="4" />
+    <circle cx="0" cy="0" r="25" fill="none" stroke="url(#redGradient)" stroke-width="4" stroke-dasharray="157 157" stroke-dashoffset="39" class="gauge-progress" />
+    <text x="0" y="3" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle" class="fuel-level-text">75%</text>
+    <text x="0" y="13" fill="#aaaaaa" font-family="Arial" font-size="6" text-anchor="middle">FUEL</text>
+  </g>
+  
+  <!-- Consumption gauge -->
+  <g class="consumption-gauge" transform="translate(150, 70)">
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#444444" stroke-width="4" />
+    <circle cx="0" cy="0" r="25" fill="none" stroke="url(#redGradient)" stroke-width="4" stroke-dasharray="157 157" stroke-dashoffset="94" class="gauge-progress" />
+    <text x="0" y="3" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle" class="consumption-text">40%</text>
+    <text x="0" y="13" fill="#aaaaaa" font-family="Arial" font-size="6" text-anchor="middle">USAGE</text>
+  </g>
+  
+  <!-- Cost savings gauge -->
+  <g class="savings-gauge" transform="translate(100, 140)">
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#444444" stroke-width="4" />
+    <circle cx="0" cy="0" r="25" fill="none" stroke="url(#redGradient)" stroke-width="4" stroke-dasharray="157 157" stroke-dashoffset="63" class="gauge-progress" />
+    <text x="0" y="3" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle" class="savings-text">60%</text>
+    <text x="0" y="13" fill="#aaaaaa" font-family="Arial" font-size="6" text-anchor="middle">SAVINGS</text>
+  </g>
+  
+  <!-- Center design element -->
+  <circle cx="100" cy="100" r="15" fill="#222222" stroke="#333333" stroke-width="1" filter="url(#innerShadow)" />
+  <circle cx="100" cy="100" r="8" fill="#111111" stroke="#333333" stroke-width="1" />
+  <circle cx="100" cy="100" r="3" fill="url(#redGradient)" class="center-pulse" />
+  
+  <!-- Glowing dots -->
+  <circle cx="50" cy="70" r="3" fill="url(#redGradient)" filter="url(#glowFilter)" class="glow-dot dot1" />
+  <circle cx="150" cy="70" r="3" fill="url(#redGradient)" filter="url(#glowFilter)" class="glow-dot dot2" />
+  <circle cx="100" cy="140" r="3" fill="url(#redGradient)" filter="url(#glowFilter)" class="glow-dot dot3" />
+  
+  <!-- Connection lines -->
+  <line x1="58" y1="70" x2="92" y2="100" stroke="url(#redGradient)" stroke-width="1" class="connection-line line1" />
+  <line x1="142" y1="70" x2="108" y2="100" stroke="url(#redGradient)" stroke-width="1" class="connection-line line2" />
+  <line x1="100" y1="115" x2="100" y2="132" stroke="url(#redGradient)" stroke-width="1" class="connection-line line3" />
+  
+  <!-- Digital readout -->
+  <g class="digital-readout" transform="translate(100, 40)">
+    <rect x="-45" y="-12" width="90" height="24" rx="5" ry="5" fill="#111111" stroke="#333333" stroke-width="1" />
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#e62e2e" font-family="'Courier New', monospace" font-size="12" font-weight="bold" class="readout-value">12.5 L/100km</text>
+    <text x="-38" y="-6" fill="#666666" font-family="Arial" font-size="5">AVG CONSUMPTION</text>
+  </g>
+  
+  <!-- Animated notifications -->
+  <g class="notification" transform="translate(170, 30)" opacity="0">
+    <circle cx="0" cy="0" r="10" fill="#111111" stroke="#e62e2e" stroke-width="1" />
+    <text x="0" y="1" text-anchor="middle" dominant-baseline="middle" fill="#e62e2e" font-family="Arial" font-size="10" font-weight="bold">!</text>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#e62e2e" stroke-width="1" class="notification-ring" />
+  </g>
+  
+  <!-- Animation -->
+  <style>
+    .gauge-progress {
+      transform-origin: center;
+      transition: stroke-dashoffset 1s ease;
+    }
+    
+    .efficiency-gauge .gauge-progress {
+      animation: efficiencyAnimate 8s infinite alternate ease-in-out;
+    }
+    
+    .fuel-level-gauge .gauge-progress {
+      animation: fuelLevelAnimate 8s infinite alternate ease-in-out;
+    }
+    
+    .consumption-gauge .gauge-progress {
+      animation: consumptionAnimate 8s infinite alternate ease-in-out;
+    }
+    
+    .savings-gauge .gauge-progress {
+      animation: savingsAnimate 8s infinite alternate ease-in-out;
+    }
+    
+    .center-pulse {
+      animation: pulse 2s infinite alternate;
+    }
+    
+    .glow-dot {
+      animation: glowPulse 3s infinite alternate;
+    }
+    
+    .dot1 { animation-delay: 0s; }
+    .dot2 { animation-delay: 1s; }
+    .dot3 { animation-delay: 2s; }
+    
+    .connection-line {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: lineReveal 3s infinite;
+    }
+    
+    .line1 { animation-delay: 0s; }
+    .line2 { animation-delay: 0.5s; }
+    .line3 { animation-delay: 1s; }
+    
+    .notification {
+      animation: notificationShow 10s infinite;
+    }
+    
+    .notification-ring {
+      animation: ringExpand 2s infinite;
+      transform-origin: center;
+    }
+    
+    .efficiency-text {
+      animation: updateEfficiency 8s infinite alternate ease-in-out;
+    }
+    
+    .fuel-level-text {
+      animation: updateFuelLevel 8s infinite alternate ease-in-out;
+    }
+    
+    .consumption-text {
+      animation: updateConsumption 8s infinite alternate ease-in-out;
+    }
+    
+    .savings-text {
+      animation: updateSavings 8s infinite alternate ease-in-out;
+    }
+    
+    .readout-value {
+      animation: updateReadout 8s infinite;
+    }
+    
+    @keyframes efficiencyAnimate {
+      0% { stroke-dashoffset: 141; }
+      50% { stroke-dashoffset: 94; }
+      100% { stroke-dashoffset: 118; }
+    }
+    
+    @keyframes fuelLevelAnimate {
+      0% { stroke-dashoffset: 20; }
+      50% { stroke-dashoffset: 39; }
+      100% { stroke-dashoffset: 78; }
+    }
+    
+    @keyframes consumptionAnimate {
+      0% { stroke-dashoffset: 63; }
+      50% { stroke-dashoffset: 94; }
+      100% { stroke-dashoffset: 78; }
+    }
+    
+    @keyframes savingsAnimate {
+      0% { stroke-dashoffset: 94; }
+      50% { stroke-dashoffset: 63; }
+      100% { stroke-dashoffset: 78; }
+    }
+    
+    @keyframes pulse {
+      0% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.7; }
+      100% { r: 3; opacity: 1; }
+    }
+    
+    @keyframes glowPulse {
+      0% { opacity: 0.7; r: 2; }
+      100% { opacity: 1; r: 4; }
+    }
+    
+    @keyframes lineReveal {
+      0%, 20% { stroke-dashoffset: 50; opacity: 0.3; }
+      50%, 70% { stroke-dashoffset: 0; opacity: 1; }
+      90%, 100% { stroke-dashoffset: 50; opacity: 0.3; }
+    }
+    
+    @keyframes notificationShow {
+      0%, 70% { opacity: 0; }
+      75% { opacity: 1; }
+      85% { opacity: 1; }
+      90%, 100% { opacity: 0; }
+    }
+    
+    @keyframes ringExpand {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    
+    @keyframes updateEfficiency {
+      0% { content: "70%"; }
+      50% { content: "80%"; }
+      100% { content: "75%"; }
+    }
+    
+    @keyframes updateFuelLevel {
+      0% { content: "90%"; }
+      50% { content: "75%"; }
+      100% { content: "50%"; }
+    }
+    
+    @keyframes updateConsumption {
+      0% { content: "60%"; }
+      50% { content: "40%"; }
+      100% { content: "50%"; }
+    }
+    
+    @keyframes updateSavings {
+      0% { content: "40%"; }
+      50% { content: "60%"; }
+      100% { content: "50%"; }
+    }
+    
+    @keyframes updateReadout {
+      0% { content: "12.5 L/100km"; }
+      25% { content: "10.8 L/100km"; }
+      50% { content: "11.2 L/100km"; }
+      75% { content: "13.4 L/100km"; }
+      100% { content: "12.5 L/100km"; }
+    }
+  </style>
+</svg> 

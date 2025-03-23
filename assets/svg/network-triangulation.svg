@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+    <!-- Define gradients and filters -->
+    <defs>
+        <linearGradient id="signalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e62e2e" />
+            <stop offset="100%" stop-color="#ff5c5c" />
+        </linearGradient>
+        
+        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#222" />
+            <stop offset="100%" stop-color="#333" />
+        </linearGradient>
+        
+        <radialGradient id="towerRadius" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="rgba(230, 46, 46, 0.3)" />
+            <stop offset="100%" stop-color="rgba(230, 46, 46, 0)" />
+        </radialGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="600" fill="#0a0a0a" rx="15" ry="15" />
+    
+    <!-- Map Background -->
+    <rect x="50" y="50" width="700" height="500" rx="10" ry="10" fill="url(#mapGradient)" />
+    
+    <!-- Grid Lines -->
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="50" height="50">
+        <rect width="50" height="50" fill="none" />
+        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#444" stroke-width="0.5" opacity="0.5" />
+    </pattern>
+    <rect x="50" y="50" width="700" height="500" fill="url(#grid)" />
+    
+    <!-- Title -->
+    <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">
+        NETWORK-BASED LOCATION TRACKING
+    </text>
+    
+    <!-- Cell Towers -->
+    <g id="towers">
+        <!-- Tower 1 -->
+        <g id="tower1" transform="translate(200, 200)">
+            <circle cx="0" cy="0" r="120" fill="url(#towerRadius)" opacity="0.3" />
+            <circle cx="0" cy="0" r="10" fill="#333" stroke="#444" stroke-width="1" />
+            <path d="M -5,-5 L 0,-15 L 5,-5 L 0,0 Z" fill="#e62e2e" />
+            <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">Tower A</text>
+            <text x="0" y="40" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">Signal Strength: 85%</text>
+        </g>
+        
+        <!-- Tower 2 -->
+        <g id="tower2" transform="translate(600, 200)">
+            <circle cx="0" cy="0" r="150" fill="url(#towerRadius)" opacity="0.3" />
+            <circle cx="0" cy="0" r="10" fill="#333" stroke="#444" stroke-width="1" />
+            <path d="M -5,-5 L 0,-15 L 5,-5 L 0,0 Z" fill="#e62e2e" />
+            <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">Tower B</text>
+            <text x="0" y="40" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">Signal Strength: 92%</text>
+        </g>
+        
+        <!-- Tower 3 -->
+        <g id="tower3" transform="translate(400, 450)">
+            <circle cx="0" cy="0" r="130" fill="url(#towerRadius)" opacity="0.3" />
+            <circle cx="0" cy="0" r="10" fill="#333" stroke="#444" stroke-width="1" />
+            <path d="M -5,-5 L 0,-15 L 5,-5 L 0,0 Z" fill="#e62e2e" />
+            <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">Tower C</text>
+            <text x="0" y="40" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">Signal Strength: 78%</text>
+        </g>
+    </g>
+    
+    <!-- Triangulation Lines -->
+    <g id="triangulation-lines">
+        <path d="M 200,200 L 400,300 L 600,200 L 200,200" fill="none" stroke="#e62e2e" stroke-width="2" stroke-dasharray="5,5" opacity="0.6" />
+        <path d="M 400,300 L 400,450" fill="none" stroke="#e62e2e" stroke-width="2" stroke-dasharray="5,5" opacity="0.6" />
+    </g>
+    
+    <!-- Mobile Device Position -->
+    <g id="mobile-position" transform="translate(400, 300)">
+        <circle cx="0" cy="0" r="40" fill="none" stroke="#e62e2e" stroke-width="2" opacity="0.4" />
+        <circle cx="0" cy="0" r="20" fill="none" stroke="#e62e2e" stroke-width="2" opacity="0.6" />
+        
+        <!-- Mobile Device -->
+        <rect x="-7" y="-14" width="14" height="28" rx="3" ry="3" fill="#555" stroke="#777" stroke-width="1" />
+        <rect x="-5" y="-10" width="10" height="18" rx="1" ry="1" fill="#111" />
+        <circle cx="0" cy="12" r="2" fill="#444" />
+        
+        <!-- Location Accuracy -->
+        <circle cx="0" cy="0" r="5" fill="#e62e2e" />
+    </g>
+    
+    <!-- Signal Data Elements -->
+    <g id="signal-data">
+        <!-- Tower 1 to Mobile -->
+        <g id="signal1">
+            <path d="M 200,200 L 400,300" fill="none" stroke="#777" stroke-width="1" />
+        </g>
+        
+        <!-- Tower 2 to Mobile -->
+        <g id="signal2">
+            <path d="M 600,200 L 400,300" fill="none" stroke="#777" stroke-width="1" />
+        </g>
+        
+        <!-- Tower 3 to Mobile -->
+        <g id="signal3">
+            <path d="M 400,450 L 400,300" fill="none" stroke="#777" stroke-width="1" />
+        </g>
+    </g>
+    
+    <!-- Information Panel -->
+    <g id="info-box" transform="translate(400, 530)">
+        <rect x="-200" y="-30" width="400" height="60" rx="5" ry="5" fill="#111" stroke="#333" stroke-width="1" />
+        <text x="-185" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">CALCULATED POSITION:</text>
+        <text x="-185" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">12.972442, 77.580643</text>
+        
+        <text x="50" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">ACCURACY:</text>
+        <text x="50" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">87%</text>
+        
+        <text x="150" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">METHOD:</text>
+        <text x="150" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">TRIANGULATION</text>
+    </g>
+</svg> 

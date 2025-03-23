@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+    <!-- Define gradients and filters -->
+    <defs>
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e62e2e" />
+            <stop offset="100%" stop-color="#ff5c5c" />
+        </linearGradient>
+        
+        <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#444" />
+            <stop offset="100%" stop-color="#222" />
+        </linearGradient>
+        
+        <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#222" />
+            <stop offset="100%" stop-color="#000" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="600" fill="#0a0a0a" rx="15" ry="15" />
+    
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">
+        PLUG-AND-PLAY SOLUTION
+    </text>
+    <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">
+        No GPS hardware or complex installation required
+    </text>
+    
+    <!-- Three Device Illustrations -->
+    <g id="devices-showcase">
+        <!-- Phone Device -->
+        <g id="phone-device" transform="translate(200, 250)">
+            <rect x="-40" y="-80" width="80" height="160" rx="10" ry="10" fill="url(#deviceGradient)" stroke="#555" stroke-width="2" />
+            <rect x="-30" y="-70" width="60" height="120" rx="3" ry="3" fill="url(#screenGradient)" />
+            <circle cx="0" cy="65" r="15" fill="#222" stroke="#333" stroke-width="1" />
+            <rect x="-15" y="-70" width="30" height="5" rx="2" ry="2" fill="#222" />
+            
+            <text x="0" y="-45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">MOBILE PHONE</text>
+            <text x="0" y="-20" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">with SIM card</text>
+            
+            <!-- SIM Card Icon -->
+            <rect x="-20" y="0" width="40" height="30" rx="3" ry="3" fill="#777" />
+            <rect x="-15" y="5" width="30" height="20" rx="2" ry="2" fill="#555" />
+            <path d="M -7,10 L 7,10 L 7,20 L -7,20 Z" fill="#333" />
+            
+            <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">STANDARD</text>
+            
+            <!-- Connection Lines -->
+            <g id="phone-connection">
+                <path d="M 50,0 C 70,0 80,30 100,30" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+            </g>
+        </g>
+        
+        <!-- Tablet Device -->
+        <g id="tablet-device" transform="translate(400, 250)">
+            <rect x="-60" y="-80" width="120" height="160" rx="5" ry="5" fill="url(#deviceGradient)" stroke="#555" stroke-width="2" />
+            <rect x="-50" y="-70" width="100" height="140" rx="2" ry="2" fill="url(#screenGradient)" />
+            <circle cx="0" cy="80" r="10" fill="#222" stroke="#333" stroke-width="1" />
+            
+            <text x="0" y="-45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">TABLET</text>
+            <text x="0" y="-20" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">with cellular connectivity</text>
+            
+            <!-- Network Status Display -->
+            <rect x="-40" y="0" width="80" height="40" rx="3" ry="3" fill="#111" stroke="#333" stroke-width="1" />
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="10" fill="#fff" text-anchor="middle">CONNECTED</text>
+            <text x="0" y="30" font-family="Arial, sans-serif" font-size="10" fill="#e62e2e" text-anchor="middle">TRACKING ACTIVE</text>
+            
+            <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">PORTABLE</text>
+            
+            <!-- Connection Lines -->
+            <g id="tablet-connection">
+                <path d="M 70,0 C 90,0 100,30 120,30" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+            </g>
+        </g>
+        
+        <!-- Vehicle Tracker -->
+        <g id="vehicle-tracker" transform="translate(600, 250)">
+            <rect x="-50" y="-60" width="100" height="120" rx="5" ry="5" fill="url(#deviceGradient)" stroke="#555" stroke-width="2" />
+            <rect x="-40" y="-50" width="80" height="60" rx="3" ry="3" fill="#111" stroke="#333" stroke-width="1" />
+            
+            <text x="0" y="-30" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">SIM TRACKER</text>
+            <text x="0" y="-15" font-family="Arial, sans-serif" font-size="10" fill="#e62e2e" text-anchor="middle">LOCATION ACTIVE</text>
+            
+            <!-- LED Indicators -->
+            <circle cx="-20" cy="30" r="5" fill="#19b050" />
+            <text x="-20" cy="45" font-family="Arial, sans-serif" font-size="8" fill="#aaa" text-anchor="middle">POWER</text>
+            
+            <circle cx="0" cy="30" r="5" fill="#e62e2e" />
+            <text x="0" cy="45" font-family="Arial, sans-serif" font-size="8" fill="#aaa" text-anchor="middle">SIGNAL</text>
+            
+            <circle cx="20" cy="30" r="5" fill="#e6c830" />
+            <text x="20" cy="45" font-family="Arial, sans-serif" font-size="8" fill="#aaa" text-anchor="middle">GPS</text>
+            
+            <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">DEDICATED</text>
+            
+            <!-- Antenna -->
+            <rect x="40" y="-50" width="5" height="30" rx="2" ry="2" fill="#444" />
+            
+            <!-- Connection Lines -->
+            <path d="M 50,-35 C 60,-35 70,-35 80,-35" fill="none" stroke="url(#mainGradient)" stroke-width="2" stroke-dasharray="3,2" opacity="0.6" />
+        </g>
+    </g>
+    
+    <!-- Central Server System -->
+    <g id="central-system" transform="translate(400, 400)">
+        <rect x="-150" y="0" width="300" height="100" rx="5" ry="5" fill="#111" stroke="#444" stroke-width="2" />
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">CENTRAL TRACKING SYSTEM</text>
+        <text x="0" y="55" font-family="Arial, sans-serif" font-size="12" fill="#aaa" text-anchor="middle">Collects data from any SIM-enabled device</text>
+        
+        <!-- Device Connection Icons -->
+        <g transform="translate(-100, 80)">
+            <circle cx="0" cy="0" r="10" fill="#111" stroke="#e62e2e" stroke-width="2" />
+            <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">1</text>
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">MOBILE</text>
+        </g>
+        
+        <g transform="translate(0, 80)">
+            <circle cx="0" cy="0" r="10" fill="#111" stroke="#e62e2e" stroke-width="2" />
+            <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">2</text>
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">TABLET</text>
+        </g>
+        
+        <g transform="translate(100, 80)">
+            <circle cx="0" cy="0" r="10" fill="#111" stroke="#e62e2e" stroke-width="2" />
+            <text x="0" y="0" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">3</text>
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">TRACKER</text>
+        </g>
+        
+        <!-- Central Connection Lines -->
+        <line x1="-100" y1="0" x2="-100" y2="65" stroke="#e62e2e" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+        <line x1="0" y1="0" x2="0" y2="65" stroke="#e62e2e" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+        <line x1="100" y1="0" x2="100" y2="65" stroke="#e62e2e" stroke-width="2" stroke-dasharray="5,3" opacity="0.6" />
+    </g>
+    
+    <!-- Key Benefits -->
+    <g id="benefits">
+        <g transform="translate(150, 160)">
+            <circle cx="0" cy="0" r="25" fill="#111" stroke="url(#mainGradient)" stroke-width="2" />
+            <text x="0" y="5" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">1</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">NO HARDWARE</text>
+            <text x="0" y="60" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">PURCHASE NEEDED</text>
+        </g>
+        
+        <g transform="translate(400, 160)">
+            <circle cx="0" cy="0" r="25" fill="#111" stroke="url(#mainGradient)" stroke-width="2" />
+            <text x="0" y="5" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">2</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">INSTANT SETUP</text>
+            <text x="0" y="60" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">READY IN MINUTES</text>
+        </g>
+        
+        <g transform="translate(650, 160)">
+            <circle cx="0" cy="0" r="25" fill="#111" stroke="url(#mainGradient)" stroke-width="2" />
+            <text x="0" y="5" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">3</text>
+            <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">WORKS ANYWHERE</text>
+            <text x="0" y="60" font-family="Arial, sans-serif" font-size="10" fill="#aaa" text-anchor="middle">WITH CELLULAR COVERAGE</text>
+        </g>
+    </g>
+</svg> 

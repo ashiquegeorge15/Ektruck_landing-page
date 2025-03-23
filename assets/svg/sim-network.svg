@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+    <!-- Define gradients and filters -->
+    <defs>
+        <linearGradient id="signalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e62e2e" />
+            <stop offset="100%" stop-color="#ff5c5c" />
+        </linearGradient>
+        
+        <linearGradient id="towerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#555" />
+            <stop offset="100%" stop-color="#222" />
+        </linearGradient>
+        
+        <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#444" />
+            <stop offset="100%" stop-color="#222" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="600" fill="#0a0a0a" rx="15" ry="15" />
+    
+    <!-- Grid Pattern -->
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="30" height="30" patternTransform="rotate(45)">
+        <rect width="30" height="30" fill="none" />
+        <path d="M 30 0 L 0 0 0 30" stroke="#222" stroke-width="0.5" fill="none" />
+    </pattern>
+    <rect width="800" height="600" fill="url(#grid)" opacity="0.3" />
+    
+    <!-- Title -->
+    <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">
+        SIM-BASED TRACKING
+    </text>
+    <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">
+        Real-time visibility without GPS hardware
+    </text>
+    
+    <!-- Cell Towers -->
+    <g id="tower1" transform="translate(150, 200)">
+        <rect x="-15" y="-120" width="30" height="120" fill="url(#towerGradient)" rx="2" ry="2" />
+        <rect x="-25" y="-140" width="50" height="20" fill="#444" rx="2" ry="2" />
+        <path d="M -25,-140 L 0,-160 L 25,-140" fill="none" stroke="#555" stroke-width="3" />
+        <circle cx="0" cy="-130" r="5" fill="#e62e2e" />
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Cell Tower 1</text>
+        
+        <!-- Signal Waves -->
+        <circle cx="0" cy="-130" r="40" fill="none" stroke="url(#signalGradient)" stroke-width="2" opacity="0.4" />
+    </g>
+    
+    <g id="tower2" transform="translate(650, 200)">
+        <rect x="-15" y="-120" width="30" height="120" fill="url(#towerGradient)" rx="2" ry="2" />
+        <rect x="-25" y="-140" width="50" height="20" fill="#444" rx="2" ry="2" />
+        <path d="M -25,-140 L 0,-160 L 25,-140" fill="none" stroke="#555" stroke-width="3" />
+        <circle cx="0" cy="-130" r="5" fill="#e62e2e" />
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Cell Tower 2</text>
+        
+        <!-- Signal Waves -->
+        <circle cx="0" cy="-130" r="40" fill="none" stroke="url(#signalGradient)" stroke-width="2" opacity="0.4" />
+    </g>
+    
+    <g id="tower3" transform="translate(400, 450)">
+        <rect x="-15" y="-120" width="30" height="120" fill="url(#towerGradient)" rx="2" ry="2" />
+        <rect x="-25" y="-140" width="50" height="20" fill="#444" rx="2" ry="2" />
+        <path d="M -25,-140 L 0,-160 L 25,-140" fill="none" stroke="#555" stroke-width="3" />
+        <circle cx="0" cy="-130" r="5" fill="#e62e2e" />
+        <text x="0" y="30" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Cell Tower 3</text>
+        
+        <!-- Signal Waves -->
+        <circle cx="0" cy="-130" r="40" fill="none" stroke="url(#signalGradient)" stroke-width="2" opacity="0.4" />
+    </g>
+    
+    <!-- Mobile Device -->
+    <g id="mobile-device" transform="translate(400, 300)">
+        <!-- Phone Body -->
+        <rect x="-25" y="-50" width="50" height="100" rx="10" ry="10" fill="url(#phoneGradient)" stroke="#666" stroke-width="2" />
+        <rect x="-20" y="-40" width="40" height="70" rx="3" ry="3" fill="#111" stroke="#333" stroke-width="1" />
+        <circle cx="0" cy="45" r="10" fill="#222" stroke="#444" stroke-width="1" />
+        <rect x="-15" y="-45" width="30" height="5" rx="2" ry="2" fill="#222" />
+        
+        <!-- Phone Display -->
+        <rect x="-18" y="-38" width="36" height="66" rx="2" ry="2" fill="#1a1a1a" />
+        <text x="0" y="-20" font-family="Arial, sans-serif" font-size="9" fill="#fff" text-anchor="middle">Device ID:</text>
+        <text x="0" y="-8" font-family="Arial, sans-serif" font-size="9" fill="#e62e2e" text-anchor="middle">SIM-TR-3425</text>
+        
+        <text x="0" y="10" font-family="Arial, sans-serif" font-size="8" fill="#fff" text-anchor="middle">NETWORK:</text>
+        <text x="0" y="22" font-family="Arial, sans-serif" font-size="8" fill="#e62e2e" text-anchor="middle">CONNECTED</text>
+        
+        <!-- Signal Strength Indicators -->
+        <g id="signal-bars" transform="translate(0, -28) scale(0.6)">
+            <rect x="-20" y="0" width="5" height="5" fill="#e62e2e" />
+            <rect x="-12" y="0" width="5" height="10" fill="#e62e2e" />
+            <rect x="-4" y="0" width="5" height="15" fill="#e62e2e" />
+            <rect x="4" y="0" width="5" height="20" fill="#e62e2e" />
+            <rect x="12" y="0" width="5" height="25" fill="#aaa" />
+        </g>
+    </g>
+    
+    <!-- Triangulation Area -->
+    <g id="triangulation">
+        <!-- Signal Lines -->
+        <path d="M 157,77 L 400,300" fill="none" stroke="url(#signalGradient)" stroke-width="1" stroke-dasharray="5,3" opacity="0.6" />
+        <path d="M 650,77 L 400,300" fill="none" stroke="url(#signalGradient)" stroke-width="1" stroke-dasharray="5,3" opacity="0.6" />
+        <path d="M 400,327 L 400,300" fill="none" stroke="url(#signalGradient)" stroke-width="1" stroke-dasharray="5,3" opacity="0.6" />
+        
+        <!-- Triangle Fill -->
+        <path d="M 157,77 L 650,77 L 400,327 Z" fill="url(#signalGradient)" opacity="0.05" />
+    </g>
+    
+    <!-- Location Indicator -->
+    <g id="location" transform="translate(400, 300)">
+        <circle cx="0" cy="0" r="30" fill="none" stroke="#e62e2e" stroke-width="2" opacity="0.4" />
+        <circle cx="0" cy="0" r="15" fill="none" stroke="#e62e2e" stroke-width="2" />
+        <circle cx="0" cy="0" r="5" fill="#e62e2e" />
+    </g>
+    
+    <!-- Information Panel -->
+    <g id="info-panel" transform="translate(400, 500)">
+        <rect x="-200" y="-30" width="400" height="60" rx="5" ry="5" fill="#111" stroke="#333" stroke-width="1" />
+        <text x="-180" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">LAST LOCATION:</text>
+        <text x="-180" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">12.972442, 77.580643</text>
+        
+        <text x="20" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">ACCURACY:</text>
+        <text x="20" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">87%</text>
+        
+        <text x="150" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#fff">UPDATED:</text>
+        <text x="150" y="10" font-family="Arial, sans-serif" font-size="12" fill="#e62e2e">2 MIN AGO</text>
+    </g>
+</svg> 

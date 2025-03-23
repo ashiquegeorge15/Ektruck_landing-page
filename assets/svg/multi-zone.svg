@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions -->
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e62e2e" />
+            <stop offset="100%" stop-color="#c41e1e" />
+        </linearGradient>
+        
+        <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#141414" />
+            <stop offset="100%" stop-color="#0c0c0c" />
+        </linearGradient>
+        
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3b82f6" />
+            <stop offset="100%" stop-color="#1e40af" />
+        </linearGradient>
+        
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#34d399" />
+            <stop offset="100%" stop-color="#059669" />
+        </linearGradient>
+        
+        <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a78bfa" />
+            <stop offset="100%" stop-color="#7c3aed" />
+        </linearGradient>
+        
+        <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fb923c" />
+            <stop offset="100%" stop-color="#ea580c" />
+        </linearGradient>
+        
+        <!-- Filters -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.3" />
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="400" height="300" rx="15" fill="url(#darkGradient)" filter="url(#shadow)" />
+    
+    <!-- Grid Pattern -->
+    <g opacity="0.1">
+        <path d="M0 50H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 100H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 150H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 200H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M0 250H400" stroke="#ffffff" stroke-width="1" />
+        <path d="M80 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M160 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M240 0V300" stroke="#ffffff" stroke-width="1" />
+        <path d="M320 0V300" stroke="#ffffff" stroke-width="1" />
+    </g>
+    
+    <!-- Title -->
+    <text x="200" y="40" fill="#ffffff" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle">Multi-Zone Monitoring</text>
+    
+    <!-- Central Hub -->
+    <g transform="translate(200, 150)">
+        <!-- Central Hub Base -->
+        <circle cx="0" cy="0" r="35" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="2" />
+        
+        <!-- Hub Inner -->
+        <circle cx="0" cy="0" r="25" fill="#141414" stroke="#3a3a3a" stroke-width="1" />
+        
+        <!-- Hub Display -->
+        <rect x="-18" y="-10" width="36" height="20" rx="3" fill="#0c0c0c" stroke="#3a3a3a" stroke-width="1" />
+        <text x="0" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" font-weight="600" text-anchor="middle" dominant-baseline="middle">CENTRAL</text>
+        <text x="0" y="8" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" font-weight="600" text-anchor="middle" dominant-baseline="middle">HUB</text>
+        
+        <!-- Hub Indicators -->
+        <circle cx="15" cy="-15" r="3" fill="url(#greenGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="-15" cy="-15" r="3" fill="url(#greenGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" begin="0.5s" />
+        </circle>
+        <circle cx="0" cy="-20" r="3" fill="url(#redGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite" />
+        </circle>
+        
+        <!-- Connection Antennas -->
+        <path d="M0,-35 C10,-45 20,-35 20,-25" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" fill="none" />
+        <path d="M0,-35 C-10,-45 -20,-35 -20,-25" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" fill="none" />
+        <circle cx="0" cy="-35" r="2" fill="#3a3a3a" />
+    </g>
+    
+    <!-- Zone 1: Cold Storage -->
+    <g transform="translate(80, 100)">
+        <!-- Zone Frame -->
+        <rect x="-40" y="-40" width="80" height="80" rx="8" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1.5" />
+        
+        <!-- Zone Title -->
+        <text x="0" y="-25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zone 1</text>
+        <text x="0" y="-12" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">COLD STORAGE</text>
+        
+        <!-- Temperature Display -->
+        <rect x="-25" y="5" width="50" height="25" rx="4" fill="#141414" stroke="#3b82f6" stroke-width="1" />
+        <text x="0" y="20" fill="#ffffff" font-family="Poppins, sans-serif" font-size="12" font-weight="700" text-anchor="middle">-18.5°C</text>
+        
+        <!-- Zone Icon -->
+        <rect x="-7.5" y="-7.5" width="15" height="15" rx="2" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="1" />
+        <path d="M-3.5,-3 L3.5,3 M-3.5,3 L3.5,-3" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" />
+        
+        <!-- Connection to Hub -->
+        <path d="M40,0 C80,0 115,60 160,50" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3 2" fill="none">
+            <animate attributeName="stroke-dashoffset" values="10;0" dur="3s" repeatCount="indefinite" />
+        </path>
+        <circle cx="40" cy="0" r="3" fill="url(#blueGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Zone 2: Warehouse -->
+    <g transform="translate(100, 220)">
+        <!-- Zone Frame -->
+        <rect x="-40" y="-40" width="80" height="80" rx="8" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1.5" />
+        
+        <!-- Zone Title -->
+        <text x="0" y="-25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zone 2</text>
+        <text x="0" y="-12" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">WAREHOUSE</text>
+        
+        <!-- Temperature Display -->
+        <rect x="-25" y="5" width="50" height="25" rx="4" fill="#141414" stroke="#34d399" stroke-width="1" />
+        <text x="0" y="20" fill="#ffffff" font-family="Poppins, sans-serif" font-size="12" font-weight="700" text-anchor="middle">22.3°C</text>
+        
+        <!-- Zone Icon -->
+        <rect x="-7.5" y="-7.5" width="15" height="15" rx="2" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1" />
+        <path d="M-3.5,0 L0,-3.5 L3.5,0 L0,3.5 Z" fill="#34d399" />
+        
+        <!-- Connection to Hub -->
+        <path d="M40,0 C70,0 120,-10 140,-70" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3 2" fill="none">
+            <animate attributeName="stroke-dashoffset" values="10;0" dur="3s" repeatCount="indefinite" />
+        </path>
+        <circle cx="40" cy="0" r="3" fill="url(#greenGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Zone 3: Refrigerator -->
+    <g transform="translate(300, 90)">
+        <!-- Zone Frame -->
+        <rect x="-40" y="-40" width="80" height="80" rx="8" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1.5" />
+        
+        <!-- Zone Title -->
+        <text x="0" y="-25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zone 3</text>
+        <text x="0" y="-12" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">REFRIGERATOR</text>
+        
+        <!-- Temperature Display -->
+        <rect x="-25" y="5" width="50" height="25" rx="4" fill="#141414" stroke="#a78bfa" stroke-width="1" />
+        <text x="0" y="20" fill="#ffffff" font-family="Poppins, sans-serif" font-size="12" font-weight="700" text-anchor="middle">4.1°C</text>
+        
+        <!-- Zone Icon -->
+        <rect x="-7.5" y="-7.5" width="15" height="15" rx="2" fill="rgba(167, 139, 250, 0.2)" stroke="#a78bfa" stroke-width="1" />
+        <path d="M0,-3.5 L0,3.5 M-3.5,0 L3.5,0" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round" />
+        
+        <!-- Connection to Hub -->
+        <path d="M-40,0 C-60,0 -65,50 -100,50" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3 2" fill="none">
+            <animate attributeName="stroke-dashoffset" values="10;0" dur="3s" repeatCount="indefinite" />
+        </path>
+        <circle cx="-40" cy="0" r="3" fill="url(#purpleGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Zone 4: Transport Vehicle -->
+    <g transform="translate(320, 220)">
+        <!-- Zone Frame -->
+        <rect x="-40" y="-40" width="80" height="80" rx="8" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1.5" />
+        
+        <!-- Zone Title -->
+        <text x="0" y="-25" fill="#ffffff" font-family="Poppins, sans-serif" font-size="10" font-weight="600" text-anchor="middle">Zone 4</text>
+        <text x="0" y="-12" fill="#9ca3af" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">TRANSPORT</text>
+        
+        <!-- Temperature Display -->
+        <rect x="-25" y="5" width="50" height="25" rx="4" fill="#141414" stroke="#e62e2e" stroke-width="1" />
+        <text x="0" y="20" fill="#ffffff" font-family="Poppins, sans-serif" font-size="12" font-weight="700" text-anchor="middle">5.9°C</text>
+        <text x="0" y="30" fill="#e62e2e" font-family="Poppins, sans-serif" font-size="6" font-weight="600" text-anchor="middle">ALERT</text>
+        
+        <!-- Zone Icon -->
+        <rect x="-7.5" y="-7.5" width="15" height="15" rx="2" fill="rgba(230, 46, 46, 0.2)" stroke="#e62e2e" stroke-width="1" />
+        <path d="M0,-3 L0,0 M0,2 L0,3" stroke="#e62e2e" stroke-width="1.5" stroke-linecap="round" />
+        
+        <!-- Connection to Hub -->
+        <path d="M-40,-10 C-80,-30 -90,-60 -120,-60" stroke="#e62e2e" stroke-width="1.5" stroke-dasharray="3 2" fill="none">
+            <animate attributeName="stroke-dashoffset" values="10;0" dur="3s" repeatCount="indefinite" />
+        </path>
+        <circle cx="-40" cy="-10" r="3" fill="url(#redGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Mobile Dashboard -->
+    <g transform="translate(200, 260)">
+        <!-- Mobile Frame -->
+        <rect x="-25" y="-35" width="50" height="70" rx="5" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="1" />
+        <rect x="-20" y="-30" width="40" height="60" rx="3" fill="#0c0c0c" />
+        
+        <!-- Screen Elements -->
+        <text x="0" y="-22" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" font-weight="600" text-anchor="middle">MULTI-ZONE MONITOR</text>
+        
+        <!-- Zone Indicators -->
+        <g transform="translate(0, -10)">
+            <rect x="-15" y="-4" width="30" height="8" rx="2" fill="#141414" stroke="#3b82f6" stroke-width="0.5" />
+            <text x="-10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">Z1</text>
+            <text x="7" y="0" fill="#3b82f6" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">-18.5°C</text>
+        </g>
+        
+        <g transform="translate(0, 0)">
+            <rect x="-15" y="-4" width="30" height="8" rx="2" fill="#141414" stroke="#34d399" stroke-width="0.5" />
+            <text x="-10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">Z2</text>
+            <text x="7" y="0" fill="#34d399" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">22.3°C</text>
+        </g>
+        
+        <g transform="translate(0, 10)">
+            <rect x="-15" y="-4" width="30" height="8" rx="2" fill="#141414" stroke="#a78bfa" stroke-width="0.5" />
+            <text x="-10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">Z3</text>
+            <text x="7" y="0" fill="#a78bfa" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">4.1°C</text>
+        </g>
+        
+        <g transform="translate(0, 20)">
+            <rect x="-15" y="-4" width="30" height="8" rx="2" fill="#141414" stroke="#e62e2e" stroke-width="0.5" />
+            <text x="-10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">Z4</text>
+            <text x="7" y="0" fill="#e62e2e" font-family="Poppins, sans-serif" font-size="4" dominant-baseline="middle">5.9°C</text>
+            <circle cx="13" cy="-2" r="1" fill="#e62e2e">
+                <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite" />
+            </circle>
+        </g>
+        
+        <!-- Connection to Hub -->
+        <path d="M0,-35 C0,-50 0,-70 0,-85" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="2 1" fill="none">
+            <animate attributeName="stroke-dashoffset" values="6;0" dur="1s" repeatCount="indefinite" />
+        </path>
+        <circle cx="0" cy="-35" r="2" fill="url(#orangeGradient)">
+            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+    </g>
+    
+    <!-- Legend -->
+    <g transform="translate(30, 40)">
+        <rect x="0" y="0" width="120" height="40" rx="5" fill="rgba(26, 26, 26, 0.7)" />
+        
+        <!-- Legend Items -->
+        <g transform="translate(10, 10)">
+            <circle cx="0" cy="0" r="3" fill="url(#blueGradient)" />
+            <text x="10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" dominant-baseline="middle">Cold Storage</text>
+        </g>
+        
+        <g transform="translate(10, 20)">
+            <circle cx="0" cy="0" r="3" fill="url(#greenGradient)" />
+            <text x="10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" dominant-baseline="middle">Ambient</text>
+        </g>
+        
+        <g transform="translate(10, 30)">
+            <circle cx="0" cy="0" r="3" fill="url(#redGradient)" />
+            <text x="10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" dominant-baseline="middle">Alert</text>
+        </g>
+        
+        <g transform="translate(70, 10)">
+            <circle cx="0" cy="0" r="3" fill="url(#purpleGradient)" />
+            <text x="10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" dominant-baseline="middle">Refrigerator</text>
+        </g>
+        
+        <g transform="translate(70, 20)">
+            <circle cx="0" cy="0" r="3" fill="url(#orangeGradient)" />
+            <text x="10" y="0" fill="#ffffff" font-family="Poppins, sans-serif" font-size="6" dominant-baseline="middle">Mobile App</text>
+        </g>
+    </g>
+    
+    <!-- Data Flow Animation -->
+    <g>
+        <circle cx="200" cy="150" r="40" fill="none" stroke="#fb923c" stroke-width="1" opacity="0.1">
+            <animate attributeName="r" from="40" to="70" dur="3s" begin="0s" repeatCount="indefinite" />
+            <animate attributeName="opacity" from="0.1" to="0" dur="3s" begin="0s" repeatCount="indefinite" />
+        </circle>
+        
+        <circle cx="200" cy="150" r="50" fill="none" stroke="#fb923c" stroke-width="1" opacity="0.05">
+            <animate attributeName="r" from="50" to="80" dur="3s" begin="1s" repeatCount="indefinite" />
+            <animate attributeName="opacity" from="0.05" to="0" dur="3s" begin="1s" repeatCount="indefinite" />
+        </circle>
+    </g>
+</svg> 
