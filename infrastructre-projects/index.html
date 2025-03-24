@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure Projects Solutions - ek(one)</title>
+    <title>Infrastructure Projects - EkTruck Solutions</title>
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/ip.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Add Lottie Player library -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
- 
-    <!-- Navigation -->
-    <nav class="navbar">
+   
+      <!-- Navigation -->
+      <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src=/assets/logo.png" alt="ek(one) Logo">
+                <img src="../assets/logo.png" alt="ek(one) Logo">
             </div>
             
             <div class="nav-menu">
@@ -25,8 +29,9 @@
                     <li class="nav-item">
                         <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
                     </li>
+
                     <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <a href="/managed-control-tower/">Managed Control Tower</a>
                             <a href="/adas-dms/">ADAS/DMS Solutions</a>
@@ -42,9 +47,9 @@
                         <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
                             <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                            <a href="/government-authorities/">Government Authorities</a>
+                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
+                            <a href="/infrastructre-projects/" class="active">Infrastructure Projects</a>
+                    
                             <a href="/small&medium-business/">Small and Medium Businesses</a>
                             <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
                             <a href="/manufacturers-traders/">Manufacturers & Traders</a>
@@ -59,8 +64,7 @@
                 </ul>
                 
                 <div class="nav-buttons">
-                    <button class="btn btn-login">Login</button>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary">Login</button>
                 </div>
             </div>
 
@@ -71,511 +75,629 @@
             </div>
         </div>
     </nav>
-    
 
     <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('assets/infrastructure-bg.jpg');">
-        <div class="hero-bg"></div>
-        <div class="floating-objects">
+    <section id="hero-section" class="hero ip-hero">
+        <div class="hero-bg-elements">
+            <div class="gradient-overlay"></div>
+            <div class="grid-pattern"></div>
             <div class="floating-shape shape1"></div>
             <div class="floating-shape shape2"></div>
             <div class="floating-shape shape3"></div>
-            <div class="floating-shape shape4"></div>
+            <div class="particles-container" id="hero-particles"></div>
+            
+            <!-- Added SVG animations -->
+            <div class="svg-animation-container">
+                <!-- Circuit lines SVG -->
+                <svg class="animated-svg svg-circuit" style="top: 20%; left: 5%;" viewBox="0 0 100 100">
+                    <path fill="none" stroke="#ff0000" stroke-width="0.5" stroke-dasharray="5,5" 
+                        d="M10,50 Q30,30 50,50 T90,50" />
+                    <circle cx="10" cy="50" r="2" fill="#ff0000" />
+                    <circle cx="50" cy="50" r="2" fill="#ff0000" />
+                    <circle cx="90" cy="50" r="2" fill="#ff0000" />
+                </svg>
+                
+                <!-- Gear SVG -->
+                <svg class="animated-svg svg-gear" style="top: 15%; right: 10%;" viewBox="0 0 100 100">
+                    <path fill="#ff0000" d="M50,20 L54,35 L65,25 L60,40 L75,40 L65,45 L75,60 L60,55 L65,70 L54,60 L50,75 L46,60 L35,70 L40,55 L25,60 L35,45 L25,40 L40,40 L35,25 L46,35 Z" />
+                    <circle cx="50" cy="50" r="10" fill="#000000" />
+                </svg>
+                
+                <!-- Small gear SVG -->
+                <svg class="animated-svg svg-gear-small" style="bottom: 25%; left: 15%;" viewBox="0 0 100 100">
+                    <path fill="#ff0000" d="M50,30 L54,40 L65,35 L60,45 L75,45 L65,50 L75,55 L60,55 L65,65 L54,60 L50,70 L46,60 L35,65 L40,55 L25,55 L35,50 L25,45 L40,45 L35,35 L46,40 Z" />
+                    <circle cx="50" cy="50" r="8" fill="#000000" />
+                </svg>
+            </div>
         </div>
-        
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" data-aos-anchor-placement="top-bottom">
-                <div class="hero-badge">Industry Solutions</div>
-                <h1>Infrastructure Projects<span class="accent-text">Innovation</span></h1>
-                <p class="hero-tagline">Transforming <strong>large-scale development</strong> with intelligent visibility and enhanced control systems</p>
-                <div class="hero-buttons">
-                    <a href="#solutions" class="btn btn-primary">Explore Solutions <i class="fas fa-arrow-right"></i></a>
-                    <a href="#contact" class="btn btn-outline">Schedule Demo</a>
+
+        <div class="container hero-container">
+            <!-- Left side - text content -->
+            <div class="hero-content">
+                <div class="badge-container">
+                    <span class="badge">Industry Solutions</span>
                 </div>
-                <div class="hero-scroll-indicator">
-                    <span>Discover More</span>
-                    <div class="mouse-icon">
-                        <div class="mouse-wheel"></div>
+                
+                <h1 class="animated-heading">
+                    <span class="text-line text-reveal">INFRASTRUCTURE</span>
+                    <span class="text-line">
+                        <span class="accent-text">PROJECTS</span>
+                        <span class="highlight">SOLUTIONS</span>
+                    </span>
+                </h1>
+                
+                <p class="hero-description">
+                    IoT-Powered Fleet Management Solutions for Construction & Infrastructure projects—whether roads, bridges, tunnels, or large-scale construction—depend on efficient logistics and fleet management to ensure timely delivery of materials, optimized equipment usage, and cost control.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary-btn">
+                        Get Started
+                        <span class="btn-shine"></span>
+                    </a>
+                    <a href="#solutions" class="btn secondary-btn">
+                        Discover Solutions
+                    </a>
+                </div>
+
+                <!-- Stats Counter Row -->
+                <!-- <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">Project Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="45">0</div>
+                        <div class="stat-label">Cost Reduction (%)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="24">0</div>
+                        <div class="stat-label">Support (Hours)</div>
+                    </div>
+                </div> -->
+            </div>
+            
+            <!-- Right side - image -->
+            <div class="hero-image">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-content">
+                        <div class="construction-vehicle"></div>
+                        <div class="road-construction"></div>
+                        <div class="construction-dots"></div>
+                        <div class="floating-element red-square"></div>
+                        <div class="floating-element small-gear"></div>
+                        <div class="floating-element medium-gear"></div>
+                        <div class="dark-overlay"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="section-title-container" data-aos="fade-up">
-                <h2 class="section-title">Delivering Measurable Results</h2>
-                <p class="section-subtitle">Our clients have experienced significant improvements in their infrastructure projects</p>
+    <!-- Challenges Section -->
+    <section class="ip-challenges-section" id="challenges">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
             </div>
-            <div class="stats-grid">
-                <div class="stats-card" data-aos="fade-up">
-                    <div class="stats-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="stat-number" data-count="35">0</div>
-                    <div class="stat-suffix">%</div>
-                    <div class="stat-label">Cost Reduction</div>
+            <div class="circuit-lines">
+                <div class="circuit-line line-1"></div>
+                <div class="circuit-line line-2"></div>
+                <div class="circuit-node node-1"></div>
+                <div class="circuit-node node-2"></div>
+            </div>
+            
+            <!-- Added SVG animations -->
+            <div class="svg-animation-container">
+                <!-- Circuit paths -->
+                <div class="circuit-path">
+                    <div class="circuit-line" style="top: 25%;"></div>
+                    <div class="circuit-line" style="top: 75%;"></div>
+                    <div class="circuit-dot" style="top: 25%; left: 30%;"></div>
+                    <div class="circuit-dot" style="top: 75%; right: 30%;"></div>
                 </div>
-                <div class="stats-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stats-icon">
-                        <i class="fas fa-clock"></i>
+                
+                <!-- Construction SVG -->
+                <svg class="animated-svg svg-construction" style="top: 5%; right: 10%;" viewBox="0 0 100 100">
+                    <polygon fill="none" stroke="#ff0000" stroke-width="2" points="20,80 50,20 80,80" />
+                    <rect x="35" y="40" width="30" height="40" fill="none" stroke="#ff0000" stroke-width="2" />
+                    <circle cx="50" cy="30" r="5" fill="#ff0000" />
+                </svg>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="animated-heading">
+                    Challenges in <span class="highlight-text">Infrastructure</span> Project Logistics
+                </h2>
+                <p class="section-subtitle">Meeting the unique challenges of complex infrastructure projects across both urban and remote locations</p>
+            </div>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="challenge-icon">
+                        <!-- Equipment Delays SVG Icon -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 16.5l-5-3 5-3V16.5z" fill="#FF0000"/>
+                            <path d="M17 7.5l5 3-5 3V7.5z" fill="#FF0000"/>
+                            <circle cx="12" cy="12" r="4" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M12 8v4l2 2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
                     </div>
-                    <div class="stat-number" data-count="40">0</div>
-                    <div class="stat-suffix">%</div>
-                    <div class="stat-label">Faster Project Completion</div>
+                    <h3>Equipment & Material Delays</h3>
+                    <p>Inefficient scheduling and tracking cause project slowdowns.</p>
                 </div>
-                <div class="stats-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stats-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="challenge-icon">
+                        <!-- Fuel Costs SVG Icon -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 20V5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v15" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M11 13h7a1 1 0 0 1 1 1v6" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M5 21h16" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M17.5 5.5l-3-3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M14.5 5.5l3-3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="7" cy="14" r="1" fill="#FF0000"/>
+                        </svg>
                     </div>
-                    <div class="stat-number" data-count="60">0</div>
-                    <div class="stat-suffix">%</div>
-                    <div class="stat-label">Safety Improvement</div>
+                    <h3>High Fuel & Maintenance Costs</h3>
+                    <p>Poor fleet management leads to excessive fuel consumption and unplanned repairs.</p>
                 </div>
-                <div class="stats-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stats-icon">
-                        <i class="fas fa-cogs"></i>
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="challenge-icon">
+                        <!-- Remote Site SVG Icon -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" stroke="#FF0000" stroke-width="1.5"/>
+                            <circle cx="12" cy="10" r="3" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M3 19l4-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M21 19l-4-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
                     </div>
-                    <div class="stat-number" data-count="45">0</div>
-                    <div class="stat-suffix">%</div>
-                    <div class="stat-label">Better Resource Utilization</div>
+                    <h3>Remote Site Operations</h3>
+                    <p>Construction sites often have limited visibility and tracking options.</p>
+                </div>
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="challenge-icon">
+                        <!-- Asset Utilization SVG Icon -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M19 12h.01" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M5 12h.01" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M12 19v.01" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M12 5v.01" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M17 17l-.013-.013" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M7 7l-.013-.013" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M17 7l-.013-.013" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M7 17l-.013-.013" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Unoptimized Asset Utilization</h3>
+                    <p>Idle equipment increases project costs and delays.</p>
+                </div>
+                <div class="challenge-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="challenge-icon">
+                        <!-- Safety Risks SVG Icon -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 9v4M12 16.01l.01-.011" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9z" stroke="#FF0000" stroke-width="1.5"/>
+                            <path d="M8.5 7.5l7 7M16 7.5L8.5 15" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Safety & Compliance Risks</h3>
+                    <p>Heavy machinery and construction vehicles require strict safety monitoring.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="solutions-section">
-        <div class="container">
-            <div class="section-title-container" data-aos="fade-up">
-                <h2 class="section-title">Our Infrastructure Solutions</h2>
-                <p class="section-subtitle">Comprehensive technology to transform your infrastructure projects</p>
+    <section class="ip-solutions-section" id="solutions">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
             </div>
-            <div class="solutions-grid">
-                <!-- Solution 1: Control Tower -->
-                <div class="solution-card" data-aos="fade-up">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-tower-observation"></i>
-                            </div>
-                            <h3>Managed Control Tower with ERP</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Managed Control Tower with ERP</h3>
-                            <ul class="feature-list">
-                                <li>Centralized visibility of materials, equipment & resources</li>
-                                <li>Real-time tracking across project sites</li>
-                                <li>Better supplier-contractor coordination</li>
-                                <li>Automated compliance reporting</li>
-                            </ul>
-                            <a href="/managed-control-tower/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 2: TMS -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-truck-fast"></i>
-                            </div>
-                            <h3>Transport Management Solution</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Transport Management Solution</h3>
-                            <ul class="feature-list">
-                                <li>Streamlined material transportation</li>
-                                <li>Real-time tracking of construction materials</li>
-                                <li>Optimized route planning for cost management</li>
-                                <li>Automated dispatching system</li>
-                            </ul>
-                            <a href="/TMS/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 3: Fuel Management -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-gas-pump"></i>
-                            </div>
-                            <h3>Fuel Management Solutions</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Fuel Management Solutions</h3>
-                            <ul class="feature-list">
-                                <li>Tracks fuel consumption for construction vehicles</li>
-                                <li>Prevents theft and pilferage on-site</li>
-                                <li>Real-time fuel level monitoring</li>
-                                <li>Detailed reports for expense management</li>
-                            </ul>
-                            <a href="/Fuel-managment/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 4: ADAS/DMS -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h3>ADAS/DMS Solutions</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>ADAS/DMS Solutions</h3>
-                            <ul class="feature-list">
-                                <li>Construction site safety enhancement</li>
-                                <li>Driver behavior and fatigue monitoring</li>
-                                <li>Collision avoidance system</li>
-                                <li>Regulatory compliance for fleet operations</li>
-                            </ul>
-                            <a href="/adas-dms/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 5: Intelligent Cargo -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-boxes-stacked"></i>
-                            </div>
-                            <h3>Intelligent Cargo Management</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Intelligent Cargo Management</h3>
-                            <ul class="feature-list">
-                                <li>Tracking of construction materials & machinery</li>
-                                <li>Environmental monitoring for sensitive materials</li>
-                                <li>Real-time insights for material management</li>
-                                <li>Theft prevention and security system</li>
-                            </ul>
-                            <a href="/intelligent-cargo-solutions/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 6: SIM/Mobile-Based -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>SIM/Mobile-Based Visibility</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>SIM/Mobile-Based Visibility</h3>
-                            <ul class="feature-list">
-                                <li>Tracking without GPS hardware requirements</li>
-                                <li>Real-time updates via mobile networks</li>
-                                <li>Works in remote or GPS-restricted areas</li>
-                                <li>Visibility of subcontractor fleets & equipment</li>
-                            </ul>
-                            <a href="/sim-tracking/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 7: Smart Payment -->
-                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <div class="solution-icon">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <h3>Smart Payment Solutions</h3>
-                            <div class="card-action">
-                                <span>Flip to learn more</span>
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        <div class="card-back">
-                            <h3>Smart Payment Solutions</h3>
-                            <ul class="feature-list">
-                                <li>Faster payments for contractors & vendors</li>
-                                <li>Automated invoicing for material deliveries</li>
-                                <li>Advance payments management</li>
-                                <li>Transparent transaction system</li>
-                            </ul>
-                            <a href="/payment-solutions/" class="card-link">Learn More</a>
-                        </div>
-                    </div>
-                </div>
+            
+            <!-- Added SVG animations -->
+            <div class="svg-animation-container">
+                <!-- Data flow SVG -->
+                <svg class="animated-svg svg-data-flow" viewBox="0 0 1000 600">
+                    <path fill="none" stroke="#ff0000" stroke-width="1" stroke-dasharray="10,10" 
+                          d="M100,300 C200,100 300,500 400,300 S500,100 600,300 S700,500 800,300 S900,100 950,300" />
+                    <circle cx="100" cy="300" r="5" fill="#ff0000">
+                        <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="400" cy="300" r="5" fill="#ff0000">
+                        <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="600" cy="300" r="5" fill="#ff0000">
+                        <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="950" cy="300" r="5" fill="#ff0000">
+                        <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+                
+                <!-- Gear animation -->
+                <svg class="animated-svg svg-gear" style="bottom: 20%; right: 15%;" viewBox="0 0 100 100">
+                    <path fill="#ff0000" d="M50,20 L54,35 L65,25 L60,40 L75,40 L65,45 L75,60 L60,55 L65,70 L54,60 L50,75 L46,60 L35,70 L40,55 L25,60 L35,45 L25,40 L40,40 L35,25 L46,35 Z" />
+                    <circle cx="50" cy="50" r="10" fill="#000000" />
+                </svg>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
-    <section class="case-study-section">
         <div class="container">
-            <div class="case-study-container" data-aos="fade-up">
-                <div class="case-study-content">
-                    <div class="case-tag">Success Story</div>
-                    <h2>Major Highway Project Transformation</h2>
-                    <p>A leading infrastructure company implementing our integrated solutions achieved remarkable results across their nationwide highway construction project.</p>
-                    <ul class="case-results">
-                        <li><span class="result-number">35%</span> reduction in operational costs</li>
-                        <li><span class="result-number">40%</span> improvement in project timeline</li>
-                        <li><span class="result-number">60%</span> decrease in safety incidents</li>
-                        <li><span class="result-number">45%</span> better resource utilization</li>
-                    </ul>
-                    <div class="quote">
-                        <p>"The implementation of ek(one)'s solutions transformed our entire project management approach. The visibility and control we gained helped us deliver the project ahead of schedule while significantly reducing costs."</p>
-                        <div class="quote-author">- Project Director, National Highway Construction</div>
+            <div class="section-header">
+                <h2 class="animated-heading">
+                    How EkTruck <span class="text-reveal highlight-text">Transforms</span> Infrastructure Fleet Management
+                </h2>
+                <p class="section-subtitle">Intelligent solutions for monitoring assets, optimizing operations and maximizing project ROI</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="solution-icon">
+                        <!-- Fleet Tracking SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 8.5V14C20 14.2652 19.8946 14.5196 19.7071 14.7071C19.5196 14.8946 19.2652 15 19 15H5C4.73478 15 4.48043 14.8946 4.29289 14.7071C4.10536 14.5196 4 14.2652 4 14V8.5M20 8.5H4M20 8.5V6.5C20 6.23478 19.8946 5.98043 19.7071 5.79289C19.5196 5.60536 19.2652 5.5 19 5.5H5C4.73478 5.5 4.48043 5.60536 4.29289 5.79289C4.10536 5.98043 4 6.23478 4 6.5V8.5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 18.5V15M16 18.5V15M12 18.5V15M2 8.5H22" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="7" cy="10.5" r="1" fill="#FF0000"/>
+                            <circle cx="12" cy="10.5" r="1" fill="#FF0000"/>
+                            <circle cx="17" cy="10.5" r="1" fill="#FF0000"/>
+                        </svg>
                     </div>
-                    <a href="#case-studies" class="btn btn-outline">View More Case Studies</a>
+                    <h3>Live Fleet & Equipment Tracking</h3>
+                    <p>Monitor trucks, cranes, bulldozers, and other machinery in real-time.</p>
                 </div>
-                <div class="case-study-image">
-                    <div class="image-container">
-                        <img src="assets/highway-project.jpg" alt="Highway Construction Project">
-                        <div class="image-overlay"></div>
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="solution-icon">
+                        <!-- Material Transport SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 19H4V9C4 8.45 4.45 8 5 8H17C17.55 8 18 8.45 18 9V11" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13 13H21C21.55 13 22 13.45 22 14V19H13V13Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 5L7 8M20 5L17 8" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="8" cy="19" r="2" stroke="#FF0000" stroke-width="1.5"/>
+                            <circle cx="17" cy="19" r="2" stroke="#FF0000" stroke-width="1.5"/>
+                        </svg>
                     </div>
+                    <h3>Material Transport Optimization</h3>
+                    <p>Track cement, steel, aggregates, and other materials for on-time delivery.</p>
+                </div>
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="solution-icon">
+                        <!-- Fuel Monitoring SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 20V4C4 3.45 4.45 3 5 3H13C13.55 3 14 3.45 14 4V20H4Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 10H17.5C18.05 10 18.5 10.45 18.5 11V15.8C18.5 16.42 19.08 16.84 19.64 16.64L21.5 16C21.78 15.9 22 15.65 22 15.36V8.5C22 8.22 21.78 8 21.5 8H19.5C19.22 8 19 7.78 19 7.5V5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 20V3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 20H2V21C2 21.55 2.45 22 3 22H13C13.55 22 14 21.55 14 21V20Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Fuel & Expense Monitoring</h3>
+                    <p>Reduce fuel wastage and pilferage with smart tracking.</p>
+                </div>
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="solution-icon">
+                        <!-- Predictive Maintenance SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M14.7 6.3C14.3 5.9 13.7 5.9 13.3 6.3L12 7.6L10.7 6.3C10.3 5.9 9.7 5.9 9.3 6.3C8.9 6.7 8.9 7.3 9.3 7.7L11 9.4V12C11 12.6 11.4 13 12 13C12.6 13 13 12.6 13 12V9.4L14.7 7.7C15.1 7.3 15.1 6.7 14.7 6.3Z" fill="#FF0000"/>
+                            <path d="M19.5 11C19.5 15.1 16.4 18.5 12.5 18.9V21H11.5V18.9C7.6 18.5 4.5 15.1 4.5 11C4.5 6.6 8.1 3 12.5 3C16.9 3 19.5 6.6 19.5 11ZM18.5 11C18.5 7.1 15.9 4 12.5 4C9.1 4 5.5 7.1 5.5 11C5.5 14.9 8.1 18 12.5 18C15.9 18 18.5 14.9 18.5 11Z" fill="#FF0000"/>
+                            <path d="M20.2 15.7L20.2 15.8C20.8 16.3 20.8 17.1 20.3 17.7L18.7 19.3C18.2 19.8 17.3 19.9 16.8 19.3L16.7 19.2C16.1 18.7 15.3 18.7 14.7 19.2C14.2 19.7 13.3 19.7 12.8 19.2L12 18.5C11.5 17.9 11.5 17.1 12 16.5C12.6 16 12.6 15.2 12 14.6C11.5 14.1 11.5 13.3 12 12.7C12.6 12.2 12.6 11.3 12 10.8C11.5 10.3 11.5 9.4 12 8.9L12.7 8.2C13.3 7.7 14.1 7.7 14.7 8.2L14.8 8.3C15.3 8.8 16.1 8.8 16.7 8.3C17.2 7.8 18.1 7.8 18.6 8.3L20.2 9.9C20.7 10.4 20.7 11.3 20.2 11.8L20.1 11.9C19.6 12.4 19.6 13.2 20.1 13.8C20.7 14.3 20.7 15.2 20.2 15.7Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Predictive Maintenance</h3>
+                    <p>Avoid breakdowns with proactive vehicle health monitoring.</p>
+                </div>
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="solution-icon">
+                        <!-- Route Planning SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 4L5 8L9 12" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 8H14.5C17.5 8 20 10.5 20 13.5C20 16.5 17.5 19 14.5 19H5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="14.5" cy="13.5" r="2.5" stroke="#FF0000" stroke-width="1.5"/>
+                            <circle cx="5" cy="19" r="2" stroke="#FF0000" stroke-width="1.5"/>
+                            <circle cx="5" cy="8" r="2" stroke="#FF0000" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3>Automated Route & Load Planning</h3>
+                    <p>Optimize routes to improve efficiency and minimize delays.</p>
+                </div>
+                <div class="solution-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="solution-icon">
+                        <!-- Safety & Compliance SVG Icon -->
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 8L10.5 13.5L8 11" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Safety & Compliance Management</h3>
+                    <p>Ensure adherence to safety regulations with automated reports.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-            <div class="section-title-container" data-aos="fade-up">
-                <h2 class="section-title">Key Benefits for Infrastructure Projects</h2>
-                <p class="section-subtitle">Our solutions deliver measurable improvements across all aspects of your operations</p>
+    <section class="ip-benefits-section" id="benefits">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
             </div>
             
-            <div class="benefits-grid">
-                <div class="benefit-card" data-aos="fade-up">
-                    <div class="benefit-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Enhanced Visibility</h3>
-                    <p>Real-time tracking and monitoring of all project resources and activities across multiple sites</p>
-                </div>
+            <!-- Added SVG animations -->
+            <div class="svg-animation-container">
+                <!-- Pulse circles -->
+                <svg class="animated-svg" style="top: 20%; left: 20%; width: 200px; height: 200px;" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="20" fill="none" stroke="#ff0000" stroke-width="1">
+                        <animate attributeName="r" values="20;40;20" dur="6s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.1;0.3;0.1" dur="6s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#ff0000" stroke-width="0.5">
+                        <animate attributeName="r" values="30;50;30" dur="6s" begin="1s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.1;0.2;0.1" dur="6s" begin="1s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
                 
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-pie"></i>
+                <!-- Connected dots -->
+                <svg class="animated-svg" style="bottom: 10%; right: 5%; width: 300px; height: 200px;" viewBox="0 0 100 100">
+                    <line x1="10" y1="20" x2="30" y2="40" stroke="#ff0000" stroke-width="0.5" />
+                    <line x1="30" y1="40" x2="50" y2="30" stroke="#ff0000" stroke-width="0.5" />
+                    <line x1="50" y1="30" x2="70" y2="60" stroke="#ff0000" stroke-width="0.5" />
+                    <line x1="70" y1="60" x2="90" y2="50" stroke="#ff0000" stroke-width="0.5" />
+                    
+                    <circle cx="10" cy="20" r="3" fill="#ff0000">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="30" cy="40" r="3" fill="#ff0000">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="0.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="50" cy="30" r="3" fill="#ff0000">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="70" cy="60" r="3" fill="#ff0000">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="90" cy="50" r="3" fill="#ff0000">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="2s" repeatCount="indefinite" />
+                    </circle>
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="animated-heading">
+                    Why Choose <span class="accent-text">EkTruck</span> for Infrastructure Projects?
+                </h2>
+                <p class="section-subtitle">Specialized solutions that address the unique demands of the infrastructure sector</p>
+            </div>
+            <div class="benefits-container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <!-- Tech-Driven Icon -->
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M12 7V3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M12 21v-4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M3 12h4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M17 12h4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M7.5 7.5l2 2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M14.5 14.5l2 2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M7.5 16.5l2 -2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M14.5 9.5l2 -2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Tech-Driven Project Efficiency</h4>
+                            <p>AI-powered insights to optimize operations and cut costs.</p>
+                        </div>
                     </div>
-                    <h3>Optimized Operations</h3>
-                    <p>Streamlined workflows, improved resource utilization, and reduced downtime for maximum efficiency</p>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <!-- Asset Management Icon -->
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 3H4a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h5a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1z" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M14 10h-9a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h9a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1z" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M20 17h-15a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h15a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -1 -1z" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M4 8l5 2" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M5 17l9 -6" stroke="#FF0000" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Comprehensive Asset Management</h4>
+                            <p>Seamlessly track and manage construction vehicles and materials.</p>
+                        </div>
                     </div>
-                    <h3>Enhanced Safety</h3>
-                    <p>Reduced accidents, improved regulatory compliance, and safer working conditions for all personnel</p>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up">
-                    <div class="benefit-icon">
-                        <i class="fas fa-money-bill-wave"></i>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <!-- Connectivity Icon -->
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 18l-1.5 1.5M12 18l1.5 1.5M12 18v-5" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" stroke="#FF0000" stroke-width="1.5"/>
+                                <path d="M6 8.4a12 12 0 0 1 12 0" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Seamless Connectivity</h4>
+                            <p>Works even in remote construction zones.</p>
+                        </div>
                     </div>
-                    <h3>Cost Reduction</h3>
-                    <p>Lower operational expenses through optimized resource management and prevention of losses</p>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <!-- Safety Icon -->
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 16l-4 -4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M12 12l-4 4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Enhanced Safety & Compliance</h4>
+                            <p>Monitor driver behavior, equipment stability, and safety compliance.</p>
+                        </div>
                     </div>
-                    <h3>Faster Execution</h3>
-                    <p>Accelerated project timelines with better coordination and elimination of bottlenecks</p>
                 </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Predictive Analytics</h3>
-                    <p>Data-driven insights to anticipate challenges and make proactive decisions</p>
-                </div>
+            </div>
+            
+            <div class="benefits-cta">
+                <div class="cta-pulse"></div>
+                <h3>Ready to transform your infrastructure project management?</h3>
+                <a href="#contact" class="btn btn-glow">Schedule a Demo</a>
             </div>
         </div>
     </section>
 
-    
+    <!-- CTA Section -->
+    <section class="ip-cta-section">
+        <div class="section-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+            
+            <!-- Added SVG animations -->
+            <div class="svg-animation-container">
+                <!-- Tech elements -->
+                <svg class="animated-svg" style="top: 5%; left: 25%; width: 100px; height: 100px;" viewBox="0 0 100 100">
+                    <rect x="20" y="20" width="60" height="60" rx="10" ry="10" fill="none" stroke="#ff0000" stroke-width="2">
+                        <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="35" y="35" width="30" height="30" rx="5" ry="5" fill="none" stroke="#ff0000" stroke-width="1">
+                        <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="4s" begin="1s" repeatCount="indefinite" />
+                    </rect>
+                </svg>
+                
+                <!-- Binary data flow -->
+                <svg class="animated-svg" style="bottom: 10%; right: 20%; width: 200px; height: 150px;" viewBox="0 0 200 100">
+                    <text x="10" y="20" fill="#ff0000" font-family="monospace" font-size="10">
+                        <tspan x="10" dy="0">01001100</tspan>
+                        <tspan x="10" dy="15">10110011</tspan>
+                        <tspan x="10" dy="15">00110101</tspan>
+                        <tspan x="10" dy="15">11010010</tspan>
+                        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" repeatCount="indefinite" />
+                    </text>
+                    
+                    <text x="100" y="20" fill="#ff0000" font-family="monospace" font-size="10">
+                        <tspan x="100" dy="0">10110011</tspan>
+                        <tspan x="100" dy="15">01001100</tspan>
+                        <tspan x="100" dy="15">11010010</tspan>
+                        <tspan x="100" dy="15">00110101</tspan>
+                        <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6s" begin="2s" repeatCount="indefinite" />
+                    </text>
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2 class="animated-heading">
+                    <span class="text-reveal">READY TO</span> 
+                    <span class="accent-text">TRANSFORM</span> 
+                    <span class="text-line">YOUR INFRASTRUCTURE</span>
+                    <span class="text-line highlight">PROJECT MANAGEMENT?</span>
+                </h2>
+                <p>At EkTruck, we provide smart, scalable, and efficient fleet solutions for infrastructure projects—ensuring on-time execution, cost efficiency, and seamless operations.</p>
+                <a href="#contact" class="btn primary-btn">Contact Us Today <span class="btn-shine"></span></a>
+            </div>
+        </div>
+    </section>
 
-   
-    <footer class="site-footer">
-        <div class="footer-background"></div>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Company Information -->
-                <div class="footer-col">
-                    <a href="/" class="footer-logo">
-                        <img src="/img/logo-white.png" alt="Transport & Logistics Logo">
-                        <div class="logo-decoration"></div>
-                    </a>
-                    <p class="company-description">
-                        We provide integrated transport and supply chain solutions that connect people and businesses across Australia with safety, efficiency and innovation.
-                    </p>
-                    <div class="transport-certification">
-                        <i class="fas fa-medal"></i>
-                        <span>ISO 9001:2015 Certified Transport Provider</span>
-                    </div>
-                    <div class="transport-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">98%</span>
-                            <span class="stat-label">On-time Delivery</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">24/7</span>
-                            <span class="stat-label">Customer Support</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Solutions -->
-                <div class="footer-col">
-                    <h4>Solutions</h4>
-                    <ul class="footer-links">
-                        <li><a href="/solutions/road-transport">Road Transport</a></li>
-                        <li><a href="/solutions/warehousing">Warehousing & Distribution</a></li>
-                        <li><a href="/solutions/fleet-management">Fleet Management</a></li>
-                        <li><a href="/solutions/temperature-controlled">Temperature Controlled</a></li>
-                        <li><a href="/solutions/heavy-haulage">Heavy Haulage</a></li>
-                        <li><a href="/solutions/specialized-equipment">Specialized Equipment</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Industries -->
-                <div class="footer-col">
-                    <h4>Industries</h4>
-                    <ul class="footer-links">
-                        <li><a href="/industries/mining">Mining & Resources</a></li>
-                        <li><a href="/industries/construction">Construction</a></li>
-                        <li><a href="/industries/agriculture">Agriculture</a></li>
-                        <li><a href="/industries/retail">Retail & FMCG</a></li>
-                        <li><a href="/industries/government">Government Services</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Transport Way, Sydney NSW 2000</p>
-                        <p><i class="fas fa-phone-alt"></i> 1300 TRANSPORT (1300 872 677)</p>
-                        <p><i class="fas fa-envelope"></i> info@transportlogistics.com.au</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 7am-6pm | 24/7 Emergency Support</p>
-                    </div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="newsletter-form">
-                        <div class="newsletter-heading">
-                            <i class="fas fa-paper-plane"></i>
-                            <span>Get updates on our services</span>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" placeholder="Your email address">
-                            <i class="fas fa-envelope input-icon"></i>
-                            <button type="submit">Subscribe</button>
-                        </div>
-                    </div>
-                </div>
+     <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="footer-background"></div>
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Company Information -->
+            <div class="footer-col">
+                <a href="/" class="footer-logo">
+                    <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                    <div class="logo-decoration"></div>
+                </a>
+                <p class="company-description">
+                    India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                </p>
+         
             </div>
             
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <i class="far fa-copyright"></i>
-                    <span>2023 Transport & Logistics Australia. All rights reserved.</span>
+            <!-- Solutions -->
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <ul class="footer-links">
+                  <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
+                    <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                    <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
+                    <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                    <li> <a href="/Fuel-managment/">Fuel Management</a></li>
+                    <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                    <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
+                </ul>
+            </div>
+            
+            <!-- Industries -->
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul class="footer-links">
+                   <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                    <li><a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a></li>
+                    <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                    <li><a href="/government-authorities/">Government Authorities</a></li>
+                    <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                    <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                    <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                    <p><i class="fas fa-phone-alt"></i>080-68976911</p>
+                    <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                 </div>
-                <div class="footer-policies">
-                    <a href="/privacy-policy">Privacy Policy</a>
-                    <a href="/terms-of-service">Terms of Service</a>
-                    <a href="/sitemap">Sitemap</a>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         
-        <!-- Scroll to top button -->
-        <div class="scroll-top">
-            <i class="fas fa-chevron-up"></i>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <span>ektruck. All rights reserved.</span>
+            </div>
+            <div class="footer-policies">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/sitemap">Sitemap</a>
+            </div>
         </div>
-    </footer>
+    </div>
     
-    <!-- Simple JavaScript for scroll to top functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollTopBtn = document.querySelector('.scroll-top');
-            
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    scrollTopBtn.classList.add('active');
-                } else {
-                    scrollTopBtn.classList.remove('active');
-                }
-            });
-            
-            scrollTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-        </script>
-    
-        
-    
-    <script>
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+</footer>
+
+<!-- Simple JavaScript for scroll to top functionality -->
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize footer components
-        initScrollToTop();
-        initNewsletterForm();
-        initAnimations();
-        initMobileOptimizations();
-    });
-    
-    /**
-     * Scroll to top button functionality
-     */
-    function initScrollToTop() {
         const scrollTopBtn = document.querySelector('.scroll-top');
         
-        // Show/hide button based on scroll position
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 scrollTopBtn.classList.add('active');
@@ -584,234 +706,437 @@
             }
         });
         
-        // Smooth scroll to top when clicked
         scrollTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-    }
+    });
+    </script>
+
     
-    /**
-     * Newsletter form validation and submission
-     */
-    function initNewsletterForm() {
-        const newsletterForm = document.querySelector('.newsletter-form');
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize footer components
+    initScrollToTop();
+    initNewsletterForm();
+    initAnimations();
+    initMobileOptimizations();
+});
+
+/**
+ * Scroll to top button functionality
+ */
+function initScrollToTop() {
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('active');
+        } else {
+            scrollTopBtn.classList.remove('active');
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/**
+ * Newsletter form validation and submission
+ */
+function initNewsletterForm() {
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    if (newsletterForm) {
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const submitBtn = newsletterForm.querySelector('button');
         
-        if (newsletterForm) {
-            const emailInput = newsletterForm.querySelector('input[type="email"]');
-            const submitBtn = newsletterForm.querySelector('button');
+        // Basic form validation
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Basic form validation
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const email = emailInput.value.trim();
-                if (!isValidEmail(email)) {
-                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
-                    emailInput.focus();
-                    return;
-                }
-                
-                // Show loading state
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission with timeout
-                setTimeout(function() {
-                    emailInput.value = '';
-                    submitBtn.innerHTML = 'Subscribe';
-                    submitBtn.disabled = false;
-                    
-                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
-                }, 1500);
-            });
-        }
-    }
-    
-    /**
-     * Check if email is valid
-     */
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    /**
-     * Show success or error message after form submission
-     */
-    function showFormMessage(form, message, type) {
-        // Remove any existing messages
-        const existingMessage = form.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-        
-        // Create new message element
-        const messageElement = document.createElement('div');
-        messageElement.className = `form-message ${type}`;
-        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-        
-        // Add message to form
-        form.appendChild(messageElement);
-        
-        // Remove message after delay
-        setTimeout(function() {
-            messageElement.style.opacity = '0';
+            const email = emailInput.value.trim();
+            if (!isValidEmail(email)) {
+                showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                emailInput.focus();
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission with timeout
             setTimeout(function() {
-                messageElement.remove();
-            }, 300);
-        }, 5000);
+                emailInput.value = '';
+                submitBtn.innerHTML = 'Subscribe';
+                submitBtn.disabled = false;
+                
+                showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+            }, 1500);
+        });
+    }
+}
+
+/**
+ * Check if email is valid
+ */
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+/**
+ * Show success or error message after form submission
+ */
+function showFormMessage(form, message, type) {
+    // Remove any existing messages
+    const existingMessage = form.querySelector('.form-message');
+    if (existingMessage) {
+        existingMessage.remove();
     }
     
-    /**
-     * Initialize animations for footer elements
-     */
-    function initAnimations() {
-        // Detect when elements enter viewport
-        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+    // Create new message element
+    const messageElement = document.createElement('div');
+    messageElement.className = `form-message ${type}`;
+    messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+    
+    // Add message to form
+    form.appendChild(messageElement);
+    
+    // Remove message after delay
+    setTimeout(function() {
+        messageElement.style.opacity = '0';
+        setTimeout(function() {
+            messageElement.remove();
+        }, 300);
+    }, 5000);
+}
+
+/**
+ * Initialize animations for footer elements
+ */
+function initAnimations() {
+    // Detect when elements enter viewport
+    const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+    
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
         
-        if ('IntersectionObserver' in window) {
+        animateElements.forEach(el => observer.observe(el));
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        animateElements.forEach(el => el.classList.add('visible'));
+    }
+    
+    // Animate stats numbers
+    animateStatCounters();
+}
+
+/**
+ * Animate the stat counter numbers with counting effect
+ */
+function animateStatCounters() {
+    const statValues = document.querySelectorAll('.stat-value');
+    
+    statValues.forEach(stat => {
+        const value = stat.innerText;
+        
+        // Skip if not a purely numeric value (e.g., "24/7")
+        if (value.match(/[^0-9%]/)) return;
+        
+        const hasPercent = value.includes('%');
+        const numericValue = parseInt(value.replace(/\D/g, ''));
+        
+        // Set starting value to 0
+        stat.innerText = hasPercent ? '0%' : '0';
+        
+        // Animate to final value
+        let current = 0;
+        const increment = Math.max(1, Math.floor(numericValue / 50));
+        const duration = 1500; // 1.5 seconds
+        const interval = Math.floor(duration / (numericValue / increment));
+        
+        const timer = setInterval(() => {
+            current += increment;
+            
+            if (current >= numericValue) {
+                clearInterval(timer);
+                current = numericValue;
+            }
+            
+            stat.innerText = hasPercent ? `${current}%` : current;
+        }, interval);
+    });
+}
+
+/**
+ * Mobile-specific optimizations for better UX
+ */
+function initMobileOptimizations() {
+    // Check if we're on mobile
+    const isMobile = window.innerWidth < 768;
+    
+    if (isMobile) {
+        // Improve tap targets for mobile
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            });
+            
+            link.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.backgroundColor = 'transparent';
+                }, 300);
+            });
+        });
+        
+        // Add extra styling for form inputs on mobile
+        const inputs = document.querySelectorAll('.newsletter-form input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focus');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focus');
+            });
+        });
+    }
+}
+</script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Load footer
+            fetch('../footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    // Re-initialize any scripts that the footer might need
+                    const footerScript = document.createElement('script');
+                    footerScript.src = '../js/footer.js';
+                    document.body.appendChild(footerScript);
+                });
+
+            // Initialize particles for hero section
+            if (document.getElementById('hero-particles')) {
+                particlesJS('hero-particles', {
+                    "particles": {
+                        "number": {
+                            "value": 50,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ff0000"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.2,
+                            "random": true
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ff0000",
+                            "opacity": 0.15,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            }
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 3
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Animation for construction elements
+            animateConstructionElements();
+            
+            // Initialize stats counter
+            initStatsCounter();
+            
+            // Initialize navigation
+            initNavigation();
+        });
+
+        function animateConstructionElements() {
+            // Additional animations handled by CSS now
+            
+            // Add dynamic movement to floating elements
+            setInterval(() => {
+                // Add subtle random movement to floating elements
+                const floatingElements = document.querySelectorAll('.floating-element');
+                floatingElements.forEach(element => {
+                    const randomX = Math.random() * 10 - 5;
+                    const randomY = Math.random() * 10 - 5;
+                    element.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                    
+                    // Reset after animation
+                    setTimeout(() => {
+                        element.style.transform = 'translate(0, 0)';
+                    }, 1500);
+                });
+            }, 3000);
+        }
+        
+        function initStatsCounter() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const speed = 100; // Counter animation speed (lower is faster)
+            
+            // Observe when stats section is in viewport
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        startCounting();
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.5 });
             
-            animateElements.forEach(el => observer.observe(el));
-        } else {
-            // Fallback for browsers that don't support IntersectionObserver
-            animateElements.forEach(el => el.classList.add('visible'));
-        }
-        
-        // Animate stats numbers
-        animateStatCounters();
-    }
-    
-    /**
-     * Animate the stat counter numbers with counting effect
-     */
-    function animateStatCounters() {
-        const statValues = document.querySelectorAll('.stat-value');
-        
-        statValues.forEach(stat => {
-            const value = stat.innerText;
-            
-            // Skip if not a purely numeric value (e.g., "24/7")
-            if (value.match(/[^0-9%]/)) return;
-            
-            const hasPercent = value.includes('%');
-            const numericValue = parseInt(value.replace(/\D/g, ''));
-            
-            // Set starting value to 0
-            stat.innerText = hasPercent ? '0%' : '0';
-            
-            // Animate to final value
-            let current = 0;
-            const increment = Math.max(1, Math.floor(numericValue / 50));
-            const duration = 1500; // 1.5 seconds
-            const interval = Math.floor(duration / (numericValue / increment));
-            
-            const timer = setInterval(() => {
-                current += increment;
-                
-                if (current >= numericValue) {
-                    clearInterval(timer);
-                    current = numericValue;
-                }
-                
-                stat.innerText = hasPercent ? `${current}%` : current;
-            }, interval);
-        });
-    }
-    
-    /**
-     * Mobile-specific optimizations for better UX
-     */
-    function initMobileOptimizations() {
-        // Check if we're on mobile
-        const isMobile = window.innerWidth < 768;
-        
-        if (isMobile) {
-            // Improve tap targets for mobile
-            const footerLinks = document.querySelectorAll('.footer-links a');
-            footerLinks.forEach(link => {
-                link.addEventListener('touchstart', function() {
-                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                });
-                
-                link.addEventListener('touchend', function() {
-                    setTimeout(() => {
-                        this.style.backgroundColor = 'transparent';
-                    }, 300);
-                });
-            });
-            
-            // Add extra styling for form inputs on mobile
-            const inputs = document.querySelectorAll('.newsletter-form input');
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() {
-                    this.parentElement.classList.add('focus');
-                });
-                
-                input.addEventListener('blur', function() {
-                    this.parentElement.classList.remove('focus');
-                });
-            });
-        }
-    }
-    </script>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="../js/ip.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS with custom settings
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100,
-                disable: false,
-                // Use easing for smoother animations
-                easeInOutQuart: 'cubic-bezier(0.76, 0, 0.24, 1)'
-            });
-            
-            // Fix for hero content to ensure text visibility while preserving animations
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent) {
-                // Listen for animation start
-                heroContent.addEventListener('animationstart', function() {
-                    // Ensure text remains visible during animation
-                    const textElements = heroContent.querySelectorAll('h1, .hero-badge, .accent-text, .hero-tagline, .btn');
-                    textElements.forEach(el => {
-                        el.style.opacity = '1';
-                        el.style.visibility = 'visible';
-                    });
-                });
-
-                // Also apply after AOS initializes
-                setTimeout(function() {
-                    // Force text elements to maintain visibility
-                    const textElements = heroContent.querySelectorAll('h1, .hero-badge, .accent-text, .hero-tagline, .btn');
-                    textElements.forEach(el => {
-                        el.style.opacity = '1';
-                        el.style.visibility = 'visible';
-                    });
-                }, 100);
+            // Observe the stats container
+            const statsContainer = document.querySelector('.hero-stats');
+            if (statsContainer) {
+                observer.observe(statsContainer);
             }
-        });
+            
+            function startCounting() {
+                statNumbers.forEach(counter => {
+                    const target = +counter.getAttribute('data-count');
+                    let count = 0;
+                    
+                    const updateCounter = () => {
+                        const increment = target / (speed / 10);
+                        
+                        if (count < target) {
+                            count = Math.ceil(count + increment);
+                            counter.innerText = count;
+                            setTimeout(updateCounter, 10);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+            }
+        }
+        
+        function initNavigation() {
+            const navbar = document.querySelector('.navbar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            // Handle scroll behavior
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Mobile menu toggle
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+
+            // Dropdown toggles for mobile
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        const parent = toggle.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Handle responsive menu
+            function handleResponsiveMenu() {
+                if (window.innerWidth <= 992) {
+                    navbar.classList.add('mobile');
+                } else {
+                    navbar.classList.remove('mobile');
+                    navLinks.classList.remove('active');
+                    document.querySelectorAll('.dropdown.active').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            }
+            
+            // Initialize and listen for window resize
+            handleResponsiveMenu();
+            window.addEventListener('resize', handleResponsiveMenu);
+        }
     </script>
 </body>
 </html>
