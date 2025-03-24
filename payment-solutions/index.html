@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Payment Solutions - ektruck</title>
+    <link rel="stylesheet" href="../css/payment-solutions.css">
+    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/footer-only.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen
+    <div id="loading-screen">
+        <div class="loading-content">
+            <img src="/assets/logo.png" alt="ektruck Logo">
+            <div class="loading-text">
+                <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+            </div>
+            <h2>Payment Solutions</h2>
+        </div>
+    </div> -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="../assets/logo.png" alt="ek(one) Logo">
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="/managed-control-tower/">Managed Control Tower</a>
+                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
+                            <a href="/TMS/">Transport Management Solution (TMS) </a>
+                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
+                            <a href="/Fuel-managment/">Fuel Management</a>
+                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
+                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
+                            <a href="/payment-solutions/" class="active">Payment Solutions</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="/transport&logistics/">Transport & Logistics</a>
+                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
+                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
+                            <a href="/small&medium-business/">Small and Medium Businesses</a>
+                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
+                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/case-study/" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <button class="btn btn-primary">Login</button>
+                </div>
+            </div>
+
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="animated-particles">
+                <div class="payment-icons">
+                    <svg class="payment-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/>
+                    </svg>
+                    <svg class="payment-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.8 10.9C9.53 10.31 8.8 9.7 8.8 8.75C8.8 7.66 9.81 6.9 11.5 6.9C13.28 6.9 13.94 7.75 14 9H16.21C16.14 7.28 15.09 5.7 13 5.19V3H10V5.16C8.06 5.58 6.5 6.84 6.5 8.77C6.5 11.08 8.41 12.23 11.2 12.9C13.7 13.5 14.2 14.38 14.2 15.31C14.2 16 13.71 17.1 11.5 17.1C9.44 17.1 8.63 16.18 8.5 15H6.32C6.46 17.19 8.08 18.42 10 18.83V21H13V18.85C14.95 18.48 16.5 17.35 16.5 15.3C16.5 12.46 14.07 11.49 11.8 10.9Z"/>
+                    </svg>
+                    <svg class="payment-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z"/>
+                    </svg>
+                </div>
+                <div class="payment-stream"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">Payment Solutions</div>
+                <h1 class="main-heading">
+                    Smart Payment Solutions for <span class="highlight">Transporters & Truck Owners</span>
+                </h1>
+                <p>Managing payments in the logistics sector can be challenging due to delayed settlements, lack of transparency, and manual processing. Our smart payment solution streamlines payments for transporters, truck owners, and fleet operators, ensuring faster, secure, and hassle-free transactions.</p>
+                
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Key Features</h2>
+                <p class="section-subtitle">Revolutionizing payments in the logistics industry</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5 4H18C19.1 4 20 4.9 20 6V18C20 19.1 19.1 20 18 20H6C4.9 20 4 19.1 4 18V6C4 4.9 4.9 4 6 4H8.5L9.5 3H14.5L15.5 4ZM8 15.5L9.5 14L11 15.5L14.5 12L16 13.5L11 18.5L8 15.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Instant & Digital Payments</h3>
+                    <p>Eliminate cash transactions with fast, secure digital transfers.</p>
+                    <div class="feature-animation">
+                        <div class="digital-payment-animation"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,6V8H3V6H21M3,18H12V16H3V18M3,13H21V11H3V13Z"/>
+                        </svg>
+                    </div>
+                    <h3>Automated Invoicing & Settlements</h3>
+                    <p>Reduce paperwork with auto-generated invoices & direct settlements.</p>
+                    <div class="feature-animation">
+                        <div class="invoice-animation"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Transparent Payment Tracking</h3>
+                    <p>Real-time status updates on pending, processed, and completed payments.</p>
+                    <div class="feature-animation">
+                        <div class="tracking-animation"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L6.04,7.5L12,10.85L17.96,7.5L12,4.15M5,15.91L11,19.29V12.58L5,9.21V15.91M19,15.91V9.21L13,12.58V19.29L19,15.91Z"/>
+                        </svg>
+                    </div>
+                    <h3>Integration with TMS & ERP</h3>
+                    <p>Seamless linking with ektruck Control Tower, SAP ERP, and other systems for automated processing.</p>
+                    <div class="feature-animation">
+                        <div class="integration-animation"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,6H23V18H5V6M14,9A3,3 0 0,1 17,12A3,3 0 0,1 14,15A3,3 0 0,1 11,12A3,3 0 0,1 14,9M9,8A2,2 0 0,1 7,10V14A2,2 0 0,1 9,16H19A2,2 0 0,1 21,14V10A2,2 0 0,1 19,8H9M1,10H3V20H19V22H1V10Z"/>
+                        </svg>
+                    </div>
+                    <h3>Advance Payments & Credit Solutions</h3>
+                    <p>Flexible payment options for fuel, tolls, and operational expenses.</p>
+                    <div class="feature-animation">
+                        <div class="credit-animation"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z"/>
+                        </svg>
+                    </div>
+                    <h3>Secure & Compliant Transactions</h3>
+                    <p>Ensures regulatory compliance with full audit trails and fraud protection.</p>
+                    <div class="feature-animation">
+                        <div class="security-animation"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Benefits for Transporters & Truck Owners</h2>
+                <p class="section-subtitle">Experience transformative advantages with our payment solution</p>
+            </div>
+
+            <div class="benefits-content">
+                <div class="benefits-image" data-aos="fade-right">
+                    <div class="image-container">
+                        <div class="benefits-animation">
+                            <div class="truck-animation"></div>
+                            <div class="payment-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits-list" data-aos="fade-left">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Faster Payment Cycles</h3>
+                            <p>No more delays; get paid on time, every time.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Reduced Administrative Work</h3>
+                            <p>Automate reconciliations and eliminate manual errors.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Improved Cash Flow Management</h3>
+                            <p>Access advance payments when needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Better Financial Transparency</h3>
+                            <p>Clear records and instant payment tracking.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Increased Trust & Efficiency</h3>
+                            <p>Strengthens relationships between shippers and transporters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Empower Your Logistics Operations with Smart Payments</h2>
+                <p>Secure, digital-first payment solution that ensures speed, transparency, and reliability—because every mile deserves an instant payout!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Get Started Now <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-outline">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-background"></div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Company Information -->
+                <div class="footer-col">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/logo.png" alt="ektruck Logo">
+                        <div class="logo-decoration"></div>
+                    </a>
+                    <p class="company-description">
+                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                    </p>
+            
+                </div>
+                
+                <!-- Solutions -->
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul class="footer-links">
+                    <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
+                        <li> <a href="/adas-dms/">ADAS/DMS Solutions</a></li>
+                        <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
+                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                        <li> <a href="/Fuel-managment/">Fuel Management</a></li>
+                        <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                        <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
+                        <li> <a href="/payment-solutions/">Payment Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Industries -->
+                <div class="footer-col">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                    <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                        <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                        <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                        <li><a href="/government-authorities/">Government Authorities</a></li>
+                        <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                        <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                        <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                        <p><i class="fas fa-phone-alt"></i>080-68976911</p>
+                        <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <i class="far fa-copyright"></i>
+                    <span>ektruck. All rights reserved.</span>
+                </div>
+                <div class="footer-policies">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-of-service">Terms of Service</a>
+                    <a href="/sitemap">Sitemap</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll to top button -->
+        <div class="scroll-top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Loading screen
+        $(window).on('load', function() {
+            setTimeout(function() {
+                $('#loading-screen').addClass('fade-out');
+                setTimeout(function() {
+                    $('#loading-screen').hide();
+                }, 500);
+            }, 1000);
+        });
+        
+        $(document).ready(function() {
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Activate the correct nav item
+            $('.navbar .nav-link').removeClass('active');
+            $('.navbar .dropdown-item').removeClass('active');
+            $('a[href="/payment-solutions/"]').addClass('active');
+            
+            // Scroll to top button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.scroll-top').fadeIn();
+                } else {
+                    $('.scroll-top').fadeOut();
+                }
+            });
+            
+            $('.scroll-top').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+            
+            // Dropdown functionality
+            $('.dropdown-toggle').on('click', function(e) {
+                if ($(window).width() > 991) {
+                    e.preventDefault();
+                    $(this).next('.dropdown-menu').toggleClass('show');
+                }
+            });
+            
+            // Close dropdown when clicking outside
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('.dropdown').length) {
+                    $('.dropdown-menu').removeClass('show');
+                }
+            });
+            
+            // Mobile menu toggle
+            $('.menu-toggle').on('click', function() {
+                $(this).toggleClass('active');
+                $('.nav-menu').toggleClass('active');
+            });
+        });
+    </script>
+    <!-- Payment Solutions specific script -->
+    <script src="../js/payment-solutions.js"></script>
+</body>
+</html> 
