@@ -12,6 +12,285 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <style>
+        /* Custom cursor styles */
+        .cursor-tracker {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+        }
+        a:hover ~ .cursor-tracker,
+        button:hover ~ .cursor-tracker,
+        .btn:hover ~ .cursor-tracker {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+        
+        /* Data Visualization Section Styles */
+        .data-visualization-section {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        
+        .data-viz-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .data-viz-card {
+            display: flex;
+            background: rgba(45, 45, 60, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .data-viz-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .data-viz-card.full-width {
+            grid-column: span 2;
+        }
+        
+        .data-viz-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+        
+        .data-viz-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .data-viz-visual.full-width {
+            flex: 1.5;
+        }
+        
+        .data-viz-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .data-viz-icon i {
+            color: white;
+            font-size: 28px;
+        }
+        
+        .data-viz-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .data-viz-desc {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .animated-svg-container {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+        }
+        
+        /* SVG Animation Styles */
+        /* Cargo Vision Animations */
+        .pulse-circle {
+            animation: pulse 3s infinite;
+        }
+        
+        .pulse-circle-2 {
+            animation: pulse 3s infinite 0.5s;
+        }
+        
+        .scanning-line {
+            animation: scan 2s infinite;
+            stroke-dasharray: 5, 5;
+        }
+        
+        .data-point {
+            animation: blink 3s infinite;
+        }
+        
+        .data-line {
+            animation: dashMove 10s infinite linear;
+        }
+        
+        /* Cargo Alarm Animations */
+        .bell {
+            transform-origin: 150px 60px;
+            animation: bellRing 2s infinite ease-in-out;
+        }
+        
+        .bell-top {
+            animation: pulse 2s infinite;
+        }
+        
+        .alarm-wave {
+            opacity: 0;
+            animation: fadeInOut 2s infinite;
+        }
+        
+        .alarm-wave-outer {
+            opacity: 0;
+            animation: fadeInOut 2s infinite 0.5s;
+        }
+        
+        .alert-dot {
+            animation: flashAlert 1s infinite;
+        }
+        
+        /* Cargo Dashboard Animations */
+        .dashboard-widget {
+            animation: fadeIn 1s;
+        }
+        
+        .chart-bar {
+            animation: growBar 2s infinite alternate;
+        }
+        
+        .chart-line {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: drawLine 5s infinite;
+        }
+        
+        .chart-point {
+            animation: pulse 3s infinite;
+        }
+        
+        .map-point {
+            animation: pulse 2s infinite;
+        }
+        
+        .map-point-destination {
+            animation: pulse 2s infinite 1s;
+        }
+        
+        .map-route {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: drawRoute 5s infinite;
+        }
+        
+        .data-transmission {
+            animation: moveData 4s infinite;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(-20px); }
+            50% { transform: translateY(20px); }
+            100% { transform: translateY(-20px); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        @keyframes dashMove {
+            to { stroke-dashoffset: -100; }
+        }
+        
+        @keyframes bellRing {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        @keyframes flashAlert {
+            0%, 100% { fill-opacity: 0.8; }
+            50% { fill-opacity: 1; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes growBar {
+            to { height: calc(var(--height, 30) * 1.2px); transform: translateY(calc(var(--height, 30) * -0.2px)); }
+        }
+        
+        @keyframes drawLine {
+            0% { stroke-dashoffset: 500; }
+            40% { stroke-dashoffset: 0; }
+            60% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -500; }
+        }
+        
+        @keyframes drawRoute {
+            0% { stroke-dashoffset: 500; }
+            40% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 0; }
+        }
+        
+        @keyframes moveData {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translate(150px, 100px); opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(300px, 200px); opacity: 0; }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .data-viz-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .data-viz-card.full-width {
+                grid-column: auto;
+            }
+            
+            .data-viz-card {
+                flex-direction: column;
+            }
+            
+            .data-viz-content {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- SVG Definitions for reuse -->
@@ -247,6 +526,156 @@
                     </div>
                     <div class="feature-visual">
                         <object type="image/svg+xml" data="../assets/svg/battery-life.svg" class="svg-loader feature-animation"></object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section id="data-visualization" class="data-visualization-section">
+        <div class="section-bg light">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-heading" data-aos="fade-up">Real-Time Data Visualization</h2>
+                <p class="section-subheading" data-aos="fade-up" data-aos-delay="100">Assisting Decision-Making & Upgrading Management Through Intelligent Data Analysis</p>
+            </div>
+            
+            <div class="data-viz-grid">
+                <!-- Cargo Vision -->
+                <div class="data-viz-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="data-viz-content">
+                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="bx bx-camera"></i>
+                        </div>
+                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="250">Cargo Vision</h3>
+                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="300">
+                            By integrating and analyzing data such as images, videos, cargo capacity, GPS, etc., we provide operators with one-stop web operations for complete visual monitoring of cargo.
+                        </p>
+                    </div>
+                    <div class="data-viz-visual" data-aos="fade-left" data-aos-delay="400">
+                        <div class="animated-svg-container">
+                            <svg class="cargo-vision-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Camera lens circles -->
+                                <circle class="pulse-circle" cx="150" cy="100" r="50" fill="rgba(255, 51, 51, 0.1)" stroke="#ff3333" stroke-width="2" />
+                                <circle class="pulse-circle-2" cx="150" cy="100" r="40" fill="none" stroke="#ff3333" stroke-width="1.5" />
+                                <circle cx="150" cy="100" r="30" fill="none" stroke="#ff3333" stroke-width="1" />
+                                <circle cx="150" cy="100" r="20" fill="#ff3333" fill-opacity="0.2" stroke="#ff3333" stroke-width="1" />
+                                
+                                <!-- Scanning line animation -->
+                                <line class="scanning-line" x1="100" y1="100" x2="200" y2="100" stroke="#ff3333" stroke-width="2" />
+                                
+                                <!-- Data points -->
+                                <circle class="data-point" cx="120" cy="80" r="3" fill="#ff3333" />
+                                <circle class="data-point" cx="180" cy="75" r="3" fill="#ff3333" />
+                                <circle class="data-point" cx="165" cy="130" r="3" fill="#ff3333" />
+                                <circle class="data-point" cx="135" cy="120" r="3" fill="#ff3333" />
+                                
+                                <!-- Data connection lines -->
+                                <line class="data-line" x1="120" y1="80" x2="180" y2="75" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
+                                <line class="data-line" x1="180" y1="75" x2="165" y2="130" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
+                                <line class="data-line" x1="165" y1="130" x2="135" y2="120" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
+                                <line class="data-line" x1="135" y1="120" x2="120" y2="80" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cargo Alarm -->
+                <div class="data-viz-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="data-viz-content">
+                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="bx bx-bell"></i>
+                        </div>
+                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="350">Cargo Alarm</h3>
+                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="400">
+                            By integrating and analyzing data such as images, videos, cargo capacity, GPS, etc., we provide operators with one-stop web operations for instant alerts and proactive issue resolution.
+                        </p>
+                    </div>
+                    <div class="data-viz-visual" data-aos="fade-left" data-aos-delay="500">
+                        <div class="animated-svg-container">
+                            <svg class="cargo-alarm-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Alarm bell -->
+                                <path class="bell" d="M150,60 C130,60 115,75 115,95 L115,140 L115,145 L185,145 L185,140 L185,95 C185,75 170,60 150,60 Z" fill="none" stroke="#ff3333" stroke-width="2" />
+                                <circle class="bell-top" cx="150" cy="60" r="5" fill="#ff3333" />
+                                
+                                <!-- Bell bottom -->
+                                <path d="M130,145 C130,155 140,165 150,165 C160,165 170,155 170,145" fill="none" stroke="#ff3333" stroke-width="2" />
+                                
+                                <!-- Alarm waves -->
+                                <path class="alarm-wave" d="M110,100 C105,100 100,95 100,90 C100,85 105,80 110,80" fill="none" stroke="#ff3333" stroke-width="2" stroke-linecap="round" />
+                                <path class="alarm-wave" d="M190,100 C195,100 200,95 200,90 C200,85 195,80 190,80" fill="none" stroke="#ff3333" stroke-width="2" stroke-linecap="round" />
+                                
+                                <path class="alarm-wave-outer" d="M95,105 C88,105 80,97 80,90 C80,83 88,75 95,75" fill="none" stroke="#ff3333" stroke-width="1.5" stroke-linecap="round" />
+                                <path class="alarm-wave-outer" d="M205,105 C212,105 220,97 220,90 C220,83 212,75 205,75" fill="none" stroke="#ff3333" stroke-width="1.5" stroke-linecap="round" />
+                                
+                                <!-- Alert dot -->
+                                <circle class="alert-dot" cx="150" cy="110" r="10" fill="#ff3333" fill-opacity="0.8" />
+                                <text x="150" y="114" text-anchor="middle" fill="white" font-size="14" font-weight="bold">!</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cargo Dashboard -->
+                <div class="data-viz-card full-width" data-aos="fade-up" data-aos-delay="300">
+                    <div class="data-viz-content">
+                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="bx bx-bar-chart-alt-2"></i>
+                        </div>
+                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="450">Cargo Dashboard</h3>
+                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="500">
+                            One page webpage displays a panoramic view of data, summarizing, categorizing, and analyzing content to help improve management. Retain and clearly display all cargo data by category, in real-time and conveniently, to facilitate efficient cargo capacity management.
+                        </p>
+                    </div>
+                    <div class="data-viz-visual full-width" data-aos="fade-left" data-aos-delay="600">
+                        <div class="animated-svg-container">
+                            <svg class="cargo-dashboard-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Dashboard outline -->
+                                <rect x="50" y="30" width="500" height="140" rx="5" ry="5" fill="#2d2d3f" stroke="#444" stroke-width="2" />
+                                
+                                <!-- Top header bar -->
+                                <rect x="50" y="30" width="500" height="25" rx="5" ry="5" fill="#444" />
+                                
+                                <!-- Dashboard widgets -->
+                                <rect class="dashboard-widget" x="65" y="65" width="140" height="90" rx="3" ry="3" fill="#3a3a58" />
+                                <rect class="dashboard-widget" x="220" y="65" width="140" height="90" rx="3" ry="3" fill="#3a3a58" />
+                                <rect class="dashboard-widget" x="375" y="65" width="160" height="90" rx="3" ry="3" fill="#3a3a58" />
+                                
+                                <!-- Chart elements -->
+                                <!-- Widget 1: Bar chart -->
+                                <rect class="chart-bar" x="80" y="130" width="15" height="15" fill="#ff3333" />
+                                <rect class="chart-bar" x="100" y="120" width="15" height="25" fill="#ff3333" />
+                                <rect class="chart-bar" x="120" y="100" width="15" height="45" fill="#ff3333" />
+                                <rect class="chart-bar" x="140" y="110" width="15" height="35" fill="#ff3333" />
+                                <rect class="chart-bar" x="160" y="105" width="15" height="40" fill="#ff3333" />
+                                
+                                <!-- Widget 2: Line chart -->
+                                <polyline class="chart-line" points="230,130 250,110 270,120 290,90 310,105 330,95" fill="none" stroke="#ff3333" stroke-width="2" />
+                                <circle class="chart-point" cx="230" cy="130" r="3" fill="#ff3333" />
+                                <circle class="chart-point" cx="250" cy="110" r="3" fill="#ff3333" />
+                                <circle class="chart-point" cx="270" cy="120" r="3" fill="#ff3333" />
+                                <circle class="chart-point" cx="290" cy="90" r="3" fill="#ff3333" />
+                                <circle class="chart-point" cx="310" cy="105" r="3" fill="#ff3333" />
+                                <circle class="chart-point" cx="330" cy="95" r="3" fill="#ff3333" />
+                                
+                                <!-- Widget 3: Map with route -->
+                                <rect x="385" y="75" width="140" height="70" rx="2" ry="2" fill="#2d2d3f" />
+                                <circle class="map-point" cx="405" cy="95" r="5" fill="#ff3333" fill-opacity="0.8" />
+                                <circle class="map-point-destination" cx="505" cy="115" r="5" fill="#32cd32" fill-opacity="0.8" />
+                                <path class="map-route" d="M405,95 Q455,75 505,115" fill="none" stroke="#ff3333" stroke-width="2" stroke-dasharray="4,2" />
+                                
+                                <!-- Data transmission animation -->
+                                <circle class="data-transmission" cx="300" cy="30" r="3" fill="#ff3333" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>

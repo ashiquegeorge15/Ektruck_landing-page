@@ -22,6 +22,57 @@
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .benefit-row:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    </style>
 </head>
 <body>
     <!-- Progress Bar -->
@@ -29,8 +80,11 @@
         <div class="progress-bar" id="progressBar"></div>
     </div>
     
-    <!-- Cursor Tracker -->
-    <div class="cursor-tracker" id="cursorTracker"></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
 
      <!-- Navigation -->
      <nav class="navbar">
@@ -138,7 +192,7 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Key Features</h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                Our temperature monitoring solution offers advanced features designed to protect your temperature-sensitive products throughout the supply chain.
+                Smart Temperature Monitoring Solutions for Cold Chain & Logistics
             </p>
             
             <div class="feature-grid">
@@ -146,9 +200,9 @@
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="feature-title">Real-Time Tracking</h3>
+                    <h3 class="feature-title">Real-Time Temperature Tracking</h3>
                     <p class="feature-description">
-                        Monitor temperature conditions in real-time with continuous data streams and customizable dashboards.
+                        Monitor temperature fluctuations 24/7 with live data.
                     </p>
                 </div>
                 
@@ -156,9 +210,9 @@
                     <div class="feature-icon">
                         <i class="fas fa-bell"></i>
                     </div>
-                    <h3 class="feature-title">Instant Alerts</h3>
+                    <h3 class="feature-title">Instant Alerts & Notifications</h3>
                     <p class="feature-description">
-                        Receive immediate notifications when temperatures deviate from your preset thresholds.
+                        Get notified of deviations via SMS, email, or mobile app.
                     </p>
                 </div>
                 
@@ -166,39 +220,39 @@
                     <div class="feature-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3 class="feature-title">Automated Reporting</h3>
+                    <h3 class="feature-title">Automated Reporting & Compliance</h3>
                     <p class="feature-description">
-                        Generate comprehensive temperature reports automatically for regulatory compliance and quality assurance.
+                        Generate audit-ready reports for regulatory adherence.
                     </p>
                 </div>
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
-                        <i class="fas fa-layer-group"></i>
+                        <i class="fas fa-plug"></i>
                     </div>
-                    <h3 class="feature-title">Multi-Zone Monitoring</h3>
+                    <h3 class="feature-title">Seamless IoT & ERP Integration</h3>
                     <p class="feature-description">
-                        Track temperature across multiple zones, warehouses, and transportation vehicles from a single platform.
+                        Connect with existing fleet management and inventory systems.
                     </p>
                 </div>
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
-                        <i class="fas fa-history"></i>
+                        <i class="fas fa-battery-full"></i>
                     </div>
-                    <h3 class="feature-title">Historical Data Analysis</h3>
+                    <h3 class="feature-title">Long Battery Life & Wireless Connectivity</h3>
                     <p class="feature-description">
-                        Access historical temperature data to identify patterns, trends, and opportunities for improvement.
+                        Reliable performance with minimal maintenance.
                     </p>
                 </div>
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3 class="feature-title">Mobile Access</h3>
+                    <h3 class="feature-title">Multi-Zone Monitoring</h3>
                     <p class="feature-description">
-                        Monitor temperatures and receive alerts on-the-go with our mobile app for iOS and Android.
+                        Track multiple temperature zones in a single vehicle or storage unit.
                     </p>
                 </div>
             </div>
@@ -223,31 +277,18 @@
     <!-- Benefits Section -->
     <section class="benefits section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Why Choose Our Solution?</h2>
+            <h2 class="section-title" data-aos="fade-up">Benefits of Our Temperature Monitoring Solution</h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                Our temperature monitoring system provides significant benefits that protect your products and enhance your operations.
+                Protect your temperature-sensitive cargo with an intelligent, real-time monitoring system that ensures quality, safety, and compliance at every stage of the supply chain.
             </p>
             
             <div class="benefit-row">
                 <div class="benefit-content" data-aos="fade-right">
                     <h3 class="benefit-title">Reduce Product Losses</h3>
                     <p class="benefit-text">
-                        By continuously monitoring temperature conditions, our solution helps prevent spoilage and damage, significantly reducing product losses by up to 68%.
+                        Prevent spoilage with proactive alerts.
                     </p>
-                    <ul class="benefit-list">
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Detect temperature excursions before damage occurs
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Take corrective action immediately with real-time alerts
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Identify and address recurring issues in your cold chain
-                        </li>
-                    </ul>
+            
                 </div>
                 <div class="benefit-image" data-aos="fade-left">
                     <object type="image/svg+xml" data="../assets/svg/reduce-losses.svg" class="img-fluid"></object>
@@ -258,22 +299,9 @@
                 <div class="benefit-content" data-aos="fade-left">
                     <h3 class="benefit-title">Ensure Regulatory Compliance</h3>
                     <p class="benefit-text">
-                        Meet and exceed regulatory requirements with automated temperature documentation that satisfies FDA, GMP, and HACCP standards.
+                        Meet industry standards (GMP, HACCP, FDA, etc.).
                     </p>
-                    <ul class="benefit-list">
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Maintain comprehensive temperature records
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Generate audit-ready reports with a single click
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Demonstrate due diligence with continuous monitoring
-                        </li>
-                    </ul>
+  
                 </div>
                 <div class="benefit-image" data-aos="fade-right">
                     <object type="image/svg+xml" data="../assets/svg/compliance.svg" class="img-fluid"></object>
@@ -284,22 +312,9 @@
                 <div class="benefit-content" data-aos="fade-right">
                     <h3 class="benefit-title">Enhance Supply Chain Visibility</h3>
                     <p class="benefit-text">
-                        Gain complete visibility into temperature conditions throughout your supply chain, from production to final delivery.
+                        Monitor shipments from warehouse to last-mile delivery.
                     </p>
-                    <ul class="benefit-list">
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Track temperatures across multiple locations
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Monitor conditions during transportation
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Identify weaknesses in your cold chain
-                        </li>
-                    </ul>
+              
                 </div>
                 <div class="benefit-image" data-aos="fade-left">
                     <object type="image/svg+xml" data="../assets/svg/supply-chain.svg" class="img-fluid"></object>
@@ -312,20 +327,7 @@
                     <p class="benefit-text">
                         Build confidence with your customers by providing verifiable temperature data that demonstrates your commitment to product quality.
                     </p>
-                    <ul class="benefit-list">
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Share temperature records with customers
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Provide proof of temperature compliance
-                        </li>
-                        <li class="benefit-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            Reduce customer complaints and returns
-                        </li>
-                    </ul>
+         
                 </div>
                 <div class="benefit-image" data-aos="fade-right">
                     <object type="image/svg+xml" data="../assets/svg/customer-trust.svg" class="img-fluid"></object>
@@ -339,9 +341,7 @@
         <div class="container">
             <div class="cta-container" data-aos="fade-up">
                 <h2 class="cta-title">Protect Your Temperature-Sensitive Cargo Today</h2>
-                <p class="cta-description">
-                    Join thousands of companies that rely on our temperature monitoring solutions to protect their products and ensure quality.
-                </p>
+               
                 <a href="#" class="btn btn-primary">Schedule a Free Demo <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -684,18 +684,42 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
         
-        // Cursor tracker
-        document.addEventListener('mousemove', (e) => {
-            const tracker = document.getElementById('cursorTracker');
-            tracker.style.opacity = '1';
-            tracker.style.left = e.clientX + 'px';
-            tracker.style.top = e.clientY + 'px';
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
             
-            // Hide tracker when mouse is inactive
-            clearTimeout(window.cursorTimeout);
-            window.cursorTimeout = setTimeout(() => {
-                tracker.style.opacity = '0';
-            }, 2000);
+            // Check if we're on desktop (not touch device)
+            if (!('ontouchstart' in window)) {
+                document.body.classList.add('custom-cursor-enabled');
+                
+                const updateCursor = (e) => {
+                    // Set the position of the dot to follow cursor exactly
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.left = `${e.clientX}px`;
+                    
+                    // Set the position of the circle with a slight delay for smooth effect
+                    cursorCircle.style.top = `${e.clientY}px`;
+                    cursorCircle.style.left = `${e.clientX}px`;
+                };
+                
+                window.addEventListener('mousemove', updateCursor);
+                
+                // Add hover effect to all interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .btn, .feature-card, .benefit-row, input, textarea, select, [role="button"]');
+                
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorDot.classList.add('active');
+                        cursorCircle.classList.add('active');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        cursorDot.classList.remove('active');
+                        cursorCircle.classList.remove('active');
+                    });
+                });
+            }
         });
         
         // Animate temperature values

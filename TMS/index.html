@@ -22,6 +22,52 @@
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Progress Bar -->
@@ -29,8 +75,11 @@
         <div class="progress-bar" id="progressBar"></div>
     </div>
     
-    <!-- Cursor Tracker -->
-    <div class="cursor-tracker" id="cursorTracker"></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -107,7 +156,7 @@
         </div>
 
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
                 <div class="badge-container">
                     <span class="badge">Smart Logistics Solutions</span>
                 </div>
@@ -133,7 +182,7 @@
                 </div>
             </div>
             
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
                 <div class="logistics-dashboard">
                     <div class="dashboard-header">
                         <div class="dashboard-logo">
@@ -191,7 +240,7 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Key Features</h2>
                 <p class="section-subtitle">Our TMS offers powerful capabilities to streamline your logistics operations</p>
             </div>
@@ -212,14 +261,7 @@
                     <h3>Real-Time Tracking</h3>
                     <p>Monitor shipments, fleet movement, and delivery status in a single intuitive dashboard.</p>
                 </div>
-                
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Automated Dispatch & Scheduling</h3>
-                    <p>Optimize load distribution and driver assignments for maximum efficiency.</p>
-                </div>
+          
                 
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
@@ -259,18 +301,18 @@
     <!-- Visualization Section -->
     <section class="visualization-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Streamlined Logistics Visualization</h2>
                 <p class="section-subtitle">See how our TMS brings unprecedented visibility to your transport operations</p>
             </div>
             
             <div class="visualization-content">
-                <div class="visualization-svg">
+                <div class="visualization-svg" data-aos="fade-right" data-aos-delay="200">
                     <object type="image/svg+xml" data="../assets/svg/route-optimization.svg" class="route-optimization-svg">
                         Route Optimization SVG
                     </object>
                 </div>
-                <div class="visualization-text">
+                <div class="visualization-text" data-aos="fade-left" data-aos-delay="300">
                     <h3>AI-Powered Route Optimization</h3>
                     <p>Our intelligent algorithms analyze multiple factors including traffic patterns, vehicle capacity, delivery windows, and driver availability to determine the most efficient routes.</p>
                     <ul class="benefit-list">
@@ -293,7 +335,7 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Why Choose ektruck TMS?</h2>
                 <p class="section-subtitle">Our Transport Management Solution delivers tangible benefits for your business</p>
             </div>
@@ -337,7 +379,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content" data-aos="fade-right" data-aos-delay="100">
                 <h2>Revolutionize Your Logistics Operations</h2>
                 <p>Experience the power of our smart, automated, and data-driven TMS to ensure efficiency, transparency, and profitability in your transport management.</p>
                 <a href="#" class="btn btn-primary btn-glow">
@@ -345,7 +387,7 @@
                     <span class="btn-shine"></span>
                 </a>
             </div>
-            <div class="cta-image">
+            <div class="cta-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="loading-spinner"></div>
                 <img src="../assets/img/tms-mobile.png" alt="TMS Mobile App" class="mobile-app-image">
             </div>
@@ -355,7 +397,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-top" data-aos="fade-up">
                 <div class="footer-logo">
                     <img src="../assets/logo.png" alt="ek(one) Logo">
                 </div>
@@ -368,7 +410,7 @@
             </div>
             
             <div class="footer-grid">
-                <div class="footer-column">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="footer-title">Solutions</h3>
                     <ul class="footer-links">
                         <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -381,7 +423,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="footer-title">Industries</h3>
                     <ul class="footer-links">
                         <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -393,7 +435,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
                     <h3 class="footer-title">Resources</h3>
                     <ul class="footer-links">
                         <li><a href="/case-study/">Case Studies</a></li>
@@ -403,7 +445,7 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="footer-title">Contact</h3>
                     <p class="footer-contact-info">
                         <i class="fas fa-map-marker-alt"></i> 123 Business Avenue, Dubai, UAE
@@ -417,7 +459,7 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="100">
                 <p class="copyright">© 2023 ek(one). All rights reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
@@ -446,11 +488,76 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
         
-        // Cursor Tracker
-        document.addEventListener('mousemove', function(e) {
-            const cursor = document.getElementById('cursorTracker');
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            // Function to update cursor position
+            const updateCursorPosition = (event) => {
+                const posX = event.clientX;
+                const posY = event.clientY;
+                
+                // Update dot position immediately (no transition)
+                requestAnimationFrame(() => {
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+                });
+                
+                // Update circle with slight delay for smooth effect
+                setTimeout(() => {
+                    cursorCircle.style.left = `${posX}px`;
+                    cursorCircle.style.top = `${posY}px`;
+                }, 10);
+            };
+            
+            // Mouse move event listener
+            document.addEventListener('mousemove', updateCursorPosition);
+            
+            // Add cursor effects on interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .btn, .feature-card, .benefit-card, .nav-link, .nav-item, .menu-toggle');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorCircle.style.width = '60px';
+                    cursorCircle.style.height = '60px';
+                    cursorCircle.style.backgroundColor = 'rgba(255, 51, 51, 0.1)';
+                    cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.8)';
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorCircle.style.width = '40px';
+                    cursorCircle.style.height = '40px';
+                    cursorCircle.style.backgroundColor = 'transparent';
+                    cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.5)';
+                });
+            });
+            
+            // Hide default cursor on desktop
+            if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+                document.body.style.cursor = 'none';
+            } else {
+                // Show default cursor and hide custom cursor on mobile/touch devices
+                document.body.style.cursor = 'auto';
+                cursorDot.style.display = 'none';
+                cursorCircle.style.display = 'none';
+            }
+            
+            // Hide cursor when mouse leaves the window
+            document.addEventListener('mouseleave', () => {
+                cursorDot.style.display = 'none';
+                cursorCircle.style.display = 'none';
+            });
+            
+            // Show cursor when mouse enters the window
+            document.addEventListener('mouseenter', () => {
+                if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+                    cursorDot.style.display = 'block';
+                    cursorCircle.style.display = 'block';
+                }
+            });
         });
         
         // Mobile Menu Toggle

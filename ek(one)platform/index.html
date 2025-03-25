@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
+    <link rel="stylesheet" href="../css/benefits.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,8 +20,62 @@
     
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .benefit-item:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .benefit-card:hover ~ .custom-cursor .cursor-circle,
+        .business-benefit-card:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -174,7 +229,7 @@
         <div class="container">
             <div class="showcase-content" data-aos="fade-up">
                 <h1>SAAS Based ERP platform for Management of Market Trucks</h1>
-                <p class="showcase-subtitle">No more worries for trip rates. Define your rates and list your vehicles in the market. We empower you to do the business your way, digitally</p>
+                <p class="showcase-subtitle">Don't Worry about Reverse bidding.  Get the actual market rates for prevailing for the day. We empower you to do the business your way, digitally</p>
                 <div class="showcase-cta">
                     <a href="#get-started" class="btn btn-primary">Get Started</a>
                     <a href="#learn-more" class="btn btn-outline">Learn More</a>
@@ -218,157 +273,176 @@
         </div>
     </section>
 
-    <section id="trip-tracking-animation" class="trip-tracking-section">
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits-section">
+        <div class="benefits-bg">
+            <div class="grid-pattern"></div>
+            <div class="glow-orbs">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+            <div class="circuit-lines">
+                <svg class="circuit-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path class="circuit-path" d="M0,500 Q250,400 500,500 T1000,500" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                    <path class="circuit-path" d="M0,300 Q250,200 500,300 T1000,300" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                    <path class="circuit-path" d="M0,700 Q250,600 500,700 T1000,700" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                    <circle class="circuit-node" cx="0" cy="500" r="4" fill="rgba(255,0,0,0.3)"/>
+                    <circle class="circuit-node" cx="500" cy="500" r="4" fill="rgba(255,0,0,0.3)"/>
+                    <circle class="circuit-node" cx="1000" cy="500" r="4" fill="rgba(255,0,0,0.3)"/>
+                </svg>
+            </div>
+        </div>
+
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2>Who Benefits from ek<span class="highlight-text">(one)</span>?</h2>
-                <p class="section-subtitle">Follow the seamless flow from order to delivery with ek(one)</p>
+                <p class="section-subtitle">Empowering every stakeholder in the logistics ecosystem</p>
             </div>
-            
-            <div class="motion-graphics-container" data-aos="fade-up">
-                <!-- Main Animation Canvas -->
-                <div class="animation-canvas">
-                    <!-- Background Elements -->
-                    <div class="map-background"></div>
-                    <div class="grid-overlay"></div>
-                    <div class="glow-effects"></div>
-                    
-                    <!-- Timeline Progress -->
-                    <div class="timeline-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
-                        <div class="timeline-marker" data-stage="1">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Small Truck Owners</div>
-                        </div>
-                        <div class="timeline-marker" data-stage="2">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Shippers</div>
-                        </div>
-                        <div class="timeline-marker" data-stage="3">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Brokers & Aggregators</div>
-                        </div>
-                        <div class="timeline-marker" data-stage="4">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Drivers</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Central Animation Area -->
-                    <div class="central-animation">
-                        <!-- Truck Animation
-                        <div class="truck-container">
-                            <div id="truck-animation" data-lottie="assets/animations/truck.json" class="lottie-container"></div>
-                        </div>
-                         -->
-                        <!-- Route Path -->
-                        <svg class="route-path" width="100%" height="100%" viewBox="0 0 1000 300">
-                            <path class="route-line" d="M100,150 C250,50 350,250 500,150 C650,50 750,250 900,150" />
-                            <circle class="route-point point-1" cx="100" cy="150" r="10" />
-                            <circle class="route-point point-2" cx="300" cy="100" r="10" />
-                            <circle class="route-point point-3" cx="500" cy="150" r="10" />
-                            <circle class="route-point point-4" cx="700" cy="100" r="10" />
-                            <circle class="route-point point-5" cx="900" cy="150" r="10" />
+
+            <div class="benefits-grid">
+                <!-- Small Truck Owners -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-bg">
+                        <svg class="card-pattern" viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgba(255,0,0,0.1);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:rgba(255,0,0,0);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="blob" fill="url(#grad1)" d="M40,-50C51.2,-41.9,59.1,-28.7,63.3,-13.9C67.4,0.9,67.8,17.2,61.4,30.5C55.1,43.8,42.1,54.2,27.3,59.8C12.6,65.4,-3.9,66.2,-19.8,62.1C-35.7,58,-51,49,-59.8,35.1C-68.7,21.2,-71.1,2.4,-66.3,-13.4C-61.5,-29.2,-49.5,-42,-36.2,-49.8C-22.8,-57.6,-8.2,-60.4,3.9,-65.1C16,-69.8,28.8,-58.1,40,-50Z" transform="translate(100 100)">
+                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite"/>
+                            </path>
                         </svg>
-                        
-                        <!-- Location Pins -->
-                        <div class="location-pin pin-1">
-                            <div class="pin-pulse"></div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="pin-label">Pickup</div>
-                        </div>
-                        <div class="location-pin pin-2">
-                            <div class="pin-pulse"></div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="pin-label">Checkpoint</div>
-                        </div>
-                        <div class="location-pin pin-3">
-                            <div class="pin-pulse"></div>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="pin-label">Delivery</div>
-                        </div>
                     </div>
-                    
-                    <!-- Stage Information Panels -->
-                    <div class="stage-info-container">
-                        <div class="stage-info stage-1 active">
-                            <div class="stage-icon">
-                                <i class="fas fa-file-signature"></i>
-                            </div>
-                            <h3>Small Truck Owners</h3>
-                            <p>Get better load opportunities, faster payments, and reduced empty miles.d delivery requirements</p>
-                        </div>
-                        <div class="stage-info stage-2">
-                            <div class="stage-icon">
-                                <i class="fas fa-random"></i>
-                            </div>
-                            <h3>Shippers</h3>
-                            <p>Access reliable trucks instantly, optimize freight costs, and ensure on-time deliveries.</p>
-                        </div>
-                        <div class="stage-info stage-3">
-                            <div class="stage-icon">
-                                <i class="fas fa-truck-loading"></i>
-                            </div>
-                            <h3>Brokers & Aggregators</h3>
-                            <p>Digitalize operations, match trucks with loads efficiently, and manage settlements effortlessly.</p>
-                        </div>
-                        <div class="stage-info stage-4">
-                            <div class="stage-icon">
-                                <i class="fas fa-route"></i>
-                            </div>
-                            <h3>Real-time Tracking</h3>
-                            <p>GPS tracking provides live location updates, ETA, and status notifications</p>
-                        </div>
-                        <div class="stage-info stage-5">
-                            <div class="stage-icon">
-                                <i class="fas fa-box-open"></i>
-                            </div>
-                            <h3>Drivers</h3>
-                            <p>Digital proof of delivery with signature and photo confirmation ensures transparency</p>
-                        </div>
-                 
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck-moving"></i>
+                        <svg class="icon-rings" viewBox="0 0 100 100">
+                            <circle class="ring" cx="50" cy="50" r="40" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="35" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="30" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                        </svg>
                     </div>
-                    
-                    <!-- Digital Elements -->
-                    <div class="digital-elements">
-                        <div class="data-stream stream-1"></div>
-                        <div class="data-stream stream-2"></div>
-                        <div class="data-stream stream-3"></div>
-                        <div class="data-point point-1"></div>
-                        <div class="data-point point-2"></div>
-                        <div class="data-point point-3"></div>
+                    <h3>Small Truck Owners</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check"></i> Better load opportunities</li>
+                        <li><i class="fas fa-check"></i> Faster payments</li>
+                        <li><i class="fas fa-check"></i> Reduced empty miles</li>
+                        <li><i class="fas fa-check"></i> Improved fleet utilization</li>
+                    </ul>
+
+                    <div class="benefit-animation"></div>
+                </div>
+
+                <!-- Shippers -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-bg">
+                        <svg class="card-pattern" viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgba(255,0,0,0.1);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:rgba(255,0,0,0);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="blob" fill="url(#grad2)" d="M45.7,-57.2C59.1,-47.3,69.6,-32.7,73.9,-16.1C78.2,0.5,76.2,19.1,67.6,33C59,46.9,43.8,56.1,27.4,61.9C11,67.7,-6.7,70.1,-23.2,65.9C-39.7,61.7,-55,51,-65.4,35.8C-75.8,20.6,-81.2,0.9,-77.4,-16.5C-73.6,-33.9,-60.5,-49,-45.1,-58.8C-29.7,-68.7,-11.9,-73.3,2.4,-76.2C16.7,-79,32.3,-67.1,45.7,-57.2Z" transform="translate(100 100)">
+                                <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="20s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
                     </div>
-                    
-                    <!-- Mobile Device Overlay -->
-                    <div class="mobile-overlay">
-                        <div class="device-frame">
-                            <div class="device-screen">
-                                <div class="app-interface">
-                                    <div class="app-header">
-                                        <div class="app-logo">ek(one)</div>
-                                        <div class="app-menu"><i class="fas fa-bars"></i></div>
-                                    </div>
-                                    <div class="app-content">
-                                        <div class="trip-card">
-                                            <div class="trip-status">In Transit</div>
-                                            <div class="trip-details">
-                                                <div class="trip-route">Mumbai → Delhi</div>
-                                                <div class="trip-id">TRP-12345</div>
-                                            </div>
-                                            <div class="trip-progress">
-                                                <div class="progress-bar">
-                                                    <div class="progress-fill"></div>
-                                                </div>
-                                                <div class="progress-text">68% Complete</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-building"></i>
+                        <svg class="icon-rings" viewBox="0 0 100 100">
+                            <circle class="ring" cx="50" cy="50" r="40" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="35" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="30" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                        </svg>
                     </div>
+                    <h3>Shippers</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check"></i> Access reliable trucks instantly</li>
+                        <li><i class="fas fa-check"></i> Optimize freight costs</li>
+                        <li><i class="fas fa-check"></i> Ensure on-time deliveries</li>
+                        <li><i class="fas fa-check"></i> End-to-end visibility</li>
+                    </ul>
+                
+                    <div class="benefit-animation"></div>
+                </div>
+
+                <!-- Brokers/Agents -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-bg">
+                        <svg class="card-pattern" viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgba(255,0,0,0.1);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:rgba(255,0,0,0);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="blob" fill="url(#grad3)" d="M47.7,-57.2C62,-47.3,74.2,-32.7,78.9,-16.1C83.6,0.5,80.8,19.1,71.4,33C62,46.9,46,56.1,29.4,61.9C12.8,67.7,-4.2,70.1,-20.2,65.9C-36.2,61.7,-51.2,51,-61.4,35.8C-71.6,20.6,-77.2,0.9,-73.4,-16.5C-69.6,-33.9,-56.4,-49,-41.4,-58.8C-26.4,-68.7,-13.2,-73.3,1.6,-76.2C17.4,-79,34.4,-67.1,47.7,-57.2Z" transform="translate(100 100)">
+                                <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="25s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                        <svg class="icon-rings" viewBox="0 0 100 100">
+                            <circle class="ring" cx="50" cy="50" r="40" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="35" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="30" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Brokers & Aggregators</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check"></i> Digitalize operations</li>
+                        <li><i class="fas fa-check"></i> Match trucks with loads efficiently</li>
+                        <li><i class="fas fa-check"></i> Manage settlements effortlessly</li>
+                        <li><i class="fas fa-check"></i> Expanded network access</li>
+                    </ul>
+      
+                    <div class="benefit-animation"></div>
+                </div>
+
+                <!-- Drivers -->
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-bg">
+                        <svg class="card-pattern" viewBox="0 0 200 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgba(255,0,0,0.1);stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:rgba(255,0,0,0);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path class="blob" fill="url(#grad4)" d="M43.7,-53.2C58,-43.3,72.2,-28.7,76.9,-12.1C81.6,4.5,76.8,23.1,67.4,37C58,50.9,44,60.1,27.4,65.9C10.8,71.7,-8.2,74.1,-24.2,69.9C-40.2,65.7,-53.2,55,-61.4,39.8C-69.6,24.6,-73.2,4.9,-69.4,-12.5C-65.6,-29.9,-54.4,-45,-41.4,-54.8C-28.4,-64.7,-14.2,-69.3,1.6,-72.2C17.4,-75,34.4,-63.1,43.7,-53.2Z" transform="translate(100 100)">
+                                <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="22s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="benefit-icon">
+                        <i class="fas fa-user"></i>
+                        <svg class="icon-rings" viewBox="0 0 100 100">
+                            <circle class="ring" cx="50" cy="50" r="40" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="35" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                            <circle class="ring" cx="50" cy="50" r="30" stroke="rgba(255,0,0,0.1)" fill="none" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Drivers</h3>
+                    <ul class="benefit-list">
+                        <li><i class="fas fa-check"></i> Find loads easily</li>
+                        <li><i class="fas fa-check"></i> Route optimization</li>
+                        <li><i class="fas fa-check"></i> Digital documentation</li>
+                        <li><i class="fas fa-check"></i> Real-time tracking & updates</li>
+                    </ul>
+     
+                    <div class="benefit-animation"></div>
+                </div>
+            </div>
+
+            <div class="benefits-cta" data-aos="fade-up">
+                <h3>Ready to Transform Your Logistics?</h3>
+                <p>Join India's largest digital trucking ecosystem and experience the future of transportation</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
         </div>
@@ -730,91 +804,91 @@
                                 </div>
                     
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Why Choose <span class="highlight-text">ek(one)?</span></h2>
                             </div>
                         
             <div class="benefits-grid">
-                <div class="benefit-item">
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="benefit-icon">
                         <i class="fa fa-truck"></i>
                         </div>
                     <h4>Instant Access to Market Trucks</h4>
-                    <p>Get immediate access to thousands of verified trucks across India, eliminating long wait times and delays in finding transport.</p>
+                    <p>Book and dispatch trucks within minutes.</p>
                     </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="benefit-icon">
                         <i class="fa fa-money-bill"></i>
                                 </div>
-                    <h4>Lower Costs</h4>
-                    <p>Reduce logistics expenses by up to 20% through transparent pricing, optimized routes, and elimination of middlemen costs.</p>
+                    <h4>Lower Costs & Higher Profitability</h4>
+                    <p>Reduce manual effort and empty returns.</p>
                             </div>
                         
-                <div class="benefit-item">
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="benefit-icon">
                         <i class="fa fa-chart-line"></i>
                         </div>
                     <h4>Data-Driven Insights</h4>
-                    <p>Make informed decisions with comprehensive analytics on transport performance, costs, and market rates in real-time.</p>
+                    <p>Make informed logistics decisions with AI-powered analytics.</p>
                                 </div>
             
-                <div class="benefit-item">
+                <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
                     <div class="benefit-icon">
                         <i class="fa fa-cogs"></i>
                                 </div>
-                    <h4>Complete Control</h4>
-                    <p>Manage your entire logistics operation from a single dashboard with full visibility and control over every shipment.</p>
+                    <h4>One Platform, Complete Control</h4>
+                    <p>Manage loads, payments, compliance, and tracking seamlessly.</p>
                             </div>
                         </div>
             
-            <div class="join-message">
-                <p>Join the thousands of businesses that have transformed their logistics operations with ek(one), India's most comprehensive digital trucking platform.</p>
+            <div class="join-message" data-aos="fade-up">
+                <p>Join ek(one) and experience a smarter, faster, and more profitable way to manage spot market trucking in India.</p>
                                 </div>
                         
-            <div class="business-benefits">
-                <h3>Benefits for Your Business</h3>
+            <div class="business-benefits" data-aos="fade-up">
+                <h3>Benefits for Businesses</h3>
                 <div class="business-benefits-grid">
-                    <div class="business-benefit-card">
+                    <div class="business-benefit-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="benefit-card-icon">
                             <i class="fa fa-clock"></i>
                                 </div>
-                        <h4>Save Time & Resources</h4>
-                        <p>Automate manual processes and reduce the time spent on logistics management by up to 60%. Our platform handles everything from truck booking to payment settlements.</p>
+                        <h4>Lower Manpower Costs</h4>
+                        <p>Reduce dependency on manual operations, freeing up resources for strategic tasks.</p>
                         <div class="benefit-indicator"></div>
                             </div>
                 
-                    <div class="business-benefit-card">
+                    <div class="business-benefit-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="benefit-card-icon">
                             <i class="fa fa-shield-alt"></i>
                         </div>
-                        <h4>Enhanced Reliability</h4>
-                        <p>Work with verified transport partners and access real-time tracking to ensure your goods reach their destination safely and on time, every time.</p>
+                        <h4>Faster Order Processing</h4>
+                        <p>Automate load assignments and payments, minimizing delays.</p>
                         <div class="benefit-indicator"></div>
                                 </div>
                     
-                    <div class="business-benefit-card">
+                    <div class="business-benefit-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="benefit-card-icon">
                             <i class="fa fa-expand-arrows-alt"></i>
                                 </div>
-                        <h4>Scale With Confidence</h4>
-                        <p>Whether you move 10 or 10,000 trucks monthly, our platform scales with your business needs, providing consistent service quality at any volume.</p>
+                        <h4>Minimized Errors & Disputes</h4>
+                        <p>Digital contracts and automated billing ensure accurate and transparent transactions.</p>
                         <div class="benefit-indicator"></div>
                             </div>
                     
-                    <div class="business-benefit-card">
+                    <div class="business-benefit-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="benefit-card-icon">
                             <i class="fa fa-sync-alt"></i>
                         </div>
-                        <h4>Seamless Integration</h4>
-                        <p>Easily integrate with your existing ERP, WMS, or other business systems through our robust API to create a unified logistics ecosystem.</p>
+                        <h4>Scalability Without Extra Costs</h4>
+                        <p>Manage a growing fleet or shipment volume without increasing administrative expenses.</p>
                         <div class="benefit-indicator"></div>
                                 </div>
                                 </div>
                             </div>
         
-            <div class="conclusion-message">
-                <p>Experience the future of logistics with ek(one) - where technology meets transportation to deliver exceptional results for your business.</p>
+            <div class="conclusion-message" data-aos="fade-up">
+                <p>By digitizing and automating key trucking operations, ek(one) significantly reduces administrative costs, improves efficiency, and ensures a more profitable trucking business.</p>
                         </div>
                                 </div>
     </section>
@@ -837,17 +911,17 @@
                             </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Real-Time <span class="highlight-text">Market Indices</span></h2>
-                <div class="section-subtitle">Transparent Freight Rate Information</div>
+                <div class="section-subtitle">Driving Transparency & Efficiency</div>
                         </div>
                         
-            <div class="indices-intro">
-                <p>Our proprietary market indices provide unprecedented transparency into freight rates across various routes, vehicle types, and seasons - enabling smarter decisions for shippers and truck owners alike.</p>
+            <div class="indices-intro" data-aos="fade-up">
+                <p>In the highly dynamic spot trucking market, freight rates fluctuate based on demand, supply, fuel prices, and seasonal trends. Real-time market indices for market trucks provide data-driven freight pricing, ensuring transparency, fairness, and efficiency for all stakeholders, including small truck owners, brokers, and shippers.</p>
                                 </div>
                         
             <div class="indices-content-container">
-                <div class="indices-visual">
+                <div class="indices-visual" data-aos="fade-right">
                     <div class="indices-image-container">
                         <div class="indices-image-placeholder">
                             <div class="image-shine"></div>
@@ -864,86 +938,112 @@
                         </div>
                                 </div>
                         
-                <div class="indices-content">
-                    <div class="indices-how-it-works">
+                <div class="indices-content" data-aos="fade-left">
+                    <div class="indices-how-it-works" data-aos="fade-up">
                         <h3>How Real-Time Indices Work</h3>
                         <div class="indices-features-grid">
-                            <div class="indices-feature">
+                            <div class="indices-feature" data-aos="fade-up" data-aos-delay="100">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-database"></i>
                                 </div>
                                 <div class="indices-feature-content">
-                                    <h4>Data Aggregation</h4>
-                                    <p>We aggregate millions of data points from actual transactions on our platform to create accurate, real-time freight rate indices.</p>
+                                    <h4>AI-Powered Rate Benchmarking</h4>
+                                    <p>Uses live market data, historical trends, and predictive analytics to determine fair pricing.</p>
                             </div>
                         </div>
                             
-                            <div class="indices-feature">
+                            <div class="indices-feature" data-aos="fade-up" data-aos-delay="200">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-route"></i>
                                 </div>
                                 <div class="indices-feature-content">
-                                    <h4>Route-Specific Rates</h4>
-                                    <p>Access freight rates for specific routes, with historical trends and future projections based on market dynamics.</p>
+                                    <h4>Demand-Supply Tracking</h4>
+                                    <p>Monitors truck availability and freight demand across different regions to reflect accurate pricing.</p>
                                 </div>
                             </div>
                 
-                            <div class="indices-feature">
+                            <div class="indices-feature" data-aos="fade-up" data-aos-delay="300">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-truck-loading"></i>
                         </div>
                                 <div class="indices-feature-content">
-                                    <h4>Vehicle Type Analysis</h4>
-                                    <p>Compare rates across different vehicle types and capacities to optimize your transport mix for maximum efficiency.</p>
+                                    <h4>Cost Component Analysis</h4>
+                                    <p>Factors in fuel price fluctuations, toll charges, and operational expenses for real-time rate adjustments.</p>
                                 </div>
                                 </div>
                 
-                            <div class="indices-feature">
+                            <div class="indices-feature" data-aos="fade-up" data-aos-delay="400">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-calendar-alt"></i>
                             </div>
                                 <div class="indices-feature-content">
-                                    <h4>Seasonal Patterns</h4>
-                                    <p>Understand seasonal rate fluctuations and plan your logistics operations to take advantage of favorable pricing periods.</p>
+                                    <h4>Lane-Wise Rate Indexing</h4>
+                                    <p>Provides region-specific and route-specific freight indices, preventing price manipulation.</p>
+                        </div>
+                                </div>
+
+                            <div class="indices-feature" data-aos="fade-up" data-aos-delay="500">
+                                <div class="indices-feature-icon">
+                                    <i class="fa fa-exchange-alt"></i>
+                            </div>
+                                <div class="indices-feature-content">
+                                    <h4>Integration with Digital Trucking Platforms</h4>
+                                    <p>Real-time indices help automate negotiations and enable instant booking at fair prices.</p>
                         </div>
                                 </div>
                                 </div>
                             </div>
                     
-                    <div class="indices-transparency">
-                        <h3>The Power of Market Transparency</h3>
+                    <div class="indices-transparency" data-aos="fade-up">
+                        <h3>How Real-Time Market Indices Create Transparency</h3>
                         <div class="transparency-benefits-grid">
-                            <div class="transparency-benefit">
+                            <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="100">
                                 <div class="transparency-icon">
                                     <i class="fa fa-handshake"></i>
                         </div>
-                                <h4>Fair Pricing</h4>
-                                <p>Access fair market rates based on actual transactions, eliminating price gouging and ensuring competitive pricing.</p>
+                                <h4>Eliminates Rate Manipulation</h4>
+                                <p>Data-driven pricing prevents overcharging or under-pricing by brokers or middlemen.</p>
                                 </div>
                 
-                            <div class="transparency-benefit">
+                            <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="200">
                                 <div class="transparency-icon">
                                     <i class="fa fa-calculator"></i>
                                 </div>
-                                <h4>Better Forecasting</h4>
-                                <p>Use historical trends and future projections to budget more accurately and plan logistics operations with confidence.</p>
+                                <h4>Empowers Small Truck Owners</h4>
+                                <p>Gives truckers real-time insights into competitive rates, ensuring fair earnings.</p>
                             </div>
                             
-                            <div class="transparency-benefit">
+                            <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="300">
                                 <div class="transparency-icon">
                                     <i class="fa fa-balance-scale"></i>
                         </div>
-                                <h4>Market Equilibrium</h4>
-                                <p>Contribute to a more efficient market where rates reflect true supply and demand, benefiting both shippers and transporters.</p>
+                                <h4>Enhances Shipper Confidence</h4>
+                                <p>Provides verified, market-driven rates, reducing uncertainties in freight costs.</p>
+                </div>
+
+                            <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="400">
+                                <div class="transparency-icon">
+                                    <i class="fa fa-bolt"></i>
+                        </div>
+                                <h4>Faster & Smarter Decision-Making</h4>
+                                <p>Instant rate visibility helps in quick load-booking and optimized fleet allocation.</p>
+                </div>
+
+                            <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="500">
+                                <div class="transparency-icon">
+                                    <i class="fa fa-check-circle"></i>
+                        </div>
+                                <h4>Regulatory Compliance & Standardization</h4>
+                                <p>Helps in creating fair industry benchmarks, benefiting all stakeholders.</p>
                 </div>
             </div>
         </div>
         
-                    <div class="indices-conclusion">
-                        <p>With ek(one)'s real-time market indices, both shippers and truck owners can make data-driven decisions, reducing price uncertainty and creating a more transparent and efficient trucking marketplace.</p>
+                    <div class="indices-conclusion" data-aos="fade-up">
+                        <p>By leveraging real-time market indices, digital trucking platforms like ek(one) are transforming the spot trucking ecosystem, ensuring fair pricing, better negotiations, and enhanced operational efficiency for everyone.</p>
         </div>
                 
-                    <div class="indices-cta">
+                    <div class="indices-cta" data-aos="fade-up">
                         <a href="#contact" class="btn btn-primary">Learn More About Market Indices</a>
         </div>
             </div>
@@ -1447,4 +1547,79 @@ function initMobileOptimizations() {
 <script src="../js/partners.js"></script>
 <script src="../js/index-transition.js"></script>
 
+<!-- Custom cursor script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        
+        // Function to update cursor position
+        const updateCursorPosition = (event) => {
+            const posX = event.clientX;
+            const posY = event.clientY;
+            
+            // Update dot position immediately (no transition)
+            requestAnimationFrame(() => {
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+            });
+            
+            // Update circle with slight delay for smooth effect
+            setTimeout(() => {
+                cursorCircle.style.left = `${posX}px`;
+                cursorCircle.style.top = `${posY}px`;
+            }, 10);
+        };
+        
+        // Mouse move event listener
+        document.addEventListener('mousemove', updateCursorPosition);
+        
+        // Add cursor effects on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .benefit-item, .feature-card, .benefit-card, .business-benefit-card, .nav-link, .nav-item, .menu-toggle');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorCircle.style.width = '60px';
+                cursorCircle.style.height = '60px';
+                cursorCircle.style.backgroundColor = 'rgba(255, 51, 51, 0.1)';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.8)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorCircle.style.width = '40px';
+                cursorCircle.style.height = '40px';
+                cursorCircle.style.backgroundColor = 'transparent';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.5)';
+            });
+        });
+        
+        // Hide default cursor on desktop
+        if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+            document.body.style.cursor = 'none';
+        } else {
+            // Show default cursor and hide custom cursor on mobile/touch devices
+            document.body.style.cursor = 'auto';
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        }
+        
+        // Hide cursor when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        });
+        
+        // Show cursor when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+                cursorDot.style.display = 'block';
+                cursorCircle.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
 </html>

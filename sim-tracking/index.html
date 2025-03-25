@@ -12,6 +12,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-item:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .benefit-card:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    </style>
 </head>
 <body>
     <!-- SVG Definitions for reuse -->
@@ -26,8 +78,19 @@
     <!-- Progress Indicator -->
     <div class="progress-indicator"></div>
     
-    <!-- Cursor Tracker -->
-    <div class="cursor-tracker"></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+    
+    <!-- Loader -->
+    <div class="page-loader" data-aos="fade-out" data-aos-duration="1000">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
     
     <!-- Navigation -->
     <nav class="navbar">
@@ -112,7 +175,7 @@
 
         <div class="container">
             <!-- Left side - text content -->
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
                 <div class="badge-container">
                     <span class="badge">Smart Logistics</span>
                 </div>
@@ -137,8 +200,8 @@
             </div>
             
             <!-- Right side - image -->
-            <div class="hero-image">
-                <div class="hero-img-container">
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-img-container" data-aos="zoom-in" data-aos-delay="500">
                     <img src="../assets/images/sim-dashboard.jpg" class="hero-img" alt="SIM Tracking Solution">
                 </div>
             </div>
@@ -303,7 +366,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                         <div class="logo-decoration"></div>
@@ -315,7 +378,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                         <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -325,11 +388,12 @@
                         <li><a href="/Fuel-managment/">Fuel Management</a></li>
                         <li><a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
                         <li><a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
+                        <li><a href="/payment-solutions/">Payment Solutions</a></li>
                     </ul>
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                         <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -343,7 +407,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -351,7 +415,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -362,7 +426,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -388,7 +452,8 @@
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
-            once: true
+            once: true,
+            offset: 100
         });
 
         // Create particles effect
@@ -456,30 +521,41 @@
                 document.querySelector('.progress-indicator').style.width = scrolled + '%';
             });
             
-            // Cursor tracker
-            const cursor = document.querySelector('.cursor-tracker');
+            // Custom cursor implementation
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
             
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.opacity = '1';
-                cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            });
-            
-            document.addEventListener('mouseleave', function() {
-                cursor.style.opacity = '0';
-            });
-            
-            // Add active class on hover over interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .feature-item, .benefit-card');
-            
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', function() {
-                    cursor.classList.add('active');
-                });
+            // Check if we're on desktop (not touch device)
+            if (!('ontouchstart' in window)) {
+                document.body.classList.add('custom-cursor-enabled');
                 
-                el.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('active');
+                const updateCursor = (e) => {
+                    // Set the position of the dot to follow cursor exactly
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.left = `${e.clientX}px`;
+                    
+                    // Set the position of the circle with a slight delay for smooth effect
+                    cursorCircle.style.top = `${e.clientY}px`;
+                    cursorCircle.style.left = `${e.clientX}px`;
+                };
+                
+                window.addEventListener('mousemove', updateCursor);
+                
+                // Add hover effect to all interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .btn, .feature-item, .benefit-card, input, textarea, select, [role="button"]');
+                
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorDot.classList.add('active');
+                        cursorCircle.classList.add('active');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        cursorDot.classList.remove('active');
+                        cursorCircle.classList.remove('active');
+                    });
                 });
-            });
+            }
         });
     </script>
 </body>

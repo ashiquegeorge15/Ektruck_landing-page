@@ -12,13 +12,72 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .fuel-benefit:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
 </head>
 <body>
     <!-- Progress Indicator -->
     <div class="progress-indicator"></div>
     
-    <!-- Cursor Tracker -->
-    <div class="cursor-tracker"></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+    
+    <!-- Loader -->
+    <div class="page-loader" data-aos="fade-out" data-aos-duration="1000">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
     
   <!-- Navigation -->
   <nav class="navbar">
@@ -103,7 +162,7 @@
 
         <div class="container">
             <!-- Left side - text content -->
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
                 <div class="badge-container">
                     <span class="badge">Smart Fleet Solutions</span>
                 </div>
@@ -128,11 +187,20 @@
             </div>
             
             <!-- Right side - image -->
-            <div class="hero-image">
-                <div class="dashboard-mockup">
-                    <div class="dashboard-content">
-                        <img src="../assets/images/fuel-dashboard.jpg" class="dashboard-img" alt="Fuel Management Dashboard">
-                        
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <div class="dashboard-mockup" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="dashboard-header">
+                        <h3>Fuel Management Dashboard</h3>
+                        <div class="dashboard-controls">
+                            <span class="dashboard-date">Today, <span id="current-date">Jun 15</span></span>
+                            <div class="dashboard-actions">
+                                <i class="fas fa-bell"></i>
+                                <i class="fas fa-cog"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-body">
                         <!-- Fuel gauges -->
                         <div class="fuel-gauge fuel-gauge-1">
                             <svg class="gauge-animation" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -141,7 +209,7 @@
                                         <stop offset="0%" stop-color="#e62e2e" />
                                         <stop offset="100%" stop-color="#ff5c5c" />
                                     </linearGradient>
-                                    <filter id="gaugeGlow">
+                                    <filter id="gaugeGlow" x="-20%" y="-20%" width="140%" height="140%">
                                         <feGaussianBlur stdDeviation="2" result="blur" />
                                         <feComposite in="SourceGraphic" in2="blur" operator="over" />
                                     </filter>
@@ -204,19 +272,19 @@
                         <div class="fuel-level-indicator" data-level="75%"></div>
                         
                         <!-- Dashboard elements -->
-                        <div class="dashboard-element fuel-consumption">
+                        <div class="dashboard-element fuel-consumption" data-aos="fade-up" data-aos-delay="700">
                             <div class="dashboard-value">5.6 L/100km</div>
                             <div class="dashboard-label">AVG CONSUMPTION</div>
                         </div>
                         
-                        <div class="dashboard-element fuel-savings">
+                        <div class="dashboard-element fuel-savings" data-aos="fade-up" data-aos-delay="800">
                             <div class="dashboard-value">-15%</div>
                             <div class="dashboard-label">COST REDUCTION</div>
                         </div>
                         
                         <!-- Route and vehicle animation -->
-                        <div class="route-path"></div>
-                        <div class="route-vehicle"></div>
+                        <div class="route-path" data-aos="fade-up" data-aos-delay="900"></div>
+                        <div class="route-vehicle" data-aos="fade-up" data-aos-delay="950"></div>
                         
                         <!-- Fuel droplets animation -->
                         <div class="fuel-droplet droplet-1"></div>
@@ -399,13 +467,12 @@
     </section>
 
     <!-- Footer Section -->
-      <!-- Footer Section -->
-      <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-background"></div>
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                         <div class="logo-decoration"></div>
@@ -417,7 +484,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                       <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -432,7 +499,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                        <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -446,7 +513,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -454,7 +521,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -465,7 +532,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -504,9 +571,7 @@
                 });
             });
         });
-        </script>
-    
-        
+    </script>
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -721,7 +786,8 @@
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
-                once: true
+                once: true,
+                offset: 100
             });
             
             // Create dynamic particles for hero section
@@ -880,6 +946,102 @@
                 }
             });
         });
+    </script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Existing code for scrolling effect
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('.site-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        
+        // Custom cursor implementation
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        
+        // Check if we're on desktop (not touch device)
+        if (!('ontouchstart' in window)) {
+            document.body.classList.add('custom-cursor-enabled');
+            
+            const updateCursor = (e) => {
+                // Set the position of the dot to follow cursor exactly
+                cursorDot.style.top = `${e.clientY}px`;
+                cursorDot.style.left = `${e.clientX}px`;
+                
+                // Set the position of the circle with a slight delay for smooth effect
+                cursorCircle.style.top = `${e.clientY}px`;
+                cursorCircle.style.left = `${e.clientX}px`;
+            };
+            
+            window.addEventListener('mousemove', updateCursor);
+            
+            // Add hover effect to all interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .btn, input, textarea, select, [role="button"]');
+            
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorDot.classList.add('active');
+                    cursorCircle.classList.add('active');
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursorDot.classList.remove('active');
+                    cursorCircle.classList.remove('active');
+                });
+            });
+        }
+        
+        // Create particles effect for hero section (existing code)
+        createParticles();
+    });
+    
+    function createParticles() {
+        // Existing particle creation code
+        const particlesContainer = document.querySelector('.particles-container');
+        if (!particlesContainer) return;
+        
+        const numberOfParticles = 30;
+        
+        for (let i = 0; i < numberOfParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random position
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 5 + 2;
+            
+            // Random animation duration
+            const duration = Math.random() * 20 + 10;
+            
+            // Random opacity
+            const opacity = Math.random() * 0.5 + 0.1;
+            
+            // Set styles
+            particle.style.left = `${posX}%`;
+            particle.style.top = `${posY}%`;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.opacity = opacity;
+            particle.style.animationDuration = `${duration}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
     </script>
 </body>
 </html>

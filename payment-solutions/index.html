@@ -10,8 +10,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .benefit-item:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+    
+    <!-- Loader -->
+    <div class="page-loader" data-aos="fade-out" data-aos-duration="1000">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+
     <!-- Loading Screen
     <div id="loading-screen">
         <div class="loading-content">
@@ -101,20 +167,20 @@
             </div>
         </div>
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-badge">Payment Solutions</div>
-                <h1 class="main-heading">
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
+                <div class="hero-badge" data-aos="fade-up" data-aos-delay="300">Payment Solutions</div>
+                <h1 class="main-heading" data-aos="fade-up" data-aos-delay="400">
                     Smart Payment Solutions for <span class="highlight">Transporters & Truck Owners</span>
                 </h1>
-                <p>Managing payments in the logistics sector can be challenging due to delayed settlements, lack of transparency, and manual processing. Our smart payment solution streamlines payments for transporters, truck owners, and fleet operators, ensuring faster, secure, and hassle-free transactions.</p>
+                <p data-aos="fade-up" data-aos-delay="500">Managing payments in the logistics sector can be challenging due to delayed settlements, lack of transparency, and manual processing. Our smart payment solution streamlines payments for transporters, truck owners, and fleet operators, ensuring faster, secure, and hassle-free transactions.</p>
                 
-                <div class="cta-buttons">
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                     <button class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></button>
                     <button class="btn btn-outline">Learn More</button>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="700">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
@@ -231,8 +297,8 @@
             </div>
 
             <div class="benefits-content">
-                <div class="benefits-image" data-aos="fade-right">
-                    <div class="image-container">
+                <div class="benefits-image" data-aos="fade-right" data-aos-delay="200">
+                    <div class="image-container" data-aos="zoom-in" data-aos-delay="300">
                         <div class="benefits-animation">
                             <div class="truck-animation"></div>
                             <div class="payment-pulse"></div>
@@ -240,8 +306,8 @@
                     </div>
                 </div>
 
-                <div class="benefits-list" data-aos="fade-left">
-                    <div class="benefit-item">
+                <div class="benefits-list" data-aos="fade-left" data-aos-delay="200">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="benefit-icon">
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
@@ -251,7 +317,7 @@
                         </div>
                     </div>
 
-                    <div class="benefit-item">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
                         <div class="benefit-icon">
                             <i class="fas fa-tasks"></i>
                         </div>
@@ -261,7 +327,7 @@
                         </div>
                     </div>
 
-                    <div class="benefit-item">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="500">
                         <div class="benefit-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -271,7 +337,7 @@
                         </div>
                     </div>
 
-                    <div class="benefit-item">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="600">
                         <div class="benefit-icon">
                             <i class="fas fa-search-dollar"></i>
                         </div>
@@ -281,7 +347,7 @@
                         </div>
                     </div>
 
-                    <div class="benefit-item">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="700">
                         <div class="benefit-icon">
                             <i class="fas fa-handshake"></i>
                         </div>
@@ -298,12 +364,12 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2>Empower Your Logistics Operations with Smart Payments</h2>
-                <p>Secure, digital-first payment solution that ensures speed, transparency, and reliability—because every mile deserves an instant payout!</p>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary">Get Started Now <i class="fas fa-arrow-right"></i></button>
-                    <button class="btn btn-outline">Contact Sales</button>
+            <div class="cta-content" data-aos="zoom-in" data-aos-duration="1000">
+                <h2 data-aos="fade-up" data-aos-delay="200">Empower Your Logistics Operations with Smart Payments</h2>
+                <p data-aos="fade-up" data-aos-delay="300">Secure, digital-first payment solution that ensures speed, transparency, and reliability—because every mile deserves an instant payout!</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <button class="btn btn-primary" data-aos="fade-right" data-aos-delay="500">Get Started Now <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-outline" data-aos="fade-left" data-aos-delay="500">Contact Sales</button>
                 </div>
             </div>
         </div>
@@ -315,7 +381,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="ektruck Logo">
                         <div class="logo-decoration"></div>
@@ -327,7 +393,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                     <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -342,7 +408,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                     <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -356,7 +422,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -364,7 +430,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -375,7 +441,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -406,6 +472,12 @@
                     $('#loading-screen').hide();
                 }, 500);
             }, 1000);
+            
+            // Hide loader when page is loaded
+            $('.page-loader').addClass('fade-out');
+            setTimeout(function() {
+                $('.page-loader').hide();
+            }, 1000);
         });
         
         $(document).ready(function() {
@@ -413,7 +485,8 @@
             AOS.init({
                 duration: 800,
                 easing: 'ease-in-out',
-                once: true
+                once: true,
+                offset: 100
             });
             
             // Activate the correct nav item
@@ -455,6 +528,42 @@
                 $(this).toggleClass('active');
                 $('.nav-menu').toggleClass('active');
             });
+            
+            // Custom cursor implementation
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            // Check if we're on desktop (not touch device)
+            if (!('ontouchstart' in window)) {
+                document.body.classList.add('custom-cursor-enabled');
+                
+                const updateCursor = (e) => {
+                    // Set the position of the dot to follow cursor exactly
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.left = `${e.clientX}px`;
+                    
+                    // Set the position of the circle with a slight delay for smooth effect
+                    cursorCircle.style.top = `${e.clientY}px`;
+                    cursorCircle.style.left = `${e.clientX}px`;
+                };
+                
+                window.addEventListener('mousemove', updateCursor);
+                
+                // Add hover effect to all interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .btn, .feature-card, .benefit-item, input, textarea, select, [role="button"]');
+                
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorDot.classList.add('active');
+                        cursorCircle.classList.add('active');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        cursorDot.classList.remove('active');
+                        cursorCircle.classList.remove('active');
+                    });
+                });
+            }
         });
     </script>
     <!-- Payment Solutions specific script -->

@@ -9,8 +9,63 @@
     <link rel="stylesheet" href="../css/m&h.css">
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Custom cursor styles */
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 51, 51, 0.9);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 10000;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease;
+            z-index: 9999;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .challenge-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .button:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+            border-color: rgba(255, 51, 51, 0.8);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
 
      <!-- Navigation -->
      <nav class="navbar">
@@ -84,10 +139,10 @@
         
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">Mining & Heavy Equipment</div>
-                <h1 class="hero-title">Optimize Your <span>Mining Operations</span> & Heavy Equipment Fleet</h1>
-                <p class="hero-subtitle">The mining and heavy equipment industry depends on seamless logistics and advanced fleet management to transport raw materials, heavy machinery, and specialized equipment safely and efficiently. EkTruck provides IoT-driven fleet solutions to enhance safety, optimize performance, and reduce operational costs for mining companies and equipment transporters.</p>
-                <div class="hero-buttons">
+                <div class="hero-badge" data-aos="fade-right" data-aos-delay="100">Mining & Heavy Equipment</div>
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Optimize Your <span>Mining Operations</span> & Heavy Equipment Fleet</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">The mining and heavy equipment industry depends on seamless logistics and advanced fleet management to transport raw materials, heavy machinery, and specialized equipment safely and efficiently. EkTruck provides IoT-driven fleet solutions to enhance safety, optimize performance, and reduce operational costs for mining companies and equipment transporters.</p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
                     <a href="#" class="button primary-button">Explore Solutions <i class="fas fa-long-arrow-alt-right"></i></a>
                     <a href="#" class="button outline-button">Contact Sales</a>
                 </div>
@@ -154,41 +209,41 @@
         <div class="enhanced-grid"></div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Challenges in Mining & Heavy Equipment Transport</h2>
                 <div class="title-underline"></div>
                 <p>The mining industry faces unique challenges that impact operational efficiency, safety, and maintenance costs.</p>
             </div>
             <div class="challenges-grid">
-                <div class="challenge-card glass-card">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="challenge-icon">
                         <i class="fas fa-hourglass-half"></i>
                     </div>
                     <h3 class="challenge-title">Delays & Downtime</h3>
                     <p class="challenge-text">Equipment breakdowns and inefficient scheduling lead to production losses.</p>
                 </div>
-                <div class="challenge-card glass-card">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="challenge-icon">
                         <i class="fas fa-gas-pump"></i>
                     </div>
                     <h3 class="challenge-title">High Fuel & Maintenance Costs</h3>
                     <p class="challenge-text">Unoptimized fuel usage and unexpected repairs increase expenses.</p>
                 </div>
-                <div class="challenge-card glass-card">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="challenge-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3 class="challenge-title">Remote Location Tracking</h3>
                     <p class="challenge-text">Mining sites are often in inaccessible areas with limited connectivity.</p>
                 </div>
-                <div class="challenge-card glass-card">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="challenge-icon">
                         <i class="fas fa-hard-hat"></i>
                     </div>
                     <h3 class="challenge-title">Safety & Compliance Risks</h3>
                     <p class="challenge-text">Stringent safety regulations and hazardous conditions demand continuous monitoring.</p>
                 </div>
-                <div class="challenge-card glass-card">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="challenge-icon">
                         <i class="fas fa-angle-double-up"></i>
                     </div>
@@ -228,13 +283,13 @@
         <div class="enhanced-grid"></div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>How EkTruck Transforms Mining & Heavy Equipment Logistics</h2>
                 <div class="title-underline"></div>
                 <p>Our comprehensive IoT solutions deliver actionable insights to optimize performance, enhance safety, and reduce costs.</p>
             </div>
             <div class="transform-content features-grid">
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-truck"></i>
                     </div>
@@ -246,7 +301,7 @@
                         <li>Custom geofencing alerts</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-route"></i>
                     </div>
@@ -258,7 +313,7 @@
                         <li>Load distribution insights</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-gas-pump"></i>
                     </div>
@@ -270,7 +325,7 @@
                         <li>Cost-saving recommendations</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-tools"></i>
                     </div>
@@ -282,7 +337,7 @@
                         <li>Equipment health monitoring</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
@@ -294,7 +349,7 @@
                         <li>Incident reporting system</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="feature-icon">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
@@ -306,7 +361,7 @@
                         <li>Automated reporting system</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="700">
                     <div class="feature-icon">
                         <i class="fas fa-angle-double-up"></i>
                     </div>
@@ -352,11 +407,11 @@
         
         <div class="container">
             <div class="why-choose-wrapper">
-                <div class="why-choose-content">
+                <div class="why-choose-content" data-aos="fade-right" data-aos-delay="100">
                     <h2 class="why-choose-title">Why Choose EkTruck?</h2>
                     <p class="why-choose-text">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
                     <div class="benefits-list">
-                        <div class="benefit-item">
+                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
                             <div class="benefit-icon">
                                 <i class="fas fa-robot"></i>
                             </div>
@@ -365,7 +420,7 @@
                                 <p>AI-powered insights for optimized operations.</p>
                             </div>
                         </div>
-                        <div class="benefit-item">
+                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
                             <div class="benefit-icon">
                                 <i class="fas fa-truck-monster"></i>
                             </div>
@@ -374,7 +429,7 @@
                                 <p>Designed for mining trucks, excavators, shovels, and construction equipment.</p>
                             </div>
                         </div>
-                        <div class="benefit-item">
+                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
                             <div class="benefit-icon">
                                 <i class="fas fa-satellite-dish"></i>
                             </div>
@@ -383,7 +438,7 @@
                                 <p>Reliable tracking even in remote mining locations.</p>
                             </div>
                         </div>
-                        <div class="benefit-item">
+                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="500">
                             <div class="benefit-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
@@ -394,7 +449,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="why-choose-visual">
+                <div class="why-choose-visual" data-aos="fade-left" data-aos-delay="200">
                     <div class="why-choose-image tilt-effect">
                         <img src="../img/mining-dashboard.jpg" alt="Mining Equipment Dashboard">
                     </div>
@@ -434,10 +489,10 @@
         
         <div class="cta-bg"></div>
         <div class="container">
-            <div class="cta-content glass-card">
-                <h2 class="cta-title">Ready to Optimize Your Mining Operations?</h2>
-                <p class="cta-text">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
-                <div class="cta-buttons">
+            <div class="cta-content glass-card" data-aos="fade-up">
+                <h2 class="cta-title" data-aos="fade-up" data-aos-delay="100">Ready to Optimize Your Mining Operations?</h2>
+                <p class="cta-text" data-aos="fade-up" data-aos-delay="200">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
                     <a href="#" class="button primary-button cta-glow">Request a Demo <i class="fas fa-play-circle"></i></a>
                     <a href="#" class="button outline-button">Download Case Study</a>
                 </div>
@@ -466,7 +521,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                         <div class="logo-decoration"></div>
@@ -478,7 +533,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                       <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -492,7 +547,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                        <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -506,7 +561,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -514,7 +569,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -525,7 +580,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -776,6 +831,62 @@
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../js/m&h.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            if (!cursorDot || !cursorCircle) return;
+            
+            // Add class to body to indicate custom cursor is enabled
+            document.body.classList.add('custom-cursor-enabled');
+            
+            // Function to update cursor position
+            const updateCursor = (e) => {
+                // Set the position of the dot to follow cursor exactly
+                cursorDot.style.top = `${e.clientY}px`;
+                cursorDot.style.left = `${e.clientX}px`;
+                
+                // Set the position of the circle to follow cursor with slight delay
+                cursorCircle.style.top = `${e.clientY}px`;
+                cursorCircle.style.left = `${e.clientX}px`;
+            };
+            
+            window.addEventListener('mousemove', updateCursor);
+            
+            // Hide cursor when mouse leaves window
+            document.addEventListener('mouseout', function(e) {
+                if (e.relatedTarget === null) {
+                    cursorDot.classList.add('active');
+                    cursorCircle.classList.add('active');
+                }
+            });
+            
+            // Show cursor when mouse enters window
+            document.addEventListener('mouseover', function() {
+                cursorDot.classList.remove('active');
+                cursorCircle.classList.remove('active');
+            });
+            
+            // Hide custom cursor on mobile/touch devices
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('custom-cursor-enabled');
+                cursorDot.style.display = 'none';
+                cursorCircle.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html> 

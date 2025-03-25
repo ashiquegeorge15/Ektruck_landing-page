@@ -10,6 +10,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom cursor styles */
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 51, 51, 0.9);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 10000;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease;
+            z-index: 9999;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .case-study-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .tab-btn:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+            border-color: rgba(255, 51, 51, 0.8);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -22,6 +70,13 @@
             <h2>Success Stories</h2>
         </div>
     </div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+    
      <!-- Navigation -->
      <nav class="navbar">
         <div class="container nav-container">
@@ -90,23 +145,23 @@
             </div>
         </div>
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <div class="hero-badge">Success Stories</div>
-                <h1 class="main-heading">
+            <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="hero-badge" data-aos="fade-right" data-aos-delay="200">Success Stories</div>
+                <h1 class="main-heading" data-aos="fade-right" data-aos-delay="300">
                     How <span class="highlight">ektruck</span> Transforms Logistics
                 </h1>
-                <p>Discover how our innovative solutions solve complex logistics challenges for businesses across industries, resulting in increased efficiency, reduced costs, and improved operations.</p>
+                <p data-aos="fade-right" data-aos-delay="400">Discover how our innovative solutions solve complex logistics challenges for businesses across industries, resulting in increased efficiency, reduced costs, and improved operations.</p>
                 
-                <div class="stats-container">
-                    <div class="stat-item">
+                <div class="stats-container" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
                         <div class="stat-number">40%</div>
                         <div class="stat-label">Average Reduction in TAT</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="700">
                         <div class="stat-number">25%</div>
                         <div class="stat-label">Average Cost Savings</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="800">
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Real-time Visibility</div>
                     </div>
@@ -138,18 +193,18 @@
                 <div class="case-study-card" data-aos="fade-up" data-aos-delay="100" data-category="manufacturing">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="150">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
-                            <h3>Case Study 1: Mobile Manufacturer</h3>
-                            <p>How ektruck Optimized Truck Management for a Leading Mobile Manufacturer</p>
+                            <h3 data-aos="fade-up" data-aos-delay="200">Case Study 1: Mobile Manufacturer</h3>
+                            <p data-aos="fade-up" data-aos-delay="250">How ektruck Optimized Truck Management for a Leading Mobile Manufacturer</p>
                             
-                            <div class="problem-statement">
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="300">
                                 <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
                                 <p>A major mobile phone manufacturer faced significant challenges in managing trucks for raw material supply and finished goods distribution.</p>
                             </div>
                             
-                            <div class="key-points">
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="350">
                                 <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
                                     <li>Lack of Real-Time Visibility</li>
@@ -159,7 +214,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="400">
                                 <div class="stat">
                                     <div class="stat-value">40%</div>
                                     <div class="stat-label">Reduced TAT</div>
@@ -170,7 +225,7 @@
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="450">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
@@ -233,18 +288,18 @@
                 <div class="case-study-card" data-aos="fade-up" data-aos-delay="200" data-category="fleet">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="250">
                                 <i class="fas fa-truck"></i>
                             </div>
-                            <h3>Case Study 2: Medium-Sized Truck Owner</h3>
-                            <p>How ektruck Digitalized Operations for a Medium-Sized Truck Owner</p>
+                            <h3 data-aos="fade-up" data-aos-delay="300">Case Study 2: Medium-Sized Truck Owner</h3>
+                            <p data-aos="fade-up" data-aos-delay="350">How ektruck Digitalized Operations for a Medium-Sized Truck Owner</p>
                             
-                            <div class="problem-statement">
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="400">
                                 <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
                                 <p>A medium-sized fleet owner with 100 trucks was facing major challenges in managing operations manually.</p>
                             </div>
                             
-                            <div class="key-points">
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="450">
                                 <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
                                     <li>Lack of Real-Time Fleet Visibility</li>
@@ -254,7 +309,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="500">
                                 <div class="stat">
                                     <div class="stat-value">30%</div>
                                     <div class="stat-label">Efficiency Gain</div>
@@ -265,7 +320,7 @@
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="550">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
@@ -329,18 +384,18 @@
                 <div class="case-study-card" data-aos="fade-up" data-aos-delay="300" data-category="automotive">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="350">
                                 <i class="fas fa-car"></i>
                             </div>
-                            <h3>Case Study 3: 3PL for Car Manufacturer</h3>
-                            <p>How ektruck Digitalized End-to-End Logistics for a 3PL Partnering with a Leading Car Manufacturer</p>
+                            <h3 data-aos="fade-up" data-aos-delay="400">Case Study 3: 3PL for Car Manufacturer</h3>
+                            <p data-aos="fade-up" data-aos-delay="450">How ektruck Digitalized End-to-End Logistics for a 3PL Partnering with a Leading Car Manufacturer</p>
                             
-                            <div class="problem-statement">
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="500">
                                 <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
                                 <p>A 3PL logistics provider responsible for transporting vehicles faced significant operational challenges due to a lack of digital systems.</p>
                             </div>
                             
-                            <div class="key-points">
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="550">
                                 <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
                                     <li>Manual Vehicle Selection & Pickup</li>
@@ -350,7 +405,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="600">
                                 <div class="stat">
                                     <div class="stat-value">100%</div>
                                     <div class="stat-label">VIN Accuracy</div>
@@ -361,7 +416,7 @@
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="650">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
@@ -426,18 +481,18 @@
                 <div class="case-study-card" data-aos="fade-up" data-aos-delay="400" data-category="mining">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="450">
                                 <i class="fas fa-hard-hat"></i>
                             </div>
-                            <h3>Case Study 4: Mining Company</h3>
-                            <p>How ektruck Optimized Vehicle & Fuel Utilization for a Leading Mining Company</p>
+                            <h3 data-aos="fade-up" data-aos-delay="500">Case Study 4: Mining Company</h3>
+                            <p data-aos="fade-up" data-aos-delay="550">How ektruck Optimized Vehicle & Fuel Utilization for a Leading Mining Company</p>
                             
-                            <div class="problem-statement">
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="600">
                                 <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
                                 <p>A leading mining company faced operational inefficiencies due to a lack of real-time visibility into vehicle and fuel utilization.</p>
                             </div>
                             
-                            <div class="key-points">
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="650">
                                 <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
                                     <li>Poor Vehicle Utilization</li>
@@ -447,7 +502,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="700">
                                 <div class="stat">
                                     <div class="stat-value">35%</div>
                                     <div class="stat-label">Fleet Utilization</div>
@@ -458,7 +513,7 @@
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="750">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
@@ -517,30 +572,23 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Grid - Row 2 -->
-    <section class="case-study-grid bg-alt">
-        <div class="container">
-            <div class="grid-container">
+                
                 <!-- Case Study 5 -->
-                <div class="case-study-card" data-aos="fade-up" data-aos-delay="100" data-category="oil-gas">
+                <div class="case-study-card" data-aos="fade-up" data-aos-delay="500" data-category="oil-gas">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="550">
                                 <i class="fas fa-gas-pump"></i>
                             </div>
-                            <h3>Case Study 5: Oil & Gas Company</h3>
-                            <p>How ektruck Improved Driver Behavior for Last-Mile Deliveries in an Oil & Gas Company</p>
+                            <h3 data-aos="fade-up" data-aos-delay="600">Case Study 5: Oil & Gas Company</h3>
+                            <p data-aos="fade-up" data-aos-delay="650">How ektruck Improved Driver Behavior for Last-Mile Deliveries in an Oil & Gas Company</p>
                             
-                            <div class="problem-statement">
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="700">
                                 <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
                                 <p>A leading Oil & Gas company faced significant driver behavior-related challenges in their last-mile fuel deliveries.</p>
                             </div>
                             
-                            <div class="key-points">
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="750">
                                 <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
                                     <li>Unsafe Driving Practices</li>
@@ -550,7 +598,7 @@
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="800">
                                 <div class="stat">
                                     <div class="stat-value">40%</div>
                                     <div class="stat-label">Safety Improvement</div>
@@ -561,7 +609,7 @@
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="850">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
@@ -622,84 +670,104 @@
                 </div>
                 
                 <!-- Case Study 6 -->
-                <div class="case-study-card" data-aos="fade-up" data-aos-delay="200" data-category="integration">
+                <div class="case-study-card" data-aos="fade-up" data-aos-delay="600" data-category="integration">
                     <div class="card-inner">
                         <div class="card-front">
-                            <div class="case-icon">
+                            <div class="case-icon" data-aos="zoom-in" data-aos-delay="650">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <h3>Case Study 6: ERP Integration</h3>
-                            <p>Seamless Integration with Major ERPs & Tools</p>
+                            <h3 data-aos="fade-up" data-aos-delay="700">Case Study 6: FMCG Market Truck Management</h3>
+                            <p data-aos="fade-up" data-aos-delay="750">How ektruck Control Tower Optimized Market Truck Management for an FMCG Company</p>
                             
-                            <div class="problem-statement">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Integration Challenge</h4>
-                                <p>Businesses need logistics platforms that seamlessly integrate with their existing ERP systems for efficient data flow and operations.</p>
+                            <div class="problem-statement" data-aos="fade-up" data-aos-delay="800">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
+                                <p>A leading FMCG company faced challenges in managing market trucks at their factories.</p>
                             </div>
                             
-                            <div class="key-points">
-                                <h4><i class="fas fa-key"></i> Integration Benefits</h4>
+                            <div class="key-points" data-aos="fade-up" data-aos-delay="850">
+                                <h4><i class="fas fa-key"></i> Key Issues</h4>
                                 <ul>
-                                    <li>Real-time data flow</li>
-                                    <li>Automated order management</li>
-                                    <li>Enhanced visibility</li>
-                                    <li>Reduced manual interventions</li>
+                                    <li>Lack of real-time visibility on truck availability</li>
+                                    <li>Delays in dispatch and turnaround times</li>
+                                    <li>Manual coordination with transporters</li>
+                                    <li>Higher operational costs</li>
                                 </ul>
                             </div>
                             
-                            <div class="stats-bar">
+                            <div class="stats-bar" data-aos="fade-up" data-aos-delay="900">
                                 <div class="stat">
-                                    <div class="stat-value">100%</div>
-                                    <div class="stat-label">Visibility</div>
+                                    <div class="stat-value">30%</div>
+                                    <div class="stat-label">TAT Reduction</div>
                                 </div>
                                 <div class="stat">
-                                    <div class="stat-value">90%</div>
-                                    <div class="stat-label">Less Manual Entry</div>
+                                    <div class="stat-value">20%</div>
+                                    <div class="stat-label">Cost Savings</div>
                                 </div>
                             </div>
                             
-                            <button class="btn-read-more">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
+                            <button class="btn-read-more" data-aos="fade-up" data-aos-delay="950">Read Full Case Study <i class="fas fa-arrow-right"></i></button>
                         </div>
                         
                         <div class="card-back">
                             <button class="btn-flip-back"><i class="fas fa-arrow-left"></i></button>
-                            <h3>Seamless Integration with Major ERPs & Tools</h3>
+                            <h3>How ektruck Control Tower Optimized Market Truck Management for an FMCG Company</h3>
                             
                             <div class="challenge">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Integration Challenge</h4>
-                                <p>Businesses need logistics platforms that can seamlessly integrate with their existing enterprise systems for efficient data flow and streamlined operations. This is often a critical requirement for adoption of new logistics technology.</p>
+                                <h4><i class="fas fa-exclamation-triangle"></i> Problem Statement</h4>
+                                <p>A leading FMCG company faced challenges in managing market trucks at their factories. The key issues included:</p>
+                                <ul>
+                                    <li>Lack of real-time visibility on truck availability and movements.</li>
+                                    <li>Delays in dispatch and turnaround times, leading to supply chain inefficiencies.</li>
+                                    <li>Manual coordination with transporters, causing communication gaps.</li>
+                                    <li>Higher operational costs due to unoptimized fleet utilization.</li>
+                                </ul>
                             </div>
                             
                             <div class="solution">
-                                <h4><i class="fas fa-lightbulb"></i> ektruck's ERP Integration Capabilities</h4>
-                                <p>ektruck, India's 1st Unified Trucking Platform, is designed to streamline logistics operations by seamlessly integrating with all major ERP systems and industry tools. Whether it's SAP, Oracle, Microsoft Dynamics, or custom-built enterprise solutions, Ektruck ensures real-time data flow for efficient order management, inventory tracking, freight optimization, and financial reconciliation.</p>
-                                <p><strong>Key Integration Features:</strong></p>
+                                <h4><i class="fas fa-lightbulb"></i> Solution: ektruck Control Tower Implementation</h4>
+                                <p>To address these challenges, the FMCG company integrated the ektruck Control Tower, which provided:</p>
                                 <ul>
-                                    <li>API-driven architecture for effortless plug-and-play connectivity</li>
-                                    <li>Real-time synchronization with enterprise systems</li>
-                                    <li>Automated workflow management across platforms</li>
-                                    <li>Centralized data repository for consistent information</li>
-                                    <li>Custom integration options for unique business requirements</li>
-                                    <li>Secure data exchange protocols for sensitive information</li>
+                                    <li><strong>Real-Time Truck Visibility</strong> – Live tracking of inbound and outbound market trucks, ensuring optimized scheduling.</li>
+                                    <li><strong>Automated Slot Management</strong> – Digital allocation of trucks reduced waiting time and improved dispatch efficiency.</li>
+                                    <li><strong>Data-Driven Decision Making</strong> – AI-powered insights helped in route optimization, fleet utilization, and demand forecasting.</li>
+                                    <li><strong>Seamless Transporter Coordination</strong> – A centralized platform enabled faster communication and reduced delays.</li>
+                                    <li><strong>Exception Management & Alerts</strong> – Instant notifications for delays, congestion, and compliance issues, allowing proactive resolution.</li>
+                                </ul>
+                                
+                                <h4><i class="fas fa-sync"></i> SAP ERP Integration</h4>
+                                <p>To further enhance operational efficiency, the ektruck Control Tower was integrated with their SAP ERP system, ensuring real-time synchronization of order management and truck dispatch processes.</p>
+                                <p><strong>How the Integration Works:</strong></p>
+                                <ul>
+                                    <li><strong>Automated Order Processing</strong> – Orders created in SAP ERP are instantly reflected in the ektruck Control Tower, enabling seamless truck allocation.</li>
+                                    <li><strong>Real-Time Load Planning</strong> – The system matches available market trucks with pending orders, optimizing fleet utilization.</li>
+                                    <li><strong>Live Tracking & Status Updates</strong> – SAP ERP receives live updates on truck movement, estimated arrival times, and delays, ensuring full transparency.</li>
+                                    <li><strong>Exception Handling & Alerts</strong> – Any order fulfillment issues, truck delays, or load mismatches trigger instant alerts for proactive resolution.</li>
+                                    <li><strong>Digitized Proof of Delivery (POD)</strong> – Once the goods are delivered, POD data syncs back to SAP ERP, automating invoicing and settlement.</li>
                                 </ul>
                             </div>
                             
                             <div class="results">
-                                <h4><i class="fas fa-chart-line"></i> Benefits & Outcomes</h4>
+                                <h4><i class="fas fa-chart-line"></i> Results & Impact</h4>
                                 <div class="result-metrics">
                                     <div class="metric">
-                                        <div class="metric-value">100%</div>
-                                        <div class="metric-label">Visibility across logistics and enterprise systems</div>
+                                        <div class="metric-value">30%</div>
+                                        <div class="metric-label">Reduction in truck turnaround time at factories</div>
                                     </div>
                                     <div class="metric">
-                                        <div class="metric-value">90%</div>
-                                        <div class="metric-label">Reduction in manual data entry and processing</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value">50%</div>
-                                        <div class="metric-label">Faster order-to-delivery cycles with automated workflows</div>
+                                        <div class="metric-value">20%</div>
+                                        <div class="metric-label">Cost Savings through better fleet utilization</div>
                                     </div>
                                 </div>
-                                <p>By bridging the gap between logistics and enterprise systems, Ektruck enhances visibility, automates workflows, reduces manual interventions, and enables data-driven decision-making. Its API-driven architecture allows effortless plug-and-play connectivity, ensuring businesses can leverage their existing infrastructure while maximizing efficiency and control over their trucking operations.</p>
+                                <p><strong>Key Benefits:</strong></p>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Eliminated Manual Coordination, improving efficiency and transparency.</li>
+                                    <li><i class="fas fa-check-circle"></i> Enhanced Supply Chain Performance, ensuring timely deliveries and reduced stockouts.</li>
+                                    <li><i class="fas fa-check-circle"></i> End-to-End Order Visibility – From order creation to final delivery, all stakeholders have real-time data access.</li>
+                                    <li><i class="fas fa-check-circle"></i> Faster Order Fulfillment – Automated truck scheduling reduces delays and ensures on-time deliveries.</li>
+                                    <li><i class="fas fa-check-circle"></i> Data-Driven Insights – AI-powered analytics improve demand forecasting and inventory planning.</li>
+                                    <li><i class="fas fa-check-circle"></i> Seamless Workflow Automation – Eliminates manual data entry, reducing errors and improving operational agility.</li>
+                                </ul>
+                                <p>By implementing the ektruck Control Tower and integrating it with SAP ERP, the FMCG company achieved a fully digitized, transparent, and efficient logistics ecosystem, ensuring faster deliveries, lower costs, and improved supply chain performance.</p>
                             </div>
                             
                             <button class="btn-full-case" data-case-id="case6">View Full Case Study <i class="fas fa-external-link-alt"></i></button>
@@ -711,16 +779,16 @@
     </section>
 
     <!-- Case Study Category Navigation -->
-    <section class="case-study-nav">
+    <section class="case-study-nav" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
-            <div class="tab-container">
-                <button class="tab-btn active" data-target="all">All Case Studies</button>
-                <button class="tab-btn" data-target="manufacturing">Manufacturing</button>
-                <button class="tab-btn" data-target="fleet">Fleet Management</button>
-                <button class="tab-btn" data-target="automotive">Automotive</button>
-                <button class="tab-btn" data-target="mining">Mining & Heavy Equipment</button>
-                <button class="tab-btn" data-target="oil-gas">Oil & Gas</button>
-                <button class="tab-btn" data-target="integration">ERP Integration</button>
+            <div class="tab-container" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active" data-target="all" data-aos="zoom-in" data-aos-delay="250">All Case Studies</button>
+                <button class="tab-btn" data-target="manufacturing" data-aos="zoom-in" data-aos-delay="300">Manufacturing</button>
+                <button class="tab-btn" data-target="fleet" data-aos="zoom-in" data-aos-delay="350">Fleet Management</button>
+                <button class="tab-btn" data-target="automotive" data-aos="zoom-in" data-aos-delay="400">Automotive</button>
+                <button class="tab-btn" data-target="mining" data-aos="zoom-in" data-aos-delay="450">Mining & Heavy Equipment</button>
+                <button class="tab-btn" data-target="oil-gas" data-aos="zoom-in" data-aos-delay="500">Oil & Gas</button>
+                <button class="tab-btn" data-target="integration" data-aos="zoom-in" data-aos-delay="550">FMCG</button>
             </div>
         </div>
     </section>
@@ -792,13 +860,86 @@
         </div>
     </div>
 
+    <!-- Case Study 6 Modal -->
+    <div class="case-study-modal" data-case-id="case6">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>FMCG Market Truck Management Case Study</h2>
+                <div class="company-info">
+                    <i class="fas fa-building"></i> <span>Leading FMCG Company</span>
+                    <i class="fas fa-map-marker-alt ml-3"></i> <span>Pan-India Operations</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h3>Executive Summary</h3>
+                <p>A leading FMCG company implemented ektruck's Control Tower solution to optimize their market truck management at factories. This implementation resulted in 30% reduction in truck turnaround time, 20% cost savings, and significant improvements in supply chain efficiency through seamless SAP ERP integration.</p>
+                
+                <h3>Business Challenges</h3>
+                <p>The FMCG company faced multiple operational challenges that affected their distribution efficiency and supply chain:</p>
+                <ul>
+                    <li><strong>Limited Visibility:</strong> Unable to track market trucks in real-time, causing delays in planning and execution.</li>
+                    <li><strong>High Turnaround Time:</strong> Trucks waited for hours at factories due to poor scheduling and manual allocation.</li>
+                    <li><strong>Manual Coordination:</strong> Dependency on calls and emails for transporter communication, leading to miscommunication.</li>
+                    <li><strong>Higher Operational Costs:</strong> Unoptimized fleet utilization resulting in increased logistics expenses.</li>
+                    <li><strong>Disconnected Systems:</strong> Lack of integration between truck management and their SAP ERP system.</li>
+                </ul>
+                
+                <h3>Solution Implementation</h3>
+                <p>ektruck's Control Tower was implemented with the following key components:</p>
+                <ol>
+                    <li><strong>Real-Time Truck Visibility:</strong> Live tracking of inbound and outbound market trucks, ensuring optimized scheduling and allocation.</li>
+                    <li><strong>Automated Slot Management:</strong> Digital allocation of trucks reduced waiting time and improved dispatch efficiency at factories.</li>
+                    <li><strong>Data-Driven Decision Making:</strong> AI-powered insights helped in route optimization, fleet utilization, and demand forecasting.</li>
+                    <li><strong>Seamless Transporter Coordination:</strong> A centralized platform enabled faster communication and reduced delays between all stakeholders.</li>
+                    <li><strong>Exception Management & Alerts:</strong> Instant notifications for delays, congestion, and compliance issues, allowing proactive resolution.</li>
+                </ol>
+                
+                <h3>SAP ERP Integration</h3>
+                <p>A key aspect of the solution was the seamless integration with the company's SAP ERP system:</p>
+                <ul>
+                    <li><strong>Automated Order Processing:</strong> Orders created in SAP ERP were instantly reflected in the ektruck Control Tower, enabling seamless truck allocation.</li>
+                    <li><strong>Real-Time Load Planning:</strong> The system matched available market trucks with pending orders, optimizing fleet utilization.</li>
+                    <li><strong>Live Tracking & Status Updates:</strong> SAP ERP received live updates on truck movement, estimated arrival times, and delays, ensuring full transparency.</li>
+                    <li><strong>Exception Handling & Alerts:</strong> Any order fulfillment issues, truck delays, or load mismatches triggered instant alerts for proactive resolution.</li>
+                    <li><strong>Digitized Proof of Delivery (POD):</strong> Once goods were delivered, POD data synced back to SAP ERP, automating invoicing and settlement.</li>
+                </ul>
+                
+                <h3>Results and Business Impact</h3>
+                <p>The implementation delivered significant measurable benefits:</p>
+                <ul>
+                    <li><strong>30% Reduction in Truck Turnaround Time:</strong> Improved factory efficiency and reduced bottlenecks at loading/unloading bays.</li>
+                    <li><strong>20% Cost Savings:</strong> Through better fleet utilization, reduced idle time, and optimized routes.</li>
+                    <li><strong>100% Digital Coordination:</strong> Eliminated manual follow-ups and communication gaps between stakeholders.</li>
+                    <li><strong>End-to-End Order Visibility:</strong> Complete transparency from order creation to final delivery for all stakeholders.</li>
+                    <li><strong>Faster Order Fulfillment:</strong> Automated truck scheduling reduced delays and ensured on-time deliveries.</li>
+                    <li><strong>Data-Driven Insights:</strong> AI-powered analytics improved demand forecasting and inventory planning.</li>
+                    <li><strong>Seamless Workflow Automation:</strong> Eliminated manual data entry, reducing errors and improving operational agility.</li>
+                </ul>
+                
+                <h3>Conclusion</h3>
+                <p>By implementing ektruck's Control Tower and integrating it with their SAP ERP system, the FMCG company achieved a fully digitized, transparent, and efficient logistics ecosystem. This not only reduced costs and improved efficiency but also provided better market responsiveness and enhanced supply chain reliability, ensuring faster deliveries and improved overall performance.</p>
+                
+                <div class="testimonial">
+                    <blockquote>
+                        "The ektruck Control Tower solution has transformed our market truck management operations. The seamless integration with our SAP ERP system has given us end-to-end visibility and control that was previously impossible. We've seen substantial improvements in efficiency and significant cost savings."
+                    </blockquote>
+                    <p class="author">- Logistics Head, Leading FMCG Company</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-download-case"><i class="fas fa-download"></i> Download Case Study PDF</button>
+            </div>
+        </div>
+    </div>
+
      <!-- Footer Section -->
   <footer class="site-footer">
     <div class="footer-background"></div>
     <div class="footer-container">
         <div class="footer-grid">
             <!-- Company Information -->
-            <div class="footer-col">
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                 <a href="/" class="footer-logo">
                     <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                     <div class="logo-decoration"></div>
@@ -810,62 +951,70 @@
             </div>
             
             <!-- Solutions -->
-            <div class="footer-col">
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                 <h4>Solutions</h4>
-                <ul class="footer-links">
-                  <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
-                    <li> <a href="/adas-dms/">ADAS/DMS Solutions</a></li>
-                    <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
-                    <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
-                    <li> <a href="/Fuel-managment/">Fuel Management</a></li>
-                    <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
-                    <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
-                    <li> <a href="/payment-solutions/">Payment Solutions</a></li>
-                </ul>
+                <div class="footer-links">
+                    <a href="/managed-control-tower/">Managed Control Tower</a>
+                    <a href="/adas-dms/">ADAS/DMS Solutions</a>
+                    <a href="/TMS/">Transport Management Solution</a>
+                    <a href="/TPMS/">Temperature Monitoring Solutions</a>
+                    <a href="/Fuel-managment/">Fuel Management</a>
+                    <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
+                    <a href="/sim-tracking/">SIM/Mobile-Based Visibility</a>
+                    <a href="/payment-solutions/">Payment Solutions</a>
+                </div>
             </div>
             
             <!-- Industries -->
-            <div class="footer-col">
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                 <h4>Industries</h4>
-                <ul class="footer-links">
-                   <li><a href="/transport&logistics/">Transport & Logistics</a></li>
-                    <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
-                    <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
-                    <li><a href="/government-authorities/">Government Authorities</a></li>
-                    <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
-                    <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
-                    <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
-                </ul>
+                <div class="footer-links">
+                    <a href="/transport&logistics/">Transport & Logistics</a>
+                    <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
+                    <a href="/infrastructre-projects/">Infrastructure Projects</a>
+                    <a href="/small&medium-business/">Small and Medium Businesses</a>
+                    <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
+                    <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                </div>
             </div>
             
-            <!-- Contact -->
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <div class="footer-contact">
-                    <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
-                    <p><i class="fas fa-phone-alt"></i>080-68976911</p>
-                    <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+            <!-- Contact & Newsletter -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                <h4>Connect With Us</h4>
+                <div class="contact-info">
+                    <div class="contact-item"><i class="fas fa-envelope"></i> info@ektruck.com</div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> +91 9872621213</div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> SAS Nagar, Sector 82, Mohali, Punjab, 140306</div>
                 </div>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                
+                <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <div class="newsletter" data-aos="fade-up" data-aos-delay="600">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for latest updates</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
         
         <!-- Footer Bottom -->
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-aos="fade-up" data-aos-delay="700">
             <div class="copyright">
-                <i class="far fa-copyright"></i>
-                <span>ektruck. All rights reserved.</span>
+                &copy; 2023 ektruck. All Rights Reserved.
             </div>
-            <div class="footer-policies">
+            <div class="footer-bottom-links">
                 <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/terms-of-service">Terms of Service</a>
+                <a href="/terms-conditions">Terms & Conditions</a>
                 <a href="/sitemap">Sitemap</a>
             </div>
         </div>
@@ -1179,6 +1328,47 @@ function initMobileOptimizations() {
                 $(this).toggleClass('active');
                 $('.nav-menu').toggleClass('active');
             });
+            
+            // Custom cursor functionality
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            // Add class to body to indicate custom cursor is enabled
+            document.body.classList.add('custom-cursor-enabled');
+            
+            // Function to update cursor position
+            const updateCursor = (e) => {
+                // Set the position of the dot to follow cursor exactly
+                cursorDot.style.top = `${e.clientY}px`;
+                cursorDot.style.left = `${e.clientX}px`;
+                
+                // Set the position of the circle to follow cursor with slight delay
+                cursorCircle.style.top = `${e.clientY}px`;
+                cursorCircle.style.left = `${e.clientX}px`;
+            };
+            
+            window.addEventListener('mousemove', updateCursor);
+            
+            // Hide cursor when mouse leaves window
+            document.addEventListener('mouseout', function(e) {
+                if (e.relatedTarget === null) {
+                    cursorDot.classList.add('active');
+                    cursorCircle.classList.add('active');
+                }
+            });
+            
+            // Show cursor when mouse enters window
+            document.addEventListener('mouseover', function() {
+                cursorDot.classList.remove('active');
+                cursorCircle.classList.remove('active');
+            });
+            
+            // Hide custom cursor on mobile/touch devices
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('custom-cursor-enabled');
+                cursorDot.style.display = 'none';
+                cursorCircle.style.display = 'none';
+            }
         });
     </script>
 

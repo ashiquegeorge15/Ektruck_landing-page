@@ -14,8 +14,64 @@
     
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .benefit-item:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .benefit-card:hover ~ .custom-cursor .cursor-circle,
+        .business-benefit-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .pulse-area:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -89,7 +145,7 @@
 
       <div class="container">
         <!-- Left side - text content -->
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
           <div class="badge-container">
             <span class="badge">Intelligent Safety Systems</span>
           </div>
@@ -112,7 +168,7 @@
         </div>
         
         <!-- Right side - image -->
-        <div class="hero-image">
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
           <div class="dashboard-mockup">
             <div class="dashboard-content">
               <img src="../assets/img/adas-dashboard.png" alt="ADAS Dashboard" class="dashboard-img">
@@ -140,18 +196,18 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading">Advanced Driver Assistance <span class="highlight-text">System</span></h2>
                 <p class="section-subtitle">Cutting-Edge Technology for Proactive Accident Prevention</p>
             </div>
             
-            <div class="adas-intro">
+            <div class="adas-intro" data-aos="fade-up" data-aos-delay="100">
                 <p>Our ADAS solutions use advanced sensors, cameras, and AI algorithms to detect potential hazards and alert drivers in real-time, significantly reducing the risk of accidents and improving overall road safety.</p>
             </div>
             
-            <div class="adas-visual-container">
+            <div class="adas-visual-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="vehicle-animation">
-                    <div class="vehicle-model">
+                    <div class="vehicle-model" data-aos="zoom-in" data-aos-delay="300">
                         <div class="pulse-area fcw-area" data-feature="fcw">
                             <div class="pulse-ripple"></div>
                         </div>
@@ -171,7 +227,7 @@
                     </div>
                     
                     <div class="feature-details">
-                        <div class="feature-card fcw-card active" id="fcw">
+                        <div class="feature-card fcw-card active" id="fcw" data-aos="fade-left" data-aos-delay="100">
                             <div class="feature-icon">
                                 <i class="fas fa-exclamation-triangle"></i>
                             </div>
@@ -181,7 +237,7 @@
                             </div>
                         </div>
                         
-                        <div class="feature-card ldw-card" id="ldw">
+                        <div class="feature-card ldw-card" id="ldw" data-aos="fade-left" data-aos-delay="200">
                             <div class="feature-icon">
                                 <i class="fas fa-road"></i>
                             </div>
@@ -191,7 +247,7 @@
                             </div>
                         </div>
                         
-                        <div class="feature-card bsd-card" id="bsd">
+                        <div class="feature-card bsd-card" id="bsd" data-aos="fade-left" data-aos-delay="300">
                             <div class="feature-icon">
                                 <i class="fas fa-eye-slash"></i>
                             </div>
@@ -201,7 +257,7 @@
                             </div>
                         </div>
                         
-                        <div class="feature-card pod-card" id="pod">
+                        <div class="feature-card pod-card" id="pod" data-aos="fade-left" data-aos-delay="400">
                             <div class="feature-icon">
                                 <i class="fas fa-walking"></i>
                             </div>
@@ -211,7 +267,7 @@
                             </div>
                         </div>
                         
-                        <div class="feature-card acc-card" id="acc">
+                        <div class="feature-card acc-card" id="acc" data-aos="fade-left" data-aos-delay="500">
                             <div class="feature-icon">
                                 <i class="fas fa-tachometer-alt"></i>
                             </div>
@@ -243,18 +299,18 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading">Driver Monitoring <span class="highlight-text">System</span></h2>
                 <p class="section-subtitle">AI-Powered Solutions for Enhanced Driver Safety and Compliance</p>
             </div>
             
-            <div class="dms-intro">
+            <div class="dms-intro" data-aos="fade-up" data-aos-delay="100">
                 <p>Our DMS solutions use advanced computer vision and AI algorithms to monitor driver behavior in real-time, detecting signs of fatigue, distraction, and other risky behaviors to prevent accidents before they happen.</p>
             </div>
             
-            <div class="dms-visual-container">
+            <div class="dms-visual-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="driver-monitoring-display">
-                    <div class="camera-view">
+                    <div class="camera-view" data-aos="zoom-in" data-aos-delay="300">
                         <div class="facial-tracking-overlay">
                             <div class="tracking-point eye-left"></div>
                             <div class="tracking-point eye-right"></div>
@@ -269,7 +325,7 @@
                     </div>
                     
                     <div class="dms-features">
-                        <div class="dms-feature fatigue" data-feature="fatigue">
+                        <div class="dms-feature fatigue" data-feature="fatigue" data-aos="fade-right" data-aos-delay="100">
                             <div class="feature-icon">
                                 <i class="fas fa-bed"></i>
                             </div>
@@ -277,7 +333,7 @@
                             <div class="feature-description">Identifies drowsiness through eye tracking and alerts the driver</div>
                         </div>
                         
-                        <div class="dms-feature distraction" data-feature="distraction">
+                        <div class="dms-feature distraction" data-feature="distraction" data-aos="fade-right" data-aos-delay="200">
                             <div class="feature-icon">
                                 <i class="fas fa-mobile-alt"></i>
                             </div>
@@ -285,15 +341,15 @@
                             <div class="feature-description">Detects phone usage, inattention, or other risky behaviors</div>
                         </div>
                         
-                        <div class="dms-feature compliance" data-feature="compliance">
+                        <div class="dms-feature compliance" data-feature="compliance" data-aos="fade-right" data-aos-delay="300">
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <div class="feature-label">Compliance Monitoring</div>
-                            <div class="feature-description">Ensures seatbelt usage and detects smoking violations</div>
+                            <div class="feature-label">Seatbelt & Smoking Alerts </div>
+                            <div class="feature-description">Ensures compliance with safety regulations</div>
                         </div>
                         
-                        <div class="dms-feature identity" data-feature="identity">
+                        <div class="dms-feature identity" data-feature="identity" data-aos="fade-right" data-aos-delay="400">
                             <div class="feature-icon">
                                 <i class="fas fa-id-card"></i>
                             </div>
@@ -301,7 +357,7 @@
                             <div class="feature-description">Facial recognition to prevent unauthorized vehicle operation</div>
                         </div>
                         
-                        <div class="dms-feature analytics" data-feature="analytics">
+                        <div class="dms-feature analytics" data-feature="analytics" data-aos="fade-right" data-aos-delay="500">
                             <div class="feature-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
@@ -331,18 +387,18 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading">Comprehensive Safety & <span class="highlight-text">Efficiency Solution</span></h2>
                 <p class="section-subtitle">Seamless Integration with Your Fleet Management Systems</p>
             </div>
             
-            <div class="integration-intro">
+            <div class="integration-intro" data-aos="fade-up" data-aos-delay="100">
                 <p>Our ADAS & DMS solutions integrate seamlessly with fleet management systems, providing real-time alerts, automated reports, and predictive analytics to prevent accidents, reduce operational costs, and improve compliance.</p>
             </div>
             
           
             
-            <div class="integration-cta">
+            <div class="integration-cta" data-aos="fade-up" data-aos-delay="300">
                 <div class="cta-pulse"></div>
                 <h3>Empower your fleet with intelligent safety solutions</h3>
                 <a href="#contact" class="btn btn-glow">Schedule a Demo</a>
@@ -356,7 +412,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                         <div class="logo-decoration"></div>
@@ -368,7 +424,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                       <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -383,7 +439,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                        <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -397,7 +453,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -678,6 +734,80 @@
 </script>
 <script src="../js/index.js"></script>
 <script src="../js/adas.js"></script>
+
+<!-- Custom cursor script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        
+        // Function to update cursor position
+        const updateCursorPosition = (event) => {
+            const posX = event.clientX;
+            const posY = event.clientY;
+            
+            // Update dot position immediately (no transition)
+            requestAnimationFrame(() => {
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+            });
+            
+            // Update circle with slight delay for smooth effect
+            setTimeout(() => {
+                cursorCircle.style.left = `${posX}px`;
+                cursorCircle.style.top = `${posY}px`;
+            }, 10);
+        };
+        
+        // Mouse move event listener
+        document.addEventListener('mousemove', updateCursorPosition);
+        
+        // Add cursor effects on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .benefit-item, .feature-card, .benefit-card, .nav-link, .nav-item, .menu-toggle, .pulse-area');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorCircle.style.width = '60px';
+                cursorCircle.style.height = '60px';
+                cursorCircle.style.backgroundColor = 'rgba(255, 51, 51, 0.1)';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.8)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorCircle.style.width = '40px';
+                cursorCircle.style.height = '40px';
+                cursorCircle.style.backgroundColor = 'transparent';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.5)';
+            });
+        });
+        
+        // Hide default cursor on desktop
+        if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+            document.body.style.cursor = 'none';
+        } else {
+            // Show default cursor and hide custom cursor on mobile/touch devices
+            document.body.style.cursor = 'auto';
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        }
+        
+        // Hide cursor when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        });
+        
+        // Show cursor when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+                cursorDot.style.display = 'block';
+                cursorCircle.style.display = 'block';
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

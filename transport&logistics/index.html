@@ -12,8 +12,74 @@
     <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .challenge-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .solution-card:hover ~ .custom-cursor .cursor-circle,
+        .case-study-card:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+    
+    <!-- Loader -->
+    <div class="page-loader" data-aos="fade-out" data-aos-duration="1000">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
 
         <!-- Navigation -->
         <nav class="navbar">
@@ -125,23 +191,23 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="hero-content">
-                    <div class="hero-badge">
+                <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
+                    <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">
                         <i class="fas fa-truck-moving"></i> Transport & Logistics
                     </div>
-                    <h1 class="hero-title">Revolutionizing Transport & Logistics with <span>EkTruck</span></h1>
-                    <p class="hero-subtitle">The transport and logistics industry is the backbone of commerce, ensuring the seamless movement of goods across cities, states, and borders. At EkTruck, we leverage cutting-edge IoT and fleet management solutions to enhance efficiency, reduce costs, and improve operational transparency for truck owners, fleet operators, and shippers.</p>
-                    <div class="hero-buttons">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">Revolutionizing Transport & Logistics with <span>EkTruck</span></h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">The transport and logistics industry is the backbone of commerce, ensuring the seamless movement of goods across cities, states, and borders. At EkTruck, we leverage cutting-edge IoT and fleet management solutions to enhance efficiency, reduce costs, and improve operational transparency for truck owners, fleet operators, and shippers.</p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#features" class="btn btn-primary">Explore Solutions <i class="fas fa-arrow-right"></i></a>
                         <a href="#contact" class="btn btn-outline">Contact Us</a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <img src="../assets/img/truck-dashboard.jpg" alt="EkTruck Fleet Management Dashboard" class="hero-image">
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                    <img src="../assets/img/truck-dashboard.jpg" alt="EkTruck Fleet Management Dashboard" class="hero-image" data-aos="zoom-in" data-aos-delay="600">
                 </div>
             </div>
         </div>
-        <div class="truck-animation">
+        <div class="truck-animation" data-aos="fade-up" data-aos-delay="700">
             <div class="road">
                 <div class="road-marking"></div>
             </div>
@@ -207,7 +273,7 @@
     </section>
 
     <!-- Added between Challenges and Solutions sections -->
-    <div class="logistics-flow-wrapper">
+    <div class="logistics-flow-wrapper" data-aos="fade-up" data-aos-delay="300">
         <svg class="logistics-flow-svg" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
             <!-- Path for the truck to follow -->
             <path id="truckPath" d="M-50,100 C100,140 200,60 400,100 S700,140 900,100 S1100,60 1300,100" fill="none" stroke="rgba(230, 46, 46, 0.2)" stroke-width="2" />
@@ -256,15 +322,15 @@
         </div>
         <div class="container">
             <div class="solutions-wrapper">
-                <div class="solutions-content" data-aos="fade-right">
-                    <h2 class="solutions-title">How EkTruck Transforms the Industry</h2>
-                    <p class="solutions-text">Our innovative solutions address the key challenges faced by the transport and logistics industry, providing smart technology to revolutionize operations.</p>
-                    <a href="#features" class="btn btn-primary">Explore Features <i class="fas fa-arrow-right"></i></a>
+                <div class="solutions-content" data-aos="fade-right" data-aos-delay="100">
+                    <h2 class="solutions-title" data-aos="fade-up" data-aos-delay="200">How EkTruck Transforms the Industry</h2>
+                    <p class="solutions-text" data-aos="fade-up" data-aos-delay="300">Our innovative solutions address the key challenges faced by the transport and logistics industry, providing smart technology to revolutionize operations.</p>
+                    <a href="#features" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Explore Features <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="solutions-visual" data-aos="fade-left">
-                    <div class="solutions-image-wrapper">
+                <div class="solutions-visual" data-aos="fade-left" data-aos-delay="200">
+                    <div class="solutions-image-wrapper" data-aos="zoom-in" data-aos-delay="400">
                         <img src="../assets/img/logistics-solutions.jpg" alt="EkTruck Logistics Solutions" class="solutions-image">
-                        <div class="image-badge">Smart Solutions</div>
+                        <div class="image-badge" data-aos="fade-up" data-aos-delay="600">Smart Solutions</div>
                     </div>
                 </div>
             </div>
@@ -419,7 +485,7 @@
             </div>
             
             <!-- Added Connected World SVG -->
-            <svg class="world-svg" width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+            <svg class="world-svg" width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" data-aos="fade-in" data-aos-delay="300">
                 <!-- World Grid -->
                 <path class="world-grid" d="M50,200 C150,120 250,280 350,200 S550,120 650,200 S750,280 850,200" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
                 <path class="world-grid" d="M50,100 C150,180 250,20 350,100 S550,180 650,100 S750,20 850,100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
@@ -445,12 +511,12 @@
             </svg>
         </div>
         <div class="container">
-            <div class="cta-content glow-border" data-aos="fade-up">
-                <h2 class="cta-title">Ready to Transform Your Logistics?</h2>
-                <p class="cta-text">At EkTruck, we empower the transport & logistics industry with smart, scalable, and efficient solutions—helping businesses move forward with confidence.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
-                    <a href="#demo" class="btn btn-outline">Schedule Demo</a>
+            <div class="cta-content glow-border" data-aos="zoom-in" data-aos-duration="1000">
+                <h2 class="cta-title" data-aos="fade-up" data-aos-delay="200">Ready to Transform Your Logistics?</h2>
+                <p class="cta-text" data-aos="fade-up" data-aos-delay="300">At EkTruck, we empower the transport & logistics industry with smart, scalable, and efficient solutions—helping businesses move forward with confidence.</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#contact" class="btn btn-primary" data-aos="fade-right" data-aos-delay="500">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="#demo" class="btn btn-outline" data-aos="fade-left" data-aos-delay="500">Schedule Demo</a>
                 </div>
             </div>
         </div>
@@ -462,7 +528,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="Transport & Logistics Logo">
                         <div class="logo-decoration"></div>
@@ -474,7 +540,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                       <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -489,7 +555,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                        <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -503,7 +569,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -511,7 +577,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -522,7 +588,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -782,8 +848,55 @@
             offset: 100
         });
 
-        // Intersection Observer for animated elements
+        // Custom cursor implementation
         document.addEventListener('DOMContentLoaded', function() {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            // Check if we're on desktop (not touch device)
+            if (!('ontouchstart' in window)) {
+                document.body.classList.add('custom-cursor-enabled');
+                
+                const updateCursor = (e) => {
+                    // Set the position of the dot to follow cursor exactly
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.left = `${e.clientX}px`;
+                    
+                    // Set the position of the circle with a slight delay for smooth effect
+                    cursorCircle.style.top = `${e.clientY}px`;
+                    cursorCircle.style.left = `${e.clientX}px`;
+                };
+                
+                window.addEventListener('mousemove', updateCursor);
+                
+                // Add hover effect to all interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .btn, .challenge-card, .solution-card, .case-study-card, input, textarea, select, [role="button"]');
+                
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorDot.classList.add('active');
+                        cursorCircle.classList.add('active');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        cursorDot.classList.remove('active');
+                        cursorCircle.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Hide loader when page is loaded
+            window.addEventListener('load', function() {
+                const pageLoader = document.querySelector('.page-loader');
+                if (pageLoader) {
+                    pageLoader.classList.add('fade-out');
+                    setTimeout(function() {
+                        pageLoader.style.display = 'none';
+                    }, 1000);
+                }
+            });
+
+            // Intersection Observer for animated elements
             const animatedElements = document.querySelectorAll('.animated-element');
             
             const observer = new IntersectionObserver((entries) => {

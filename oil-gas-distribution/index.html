@@ -14,9 +14,64 @@
     
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <style>
+        /* Custom cursor styles */
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 51, 51, 0.9);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 10000;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease;
+            z-index: 9999;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .solution-card:hover ~ .custom-cursor .cursor-circle,
+        .challenge-card:hover ~ .custom-cursor .cursor-circle,
+        .nav-link:hover ~ .custom-cursor .cursor-circle,
+        .btn:hover ~ .custom-cursor .cursor-circle,
+        .button:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+            border-color: rgba(255, 51, 51, 0.8);
+        }
+        
+        .cursor-dot.active, .cursor-circle.active {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
-   
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -99,10 +154,10 @@
             <!-- Left side - text content -->
             <div class="hero-content">
                 <div class="badge-container">
-                    <span class="badge">Industry Solutions</span>
+                    <span class="badge" data-aos="fade-right" data-aos-delay="100">Industry Solutions</span>
                 </div>
                 
-                <h1 class="animated-heading">
+                <h1 class="animated-heading" data-aos="fade-up" data-aos-delay="200">
                     <span class="text-line text-reveal">LAST-MILE</span>
                     <span class="text-line">
                         <span class="accent-text">OIL & GAS</span>
@@ -110,11 +165,11 @@
                     </span>
                 </h1>
                 
-                <p class="hero-description">
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
                     The oil and gas industry requires precision, safety, and efficiency in last-mile distribution to ensure timely and secure deliveries of fuel, LPG, and other petroleum products. EkTruck provides IoT-powered fleet solutions to enhance tracking, optimize delivery routes, ensure regulatory compliance, and minimize risks in fuel transportation.
                 </p>
                 
-                <div class="hero-buttons">
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
                     <a href="#contact" class="btn primary-btn">
                         Get Started
                         <span class="btn-shine"></span>
@@ -126,7 +181,7 @@
             </div>
             
             <!-- Right side - image -->
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
                 <div class="dashboard-mockup">
                     <div class="dashboard-content">
                         <div class="fuel-tanker"></div>
@@ -159,16 +214,16 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
-                <h2 class="animated-heading">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="animated-heading" data-aos="fade-up" data-aos-delay="100">
                     Challenges in <span class="highlight-text">Oil & Gas</span> Last-Mile Distribution
                 </h2>
-                <p class="section-subtitle">Key operational hurdles that impact efficiency and safety in fuel transportation</p>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Key operational hurdles that impact efficiency and safety in fuel transportation</p>
             </div>
             
             <div class="challenges-grid">
                 <div class="challenge-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="challenge-icon">
+                    <div class="challenge-icon" data-aos="zoom-in" data-aos-delay="150">
                         <!-- Delay Icon -->
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                             <circle cx="12" cy="12" r="10" stroke="#FF0000" stroke-width="1.5"/>
@@ -180,7 +235,7 @@
                     <p>Traffic congestion and inefficient route planning impact fuel station and industrial supply chains.</p>
                 </div>
                 <div class="challenge-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="challenge-icon">
+                    <div class="challenge-icon" data-aos="zoom-in" data-aos-delay="200">
                         <!-- Cost Icon -->
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                             <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H7" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -191,7 +246,7 @@
                     <p>Unoptimized routes and excessive idling increase transportation expenses.</p>
                 </div>
                 <div class="challenge-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="challenge-icon">
+                    <div class="challenge-icon" data-aos="zoom-in" data-aos-delay="250">
                         <!-- Visibility Icon -->
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -203,7 +258,7 @@
                     <p>Lack of real-time tracking can lead to mismanagement and pilferage.</p>
                 </div>
                 <div class="challenge-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="challenge-icon">
+                    <div class="challenge-icon" data-aos="zoom-in" data-aos-delay="300">
                         <!-- Safety Icon -->
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -214,7 +269,7 @@
                     <p>Transporting hazardous materials requires strict adherence to safety protocols.</p>
                 </div>
                 <div class="challenge-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="challenge-icon">
+                    <div class="challenge-icon" data-aos="zoom-in" data-aos-delay="350">
                         <!-- Resource Icon -->
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                             <path d="M8 7.5a2.5 2.5 0 1 0 5 0 2.5 2.5 0 1 0-5 0M4 19v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
@@ -238,16 +293,16 @@
             </div>
         </div>
         <div class="container">
-            <div class="section-header">
-                <h2 class="animated-heading">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="animated-heading" data-aos="fade-up" data-aos-delay="100">
                     Why Choose <span class="text-reveal">EkTruck</span> for <span class="accent-text">Oil & Gas</span> Logistics
                 </h2>
-                <p class="section-subtitle">Features that make our solutions perfect for the petroleum distribution industry</p>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Features that make our solutions perfect for the petroleum distribution industry</p>
             </div>
             <div class="benefits-container">
                 <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon" data-aos="zoom-in" data-aos-delay="150">
                             <!-- Industry-Specific Icon -->
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                                 <path d="M16 4h4a2 2 0 0 1 2 2v4M12 3v4M3 8V6a2 2 0 0 1 2-2h3" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
@@ -262,8 +317,8 @@
                         </div>
                     </div>
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon" data-aos="zoom-in" data-aos-delay="200">
                             <!-- Safety & Compliance Icon -->
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -276,8 +331,8 @@
                         </div>
                     </div>
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon" data-aos="zoom-in" data-aos-delay="250">
                             <!-- Connectivity Icon -->
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                                 <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1v12z" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -290,8 +345,8 @@
                         </div>
                     </div>
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benefit-icon" data-aos="zoom-in" data-aos-delay="300">
                             <!-- Cost Optimization Icon -->
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
                                 <path d="M2 8h20M6 8v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 12h4M10 16h4" stroke="#FF0000" stroke-width="1.5" stroke-linecap="round"/>
@@ -305,7 +360,7 @@
                 </div>
             </div>
             
-            <div class="benefits-cta">
+            <div class="benefits-cta" data-aos="fade-up" data-aos-delay="500">
                 <div class="cta-pulse"></div>
                 <h3>Ready to transform your oil & gas distribution logistics?</h3>
                 <a href="#contact" class="btn btn-glow">Schedule a Demo</a>
@@ -324,14 +379,14 @@
         </div>
         <div class="container">
             <div class="cta-content" data-aos="fade-up">
-                <h2 class="animated-heading">
+                <h2 class="animated-heading" data-aos="fade-up" data-aos-delay="100">
                     <span class="text-reveal">TRANSFORM YOUR</span> 
                     <span class="accent-text">OIL & GAS</span> 
                     <span class="text-line">LAST-MILE DISTRIBUTION WITH</span>
                     <span class="text-line highlight">SMART SOLUTIONS</span>
                 </h2>
-                <p>At EkTruck, we provide smart fleet solutions for last-mile oil & gas distribution—ensuring safe, efficient, and cost-effective deliveries to fuel stations, industries, and end-users.</p>
-                <a href="#contact" class="btn primary-btn">Contact Us Today <span class="btn-shine"></span></a>
+                <p data-aos="fade-up" data-aos-delay="200">At EkTruck, we provide smart fleet solutions for last-mile oil & gas distribution—ensuring safe, efficient, and cost-effective deliveries to fuel stations, industries, and end-users.</p>
+                <a href="#contact" class="btn primary-btn" data-aos="fade-up" data-aos-delay="300">Contact Us Today <span class="btn-shine"></span></a>
             </div>
         </div>
     </section>
@@ -342,7 +397,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Company Information -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
                     <a href="/" class="footer-logo">
                         <img src="/assets/logo.png" alt="EkTruck Logo">
                         <div class="logo-decoration"></div>
@@ -354,7 +409,7 @@
                 </div>
                 
                 <!-- Solutions -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Solutions</h4>
                     <ul class="footer-links">
                         <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
@@ -370,7 +425,7 @@
                 </div>
                 
                 <!-- Industries -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
                     <h4>Industries</h4>
                     <ul class="footer-links">
                         <li><a href="/transport&logistics/">Transport & Logistics</a></li>
@@ -383,7 +438,7 @@
                 </div>
                 
                 <!-- Contact -->
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
                     <h4>Contact Us</h4>
                     <div class="footer-contact">
                         <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
@@ -391,7 +446,7 @@
                         <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
                     </div>
-                    <div class="social-icons">
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -402,7 +457,7 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
                 <div class="copyright">
                     <i class="far fa-copyright"></i>
                     <span>ektruck. All rights reserved.</span>
@@ -457,6 +512,49 @@
                 duration: 1000,
                 once: true
             });
+            
+            // Custom cursor functionality
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorCircle = document.querySelector('.cursor-circle');
+            
+            if (cursorDot && cursorCircle) {
+                // Add class to body to indicate custom cursor is enabled
+                document.body.classList.add('custom-cursor-enabled');
+                
+                // Function to update cursor position
+                const updateCursor = (e) => {
+                    // Set the position of the dot to follow cursor exactly
+                    cursorDot.style.top = `${e.clientY}px`;
+                    cursorDot.style.left = `${e.clientX}px`;
+                    
+                    // Set the position of the circle to follow cursor with slight delay
+                    cursorCircle.style.top = `${e.clientY}px`;
+                    cursorCircle.style.left = `${e.clientX}px`;
+                };
+                
+                window.addEventListener('mousemove', updateCursor);
+                
+                // Hide cursor when mouse leaves window
+                document.addEventListener('mouseout', function(e) {
+                    if (e.relatedTarget === null) {
+                        cursorDot.classList.add('active');
+                        cursorCircle.classList.add('active');
+                    }
+                });
+                
+                // Show cursor when mouse enters window
+                document.addEventListener('mouseover', function() {
+                    cursorDot.classList.remove('active');
+                    cursorCircle.classList.remove('active');
+                });
+                
+                // Hide custom cursor on mobile/touch devices
+                if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                    document.body.classList.remove('custom-cursor-enabled');
+                    cursorDot.style.display = 'none';
+                    cursorCircle.style.display = 'none';
+                }
+            }
             
             // Initialize particles.js with simplified configuration
             particlesJS('particles-js', {

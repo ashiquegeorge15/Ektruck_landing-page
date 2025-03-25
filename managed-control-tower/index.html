@@ -15,8 +15,62 @@
     
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Custom cursor styles -->
+    <style>
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        .cursor-circle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 51, 51, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, transform 0.2s ease;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        
+        a:hover ~ .custom-cursor .cursor-circle,
+        button:hover ~ .custom-cursor .cursor-circle,
+        .benefit-item:hover ~ .custom-cursor .cursor-circle,
+        .feature-card:hover ~ .custom-cursor .cursor-circle,
+        .benefit-card:hover ~ .custom-cursor .cursor-circle,
+        .business-benefit-card:hover ~ .custom-cursor .cursor-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 51, 51, 0.1);
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
      <!-- Navigation -->
      <nav class="navbar">
         <div class="container nav-container">
@@ -141,18 +195,18 @@
         </div>
         
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading">Managed Control Tower Integration with <span class="highlight-text">ERP</span></h2>
-                <p class="section-subtitle">Enhancing Logistics Efficiency Through Seamless System Integration</p>
+                <p class="section-subtitle">Creating a unified logistics ecosystem that enhances visibility, coordination, and decision-making</p>
             </div>
             
-            <div class="erp-intro">
-                <p>Our Managed Control Tower seamlessly integrates with your existing ERP systems, providing a unified view of your logistics operations and enabling intelligent decision-making through advanced analytics and automation.</p>
+            <div class="erp-intro" data-aos="fade-up">
+                <p>ektruck Managed Control Tower seamlessly integrates with your ERP system, creating a unified logistics ecosystem that enhances visibility, coordination, and decision-making. By bridging the gap between transportation, warehousing, and supply chain stakeholders, this integration ensures real-time tracking, predictive analytics, and automated workflows.</p>
             </div>
             
-            <div class="erp-visual-container">
+            <div class="erp-visual-container" data-aos="fade-up" data-aos-delay="100">
                 <div class="integration-animation">
-                    <div class="erp-system">
+                    <div class="erp-system" data-aos="fade-right" data-aos-delay="200">
                         <h3>ERP System</h3>
                         <div class="system-icon">
                             <i class="fas fa-database"></i>
@@ -164,13 +218,13 @@
                         </div>
                 </div>
                 
-                    <div class="connection-path">
+                    <div class="connection-path" data-aos="fade-up" data-aos-delay="300">
                         <div class="data-packet packet-1"></div>
                         <div class="data-packet packet-2"></div>
                         <div class="data-packet packet-3"></div>
                     </div>
                     
-                    <div class="control-tower">
+                    <div class="control-tower" data-aos="fade-left" data-aos-delay="200">
                         <h3>Control Tower</h3>
                         <div class="system-icon">
                             <i class="fas fa-broadcast-tower"></i>
@@ -183,7 +237,7 @@
                     </div>
                 </div>
                 
-                <div class="integration-dashboard">
+                <div class="integration-dashboard" data-aos="fade-up" data-aos-delay="400">
                     <img src="../assets/img/erp-dashboard.svg" alt="ERP Integration Dashboard" class="dashboard-img">
                     <div class="pulse-point point-1">
                         <div class="pulse-ripple"></div>
@@ -200,17 +254,24 @@
                 </div>
             </div>
             
-            <div class="benefits-container">
-                <h3 class="benefits-title">Key Benefits of Integration</h3>
+            <div class="workflow-section" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="workflow-title">GENERIC WORKFLOW OF SYSTEM INTEGRATION</h3>
+                <div class="workflow-diagram">
+                    <!-- Workflow diagram will be filled with image or visual content -->
+                </div>
+            </div>
+            
+            <div class="benefits-container" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="benefits-title">Key Benefits</h3>
                 
                 <div class="benefits-grid">
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="benefit-icon">
                             <i class="fas fa-eye"></i>
                         </div>
                         <div class="benefit-content">
                             <h4>End-to-End Visibility</h4>
-                            <p>Gain complete visibility into your entire supply chain, from order creation in your ERP to final delivery, with real-time updates and status tracking.</p>
+                            <p>Monitor shipments, inventory, and logistics in real-time within your ERP dashboard.</p>
                         </div>
                         <div class="benefit-image">
                             <div class="image-container">
@@ -220,13 +281,13 @@
                         </div>
                     </div>
                     
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="benefit-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="benefit-content">
                             <h4>Data-Driven Decisions</h4>
-                            <p>Leverage powerful analytics that combine ERP and logistics data to identify optimization opportunities, forecast trends, and make informed strategic decisions.</p>
+                            <p>Leverage AI-powered insights for route optimization, cost reduction, and demand forecasting.</p>
                         </div>
                         <div class="benefit-image">
                             <div class="image-container">
@@ -236,13 +297,13 @@
                     </div>
                 </div>
                 
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="benefit-icon">
                             <i class="fas fa-robot"></i>
                     </div>
                         <div class="benefit-content">
                             <h4>Automated Processes</h4>
-                            <p>Eliminate manual data entry and reduce errors with automated workflows that seamlessly transfer information between your ERP and the Control Tower.</p>
+                            <p>Reduce manual effort with automated order management, exception handling, and compliance tracking.</p>
                         </div>
                         <div class="benefit-image">
                             <div class="image-container">
@@ -252,13 +313,13 @@
                     </div>
                 </div>
                 
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="benefit-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <div class="benefit-content">
                             <h4>Enhanced Collaboration</h4>
-                            <p>Enable seamless communication between departments, suppliers, and carriers through a centralized platform that connects with your core business systems.</p>
+                            <p>Connect vendors, carriers, and teams for seamless communication and issue resolution.</p>
                             </div>
                         <div class="benefit-image">
                             <div class="image-container">
@@ -268,17 +329,17 @@
                     </div>
                 </div>
                 
-                    <div class="benefit-card">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="benefit-icon">
                             <i class="fas fa-expand-arrows-alt"></i>
                         </div>
                         <div class="benefit-content">
-                            <h4>Scalability</h4>
-                            <p>Easily scale your logistics operations without disrupting existing workflows, thanks to flexible integration that adapts to your growing business needs.</p>
+                            <h4>Scalability & Compliance</h4>
+                            <p>Adapt to business growth while ensuring regulatory adherence and data security.</p>
                             </div>
                         <div class="benefit-image">
                             <div class="image-container">
-                                <img src="../assets/img/scalability-icon.svg" alt="Scalability">
+                                <img src="../assets/img/scalability-icon.svg" alt="Scalability & Compliance">
                                 <div class="image-shine"></div>
                             </div>
                         </div>
@@ -286,9 +347,9 @@
                 </div>
             </div>
             
-            <div class="erp-cta">
+            <div class="erp-cta" data-aos="fade-up" data-aos-delay="300">
                 <div class="cta-pulse"></div>
-                <h3>Ready to transform your logistics efficiency?</h3>
+                <h3>Empower your supply chain with a Managed Control Tower that integrates seamlessly with your ERP, driving efficiency, cost savings, and operational excellence.</h3>
                 <a href="#contact" class="btn btn-glow">Schedule a Demo</a>
             </div>
         </div>
@@ -622,6 +683,80 @@
         </script>
 <script src="../js/index.js"></script>
 <script src="../js/erp-integration.js"></script>
+
+<!-- Custom cursor script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        
+        // Function to update cursor position
+        const updateCursorPosition = (event) => {
+            const posX = event.clientX;
+            const posY = event.clientY;
+            
+            // Update dot position immediately (no transition)
+            requestAnimationFrame(() => {
+                cursorDot.style.left = `${posX}px`;
+                cursorDot.style.top = `${posY}px`;
+            });
+            
+            // Update circle with slight delay for smooth effect
+            setTimeout(() => {
+                cursorCircle.style.left = `${posX}px`;
+                cursorCircle.style.top = `${posY}px`;
+            }, 10);
+        };
+        
+        // Mouse move event listener
+        document.addEventListener('mousemove', updateCursorPosition);
+        
+        // Add cursor effects on interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .btn, .benefit-item, .feature-card, .benefit-card, .business-benefit-card, .nav-link, .nav-item, .menu-toggle');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                cursorCircle.style.width = '60px';
+                cursorCircle.style.height = '60px';
+                cursorCircle.style.backgroundColor = 'rgba(255, 51, 51, 0.1)';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.8)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                cursorCircle.style.width = '40px';
+                cursorCircle.style.height = '40px';
+                cursorCircle.style.backgroundColor = 'transparent';
+                cursorCircle.style.borderColor = 'rgba(255, 51, 51, 0.5)';
+            });
+        });
+        
+        // Hide default cursor on desktop
+        if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+            document.body.style.cursor = 'none';
+        } else {
+            // Show default cursor and hide custom cursor on mobile/touch devices
+            document.body.style.cursor = 'auto';
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        }
+        
+        // Hide cursor when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.display = 'none';
+            cursorCircle.style.display = 'none';
+        });
+        
+        // Show cursor when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            if (!('ontouchstart' in window) && window.matchMedia('(min-width: 769px)').matches) {
+                cursorDot.style.display = 'block';
+                cursorCircle.style.display = 'block';
+            }
+        });
+    });
+</script>
 
     </body>
     </html>
