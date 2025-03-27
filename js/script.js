@@ -65,11 +65,59 @@ window.onload = function () {
     });
 };
 
+// Function to check if splash screen should be shown
+function shouldShowSplashScreen() {
+    // Get last splash screen timestamp from localStorage
+    const lastSplashTimestamp = localStorage.getItem('lastSplashTimestamp');
+    const currentTime = new Date().getTime();
+    
+    // 20 hours in milliseconds
+    const twentyHoursInMs = 20 * 60 * 60 * 1000;
+    
+    // If no timestamp exists or the time difference is more than 20 hours
+    if (!lastSplashTimestamp || (currentTime - parseInt(lastSplashTimestamp)) > twentyHoursInMs) {
+        // Set the current timestamp
+        localStorage.setItem('lastSplashTimestamp', currentTime.toString());
+        return true;
+    }
+    
+    return false;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const splash = document.querySelector('.splash');
+    const content = document.querySelector('.content');
     const splashLogo = document.querySelector('.splash-logo');
     const changingText = document.querySelector('.changing-text');
     const logo = document.querySelector('.logo');
+    
+    // Check if we should show the splash screen
+    const showSplash = shouldShowSplashScreen();
+    
+    if (!showSplash && splash && content) {
+        // Hide splash and show content immediately if we shouldn't show splash
+        splash.style.display = 'none';
+        content.style.display = 'block';
+        content.style.opacity = '1';
+        content.style.visibility = 'visible';
+        
+        // Dispatch an event that the splash is complete
+        window.dispatchEvent(new CustomEvent('splashComplete'));
+        
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+            setTimeout(() => {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    offset: 100
+                });
+            }, 100);
+        }
+        
+        return; // Skip the rest of splash animation setup
+    }
     
     // Array of text to display
     const texts = ['ek', 'one', 'ஒன்று', 'ಒಂದು', 'एक', 'ek'];
@@ -306,25 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modify the startMorphicTransition function for a cleaner transition
     function startMorphicTransition() {
         // Get elements needed for transition
-        const ektruckContainer = document.querySelector('.ektruck-container');
-        const splashLogo = document.querySelector('.logo');
-        const tagline = document.querySelector('.ektruck-tagline');
-        const frontTire = document.querySelector('.front-tire');
-        const rearTire1 = document.querySelector('.rear-tire-1');
-        const rearTire2 = document.querySelector('.rear-tire-2');
-        const changingText = document.querySelector('.changing-text');
-        const truckText = document.querySelector('.truck-text');
         const splash = document.querySelector('.splash');
-        
-        // Store the current position of the logo for the transition
-        const logoRect = splashLogo.getBoundingClientRect();
-        sessionStorage.setItem('comingFromSplash', 'true');
-        sessionStorage.setItem('splashLogoPosition', JSON.stringify({
-            top: logoRect.top,
-            left: logoRect.left,
-            width: logoRect.width,
-            height: logoRect.height
-        }));
+        const content = document.querySelector('.content');
         
         // Create a loading overlay for smooth transition
         const loadingOverlay = document.createElement('div');
@@ -341,25 +372,64 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingOverlay.style.fontFamily = "'Poppins', sans-serif";
         document.body.appendChild(loadingOverlay);
         
-        // Preserve the "ek" text but hide the truck text
-        changingText.style.opacity = '1';
-        truckText.classList.add('truck-text-shrink');
-        
-        // Hide the tires with animation
-        frontTire.classList.add('shrinking-tires');
-        rearTire1.classList.add('shrinking-tires');
-        rearTire2.classList.add('shrinking-tires');
-        
-        // Fade out the tagline
-        tagline.classList.add('fading-out');
-        
-        // After a short delay, start fading in the overlay
+        // Fade in the overlay
         setTimeout(() => {
             loadingOverlay.style.opacity = '1';
             
-            // After the overlay is visible, navigate to landing-page.html
+            // After the overlay is visible, show main content
             setTimeout(() => {
-                window.location.href = '/ek(one)platform/';
+                if (splash && content) {
+                    // Completely hide the splash
+                    splash.style.display = 'none';
+                    
+                    // Show the content with explicit styling
+                    content.style.display = 'block';
+                    content.style.opacity = '1';
+                    content.style.visibility = 'visible';
+                    content.style.position = 'relative';
+                    content.style.zIndex = '50';
+                    
+                    // Add additional styling to make content visible
+                    document.body.style.overflow = 'auto';
+                    document.body.style.height = 'auto';
+                    
+                    // Fade out the overlay
+                    loadingOverlay.style.opacity = '0';
+                    
+                    // Remove any skip button that might be present
+                    const skipBtn = document.querySelector('.skip-button');
+                    if (skipBtn) {
+                        skipBtn.style.transition = 'opacity 0.5s ease';
+                        skipBtn.style.opacity = '0';
+                        setTimeout(() => skipBtn.remove(), 500);
+                    }
+                    
+                    // Remove overlay after fade out
+                    setTimeout(() => {
+                        loadingOverlay.remove();
+                        
+                        // Force a window resize to ensure all elements are properly rendered
+                        window.dispatchEvent(new Event('resize'));
+                    }, 500);
+                    
+                    // Initialize AOS animations if they exist
+                    if (typeof AOS !== 'undefined') {
+                        setTimeout(() => {
+                            AOS.init({
+                                duration: 800,
+                                easing: 'ease-in-out',
+                                once: true
+                            });
+                        }, 100);
+                    }
+                    
+                    // Dispatch an event that the splash is complete
+                    window.dispatchEvent(new CustomEvent('splashComplete'));
+                    
+                    // Update localStorage timestamp to remember this session
+                    const currentTime = new Date().getTime();
+                    localStorage.setItem('lastSplashTimestamp', currentTime.toString());
+                }
             }, 500);
         }, 800);
     }
@@ -445,6 +515,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Also call it when the window is resized
     window.addEventListener('resize', positionTextAtBottom);
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+        
+        // Handle dropdowns in mobile menu
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    // Hide navbar on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.classList.add('hidden');
+            } else {
+                navbar.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
 });
 
 // Add this at the end of your script.js file
@@ -467,9 +590,112 @@ document.addEventListener('DOMContentLoaded', function() {
     skipButton.style.fontWeight = '500';
     skipButton.style.fontSize = '14px';
     skipButton.onclick = function() {
-        window.location.href = '/ek(one)platform/';
+        // Skip animation and show main content
+        const splash = document.querySelector('.splash');
+        const content = document.querySelector('.content');
+        
+        // Handle splash element
+        if (splash) {
+            // Completely hide the splash
+            splash.style.display = 'none';
+        }
+        
+        // Handle content element
+        if (content) {
+            // Show the content with explicit styling
+            content.style.display = 'block';
+            content.style.opacity = '1';
+            content.style.visibility = 'visible';
+            content.style.position = 'relative';
+            content.style.zIndex = '50';
+        }
+        
+        // Add additional styling to make content visible
+        document.body.style.overflow = 'auto';
+        document.body.style.height = 'auto';
+        
+        // Force a window resize to ensure all elements are properly rendered
+        window.dispatchEvent(new Event('resize'));
+        
+        // Initialize AOS animations if they exist
+        setTimeout(() => {
+            if (typeof AOS !== 'undefined') {
+                try {
+                    AOS.init({
+                        duration: 800,
+                        easing: 'ease-in-out',
+                        once: true
+                    });
+                    console.log('AOS animations initialized from skip button');
+                } catch (e) {
+                    console.error('Error initializing AOS from skip button:', e);
+                }
+            }
+        }, 300);
+        
+        // Dispatch an event that the splash is complete
+        window.dispatchEvent(new CustomEvent('splashComplete'));
+        
+        // Update localStorage timestamp to remember this session
+        const currentTime = new Date().getTime();
+        localStorage.setItem('lastSplashTimestamp', currentTime.toString());
+        
+        // Remove the skip button after it's used
+        skipButton.remove();
     };
-    document.body.appendChild(skipButton);
+    
+    // Only add the skip button if splash screen should be shown
+    if (shouldShowSplashScreen()) {
+        document.body.appendChild(skipButton);
+    }
+    
+    // Auto-remove skip button when content is fully loaded
+    const contentObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.target.style.opacity === '1' && 
+                mutation.target.style.display === 'block') {
+                // Content is now visible, remove skip button
+                const skipBtn = document.querySelector('.skip-button');
+                if (skipBtn) {
+                    // Add fade out animation
+                    skipBtn.style.transition = 'opacity 0.5s ease';
+                    skipBtn.style.opacity = '0';
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        skipBtn.remove();
+                    }, 500);
+                }
+                
+                // Disconnect observer since we no longer need it
+                contentObserver.disconnect();
+            }
+        });
+    });
+    
+    // Start observing the content element
+    const content = document.querySelector('.content');
+    if (content) {
+        contentObserver.observe(content, { 
+            attributes: true,
+            attributeFilter: ['style']
+        });
+    }
+    
+    // Additional failsafe: Remove skip button after animation complete (typical timing)
+    setTimeout(() => {
+        const skipBtn = document.querySelector('.skip-button');
+        if (skipBtn && document.querySelector('.content').style.opacity === '1') {
+            // Add fade out animation
+            skipBtn.style.transition = 'opacity 0.5s ease';
+            skipBtn.style.opacity = '0';
+            
+            // Remove after animation
+            setTimeout(() => {
+                skipBtn.remove();
+            }, 500);
+        }
+    }, 15000); // 15 seconds is typically enough for the splash animation
     
     // Disable particles animation without removing elements
     window.onload = function() {
@@ -491,4 +717,224 @@ document.addEventListener('DOMContentLoaded', function() {
             originalOnload();
         }
     };
+});
+
+// Stats Counter Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all stats number elements
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    // Only proceed if stat numbers exist
+    if (statNumbers && statNumbers.length > 0) {
+        // Create Intersection Observer for stats
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Start the counter animation when the stats section is visible
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe each stat number
+        statNumbers.forEach(stat => {
+            statsObserver.observe(stat);
+        });
+    }
+    
+    // Function to animate counter
+    function animateCounter(statElement) {
+        if (!statElement) return;
+        
+        const targetAttr = statElement.getAttribute('data-count');
+        if (!targetAttr) return;
+        
+        const target = parseInt(targetAttr);
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // Assuming 60fps (1000ms/60 ≈ 16ms per frame)
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += step;
+            if (current < target) {
+                statElement.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                statElement.textContent = target;
+            }
+        };
+        
+        requestAnimationFrame(updateCounter);
+    }
+});
+
+// Animate SVG elements when they enter viewport
+document.addEventListener('DOMContentLoaded', function() {
+    const animatedIcons = document.querySelectorAll('.animated-icon');
+    
+    // Only proceed if animatedIcons exist
+    if (animatedIcons && animatedIcons.length > 0) {
+        const iconObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        animatedIcons.forEach(icon => {
+            iconObserver.observe(icon);
+        });
+    }
+});
+
+// Initialize AOS animations when the content is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Add a small delay to ensure all elements are ready
+    setTimeout(() => {
+        // Check if AOS is loaded
+        if (typeof AOS !== 'undefined') {
+            try {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: false,
+                    mirror: false,
+                    offset: 100
+                });
+                console.log('AOS animations initialized');
+            } catch (error) {
+                console.error('Error initializing AOS:', error);
+            }
+        } else {
+            console.log('AOS library not loaded');
+        }
+    }, 200);
+});
+
+// Partners Marquee Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to adjust marquee animation speed based on screen width
+    function adjustMarqueeSpeed() {
+        const marqueeContainers = document.querySelectorAll('.marquee-container');
+        if (!marqueeContainers || marqueeContainers.length === 0) return;
+        
+        const screenWidth = window.innerWidth;
+        let speed;
+        
+        // Adjust speed based on screen width
+        if (screenWidth <= 480) {
+            speed = '20s';
+        } else if (screenWidth <= 768) {
+            speed = '25s';
+        } else {
+            speed = '35s';
+        }
+        
+        // Apply speed to all marquee containers
+        marqueeContainers.forEach(container => {
+            container.style.setProperty('--marquee-speed', speed);
+        });
+    }
+    
+    // Add mouse interaction to marquee
+    const marqueeTrack = document.querySelector('.marquee-track');
+    if (marqueeTrack) {
+        // Pause marquee on mouse hover
+        marqueeTrack.addEventListener('mouseenter', function() {
+            this.style.animationPlayState = 'paused';
+        });
+        
+        // Resume marquee on mouse leave
+        marqueeTrack.addEventListener('mouseleave', function() {
+            this.style.animationPlayState = 'running';
+        });
+        
+        // Add touch capability for mobile
+        marqueeTrack.addEventListener('touchstart', function() {
+            this.style.animationPlayState = 'paused';
+        }, { passive: true });
+        
+        marqueeTrack.addEventListener('touchend', function() {
+            this.style.animationPlayState = 'running';
+        }, { passive: true });
+    }
+    
+    // Initial adjustment
+    adjustMarqueeSpeed();
+    
+    // Adjust on window resize
+    window.addEventListener('resize', adjustMarqueeSpeed);
+});
+
+// Navbar scroll effect and mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Get navbar elements
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+    
+    // Mobile menu toggle
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            if (navMenu) {
+                navMenu.classList.toggle('active');
+            }
+        });
+    }
+    
+    // Dropdown toggle for mobile
+    if (dropdownItems && dropdownItems.length > 0) {
+        dropdownItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            if (link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        item.classList.toggle('show-dropdown');
+                        
+                        // Close other dropdowns
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('show-dropdown');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+    
+    // Navbar scroll effect
+    function handleScroll() {
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+    }
+    
+    // Initial check
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navMenu && navMenu.classList.contains('active') && 
+            !e.target.closest('.nav-menu') && 
+            !e.target.closest('.menu-toggle')) {
+            navMenu.classList.remove('active');
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+            }
+        }
+    });
 });
