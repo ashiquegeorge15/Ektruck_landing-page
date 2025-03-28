@@ -938,3 +938,132 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Hero Screenshots Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Interactive Hero Screenshots with Click-to-Reveal functionality
+    const heroSection = document.querySelector('.hero-section');
+    const heroInteractive = document.querySelector('.hero-interactive-area');
+    const clickInstruction = document.querySelector('.hero-click-instruction');
+    const screenshotsContainer = document.getElementById('hero-screenshots-container');
+    
+    if (!heroSection || !heroInteractive || !screenshotsContainer) return;
+    
+    // Get all screenshot images from assets/slider folder
+    const screenshotImages = [
+        'assets/slider/ss1.jpeg',
+        'assets/slider/ss2.jpeg',
+        'assets/slider/ss3.jpeg',
+        'assets/slider/ss4.jpeg',
+        'assets/slider/ss5.jpeg',
+        'assets/slider/ss6.jpeg',
+    
+    ];
+    
+    let clickCount = 0;
+    let activeScreenshots = [];
+    const maxActiveScreenshots = 5; // Maximum number of screenshots visible at once
+    
+    // Click on the hero section to reveal a screenshot
+    heroInteractive.addEventListener('click', function(e) {
+        // Get click position relative to the hero section
+        const rect = heroSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Create and show a new screenshot
+        showScreenshotAtPosition(x, y);
+        
+        // Hide instruction after first click
+        if (clickInstruction && !clickInstruction.classList.contains('hide')) {
+            clickInstruction.classList.add('hide');
+        }
+        
+        // Count clicks
+        clickCount++;
+    });
+    
+    // Show a screenshot at the specified position
+    function showScreenshotAtPosition(x, y) {
+        // Randomly select an image
+        const randomIndex = Math.floor(Math.random() * screenshotImages.length);
+        const imageSrc = screenshotImages[randomIndex];
+        
+        // Create screenshot element
+        const screenshot = document.createElement('div');
+        screenshot.className = 'hero-screenshot';
+        
+        // Create image element
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = 'App Screenshot';
+        img.loading = 'lazy';
+        
+        // Add image to screenshot
+        screenshot.appendChild(img);
+        
+        // Position the screenshot initially below the visible area
+        screenshot.style.left = `${x - 125}px`; // Center horizontally on click position
+        screenshot.style.top = `${y - 100}px`; // Position vertically
+        
+        // Set random exit rotation
+        const exitRotation = Math.random() * 40 - 20; // -20 to 20 degrees
+        screenshot.style.setProperty('--exit-rotate', `${exitRotation}deg`);
+        
+        // Add screenshot to container
+        screenshotsContainer.appendChild(screenshot);
+        
+        // Track this screenshot
+        activeScreenshots.push(screenshot);
+        
+        // Enforce maximum number of active screenshots
+        if (activeScreenshots.length > maxActiveScreenshots) {
+            // Remove oldest screenshot
+            const oldestScreenshot = activeScreenshots.shift();
+            if (oldestScreenshot) {
+                oldestScreenshot.classList.add('exit');
+                
+                // Remove from DOM after animation completes
+                setTimeout(() => {
+                    oldestScreenshot.remove();
+                }, 1200); // Match the exit animation duration
+            }
+        }
+        
+        // Make screenshot visible after a small delay to trigger animation
+        requestAnimationFrame(() => {
+            screenshot.classList.add('visible');
+        });
+        
+        // Auto remove after some time
+        setTimeout(() => {
+            if (activeScreenshots.includes(screenshot)) {
+                // Remove from active list
+                const index = activeScreenshots.indexOf(screenshot);
+                if (index > -1) {
+                    activeScreenshots.splice(index, 1);
+                }
+                
+                // Start exit animation
+                screenshot.classList.remove('visible');
+                screenshot.classList.add('exit');
+                
+                // Remove from DOM after animation completes
+                setTimeout(() => {
+                    screenshot.remove();
+                }, 1200); // Match the exit animation duration
+            }
+        }, 4000 + Math.random() * 2000); // Random display time between 4-6 seconds
+    }
+    
+    // Recreate screenshot container when window is resized
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            // Clear all screenshots on resize
+            screenshotsContainer.innerHTML = '';
+            activeScreenshots = [];
+        }, 300);
+    });
+});

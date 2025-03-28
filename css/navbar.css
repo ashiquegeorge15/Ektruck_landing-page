@@ -71,7 +71,7 @@
 
 .nav-logo img,
 .navbar .nav-logo img {
-    height: 65px;
+    height: 90px;
     width: auto;
     transition: var(--transition);
     transform: translateY(-5px);
@@ -110,7 +110,7 @@
     color: var(--navbar-text);
     padding: 0.5rem 1rem;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     transition: var(--transition);
     position: relative;

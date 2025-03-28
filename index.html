@@ -140,7 +140,7 @@
                 </ul>
                 
                 <div class="nav-buttons">
-                    <a href="/login" class="btn btn-primary">Login</a>
+                    <a href="/login" class="btn btn-primary">Sign In</a>
                 </div>
             </div>
 
@@ -153,7 +153,7 @@
     </nav>
     
         <!-- Hero Section -->
-        <section class="hero-section">
+        <section class="hero-section" id="hero">
             <!-- Background Elements -->
             <div class="hero-bg">
                 <!-- Particle Canvas -->
@@ -199,6 +199,21 @@
                 <div class="glow-effect glow-2"></div>
             </div>
             
+            <!-- Click instruction -->
+            <div class="click-instruction hero-click-instruction">
+                Click Anywhere to Explore
+            </div>
+            
+            <!-- Interactive click area for screenshots -->
+            <div class="hero-interactive-area">
+                <!-- Screenshots will appear when clicking anywhere -->
+            </div>
+             
+            <!-- Screenshots container -->
+            <div id="hero-screenshots-container">
+                <!-- Screenshots will be added dynamically by JavaScript -->
+            </div>
+            
             <div class="hero-container">
                 <div class="hero-content">
                     <!-- Badge with Pulse Effect -->
@@ -211,7 +226,7 @@
                     <!-- Main Heading with Animated Text -->
                     <h1 class="hero-title">
                         <span class="text-reveal">Revolutionizing</span>
-                        <span class="text-gradient">Transparent Trucking</span>
+                        <span class="text-gradient">Digital Trucking</span>
                     </h1>
                     
                     <!-- Animated Subtitle -->
@@ -219,7 +234,7 @@
                         Elevating Logistics with <span class="highlight-text">Real-time Visibility</span> & <span class="highlight-text">Smart Technology</span>
                     </p>
                     
-                    <!-- Features with Icons -->
+                    <!-- Features with Icons
                     <div class="hero-features">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -241,7 +256,7 @@
                             </div>
                             <span>Seamless API Integration</span>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- CTA Buttons with Hover Effects -->
                     <div class="hero-cta">
@@ -257,16 +272,225 @@
                         </a>
                     </div>
                 </div>
-                
-                <!-- Animated SVG Truck -->
-             
             
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="scroll-dot"></div>
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="scroll-dot"></div>
+                    </div>
+                    <span>Scroll to explore</span>
                 </div>
-                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- AI ML IoT Section -->
+        <section class="ai-ml-section" id="ai-ml-solutions">
+            <div class="container section-container">
+                <div class="section-header">
+                    <h2 class="section-title">AI, ML & IoT-Powered <span class="text-gradient">Transport Management</span></h2>
+                    <!-- <p class="section-subtitle">Transform your logistics operations with intelligent technology</p> -->
+                </div>
+                
+                <div class="ai-ml-content">
+                    <div class="ai-ml-description" data-aos="fade-right">
+                        <p>Transform your logistics operations with AI, Machine Learning (ML), and IoT-driven Transport Management Solutions (TMS). Our intelligent platform ensures real-time visibility, predictive analytics, and automation, enabling efficient fleet utilization, reduced costs, and enhanced decision-making.</p>
+                    </div>
+                    
+                    <div class="capabilities-grid">
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="capability-icon">
+                                <i class="fas fa-location-arrow"></i>
+                            </div>
+                            <h3>Real-Time Fleet Visibility</h3>
+                            <p>IoT-enabled GPS and SIM-based tracking provide live location updates and prevent unauthorized movements.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="capability-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Predictive Analytics & Forecasting</h3>
+                            <p>AI-driven insights anticipate delays, optimize routes, and reduce downtime.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="capability-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <h3>Automated Alerts & Exceptions</h3>
+                            <p>Real-time ML algorithms detect anomalies in fuel consumption, vehicle health, and driver behavior.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="capability-icon">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h3>Dynamic Route Optimization</h3>
+                            <p>AI processes traffic, weather, and historical data to suggest the most efficient delivery routes.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="capability-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>Seamless Integration</h3>
+                            <p>IoT-enabled systems sync with SAP ERP, TMS, and other logistics platforms for automated dispatching and compliance.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="600">
+                            <div class="capability-icon">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <h3>Fuel & Cost Optimization</h3>
+                            <p>AI analyzes fuel usage patterns, prevents pilferage, and suggests cost-saving measures.</p>
+                        </div>
+                        
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="700">
+                            <div class="capability-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h3>Driver Monitoring & Safety</h3>
+                            <p>ML-powered Driver Monitoring Systems detect fatigue, distractions, and risky driving behaviors in real time.</p>
+                        </div>
+
+                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="700">
+                            <div class="capability-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3>Payment Solutions</h3>
+                            <p>Experience transformative advantages with our payment solution.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="benefits-container" data-aos="fade-up">
+                        <h3 class="benefits-title">Benefits of AI, ML & IoT in Transport Management</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Increased Efficiency</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Enhanced Fleet Utilization</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cost Reduction</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Data-Driven Decision Making</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Regulatory Compliance & Security</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="integration-section" id="integrations">
+            <div class="container section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Seamless Integration</h2>
+                    <p class="text-gradient">With major ERPs and tools</p>
+                </div>
+                
+                <div class="integration-content" data-aos="fade-up">
+                    <div class="integration-description">
+                        <h3>India's 1st Unified Trucking Platform</h3>
+                        <p>ektruck is designed to streamline logistics operations by seamlessly integrating with all major ERP systems and industry tools. Whether it's SAP, Oracle, Microsoft Dynamics, or custom-built enterprise solutions, Ektruck ensures real-time data flow for efficient order management, inventory tracking, freight optimization, and financial reconciliation.</p>
+                        <p>By bridging the gap between logistics and enterprise systems, Ektruck enhances visibility, automates workflows, reduces manual interventions, and enables data-driven decision-making. Its API-driven architecture allows effortless plug-and-play connectivity, ensuring businesses can leverage their existing infrastructure while maximizing efficiency and control over their trucking operations.</p>
+                    </div>
+                    
+                    <div class="integration-visual">
+                        <div class="integration-grid">
+                            <!-- Left Column -->
+                            <div class="erp-column">
+                                <div class="erp-card" data-aos="fade-right" data-aos-delay="100">
+                                    <div class="erp-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="erp-info">
+                                        <h4>SAP</h4>
+                                        <p>Enterprise Resource Planning</p>
+                                    </div>
+                                    <div class="connection-dot"></div>
+                                </div>
+                                
+                                <div class="erp-card" data-aos="fade-right" data-aos-delay="200">
+                                    <div class="erp-icon">
+                                        <i class="fas fa-cubes"></i>
+                                    </div>
+                                    <div class="erp-info">
+                                        <h4>Oracle</h4>
+                                        <p>Cloud Infrastructure</p>
+                                    </div>
+                                    <div class="connection-dot"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Center Column -->
+                            <div class="center-column">
+                                <div class="platform-card" data-aos="zoom-in" data-aos-delay="300">
+                                    <img src="assets/logo.png" alt="ektruck" width="120">
+                                    <div class="platform-glow"></div>
+                                </div>
+                                <div class="connection-lines">
+                                    <div class="line line-1"></div>
+                                    <div class="line line-2"></div>
+                                    <div class="line line-3"></div>
+                                    <div class="line line-4"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Right Column -->
+                            <div class="erp-column">
+                                <div class="erp-card" data-aos="fade-left" data-aos-delay="400">
+                                    <div class="erp-icon">
+                                        <i class="fab fa-microsoft"></i>
+                                    </div>
+                                    <div class="erp-info">
+                                        <h4>Dynamics</h4>
+                                        <p>Business Applications</p>
+                                    </div>
+                                    <div class="connection-dot"></div>
+                                </div>
+                                
+                                <div class="erp-card" data-aos="fade-left" data-aos-delay="500">
+                                    <div class="erp-icon">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <div class="erp-info">
+                                        <h4>Custom ERP</h4>
+                                        <p>Tailored Solutions</p>
+                                    </div>
+                                    <div class="connection-dot"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Integration Features -->
+                        <div class="integration-features">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
+                                <i class="fas fa-sync"></i>
+                                <span>Real-time Data Sync</span>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="700">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Integration</span>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="800">
+                                <i class="fas fa-bolt"></i>
+                                <span>Fast Implementation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -394,10 +618,10 @@
                     <div class="stakeholder-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="stakeholder-icon">
                             <i class="fas fa-truck"></i>
-                        </div>
+                    </div>
                         <h3>Fleet Owners</h3>
                         <p>Manage and monitor your trucks effortlessly.</p>
-                    </div>
+                </div>
                     
                     <div class="stakeholder-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="stakeholder-icon">
@@ -405,12 +629,12 @@
                         </div>
                         <h3>Booking Agents</h3>
                         <p>Easily match loads with available trucks, manage multiple bookings, and maximize earnings with transparency.</p>
-                    </div>
-                    
+            </div>
+            
                     <div class="stakeholder-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="stakeholder-icon">
                             <i class="fas fa-shipping-fast"></i>
-                        </div>
+                </div>
                         <h3>Shippers</h3>
                         <p>Get accurate delivery estimates and updates.</p>
                     </div>
@@ -566,135 +790,6 @@
                         </div>
                         <h3>Manufacturers & Traders</h3>
                         <p>Integrated supply chain visibility and distribution management</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI ML IoT Section -->
-        <section class="ai-ml-section" id="ai-ml-solutions">
-            <div class="container section-container">
-                <div class="section-header">
-                    <h2 class="section-title">AI, ML & IoT-Powered <span class="text-gradient">Transport Management</span></h2>
-                    <p class="section-subtitle">Transform your logistics operations with intelligent technology</p>
-                </div>
-                
-                <div class="ai-ml-content">
-                    <div class="ai-ml-description" data-aos="fade-right">
-                        <p>Transform your logistics operations with AI, Machine Learning (ML), and IoT-driven Transport Management Solutions (TMS). Our intelligent platform ensures real-time visibility, predictive analytics, and automation, enabling efficient fleet utilization, reduced costs, and enhanced decision-making.</p>
-                    </div>
-                    
-                    <div class="capabilities-grid">
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="capability-icon">
-                                <i class="fas fa-location-arrow"></i>
-                            </div>
-                            <h3>Real-Time Fleet Visibility</h3>
-                            <p>IoT-enabled GPS and SIM-based tracking provide live location updates and prevent unauthorized movements.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="capability-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Predictive Analytics & Forecasting</h3>
-                            <p>AI-driven insights anticipate delays, optimize routes, and reduce downtime.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="capability-icon">
-                                <i class="fas fa-bell"></i>
-                            </div>
-                            <h3>Automated Alerts & Exceptions</h3>
-                            <p>Real-time ML algorithms detect anomalies in fuel consumption, vehicle health, and driver behavior.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="capability-icon">
-                                <i class="fas fa-route"></i>
-                            </div>
-                            <h3>Dynamic Route Optimization</h3>
-                            <p>AI processes traffic, weather, and historical data to suggest the most efficient delivery routes.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="500">
-                            <div class="capability-icon">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <h3>Seamless Integration</h3>
-                            <p>IoT-enabled systems sync with SAP ERP, TMS, and other logistics platforms for automated dispatching and compliance.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="600">
-                            <div class="capability-icon">
-                                <i class="fas fa-gas-pump"></i>
-                            </div>
-                            <h3>Fuel & Cost Optimization</h3>
-                            <p>AI analyzes fuel usage patterns, prevents pilferage, and suggests cost-saving measures.</p>
-                        </div>
-                        
-                        <div class="capability-card" data-aos="zoom-in" data-aos-delay="700">
-                            <div class="capability-icon">
-                                <i class="fas fa-user-shield"></i>
-                            </div>
-                            <h3>Driver Monitoring & Safety</h3>
-                            <p>ML-powered Driver Monitoring Systems detect fatigue, distractions, and risky driving behaviors in real time.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefits-container" data-aos="fade-up">
-                        <h3 class="benefits-title">Benefits of AI, ML & IoT in Transport Management</h3>
-                        <div class="benefits-grid">
-                            <div class="benefit-item">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <span>Increased Efficiency</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-truck"></i>
-                                <span>Enhanced Fleet Utilization</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-money-bill-wave"></i>
-                                <span>Cost Reduction</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-brain"></i>
-                                <span>Data-Driven Decision Making</span>
-                            </div>
-                            <div class="benefit-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Regulatory Compliance & Security</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Integration Section -->
-        <section class="integration-section" id="integrations">
-            <div class="container section-container">
-                <div class="section-header">
-                    <h2 class="section-title">Seamless <span class="text-gradient">Integration</span></h2>
-                    <p class="section-subtitle">Connect with all major ERPs and industry tools</p>
-                </div>
-                
-                <div class="integration-content" data-aos="fade-up">
-                    <div class="integration-description">
-                        <h3>India's 1st Unified Trucking Platform</h3>
-                        <p>ektruck is designed to streamline logistics operations by seamlessly integrating with all major ERP systems and industry tools. Whether it's SAP, Oracle, Microsoft Dynamics, or custom-built enterprise solutions, Ektruck ensures real-time data flow for efficient order management, inventory tracking, freight optimization, and financial reconciliation.</p>
-                        <p>By bridging the gap between logistics and enterprise systems, Ektruck enhances visibility, automates workflows, reduces manual interventions, and enables data-driven decision-making. Its API-driven architecture allows effortless plug-and-play connectivity, ensuring businesses can leverage their existing infrastructure while maximizing efficiency and control over their trucking operations.</p>
-                    </div>
-                    
-                    <div class="integration-visual">
-                        <div class="integration-icons">
-                            <div class="erp-icon"><i class="fas fa-database"></i><span>SAP</span></div>
-                            <div class="erp-icon"><i class="fas fa-cubes"></i><span>Oracle</span></div>
-                            <div class="erp-icon"><i class="fab fa-microsoft"></i><span>Dynamics</span></div>
-                            <div class="erp-icon"><i class="fas fa-cogs"></i><span>Custom ERP</span></div>
-                            <div class="connection-line"></div>
-                            <div class="platform-icon"><img src="assets/logo.png" alt="ektruck" width="120"></div>
-                        </div>
                     </div>
                 </div>
             </div>
