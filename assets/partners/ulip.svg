@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+    <rect width="200" height="200" fill="#121212" rx="10" ry="10"/>
+    <path d="M20,100 a80,80 0 1,0 160,0 a80,80 0 1,0 -160,0" fill="none" stroke="#0078D7" stroke-width="8"/>
+    <text x="100" y="105" font-family="Arial" font-size="24" text-anchor="middle" fill="white">ULIP</text>
+</svg>
