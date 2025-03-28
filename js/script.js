@@ -839,28 +839,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add mouse interaction to marquee
-    const marqueeTrack = document.querySelector('.marquee-track');
-    if (marqueeTrack) {
-        // Pause marquee on mouse hover
-        marqueeTrack.addEventListener('mouseenter', function() {
-            this.style.animationPlayState = 'paused';
-        });
-        
-        // Resume marquee on mouse leave
-        marqueeTrack.addEventListener('mouseleave', function() {
-            this.style.animationPlayState = 'running';
-        });
-        
-        // Add touch capability for mobile
-        marqueeTrack.addEventListener('touchstart', function() {
-            this.style.animationPlayState = 'paused';
-        }, { passive: true });
-        
-        marqueeTrack.addEventListener('touchend', function() {
-            this.style.animationPlayState = 'running';
-        }, { passive: true });
-    }
+    // Remove all hover/touch pause events for the marquee
+    // No more pausing on hover or touch
     
     // Initial adjustment
     adjustMarqueeSpeed();

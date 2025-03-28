@@ -18,7 +18,7 @@
 
 .text-gradient {
     display: block;
-    font-size: 4rem;
+    /* font-size: 4rem; */
     font-weight: 700;
     background: linear-gradient(135deg, #ff3333 0%, #ff0000 50%, #cc0000 100%);
     -webkit-background-clip: text;
@@ -814,7 +814,7 @@
 
 /* Partners Section */
 .partners-section {
-    background-color: #0a0a0a;
+    background-color: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -841,10 +841,10 @@
 
 /* Partners Section - Marquee Style */
 .partners-section {
-    background-color: #0a0a0a;
+    background-color: #ffffff;
     position: relative;
     overflow: hidden;
-    padding: 6rem 0;
+    
 }
 
 .partners-section::before {
@@ -859,12 +859,20 @@
 }
 
 .partners-section .section-header {
-    max-width: 800px;
+
     margin: 0 auto 4rem;
     text-align: center;
     position: relative;
     z-index: 2;
     padding: 0 2rem;
+}
+
+.partners-section .section-title {
+    color: #000000;
+}
+
+.partners-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .marquee-container {
@@ -873,6 +881,33 @@
     overflow: hidden;
     z-index: 2;
     --marquee-speed: 35s;
+    background: #ffffff;
+    padding: 30px 0;
+    margin: 10px 0 30px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
 }
 
 .marquee-track {
@@ -881,66 +916,42 @@
     animation: marquee var(--marquee-speed) linear infinite;
 }
 
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
 .marquee-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 2rem;
+    position: relative;
 }
 
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+.marquee-content::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 51, 51, 0.5), transparent);
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
 }
 
 .partner-logo {
-    background: rgba(15, 15, 15, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 1.5rem;
-    min-width: 180px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    height: 60px;
+    transition: all 0.3s ease;
+    position: relative;
+    filter: grayscale(100%);
+}
+
+.partner-logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
     transition: all 0.3s ease;
 }
 
 .partner-logo:hover {
-    transform: translateY(-10px) scale(1.05);
-    border-color: rgba(255, 0, 0, 0.3);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(20, 20, 20, 0.8);
-    z-index: 10;
-}
-
-.partner-logo i {
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.partner-logo:hover i {
-    color: #ff3333;
-    transform: scale(1.2);
-    animation: pulse 2s infinite;
-}
-
-.partner-logo span {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
+    transform: translateY(-5px);
+    filter: grayscale(0%);
 }
 
 /* Add a reverse direction marquee option */
@@ -955,13 +966,11 @@
     }
     
     .partner-logo {
-        min-width: 150px;
-        height: 150px;
-        padding: 1.2rem;
+        height: 50px;
     }
     
-    .partner-logo i {
-        font-size: 2.5rem;
+    .marquee-content {
+        gap: 2.5rem;
     }
 }
 
@@ -971,18 +980,11 @@
     }
     
     .partner-logo {
-        min-width: 120px;
-        height: 120px;
-        padding: 1rem;
+        height: 40px;
     }
     
-    .partner-logo i {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    .partner-logo span {
-        font-size: 0.8rem;
+    .marquee-content {
+        gap: 2rem;
     }
 }
 
@@ -2012,4 +2014,13 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }

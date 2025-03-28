@@ -365,18 +365,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMarquee('.partners-marquee .marquee-track');
     setupMarquee('.clients-marquee .marquee-track');
     
-    // Handle pause on hover for better user interaction
+    // Remove hover pause functionality
     const tracks = document.querySelectorAll('.marquee-track');
-    
-    tracks.forEach(track => {
-        track.addEventListener('mouseenter', () => {
-            track.style.animationPlayState = 'paused';
-        });
-        
-        track.addEventListener('mouseleave', () => {
-            track.style.animationPlayState = 'running';
-        });
-    });
     
     // Pause animations when not in viewport to save resources
     if ('IntersectionObserver' in window) {
