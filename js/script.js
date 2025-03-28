@@ -1067,3 +1067,148 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
 });
+
+// Industries Section Particles
+document.addEventListener('DOMContentLoaded', function() {
+    const industriesParticlesCanvas = document.getElementById('industries-particles');
+    if (industriesParticlesCanvas) {
+        const ctx = industriesParticlesCanvas.getContext('2d');
+        let particles = [];
+        
+        // Resize function
+        function resizeCanvas() {
+            industriesParticlesCanvas.width = industriesParticlesCanvas.parentElement.offsetWidth;
+            industriesParticlesCanvas.height = industriesParticlesCanvas.parentElement.offsetHeight;
+            initParticles(); // Reinitialize particles after resize
+        }
+        
+        // Create particles
+        function initParticles() {
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 30 : 60;
+            
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * industriesParticlesCanvas.width,
+                    y: Math.random() * industriesParticlesCanvas.height,
+                    radius: Math.random() * 2 + 1,
+                    color: `rgba(255, ${Math.floor(Math.random() * 50)}, ${Math.floor(Math.random() * 50)}, ${Math.random() * 0.3 + 0.1})`,
+                    speedX: Math.random() * 0.3 - 0.15,
+                    speedY: Math.random() * 0.3 - 0.15,
+                    pulsate: Math.random() > 0.7 // Some particles will pulsate
+                });
+            }
+        }
+        
+        // Draw particles
+        function drawParticles() {
+            if (!industriesParticlesCanvas) return;
+            
+            ctx.clearRect(0, 0, industriesParticlesCanvas.width, industriesParticlesCanvas.height);
+            
+            // Draw connecting lines between particles that are close to each other
+            ctx.strokeStyle = 'rgba(255, 0, 0, 0.03)';
+            ctx.lineWidth = 0.5;
+            
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Draw a line if particles are close enough
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            // Draw and update particles
+            particles.forEach(particle => {
+                // Draw particle
+                ctx.beginPath();
+                
+                // Apply pulsating effect to some particles
+                let radius = particle.radius;
+                if (particle.pulsate) {
+                    radius += Math.sin(Date.now() * 0.003) * 0.5;
+                }
+                
+                ctx.arc(particle.x, particle.y, radius, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.fill();
+                
+                // Update position
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+                
+                // Bounce off edges
+                if (particle.x < 0 || particle.x > industriesParticlesCanvas.width) {
+                    particle.speedX = -particle.speedX;
+                }
+                
+                if (particle.y < 0 || particle.y > industriesParticlesCanvas.height) {
+                    particle.speedY = -particle.speedY;
+                }
+            });
+            
+            requestAnimationFrame(drawParticles);
+        }
+        
+        // Initialize
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        drawParticles();
+        
+        // Add intersection observer to only animate when visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    drawParticles();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(document.querySelector('.industries-section'));
+    }
+});
+
+// Industry Cards Click Interaction
+document.addEventListener('DOMContentLoaded', function() {
+    const industryCards = document.querySelectorAll('.industry-card');
+    
+    industryCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Add a click animation class
+            this.classList.add('card-clicked');
+            
+            // Create a ripple effect
+            const ripple = document.createElement('div');
+            ripple.classList.add('card-ripple');
+            this.appendChild(ripple);
+            
+            // Position the ripple at click position
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${event.clientX - rect.left - size/2}px`;
+            ripple.style.top = `${event.clientY - rect.top - size/2}px`;
+            
+            // Remove ripple and class after animation completes
+            setTimeout(() => {
+                ripple.remove();
+                this.classList.remove('card-clicked');
+            }, 750);
+            
+            // You could also add a click handler to navigate to industry-specific pages:
+            // window.location.href = `/industries/${this.getAttribute('data-industry')}`;
+        });
+    });
+});
