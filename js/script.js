@@ -1278,3 +1278,97 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Scroll Animation Handler
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize custom scroll animations
+    initScrollAnimations();
+    
+    // Check for elements in viewport on load
+    setTimeout(checkElementsInViewport, 100);
+    
+    // Add event listener for scroll
+    window.addEventListener('scroll', debounce(checkElementsInViewport, 15));
+});
+
+// Initialize scroll animation elements
+function initScrollAnimations() {
+    // Add animation classes to elements that should animate on scroll
+    
+    // Text reveal for paragraphs
+    document.querySelectorAll('.ai-ml-description p, .integration-description p').forEach(element => {
+        element.classList.add('text-reveal-scroll');
+    });
+    
+    // Add animation classes to paragraphs
+    document.querySelectorAll('.section-container p:not(.text-reveal-scroll)').forEach(element => {
+        element.classList.add('animate-text');
+    });
+    
+    // Add animation classes to icons
+    document.querySelectorAll('.capability-icon i, .industry-icon i, .feature-icon i').forEach(element => {
+        element.classList.add('icon-bounce');
+    });
+    
+    // Add animation to section titles if they don't already have AOS
+    document.querySelectorAll('.section-title:not([data-aos])').forEach(element => {
+        element.classList.add('animate-on-scroll');
+    });
+    
+    // Add left/right animations
+    document.querySelectorAll('.capability-card:nth-child(odd):not([data-aos])').forEach(element => {
+        element.classList.add('fade-in-right');
+    });
+    
+    document.querySelectorAll('.capability-card:nth-child(even):not([data-aos])').forEach(element => {
+        element.classList.add('fade-in-left');
+    });
+    
+    // Add scale animations
+    document.querySelectorAll('.industry-card:not([data-aos])').forEach(element => {
+        element.classList.add('scale-in');
+    });
+}
+
+// Check if elements are in viewport
+function checkElementsInViewport() {
+    const elements = document.querySelectorAll('.animate-on-scroll, .fade-in-right, .fade-in-left, .scale-in, .text-reveal-scroll, .animate-text, .icon-bounce, .section-title');
+    
+    elements.forEach(element => {
+        if (isElementInViewport(element)) {
+            element.classList.add('visible');
+        } else if (!document.querySelector('[data-aos-once="true"]')) {
+            // If animations can repeat (once is false), remove visible class when out of viewport
+            element.classList.remove('visible');
+        }
+    });
+}
+
+// Helper function to check if element is in viewport
+function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    // Element is considered in viewport if its top is in the bottom 80% of the screen
+    // or if its bottom is in the top 80% of the screen
+    return (
+        rect.top <= windowHeight * 0.8 &&
+        rect.bottom >= windowHeight * 0.2
+    );
+}
+
+// Debounce function to limit the rate at which a function can fire
+function debounce(func, wait) {
+    let timeout;
+    
+    return function() {
+        const context = this;
+        const args = arguments;
+        
+        clearTimeout(timeout);
+        
+        timeout = setTimeout(function() {
+            func.apply(context, args);
+        }, wait);
+    };
+}
