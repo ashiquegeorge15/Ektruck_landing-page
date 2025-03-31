@@ -1011,23 +1011,27 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    max-width: 800px;
     padding: 40px 0;
     z-index: 10;
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 0.3s;
     opacity: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes fadeInUp {
@@ -1039,6 +1043,29 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Add these visible state classes to control animations */
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-visual {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-visual.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .hero-badge {
@@ -1152,6 +1179,94 @@ body {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+/* Hero Click to Explore Styles */
+.hero-click-instruction {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 0, 0.2);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    z-index: 100;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3), inset 0 0 15px rgba(255, 0, 0, 0.2);
+    animation: pulseInstruction 2s infinite;
+    transition: opacity 0.5s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-click-instruction.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes pulseInstruction {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(1.05); opacity: 0.9; }
+}
+
+.hero-interactive-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    cursor: pointer;
+}
+
+#hero-screenshots-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-screenshot {
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.7) rotate(var(--exit-rotate, 0deg));
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s ease;
+    z-index: 6;
+}
+
+.hero-screenshot.visible {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.hero-screenshot.exit {
+    opacity: 0;
+    transform: scale(0.7) rotate(var(--exit-rotate, 0deg)) translateY(50px);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hero-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-screenshot:hover img {
+    transform: scale(1.05);
 }
 
 .highlight-text {
@@ -1488,23 +1603,18 @@ body {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .hero-container {
-        padding: 0 40px;
+        padding: 0 30px;
     }
 }
 
 @media (max-width: 992px) {
     .hero-container {
-        flex-direction: column;
-        padding: 60px 40px;
-    }
-    
-    .hero-content, .hero-visual {
-        max-width: 100%;
+        padding: 0 20px;
     }
     
     .hero-content {
-        text-align: center;
-        margin-bottom: 60px;
+        max-width: 100%;
+        padding: 30px 0;
     }
     
     .hero-features {
@@ -1526,19 +1636,24 @@ body {
 
 @media (max-width: 768px) {
     .hero-container {
-        padding: 40px 20px;
+        padding: 0 15px;
     }
     
     .text-gradient {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
     }
     
     .text-reveal {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+    
+    .hero-screenshot {
+        width: 200px;
+        height: 150px;
     }
     
     .feature-item {
@@ -1546,23 +1661,22 @@ body {
     }
     
     .feature-icon {
-        width: 32px;
-        height: 32px;
+        height: 35px;
+        width: 35px;
     }
     
     .cta-button {
-        padding: 14px 28px;
-        font-size: 15px;
+        padding: 12px 20px;
     }
 }
 
 @media (max-width: 576px) {
     .text-gradient {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .text-reveal {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
     
     .hero-subtitle {
@@ -1573,9 +1687,14 @@ body {
         flex-direction: column;
     }
     
+    .hero-screenshot {
+        width: 180px;
+        height: 130px;
+    }
+    
     .cta-button {
-        padding: 12px 24px;
-        font-size: 14px;
+        padding: 10px 16px;
+        margin: 5px;
     }
 }
 /* Hero Section Styles - End */

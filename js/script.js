@@ -941,131 +941,197 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Hero Screenshots Animation
 document.addEventListener('DOMContentLoaded', function() {
-    // Interactive Hero Screenshots with Click-to-Reveal functionality
-    const heroSection = document.querySelector('.hero-section');
-    const heroInteractive = document.querySelector('.hero-interactive-area');
-    const clickInstruction = document.querySelector('.hero-click-instruction');
-    const screenshotsContainer = document.getElementById('hero-screenshots-container');
-    
-    if (!heroSection || !heroInteractive || !screenshotsContainer) return;
-    
-    // Get all screenshot images from assets/slider folder
-    const screenshotImages = [
-        'assets/slider/ss1.jpeg',
-        'assets/slider/ss2.jpeg',
-        'assets/slider/ss3.jpeg',
-        'assets/slider/ss4.jpeg',
-        'assets/slider/ss5.jpeg',
-        'assets/slider/ss6.jpeg',
-    
-    ];
-    
-    let clickCount = 0;
-    let activeScreenshots = [];
-    const maxActiveScreenshots = 5; // Maximum number of screenshots visible at once
-    
-    // Click on the hero section to reveal a screenshot
-    heroInteractive.addEventListener('click', function(e) {
-        // Get click position relative to the hero section
-        const rect = heroSection.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    try {
+        // Interactive Hero Screenshots with Click-to-Reveal functionality
+        const heroSection = document.querySelector('.hero-section');
+        const heroInteractive = document.querySelector('.hero-interactive-area');
+        const clickInstruction = document.querySelector('.hero-click-instruction');
+        const screenshotsContainer = document.getElementById('hero-screenshots-container');
         
-        // Create and show a new screenshot
-        showScreenshotAtPosition(x, y);
+        if (!heroSection || !heroInteractive || !screenshotsContainer) return;
         
-        // Hide instruction after first click
-        if (clickInstruction && !clickInstruction.classList.contains('hide')) {
-            clickInstruction.classList.add('hide');
-        }
+        // Get all screenshot images from assets/slider folder
+        const screenshotImages = [
+            'assets/slider/ss1.jpeg',
+            'assets/slider/ss2.jpeg',
+            'assets/slider/ss3.jpeg',
+            'assets/slider/ss4.jpeg',
+            'assets/slider/ss5.jpeg',
+            'assets/slider/ss6.jpeg',
+        ];
         
-        // Count clicks
-        clickCount++;
-    });
-    
-    // Show a screenshot at the specified position
-    function showScreenshotAtPosition(x, y) {
-        // Randomly select an image
-        const randomIndex = Math.floor(Math.random() * screenshotImages.length);
-        const imageSrc = screenshotImages[randomIndex];
+        let clickCount = 0;
+        let activeScreenshots = [];
+        const maxActiveScreenshots = 5; // Maximum number of screenshots visible at once
         
-        // Create screenshot element
-        const screenshot = document.createElement('div');
-        screenshot.className = 'hero-screenshot';
-        
-        // Create image element
-        const img = document.createElement('img');
-        img.src = imageSrc;
-        img.alt = 'App Screenshot';
-        img.loading = 'lazy';
-        
-        // Add image to screenshot
-        screenshot.appendChild(img);
-        
-        // Position the screenshot initially below the visible area
-        screenshot.style.left = `${x - 125}px`; // Center horizontally on click position
-        screenshot.style.top = `${y - 100}px`; // Position vertically
-        
-        // Set random exit rotation
-        const exitRotation = Math.random() * 40 - 20; // -20 to 20 degrees
-        screenshot.style.setProperty('--exit-rotate', `${exitRotation}deg`);
-        
-        // Add screenshot to container
-        screenshotsContainer.appendChild(screenshot);
-        
-        // Track this screenshot
-        activeScreenshots.push(screenshot);
-        
-        // Enforce maximum number of active screenshots
-        if (activeScreenshots.length > maxActiveScreenshots) {
-            // Remove oldest screenshot
-            const oldestScreenshot = activeScreenshots.shift();
-            if (oldestScreenshot) {
-                oldestScreenshot.classList.add('exit');
-                
-                // Remove from DOM after animation completes
-                setTimeout(() => {
-                    oldestScreenshot.remove();
-                }, 1200); // Match the exit animation duration
+        // Click on the hero section to reveal a screenshot
+        heroInteractive.addEventListener('click', function(e) {
+            // Get click position relative to the hero section
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Create and show a new screenshot
+            showScreenshotAtPosition(x, y);
+            
+            // Hide instruction after first click
+            if (clickInstruction && !clickInstruction.classList.contains('hide')) {
+                clickInstruction.classList.add('hide');
             }
-        }
-        
-        // Make screenshot visible after a small delay to trigger animation
-        requestAnimationFrame(() => {
-            screenshot.classList.add('visible');
+            
+            // Count clicks
+            clickCount++;
         });
         
-        // Auto remove after some time
-        setTimeout(() => {
-            if (activeScreenshots.includes(screenshot)) {
-                // Remove from active list
-                const index = activeScreenshots.indexOf(screenshot);
-                if (index > -1) {
-                    activeScreenshots.splice(index, 1);
+        // Show a screenshot at the specified position
+        function showScreenshotAtPosition(x, y) {
+            try {
+                // Randomly select an image
+                const randomIndex = Math.floor(Math.random() * screenshotImages.length);
+                const imageSrc = screenshotImages[randomIndex];
+                
+                // Create screenshot element
+                const screenshot = document.createElement('div');
+                screenshot.className = 'hero-screenshot';
+                
+                // Create image element
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = 'App Screenshot';
+                img.loading = 'lazy';
+                
+                // Add image to screenshot
+                screenshot.appendChild(img);
+                
+                // Get hero section dimensions
+                const heroWidth = heroSection.offsetWidth;
+                const heroHeight = heroSection.offsetHeight;
+                
+                // Calculate safe area (exclude center area where main content is)
+                const centerWidth = Math.min(800, heroWidth * 0.6);
+                const centerHeight = Math.min(500, heroHeight * 0.6);
+                
+                // Constrain x and y to avoid center area
+                let safeX = x;
+                let safeY = y;
+                
+                // Apply positioning logic to avoid center content
+                const centerX = heroWidth / 2;
+                const centerY = heroHeight / 2;
+                
+                // Calculate screenshot dimensions
+                const screenshotWidth = 250;
+                const screenshotHeight = 180;
+                
+                // Calculate center area boundaries
+                const centerLeft = centerX - centerWidth / 2;
+                const centerRight = centerX + centerWidth / 2;
+                const centerTop = centerY - centerHeight / 2;
+                const centerBottom = centerY + centerHeight / 2;
+                
+                // Check if click is in center area and adjust
+                if (x > centerLeft && x < centerRight && y > centerTop && y < centerBottom) {
+                    // Click is in center area, randomly position at edges
+                    const edge = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+                    
+                    switch (edge) {
+                        case 0: // top
+                            safeX = Math.random() * heroWidth;
+                            safeY = Math.random() * centerTop;
+                            break;
+                        case 1: // right
+                            safeX = centerRight + Math.random() * (heroWidth - centerRight);
+                            safeY = Math.random() * heroHeight;
+                            break;
+                        case 2: // bottom
+                            safeX = Math.random() * heroWidth;
+                            safeY = centerBottom + Math.random() * (heroHeight - centerBottom);
+                            break;
+                        case 3: // left
+                            safeX = Math.random() * centerLeft;
+                            safeY = Math.random() * heroHeight;
+                            break;
+                    }
                 }
                 
-                // Start exit animation
-                screenshot.classList.remove('visible');
-                screenshot.classList.add('exit');
+                // Ensure the screenshot stays within hero section bounds
+                safeX = Math.max(screenshotWidth/2, Math.min(safeX, heroWidth - screenshotWidth/2));
+                safeY = Math.max(screenshotHeight/2, Math.min(safeY, heroHeight - screenshotHeight/2));
                 
-                // Remove from DOM after animation completes
+                // Position the screenshot
+                screenshot.style.left = `${safeX - screenshotWidth/2}px`;
+                screenshot.style.top = `${safeY - screenshotHeight/2}px`;
+                
+                // Set random exit rotation
+                const exitRotation = Math.random() * 40 - 20; // -20 to 20 degrees
+                screenshot.style.setProperty('--exit-rotate', `${exitRotation}deg`);
+                
+                // Add screenshot to container
+                screenshotsContainer.appendChild(screenshot);
+                
+                // Track this screenshot
+                activeScreenshots.push(screenshot);
+                
+                // Enforce maximum number of active screenshots
+                if (activeScreenshots.length > maxActiveScreenshots) {
+                    // Remove oldest screenshot
+                    const oldestScreenshot = activeScreenshots.shift();
+                    if (oldestScreenshot) {
+                        oldestScreenshot.classList.add('exit');
+                        
+                        // Remove from DOM after animation completes
+                        setTimeout(() => {
+                            if (oldestScreenshot.parentNode) {
+                                oldestScreenshot.remove();
+                            }
+                        }, 1200); // Match the exit animation duration
+                    }
+                }
+                
+                // Make screenshot visible after a small delay to trigger animation
+                requestAnimationFrame(() => {
+                    screenshot.classList.add('visible');
+                });
+                
+                // Auto remove after some time
                 setTimeout(() => {
-                    screenshot.remove();
-                }, 1200); // Match the exit animation duration
+                    if (activeScreenshots.includes(screenshot)) {
+                        // Remove from active list
+                        const index = activeScreenshots.indexOf(screenshot);
+                        if (index > -1) {
+                            activeScreenshots.splice(index, 1);
+                        }
+                        
+                        // Start exit animation
+                        screenshot.classList.remove('visible');
+                        screenshot.classList.add('exit');
+                        
+                        // Remove from DOM after animation completes
+                        setTimeout(() => {
+                            if (screenshot.parentNode) {
+                                screenshot.remove();
+                            }
+                        }, 1200); // Match the exit animation duration
+                    }
+                }, 4000 + Math.random() * 2000); // Random display time between 4-6 seconds
+            } catch (error) {
+                console.error("Error in showScreenshotAtPosition:", error);
             }
-        }, 4000 + Math.random() * 2000); // Random display time between 4-6 seconds
+        }
+        
+        // Recreate screenshot container when window is resized
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                // Clear all screenshots on resize
+                screenshotsContainer.innerHTML = '';
+                activeScreenshots = [];
+            }, 300);
+        });
+    } catch (error) {
+        console.error("Error initializing hero screenshot animations:", error);
     }
-    
-    // Recreate screenshot container when window is resized
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            // Clear all screenshots on resize
-            screenshotsContainer.innerHTML = '';
-            activeScreenshots = [];
-        }, 300);
-    });
 });
 
 // Industries Section Particles

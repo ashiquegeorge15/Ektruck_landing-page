@@ -217,20 +217,20 @@
             <div class="hero-container">
                 <div class="hero-content">
                     <!-- Badge with Pulse Effect -->
-                    <div class="hero-badge">
+                    <div class="hero-badge" data-aos="fade-up">
                         <div class="badge-pulse"></div>
                         <i class="fas fa-rocket badge-icon"></i>
                         <span>Next-Gen Logistics</span>
                     </div>
                     
                     <!-- Main Heading with Animated Text -->
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
                         <span class="text-reveal">Revolutionizing</span>
                         <span class="text-gradient">Digital Trucking</span>
                     </h1>
                     
                     <!-- Animated Subtitle -->
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
                         Elevating Logistics with <span class="highlight-text">Real-time Visibility</span> & <span class="highlight-text">Smart Technology</span>
                     </p>
                     
@@ -259,7 +259,7 @@
                     </div> -->
                     
                     <!-- CTA Buttons with Hover Effects -->
-                    <div class="hero-cta">
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="600">
                         <a href="#" class="cta-button primary-button">
                             <span>Start Your Journey</span>
                             <i class="fas fa-arrow-right"></i>
@@ -287,7 +287,7 @@
         <section class="ai-ml-section" id="ai-ml-solutions">
             <div class="container section-container">
                 <div class="section-header">
-                    <h2 class="section-title">AI, ML & IoT-Powered <span class="text-gradient">Transport Management</span></h2>
+                    <h2 class="section-title">AI, ML & IoT-Powered <span class="text-grad">Transport Management</span></h2>
                     <!-- <p class="section-subtitle">Transform your logistics operations with intelligent technology</p> -->
                 </div>
                 
@@ -397,7 +397,7 @@
             <div class="container section-container">
                 <div class="section-header">
                     <h2 class="section-title">Seamless Integration</h2>
-                    <p class="text-gradient">With major ERPs and tools</p>
+                    <p class="text-grad">With major ERPs and tools</p>
                 </div>
                 
                 <div class="integration-content" data-aos="fade-up">
@@ -498,7 +498,7 @@
          <section class="ecosystem-section" id="ecosystem">
             <div class="container section-container">
                 <div class="section-header">
-                    <h2 class="section-title" data-aos="fade-up">Built for the entire <span class="text-gradient">logistics ecosystem</span></h2>
+                    <h2 class="section-title" data-aos="fade-up">Built for the entire <span class="text-grad">logistics ecosystem</span></h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Tailored solutions for every stakeholder in the supply chain</p>
                 </div>
                 
@@ -550,7 +550,7 @@
          <section class="industries-section" id="industries">
             <div class="container section-container">
                 <div class="section-header">
-                    <h2 class="section-title" data-aos="fade-up"><span class="text-gradient">Industries We Serve</span></h2>
+                    <h2 class="section-title" data-aos="fade-up"><span class="text-grad">Industries We Serve</span></h2>
                     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Tailored logistics solutions for diverse industry needs</p>
                 </div>
                 
@@ -627,7 +627,7 @@
          <!-- Partners Section -->
         <section class="partners-section" id="partners">
             <div class="section-header">
-                <h2 class="section-title"><span class="text-gradient">Powered by our Customers</span></h2>
+                <h2 class="section-title"><span class="text-grad">Powered by our Customers</span></h2>
                 <p class="section-subtitle">Collaborating with industry leaders to deliver cutting-edge logistics solutions</p>
             </div>
             
@@ -680,7 +680,7 @@
 
         <section class="partners-section" id="partners">
             <div class="section-header">
-                <h2 class="section-title"><span class="text-gradient">Driving Success through Collaboration</span></h2>
+                <h2 class="section-title"><span class="text-grad">Driving Success through Collaboration</span></h2>
          
             </div>
             
@@ -739,7 +739,7 @@
                             <img src="assets/img/iaf.png" alt="IAF Accredited ISO 27001:2022 Certification Badge">
                         </div>
                         <h2 class="section-title">An ISO 27001:2022 Certified Company</h2>
-                        <span class="text-gradient">Your data security and privacy are our top priorities</span>
+                        <span class="text-grad">Your data security and privacy are our top priorities</span>
                     </div>
                 </div>
             </section>
@@ -1101,29 +1101,31 @@ function initMobileOptimizations() {
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS only when content is visible
-            if (document.querySelector('.content').style.display === 'block') {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true
-                });
-            }
-            
-            // Initialize AOS for new sections when splash screen is complete
-            window.addEventListener('splashComplete', function() {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-in-out',
-                    once: true,
-                    offset: 100
-                });
-                
-                // Refresh AOS when all images are loaded
-                window.addEventListener('load', function() {
-                    AOS.refresh();
-                });
+            // Initialize AOS immediately for all elements
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: false,
+                offset: 100
             });
+            
+            // Reinitialize AOS when splash screen is complete
+            window.addEventListener('splashComplete', function() {
+                setTimeout(function() {
+                    AOS.refresh();
+                }, 200);
+            });
+            
+            // Refresh AOS when all images are loaded
+            window.addEventListener('load', function() {
+                AOS.refresh();
+            });
+            
+            // Additional refresh after a delay to ensure animations trigger
+            setTimeout(function() {
+                AOS.refresh();
+            }, 1000);
         });
 
         // Animated counter for stats
@@ -1171,68 +1173,87 @@ function initMobileOptimizations() {
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Hero Particles Animation
-            const heroParticles = document.getElementById('hero-particles');
-            if (heroParticles) {
-                const ctx = heroParticles.getContext('2d');
-                
-                // Set canvas dimensions
-                function resizeCanvas() {
-                    heroParticles.width = heroParticles.parentElement.offsetWidth;
-                    heroParticles.height = heroParticles.parentElement.offsetHeight;
-                }
-                
-                // Call initially and on window resize
-                resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
-                
-                // Particle properties
-                const particles = [];
-                const particleCount = 100;
-                const particleColors = ['#ff3333', '#ff6666', '#990000'];
-                
-                // Create particles
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push({
-                        x: Math.random() * heroParticles.width,
-                        y: Math.random() * heroParticles.height,
-                        radius: Math.random() * 2 + 1,
-                        color: particleColors[Math.floor(Math.random() * particleColors.length)],
-                        speedX: Math.random() * 0.5 - 0.25,
-                        speedY: Math.random() * 0.5 - 0.25,
-                        opacity: Math.random() * 0.5 + 0.2
-                    });
-                }
-                
-                // Draw particles
-                function drawParticles() {
-                    ctx.clearRect(0, 0, heroParticles.width, heroParticles.height);
+            try {
+                const heroParticles = document.getElementById('hero-particles');
+                if (heroParticles) {
+                    const ctx = heroParticles.getContext('2d');
                     
-                    particles.forEach(particle => {
-                        ctx.beginPath();
-                        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                        ctx.fillStyle = particle.color;
-                        ctx.globalAlpha = particle.opacity;
-                        ctx.fill();
+                    // Set canvas dimensions
+                    function resizeCanvas() {
+                        heroParticles.width = heroParticles.parentElement.offsetWidth;
+                        heroParticles.height = heroParticles.parentElement.offsetHeight;
+                    }
+                    
+                    // Call initially and on window resize
+                    resizeCanvas();
+                    window.addEventListener('resize', resizeCanvas);
+                    
+                    // Particle properties
+                    const particles = [];
+                    const particleCount = 100;
+                    const particleColors = ['#ff3333', '#ff6666', '#990000'];
+                    
+                    // Create particles
+                    function initParticles() {
+                        particles.length = 0;
                         
-                        // Update position
-                        particle.x += particle.speedX;
-                        particle.y += particle.speedY;
-                        
-                        // Bounce off edges
-                        if (particle.x < 0 || particle.x > heroParticles.width) {
-                            particle.speedX = -particle.speedX;
+                        for (let i = 0; i < particleCount; i++) {
+                            particles.push({
+                                x: Math.random() * heroParticles.width,
+                                y: Math.random() * heroParticles.height,
+                                radius: Math.random() * 2 + 1,
+                                color: particleColors[Math.floor(Math.random() * particleColors.length)],
+                                speedX: Math.random() * 0.5 - 0.25,
+                                speedY: Math.random() * 0.5 - 0.25,
+                                opacity: Math.random() * 0.5 + 0.2
+                            });
                         }
+                    }
+                    
+                    // Initialize particles
+                    initParticles();
+                    
+                    // Draw particles
+                    function drawParticles() {
+                        if (!heroParticles.getContext) return;
                         
-                        if (particle.y < 0 || particle.y > heroParticles.height) {
-                            particle.speedY = -particle.speedY;
-                        }
+                        ctx.clearRect(0, 0, heroParticles.width, heroParticles.height);
+                        
+                        particles.forEach(particle => {
+                            ctx.beginPath();
+                            ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                            ctx.fillStyle = particle.color;
+                            ctx.globalAlpha = particle.opacity;
+                            ctx.fill();
+                            
+                            // Update position
+                            particle.x += particle.speedX;
+                            particle.y += particle.speedY;
+                            
+                            // Bounce off edges
+                            if (particle.x < 0 || particle.x > heroParticles.width) {
+                                particle.speedX = -particle.speedX;
+                            }
+                            
+                            if (particle.y < 0 || particle.y > heroParticles.height) {
+                                particle.speedY = -particle.speedY;
+                            }
+                        });
+                        
+                        requestAnimationFrame(drawParticles);
+                    }
+                    
+                    // Handle window resize
+                    window.addEventListener('resize', function() {
+                        resizeCanvas();
+                        initParticles();
                     });
                     
-                    requestAnimationFrame(drawParticles);
+                    // Start animation
+                    drawParticles();
                 }
-                
-                // Start animation
-                drawParticles();
+            } catch(error) {
+                console.error("Error initializing hero particles:", error);
             }
             
             // Scroll indicator functionality
@@ -1286,13 +1307,12 @@ function initMobileOptimizations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
+                        entry.target.classList.add('visible');
                     }
                 });
             }, { threshold: 0.1 });
             
             fadeElements.forEach(element => {
-                element.style.animationPlayState = 'paused';
                 observer.observe(element);
             });
         });

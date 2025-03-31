@@ -7,8 +7,8 @@
 
 .text-reveal {
     display: block;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 5.5rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
     position: relative;
     overflow: hidden;
@@ -18,8 +18,8 @@
 
 .text-gradient {
     display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 3.9rem;
+    font-weight: 1000;
     background: linear-gradient(135deg, #ff3333 0%, #ff0000 50%, #cc0000 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -64,7 +64,7 @@
     color: #ff3333;
 }
 
-.highlight-text::after {
+/* .highlight-text::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -75,7 +75,7 @@
     transform: scaleX(0);
     transform-origin: left;
     animation: scaleIn 0.5s ease-out forwards 1.2s;
-}
+} */
 
 .hero-features {
     display: flex;
