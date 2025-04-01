@@ -826,11 +826,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Adjust speed based on screen width
         if (screenWidth <= 480) {
-            speed = '20s';
+            speed = '100s';  // Increased from 20s
         } else if (screenWidth <= 768) {
-            speed = '25s';
+            speed = '110s';  // Increased from 25s
         } else {
-            speed = '35s';
+            speed = '120s';  // Increased from 35s
         }
         
         // Apply speed to all marquee containers
@@ -950,14 +950,88 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!heroSection || !heroInteractive || !screenshotsContainer) return;
         
+        // Remove existing click instruction
+        if (clickInstruction) {
+            clickInstruction.remove();
+        }
+        
+        // Create custom cursor element
+        const customCursor = document.createElement('div');
+        customCursor.className = 'custom-cursor';
+        
+        // Create inner text element for cursor
+        const cursorText = document.createElement('div');
+        cursorText.className = 'cursor-text';
+        cursorText.textContent = 'Click to explore';
+        
+        // Append text to cursor
+        customCursor.appendChild(cursorText);
+        
+        // Add cursor to hero section
+        document.body.appendChild(customCursor);
+        
+        // Make custom cursor follow mouse with smooth animation
+        heroSection.addEventListener('mousemove', function(e) {
+            // Get mouse position relative to viewport
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            // Apply position with transform for better performance
+            requestAnimationFrame(() => {
+                customCursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+                
+                // Save position as CSS variables for the animation
+                customCursor.style.setProperty('--x', `${mouseX}px`);
+                customCursor.style.setProperty('--y', `${mouseY}px`);
+            });
+        });
+        
+        // Hide custom cursor when mouse leaves hero section
+        heroSection.addEventListener('mouseleave', function() {
+            customCursor.style.opacity = '0';
+        });
+        
+        // Show custom cursor when mouse enters hero section
+        heroSection.addEventListener('mouseenter', function() {
+            customCursor.style.opacity = '1';
+        });
+        
+        // Hide cursor text on first click
+        let isFirstClick = true;
+        heroInteractive.addEventListener('click', function() {
+            if (isFirstClick) {
+                cursorText.style.opacity = '0';
+                isFirstClick = false;
+            }
+        });
+        
         // Get all screenshot images from assets/slider folder
         const screenshotImages = [
-            'assets/slider/ss1.jpeg',
-            'assets/slider/ss2.jpeg',
-            'assets/slider/ss3.jpeg',
-            'assets/slider/ss4.jpeg',
-            'assets/slider/ss5.jpeg',
-            'assets/slider/ss6.jpeg',
+            'assets/slider/1.png',
+            'assets/slider/2.png',
+            'assets/slider/3.png',
+            'assets/slider/4.png',
+            'assets/slider/5.png',
+            'assets/slider/6.png',
+            'assets/slider/7.png',
+            'assets/slider/8.png',
+            'assets/slider/9.png',
+            'assets/slider/10.png',
+            'assets/slider/11.png',
+            'assets/slider/12.png',
+            'assets/slider/13.png',
+            'assets/slider/14.png',
+            'assets/slider/15.png',     
+            'assets/slider/16.png',
+            'assets/slider/17.png',
+            'assets/slider/18.png',
+            'assets/slider/19.png',
+            'assets/slider/20.png',
+            'assets/slider/21.png',
+            'assets/slider/22.png',
+            'assets/slider/23.png',
+            'assets/slider/24.png',
+            'assets/slider/25.png', 
         ];
         
         let clickCount = 0;
@@ -974,149 +1048,162 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create and show a new screenshot
             showScreenshotAtPosition(x, y);
             
-            // Hide instruction after first click
-            if (clickInstruction && !clickInstruction.classList.contains('hide')) {
-                clickInstruction.classList.add('hide');
-            }
-            
             // Count clicks
             clickCount++;
         });
         
         // Show a screenshot at the specified position
         function showScreenshotAtPosition(x, y) {
-            try {
-                // Randomly select an image
-                const randomIndex = Math.floor(Math.random() * screenshotImages.length);
-                const imageSrc = screenshotImages[randomIndex];
-                
-                // Create screenshot element
-                const screenshot = document.createElement('div');
-                screenshot.className = 'hero-screenshot';
-                
-                // Create image element
-                const img = document.createElement('img');
-                img.src = imageSrc;
-                img.alt = 'App Screenshot';
-                img.loading = 'lazy';
-                
-                // Add image to screenshot
-                screenshot.appendChild(img);
-                
-                // Get hero section dimensions
-                const heroWidth = heroSection.offsetWidth;
-                const heroHeight = heroSection.offsetHeight;
-                
-                // Calculate safe area (exclude center area where main content is)
-                const centerWidth = Math.min(800, heroWidth * 0.6);
-                const centerHeight = Math.min(500, heroHeight * 0.6);
-                
-                // Constrain x and y to avoid center area
-                let safeX = x;
-                let safeY = y;
-                
-                // Apply positioning logic to avoid center content
-                const centerX = heroWidth / 2;
-                const centerY = heroHeight / 2;
-                
-                // Calculate screenshot dimensions
-                const screenshotWidth = 250;
-                const screenshotHeight = 180;
-                
-                // Calculate center area boundaries
-                const centerLeft = centerX - centerWidth / 2;
-                const centerRight = centerX + centerWidth / 2;
-                const centerTop = centerY - centerHeight / 2;
-                const centerBottom = centerY + centerHeight / 2;
-                
-                // Check if click is in center area and adjust
-                if (x > centerLeft && x < centerRight && y > centerTop && y < centerBottom) {
-                    // Click is in center area, randomly position at edges
-                    const edge = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
-                    
-                    switch (edge) {
-                        case 0: // top
-                            safeX = Math.random() * heroWidth;
-                            safeY = Math.random() * centerTop;
-                            break;
-                        case 1: // right
-                            safeX = centerRight + Math.random() * (heroWidth - centerRight);
-                            safeY = Math.random() * heroHeight;
-                            break;
-                        case 2: // bottom
-                            safeX = Math.random() * heroWidth;
-                            safeY = centerBottom + Math.random() * (heroHeight - centerBottom);
-                            break;
-                        case 3: // left
-                            safeX = Math.random() * centerLeft;
-                            safeY = Math.random() * heroHeight;
-                            break;
-                    }
-                }
-                
-                // Ensure the screenshot stays within hero section bounds
-                safeX = Math.max(screenshotWidth/2, Math.min(safeX, heroWidth - screenshotWidth/2));
-                safeY = Math.max(screenshotHeight/2, Math.min(safeY, heroHeight - screenshotHeight/2));
-                
-                // Position the screenshot
-                screenshot.style.left = `${safeX - screenshotWidth/2}px`;
-                screenshot.style.top = `${safeY - screenshotHeight/2}px`;
-                
-                // Set random exit rotation
-                const exitRotation = Math.random() * 40 - 20; // -20 to 20 degrees
-                screenshot.style.setProperty('--exit-rotate', `${exitRotation}deg`);
-                
-                // Add screenshot to container
-                screenshotsContainer.appendChild(screenshot);
-                
-                // Track this screenshot
-                activeScreenshots.push(screenshot);
-                
-                // Enforce maximum number of active screenshots
-                if (activeScreenshots.length > maxActiveScreenshots) {
-                    // Remove oldest screenshot
-                    const oldestScreenshot = activeScreenshots.shift();
-                    if (oldestScreenshot) {
-                        oldestScreenshot.classList.add('exit');
-                        
-                        // Remove from DOM after animation completes
-                        setTimeout(() => {
-                            if (oldestScreenshot.parentNode) {
-                                oldestScreenshot.remove();
-                            }
-                        }, 1200); // Match the exit animation duration
-                    }
-                }
-                
-                // Make screenshot visible after a small delay to trigger animation
-                requestAnimationFrame(() => {
-                    screenshot.classList.add('visible');
-                });
-                
-                // Auto remove after some time
+            // Cap the maximum number of concurrent screenshots
+            if (activeScreenshots.length >= maxActiveScreenshots) {
+                // Remove the oldest screenshot if at capacity
+                const oldest = activeScreenshots.shift();
+                oldest.classList.add('exit');
+                // Set a random rotation for exit animation
+                oldest.style.setProperty('--exit-rotate', `${Math.random() > 0.5 ? '' : '-'}${10 + Math.random() * 15}deg`);
                 setTimeout(() => {
-                    if (activeScreenshots.includes(screenshot)) {
-                        // Remove from active list
-                        const index = activeScreenshots.indexOf(screenshot);
-                        if (index > -1) {
-                            activeScreenshots.splice(index, 1);
-                        }
-                        
-                        // Start exit animation
-                        screenshot.classList.remove('visible');
-                        screenshot.classList.add('exit');
-                        
-                        // Remove from DOM after animation completes
-                        setTimeout(() => {
-                            if (screenshot.parentNode) {
-                                screenshot.remove();
-                            }
-                        }, 1200); // Match the exit animation duration
+                    if (oldest.parentNode) {
+                        oldest.parentNode.removeChild(oldest);
                     }
-                }, 4000 + Math.random() * 2000); // Random display time between 4-6 seconds
-            } catch (error) {
-                console.error("Error in showScreenshotAtPosition:", error);
+                }, 1200); // Match this with the CSS exit animation duration
             }
+            
+            // Create new screenshot element
+            const screenshot = document.createElement('div');
+            screenshot.className = 'hero-screenshot';
+            
+            // Get hero section dimensions
+            const heroWidth = heroSection.offsetWidth;
+            const heroHeight = heroSection.offsetHeight;
+            
+            // Calculate safe area (exclude center area where main content is)
+            const centerWidth = Math.min(800, heroWidth * 0.6);
+            const centerHeight = Math.min(500, heroHeight * 0.6);
+            
+            // Constrain x and y to avoid center area
+            let safeX = x;
+            let safeY = y;
+            
+            // Apply positioning logic to avoid center content
+            const centerX = heroWidth / 2;
+            const centerY = heroHeight / 2;
+            
+            // Calculate screenshot dimensions
+            const screenshotWidth = 250;
+            const screenshotHeight = 180;
+            
+            // Calculate center area boundaries
+            const centerLeft = centerX - centerWidth / 2;
+            const centerRight = centerX + centerWidth / 2;
+            const centerTop = centerY - centerHeight / 2;
+            const centerBottom = centerY + centerHeight / 2;
+            
+            // Check if click is in center area and adjust
+            if (x > centerLeft && x < centerRight && y > centerTop && y < centerBottom) {
+                // Click is in center area, randomly position at edges
+                const edge = Math.floor(Math.random() * 4); // 0: top, 1: right, 2: bottom, 3: left
+                
+                switch (edge) {
+                    case 0: // top
+                        safeX = Math.random() * heroWidth;
+                        safeY = Math.random() * centerTop;
+                        break;
+                    case 1: // right
+                        safeX = centerRight + Math.random() * (heroWidth - centerRight);
+                        safeY = Math.random() * heroHeight;
+                        break;
+                    case 2: // bottom
+                        safeX = Math.random() * heroWidth;
+                        safeY = centerBottom + Math.random() * (heroHeight - centerBottom);
+                        break;
+                    case 3: // left
+                        safeX = Math.random() * centerLeft;
+                        safeY = Math.random() * heroHeight;
+                        break;
+                }
+            } else {
+                // Add small random offset from exact click position
+                const offsetX = (Math.random() - 0.5) * 100;
+                const offsetY = (Math.random() - 0.5) * 100;
+                safeX = x + offsetX;
+                safeY = y + offsetY;
+            }
+            
+            // Ensure the screenshot stays within hero section bounds
+            safeX = Math.max(screenshotWidth/2, Math.min(safeX, heroWidth - screenshotWidth/2));
+            safeY = Math.max(screenshotHeight/2, Math.min(safeY, heroHeight - screenshotHeight/2));
+            
+            // Position the screenshot
+            screenshot.style.left = `${safeX - screenshotWidth/2}px`;
+            screenshot.style.top = `${safeY - screenshotHeight/2}px`;
+            
+            // Select a random image
+            const imgIndex = Math.floor(Math.random() * screenshotImages.length);
+            const imgSrc = screenshotImages[imgIndex];
+            
+            // Create image element with protection
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = 'App Screenshot';
+            img.loading = 'lazy';
+            img.style.pointerEvents = 'none'; // Disable direct interaction with the image
+            img.draggable = false; // Prevent dragging
+            
+            // Add the image to the screenshot div
+            screenshot.appendChild(img);
+            
+            // Add additional protection
+            screenshot.addEventListener('contextmenu', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+            
+            // Prevent copying by disabling selection
+            screenshot.addEventListener('selectstart', e => {
+                e.preventDefault();
+                return false;
+            });
+            
+            // Prevent mousedown events that could trigger saving
+            screenshot.addEventListener('mousedown', e => {
+                if (e.button === 2) { // Right click
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                }
+            });
+            
+            // Add the screenshot to the container
+            screenshotsContainer.appendChild(screenshot);
+            
+            // Add to active screenshots array
+            activeScreenshots.push(screenshot);
+            
+            // Apply visible class after a short delay (for animation)
+            setTimeout(() => {
+                screenshot.classList.add('visible');
+            }, 10);
+            
+            // Set a timer to remove the screenshot
+            setTimeout(() => {
+                if (screenshot.parentNode) {
+                    screenshot.classList.add('exit');
+                    // Set a random rotation for exit animation
+                    screenshot.style.setProperty('--exit-rotate', `${Math.random() > 0.5 ? '' : '-'}${10 + Math.random() * 15}deg`);
+                    
+                    setTimeout(() => {
+                        if (screenshot.parentNode) {
+                            screenshot.parentNode.removeChild(screenshot);
+                            // Also remove from the active array
+                            const index = activeScreenshots.indexOf(screenshot);
+                            if (index > -1) {
+                                activeScreenshots.splice(index, 1);
+                            }
+                        }
+                    }, 1200); // Match this with the CSS exit animation duration
+                }
+            }, 5000); // How long the screenshot remains visible
         }
         
         // Recreate screenshot container when window is resized

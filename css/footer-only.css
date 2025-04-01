@@ -376,7 +376,7 @@
 .footer-contact p {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     font-size: 0.95rem;
     color: var(--text-muted);
     transition: var(--transition-fast);
@@ -409,6 +409,7 @@
     border-radius: 50%;
     color: var(--text-light);
     transition: var(--transition-fast);
+    text-decoration: none;
 }
 
 .social-icons a:hover {
