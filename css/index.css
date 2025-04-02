@@ -301,10 +301,10 @@ a:hover {
 /* Logistics Showcase Section Styles - Black & Red Theme */
 .logistics-showcase {
   position: relative;
-  min-height: 100vh;
+  min-height: 0vh;
   background-color: #0a0a0a;
   overflow: hidden;
-  padding: 120px 0 80px;
+  /* padding: 120px 0 80px; */
 }
 
 /* Background effect with animated gradient */
