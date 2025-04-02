@@ -181,7 +181,7 @@
 
 .btn-primary {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.4rem 0.6rem;
     background: linear-gradient(135deg, #ff3333, #ff0000);
     color: white;
     border: none;

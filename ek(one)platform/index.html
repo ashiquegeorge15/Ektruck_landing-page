@@ -591,6 +591,704 @@
             z-index: 9;
             opacity: 0.7;
         }
+        
+        /* Remove glowing effects from highlights */
+        .highlight, .highlight-text {
+            position: relative;
+            color: #ff3333 !important;
+            animation: none !important;
+            background: none !important;
+            text-shadow: none !important;
+        }
+        
+        .highlight::before, .highlight::after, 
+        .highlight-text::before, .highlight-text::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+            animation: none !important;
+            filter: none !important;
+        }
+        
+        .highlight .char {
+            animation: none !important;
+            text-shadow: none !important;
+        }
+        
+        /* Ensure the style overrides any animations */
+        @keyframes none {
+            0% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+
+        /* Updated Feature Icons to match Capability Icon Style */
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+            padding: 0.5rem 0;
+            justify-content: center;
+            align-items: stretch;
+        }
+        
+        .feature-card {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            flex: 0 0 calc(33.333% - 0.8rem);
+            max-width: calc(33.333% - 0.8rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 220px; /* Set fixed height for uniformity */
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff3333, transparent);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+            z-index: 0;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+        
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+            margin-left: auto;
+            margin-right: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon i {
+            font-size: 1.2rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+        
+        .feature-card:hover .feature-icon i {
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 0.85rem;
+            margin-bottom: var(--spacing-md);
+            color: #ff3333; /* Make title red */
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        
+        /* Responsive styles for features grid */
+        @media (max-width: 992px) {
+            .feature-card {
+                flex: 0 0 calc(50% - 0.8rem);
+                max-width: calc(50% - 0.8rem);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .feature-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* SOS Management Layout Styles */
+        .sos-content-container {
+            margin-top: 2rem;
+        }
+
+        .sos-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .sos-image-section {
+            flex: 0 0 40%;
+        }
+
+        .sos-main-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            /* border: 1px solid rgba(255, 51, 51, 0.3); */
+        }
+
+        .sos-features-section {
+            flex: 0 0 60%;
+        }
+
+        .sos-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .sos-feature {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .sos-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .sos-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .sos-feature-icon i {
+            font-size: 1.2rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .sos-feature:hover .sos-feature-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .sos-feature:hover .sos-feature-icon i {
+            color: white;
+        }
+
+        .sos-feature h4 {
+            font-size: 0.85rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .sos-feature p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Media Queries for Responsive Layout */
+        @media (max-width: 992px) {
+            .sos-layout {
+                flex-direction: column;
+            }
+            
+            .sos-image-section, 
+            .sos-features-section {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+            
+            .sos-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sos-features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Rating Management Layout Styles */
+        .rating-content-container {
+            margin-top: 2rem;
+        }
+
+        .rating-layout {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .rating-image-section {
+            flex: 0 0 40%;
+        }
+
+        .rating-main-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+           
+        }
+
+        .rating-features-section {
+            flex: 0 0 60%;
+        }
+
+        .rating-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .rating-feature {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .rating-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .rating-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .rating-feature-icon i {
+            font-size: 1.2rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .rating-feature:hover .rating-feature-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .rating-feature:hover .rating-feature-icon i {
+            color: white;
+        }
+
+        .rating-feature h4 {
+            font-size: 0.85rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating-feature p {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Media Queries for Responsive Layout */
+        @media (max-width: 992px) {
+            .rating-layout {
+                flex-direction: column;
+            }
+            
+            .rating-image-section, 
+            .rating-features-section {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+            
+            .rating-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .rating-features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Why Choose Section - Smaller Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .benefit-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-icon i {
+            font-size: 1rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .benefit-item:hover .benefit-icon i {
+            color: white;
+        }
+
+        .benefit-item h4 {
+            font-size: 0.8rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-item p {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+
+        /* Media Queries for Benefits Grid */
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Business Benefits - Smaller Grid */
+        .business-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .business-benefit-card {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+
+        .business-benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .benefit-card-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card-icon i {
+            font-size: 1rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .business-benefit-card:hover .benefit-card-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .business-benefit-card:hover .benefit-card-icon i {
+            color: white;
+        }
+
+        .business-benefit-card h4 {
+            font-size: 0.8rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .business-benefit-card p {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+
+        /* Remove the indicator since it's not needed for smaller cards */
+        .benefit-indicator {
+            display: none;
+        }
+
+        /* Media Queries for Business Benefits */
+        @media (max-width: 992px) {
+            .business-benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .business-benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Real-Time Market Indices Styles */
+        .indices-main-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+           
+        }
+
+        .indices-features-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .indices-feature {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.8rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex: 0 0 calc(25% - 0.75rem);
+            min-width: 160px;
+        }
+
+        .indices-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .indices-feature-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .indices-feature-icon i {
+            font-size: 1rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .indices-feature:hover .indices-feature-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .indices-feature:hover .indices-feature-icon i {
+            color: white;
+        }
+
+        .indices-feature h4 {
+            font-size: 0.8rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .indices-feature p {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+
+        /* Media Queries for Indices Features */
+        @media (max-width: 992px) {
+            .indices-features-row {
+                flex-wrap: wrap;
+            }
+            
+            .indices-feature {
+                flex: 0 0 calc(50% - 0.5rem);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .indices-feature {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Transparency Benefits Row Styles */
+        .transparency-benefits-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .transparency-benefit {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 0.8rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex: 0 0 calc(20% - 0.8rem);
+            min-width: 150px;
+        }
+
+        .transparency-benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.4);
+        }
+
+        .transparency-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .transparency-icon i {
+            font-size: 1rem;
+            color: #ff3333;
+            transition: all 0.3s ease;
+        }
+
+        .transparency-benefit:hover .transparency-icon {
+            background: linear-gradient(135deg, #ff3333, #cc0000);
+            transform: rotate(5deg);
+        }
+
+        .transparency-benefit:hover .transparency-icon i {
+            color: white;
+        }
+
+        .transparency-benefit h4 {
+            font-size: 0.8rem;
+            color: #ff3333;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .transparency-benefit p {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+        }
+
+        /* Media Queries for Transparency Benefits */
+        @media (max-width: 992px) {
+            .transparency-benefits-row {
+                flex-wrap: wrap;
+            }
+            
+            .transparency-benefit {
+                flex: 0 0 calc(50% - 0.5rem);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .transparency-benefit {
+                flex: 0 0 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -709,12 +1407,12 @@
           </h1>
           
           <p class="hero-description">
-            ek(one) is India's first unified trucking platform designed to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks with real-time visibility, digital payments, and AI-driven load matching.
+            ek is India's first unified trucking platform designed to empower small truck owners, brokers, and shippers by seamlessly managing spot market trucks with real-time visibility, digital payments, and AI-driven load matching.
           </p>
           
           <div class="hero-buttons">
             <a href="#" class="btn btn-primary">
-              Demo
+              Book a demo
               <span class="btn-shine"></span>
             </a>
 <!--             
@@ -731,7 +1429,7 @@
         <!-- Right side - your image -->
         <div class="hero-image">
           <div class="phone-mockup">
-            <div class="phone-notch"></div>
+            
             <div class="phone-button"></div>
             <div class="phone-screen">
               <div class="phone-images-container" id="phone-images-container">
@@ -813,8 +1511,8 @@
     <section class="logistics-showcase">
         <div class="container">
             <div class="showcase-content" data-aos="fade-up">
-                <h1>SAAS Based ERP platform for Management of Market Trucks</h1>
-                <p class="showcase-subtitle">Don't Worry about Reverse bidding.  Get the actual market rates for prevailing for the day. We empower you to do the business your way, digitally</p>
+                <h1>SAAS Based ERP platform for<br>management of market trucks</h1>
+                <p class="showcase-subtitle">Get the actual market rates for prevailing for the day. <br>  We empower you to do the business your way, digitally</p>
                 <div class="showcase-cta">
                     <a href="#get-started" class="btn btn-primary">Get Started</a>
                     <a href="#learn-more" class="btn btn-outline">Learn More</a>
@@ -880,7 +1578,7 @@
 
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Who Benefits from ek<span class="highlight-text">(one)</span>?</h2>
+                <h2><span class="highlight-text">Who benefits from ek?</span></h2>
                 <p class="section-subtitle">Empowering every stakeholder in the logistics ecosystem</p>
             </div>
 
@@ -1026,7 +1724,7 @@
                 <h3>Ready to Transform Your Logistics?</h3>
                 <p>Join India's largest digital trucking ecosystem and experience the future of transportation</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
                     <a href="#" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
@@ -1044,7 +1742,7 @@
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Key Features of <span class="highlight-text">ek(one)</span></h2>
+                <h2><span class="highlight-text">Key Features of ek</span></h2>
                 <p class="section-subtitle">Transforming logistics with cutting-edge technology and seamless integration</p>
             </div>
             
@@ -1139,113 +1837,68 @@
             
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>SOS <span class="highlight-text">Management</span></h2>
+                <h2><span class="highlight-text">SOS Management</span></h2>
                 <p class="section-subtitle">Immediate emergency response system for driver safety and incident management</p>
-                    </div>
+            </div>
                         
-            <div class="sos-how-it-works" data-aos="fade-up">
-                <h3>How It Works</h3>
-                <div class="sos-process-container">
-                    <div class="sos-process-visual">
-                        <div class="sos-button-animation">
-                            <div class="sos-button">
-                                <span>SOS</span>
-                    </div>
-                            <div class="pulse-rings">
-                                <div class="ring ring1"></div>
-                                <div class="ring ring2"></div>
-                                <div class="ring ring3"></div>
-                    </div>
-                    </div>
-                        <div class="sos-image-container">
-                            <div class="sos-image-placeholder" data-aos="fade-up">
-                                <!-- Image placeholder -->
-                                <div class="image-shine"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                    <div class="sos-features-grid">
-                    <!-- Feature 1 -->
-                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="100">
-                            <div class="sos-feature-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                            <div class="sos-feature-content">
-                                <h4>Instant SOS Trigger</h4>
-                                <p>Truck Owner/Drivers can activate the SOS button in case of an emergency, alerting the fleet manager/shipper instantly.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="200">
-                            <div class="sos-feature-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                            <div class="sos-feature-content">
-                                <h4>Live Location Tracking</h4>
-                                <p>Get real-time location updates of the distressed vehicle for quick assistance.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 3 -->
-                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="300">
-                            <div class="sos-feature-icon">
+            <div class="sos-content-container" data-aos="fade-up">
+                <div class="sos-layout">
+                    <!-- Features on the left -->
+                    <div class="sos-features-section">
+                        <div class="sos-features-grid">
+                            <!-- Feature 1 -->
+                            <div class="sos-feature" data-aos="fade-up" data-aos-delay="100">
+                                <div class="sos-feature-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="sos-feature-content">
+                                    <h4>Instant SOS Trigger</h4>
+                                    <p>Truck Owner/Drivers can activate the SOS button in case of an emergency, alerting the fleet manager/shipper instantly.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature 2 -->
+                            <div class="sos-feature" data-aos="fade-up" data-aos-delay="200">
+                                <div class="sos-feature-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="sos-feature-content">
+                                    <h4>Live Location Tracking</h4>
+                                    <p>Get real-time location updates of the distressed vehicle for quick assistance.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature 3 -->
+                            <div class="sos-feature" data-aos="fade-up" data-aos-delay="300">
+                                <div class="sos-feature-icon">
                                     <i class="fas fa-bell"></i>
-                        </div>
-                            <div class="sos-feature-content">
-                                <h4>Automated Alerts & Notifications</h4>
-                                <p>Immediate alerts are sent to fleet operators and emergency contacts via SMS, app notifications, and email.</p>
+                                </div>
+                                <div class="sos-feature-content">
+                                    <h4>Automated Alerts & Notifications</h4>
+                                    <p>Immediate alerts are sent to fleet operators and emergency contacts via SMS, app notifications, and email.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature 4 -->
+                            <div class="sos-feature" data-aos="fade-up" data-aos-delay="400">
+                                <div class="sos-feature-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <div class="sos-feature-content">
+                                    <h4>Incident Reporting & Analysis</h4>
+                                    <p>Log and analyze SOS incidents to improve safety measures and response efficiency.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Feature 4 -->
-                        <div class="sos-feature" data-aos="fade-up" data-aos-delay="400">
-                            <div class="sos-feature-icon">
-                                <i class="fas fa-clipboard-list"></i>
-                        </div>
-                            <div class="sos-feature-content">
-                                <h4>Incident Reporting & Analysis</h4>
-                                <p>Log and analyze SOS incidents to improve safety measures and response efficiency.</p>
-                        </div>
+                    <!-- SOS Image on the right -->
+                    <div class="sos-image-section">
+                        <img src="../assets/img/sos.png" alt="SOS Emergency System" class="sos-main-image">
                     </div>
                 </div>
             </div>
         </div>
-        
-            <div class="sos-why-choose" data-aos="fade-up">
-                <h3>Why Choose EkTruck SOS Management?</h3>
-                <div class="sos-benefits-container">
-                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="100">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headset"></i>
-        </div>
-                        <h4>24/7 Emergency Monitoring</h4>
-                        <p>Continuous support to handle any crisis.</p>
-        </div>
-        
-                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="200">
-                        <div class="benefit-icon">
-                            <i class="fas fa-cogs"></i>
-                                </div>
-                        <h4>Seamless Integration</h4>
-                        <p>Works with GPS tracking, geofencing, and vehicle health monitoring.</p>
-                        </div>
-                        
-                    <div class="sos-benefit" data-aos="fade-up" data-aos-delay="300">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
-                                </div>
-                        <h4>Driver Safety First</h4>
-                        <p>Ensures quick intervention in case of accidents, breakdowns, or security threats.</p>
-                            </div>
-                        </div>
-                        
-                <div class="sos-cta" data-aos="fade-up">
-                    <a href="#contact" class="btn btn-primary">Learn More About SOS <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                                </div>
-                            </div>
     </section>
 
     <!-- User Rating Management Section -->
@@ -1264,113 +1917,72 @@
                     
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>User <span class="highlight-text">Rating Management</span></h2>
+                <h2><span class="highlight-text">User Rating Management</span></h2>
                 <p class="section-subtitle">Two-Way Rating System: Building Trust & Transparency</p>
-                            </div>
+            </div>
                         
             <div class="rating-intro" data-aos="fade-up">
-                <p>At EkTruck, we believe in fostering a fair and transparent logistics ecosystem. Our Two-Way Rating System allows both truck owners and shippers to rate each other based on their experience, ensuring accountability and improved service quality.</p>
-                        </div>
+                <p>At ektruck, we believe in fostering a fair and transparent logistics ecosystem. Our Two-Way Rating System allows both truck owners and shippers to rate each other based on their experience, ensuring accountability and improved service quality.</p>
+            </div>
                         
-            <div class="rating-how-it-works" data-aos="fade-up">
-                <h3>How It Works</h3>
-                <div class="rating-process-container">
-                    <div class="rating-visualization">
-                        <div class="rating-image-placeholder" data-aos="fade-up">
-                            <!-- Image placeholder -->
-                            <div class="image-shine"></div>
+            <div class="rating-content-container" data-aos="fade-up">
+                <div class="rating-layout">
+                    <!-- Rating Image on the left -->
+                    <div class="rating-image-section">
+                        <img src="../assets/img/user rating.png" alt="User Rating System" class="rating-main-image">
+                    </div>
+                    
+                    <!-- Features on the right -->
+                    <div class="rating-features-section">
+                        <div class="rating-features-grid">
+                            <!-- Feature 1 -->
+                            <div class="rating-feature" data-aos="fade-up" data-aos-delay="100">
+                                <div class="rating-feature-icon">
+                                    <i class="fas fa-exchange-alt"></i>
                                 </div>
-                
-                        <div class="rating-animation">
-                            <div class="rating-stars">
-                                <div class="star star1"><i class="fas fa-star"></i></div>
-                                <div class="star star2"><i class="fas fa-star"></i></div>
-                                <div class="star star3"><i class="fas fa-star"></i></div>
-                                <div class="star star4"><i class="fas fa-star"></i></div>
-                                <div class="star star5"><i class="fas fa-star"></i></div>
+                                <div class="rating-feature-content">
+                                    <h4>Mutual Rating & Feedback</h4>
+                                    <p>After each completed trip, both the truck owner and the shipper can rate each other on key parameters such as reliability, communication, and professionalism.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature 2 -->
+                            <div class="rating-feature" data-aos="fade-up" data-aos-delay="200">
+                                <div class="rating-feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="rating-feature-content">
+                                    <h4>Verified Reviews</h4>
+                                    <p>Only users who have successfully completed a transaction can leave ratings, ensuring authenticity and credibility.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Feature 3 -->
+                            <div class="rating-feature" data-aos="fade-up" data-aos-delay="300">
+                                <div class="rating-feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="rating-feature-content">
+                                    <h4>Continuous Improvement</h4>
+                                    <p>Higher ratings help users build a strong reputation, while constructive feedback allows for service enhancements.</p>
+                                </div>
+                            </div>
+
+                             <!-- Feature 4 -->
+                             <div class="rating-feature" data-aos="fade-up" data-aos-delay="300">
+                                <div class="rating-feature-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="rating-feature-content">
+                                    <h4>Trust & Transparency</h4>
+                                    <p>Mutual ratings foster a transparent ecosystem, helping users make informed decisions and encouraging accountability in every transaction.</p>
                                 </div>
                             </div>
                         </div>
-                        
-                    <div class="rating-features-grid">
-                        <!-- Feature 1 -->
-                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="100">
-                            <div class="rating-feature-icon">
-                                <i class="fas fa-exchange-alt"></i>
-                                </div>
-                            <div class="rating-feature-content">
-                                <h4>Mutual Rating & Feedback</h4>
-                                <p>After each completed trip, both the truck owner and the shipper can rate each other on key parameters such as reliability, communication, and professionalism.</p>
-                                </div>
-                            </div>
-                    
-                        <!-- Feature 2 -->
-                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="200">
-                            <div class="rating-feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                        </div>
-                            <div class="rating-feature-content">
-                                <h4>Verified Reviews</h4>
-                                <p>Only users who have successfully completed a transaction can leave ratings, ensuring authenticity and credibility.</p>
-                                </div>
-                                </div>
-                    
-                    <!-- Feature 3 -->
-                        <div class="rating-feature" data-aos="fade-up" data-aos-delay="300">
-                            <div class="rating-feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                                </div>
-                            <div class="rating-feature-content">
-                                <h4>Continuous Improvement</h4>
-                                <p>Higher ratings help users build a strong reputation, while constructive feedback allows for service enhancements.</p>
-                                </div>
-                            </div>
-                                </div>
-                                </div>
-                            </div>
-        
-            <div class="rating-benefits" data-aos="fade-up">
-                <h3>Benefits of Two-Way Rating</h3>
-                <div class="benefits-container">
-                    <div class="benefit-group">
-                        <div class="benefit-card truck-owners" data-aos="fade-up" data-aos-delay="100">
-                            <div class="benefit-icon">
-                                <i class="fas fa-truck"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-                            <h4>For Truck Owners</h4>
-                            <p>Work with reliable shippers who offer fair payments and clear communication.</p>
-                            <div class="benefit-glow"></div>
-                        </div>
-                        
-                        <div class="benefit-card shippers" data-aos="fade-up" data-aos-delay="200">
-                            <div class="benefit-icon">
-                                <i class="fas fa-building"></i>
-                                </div>
-                            <h4>For Shippers</h4>
-                            <p>Partner with trustworthy truck owners who deliver on time and maintain vehicle standards.</p>
-                            <div class="benefit-glow"></div>
-                                </div>
-        
-                        <div class="benefit-card industry" data-aos="fade-up" data-aos-delay="300">
-                            <div class="benefit-icon">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h4>For the Industry</h4>
-                            <p>A transparent rating system encourages professionalism, safety, and efficiency.</p>
-                            <div class="benefit-glow"></div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                <div class="rating-conclusion" data-aos="fade-up">
-                    <p>At EkTruck, we empower our users to make informed decisions, ensuring trust, accountability, and better business relationships.</p>
-                                </div>
-                        
-                <div class="rating-cta" data-aos="fade-up">
-                    <a href="#contact" class="btn btn-primary">Learn More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                                </div>
-                            </div>
     </section>
 
     <!-- Why Choose ek(one) Section -->
@@ -1390,7 +2002,7 @@
                     
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Why Choose <span class="highlight-text">ek(one)?</span></h2>
+                <h2><span class="highlight-text">Why Choose ek?</span></h2>
                             </div>
                         
             <div class="benefits-grid">
@@ -1428,11 +2040,11 @@
                         </div>
             
             <div class="join-message" data-aos="fade-up">
-                <p>Join ek(one) and experience a smarter, faster, and more profitable way to manage spot market trucking in India.</p>
+                <p>Join ek and experience a smarter, faster, and more profitable way to manage spot market trucking in India.</p>
                                 </div>
                         
             <div class="business-benefits" data-aos="fade-up">
-                <h3>Benefits for Businesses</h3>
+                <h3><span class="highlight-text">Benefits for Businesses</span></h3>
                 <div class="business-benefits-grid">
                     <div class="business-benefit-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="benefit-card-icon">
@@ -1497,7 +2109,7 @@
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Real-Time <span class="highlight-text">Market Indices</span></h2>
+                <h2><span class="highlight-text">Real-Time Market Indices</span></h2>
                 <div class="section-subtitle">Driving Transparency & Efficiency</div>
                         </div>
                         
@@ -1509,127 +2121,116 @@
                 <div class="indices-visual" data-aos="fade-right">
                     <div class="indices-image-container">
                         <div class="indices-image-placeholder">
-                            <div class="image-shine"></div>
-                            <div class="market-chart-animation">
-                                <div class="chart-line"></div>
-                                <div class="chart-indicator"></div>
-                                <div class="data-point-pulse dp1"></div>
-                                <div class="data-point-pulse dp2"></div>
-                                <div class="data-point-pulse dp3"></div>
-                                </div>
-                            <!-- Image of market indices chart will be placed here -->
-                            <img src="../assets/market-indices.svg" alt="Real-Time Freight Rate Index" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            </div>
+                            <!-- Replace animation with mi.png image -->
+                            <img src="../assets/img/market-indices.png" alt="Real-Time Market Indices" class="indices-main-image">
                         </div>
-                                </div>
+                    </div>
+                </div>
                         
                 <div class="indices-content" data-aos="fade-left">
                     <div class="indices-how-it-works" data-aos="fade-up">
-                        <h3>How Real-Time Indices Work</h3>
-                        <div class="indices-features-grid">
+                        <h3><span class="highlight-text"></span>How Real-Time Indices Work</span></h3>
+                        <div class="indices-features-row">
+                            <!-- Feature 1 -->
                             <div class="indices-feature" data-aos="fade-up" data-aos-delay="100">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-database"></i>
                                 </div>
                                 <div class="indices-feature-content">
                                     <h4>AI-Powered Rate Benchmarking</h4>
-                                    <p>Uses live market data, historical trends, and predictive analytics to determine fair pricing.</p>
+                                    <p>Uses live market data and predictive analytics for fair pricing.</p>
+                                </div>
                             </div>
-                        </div>
                             
+                            <!-- Feature 2 -->
                             <div class="indices-feature" data-aos="fade-up" data-aos-delay="200">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-route"></i>
                                 </div>
                                 <div class="indices-feature-content">
                                     <h4>Demand-Supply Tracking</h4>
-                                    <p>Monitors truck availability and freight demand across different regions to reflect accurate pricing.</p>
+                                    <p>Monitors truck availability and freight demand for accurate pricing.</p>
                                 </div>
                             </div>
                 
+                            <!-- Feature 3 -->
                             <div class="indices-feature" data-aos="fade-up" data-aos-delay="300">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-truck-loading"></i>
-                        </div>
+                                </div>
                                 <div class="indices-feature-content">
                                     <h4>Cost Component Analysis</h4>
-                                    <p>Factors in fuel price fluctuations, toll charges, and operational expenses for real-time rate adjustments.</p>
+                                    <p>Factors in fuel prices and operational expenses for rate adjustments.</p>
                                 </div>
-                                </div>
+                            </div>
                 
+                            <!-- Feature 4 -->
                             <div class="indices-feature" data-aos="fade-up" data-aos-delay="400">
                                 <div class="indices-feature-icon">
                                     <i class="fa fa-calendar-alt"></i>
-                            </div>
+                                </div>
                                 <div class="indices-feature-content">
                                     <h4>Lane-Wise Rate Indexing</h4>
-                                    <p>Provides region-specific and route-specific freight indices, preventing price manipulation.</p>
-                        </div>
-                                </div>
-
-                            <!-- <div class="indices-feature" data-aos="fade-up" data-aos-delay="500">
-                                <div class="indices-feature-icon">
-                                    <i class="fa fa-exchange-alt"></i>
-                            </div>
-                                <div class="indices-feature-content">
-                                    <h4>Integration with Digital Trucking Platforms</h4>
-                                    <p>Real-time indices help automate negotiations and enable instant booking at fair prices.</p>
-                        </div>
-                                </div> -->
+                                    <p>Provides region-specific indices, preventing price manipulation.</p>
                                 </div>
                             </div>
-                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
                     <div class="indices-transparency" data-aos="fade-up">
-                        <h3>How Real-Time Market Indices Create Transparency</h3>
-                        <div class="transparency-benefits-grid">
+                        <h3><span class="highlight-text"></span>How Real-Time Market Indices Create Transparency</span></h3>
+                        <div class="transparency-benefits-row">
                             <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="100">
                                 <div class="transparency-icon">
                                     <i class="fa fa-handshake"></i>
-                        </div>
-                                <h4>Eliminates Rate Manipulation</h4>
-                                <p>Data-driven pricing prevents overcharging or under-pricing by brokers or middlemen.</p>
                                 </div>
+                                <h4>Eliminates Rate Manipulation</h4>
+                                <p>Prevents overcharging or under-pricing by brokers.</p>
+                            </div>
                 
                             <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="200">
                                 <div class="transparency-icon">
                                     <i class="fa fa-calculator"></i>
                                 </div>
                                 <h4>Empowers Small Truck Owners</h4>
-                                <p>Gives truckers real-time insights into competitive rates, ensuring fair earnings.</p>
+                                <p>Ensures fair earnings with competitive rate insights.</p>
                             </div>
                             
                             <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="300">
                                 <div class="transparency-icon">
                                     <i class="fa fa-balance-scale"></i>
-                        </div>
+                                </div>
                                 <h4>Enhances Shipper Confidence</h4>
-                                <p>Provides verified, market-driven rates, reducing uncertainties in freight costs.</p>
-                </div>
+                                <p>Provides verified, market-driven freight rates.</p>
+                            </div>
 
                             <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="400">
                                 <div class="transparency-icon">
                                     <i class="fa fa-bolt"></i>
-                        </div>
-                                <h4>Faster & Smarter Decision-Making</h4>
-                                <p>Instant rate visibility helps in quick load-booking and optimized fleet allocation.</p>
-                </div>
+                                </div>
+                                <h4>Faster Decision-Making</h4>
+                                <p>Enables quick load-booking and fleet optimization.</p>
+                            </div>
 
                             <div class="transparency-benefit" data-aos="fade-up" data-aos-delay="500">
                                 <div class="transparency-icon">
                                     <i class="fa fa-check-circle"></i>
+                                </div>
+                                <h4>Regulatory Compliance</h4>
+                                <p>Creates fair industry benchmarks for all stakeholders.</p>
+                            </div>
                         </div>
-                                <h4>Regulatory Compliance & Standardization</h4>
-                                <p>Helps in creating fair industry benchmarks, benefiting all stakeholders.</p>
-                </div>
-            </div>
-        </div>
+                    </div>
         
                     <div class="indices-conclusion" data-aos="fade-up">
                         <p>By leveraging real-time market indices, digital trucking platforms like ek(one) are transforming the spot trucking ecosystem, ensuring fair pricing, better negotiations, and enhanced operational efficiency for everyone.</p>
         </div>
                 
                     <div class="indices-cta" data-aos="fade-up">
-                        <a href="#contact" class="btn btn-primary">Learn More About Market Indices</a>
+                        <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
             </div>
                     </div>
@@ -2299,6 +2900,59 @@ function initMobileOptimizations() {
             }
         `;
         document.head.appendChild(style);
+    });
+</script>
+
+<!-- Add script to disable any highlight animations -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all highlight elements
+        const highlightElements = document.querySelectorAll('.highlight, .highlight-text');
+        
+        // Remove any animation-related styles
+        highlightElements.forEach(el => {
+            el.style.animation = 'none';
+            el.style.background = 'none';
+            el.style.textShadow = 'none';
+            
+            // Also assign a unique ID for targeting with CSS
+            if (!el.id) {
+                el.id = `highlight-${Math.random().toString(36).substr(2, 9)}`;
+            }
+            
+            // Find all child elements with class 'char'
+            const charElements = el.querySelectorAll('.char');
+            charElements.forEach(char => {
+                char.style.animation = 'none';
+                char.style.textShadow = 'none';
+            });
+        });
+        
+        // Force remove all animations with stronger CSS
+        const styleElem = document.createElement('style');
+        styleElem.textContent = `
+            .highlight, .highlight-text {
+                animation: none !important;
+                background: none !important;
+                text-shadow: none !important;
+                position: relative;
+                color: #ff3333 !important;
+            }
+            
+            .highlight::before, .highlight::after,
+            .highlight-text::before, .highlight-text::after {
+                content: none !important;
+                display: none !important;
+                animation: none !important;
+                background: none !important;
+            }
+            
+            .highlight .char {
+                animation: none !important;
+                text-shadow: none !important;
+            }
+        `;
+        document.head.appendChild(styleElem);
     });
 </script>
 

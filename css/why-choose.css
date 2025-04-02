@@ -174,7 +174,7 @@
 
 .benefit-item h4 {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -211,7 +211,7 @@
 
 .join-message p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     font-weight: 500;
 }
 
@@ -316,7 +316,7 @@
 
 .conclusion-message p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     font-weight: 500;
 }
@@ -475,7 +475,7 @@
 
 .market-indices-section .section-subtitle {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     margin-bottom: 15px;
     font-weight: 500;
 }
@@ -488,7 +488,7 @@
 
 .indices-intro p {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.6;
 }
 
@@ -518,7 +518,7 @@
     border-radius: 12px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 0, 0, 0.2);
+    
 }
 
 .indices-image-placeholder .image-shine {
@@ -606,7 +606,7 @@
 }
 
 .indices-how-it-works h3 {
-    color: #fff;
+    color: #ff0000;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
@@ -687,7 +687,7 @@
 }
 
 .indices-transparency h3 {
-    color: #fff;
+    color: #ff0000;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 40px;
@@ -767,7 +767,7 @@
 
 .transparency-benefit h4 {
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     margin-bottom: 15px;
     font-weight: 600;
     position: relative;
@@ -790,7 +790,7 @@
 
 .indices-conclusion p {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     font-weight: 500;
 }
@@ -802,7 +802,7 @@
 
 .indices-cta .btn {
     padding: 15px 35px;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     transition: all 0.3s ease;
 }
 
@@ -1007,7 +1007,7 @@
     .join-message p,
     .conclusion-message p,
     .indices-conclusion p {
-        font-size: 1.1rem;
+        font-size: 1.0rem;
     }
     
     .indices-image-placeholder {
