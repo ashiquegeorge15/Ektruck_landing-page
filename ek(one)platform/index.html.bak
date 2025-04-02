@@ -68,554 +68,9 @@
             height: 60px;
             background-color: rgba(255, 51, 51, 0.1);
         }
-        
-        /* Hero section styles */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            overflow: hidden;
-            background-color: #0a0a0a;
-            padding: 80px 0;
-            z-index: 1;
-        }
-        
-        .hero .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            z-index: 5;
-        }
-        
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-            padding-right: 40px;
-        }
-        
-        /* Additional phone mockup styles to ensure they are displayed */
-        .hero-image {
-            position: relative;
-            flex: 1;
-            max-width: 600px;
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            z-index: 5;
-            overflow: visible;
-            min-height: 600px;
-            perspective: 1000px;
-        }
-        
-        .phone-mockup {
-            position: absolute;
-    width: 150px;
-    height: 300px;
-    background: #111;
-    border-radius: 30px;
-    border: 8px solid #333;
-    overflow: hidden;
-    z-index: 10;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    left: auto;
-    right: -30px;
-    bottom: 120px;
-    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
-    animation: phoneFloat 5s ease-in-out infinite alternate;
-        }
-        
-        .phone-notch {
-            position: absolute;
-            width: 60%;
-            height: 20px;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #000;
-            border-radius: 0 0 15px 15px;
-            z-index: 2;
-        }
-        
-        .phone-button {
-            position: absolute;
-            width: 3px;
-            height: 40px;
-            top: 120px;
-            right: -9px;
-            background: #222;
-            border-radius: 3px;
-            z-index: 2;
-        }
-        
-        .phone-mockup::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                                      rgba(255,255,255,0.05) 0%, 
-                                      rgba(255,255,255,0) 60%);
-            z-index: 3;
-            pointer-events: none;
-        }
-        
-        .phone-screen {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .phone-images-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-        }
-        
-        .phone-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: translateY(100%);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            object-fit: cover;
-            object-position: center top;
-            filter: blur(1.2px); /* 20% blur effect */
-            pointer-events: none; /* Prevent direct interaction */
-            user-select: none; /* Prevent text selection */
-            -webkit-user-drag: none; /* Prevent dragging on Safari/Chrome */
-            -webkit-touch-callout: none; /* Prevent saving on iOS */
-        }
-        
-        /* Add grey overlay to make text less readable */
-        .phone-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(120, 120, 120, 0.3); /* More subtle grey overlay */
-            pointer-events: none;
-            z-index: 2;
-        }
-        
-        .phone-image.prev {
-            opacity: 0;
-            transform: translateY(-100%);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        
-        .phone-image.active {
-            opacity: 1;
-            transform: translateY(0);
-            z-index: 2;
-        }
-        
-        .phone-image.fly-out {
-            animation: flyOut 1s forwards;
-            z-index: 6;
-        }
-        
-        @keyframes flyOut {
-            0% {
-                transform: translate(0, 0) scale(1) rotate(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--fly-x, 100px), var(--fly-y, -100px)) scale(0.5) rotate(var(--fly-rotate, 10deg));
-                opacity: 0;
-            }
-        }
-        
-        @keyframes activeImagePulse {
-            0% {
-                filter: blur(0.3px) brightness(1.1);
-            }
-            100% {
-                filter: blur(0.5px) brightness(1.2);
-            }
-        }
-        
-        #flying-images-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 6;
-            display: none; /* Hidden as per request to remove animations */
-        }
-        
-        .flying-image {
-            position: absolute;
-            width: 220px;
-            height: 380px;
-            background-size: cover;
-            background-position: center top;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            filter: blur(0.5px) brightness(1.1);
-            transform: translate(-50%, -50%) rotateY(0deg) scale(0.8);
-            transition: opacity 0.15s ease;
-            will-change: transform, opacity;
-            overflow: hidden;
-            z-index: 100;
-            pointer-events: none;
-            transform-origin: center left;
-            backface-visibility: hidden;
-            /* Animation styles removed per request */
-            display: none;
-        }
-        
-        .flying-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(200, 200, 200, 0.25);
-            z-index: 1;
-            /* Animation styles removed per request */
-            display: none;
-        }
-        
-        .flying-image.visible {
-            opacity: 0.98;
-            animation: pageFlipAnimation 1.4s forwards cubic-bezier(0.4, 0, 0.2, 1);
-            /* Animation styles removed per request */
-            display: none;
-        }
-        
-        /* Page turning animation */
-        @keyframes pageFlipAnimation {
-            0% {
-                opacity: 0.95;
-                transform: translate(-50%, -50%) rotateY(0deg) scale(0.6);
-            }
-            50% {
-                opacity: 0.5;
-                transform: translate(-50%, -150%) rotateY(85deg) scale(0.8);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -250%) rotateY(180deg) scale(0.4);
-            }
-        }
-        
-        @keyframes phoneFloat {
-            0% {
-                transform: perspective(1000px) rotateY(-15deg) rotateX(5deg) translateY(0);
-            }
-            100% {
-                transform: perspective(1000px) rotateY(-15deg) rotateX(5deg) translateY(-20px);
-            }
-        }
-        
-        /* Hero background elements */
-        .hero-bg-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 51, 51, 0.1) 0%, rgba(10, 10, 10, 0.5) 70%);
-            z-index: 1;
-        }
-        
-        .grid-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 2;
-        }
-        
-        .floating-shape {
-            position: absolute;
-            background-color: rgba(255, 0, 0, 0.1);
-            border-radius: 50%;
-            z-index: 3;
-            animation: floatShape 15s ease-in-out infinite alternate;
-        }
-        
-        .shape1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            right: -100px;
-            background: radial-gradient(circle at center, rgba(255, 51, 51, 0.2) 0%, rgba(10, 10, 10, 0) 70%);
-        }
-        
-        .shape2 {
-            width: 200px;
-            height: 200px;
-            bottom: -50px;
-            left: -50px;
-            background: radial-gradient(circle at center, rgba(255, 51, 51, 0.15) 0%, rgba(10, 10, 10, 0) 70%);
-            animation-delay: -5s;
-        }
-        
-        .shape3 {
-            width: 150px;
-            height: 150px;
-            bottom: 100px;
-            right: 30%;
-            background: radial-gradient(circle at center, rgba(255, 51, 51, 0.1) 0%, rgba(10, 10, 10, 0) 70%);
-            animation-delay: -10s;
-        }
-        
-        @keyframes floatShape {
-            0% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-30px) scale(1.1);
-            }
-            100% {
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Add laptop mockup styles */
-        .laptop-mockup {
-            position: absolute;
-            width: 400px;
-            height: 250px;
-            right: auto;
-            left: 50%;
-            transform: perspective(1000px) rotateY(0deg) rotateX(-5deg) translateX(-50%);
-            bottom: 150px;
-            background: #111;
-            border-radius: 12px 12px 2px 2px;
-            border: 8px solid #333;
-            border-bottom-width: 15px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            z-index: 5; /* Lower z-index to put behind phone */
-            animation: laptopFloat 6s ease-in-out infinite alternate;
-            animation-delay: 0.5s;
-        }
-
-        .laptop-base {
-            position: absolute;
-            width: 460px;
-            height: 20px;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            border-radius: 2px 2px 6px 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .laptop-screen {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .laptop-screen::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom right, 
-                                       rgba(255, 255, 255, 0.05) 0%, 
-                                       rgba(255, 255, 255, 0.02) 50%, 
-                                       rgba(255, 255, 255, 0) 100%);
-            pointer-events: none;
-        }
-
-        .laptop-images-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #fff;
-        }
-
-        /* Update laptop images for zoom animation */
-        .laptop-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transform: scale(1.15);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-            object-fit: cover;
-            object-position: center top;
-            filter: blur(1.2px); /* 20% blur effect */
-            pointer-events: none; /* Prevent direct interaction */
-            user-select: none; /* Prevent text selection */
-            -webkit-user-drag: none; /* Prevent dragging on Safari/Chrome */
-            -webkit-touch-callout: none; /* Prevent saving on iOS */
-        }
-
-        .laptop-image.active {
-            opacity: 1;
-            transform: scale(1);
-            z-index: 2;
-        }
-
-        /* Responsive adjustments for laptop display */
-        @media (max-width: 1200px) {
-            .laptop-mockup {
-                width: 320px;
-                height: 200px;
-            }
-            
-            .laptop-base {
-                width: 380px;
-            }
-            
-            .phone-mockup {
-                right: -20px;
-                width: 180px;
-                height: 350px;
-                bottom: 90px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .laptop-mockup {
-                width: 280px;
-                height: 180px;
-                bottom: 130px;
-            }
-            
-            .laptop-base {
-                width: 330px;
-            }
-            
-            .phone-mockup {
-                right: -10px;
-                width: 160px;
-                height: 320px;
-                bottom: 80px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .laptop-mockup {
-                left: 50%;
-                transform: perspective(1000px) translateX(-50%);
-                width: 260px;
-                height: 170px;
-            }
-            
-            .phone-mockup {
-                right: 20px; /* Keep phone visible on medium screens */
-                width: 140px;
-                height: 280px;
-                bottom: 50px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .phone-mockup {
-                display: none; /* Hide phone only on very small screens */
-            }
-        }
-
-        @keyframes laptopFloat {
-            0% {
-                transform: perspective(1000px) rotateY(0deg) rotateX(-5deg) translateX(-50%) translateY(0);
-            }
-            100% {
-                transform: perspective(1000px) rotateY(0deg) rotateX(-5deg) translateX(-50%) translateY(-15px);
-            }
-        }
-
-        .phone-screen::after,
-        .laptop-screen::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, 
-                             rgba(255,255,255,0.05) 0%, 
-                             rgba(255,255,255,0) 60%);
-            pointer-events: none;
-            z-index: 10; /* Higher z-index to be above all images */
-        }
-
-        /* Anti-screenshot pattern for devices */
-        .protection-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: repeating-linear-gradient(
-                45deg,
-                rgba(200, 200, 200, 0.02) 0px,
-                rgba(200, 200, 200, 0.02) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            pointer-events: none;
-            z-index: 9;
-            opacity: 0.7;
-        }
     </style>
 </head>
 <body>
-    <!-- Force reflow to ensure phone mockup is displayed -->
-    <script>
-        window.onload = function() {
-            // Force reflow by accessing offsetHeight
-            const phoneElement = document.querySelector('.phone-mockup');
-            if (phoneElement) {
-                console.log("Phone mockup found, forcing reflow:", phoneElement.offsetHeight);
-                
-                // Make sure it's visible
-                phoneElement.style.display = 'block';
-                phoneElement.style.visibility = 'visible';
-                
-                // Force browser to recognize styles
-                setTimeout(function() {
-                    phoneElement.style.opacity = '1';
-                }, 100);
-            } else {
-                console.error("Phone mockup element not found");
-            }
-        };
-    </script>
-    
     <!-- Custom Cursor -->
     <div class="custom-cursor">
         <div class="cursor-dot"></div>
@@ -626,8 +81,8 @@
       <nav class="navbar">
         <div class="container nav-container">
             <div class="logo nav-logo">
-                <a href="../">
-                    <img src="../assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+                <a href="/">
+                    <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
                 </a>
             </div>
             
@@ -730,60 +185,43 @@
         
         <!-- Right side - your image -->
         <div class="hero-image">
-          <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <div class="phone-button"></div>
-            <div class="phone-screen">
-              <div class="phone-images-container" id="phone-images-container">
-                <!-- Add all images from slider2 -->
-                <img src="../assets/slider2/1.png" alt="App Screenshot 1" class="phone-image active" style="opacity: 1;" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/2.png" alt="App Screenshot 2" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/3.png" alt="App Screenshot 3" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/4.png" alt="App Screenshot 4" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/5.png" alt="App Screenshot 5" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/6.png" alt="App Screenshot 6" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/7.png" alt="App Screenshot 7" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/8.png" alt="App Screenshot 8" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/9.png" alt="App Screenshot 9" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/10.png" alt="App Screenshot 10" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/11.png" alt="App Screenshot 11" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/12.png" alt="App Screenshot 12" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/13.png" alt="App Screenshot 13" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/14.png" alt="App Screenshot 14" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/15.png" alt="App Screenshot 15" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/16.png" alt="App Screenshot 16" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/17.png" alt="App Screenshot 17" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/18.png" alt="App Screenshot 18" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/19.png" alt="App Screenshot 19" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/20.png" alt="App Screenshot 20" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/21.png" alt="App Screenshot 21" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider2/22.png" alt="App Screenshot 22" class="phone-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
+          <div class="phone-mockup-container">
+            <!-- Phone frame -->
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <!-- Container for the stacked images -->
+                <div class="stacked-images-container">
+                  <!-- Images will be loaded dynamically from the slider folder -->
+                  <div class="stacked-image" style="--index: 1;"><img src="/assets/slider2/1.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 2;"><img src="/assets/slider2/2.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 3;"><img src="/assets/slider2/3.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 4;"><img src="/assets/slider2/4.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 5;"><img src="/assets/slider2/5.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 6;"><img src="/assets/slider2/6.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 7;"><img src="/assets/slider2/7.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 8;"><img src="/assets/slider2/8.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 9;"><img src="/assets/slider2/9.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 10;"><img src="/assets/slider2/10.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 11;"><img src="/assets/slider2/11.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 12;"><img src="/assets/slider2/12.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 13;"><img src="/assets/slider2/13.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 14;"><img src="/assets/slider2/14.png" alt="App Screenshot"></div>
+                  <div class="stacked-image" style="--index: 15;"><img src="/assets/slider2/15.png" alt="App Screenshot"></div>
+                  
+                  
+
+                </div>
               </div>
-              <div class="protection-overlay"></div>
+              
+              <!-- Phone details like camera, speaker, etc. -->
+              <div class="phone-notch"></div>
+              <div class="phone-button"></div>
             </div>
-          </div>
-          <!-- Flying images container -->
-          <div id="flying-images-container" style="position: absolute; width: 100%; height: 100%; z-index: 6; display: none;"></div>
-          
-          <!-- Laptop mockup -->
-          <div class="laptop-mockup">
-            <div class="laptop-screen">
-              <div class="laptop-images-container" id="laptop-images-container">
-                <!-- Adding direct images from slider folder for laptop -->
-                <img src="../assets/slider/1.png" alt="Laptop Screenshot 1" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/2.png" alt="Laptop Screenshot 2" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/3.png" alt="Laptop Screenshot 3" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/4.png" alt="Laptop Screenshot 4" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/5.png" alt="Laptop Screenshot 5" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/6.png" alt="Laptop Screenshot 6" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/7.png" alt="Laptop Screenshot 7" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/8.png" alt="Laptop Screenshot 8" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/9.png" alt="Laptop Screenshot 9" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-                <img src="../assets/slider/10.png" alt="Laptop Screenshot 10" class="laptop-image" onerror="this.src='../assets/logo.png'; this.onerror=null;">
-              </div>
-              <div class="protection-overlay"></div>
+            
+            <!-- Flying images outside the phone -->
+            <div class="flying-images-container">
+              <!-- These will be dynamically created/animated with JS -->
             </div>
-            <div class="laptop-base"></div>
           </div>
         </div>
       </div>
@@ -2062,244 +1500,134 @@ function initMobileOptimizations() {
     });
 </script>
 
-<!-- Add flying phone images animation script -->
 <script>
-    // All animations removed per request
-</script>
-
-<!-- Add debugging script -->
-<script>
-    // Enhanced functionality for device mockups
-    window.addEventListener('load', function() {
-        console.clear();
-        console.log("=== MOCKUP DEVICES INITIALIZATION ===");
-        
-        // Check phone mockup element
-        const phoneMockup = document.querySelector('.phone-mockup');
-        const laptopMockup = document.querySelector('.laptop-mockup');
-        
-        if (phoneMockup) {
-            console.log("✅ Phone mockup found:", phoneMockup);
-            // Force phone mockup to be visible
-            phoneMockup.style.display = 'block';
-            phoneMockup.style.visibility = 'visible';
-            phoneMockup.style.opacity = '1';
-        } else {
-            console.error("❌ Phone mockup not found!");
-        }
-        
-        if (laptopMockup) {
-            console.log("✅ Laptop mockup found:", laptopMockup);
-        } else {
-            console.error("❌ Laptop mockup not found!");
-        }
-        
-        // Check phone images container
-        const phoneImagesContainer = document.getElementById('phone-images-container');
-        const laptopImagesContainer = document.getElementById('laptop-images-container');
-        
-        if (phoneImagesContainer) {
-            console.log("✅ Phone images container found:", phoneImagesContainer);
-        } else {
-            console.error("❌ Phone images container not found!");
-        }
-        
-        if (laptopImagesContainer) {
-            console.log("✅ Laptop images container found:", laptopImagesContainer);
-        } else {
-            console.error("❌ Laptop images container not found!");
-        }
-        
-        // Check phone images
-        const phoneImages = document.querySelectorAll('.phone-image');
-        console.log(`✅ Found ${phoneImages.length} phone images`);
-        
-        // Get laptop images directly
-        const laptopImages = document.querySelectorAll('.laptop-image');
-        console.log(`✅ Found ${laptopImages.length} laptop images`);
-        
-        // Make sure at least one image is visible on each device
-        if (phoneImages.length > 0) {
-            phoneImagesContainer.style.display = 'block';
-            phoneImages.forEach((img, idx) => {
-                if (idx === 0) {
-                    img.classList.add('active');
-                    img.style.opacity = '1';
-                    img.style.transform = 'translateY(0)';
-                } else {
-                    img.classList.remove('active', 'prev');
-                    img.style.opacity = '0';
-                    img.style.transform = 'translateY(100%)';
-                }
-            });
-            console.log("📌 Set first phone image to be visible");
-        }
-        
-        if (laptopImages.length > 0) {
-            laptopImages.forEach((img, idx) => {
-                if (idx === 0) {
-                    img.classList.add('active');
-                    img.style.opacity = '1';
-                    img.style.transform = 'scale(1)';
-                } else {
-                    img.classList.remove('active');
-                    img.style.opacity = '0';
-                    img.style.transform = 'scale(1.15)';
-                }
-            });
-            console.log("📌 Set first laptop image to be visible");
-        }
-        
-        // Image slideshow variables
-        let phoneIndex = 0;
-        let laptopIndex = 0;
-        let isAnimating = false;
-        
-        // Slideshow function
-        function nextSlide() {
-            if (isAnimating) return;
-            isAnimating = true;
-            
-            // Calculate indexes
-            let prevPhoneIndex = phoneIndex;
-            let prevLaptopIndex = laptopIndex;
-            
-            // Update phone images with slide up animation
-            if (phoneImages.length > 0) {
-                // Set the current active image to slide up
-                phoneImages[prevPhoneIndex].classList.remove('active');
-                phoneImages[prevPhoneIndex].classList.add('prev');
-                phoneImages[prevPhoneIndex].style.opacity = '0';
-                phoneImages[prevPhoneIndex].style.transform = 'translateY(-100%)';
-                
-                // Move to next phone image
-                phoneIndex = (phoneIndex + 1) % phoneImages.length;
-                
-                // Prepare next image to enter from below
-                phoneImages[phoneIndex].style.opacity = '0';
-                phoneImages[phoneIndex].style.transform = 'translateY(100%)';
-                
-                // Force layout calculation before animation
-                phoneImages[phoneIndex].offsetHeight;
-                
-                // Slide in the next image from bottom
-                phoneImages[phoneIndex].classList.add('active');
-                phoneImages[phoneIndex].style.opacity = '1';
-                phoneImages[phoneIndex].style.transform = 'translateY(0)';
-            }
-            
-            // Update laptop images with zoom animation
-            if (laptopImages.length > 0) {
-                // Fade out current image 
-                laptopImages[prevLaptopIndex].classList.remove('active');
-                laptopImages[prevLaptopIndex].style.opacity = '0';
-                // Let it zoom out as it fades
-                laptopImages[prevLaptopIndex].style.transform = 'scale(1.15)';
-                
-                // Move to next laptop image
-                laptopIndex = (laptopIndex + 1) % laptopImages.length;
-                
-                // Prepare next image in zoomed state
-                laptopImages[laptopIndex].style.opacity = '0';
-                laptopImages[laptopIndex].style.transform = 'scale(1.15)';
-                
-                // Force layout calculation
-                laptopImages[laptopIndex].offsetHeight;
-                
-                // Fade in and zoom to normal size
-                laptopImages[laptopIndex].classList.add('active');
-                laptopImages[laptopIndex].style.opacity = '1';
-                laptopImages[laptopIndex].style.transform = 'scale(1)';
-            }
-            
-            // Clear animation flag after transition completes
-            setTimeout(() => {
-                if (phoneImages.length > 0) {
-                    phoneImages[prevPhoneIndex].classList.remove('prev');
-                    phoneImages[prevPhoneIndex].style.transform = 'translateY(100%)';
-                }
-                isAnimating = false;
-            }, 600); // Increased to match longer laptop animation
-        }
-        
-        // Start slideshow
-        setInterval(nextSlide, 2000);
+  // Array of image paths from the slider folder
+  const sliderImages = [
+    '/assets/slider/1.png',
+    '/assets/slider/2.png',
+    '/assets/slider/3.png',
+    '/assets/slider/4.png',
+    '/assets/slider/5.png',
+    '/assets/slider/6.png',
+    '/assets/slider/7.png',
+    '/assets/slider/8.png',
+    '/assets/slider/9.png',
+    '/assets/slider/10.png',
+    '/assets/slider/11.png',
+    '/assets/slider/12.png',
+    '/assets/slider/13.png',
+    '/assets/slider/14.png',
+    '/assets/slider/15.png'
+  ];
+  
+  // Function to create a flying image
+  function createFlyingImage() {
+    const flyingImagesContainer = document.querySelector('.flying-images-container');
+    if (!flyingImagesContainer) return;
+    
+    // Create a new flying image element
+    const flyingImage = document.createElement('div');
+    flyingImage.className = 'flying-image';
+    
+    // Select a random image from the array
+    const randomImageIndex = Math.floor(Math.random() * sliderImages.length);
+    const imagePath = sliderImages[randomImageIndex];
+    
+    // Create an image element
+    const img = document.createElement('img');
+    img.src = imagePath;
+    img.alt = 'Flying App Screenshot';
+    
+    // Append the image to the flying image container
+    flyingImage.appendChild(img);
+    
+    // Set random position and animation variables
+    const randomX = (Math.random() * 200 - 100) + '%';
+    const randomY = (Math.random() * 200 - 100) + '%';
+    const randomRotate = (Math.random() * 40 - 20) + 'deg';
+    
+    flyingImage.style.setProperty('--fly-x', randomX);
+    flyingImage.style.setProperty('--fly-y', randomY);
+    flyingImage.style.setProperty('--rotate-deg', randomRotate);
+    
+    // Set initial position to center of the phone
+    const phoneFrame = document.querySelector('.phone-frame');
+    if (phoneFrame) {
+      const phoneBounds = phoneFrame.getBoundingClientRect();
+      flyingImage.style.top = '50%';
+      flyingImage.style.left = '50%';
+    }
+    
+    // Add the flying image to the container
+    flyingImagesContainer.appendChild(flyingImage);
+    
+    // Remove the element after animation completes
+    setTimeout(() => {
+      if (flyingImage.parentNode) {
+        flyingImage.parentNode.removeChild(flyingImage);
+      }
+    }, 4000); // Match this with the animation duration
+  }
+  
+  // Cycle through stacked images periodically
+  function cycleStackedImages() {
+    const stackedImages = document.querySelectorAll('.stacked-image');
+    if (stackedImages.length === 0) return;
+    
+    // Get the top image (index 1)
+    const topImage = document.querySelector('.stacked-image[style*="--index: 1"]');
+    if (!topImage) return;
+    
+    // Create a flying image when cycling
+    createFlyingImage();
+    
+    // Increase index of all images
+    stackedImages.forEach(img => {
+      const currentIndex = parseInt(img.style.getPropertyValue('--index'));
+      const newIndex = currentIndex === stackedImages.length ? 1 : currentIndex + 1;
+      img.style.setProperty('--index', newIndex);
     });
-</script>
-
-<!-- Add simple flying animation script -->
-<script>
-    // All animations removed per request
-</script>
-
-<!-- Add page-turning animation script -->
-<script>
-    // Animation removed per request
-</script>
-
-<!-- Add image protection script -->
-<script>
-    // Protection against copying, saving, or downloading images
-    document.addEventListener('DOMContentLoaded', function() {
-        // Prevent right-click context menu
-        document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-        
-        // Prevent drag and drop of images
-        document.addEventListener('dragstart', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-                return false;
-            }
-        });
-        
-        // Prevent keyboard shortcuts for saving
-        document.addEventListener('keydown', function(e) {
-            // Ctrl+S, Ctrl+P, Ctrl+Shift+S, Command+S
-            if ((e.ctrlKey || e.metaKey) && 
-                (e.keyCode === 83 || e.keyCode === 80)) {
-                if (document.activeElement.tagName === 'IMG') {
-                    e.preventDefault();
-                    return false;
-                }
-            }
-        });
-        
-        // Find all image containers
-        const phoneImagesContainer = document.getElementById('phone-images-container');
-        const laptopImagesContainer = document.getElementById('laptop-images-container');
-        
-        // Apply protection to containers
-        if (phoneImagesContainer) {
-            phoneImagesContainer.style.pointerEvents = 'none';
-            phoneImagesContainer.style.userSelect = 'none';
-            phoneImagesContainer.setAttribute('draggable', 'false');
-            phoneImagesContainer.style.webkitUserDrag = 'none';
+  }
+  
+  // Set up cycling of images every few seconds
+  let imageInterval;
+  
+  function startImageCycling() {
+    // Clear any existing interval
+    if (imageInterval) {
+      clearInterval(imageInterval);
+    }
+    
+    // Initial delay before starting
+    setTimeout(() => {
+      // First image fly out
+      createFlyingImage();
+      
+      // Set up interval for subsequent images
+      imageInterval = setInterval(() => {
+        cycleStackedImages();
+      }, 3000); // Cycle every 3 seconds
+    }, 1000); // Initial delay of 1 second
+  }
+  
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    startImageCycling();
+    
+    // Add hover effect - pause cycling when hovering over phone
+    const phoneFrame = document.querySelector('.phone-frame');
+    if (phoneFrame) {
+      phoneFrame.addEventListener('mouseenter', () => {
+        if (imageInterval) {
+          clearInterval(imageInterval);
         }
-        
-        if (laptopImagesContainer) {
-            laptopImagesContainer.style.pointerEvents = 'none';
-            laptopImagesContainer.style.userSelect = 'none';
-            laptopImagesContainer.setAttribute('draggable', 'false');
-            laptopImagesContainer.style.webkitUserDrag = 'none';
-        }
-        
-        // Add CSS to disable selection of images
-        const style = document.createElement('style');
-        style.textContent = `
-            img {
-                user-select: none !important;
-                -webkit-user-drag: none !important;
-                -webkit-touch-callout: none !important;
-                pointer-events: none !important;
-            }
-        `;
-        document.head.appendChild(style);
-    });
+      });
+      
+      phoneFrame.addEventListener('mouseleave', () => {
+        startImageCycling();
+      });
+    }
+  });
 </script>
 
 </body>

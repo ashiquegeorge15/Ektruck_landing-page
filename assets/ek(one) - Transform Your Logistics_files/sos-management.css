@@ -1,0 +1,498 @@
+/* SOS Management Section Styles */
+.sos-management-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: #0c0c0c;
+    color: #fff;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.sos-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.sos-grid-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+}
+
+.sos-management-section .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
+.sos-management-section .orb1 {
+    top: 10%;
+    right: 10%;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 0, 0, 0.2);
+    animation: float 12s ease-in-out infinite alternate;
+}
+
+.sos-management-section .orb2 {
+    bottom: 5%;
+    left: 5%;
+    width: 450px;
+    height: 450px;
+    background-color: rgba(255, 0, 0, 0.15);
+    animation: float 15s ease-in-out infinite;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 0, 0, 0.1);
+    opacity: 0.5;
+    animation: pulse 4s infinite;
+}
+
+.alert-waves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(255, 0, 0, 0.03) 70%);
+    opacity: 0;
+    animation: alertWave 6s infinite;
+}
+
+.sos-management-section .section-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+.sos-management-section .section-header h2 {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sos-management-section .highlight-text {
+    color: #FF0000;
+    font-weight: 700;
+}
+
+.sos-management-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.sos-how-it-works {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+}
+
+.sos-how-it-works h3 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sos-how-it-works h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.7), transparent);
+}
+
+.sos-process-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.sos-process-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.sos-button-animation {
+    position: relative;
+    margin-right: 50px;
+}
+
+.sos-button {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff3333, #cc0000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    animation: glow 2s infinite alternate;
+}
+
+.sos-button span {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.pulse-rings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.ring1 {
+    width: 120%;
+    height: 120%;
+    animation: pingRing 2s infinite;
+}
+
+.ring2 {
+    width: 150%;
+    height: 150%;
+    animation: pingRing 2s infinite 0.5s;
+}
+
+.ring3 {
+    width: 180%;
+    height: 180%;
+    animation: pingRing 2s infinite 1s;
+}
+
+.sos-image-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.sos-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: rgba(40, 40, 40, 0.6);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    background-image: url('../assets/sos-alerts.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 0, 0, 0.2), 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+.sos-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.sos-feature {
+    display: flex;
+    background: linear-gradient(145deg, rgba(40, 40, 40, 0.6), rgba(20, 20, 20, 0.8));
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.sos-feature:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);
+}
+
+.sos-feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff3333, #cc0000);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.sos-feature-icon i {
+    font-size: 22px;
+    color: #fff;
+}
+
+.sos-feature-content {
+    flex: 1;
+}
+
+.sos-feature h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sos-feature p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.sos-why-choose {
+    position: relative;
+    z-index: 1;
+}
+
+.sos-why-choose h3 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sos-why-choose h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.7), transparent);
+}
+
+.sos-benefits-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.sos-benefit {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.6), rgba(15, 15, 15, 0.8));
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.sos-benefit:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff3333, #cc0000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.benefit-icon i {
+    font-size: 28px;
+    color: #fff;
+}
+
+.sos-benefit h4 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.sos-benefit p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.sos-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sos-cta .btn {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+@keyframes alertWave {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+    }
+}
+
+@keyframes pingRing {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    20% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-15px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .sos-benefits-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sos-management-section {
+        padding: 70px 0;
+    }
+    
+    .sos-features-grid,
+    .sos-benefits-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .sos-process-visual {
+        flex-direction: column;
+    }
+    
+    .sos-button-animation {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .sos-management-section .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .sos-how-it-works h3,
+    .sos-why-choose h3 {
+        font-size: 1.8rem;
+    }
+} 
