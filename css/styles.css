@@ -10,6 +10,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* Add this at the top of your CSS file */
