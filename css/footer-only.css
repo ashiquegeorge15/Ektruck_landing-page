@@ -175,7 +175,7 @@
 }
 
 .company-description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.7;
     color: var(--text-muted);
     margin-bottom: 25px;
@@ -220,7 +220,7 @@
 }
 
 .transport-certification span {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
 }
 
@@ -250,7 +250,7 @@
 }
 
 .stat-value {
-    font-size: 1.6rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 5px;
@@ -266,7 +266,7 @@
 
 /* ======== Section Headings ======== */
 .footer-col h4 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-bottom: 25px;
     color: var(--text-light);
     position: relative;
@@ -327,7 +327,7 @@
     position: absolute;
     left: 0;
     top: 2px;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--primary-color);
     transition: var(--transition-fast);
 }

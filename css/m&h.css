@@ -46,6 +46,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
+    font-size: 2.5rem;
 }
 
 p {
@@ -74,7 +75,21 @@ a:hover {
 section {
     position: relative;
     padding: 6rem 0;
-    overflow: hidden;
+    overflow: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+section .container {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fix for AOS elements that might be hidden */
+[data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
 }
 
 .section-bg {
@@ -341,7 +356,7 @@ section {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: left;
     background-color: var(--primary-black);
     padding: 120px 0 80px;
     overflow: hidden;
@@ -378,8 +393,8 @@ section {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-gray);
+    font-size: 1.0rem;
+    color: white;
     margin-bottom: 2rem;
     animation: fadeInLeft 1s ease 0.4s both;
 }
@@ -559,6 +574,17 @@ section {
 .challenges-section {
     background-color: var(--secondary-black);
     position: relative;
+    overflow: visible;
+}
+
+.challenges-section .enhanced-glow,
+.challenges-section .enhanced-grid {
+    z-index: 0;
+}
+
+.challenges-section .container {
+    position: relative;
+    z-index: 5;
 }
 
 .challenges-grid {
@@ -566,7 +592,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
 
 .challenge-card {
@@ -579,6 +605,8 @@ section {
     overflow: hidden;
     z-index: 2;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .challenge-card::before {
@@ -631,324 +659,46 @@ section {
 .challenge-text {
     color: var(--text-gray);
     font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.challenge-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
     margin-bottom: 0;
 }
 
-/* Transform Section */
-.transform-section {
-    background-color: var(--primary-black);
+.challenge-list li {
     position: relative;
-}
-
-.transform-content {
-    position: relative;
-    z-index: 2;
-}
-
-.transform-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.transform-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.transform-subtitle {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
     color: var(--text-gray);
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 1rem auto 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-.feature-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 2.5rem;
-    border: 1px solid var(--card-border);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.feature-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, var(--card-hover));
-    transition: width 0.4s ease;
-    z-index: -1;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--card-hover-border);
-    box-shadow: var(--shadow-dark);
-}
-
-.feature-card:hover::after {
-    width: 100%;
-}
-
-.feature-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(230, 46, 46, 0.1);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: var(--primary-red);
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
 }
 
-.feature-card:hover .feature-icon {
-    transform: scale(1.1) rotate(-10deg);
-    background: rgba(230, 46, 46, 0.2);
-    box-shadow: 0 10px 20px rgba(230, 46, 46, 0.2);
+.challenge-list li:last-child {
+    margin-bottom: 0;
 }
 
-.feature-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.feature-text {
-    color: var(--text-gray);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-}
-
-.feature-link {
-    display: inline-flex;
-    align-items: center;
-    color: var(--primary-red);
-    font-weight: 600;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    margin-top: auto;
-}
-
-.feature-link i {
-    transition: transform 0.3s ease;
-}
-
-.feature-link:hover {
-    color: var(--primary-red-light);
-}
-
-.feature-link:hover i {
-    transform: translateX(5px);
-}
-
-/* Why Choose Us Section */
-.why-choose-section {
-    background-color: var(--secondary-black);
-    position: relative;
-}
-
-.why-choose-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    position: relative;
-    z-index: 2;
-}
-
-.why-choose-content {
-    flex: 1;
-}
-
-.why-choose-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-.why-choose-title::after {
+.challenge-list li:before {
     content: '';
     position: absolute;
-    bottom: -10px;
     left: 0;
-    width: 80px;
-    height: 4px;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
     background: var(--primary-red);
 }
 
-.why-choose-text {
-    color: var(--text-gray);
-    margin-bottom: 2.5rem;
-    font-size: 1.1rem;
+.challenge-card:hover .challenge-list li {
+    color: var(--text-light);
+    transform: translateX(5px);
 }
 
-.benefits-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-}
-
-.benefit-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.benefit-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(230, 46, 46, 0.1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    color: var(--primary-red);
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-.benefit-item:hover .benefit-icon {
-    transform: scale(1.1);
-    background: rgba(230, 46, 46, 0.2);
-}
-
-.benefit-content h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.benefit-content p {
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-.why-choose-visual {
-    flex: 1;
-    position: relative;
-}
-
-.why-choose-image {
-    width: 100%;
-    max-width: 550px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-dark);
-    transform: perspective(1000px) rotateY(5deg);
-    transition: all 0.5s ease;
-}
-
-.why-choose-image:hover {
-    transform: perspective(1000px) rotateY(0);
-}
-
-.why-choose-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.why-choose-image:hover img {
-    transform: scale(1.05);
-}
-
-/* CTA Section */
-.cta-section {
-    background-color: var(--primary-black);
-    position: relative;
-    text-align: center;
-}
-
-.cta-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(230, 46, 46, 0.1) 0%, transparent 70%);
-    z-index: 0;
-}
-
-.cta-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem;
-    background: rgba(26, 26, 26, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: var(--shadow-dark);
-}
-
-.cta-title {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.cta-text {
-    font-size: 1.1rem;
-    color: var(--text-gray);
-    margin-bottom: 2rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cta-glow {
-    position: relative;
-}
-
-.cta-glow::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: linear-gradient(45deg, var(--primary-red), transparent, var(--primary-red), transparent, var(--primary-red));
-    border-radius: 23px;
-    z-index: -1;
-    animation: glowPulse 3s infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        opacity: 0.5;
-        filter: blur(5px);
-    }
-    50% {
-        opacity: 0.8;
-        filter: blur(10px);
-    }
-}
-
-/* SVG Animations */
+/* Tilt Angle SVG Animation */
 .tilt-angle-svg {
     position: absolute;
     top: 20%;
@@ -1499,8 +1249,18 @@ section {
 
 /* Enhanced Feature Cards */
 .feature-card {
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: visible;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 5;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
 }
 
 .feature-card::before {
@@ -1751,4 +1511,52 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-red);
+}
+
+/* Transform Section */
+.transform-section {
+    background-color: var(--primary-black);
+    position: relative;
+    overflow: visible;
+}
+
+.transform-section .container {
+    position: relative;
+    z-index: 5;
+}
+
+.transform-section .enhanced-glow,
+.transform-section .enhanced-grid {
+    z-index: 0;
+}
+
+.transform-content {
+    position: relative;
+    z-index: 5;
+}
+
+.transform-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 5;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 5;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.feature-list, 
+.feature-list li {
+    opacity: 1 !important;
+    visibility: visible !important;
 }

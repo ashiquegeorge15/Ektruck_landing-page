@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/m&h.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -58,6 +58,133 @@
             transform: translate(-50%, -50%) scale(0);
             opacity: 0;
         }
+
+        /* Fix for the transform section */
+        .transform-section {
+            background-color: #0c0c0c;
+            position: relative;
+            overflow: visible;
+            opacity: 1 !important;
+            visibility: visible !important;
+            z-index: 2;
+            padding: 6rem 0;
+        }
+
+        .transform-section .container {
+            position: relative;
+            z-index: 10;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .transform-section .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .transform-section .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .transform-section .title-underline {
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e62e2e;
+            margin: 1rem auto;
+        }
+
+        .transform-section .section-header p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: rgba(26, 26, 26, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(230, 46, 46, 0.4);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(230, 46, 46, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #e62e2e;
+            margin-bottom: 2rem;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-text {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .feature-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #e62e2e;
+        }
     </style>
 </head>
 <body>
@@ -70,52 +197,55 @@
      <!-- Navigation -->
      <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
+            <div class="logo nav-logo">
+                <a href="/">
+                    <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+                </a>
             </div>
             
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
+                        <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="/managed-control-tower/" class="active">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
+                            <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                            <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                            <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                            <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                            <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                            <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                            <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                            <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
                         </div>
                     </li>
-                    </li>
+
                     <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link active">Industries <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipments/" class="active"> Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                           
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                            <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                            <a href="/mining&heavy-equipment/" class="dropdown-item active">Mining & Heavy Equipment</a>
+                            <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                            <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                            <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                            <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
                         </div>
                     </li>
+
                     <li class="nav-item">
                         <a href="/case-study/" class="nav-link">Case Studies</a>
                     </li>
+
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 
                 <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
+                    <a href="/login" class="btn btn-primary">Sign In</a>
                 </div>
             </div>
 
@@ -210,7 +340,7 @@
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2>Challenges in Mining & Heavy Equipment Transport</h2>
+                <h1>Challenges in Mining & Heavy Equipment Transport</h1>
                 <div class="title-underline"></div>
                 <p>The mining industry faces unique challenges that impact operational efficiency, safety, and maintenance costs.</p>
             </div>
@@ -221,6 +351,11 @@
                     </div>
                     <h3 class="challenge-title">Delays & Downtime</h3>
                     <p class="challenge-text">Equipment breakdowns and inefficient scheduling lead to production losses.</p>
+                    <ul class="challenge-list">
+                        <li>Unplanned equipment failures</li>
+                        <li>Scheduling conflicts</li>
+                        <li>Resource bottlenecks</li>
+                    </ul>
                 </div>
                 <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="challenge-icon">
@@ -228,6 +363,11 @@
                     </div>
                     <h3 class="challenge-title">High Fuel & Maintenance Costs</h3>
                     <p class="challenge-text">Unoptimized fuel usage and unexpected repairs increase expenses.</p>
+                    <ul class="challenge-list">
+                        <li>Fuel theft and wastage</li>
+                        <li>Inefficient routes</li>
+                        <li>Reactive maintenance</li>
+                    </ul>
                 </div>
                 <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="challenge-icon">
@@ -235,6 +375,11 @@
                     </div>
                     <h3 class="challenge-title">Remote Location Tracking</h3>
                     <p class="challenge-text">Mining sites are often in inaccessible areas with limited connectivity.</p>
+                    <ul class="challenge-list">
+                        <li>Signal loss in remote areas</li>
+                        <li>Limited visibility</li>
+                        <li>Communication barriers</li>
+                    </ul>
                 </div>
                 <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="challenge-icon">
@@ -242,6 +387,11 @@
                     </div>
                     <h3 class="challenge-title">Safety & Compliance Risks</h3>
                     <p class="challenge-text">Stringent safety regulations and hazardous conditions demand continuous monitoring.</p>
+                    <ul class="challenge-list">
+                        <li>Regulatory requirements</li>
+                        <li>Operator safety concerns</li>
+                        <li>Hazardous material handling</li>
+                    </ul>
                 </div>
                 <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="challenge-icon">
@@ -249,6 +399,11 @@
                     </div>
                     <h3 class="challenge-title">Tilt Angle Challenges for Shovels</h3>
                     <p class="challenge-text">Excessive tilt angles can cause instability, machine damage, and operational hazards.</p>
+                    <ul class="challenge-list">
+                        <li>Equipment instability</li>
+                        <li>Safety threshold monitoring</li>
+                        <li>Operator training gaps</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -274,31 +429,31 @@
     </section>
 
     <!-- Transform Section -->
-    <section class="transform-section">
+    <section class="transform-section" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important; background-color:#0c0c0c;">
         <!-- Enhanced Glow Effects -->
-        <div class="enhanced-glow">
+        <div class="enhanced-glow" style="z-index:1;">
             <div class="glow-red-large"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid"></div>
+        <div class="enhanced-grid" style="z-index:1;"></div>
         
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>How EkTruck Transforms Mining & Heavy Equipment Logistics</h2>
-                <div class="title-underline"></div>
-                <p>Our comprehensive IoT solutions deliver actionable insights to optimize performance, enhance safety, and reduce costs.</p>
+        <div class="container" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important;">
+            <div class="section-header" data-aos="fade-up" style="display:block !important; opacity:1 !important; visibility:visible !important; text-align:center; margin-bottom:3rem;">
+                <h2 style="color:#ffffff; font-size:2.5rem; margin-bottom:1rem;">How EkTruck Transforms Mining & Heavy Equipment Logistics</h2>
+                <div class="title-underline" style="display:block; width:80px; height:4px; background:#e62e2e; margin:1rem auto;"></div>
+                <p style="color:#9ca3af; font-size:1.1rem; max-width:800px; margin:0 auto;">Our comprehensive IoT solutions deliver actionable insights to optimize performance, enhance safety, and reduce costs.</p>
             </div>
-            <div class="transform-content features-grid">
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
+            <div class="transform-content features-grid" style="display:grid !important; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; opacity:1 !important; visibility:visible !important; z-index:10 !important; position:relative;">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100" style="display:flex !important; flex-direction:column; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:2rem; border:1px solid rgba(255,255,255,0.05);">
+                    <div class="feature-icon" style="width:80px; height:80px; background:rgba(230,46,46,0.1); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:2rem; color:#e62e2e; margin-bottom:2rem;">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <h3 class="feature-title">Real-Time Equipment & Fleet Tracking</h3>
-                    <p class="feature-text">Monitor mining trucks, excavators, and shovels with live GPS tracking.</p>
-                    <ul class="feature-list">
-                        <li>Real-time location updates</li>
-                        <li>Equipment utilization data</li>
-                        <li>Custom geofencing alerts</li>
+                    <h3 class="feature-title" style="font-size:1.4rem; margin-bottom:1rem; color:#ffffff;">Real-Time Equipment & Fleet Tracking</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.95rem; margin-bottom:1.5rem;">Monitor mining trucks, excavators, and shovels with live GPS tracking.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:1rem; display:block !important; opacity:1 !important; visibility:visible !important;">
+                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Real-time location updates</li>
+                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Equipment utilization data</li>
+                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Custom geofencing alerts</li>
                     </ul>
                 </div>
                 <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200">
@@ -397,68 +552,77 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-section">
+    <section class="why-choose-section" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important; background-color:#0c0c0c; position:relative; padding:6rem 0;">
         <!-- Enhanced Glow Effects -->
-        <div class="enhanced-glow">
+        <div class="enhanced-glow" style="z-index:1;">
             <div class="glow-red-small"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid"></div>
+        <div class="enhanced-grid" style="z-index:1; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3;"></div>
         
-        <div class="container">
-            <div class="why-choose-wrapper">
-                <div class="why-choose-content" data-aos="fade-right" data-aos-delay="100">
-                    <h2 class="why-choose-title">Why Choose EkTruck?</h2>
-                    <p class="why-choose-text">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
-                    <div class="benefits-list">
-                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="benefit-icon">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Tech-Driven Logistics</h4>
-                                <p>AI-powered insights for optimized operations.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="benefit-icon">
-                                <i class="fas fa-truck-monster"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Heavy-Duty Fleet Support</h4>
-                                <p>Designed for mining trucks, excavators, shovels, and construction equipment.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="benefit-icon">
-                                <i class="fas fa-satellite-dish"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Seamless Connectivity</h4>
-                                <p>Reliable tracking even in remote mining locations.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item" data-aos="fade-up" data-aos-delay="500">
-                            <div class="benefit-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Enhanced Safety & Compliance</h4>
-                                <p>Ensures operator safety and meets industry regulations.</p>
-                            </div>
-                        </div>
+        <!-- Red Accent Dot -->
+        <div style="position: absolute; width: 10px; height: 10px; background-color: #e62e2e; border-radius: 50%; left: 100px; top: 140px;"></div>
+        
+        <div class="container" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important; position:relative;">
+            <div style="text-align: left; margin-bottom: 3rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; color:#ffffff;">Why Choose EkTruck?</h2>
+                <p style="color:#9ca3af; font-size:1.1rem; max-width:800px; margin-bottom:3rem;">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
+            </div>
+            
+            <div class="benefits-grid" style="display:grid !important; grid-template-columns:repeat(2, 1fr); gap:3rem; opacity:1 !important; visibility:visible !important;">
+                <!-- Tech-Driven Logistics -->
+                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important; margin-bottom: 2rem;">
+                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Tech-Driven Logistics</h4>
+                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">AI-powered insights for optimized operations.</p>
                     </div>
                 </div>
-                <div class="why-choose-visual" data-aos="fade-left" data-aos-delay="200">
-                    <div class="why-choose-image tilt-effect">
-                        <img src="../img/mining-dashboard.jpg" alt="Mining Equipment Dashboard">
+                
+                <!-- Heavy-Duty Fleet Support -->
+                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important; margin-bottom: 2rem;">
+                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                        <i class="fas fa-truck-monster"></i>
+                    </div>
+                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Heavy-Duty Fleet Support</h4>
+                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Designed for mining trucks, excavators, shovels, and construction equipment.</p>
+                    </div>
+                </div>
+                
+                <!-- Seamless Connectivity -->
+                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important;">
+                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Seamless Connectivity</h4>
+                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Reliable tracking even in remote mining locations.</p>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Safety & Compliance -->
+                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important;">
+                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Enhanced Safety & Compliance</h4>
+                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Ensures operator safety and meets industry regulations.</p>
                     </div>
                 </div>
             </div>
+            
+            <!-- Dashboard Image Area -->
+            <div style="margin-top: 3rem; position: relative; z-index: 2; opacity:1 !important; visibility:visible !important;">
+                <img src="../assets/img/dashboard.png" alt="Mining Equipment Dashboard" style="width:100%; max-width:100%; height:auto; object-fit:cover; display:block; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.4);">
+            </div>
         </div>
 
-        <!-- Excavator SVG Animation -->
-        <svg class="excavator-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG animation in background -->
+        <svg class="excavator-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="position:absolute; bottom:5%; right:5%; width:350px; height:200px; opacity:0.15; pointer-events:none; z-index:1;">
             <g class="excavator-body">
                 <rect x="140" y="150" width="100" height="30" rx="3" fill="#444" />
                 <rect x="160" y="120" width="60" height="30" rx="3" fill="#333" />
@@ -478,29 +642,28 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" style="position: relative; background-color: #0c0c0c; padding: 6rem 0; margin: 0; overflow: hidden; z-index: 5;">
         <!-- Enhanced Glow Effects -->
-        <div class="enhanced-glow">
-            <div class="glow-red-large"></div>
-            <div class="glow-red-small"></div>
+        <div class="enhanced-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;">
+            <div class="glow-red-large" style="position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(230, 46, 46, 0.2) 0%, rgba(230, 46, 46, 0) 70%); top: -100px; right: -100px; filter: blur(50px);"></div>
+            <div class="glow-red-small" style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(230, 46, 46, 0.15) 0%, rgba(230, 46, 46, 0) 70%); bottom: -50px; left: 10%; filter: blur(40px);"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid"></div>
+        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
         
-        <div class="cta-bg"></div>
-        <div class="container">
-            <div class="cta-content glass-card" data-aos="fade-up">
-                <h2 class="cta-title" data-aos="fade-up" data-aos-delay="100">Ready to Optimize Your Mining Operations?</h2>
-                <p class="cta-text" data-aos="fade-up" data-aos-delay="200">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
-                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
-                    <a href="#" class="button primary-button cta-glow">Request a Demo <i class="fas fa-play-circle"></i></a>
-                    <a href="#" class="button outline-button">Download Case Study</a>
+        <div class="container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 20px; z-index: 10;">
+            <div class="cta-content glass-card" data-aos="fade-up" style="background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 4rem; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+                <h2 class="cta-title" data-aos="fade-up" data-aos-delay="100" style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 1.5rem; text-align: center;">Ready to Optimize Your Mining Operations?</h2>
+                <p class="cta-text" data-aos="fade-up" data-aos-delay="200" style="color: #9ca3af; font-size: 1.2rem; margin-bottom: 2.5rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="#" class="button primary-button cta-glow" style="display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 8px; background: #e62e2e; color: white; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; min-width: 180px;">Request a Demo <i class="fas fa-play-circle" style="margin-left: 10px;"></i></a>
+
                 </div>
             </div>
         </div>
 
         <!-- Mining Truck SVG Animation -->
-        <svg class="mining-truck-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+        <svg class="mining-truck-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; right: 5%; width: 400px; height: 200px; z-index: 2; opacity: 0.15;">
             <g class="truck-body">
                 <rect x="100" y="120" width="240" height="60" rx="10" fill="#e62e2e" />
                 <rect x="120" y="70" width="220" height="50" rx="5" fill="#444" class="truck-dump" />
@@ -576,6 +739,26 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Transport Stats -->
+            <div class="transport-stats">
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Mining Equipment Tracked</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">35%</span>
+                    <span class="stat-label">Fuel Efficiency</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">15%</span>
+                    <span class="stat-label">Maintenance Cost Reduction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">24/7</span>
+                    <span class="stat-label">Support</span>
                 </div>
             </div>
             
@@ -831,20 +1014,54 @@
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" onload="initAOS()"></script>
     <script src="../js/m&h.js"></script>
     
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
+        // Function to initialize AOS when script loads
+        function initAOS() {
+            // Initialize AOS with a shorter duration and no mirror to avoid conflicts
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true,
+                mirror: false,
+                disable: window.innerWidth < 768 // Disable on mobile for better performance
+            });
+            
+            // Force refresh AOS after a short delay to ensure all elements are properly initialized
+            setTimeout(function() {
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            }, 100);
+        }
         
-        // Custom cursor functionality
+        // Ensure transform section is visible on load
         document.addEventListener('DOMContentLoaded', function() {
+            // Force transform section and its contents to be visible
+            const transformSection = document.querySelector('.transform-section');
+            if (transformSection) {
+                transformSection.style.opacity = '1';
+                transformSection.style.visibility = 'visible';
+                
+                // Make header visible
+                const header = transformSection.querySelector('.section-header');
+                if (header) {
+                    header.style.opacity = '1';
+                    header.style.visibility = 'visible';
+                }
+                
+                // Make all feature cards visible
+                const featureCards = transformSection.querySelectorAll('.feature-card');
+                featureCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.visibility = 'visible';
+                    card.style.transform = 'none';
+                });
+            }
+            
+            // Custom cursor functionality
             const cursorDot = document.querySelector('.cursor-dot');
             const cursorCircle = document.querySelector('.cursor-circle');
             
@@ -885,6 +1102,191 @@
                 document.body.classList.remove('custom-cursor-enabled');
                 cursorDot.style.display = 'none';
                 cursorCircle.style.display = 'none';
+            }
+            
+            // Make sure all sections are visible regardless of AOS
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+            });
+            
+            // Refresh AOS to ensure all elements are properly initialized
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+    </script>
+
+    <!-- Additional script to ensure transform section is visible -->
+    <script>
+        // Force transform section to be visible on page load
+        window.addEventListener('load', function() {
+            // Target the transform section and its contents
+            const transformSection = document.querySelector('.transform-section');
+            if (transformSection) {
+                transformSection.style.display = 'block';
+                transformSection.style.opacity = '1';
+                transformSection.style.visibility = 'visible';
+                
+                // Force all sub-elements to be visible
+                const elements = transformSection.querySelectorAll('*');
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                });
+                
+                // Specifically target the container and header
+                const container = transformSection.querySelector('.container');
+                if (container) {
+                    container.style.display = 'block';
+                    container.style.opacity = '1';
+                    container.style.visibility = 'visible';
+                }
+                
+                // Specifically target feature cards
+                const featureCards = transformSection.querySelectorAll('.feature-card');
+                featureCards.forEach(card => {
+                    card.style.display = 'flex';
+                    card.style.opacity = '1';
+                    card.style.visibility = 'visible';
+                    
+                    // Make sure feature lists are visible
+                    const list = card.querySelector('.feature-list');
+                    if (list) {
+                        list.style.display = 'block';
+                        list.style.opacity = '1';
+                        list.style.visibility = 'visible';
+                        
+                        // Make sure list items are visible
+                        const items = list.querySelectorAll('li');
+                        items.forEach(item => {
+                            item.style.display = 'block';
+                            item.style.opacity = '1';
+                            item.style.visibility = 'visible';
+                        });
+                    }
+                });
+            }
+            
+            // If there are any AOS animations, refresh them
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+    </script>
+
+    <!-- Force CSS for transform section -->
+    <script>
+        (function() {
+            // Inject CSS for transform section
+            const style = document.createElement('style');
+            style.textContent = `
+                .transform-section {
+                    display: block !important;
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    z-index: 10 !important;
+                    background-color: #0c0c0c;
+                    position: relative;
+                }
+                
+                .transform-section .container,
+                .transform-section .section-header,
+                .transform-section .features-grid,
+                .transform-section .feature-card,
+                .transform-section .feature-list,
+                .transform-section .feature-list li {
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    display: block !important;
+                }
+                
+                .transform-section .feature-card {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    background: rgba(26, 26, 26, 0.95);
+                    border-radius: 12px;
+                    padding: 2rem;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                }
+                
+                .transform-section .features-grid {
+                    display: grid !important;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                }
+                
+                .transform-section .feature-list li:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.5rem;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: #e62e2e;
+                }
+            `;
+            document.head.appendChild(style);
+        })();
+    </script>
+
+    <!-- Script to ensure Why Choose EkTruck section is visible -->
+    <script>
+        // Ensure Why Choose EkTruck section is visible
+        window.addEventListener('load', function() {
+            // Target the Why Choose section and its contents
+            const whyChooseSection = document.querySelector('.why-choose-section');
+            if (whyChooseSection) {
+                whyChooseSection.style.display = 'block';
+                whyChooseSection.style.opacity = '1';
+                whyChooseSection.style.visibility = 'visible';
+                
+                // Force all sub-elements to be visible
+                const elements = whyChooseSection.querySelectorAll('*');
+                elements.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                });
+                
+                // Fix any specific elements that might still have visibility issues
+                const whyChooseWrapper = whyChooseSection.querySelector('.why-choose-wrapper');
+                if (whyChooseWrapper) {
+                    whyChooseWrapper.style.display = 'flex';
+                    whyChooseWrapper.style.opacity = '1';
+                    whyChooseWrapper.style.visibility = 'visible';
+                }
+                
+                // Fix benefit items
+                const benefitItems = whyChooseSection.querySelectorAll('.benefit-item');
+                benefitItems.forEach(item => {
+                    item.style.display = 'flex';
+                    item.style.opacity = '1';
+                    item.style.visibility = 'visible';
+                    
+                    // Fix benefit icons
+                    const icon = item.querySelector('.benefit-icon');
+                    if (icon) {
+                        icon.style.display = 'flex';
+                        icon.style.opacity = '1';
+                        icon.style.visibility = 'visible';
+                    }
+                });
+                
+                // Fix why-choose-visual and image
+                const visual = whyChooseSection.querySelector('.why-choose-visual');
+                if (visual) {
+                    visual.style.display = 'block';
+                    visual.style.opacity = '1';
+                    visual.style.visibility = 'visible';
+                    
+                    const image = visual.querySelector('.why-choose-image');
+                    if (image) {
+                        image.style.display = 'block';
+                        image.style.opacity = '1';
+                        image.style.visibility = 'visible';
+                    }
+                }
             }
         });
     </script>

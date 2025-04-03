@@ -212,27 +212,27 @@ function initEquipmentAnimations() {
 function initChallengeCards() {
     const cards = document.querySelectorAll('.challenge-card');
     
-    // Entrance animation
-    anime({
-        targets: '.challenge-card',
-        scale: [0.9, 1],
-        opacity: [0, 1],
-        delay: anime.stagger(200),
-        easing: 'easeOutSine',
-        duration: 800,
-        begin: function() {
-            cards.forEach(card => {
-                card.style.opacity = '0';
-            });
-        }
+    // Make sure all challenge cards are visible
+    cards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.transform = 'none'; 
     });
+    
+    // Make sure AOS is defined before trying to refresh
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
     
     // Add hover interactions
     cards.forEach(card => {
+        // Get the list items for animation
+        const listItems = card.querySelectorAll('.challenge-list li');
+        
         card.addEventListener('mouseenter', () => {
             anime({
                 targets: card,
-                scale: 1.05,
+                scale: 1.03,
                 boxShadow: '0 15px 30px rgba(0,0,0,0.3), 0 0 20px rgba(230,46,46,0.4)',
                 duration: 300,
                 easing: 'easeOutQuad'
@@ -244,10 +244,21 @@ function initChallengeCards() {
                 targets: icon,
                 rotate: '+=15',
                 scale: 1.2,
-                color: '#e62e2e',
                 duration: 300,
                 easing: 'easeOutQuad'
             });
+            
+            // Animate list items if they exist
+            if (listItems.length > 0) {
+                anime({
+                    targets: listItems,
+                    translateX: [0, 5],
+                    opacity: [0.7, 1],
+                    delay: anime.stagger(50),
+                    duration: 200,
+                    easing: 'easeOutSine'
+                });
+            }
         });
         
         card.addEventListener('mouseleave', () => {
@@ -265,10 +276,19 @@ function initChallengeCards() {
                 targets: icon,
                 rotate: '-=15',
                 scale: 1,
-                color: '#fff',
                 duration: 300,
                 easing: 'easeOutQuad'
             });
+            
+            // Reset list items if they exist
+            if (listItems.length > 0) {
+                anime({
+                    targets: listItems,
+                    translateX: 0,
+                    duration: 200,
+                    easing: 'easeOutSine'
+                });
+            }
         });
     });
 }
@@ -279,19 +299,11 @@ function initChallengeCards() {
 function initFeatureCards() {
     const featureCards = document.querySelectorAll('.feature-card');
     
-    // Entrance animation
-    anime({
-        targets: '.feature-card',
-        translateY: [40, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(200),
-        easing: 'easeOutQuad',
-        duration: 800,
-        begin: function() {
-            featureCards.forEach(card => {
-                card.style.opacity = '0';
-            });
-        }
+    // Make sure all feature cards are visible
+    featureCards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.transform = 'none';
     });
     
     // Add hover interactions for feature cards
@@ -328,24 +340,19 @@ function initFeatureCards() {
         });
     });
     
-    // Why choose us animation
-    anime({
-        targets: '.benefit-item',
-        translateX: [-30, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(150),
-        easing: 'easeOutSine',
-        duration: 800,
-        begin: function() {
-            document.querySelectorAll('.benefit-item').forEach(item => {
-                item.style.opacity = '0';
-            });
-        }
-    });
+    // Ensure section title is visible
+    const transformHeader = document.querySelector('.transform-section .section-header');
+    if (transformHeader) {
+        transformHeader.style.opacity = '1';
+        transformHeader.style.visibility = 'visible';
+    }
     
-    // Add hover effect to benefit items
+    // Why choose us animation - make sure elements are visible
     const benefitItems = document.querySelectorAll('.benefit-item');
     benefitItems.forEach(item => {
+        item.style.opacity = '1';
+        item.style.visibility = 'visible';
+        
         item.addEventListener('mouseenter', () => {
             const icon = item.querySelector('.benefit-icon i');
             anime({
@@ -371,14 +378,12 @@ function initFeatureCards() {
         });
     });
     
-    // CTA animation
-    anime({
-        targets: '.cta-content',
-        scale: [0.95, 1],
-        opacity: [0, 1],
-        easing: 'easeOutQuad',
-        duration: 1000
-    });
+    // CTA animation - ensure visibility
+    const ctaContent = document.querySelector('.cta-content');
+    if (ctaContent) {
+        ctaContent.style.opacity = '1';
+        ctaContent.style.visibility = 'visible';
+    }
     
     // Add glow effect to CTA button
     const ctaButton = document.querySelector('.cta-glow');
