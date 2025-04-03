@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infrastructure Projects - EkTruck Solutions</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/ip.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -72,55 +72,58 @@
         <div class="cursor-circle"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+     <!-- Navigation -->
+     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
+            <div class="logo nav-logo">
+                <a href="/">
+                    <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+                </a>
             </div>
             
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
+                        <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
+                            <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                            <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                            <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                            <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                            <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                            <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                            <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                            <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
                         </div>
                     </li>
-                    </li>
+
                     <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link active">Industries <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/" class="active">Infrastructure Projects</a>
-                    
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                            <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                            <a href="/mining&heavy-equipment/" class="dropdown-item active">Mining & Heavy Equipment</a>
+                            <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                            <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                            <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                            <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
                         </div>
                     </li>
+
                     <li class="nav-item">
                         <a href="/case-study/" class="nav-link">Case Studies</a>
                     </li>
+
                     <li class="nav-item">
                         <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 
                 <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
+                    <a href="/login" class="btn btn-primary">Sign In</a>
                 </div>
             </div>
 
@@ -175,10 +178,10 @@
                 </div>
                 
                 <h1 class="animated-heading" data-aos="fade-up" data-aos-delay="200">
-                    <span class="text-line text-reveal">INFRASTRUCTURE</span>
+                    <span class="text-line text-reveal">Infrastructure</span>
                     <span class="text-line">
-                        <span class="accent-text">PROJECTS</span>
-                        <span class="highlight">SOLUTIONS</span>
+                        <span class="accent-text">Projects</span>
+                        <span class="title-text">Solutions</span>
                     </span>
                 </h1>
                 
@@ -217,13 +220,7 @@
             <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
                 <div class="dashboard-mockup">
                     <div class="dashboard-content">
-                        <div class="construction-vehicle"></div>
-                        <div class="road-construction"></div>
-                        <div class="construction-dots"></div>
-                        <div class="floating-element red-square"></div>
-                        <div class="floating-element small-gear"></div>
-                        <div class="floating-element medium-gear"></div>
-                        <div class="dark-overlay"></div>
+                       <img src="/assets/images-web/ip.png" alt="Infrastructure Projects" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -267,7 +264,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading" data-aos="fade-up" data-aos-delay="100">
-                    Challenges in <span class="highlight-text">Infrastructure</span> Project Logistics
+                    <span class="highlight-text">Challenges in Infrastructure<br> Project Logistics</span>
                 </h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Meeting the unique challenges of complex infrastructure projects across both urban and remote locations</p>
             </div>
@@ -387,7 +384,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2 class="animated-heading" data-aos="fade-up" data-aos-delay="100">
-                    How EkTruck <span class="text-reveal highlight-text">Transforms</span> Infrastructure Fleet Management
+                    How ektruck <span class="text-reveal highlight-text">Transforms</span> Infrastructure Fleet Management
                 </h2>
                 <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Intelligent solutions for monitoring assets, optimizing operations and maximizing project ROI</p>
             </div>
