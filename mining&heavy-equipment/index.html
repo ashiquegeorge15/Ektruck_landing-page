@@ -59,6 +59,122 @@
             opacity: 0;
         }
 
+        /* Hero image hover effect */
+        .hero-image-container img {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        
+        .hero-image-container:hover img {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(230, 46, 46, 0.3);
+        }
+        
+        /* Ensure all enhanced-grid elements are centered */
+        .enhanced-grid {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin: 0 auto !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+            background-size: 30px 30px !important;
+            opacity: 0.3 !important;
+            z-index: 1 !important;
+        }
+        
+        /* Center all content */
+        .container {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 1200px !important;
+            width: 90% !important;
+            padding: 0 !important;
+        }
+        
+        /* Ensure all text is centered */
+        p, h1, h2, h3, h4, h5, h6 {
+            text-align: center !important;
+        }
+        
+        .section-header, 
+        .challenge-card, 
+        .feature-card, 
+        .benefit-item,
+        .transform-content,
+        .cta-content {
+            text-align: center !important;
+        }
+        
+        /* Center lists but keep their text left-aligned for readability */
+        ul.challenge-list,
+        ul.feature-list {
+            width: fit-content !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        .section-header h1, 
+        .section-header h2,
+        .section-header p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        .title-underline {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        .challenge-card,
+        .feature-card,
+        .benefit-icon {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        .challenge-list,
+        .feature-list {
+            display: inline-block !important;
+            text-align: left !important;
+        }
+        
+        .benefits-grid {
+            justify-content: center !important;
+        }
+        
+        .benefit-item {
+            justify-content: center !important;
+        }
+        
+        /* Responsive styles for hero section */
+        @media (max-width: 992px) {
+            .container.hero-container {
+                flex-direction: column;
+                padding-top: 2rem;
+            }
+            
+            .hero-content {
+                max-width: 100% !important;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-image-container {
+                max-width: 70% !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image-container {
+                max-width: 90% !important;
+            }
+        }
+
         /* Fix for the transform section */
         .transform-section {
             background-color: #0c0c0c;
@@ -185,6 +301,172 @@
             border-radius: 50%;
             background: #e62e2e;
         }
+
+        /* Force center any elements with explicit text-align */
+        [style*="text-align: left"] {
+            text-align: center !important;
+        }
+
+        .challenges-grid {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            gap: 1rem !important;
+            padding-bottom: 1.5rem !important;
+            justify-content: flex-start !important;
+            scrollbar-width: thin;
+            scrollbar-color: #e62e2e #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .challenges-grid {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                justify-content: flex-start !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            .challenge-card {
+                min-width: 180px !important;
+                max-width: 180px !important;
+            }
+        }
+
+        .features-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+        .features-grid::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        .features-grid::-webkit-scrollbar-thumb {
+            background-color: #e62e2e;
+            border-radius: 4px;
+        }
+
+        /* Standardize feature card styling */
+        .feature-card {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            height: 380px !important;
+            text-align: center !important;
+        }
+        
+        .feature-title {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.7rem !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+        
+        .feature-text {
+            font-size: 0.85rem !important;
+            margin-bottom: 1rem !important;
+            line-height: 1.3 !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+        
+        .feature-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin-top: 0.8rem !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+        
+        .feature-list li {
+            position: relative !important;
+            padding-left: 0 !important;
+            margin-bottom: 0.3rem !important;
+            font-size: 0.8rem !important;
+        }
+        
+        .feature-list li:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Standardize benefit item styling */
+        .benefits-grid {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            overflow-x: auto !important;
+            gap: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+            scrollbar-width: thin;
+            scrollbar-color: #e62e2e #1a1a1a;
+        }
+        
+        .benefits-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .benefits-grid::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 4px;
+        }
+        
+        .benefits-grid::-webkit-scrollbar-thumb {
+            background-color: #e62e2e;
+            border-radius: 4px;
+        }
+        
+        .benefit-item {
+            min-width: 240px !important;
+            max-width: 240px !important;
+            flex: 0 0 auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            background: rgba(26,26,26,0.5) !important;
+            border-radius: 12px !important;
+            padding: 1.5rem !important;
+            border: 1px solid rgba(255,255,255,0.05) !important;
+            height: 300px !important;
+            text-align: center !important;
+        }
+        
+        .benefit-icon {
+            width: 55px !important;
+            height: 55px !important;
+            background: #1a1a1a !important;
+            border-radius: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.5rem !important;
+            color: #e62e2e !important;
+            margin-bottom: 0.8rem !important;
+        }
+        
+        .benefit-content h4 {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.6rem !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+        
+        .benefit-content p {
+            color: #9ca3af !important;
+            font-size: 0.85rem !important;
+            margin-bottom: 0 !important;
+            line-height: 1.3 !important;
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-grid {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .benefit-item {
+                min-width: 200px !important;
+                max-width: 200px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -267,8 +549,8 @@
         <!-- Enhanced Grid Pattern -->
         <div class="enhanced-grid"></div>
         
-        <div class="container">
-            <div class="hero-content">
+        <div class="container hero-container" style="position: relative; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div class="hero-content" style="max-width: 55%; position: relative; z-index: 10;">
                 <div class="hero-badge" data-aos="fade-right" data-aos-delay="100">Mining & Heavy Equipment</div>
                 <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Optimize Your <span>Mining Operations</span> & Heavy Equipment Fleet</h1>
                 <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">The mining and heavy equipment industry depends on seamless logistics and advanced fleet management to transport raw materials, heavy machinery, and specialized equipment safely and efficiently. EkTruck provides IoT-driven fleet solutions to enhance safety, optimize performance, and reduce operational costs for mining companies and equipment transporters.</p>
@@ -276,6 +558,13 @@
                     <a href="#" class="button primary-button">Explore Solutions <i class="fas fa-long-arrow-alt-right"></i></a>
                     <a href="#" class="button outline-button">Contact Sales</a>
                 </div>
+                
+            </div>
+            
+            <!-- Add mining image to right side -->
+            <div class="hero-image-container" style="position: relative; max-width: 40%; z-index: 5; margin-left: auto;">
+                <img src="/assets/images-web/mining.png" alt="Mining Operations" style="width: 400px; height: 450px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: transform 0.5s ease;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(230, 46, 46, 0.15), transparent 70%); border-radius: 12px; pointer-events: none;"></div>
             </div>
         </div>
 
@@ -336,73 +625,86 @@
             <div class="glow-red-small"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid"></div>
+        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; right: 0; margin: 0 auto; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
         
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h1>Challenges in Mining & Heavy Equipment Transport</h1>
-                <div class="title-underline"></div>
-                <p>The mining industry faces unique challenges that impact operational efficiency, safety, and maintenance costs.</p>
+            <div class="section-header" data-aos="fade-up" style="text-align: center !important; max-width: 90%; margin: 0 auto 2rem auto;">
+                <h1 style="font-size: 2.5rem !important; margin-bottom: 1rem !important;">Challenges in Mining & Heavy Equipment Transport</h1>
+                <div class="title-underline" style="margin: 0 auto 1rem auto;"></div>
+                <p style="font-size: 1rem !important;">The mining industry faces unique challenges that impact operational efficiency, safety, and maintenance costs.</p>
             </div>
-            <div class="challenges-grid">
-                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="challenges-grid" style="display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; gap: 1rem !important; padding-bottom: 1.5rem !important; justify-content: flex-start !important; scrollbar-width: thin; scrollbar-color: #e62e2e #1a1a1a;">
+                <style>
+                    .challenges-grid::-webkit-scrollbar {
+                        height: 8px;
+                    }
+                    .challenges-grid::-webkit-scrollbar-track {
+                        background: #1a1a1a;
+                        border-radius: 4px;
+                    }
+                    .challenges-grid::-webkit-scrollbar-thumb {
+                        background-color: #e62e2e;
+                        border-radius: 4px;
+                    }
+                </style>
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="100" style="min-width: 220px !important; max-width: 220px !important; flex: 0 0 auto !important; padding: 1.5rem !important; height: auto !important;">
                     <div class="challenge-icon">
                         <i class="fas fa-hourglass-half"></i>
                     </div>
-                    <h3 class="challenge-title">Delays & Downtime</h3>
-                    <p class="challenge-text">Equipment breakdowns and inefficient scheduling lead to production losses.</p>
-                    <ul class="challenge-list">
-                        <li>Unplanned equipment failures</li>
-                        <li>Scheduling conflicts</li>
-                        <li>Resource bottlenecks</li>
+                    <h3 class="challenge-title" style="font-size: 1.1rem !important; margin-bottom: 0.5rem !important;">Delays & Downtime</h3>
+                    <p class="challenge-text" style="font-size: 0.85rem !important; margin-bottom: 0.8rem !important; line-height: 1.3 !important;">Equipment breakdowns and inefficient scheduling lead to production losses.</p>
+                    <ul class="challenge-list" style="margin-top: 0 !important; padding-left: 0.5rem !important;">
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Unplanned equipment failures</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Scheduling conflicts</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0 !important; padding-left: 1rem !important;">Resource bottlenecks</li>
                     </ul>
                 </div>
-                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="200" style="min-width: 220px !important; max-width: 220px !important; flex: 0 0 auto !important; padding: 1.5rem !important; height: auto !important;">
                     <div class="challenge-icon">
                         <i class="fas fa-gas-pump"></i>
                     </div>
-                    <h3 class="challenge-title">High Fuel & Maintenance Costs</h3>
-                    <p class="challenge-text">Unoptimized fuel usage and unexpected repairs increase expenses.</p>
-                    <ul class="challenge-list">
-                        <li>Fuel theft and wastage</li>
-                        <li>Inefficient routes</li>
-                        <li>Reactive maintenance</li>
+                    <h3 class="challenge-title" style="font-size: 1.1rem !important; margin-bottom: 0.5rem !important;">High Fuel & Maintenance Costs</h3>
+                    <p class="challenge-text" style="font-size: 0.85rem !important; margin-bottom: 0.8rem !important; line-height: 1.3 !important;">Unoptimized fuel usage and unexpected repairs increase expenses.</p>
+                    <ul class="challenge-list" style="margin-top: 0 !important; padding-left: 0.5rem !important;">
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Fuel theft and wastage</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Inefficient routes</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0 !important; padding-left: 1rem !important;">Reactive maintenance</li>
                     </ul>
                 </div>
-                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="300" style="min-width: 220px !important; max-width: 220px !important; flex: 0 0 auto !important; padding: 1.5rem !important; height: auto !important;">
                     <div class="challenge-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3 class="challenge-title">Remote Location Tracking</h3>
-                    <p class="challenge-text">Mining sites are often in inaccessible areas with limited connectivity.</p>
-                    <ul class="challenge-list">
-                        <li>Signal loss in remote areas</li>
-                        <li>Limited visibility</li>
-                        <li>Communication barriers</li>
+                    <h3 class="challenge-title" style="font-size: 1.1rem !important; margin-bottom: 0.5rem !important;">Remote Location Tracking</h3>
+                    <p class="challenge-text" style="font-size: 0.85rem !important; margin-bottom: 0.8rem !important; line-height: 1.3 !important;">Mining sites are often in inaccessible areas with limited connectivity.</p>
+                    <ul class="challenge-list" style="margin-top: 0 !important; padding-left: 0.5rem !important;">
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Signal loss in remote areas</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Limited visibility</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0 !important; padding-left: 1rem !important;">Communication barriers</li>
                     </ul>
                 </div>
-                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="400" style="min-width: 220px !important; max-width: 220px !important; flex: 0 0 auto !important; padding: 1.5rem !important; height: auto !important;">
                     <div class="challenge-icon">
                         <i class="fas fa-hard-hat"></i>
                     </div>
-                    <h3 class="challenge-title">Safety & Compliance Risks</h3>
-                    <p class="challenge-text">Stringent safety regulations and hazardous conditions demand continuous monitoring.</p>
-                    <ul class="challenge-list">
-                        <li>Regulatory requirements</li>
-                        <li>Operator safety concerns</li>
-                        <li>Hazardous material handling</li>
+                    <h3 class="challenge-title" style="font-size: 1.1rem !important; margin-bottom: 0.5rem !important;">Safety & Compliance Risks</h3>
+                    <p class="challenge-text" style="font-size: 0.85rem !important; margin-bottom: 0.8rem !important; line-height: 1.3 !important;">Stringent safety regulations and hazardous conditions demand continuous monitoring.</p>
+                    <ul class="challenge-list" style="margin-top: 0 !important; padding-left: 0.5rem !important;">
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Regulatory requirements</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Operator safety concerns</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0 !important; padding-left: 1rem !important;">Hazardous material handling</li>
                     </ul>
                 </div>
-                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="challenge-card glass-card" data-aos="fade-up" data-aos-delay="500" style="min-width: 220px !important; max-width: 220px !important; flex: 0 0 auto !important; padding: 1.5rem !important; height: auto !important;">
                     <div class="challenge-icon">
                         <i class="fas fa-angle-double-up"></i>
                     </div>
-                    <h3 class="challenge-title">Tilt Angle Challenges for Shovels</h3>
-                    <p class="challenge-text">Excessive tilt angles can cause instability, machine damage, and operational hazards.</p>
-                    <ul class="challenge-list">
-                        <li>Equipment instability</li>
-                        <li>Safety threshold monitoring</li>
-                        <li>Operator training gaps</li>
+                    <h3 class="challenge-title" style="font-size: 1.1rem !important; margin-bottom: 0.5rem !important;">Tilt Angle Challenges</h3>
+                    <p class="challenge-text" style="font-size: 0.85rem !important; margin-bottom: 0.8rem !important; line-height: 1.3 !important;">Excessive tilt angles cause instability, machine damage, and operational hazards.</p>
+                    <ul class="challenge-list" style="margin-top: 0 !important; padding-left: 0.5rem !important;">
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Equipment instability</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0.3rem !important; padding-left: 1rem !important;">Safety threshold monitoring</li>
+                        <li style="font-size: 0.8rem !important; margin-bottom: 0 !important; padding-left: 1rem !important;">Operator training gaps</li>
                     </ul>
                 </div>
             </div>
@@ -435,97 +737,118 @@
             <div class="glow-red-large"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid" style="z-index:1;"></div>
+        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; right: 0; margin: 0 auto; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
         
         <div class="container" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important;">
             <div class="section-header" data-aos="fade-up" style="display:block !important; opacity:1 !important; visibility:visible !important; text-align:center; margin-bottom:3rem;">
-                <h2 style="color:#ffffff; font-size:2.5rem; margin-bottom:1rem;">How EkTruck Transforms Mining & Heavy Equipment Logistics</h2>
+                <h2 style="color:#ffffff; font-size:2.5rem; margin-bottom:1rem;">How <span style="color: #e62e2e;">ektruck</span> transforms mining & heavy equipment logistics</h2>
                 <div class="title-underline" style="display:block; width:80px; height:4px; background:#e62e2e; margin:1rem auto;"></div>
                 <p style="color:#9ca3af; font-size:1.1rem; max-width:800px; margin:0 auto;">Our comprehensive IoT solutions deliver actionable insights to optimize performance, enhance safety, and reduce costs.</p>
             </div>
-            <div class="transform-content features-grid" style="display:grid !important; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; opacity:1 !important; visibility:visible !important; z-index:10 !important; position:relative;">
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100" style="display:flex !important; flex-direction:column; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:2rem; border:1px solid rgba(255,255,255,0.05);">
-                    <div class="feature-icon" style="width:80px; height:80px; background:rgba(230,46,46,0.1); border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:2rem; color:#e62e2e; margin-bottom:2rem;">
+            <div class="transform-content features-grid" style="display:flex !important; flex-wrap:nowrap !important; overflow-x:auto !important; gap:1.5rem !important; padding-bottom:1.5rem !important; scrollbar-width:thin; scrollbar-color:#e62e2e #1a1a1a; opacity:1 !important; visibility:visible !important; z-index:10 !important; position:relative;">
+                <style>
+                    .features-grid::-webkit-scrollbar {
+                        height: 8px;
+                    }
+                    .features-grid::-webkit-scrollbar-track {
+                        background: #1a1a1a;
+                        border-radius: 4px;
+                    }
+                    .features-grid::-webkit-scrollbar-thumb {
+                        background-color: #e62e2e;
+                        border-radius: 4px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .features-grid {
+                            padding-left: 1rem !important;
+                            padding-right: 1rem !important;
+                            -webkit-overflow-scrolling: touch;
+                        }
+                    }
+                </style>
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="100" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-truck"></i>
                     </div>
                     <h3 class="feature-title" style="font-size:1.4rem; margin-bottom:1rem; color:#ffffff;">Real-Time Equipment & Fleet Tracking</h3>
                     <p class="feature-text" style="color:#9ca3af; font-size:0.95rem; margin-bottom:1.5rem;">Monitor mining trucks, excavators, and shovels with live GPS tracking.</p>
-                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:1rem; display:block !important; opacity:1 !important; visibility:visible !important;">
-                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Real-time location updates</li>
-                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Equipment utilization data</li>
-                        <li style="position:relative; padding-left:1.5rem; margin-bottom:0.5rem; color:#9ca3af; font-size:0.9rem; display:block !important; opacity:1 !important; visibility:visible !important;">Custom geofencing alerts</li>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Detailed fuel consumption reports</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Fraud detection algorithms</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Cost-saving recommendations</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="200" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-route"></i>
                     </div>
-                    <h3 class="feature-title">Load & Route Optimization</h3>
-                    <p class="feature-text">Plan efficient routes for oversized and heavy cargo transport.</p>
-                    <ul class="feature-list">
-                        <li>Optimized route planning</li>
-                        <li>Traffic and weather integration</li>
-                        <li>Load distribution insights</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff; text-align:center; width:100%;">Real-Time Equipment & Fleet Tracking</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:1rem; line-height:1.3; text-align:center; width:100%;">Monitor mining trucks, excavators, and shovels with live GPS tracking.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem; width:100%; text-align:center !important;">
+                        <li style="position:relative; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Real-time location updates</li>
+                        <li style="position:relative; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Equipment utilization data</li>
+                        <li style="position:relative; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Custom geofencing alerts</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="300" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-gas-pump"></i>
                     </div>
-                    <h3 class="feature-title">Fuel & Expense Monitoring</h3>
-                    <p class="feature-text">Reduce fuel wastage and pilferage with real-time tracking.</p>
-                    <ul class="feature-list">
-                        <li>Detailed fuel consumption reports</li>
-                        <li>Fraud detection algorithms</li>
-                        <li>Cost-saving recommendations</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff;">Fuel & Expense Monitoring</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.8rem; line-height:1.3;">Reduce fuel wastage and pilferage with real-time tracking.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Detailed fuel consumption reports</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Fraud detection algorithms</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Cost-saving recommendations</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="400" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3 class="feature-title">Predictive Maintenance</h3>
-                    <p class="feature-text">Prevent unexpected breakdowns with advanced diagnostics.</p>
-                    <ul class="feature-list">
-                        <li>AI-based failure prediction</li>
-                        <li>Maintenance scheduling</li>
-                        <li>Equipment health monitoring</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff;">Predictive Maintenance</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.8rem; line-height:1.3;">Prevent unexpected breakdowns with advanced diagnostics.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">AI-based failure prediction</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Maintenance scheduling</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Equipment health monitoring</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="500" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                    <h3 class="feature-title">SOS & Safety Management</h3>
-                    <p class="feature-text">Instant emergency alerts for accidents, breakdowns, and hazardous conditions.</p>
-                    <ul class="feature-list">
-                        <li>Panic button integration</li>
-                        <li>Automated emergency response</li>
-                        <li>Incident reporting system</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff;">SOS & Safety Management</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.8rem; line-height:1.3;">Instant emergency alerts for accidents, breakdowns, and hazardous conditions.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Panic button integration</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Automated emergency response</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Incident reporting system</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="600" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h3 class="feature-title">Automated Compliance & Reporting</h3>
-                    <p class="feature-text">Ensure regulatory adherence with digital logs and automated reporting.</p>
-                    <ul class="feature-list">
-                        <li>Regulatory compliance checks</li>
-                        <li>Digital documentation</li>
-                        <li>Automated reporting system</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff;">Automated Compliance & Reporting</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.8rem; line-height:1.3;">Ensure regulatory adherence with digital logs and automated reporting.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Regulatory compliance checks</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Digital documentation</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Automated reporting system</li>
                     </ul>
                 </div>
-                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="700">
-                    <div class="feature-icon">
+                <div class="feature-card glass-card" data-aos="fade-up" data-aos-delay="700" style="min-width:260px !important; max-width:260px !important; flex:0 0 auto !important; display:flex !important; flex-direction:column; align-items:center !important; justify-content:flex-start !important; opacity:1 !important; visibility:visible !important; background:rgba(26,26,26,0.95); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:380px !important; text-align:center !important;">
+                    <div class="feature-icon" style="width:60px; height:60px; background:rgba(230,46,46,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; margin-bottom:1.2rem;">
                         <i class="fas fa-angle-double-up"></i>
                     </div>
-                    <h3 class="feature-title">Tilt Angle Monitoring for Shovels</h3>
-                    <p class="feature-text">Detect unsafe tilt angles in real time to prevent rollovers, improve machine longevity, and enhance operator safety.</p>
-                    <ul class="feature-list">
-                        <li>Real-time tilt angle monitoring</li>
-                        <li>Instant operator alerts</li>
-                        <li>Operational safety insights</li>
+                    <h3 class="feature-title" style="font-size:1.1rem; margin-bottom:0.7rem; color:#ffffff;">Tilt Angle Monitoring</h3>
+                    <p class="feature-text" style="color:#9ca3af; font-size:0.85rem; margin-bottom:0.8rem; line-height:1.3;">Detect unsafe tilt angles in real time to prevent rollovers and enhance safety.</p>
+                    <ul class="feature-list" style="list-style:none; padding:0; margin-top:0.8rem;">
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Real-time tilt angle monitoring</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0.3rem; color:#9ca3af; font-size:0.8rem;">Instant operator alerts</li>
+                        <li style="position:relative; padding-left:1.2rem; margin-bottom:0; color:#9ca3af; font-size:0.8rem;">Operational safety insights</li>
                     </ul>
                 </div>
             </div>
@@ -558,66 +881,71 @@
             <div class="glow-red-small"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid" style="z-index:1; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3;"></div>
+        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; right: 0; margin: 0 auto; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
         
-        <!-- Red Accent Dot -->
-        <div style="position: absolute; width: 10px; height: 10px; background-color: #e62e2e; border-radius: 50%; left: 100px; top: 140px;"></div>
+       
         
         <div class="container" style="display:block !important; opacity:1 !important; visibility:visible !important; z-index:10 !important; position:relative;">
-            <div style="text-align: left; margin-bottom: 3rem;">
-                <h2 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; color:#ffffff;">Why Choose EkTruck?</h2>
-                <p style="color:#9ca3af; font-size:1.1rem; max-width:800px; margin-bottom:3rem;">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
+            <div style="text-align: center !important; margin-bottom: 3rem;">
+                <h2 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; color:#ffffff;">Why Choose <span style="color: #e62e2e;">ektruck?</span></h2>
+                <p style="color:#9ca3af; font-size:1.1rem; max-width:800px; margin:0 auto 3rem auto; text-align:center;">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
             </div>
             
-            <div class="benefits-grid" style="display:grid !important; grid-template-columns:repeat(2, 1fr); gap:3rem; opacity:1 !important; visibility:visible !important;">
-                <!-- Tech-Driven Logistics -->
-                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important; margin-bottom: 2rem;">
-                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
-                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Tech-Driven Logistics</h4>
-                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">AI-powered insights for optimized operations.</p>
+            <!-- Content and Image container -->
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                <!-- Left side: Benefits Grid -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="benefits-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap:1.5rem !important; padding-bottom:1.5rem !important; opacity:1 !important; visibility:visible !important;">
+                        <!-- Tech-Driven Logistics -->
+                        <div class="benefit-item" style="display:flex !important; align-items:center !important; justify-content:center !important; flex-direction:column !important; gap:1rem; opacity:1 !important; visibility:visible !important; text-align:center !important; background:rgba(26,26,26,0.5); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:300px !important;">
+                            <div class="benefit-icon" style="width:55px; height:55px; background:#1a1a1a; border-radius:8px; display:flex !important; align-items:center; justify-content:center; font-size:1.5rem; color:#e62e2e; flex-shrink:0; margin-bottom:0.8rem;">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                                <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Tech-Driven Logistics</h4>
+                                <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">AI-powered insights for optimized operations.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Heavy-Duty Fleet Support -->
+                        <div class="benefit-item" style="display:flex !important; align-items:center !important; justify-content:center !important; flex-direction:column !important; gap:1rem; opacity:1 !important; visibility:visible !important; text-align:center !important; background:rgba(26,26,26,0.5); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:300px !important;">
+                            <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                                <i class="fas fa-truck-monster"></i>
+                            </div>
+                            <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                                <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Heavy-Duty Fleet Support</h4>
+                                <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Designed for mining trucks, excavators, shovels, and construction equipment.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Seamless Connectivity -->
+                        <div class="benefit-item" style="display:flex !important; align-items:center !important; justify-content:center !important; flex-direction:column !important; gap:1rem; opacity:1 !important; visibility:visible !important; text-align:center !important; background:rgba(26,26,26,0.5); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:300px !important;">
+                            <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                                <i class="fas fa-satellite-dish"></i>
+                            </div>
+                            <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                                <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Seamless Connectivity</h4>
+                                <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Reliable tracking even in remote mining locations.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Enhanced Safety & Compliance -->
+                        <div class="benefit-item" style="display:flex !important; align-items:center !important; justify-content:center !important; flex-direction:column !important; gap:1rem; opacity:1 !important; visibility:visible !important; text-align:center !important; background:rgba(26,26,26,0.5); border-radius:12px; padding:1.5rem; border:1px solid rgba(255,255,255,0.05); height:300px !important;">
+                            <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
+                                <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Enhanced Safety & Compliance</h4>
+                                <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Ensures operator safety and meets industry regulations.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Heavy-Duty Fleet Support -->
-                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important; margin-bottom: 2rem;">
-                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
-                        <i class="fas fa-truck-monster"></i>
-                    </div>
-                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
-                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Heavy-Duty Fleet Support</h4>
-                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Designed for mining trucks, excavators, shovels, and construction equipment.</p>
-                    </div>
+                <!-- Right side: Dashboard Image Area -->
+                <div style="flex: 1; min-width: 300px; position: relative; z-index: 2; opacity:1 !important; visibility:visible !important;">
+                    <img src="../assets/images-web/mining 2.png" alt="Mining Equipment Dashboard" style="width:100%; max-width:100%; height:auto; object-fit:cover; display:block; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.4);">
                 </div>
-                
-                <!-- Seamless Connectivity -->
-                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important;">
-                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
-                        <i class="fas fa-satellite-dish"></i>
-                    </div>
-                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
-                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Seamless Connectivity</h4>
-                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Reliable tracking even in remote mining locations.</p>
-                    </div>
-                </div>
-                
-                <!-- Enhanced Safety & Compliance -->
-                <div class="benefit-item" style="display:flex !important; align-items:flex-start; gap:1.5rem; opacity:1 !important; visibility:visible !important;">
-                    <div class="benefit-icon" style="width:70px; height:70px; background:#1a1a1a; border-radius:10px; display:flex !important; align-items:center; justify-content:center; font-size:1.8rem; color:#e62e2e; flex-shrink:0;">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="benefit-content" style="opacity:1 !important; visibility:visible !important;">
-                        <h4 style="font-size:1.3rem; margin-bottom:0.8rem; color:#ffffff; font-weight: 600;">Enhanced Safety & Compliance</h4>
-                        <p style="color:#9ca3af; font-size:1rem; margin-bottom:0;">Ensures operator safety and meets industry regulations.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Dashboard Image Area -->
-            <div style="margin-top: 3rem; position: relative; z-index: 2; opacity:1 !important; visibility:visible !important;">
-                <img src="../assets/img/dashboard.png" alt="Mining Equipment Dashboard" style="width:100%; max-width:100%; height:auto; object-fit:cover; display:block; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.4);">
             </div>
         </div>
 
@@ -649,12 +977,12 @@
             <div class="glow-red-small" style="position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(230, 46, 46, 0.15) 0%, rgba(230, 46, 46, 0) 70%); bottom: -50px; left: 10%; filter: blur(40px);"></div>
         </div>
         <!-- Enhanced Grid Pattern -->
-        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
+        <div class="enhanced-grid" style="position: absolute; top: 0; left: 0; right: 0; margin: 0 auto; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 30px 30px; opacity: 0.3; z-index: 1;"></div>
         
         <div class="container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 20px; z-index: 10;">
             <div class="cta-content glass-card" data-aos="fade-up" style="background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 4rem; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
                 <h2 class="cta-title" data-aos="fade-up" data-aos-delay="100" style="font-size: 3rem; font-weight: 700; color: white; margin-bottom: 1.5rem; text-align: center;">Ready to Optimize Your Mining Operations?</h2>
-                <p class="cta-text" data-aos="fade-up" data-aos-delay="200" style="color: #9ca3af; font-size: 1.2rem; margin-bottom: 2.5rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">At EkTruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
+                <p class="cta-text" data-aos="fade-up" data-aos-delay="200" style="color: #9ca3af; font-size: 1.2rem; margin-bottom: 2.5rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">At ektruck, we provide smart fleet solutions tailored for the mining and heavy equipment industry, ensuring efficiency, safety, and cost-effective operations.</p>
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                     <a href="#" class="button primary-button cta-glow" style="display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 8px; background: #e62e2e; color: white; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; min-width: 180px;">Request a Demo <i class="fas fa-play-circle" style="margin-left: 10px;"></i></a>
 
@@ -662,20 +990,7 @@
             </div>
         </div>
 
-        <!-- Mining Truck SVG Animation -->
-        <svg class="mining-truck-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="position: absolute; bottom: 0; right: 5%; width: 400px; height: 200px; z-index: 2; opacity: 0.15;">
-            <g class="truck-body">
-                <rect x="100" y="120" width="240" height="60" rx="10" fill="#e62e2e" />
-                <rect x="120" y="70" width="220" height="50" rx="5" fill="#444" class="truck-dump" />
-                <rect x="100" y="90" width="50" height="30" rx="5" fill="#333" />
-            </g>
-            <g class="truck-wheels">
-                <circle class="truck-wheel" cx="140" cy="180" r="15" fill="#222" />
-                <circle class="truck-wheel" cx="180" cy="180" r="15" fill="#222" />
-                <circle class="truck-wheel" cx="260" cy="180" r="15" fill="#222" />
-                <circle class="truck-wheel" cx="300" cy="180" r="15" fill="#222" />
-            </g>
-        </svg>
+      
     </section>
 
     <!-- Footer Section -->
@@ -742,25 +1057,7 @@
                 </div>
             </div>
             
-            <!-- Transport Stats -->
-            <div class="transport-stats">
-                <div class="stat-item">
-                    <span class="stat-value">500+</span>
-                    <span class="stat-label">Mining Equipment Tracked</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">35%</span>
-                    <span class="stat-label">Fuel Efficiency</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">15%</span>
-                    <span class="stat-label">Maintenance Cost Reduction</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">24/7</span>
-                    <span class="stat-label">Support</span>
-                </div>
-            </div>
+          
             
             <!-- Footer Bottom -->
             <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">

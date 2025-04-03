@@ -1040,7 +1040,7 @@ section .container {
     
     .hero-content {
         max-width: 100%;
-        text-align: center;
+        text-align: left;
     }
     
     .hero-buttons {
@@ -1151,6 +1151,10 @@ section .container {
     backdrop-filter: blur(10px) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 /* Enhanced Hero Section */
