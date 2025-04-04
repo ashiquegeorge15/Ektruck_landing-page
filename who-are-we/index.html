@@ -9,70 +9,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/who-are-we.css">
-    <link rel="stylesheet" href="/css/navbar-only.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer-only.css">
 </head>
 <body>
-
-      <!-- Navigation -->
-      <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="/"><img src="../assets/logo.png" alt="ek(one) Logo"></a>
-            </div>
-            
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
+ <!-- Navigation -->
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
         
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Careers</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
 
     <!-- Hero Section -->
@@ -84,138 +86,19 @@
                 <p>At EkTruck, we are on a mission to revolutionize the logistics industry by bringing clarity, efficiency, and fairness to all stakeholders. Whether you're a fleet owner, shipper, driver, business, or booking agent, our platform ensures seamless connectivity, real-time tracking, and hassle-free payments.</p>
             </div>
         </div>
-        
-        <!-- Swiper slider -->
-        <div class="hero-slider-container" data-aos="fade-left" data-aos-delay="300">
-            <div class="swiper hero-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="/assets/slider/logistics-1.jpg" alt="Logistics Innovation">
-                            </div>
-                            <div class="slide-overlay">
-                                <div class="slide-tag">Innovation</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="/assets/slider/logistics-2.jpg" alt="Transport Technology">
-                            </div>
-                            <div class="slide-overlay">
-                                <div class="slide-tag">Technology</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="/assets/slider/logistics-3.jpg" alt="Logistics Network">
-                            </div>
-                            <div class="slide-overlay">
-                                <div class="slide-tag">Network</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide">
-                        <div class="slide-content">
-                            <div class="slide-image">
-                                <img src="/assets/slider/logistics-4.jpg" alt="Logistics Solutions">
-                            </div>
-                            <div class="slide-overlay">
-                                <div class="slide-tag">Solutions</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Navigation arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
-                
-                <!-- 3D effect elements -->
-                <div class="slider-cube-shadow"></div>
+
+
+        <!-- Hero Image -->
+        <div class="hero-image-container" data-aos="fade-left" data-aos-delay="300">
+            <div class="hero-image">
+                <img src="/assets/images-web/wwr.png" alt="Who We Are - EkTruck" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
         </div>
-        
-        <div class="hero-background">
-            <div class="particles"></div>
-        </div>
+    
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission">
-        <div class="container">
-            <div class="vision-box" data-aos="fade-right">
-                <div class="icon-box">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <h2>Our Vision</h2>
-                <p>To build a logistics ecosystem where trust and transparency drive growth, efficiency, and profitability for everyone involved.</p>
-            </div>
-            <div class="mission-box" data-aos="fade-left">
-                <div class="icon-box">
-                    <i class="fas fa-bullseye"></i>
-                </div>
-                <h2>Our Mission</h2>
-                <ul class="mission-list">
-                    <li><i class="fas fa-check"></i> Digitize & Simplify Trucking – Eliminating inefficiencies with smart technology.</li>
-                    <li><i class="fas fa-check"></i> Ensure 100% Transparency – Fair pricing, real-time tracking, and data-driven decisions.</li>
-                    <li><i class="fas fa-check"></i> Empower Stakeholders – From fleet owners to drivers, we enable better earnings and smooth transactions.</li>
-                    <li><i class="fas fa-check"></i> Seamless & Secure Payments – Instant settlements, automated invoicing, and multiple payment options.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="values">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">What We Stand For</h2>
-            <div class="values-grid">
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Transparency First</h3>
-                    <p>No hidden costs, no middlemen exploitation, just clear, fair, and open transactions.</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="value-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Efficiency Through Technology</h3>
-                    <p>AI-driven insights, GPS tracking, and digital solutions for seamless operations.</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="value-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Empowering the Ecosystem</h3>
-                    <p>A platform designed for shippers, fleet owners, drivers, booking agents, and businesses to work in harmony.</p>
-                </div>
-                <div class="value-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="value-icon">
-                        <i class="fas fa-stream"></i>
-                    </div>
-                    <h3>Simplicity at Every Step</h3>
-                    <p>Easy onboarding, user-friendly interface, and streamlined logistics management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+    
 
     <!-- Team Section -->
     <section class="team">
@@ -652,6 +535,429 @@
             </div>
         </div>
     </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="our-purpose-section">
+        <div class="purpose-container">
+            <div class="section-header">
+                <h2 class="animated-title" data-aos="fade-up">Our Purpose</h2>
+                <div class="title-underline" data-aos="fade-up" data-aos-delay="200"></div>
+            </div>
+            
+            <div class="purpose-content">
+                <!-- Mission Column -->
+                <div class="purpose-column mission-column" data-aos="fade-right" data-aos-delay="300">
+                    <div class="purpose-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        
+                        <div class="card-points">
+                            <div class="mission-point">
+                                <div class="point-icon"><i class="fas fa-check-circle"></i></div>
+                                <p>Transform unorganized trucking industry at grass-root level by providing digital solutions.</p>
+                            </div>
+                            
+                            <div class="mission-point">
+                                <div class="point-icon"><i class="fas fa-check-circle"></i></div>
+                                <p>Empower users to Monitor, Maintain and Manage their business with simplified business tools.</p>
+                            </div>
+                            
+                            <div class="mission-point highlight-point">
+                                <div class="point-icon"><i class="fas fa-star"></i></div>
+                                <p>1st Real Time Xchange market indices</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-decoration">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="decoration-svg">
+                                <path fill="none" stroke="#e20000" stroke-width="1" d="M20,100 C20,50 50,20 100,20 C150,20 180,50 180,100 C180,150 150,180 100,180 C50,180 20,150 20,100 Z" opacity="0.2"></path>
+                                <path fill="none" stroke="#e20000" stroke-width="1.5" d="M40,100 C40,60 60,40 100,40 C140,40 160,60 160,100 C160,140 140,160 100,160 C60,160 40,140 40,100 Z" opacity="0.3"></path>
+                                <path fill="none" stroke="#e20000" stroke-width="2" d="M60,100 C60,70 70,60 100,60 C130,60 140,70 140,100 C140,130 130,140 100,140 C70,140 60,130 60,100 Z" opacity="0.4"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision Column -->
+                <div class="purpose-column vision-column" data-aos="fade-up" data-aos-delay="400">
+                    <div class="purpose-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        
+                        <div class="vision-content">
+                            <p>To digitally empower every stake-holder in the trucking eco-system.</p>
+                        </div>
+                        
+                        <div class="card-decoration">
+                            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" class="decoration-svg">
+                                <path d="M10,50 C10,50 50,90 100,50 C150,10 190,50 190,50" fill="none" stroke="#e20000" stroke-width="1" opacity="0.2"></path>
+                                <circle cx="100" cy="50" r="30" fill="none" stroke="#e20000" stroke-width="1.5" opacity="0.3"></circle>
+                                <circle cx="100" cy="50" r="15" fill="none" stroke="#e20000" stroke-width="2" opacity="0.4"></circle>
+                                <circle cx="100" cy="50" r="5" fill="#e20000" opacity="0.5"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Values Column -->
+                <div class="purpose-column values-column" data-aos="fade-left" data-aos-delay="500">
+                    <div class="purpose-card">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>What We Stand For</h3>
+                        
+                        <div class="values-content">
+                            <div class="value-item">
+                                <h4><i class="fas fa-check"></i> Transparency</h4>
+                                <p>No surprises. Everyone sees what matters—location, pricing, payment, and performance.</p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h4><i class="fas fa-check"></i> Simplicity</h4>
+                                <p>We cut the noise. Our platform is built to be intuitive and accessible, regardless of your role or tech comfort.</p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h4><i class="fas fa-check"></i> Trust Through Tech</h4>
+                                <p>EkTruck ensures that every transaction, trip, and update is verified and secure.</p>
+                            </div>
+                            
+                            <div class="value-item">
+                                <h4><i class="fas fa-check"></i> Inclusivity</h4>
+                                <p>Logistics isn't just about trucks—it's about people. We design for all roles in the chain, not just a select few.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-decoration">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="decoration-svg">
+                                <path d="M100,30 L130,90 L200,90 L140,130 L160,200 L100,160 L40,200 L60,130 L0,90 L70,90 Z" fill="none" stroke="#e20000" stroke-width="1" opacity="0.2"></path>
+                                <path d="M100,50 L120,90 L170,90 L130,115 L145,165 L100,135 L55,165 L70,115 L30,90 L80,90 Z" fill="none" stroke="#e20000" stroke-width="1.5" opacity="0.3"></path>
+                                <path d="M100,70 L110,90 L135,90 L115,105 L125,130 L100,115 L75,130 L85,105 L65,90 L90,90 Z" fill="none" stroke="#e20000" stroke-width="2" opacity="0.4"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+            
+            .our-purpose-section {
+                background-color: #0a0a0a;
+                background-image: 
+                    radial-gradient(circle at 10% 20%, rgba(226, 0, 0, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(226, 0, 0, 0.03) 0%, transparent 40%),
+                    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+                background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+                background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+                padding: 120px 0;
+                position: relative;
+                overflow: hidden;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .purpose-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            
+            .section-header {
+                text-align: center;
+                margin-bottom: 60px;
+                position: relative;
+            }
+            
+            .animated-title {
+                font-size: 3rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 20px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .title-underline {
+                height: 4px;
+                width: 80px;
+                background: linear-gradient(90deg, #e20000, #ff3333);
+                margin: 0 auto;
+                border-radius: 2px;
+            }
+            
+            .purpose-content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+            }
+            
+            .purpose-column {
+                flex: 1;
+                min-width: 300px;
+            }
+            
+            .purpose-card {
+                background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+                border-radius: 16px;
+                padding: 40px 30px;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                border: 1px solid rgba(226, 0, 0, 0.1);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                transition: all 0.4s ease;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .purpose-card:hover {
+                transform: translateY(-10px);
+                border-color: rgba(226, 0, 0, 0.3);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(226, 0, 0, 0.2);
+            }
+            
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #e20000, #ff3333);
+                border-radius: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 25px;
+                box-shadow: 0 10px 20px rgba(226, 0, 0, 0.3);
+                position: relative;
+                z-index: 2;
+            }
+            
+            .card-icon i {
+                color: #ffffff;
+                font-size: 28px;
+            }
+            
+            .purpose-card h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 25px;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .card-points {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .mission-point {
+                display: flex;
+                align-items: flex-start;
+                background: rgba(15, 15, 15, 0.5);
+                border-radius: 12px;
+                padding: 15px;
+                border-left: 3px solid #e20000;
+                transition: all 0.3s ease;
+            }
+            
+            .mission-point:hover {
+                background: rgba(25, 25, 25, 0.5);
+                transform: translateX(5px);
+            }
+            
+            .highlight-point {
+                background: linear-gradient(to right, rgba(226, 0, 0, 0.1), rgba(15, 15, 15, 0.5));
+                border-left: 3px solid #ff3333;
+            }
+            
+            .point-icon {
+                color: #e20000;
+                margin-right: 12px;
+                font-size: 1.2rem;
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+            
+            .mission-point p {
+                color: #cccccc;
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+            
+            .vision-content {
+                background: rgba(15, 15, 15, 0.5);
+                border-radius: 12px;
+                padding: 30px;
+                border-left: 3px solid #e20000;
+                margin-bottom: 20px;
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+                min-height: 200px;
+            }
+            
+            .vision-content p {
+                color: #ffffff;
+                font-size: 1.6rem;
+                font-weight: 600;
+                line-height: 1.5;
+                text-align: center;
+                margin: 0;
+            }
+            
+            .values-content {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .value-item {
+                background: rgba(15, 15, 15, 0.5);
+                border-radius: 12px;
+                padding: 15px;
+                border-left: 3px solid #e20000;
+                transition: all 0.3s ease;
+            }
+            
+            .value-item:hover {
+                background: rgba(25, 25, 25, 0.5);
+                transform: translateX(5px);
+            }
+            
+            .value-item h4 {
+                color: #ffffff;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin: 0 0 8px 0;
+                display: flex;
+                align-items: center;
+            }
+            
+            .value-item h4 i {
+                color: #e20000;
+                margin-right: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .value-item p {
+                color: #cccccc;
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+            
+            .card-decoration {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                width: 200px;
+                height: 200px;
+                opacity: 0.1;
+                z-index: 1;
+                pointer-events: none;
+            }
+            
+            .decoration-svg {
+                width: 100%;
+                height: 100%;
+            }
+            
+            /* Animation */
+            @keyframes float {
+                0%, 100% { transform: translate(0, 0); }
+                50% { transform: translate(0, -15px); }
+            }
+            
+            .card-decoration {
+                animation: float 8s ease-in-out infinite;
+            }
+            
+            /* Responsive styles */
+            @media (max-width: 1200px) {
+                .purpose-content {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .purpose-column {
+                    width: 100%;
+                    max-width: 600px;
+                }
+                
+                .vision-content p {
+                    font-size: 1.4rem;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .our-purpose-section {
+                    padding: 80px 0;
+                }
+                
+                .animated-title {
+                    font-size: 2.5rem;
+                }
+                
+                .purpose-card {
+                    padding: 30px 20px;
+                }
+                
+                .card-icon {
+                    width: 60px;
+                    height: 60px;
+                }
+                
+                .purpose-card h3 {
+                    font-size: 1.6rem;
+                }
+                
+                .vision-content {
+                    padding: 20px;
+                }
+                
+                .vision-content p {
+                    font-size: 1.2rem;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .animated-title {
+                    font-size: 2rem;
+                }
+                
+                .mission-point p, .value-item p {
+                    font-size: 0.9rem;
+                }
+                
+                .value-item h4 {
+                    font-size: 1rem;
+                }
+                
+                .card-decoration {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Team Section -->
 
       <!-- Footer Section -->
   <footer class="site-footer">
