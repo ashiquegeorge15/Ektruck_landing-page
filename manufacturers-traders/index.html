@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manufacturers & Traders - EkTruck Solutions</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/m&t.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,64 +15,208 @@
     <!-- Add Lottie Player library -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
-            </div>
+
+<style>
+    /* Custom cursor styles */
+    .custom-cursor {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+    }
+    
+    .cursor-dot {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: rgba(255, 51, 51, 0.9);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+        z-index: 10000;
+    }
+    
+    .cursor-circle {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(255, 51, 51, 0.5);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s ease;
+        z-index: 9999;
+    }
+    
+    a:hover ~ .custom-cursor .cursor-circle,
+    button:hover ~ .custom-cursor .cursor-circle,
+    .feature-card:hover ~ .custom-cursor .cursor-circle,
+    .solution-card:hover ~ .custom-cursor .cursor-circle,
+    .challenge-card:hover ~ .custom-cursor .cursor-circle,
+    .benefit-card:hover ~ .custom-cursor .cursor-circle,
+    .nav-link:hover ~ .custom-cursor .cursor-circle,
+    .btn:hover ~ .custom-cursor .cursor-circle,
+    .button:hover ~ .custom-cursor .cursor-circle,
+    a:hover .cursor-circle,
+    button:hover .cursor-circle,
+    .feature-card:hover .cursor-circle,
+    .solution-card:hover .cursor-circle,
+    .challenge-card:hover .cursor-circle,
+    .benefit-card:hover .cursor-circle,
+    .nav-link:hover .cursor-circle,
+    .btn:hover .cursor-circle,
+    .button:hover .cursor-circle {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 51, 51, 0.1);
+        border-color: rgba(255, 51, 51, 0.8);
+    }
+    
+    .cursor-dot.active, .cursor-circle.active {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    .cursor-circle.enlarged {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(255, 51, 51, 0.1);
+        border-color: rgba(255, 51, 51, 0.8);
+    }
+
+    /* Hide custom cursor on touch devices */
+    @media (hover: none) {
+        .custom-cursor {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    // Initialize custom cursor as soon as DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Custom cursor functionality
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        
+        if (cursorDot && cursorCircle) {
+            // Add class to body to indicate custom cursor is enabled
+            document.body.classList.add('custom-cursor-enabled');
             
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link active">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
+            // Function to update cursor position
+            const updateCursor = (e) => {
+                // Set the position of the dot to follow cursor exactly
+                cursorDot.style.top = `${e.clientY}px`;
+                cursorDot.style.left = `${e.clientX}px`;
                 
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
+                // Set the position of the circle to follow cursor with slight delay
+                cursorCircle.style.top = `${e.clientY}px`;
+                cursorCircle.style.left = `${e.clientX}px`;
+            };
+            
+            window.addEventListener('mousemove', updateCursor);
+            
+            // Hide cursor when mouse leaves window
+            document.addEventListener('mouseout', function(e) {
+                if (e.relatedTarget === null) {
+                    cursorDot.classList.add('active');
+                    cursorCircle.classList.add('active');
+                }
+            });
+            
+            // Show cursor when mouse enters window
+            document.addEventListener('mouseover', function() {
+                cursorDot.classList.remove('active');
+                cursorCircle.classList.remove('active');
+            });
+            
+            // Add hover effects for interactive elements
+            document.querySelectorAll('a, button, .feature-card, .solution-card, .challenge-card, .nav-link, .btn, .button, .benefit-card').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorCircle.classList.add('enlarged');
+                });
+                
+                el.addEventListener('mouseleave', () => {
+                    cursorCircle.classList.remove('enlarged');
+                });
+            });
+            
+            // Hide custom cursor on mobile/touch devices
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.remove('custom-cursor-enabled');
+                cursorDot.style.display = 'none';
+                cursorCircle.style.display = 'none';
+            }
+        }
+    });
+</script>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+<body>
+     <!-- Custom Cursor -->
+     <div class="custom-cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+     <!-- Navigation -->
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item active">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero-section" class="hero mt-hero">
@@ -567,8 +711,8 @@
             // Activate the correct nav item
             $('.navbar .nav-link').removeClass('active');
             $('.navbar .dropdown-item').removeClass('active');
-            $('#industries-dropdown').addClass('active');
-            $('#manufacturers-traders-link').addClass('active');
+            $('.navbar .nav-item.dropdown:nth-child(3) .nav-link').addClass('active');
+            $('.navbar .dropdown-menu a[href="/manufacturers-traders/"]').addClass('active');
             
             // Initialize AOS animations
             AOS.init({
@@ -578,112 +722,116 @@
                 mirror: false
             });
             
-            // Initialize particles.js
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": {
-                        "value": 40,
-                        "density": {
-                            "enable": true,
-                            "value_area": 1000
-                        }
-                    },
-                    "color": {
-                        "value": "#e31e24"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.2,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 2,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#e31e24",
-                        "opacity": 0.1,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 1,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
-                    "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
+            // Initialize particles.js for hero section
+            if (document.getElementById('hero-particles')) {
+                particlesJS("hero-particles", {
+                    "particles": {
+                        "number": {
+                            "value": 40,
+                            "density": {
+                                "enable": true,
+                                "value_area": 1000
                             }
                         },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
+                        "color": {
+                            "value": "#e31e24"
                         },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
                         },
-                        "push": {
-                            "particles_nb": 4
+                        "opacity": {
+                            "value": 0.2,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
                         },
-                        "remove": {
-                            "particles_nb": 2
+                        "size": {
+                            "value": 2,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#e31e24",
+                            "opacity": 0.1,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
                         }
-                    }
-                },
-                "retina_detect": false
-            });
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": false
+                });
+            }
+            
+            // Custom cursor functionality initialization handled in DOMContentLoaded event
             
             // Dropdown functionality
             $('.dropdown-toggle').on('click', function(e) {

@@ -230,6 +230,17 @@ a:hover {
     .challenges-grid, .solutions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .hero-container {
+        flex-direction: column;
+    }
+    .hero-content, .hero-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-image img {
+        margin: 30px auto 0;
+        max-width: 90%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -465,6 +476,13 @@ body {
     max-width: 100%;
     position: relative;
     z-index: 2;
+    transform: translateY(0);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
 /* Oil & Gas specific animations */
@@ -611,6 +629,11 @@ body {
 .solution-card p {
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+img-side {
+    /* max-width: 150px; */
+    height: 450px;
 }
 
 /* Benefits Section */
@@ -797,6 +820,89 @@ body {
     color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.5;
+}
+
+/* Transformation Section Styles */
+.transformation-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+}
+
+.transformation-grid-container {
+    flex: 1.5;
+    max-width: 65%;
+}
+
+.transformation-image {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.transformation-image img {
+    width: 100%;
+    max-width: 450px;
+   
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.transformation-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(229, 0, 0, 0.3);
+}
+
+/* Responsive styles for transformation section */
+@media (max-width: 1200px) {
+    .transformation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .transformation-container {
+        flex-direction: column;
+    }
+    
+    .transformation-grid-container {
+        max-width: 100%;
+        flex: 1;
+    }
+    
+    .transformation-image {
+        position: relative;
+        top: 0;
+        margin: 0 auto 2rem;
+    }
+    
+    .transformation-image img {
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 768px) {
+    .transformation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .transformation-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .transformation-image img {
+        max-width: 100%;
+    }
+    
+    .transformation-card {
+        min-height: 180px;
+    }
 }
 
 /* CTA Section */
