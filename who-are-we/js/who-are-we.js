@@ -233,30 +233,100 @@ function addParallaxEffect() {
 
 // Add special effect for vision and mission section
 document.addEventListener('DOMContentLoaded', () => {
-    const visionBox = document.querySelector('.vision-box');
-    const missionBox = document.querySelector('.mission-box');
+    const visionCard = document.querySelector('.vision-card');
+    const missionCard = document.querySelector('.mission-card');
     
-    if (visionBox && missionBox) {
+    if (visionCard && missionCard) {
         // Add mousemove effect
-        [visionBox, missionBox].forEach(box => {
-            box.addEventListener('mousemove', (e) => {
-                const rect = box.getBoundingClientRect();
+        [visionCard, missionCard].forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
                 const x = ((e.clientX - rect.left) / rect.width) - 0.5;
                 const y = ((e.clientY - rect.top) / rect.height) - 0.5;
                 
                 // Apply subtle 3D transform
-                box.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${y * -5}deg) scale(1.02)`;
+                card.style.transform = `perspective(1000px) rotateY(${x * 5}deg) rotateX(${y * -5}deg) translateZ(10px)`;
+                
+                // Move the graphic element based on mouse position
+                const graphic = card.querySelector('.card-graphic');
+                if (graphic) {
+                    graphic.style.transform = `translate(${x * 15}px, ${y * 15}px)`;
+                }
                 
                 // Add highlight effect
-                const highlight = `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(226, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%)`;
-                box.style.backgroundImage = highlight;
+                const glow = card.querySelector('.card-glow');
+                if (glow) {
+                    glow.style.background = `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(226, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%)`;
+                    glow.style.opacity = '1';
+                }
             });
             
             // Reset on mouseout
-            box.addEventListener('mouseleave', () => {
-                box.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale(1)';
-                box.style.backgroundImage = 'none';
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) translateZ(0)';
+                
+                const graphic = card.querySelector('.card-graphic');
+                if (graphic) {
+                    graphic.style.transform = 'translate(0, 0)';
+                }
+                
+                const glow = card.querySelector('.card-glow');
+                if (glow) {
+                    glow.style.opacity = '0';
+                }
             });
         });
+        
+        // Add animation to SVG elements
+        const eyePath = document.querySelector('.eye-graphic path');
+        const eyeCircles = document.querySelectorAll('.eye-graphic circle');
+        const targetCircles = document.querySelectorAll('.target-graphic circle');
+        
+        if (eyePath) {
+            // Animate eye path
+            eyePath.style.strokeDasharray = eyePath.getTotalLength();
+            eyePath.style.strokeDashoffset = eyePath.getTotalLength();
+            eyePath.style.animation = 'dash 3s ease-in-out forwards';
+        }
+        
+        if (eyeCircles.length) {
+            // Animate eye circles
+            eyeCircles.forEach((circle, index) => {
+                setTimeout(() => {
+                    circle.style.opacity = '0';
+                    circle.style.animation = `fadeIn 1s ease-in-out ${index * 0.3}s forwards`;
+                }, 500);
+            });
+        }
+        
+        if (targetCircles.length) {
+            // Animate target circles
+            targetCircles.forEach((circle, index) => {
+                setTimeout(() => {
+                    circle.style.opacity = '0';
+                    circle.style.animation = `fadeIn 1s ease-in-out ${index * 0.2}s forwards`;
+                }, 500);
+            });
+        }
+    }
+    
+    // Add keyframes for SVG animations if they don't already exist
+    if (!document.querySelector('#vision-mission-keyframes')) {
+        const style = document.createElement('style');
+        style.id = 'vision-mission-keyframes';
+        style.textContent = `
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     }
 }); 

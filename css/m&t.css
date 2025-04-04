@@ -489,7 +489,7 @@ body {
 }
 
 .hero-image img {
-    max-width: 100%;
+   
     position: relative;
     z-index: 2;
 }
@@ -694,7 +694,7 @@ body {
     background-color: var(--card-hover);
 }
 
-.benefit-card::after {
+/* .benefit-card::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -704,7 +704,7 @@ body {
     background: var(--gradient-red);
     z-index: 0;
     transition: height var(--transition-speed);
-}
+} */
 
 .benefit-card:hover::after {
     height: 6px;
