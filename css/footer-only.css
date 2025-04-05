@@ -45,6 +45,7 @@
 }
 
 .site-footer * {
+    font-size: 0.8rem;
     box-sizing: border-box;
 }
 
@@ -94,8 +95,8 @@
 /* ======== Main Sections & Layout ======== */
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 2.5fr 1.2fr 1.2fr 1.2fr;
+    gap: 40px;
 }
 
 .footer-col {
@@ -175,7 +176,7 @@
 }
 
 .company-description {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.7;
     color: var(--text-muted);
     margin-bottom: 25px;
@@ -347,9 +348,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* margin-top: 80px; */
+    padding-top: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.footer-contact-row::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: var(--primary-color);
 }
 
 .footer-contact-col {
@@ -376,8 +388,8 @@
 .footer-contact p {
     display: flex;
     align-items: center;
-    /* margin-bottom: 15px; */
-    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
     color: var(--text-muted);
     transition: var(--transition-fast);
 }
@@ -504,7 +516,7 @@
 
 /* ======== Footer Bottom Section ======== */
 .footer-bottom {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     padding-top: 25px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
@@ -532,7 +544,7 @@
 }
 
 .footer-policies a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-subtle);
     text-decoration: none;
     transition: var(--transition-fast);
@@ -1017,12 +1029,13 @@ input:focus-visible {
 }
 
 .footer-col .footer-links a {
+    line-height: 0.9;
     color: var(--text-muted);
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     transition: var(--transition-fast);
 }
 
