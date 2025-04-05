@@ -16,7 +16,17 @@ $(document).ready(function() {
     $('.btn-read-more').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).closest('.card-inner').addClass('flipped');
+        
+        // Get the case-id if available (for direct modal opening)
+        var caseId = $(this).data('case-id');
+        if (caseId) {
+            // If it has a case-id, open the modal instead of flipping
+            $('.case-study-modal[data-case-id="' + caseId + '"]').fadeIn(300);
+            $('body').addClass('modal-open');
+        } else {
+            // Otherwise flip the card as usual
+            $(this).closest('.card-inner').addClass('flipped');
+        }
     });
 
     // Handle case study card flip - backward button
@@ -29,12 +39,12 @@ $(document).ready(function() {
     // Make sure clicking anywhere on the front card flips it (except on text elements)
     $('.card-front').on('click', function(e) {
         // Don't flip if clicking on text elements, links, or buttons
-        if ($(e.target).is('p, h3, h4, li, ul, .problem-statement, .key-points, .stats-bar, .stat, .btn-read-more')) {
+        if ($(e.target).is('p, h3, h4, li, ul, .problem-statement, .key-points, .stats-bar, .stat, .btn-read-more, .btn-full-case')) {
             return;
         }
         
-        // Don't flip if clicking inside problem statement or key points sections
-        if ($(e.target).closest('.problem-statement, .key-points, .stats-bar, .btn-read-more').length > 0) {
+        // Don't flip if clicking inside problem statement, key points, stats bar or buttons
+        if ($(e.target).closest('.problem-statement, .key-points, .stats-bar, .btn-read-more, .btn-full-case').length > 0) {
             return;
         }
         
@@ -58,7 +68,7 @@ $(document).ready(function() {
         return false;
     });
 
-    // Handle case study modal display
+    // Handle case study modal display when clicking "View Full Case Study" button
     $('.btn-full-case').on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();

@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 img {
@@ -81,7 +81,8 @@ ul {
 
 li {
     position: relative;
-    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    /* padding-left: 1.5rem; */
     margin-bottom: 0.5rem;
 }
 
@@ -210,7 +211,7 @@ a:hover {
 }
 
 .section-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto;
@@ -434,7 +435,7 @@ a:hover {
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: 1.0rem;
     margin-bottom: 2rem;
     color: var(--text-muted);
     max-width: 700px;
@@ -656,6 +657,7 @@ a:hover {
     background-color: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow-y: auto;
 }
 
 .card-back {
@@ -714,16 +716,19 @@ a:hover {
     color: var(--text-light);
 }
 
-.card-back::-webkit-scrollbar {
+.card-back::-webkit-scrollbar,
+.card-front::-webkit-scrollbar {
     width: 5px;
 }
 
-.card-back::-webkit-scrollbar-track {
+.card-back::-webkit-scrollbar-track,
+.card-front::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
 }
 
-.card-back::-webkit-scrollbar-thumb {
+.card-back::-webkit-scrollbar-thumb,
+.card-front::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 5px;
 }
@@ -750,13 +755,13 @@ a:hover {
 }
 
 .case-study-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
 .card-front p {
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.0rem;
 }
 
 .stats-bar {
@@ -818,7 +823,7 @@ a:hover {
 }
 
 .card-back h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
@@ -1322,7 +1327,7 @@ a:hover {
 }
 
 .testimonial blockquote::before {
-    content: """;
+    content: "\201C";
     font-size: 3rem;
     position: absolute;
     left: -0.5rem;
@@ -1462,4 +1467,41 @@ body.modal-open {
 }
 
 /* End of styles */
+
+.card-front .btn-full-case {
+    position: relative;
+    bottom: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    z-index: 5;
+    width: auto;
+    margin-top: auto;
+    display: block;
+    margin-left: auto;
+}
+
+.card-front .btn-full-case:hover {
+    background-color: var(--primary-dark);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(229, 0, 0, 0.3);
+}
+
+.card-front .btn-read-more {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: auto;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}
   
