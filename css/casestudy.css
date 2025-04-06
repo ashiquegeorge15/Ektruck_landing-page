@@ -823,6 +823,7 @@ a:hover {
 }
 
 .card-back h3 {
+    margin-top: 30px;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
 }
@@ -1228,7 +1229,7 @@ a:hover {
     margin: 50px auto;
     padding: 2rem;
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     border-radius: var(--border-radius-md);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
     animation: modalFadeIn 0.3s ease-out;

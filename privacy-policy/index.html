@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions | ektruck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer-only.css">
+    <style>
+        :root {
+            --primary-color: #e61919;
+            --primary-light: #ff4444;
+            --primary-dark: #c00000;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.8);
+            --text-subtle: rgba(255, 255, 255, 0.6);
+            --card-bg: rgba(255, 255, 255, 0.07);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--darker-bg);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            margin-top: 100px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), transparent);
+        }
+        
+        .terms-container {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-content {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        
+        .section-content p {
+            margin-bottom: 15px;
+        }
+        
+        .section-content ul, .section-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .section-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            color: var(--primary-light);
+            font-weight: 500;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top i {
+            font-size: 1.2rem;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-light);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+            margin: 40px 0;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: var(--text-subtle);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-container {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-content {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+ <!-- Navigation -->
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
+            </div>
+        </div>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+    
+    <div class="container">
+        <div class="page-title">
+            <h1>Privacy Policy</h1>
+        </div>
+        
+        <div class="terms-container">
+            <div class="section">
+                <div class="section-content">
+                    <p>Thank you for using ektruck ("App") Services. These Terms of Use, together with ektruck Privacy Policy ("Terms of Use"), shall apply to the users of the app as and when they visit, browse, access data and, place orders, upload or download documents, access or otherwise use the App.</p>
+                    
+                    <p>By using the App, you acknowledge and signify that you have read, understood, and agree to be bound by these Terms of Use. You must agree to these Terms of Use in order to access or use the App. You may not use the services if you do not accept the terms or are unable to be bound by the terms.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Scope of these terms</h2>
+                <div class="section-content">
+                    <p>These Terms of Use only apply to your activities when using the App or its contents. The following General Terms of Use apply to all services rendered between ektruck and Users of this app/site whether as a truck-owner, booking-agent or shipper or in any other capacity. ektruck through this app provides a platform that enables fleet-owners & booking- agents to publish their trucks on to the platform with specific route and freight charges. It also provides platform to shippers to book a truck on real-time basis for seamless transportation, conveyance or movement goods from one place to another. Deviations from these conditions are only binding if confirmed in writing and these General Terms of Use will apply to all additional services or revised services.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">User's Obligation</h2>
+                <div class="section-content">
+                    <p>The users agree not to:</p>
+                    
+                    <ul>
+                        <li>Use the services to obtain unauthorized access to the services, systems, network or data;</li>
+                        <li>Violate any applicable laws or regulations;</li>
+                        <li>Make available any content that you do not have the right to make available or that infringes any patent, trademark, copyright or other proprietary rights of any person or entity;</li>
+                        <li>Make available viruses or any other computer code, files, programs or content designed to interrupt destroy or limit the functionality of the services and affect other users;</li>
+                        <li>Interfere with or disrupt the services or servers, systems or networks connected to the services in any way.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Confidentiality</h2>
+                <div class="section-content">
+                    <p>The ektruck app shall in no event be liable for any direct, indirect, special, consequential or other damages arising out of the use of this app or any information or images contained therein, including without limitation, lost profits, business interruption and loss of programs or other data. Each party is obliged to treat any data and information not publicly accessible as confidential and to use these exclusively for the purpose intended.</p>
+                    
+                    <p>The confidentiality rule does not apply to data and information that must be passed on to third parties, especially public authorities, due to legal obligations. The other party is to be informed about such obligation without delay.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Limitation of Liability and Warranties</h2>
+                <div class="section-content">
+                    <p>The ektruck app:</p>
+                    
+                    <ul>
+                        <li>Shall not take responsibility or liability for the pricing and payment terms of contract entered between truck owner/ booking agent and shipper.</li>
+                        <li>Shall not take responsibility or liability for any dispute arising between shipper or truck-owner/booking agent or driver regarding quantity, quality, packing, assembling, etc. of goods conveyed with the help of this Application.</li>
+                        <li>Shall be harmless from any and all claims, losses, damages, and liabilities, costs and expenses, including without limitation legal fees and expenses, arising out of or related to use or misuse of the services or of the app, any violation by user of these Terms of Use, or any breach of the representations, warranties, and covenants made herein.</li>
+                        <li>Shall not be responsible for any natural loss, damage, deterioration of goods involved including on account of pilferage, theft, accident, natural calamity or any other similar cause.</li>
+                        <li>Shall not be liable for any conduct of the drivers of the vehicles. However users may notify complaints against driver of any vehicle that you may have hired using this platform, by the way of feedback against the parameters available on the application or else can directly contact the fleet-owners for giving feedbacks.</li>
+                        <li>Shall not be liable for performance of service as earlier agreed by user parties.</li>
+                        <li>Shall withhold the user's money in case the user is engaged in any fraudulent or malicious behaviour on the platform; and</li>
+                        <li>May contact the user, in any way, in case money is credited to user's account due to any technical glitch caused by ektruck and the user shall credit the exact amount transferred by ektruck within 10 (ten) days of such request by ektruck. In case the user does not credit the amount within the prescribed time as mentioned in this clause, ektruck shall have the right to approach the court against the user.</li>
+                    </ul>
+                    
+                    <p>The user of app acknowledges and agrees that they shall be liable for checking the contents, packing, sealing, addressing, labelling and handling of the goods, carriage, shipping instruction or waybill.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Intellectual Property</h2>
+                <div class="section-content">
+                    <p>The ektruck name and logo, and other trademarks, service marks, graphics and logos used in connection with the App are trademarks of Ekah Logitech Pvt Ltd. Other trademarks, service marks, graphics and logos used in connection with the App are the trademarks of their respective owners (collectively "Third Party Trademarks"). The ektruck Trademarks and Third Party Trademarks may not be copied, imitated or used, in whole or in part, without the prior written permission of the applicable trademark holder. The App and the content featured in the App are protected by copyright, trademark, patent and other intellectual property and proprietary rights which are reserved to trademark holder and its licensors.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Indemnity and limitation of liability</h2>
+                <div class="section-content">
+                    <p>In case any loss or damage occurs to us due to your failure to provide us the correct information, or due to your engagement in any such activity on our platform, which may be in violation of the applicable law in India, you shall indemnify us from such damage or loss.</p>
+                    
+                    <p>You shall be bound by the Terms of Use, and shall be liable to indemnify us wholly, if you breach any provision of the Terms of Use.</p>
+                    
+                    <p>You agree that we shall not be liable for any illegal or offensive conduct of any third party on our platform. Further, we shall not be liable for any delay or inaccuracy in information provided by any third party on our platform.</p>
+                    
+                    <p>Any dealing between you and the third-party, on or through our platform, including the delivery of product or service, payment, conditions etc., shall be between you and the third-party only. We shall not be liable for any damage or loss pertaining to such dealings.</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Trademark</h2>
+                <div class="section-content">
+                    <p>All related icons and logos are registered trademarks or trademarks or service marks of ektruck in various jurisdictions and are protected under applicable copyright, trademark and other proprietary rights laws. The unauthorized copying, modification, use or publication of these marks is strictly prohibited.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Copyright</h2>
+                <div class="section-content">
+                    <p>All content on this web site is the copyright of ektruck except the third party content and link to third party web sites on our app/website.</p>
+                    
+                    <p>Systematic retrieval of ektruck content to create or compile, directly or indirectly, a collection, compilation, database or directory (whether through robots, spiders, automatic devices or manual processes) without written permission from Ektruck is prohibited.</p>
+                    
+                    <p>In addition, use of the content for any purpose not expressly permitted in this Agreement is prohibited and may invite legal action. As a condition of your access to and use of ektruck Services, you agree that you will not use the web site service to infringe the intellectual property rights of ektruck or any other third party in any way. ektruck reserves the right to terminate the account of a user(s) upon any infringement of the rights of any third party in conjunction with use of the ektruck service, or if ektruck believes that user(s) conduct is harmful to the interests of ektruck, its affiliates, or other users, or for any other reason in ektruck's sole discretion, with or without cause. You shall be liable to indemnify ektruck for any losses or expenses incurred by Ektruck due to any infringement of intellectual property rights owned by ektruck without prejudicing ektruck's right to bring any legal action against you.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Links to Third Party Sites</h2>
+                <div class="section-content">
+                    <p>Links to third party sites are provided by web site as a convenience to user(s) and ektruck has no control over such sites i. e. content and resources provided by them.</p>
+                    
+                    <p>ektruck may allow user(s) access to content, products or Services offered by third parties through hyperlinks (in the form of word link, banners, channels or otherwise) to such Third Party's web site. You are cautioned to read such sites' terms and conditions and/or privacy policies before using such sites in order to be aware of the terms and conditions of your use of such sites. ektruck believes that user(s) acknowledge that ektruck has no control over such third party's site, does not monitor such sites, and ektruck shall not be responsible or liable to anyone for such third party site, or any content, products or Services made available on such a site. User(s) shall review ektruck's Privacy Policy and abide by ektruck's Privacy Policy at the time of the User(s) interaction with Ektruck, with respect to and concerning any information and data.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">General law and Jurisdiction</h2>
+                <div class="section-content">
+                    <p>Except as otherwise set forth in these Terms, these Terms shall be governed by Indian laws and the parties submit to the exclusive jurisdiction of Indian courts to resolve any dispute between them arising under or in connection with these App Terms.</p>
+                    
+                    <p>If any provision (or part of a provision) of these App Terms is found by any court or administrative body of competent jurisdiction to be invalid, unenforceable or illegal, such term, condition or provision will to that extent be severed from the remaining terms, conditions and provisions which will continue to be valid to the fullest extent permitted by law.</p>
+                    
+                    <p>Any dispute, conflict, claim or controversy arising out of or broadly in connection with or relating to the Services or these Terms, including those relating to its validity, its construction or its enforceability (any "Dispute") shall be first mandatorily submitted to mediation proceedings in terms of the Indian law. If such Dispute has not been settled within sixty (60) days after a request for mediation has been submitted under the Indian laws, such Dispute can be referred to and shall be exclusively and finally resolved by arbitration under the Arbitration and Conciliation Act, 1996 ("Act"). The Dispute shall be resolved by one (1) arbitrator to be appointed by Ekah Logitech Pvt Ltd. The place of both mediation and arbitration shall be Bengaluru, Karnataka, India. The language of the mediation and/or arbitration shall be English, unless you do not speak English, in which case the mediation and/or arbitration shall be conducted in both English and your native language. The existence and content of the mediation and arbitration proceedings, including documents and briefs submitted by the parties, any correspondence from the mediator, and correspondence, orders and awards issued by the sole arbitrator, shall remain strictly confidential and shall not be disclosed to any third party without the express written consent from the other party unless: (i) the disclosure to the third party is reasonably required in the context of conducting the mediation or arbitration proceedings; and (ii) the third party agrees unconditionally in writing to be bound by the confidentiality obligation stipulated herein.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Amendment to the Terms of Use</h2>
+                <div class="section-content">
+                    <p>We may amend or alter the Terms of Use from time to time. Any changes to this Terms of Use shall become effective upon posting of the revised Terms of Use on the platform, and no communication of such alteration, amendment or update shall be made to you. It is recommended that you regularly check this Terms of Use to apprise yourself of any updates.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Termination</h2>
+                <div class="section-content">
+                    <p>Most content and some of the features on the web site are made available to visitors free of charge. However, ektruck reserves the right to terminate access to certain areas or features of the web site at any time for any reason, with or without notice. Ektruck also reserves the universal right to deny access to particular users to any/all of its Services without any prior notice/explanation in order to protect the interests of Ektruck and/or other visitors to the web site. ektruck reserves the right to limit, deny or create different access to the web site and its features with respect to different user(s), or to change any of the features or introduce new features without prior notice.</p>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section">
+                <h2 class="section-title">Terms & Conditions for Use of Our Service</h2>
+                <div class="section-content">
+                    <p>The following Terms & Conditions shall apply to users utilising the Services offered by the Company on ektruck app:</p>
+                    
+                    <ul>
+                        <li>Users on the ektruck app are defined as fleet-owners, agents and shippers.</li>
+                        <li>The ektruck app is a SAAS based platform ERP tool for the fleet-owners and booking agents to carry out their business using digital systems and processes.</li>
+                        <li>It will be a constant endeavour of Ekah Logitech Pvt Ltd to empower the users with more effective tools to conduct carry out their businesses seamlessly.</li>
+                        <li>Ekah Logitech Pvt Ltd do not intent to use the database to get into the transportation business. ektruck app will facilitate the users through its tool to do a sustainable business.</li>
+                        <li>Users will have to go through a KYC (Know Your Customer) process for their user activation. Based on the KYC process the user will be granted/ denied access to the ektruck app.</li>
+                        <li>All the trucks onboarded on the platform will have to undergo the KYC Process. Once the KYC process is through the trucks will be activated on the platform. Ekah Logitech Pvt Ltd reserves all the rights to verify the trucks and reject in case of deviation from the KYC process.</li>
+                        <li>It is the discretion of the fleet-owners, booking agents to define the route, freight charges for the intended trip. Ekah Logitech Pvt Ltd, will not be responsible for the routes and freight charges defined by the fleet-owners/booking agents.</li>
+                        <li>The user agrees and accepts that the use of the Services provided by the Company is at the sole risk of the user, and further acknowledges that the Company disclaims all representations and warranties of any kind, whether express or implied.</li>
+                        <li>The GPS/GPRS devices fitted onto the truck is the sole property of Ekah Logitech Pvt Ltd and the user shall ensure that he/she will not indulge in Misusing, soiling or damaging any of the devices (technical/non-technical) in the vehicle. Once the services are discontinued or user opts to stop the services, the GPS/GPRS device fitted into the truck should be returned back to Ekah Logitech Pvt Ltd and a written acknowledgement to be taken from the ektruck officials. Failing to return the GPS/GPRS device will attract the user to pay Rs. 3700.00 (Three Thousand Seven Hundred Only) + GST Charges if any within 10 days of discontinuation of services.</li>
+                        <li>In case the fleet-owners has their existing GPS/GPRS fitted onto the truck, they can request their service provider to start sharing the real-time data with ektruck app. GPS/GPRS live data is the basis for the ektruck application and any transactions can be done if the GPS device is in working condition. Ekah Logitech Pvt Ltd or its affiliates will not be responsible for any loss of business to the users due to GPS devices not in working condition.</li>
+                        <li>The Customer shall indemnify Company from and against and in respect of any or all liabilities, losses, charges and expenses (including legal fees and costs on a full indemnity basis) claims, demands, actions and proceedings which Company may incur or sustain directly or indirectly from or by any reason of or in relation to the use or proposed use of the Services by the Customer and shall pay such sums on demand on the Company.</li>
+                        <li>The Company is hereby authorized to use the location based information provided by any of the telecommunication companies when the shipper uses ektruck app to make a vehicle booking. The location based information will be used only to facilitate and improve the services for the users.</li>
+                        <li>The Company shall be entitled to disclose to all companies within its group, or any government body as so required by the Applicable Law or by directive or request from any government body, the particulars of the Customer in the possession of Company in any way as Company, in its absolute discretion, deems fit or if it considers it in its interests to do so.</li>
+                        <li>Ekah Logitech Pvt Ltd, through its control tower will always provide the best-effort" basis in mediating and resolving the issues arising during the course of any specific trip to its users. However, Ekah Logitech Pvt Ltd will not be responsible for the any loss or damage arising due such issues during the trips.</li>
+                        <li>Any complaint in respect of the Services of the fleet-owners, booking agents or the use of the vehicles, the shipper can inform through a feedback mechanism available on the ektruck app for each completed trip.</li>
+                        <li>Ekah Logitech Pvt Ltd shall not be liable for any conduct of the drivers of the vehicles. However, we encourage shippers to provide the feedback of the driver on the ektruck app.</li>
+                        <li>The Company shall be entitled to add to, vary or amend any or all these terms and conditions at any time and the users shall be bound by such addition, variation or amendment once such addition, variation or amendment are incorporated into these terms and conditions at Company's website at https://www.ektruck.com on the date that Company may indicate that such addition, variation or amendment is to come into effect.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Disclaimer</h2>
+                <div class="section-content">
+                    <p>The information contained in this website and ektruck App is for general information purposes only. The information is provided by ektruck and while we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website / App or the information, products, services, or related graphics contained on the website / App for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+                    
+                    <p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website / App.</p>
+                    
+                    <p>Through this website / App you are able to link to other websites which are not under the control of Ektruck. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+                    
+                    <p>Every effort is made to keep the portal up and running smoothly. However, ektruck takes no responsibility for, and will not be liable for, the portal being temporarily unavailable due to technical issues beyond our control.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Miscellaneous</h2>
+                <div class="section-content">
+                    <p>The Terms of Use shall not create any partnership or agency between you and us. Each obligation is separate from the other obligations of this Terms of Use. If one or more of the obligations contained in these Terms of Use is held invalid, illegal or unenforceable in any respect by any court of competent jurisdiction, such holding will not impair the validity, legality, or enforceability of the remaining obligations.</p>
+                    
+                    <p>Time is of utmost importance for all the matters relating to the Terms of Use. The time when you access the platform, the Terms of Use shall stand duly executed between you and us.</p>
+                </div>
+            </div>
+            
+            <div class="last-updated">
+                <p>Last Updated: June 2023</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <div class="footer-background"></div>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Company Information -->
+                    <div class="footer-col">
+                        <a href="/" class="footer-logo">
+                            <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                            <div class="logo-decoration"></div>
+                        </a>
+                        <p class="company-description">
+                            India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                        </p>
+                    </div>
+                    
+                    <!-- Solutions -->
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul class="footer-links">
+                            <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
+                            <li><a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                            <li><a href="/TMS/">Transport Management Solution </a></li>
+                            <li><a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                            <li><a href="/Fuel-managment/">Fuel Management</a></li>
+                            <li><a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                            <li><a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions</a></li>
+                            <li><a href="/payment-solutions/">Payment Solutions</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Industries -->
+                    <div class="footer-col">
+                        <h4>Industries</h4>
+                        <ul class="footer-links">
+                            <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                            <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                            <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                            <li><a href="/government-authorities/">Government Authorities</a></li>
+                            <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                            <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                            <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/who-are-we/"><i class="fas fa-info-circle"></i> Who We Are</a></li>
+                            <li><a href="/careers"><i class="fas fa-briefcase"></i> Careers</a></li>
+                            <li><a href="/press"><i class="fas fa-newspaper"></i> Press</a></li>
+                            <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-contact-row" style="display: flex; justify-content: space-between;">
+                    <div class="footer-contact-col" style="width: 100%;">
+                        <div class="footer-contact" style="line-height: 0; display: flex; flex-direction: column; align-items: flex-start;">
+                   
+                            <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                            <p><i class="fas fa-phone-alt fa-rotate-90"></i>+91 8861867788</p>
+                            <p><i class="fas fa-envelope"></i>info@ektruck.com</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+        
+        
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>ektruck@2025. All rights reserved.</span>
+                    </div>
+                    <div class="footer-policies">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
+                        <a href="/sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll to top button -->
+            <div class="scroll-top">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </footer>
+    
+    <!-- Simple JavaScript for scroll to top functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        </script>
+    
+        
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize footer components
+        initScrollToTop();
+        initNewsletterForm();
+        initAnimations();
+        initMobileOptimizations();
+    });
+    
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        // Smooth scroll to top when clicked
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    /**
+     * Newsletter form validation and submission
+     */
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button');
+            
+            // Basic form validation
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                if (!isValidEmail(email)) {
+                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                    emailInput.focus();
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with timeout
+                setTimeout(function() {
+                    emailInput.value = '';
+                    submitBtn.innerHTML = 'Subscribe';
+                    submitBtn.disabled = false;
+                    
+                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+                }, 1500);
+            });
+        }
+    }
+    
+    /**
+     * Check if email is valid
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    /**
+     * Show success or error message after form submission
+     */
+    function showFormMessage(form, message, type) {
+        // Remove any existing messages
+        const existingMessage = form.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
+        
+        // Add message to form
+        form.appendChild(messageElement);
+        
+        // Remove message after delay
+        setTimeout(function() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.remove();
+            }, 300);
+        }, 5000);
+    }
+    
+    /**
+     * Initialize animations for footer elements
+     */
+    function initAnimations() {
+        // Detect when elements enter viewport
+        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('visible'));
+        }
+        
+        // Animate stats numbers
+        animateStatCounters();
+    }
+    
+    /**
+     * Animate the stat counter numbers with counting effect
+     */
+    function animateStatCounters() {
+        const statValues = document.querySelectorAll('.stat-value');
+        
+        statValues.forEach(stat => {
+            const value = stat.innerText;
+            
+            // Skip if not a purely numeric value (e.g., "24/7")
+            if (value.match(/[^0-9%]/)) return;
+            
+            const hasPercent = value.includes('%');
+            const numericValue = parseInt(value.replace(/\D/g, ''));
+            
+            // Set starting value to 0
+            stat.innerText = hasPercent ? '0%' : '0';
+            
+            // Animate to final value
+            let current = 0;
+            const increment = Math.max(1, Math.floor(numericValue / 50));
+            const duration = 1500; // 1.5 seconds
+            const interval = Math.floor(duration / (numericValue / increment));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= numericValue) {
+                    clearInterval(timer);
+                    current = numericValue;
+                }
+                
+                stat.innerText = hasPercent ? `${current}%` : current;
+            }, interval);
+        });
+    }
+    
+    /**
+     * Mobile-specific optimizations for better UX
+     */
+    function initMobileOptimizations() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Improve tap targets for mobile
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+                
+                link.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
+                });
+            });
+            
+            // Add extra styling for form inputs on mobile
+            const inputs = document.querySelectorAll('.newsletter-form input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focus');
+                });
+            });
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -87,22 +87,27 @@
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
+    gap: 15px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .feature-card {
     align-items: center;
     background: linear-gradient(145deg, rgba(40, 40, 40, 0.6), rgba(20, 20, 20, 0.8));
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 20px;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 0, 0, 0.1);
     transition: all 0.5s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
+    max-width: 280px;
+    margin: 0 auto;
 }
 
 .feature-card:hover {
@@ -123,21 +128,21 @@
 }
 
 .feature-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: linear-gradient(135deg, #ff3333, #cc0000);
-    border-radius: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
     z-index: 1;
     box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
 }
 
 .feature-icon i {
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -150,16 +155,16 @@
 
 .feature-card h3 {
     color: #fff;
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
 .feature-card p {
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .feature-image {
@@ -170,9 +175,9 @@
 
 .image-placeholder {
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
 }
@@ -231,17 +236,19 @@
 @media (max-width: 992px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
 @media (max-width: 768px) {
     .key-features-section {
-        padding: 70px 0;
+        padding: 60px 0;
     }
     
     .features-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 600px;
     }
     
     .key-features-section .section-header h2 {
@@ -249,6 +256,38 @@
     }
     
     .feature-card {
-        padding: 25px;
+        max-width: 250px;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .key-features-section {
+        padding: 50px 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 100%;
+    }
+    
+    .feature-card {
+        padding: 15px;
+        max-width: 90%;
+    }
+    
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
     }
 } 

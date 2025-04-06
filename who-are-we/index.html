@@ -92,7 +92,7 @@
         <!-- Hero Image -->
         <div class="hero-image-container" data-aos="fade-left" data-aos-delay="300">
             <div class="hero-image">
-                <img src="/assets/images-web/wwr.png" alt="Who We Are - EkTruck" style="margin-left: 30px; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <img src="/assets/images-web/wwr.png" alt="Who We Are - EkTruck" style="margin-left: 30px; max-width: 500px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             </div>
         </div>
     
@@ -647,8 +647,8 @@
             
             .serve-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
                 max-width: 1200px;
                 margin: 0 auto;
                 position: relative;
@@ -657,8 +657,8 @@
             
             .serve-card {
                 background: rgba(20, 20, 20, 0.7);
-                border-radius: 16px;
-                padding: 30px 25px;
+                border-radius: 12px;
+                padding: 20px 15px;
                 text-align: center;
                 transition: all 0.4s ease;
                 border: 1px solid rgba(226, 0, 0, 0.1);
@@ -668,21 +668,21 @@
             }
             
             .serve-card:hover {
-                transform: translateY(-10px);
+                transform: translateY(-8px);
                 border-color: rgba(226, 0, 0, 0.3);
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(226, 0, 0, 0.2);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(226, 0, 0, 0.2);
             }
             
             .serve-icon {
-                width: 70px;
-                height: 70px;
+                width: 55px;
+                height: 55px;
                 background: linear-gradient(135deg, #e20000, #ff3333);
-                border-radius: 20px;
+                border-radius: 15px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin: 0 auto 20px;
-                box-shadow: 0 10px 20px rgba(226, 0, 0, 0.3);
+                margin: 0 auto 15px;
+                box-shadow: 0 8px 15px rgba(226, 0, 0, 0.3);
                 position: relative;
                 z-index: 1;
                 transition: all 0.3s ease;
@@ -690,30 +690,30 @@
             
             .serve-card:hover .serve-icon {
                 transform: scale(1.1) rotate(10deg);
-                box-shadow: 0 15px 30px rgba(226, 0, 0, 0.4);
+                box-shadow: 0 12px 25px rgba(226, 0, 0, 0.4);
             }
             
             .serve-icon i {
                 color: #ffffff;
-                font-size: 28px;
+                font-size: 22px;
             }
             
             .serve-card h3 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
                 font-weight: 600;
                 color: #ffffff;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
             
             .serve-card p {
                 color: #cccccc;
-                font-size: 1rem;
-                line-height: 1.6;
+                font-size: 0.9rem;
+                line-height: 1.5;
             }
             
             @media (max-width: 992px) {
                 .serve-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                 }
             }
             
@@ -723,28 +723,52 @@
                 }
                 
                 .serve-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                     padding: 0 20px;
                 }
                 
                 .serve-card h3 {
-                    font-size: 1.3rem;
+                    font-size: 1.1rem;
                 }
                 
                 .serve-icon {
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
                 }
                 
                 .serve-icon i {
-                    font-size: 24px;
+                    font-size: 20px;
                 }
             }
             
             @media (max-width: 576px) {
                 .serve-grid {
-                    grid-template-columns: 1fr;
-                    max-width: 320px;
+                    grid-template-columns: repeat(2, 1fr);
+                    max-width: 350px;
+                    gap: 15px;
+                }
+                
+                .serve-card {
+                    padding: 15px 10px;
+                }
+                
+                .serve-icon {
+                    width: 45px;
+                    height: 45px;
+                    margin-bottom: 10px;
+                }
+                
+                .serve-icon i {
+                    font-size: 18px;
+                }
+                
+                .serve-card h3 {
+                    font-size: 1rem;
+                    margin-bottom: 8px;
+                }
+                
+                .serve-card p {
+                    font-size: 0.8rem;
                 }
             }
         </style>
