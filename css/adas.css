@@ -46,6 +46,7 @@
 }
 
 .adas-hero .animated-heading {
+    text-align: left;
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -58,7 +59,7 @@
 }
 
 .adas-hero .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     color: var(--text-gray);
     margin-bottom: 2.5rem;
@@ -231,7 +232,7 @@
 }
 
 .adas-intro p, .dms-intro p, .integration-intro p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     color: var(--text-gray);
 }
@@ -351,6 +352,10 @@
     border-left: 3px solid var(--primary-red);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
 
 .feature-icon {
     font-size: 1.8rem;
@@ -487,6 +492,23 @@
     animation: status-blink 1.5s infinite;
 }
 
+
+/* Center the feature icon in the DMS feature cards */
+.dms-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.dms-feature .feature-icon {
+    display: block;
+    margin: 0 auto 15px auto;
+    text-align: center;
+}
+
+
+
 .dms-features {
     flex: 1;
     min-width: 300px;
@@ -514,7 +536,7 @@
 
 .dms-feature .feature-icon {
     margin-bottom: 15px;
-    margin-right: 0;
+    margin-right: 10;
 }
 
 .dms-feature .feature-label {

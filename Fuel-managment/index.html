@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel Management Solutions - EkTruck</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/fm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -82,52 +82,55 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container nav-container">
-        <div class="logo">
-            <img src="../assets/logo.png" alt="ek(one) Logo">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
         </div>
         
         <div class="nav-menu">
             <ul class="nav-links">
                 <li class="nav-item">
-                    <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="/managed-control-tower/">Managed Control Tower</a>
-                        <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
-                        <a href="/TMS/">Transport Management Solution (TMS) </a>
-                        <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                        <a href="/Fuel-managment/" class="active">Fuel Management</a>
-                        <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                        <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                        <a href="/payment-solutions/">Payment Solutions</a>
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
                     </div>
                 </li>
-                </li>
+
                 <li class="nav-item dropdown">
-                    <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="/transport&logistics/">Transport & Logistics</a>
-                        <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                        <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                      
-                        <a href="/small&medium-business/">Small and Medium Businesses</a>
-                        <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                        <a href="/manufacturers-traders/">Manufacturers & Traders</a>
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
                     </div>
                 </li>
+
                 <li class="nav-item">
                     <a href="/case-study/" class="nav-link">Case Studies</a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
             
             <div class="nav-buttons">
-                <button class="btn btn-primary">Login</button>
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
 
@@ -176,13 +179,14 @@
                     Our Fuel Management Solution is designed to monitor, control, and optimize fuel usage across fleets, ensuring maximum efficiency, cost savings, and reduced fuel theft. By integrating IoT sensors, GPS tracking, and AI-powered analytics, businesses gain real-time insights into fuel consumption, refuelling patterns, and operational inefficiencies.
                 </p>
                 
+                
                 <div class="hero-buttons">
                     <a href="#features" class="btn btn-primary">
                         Explore Features
                         <i class="fas fa-arrow-right"></i>
                         <span class="btn-shine"></span>
                     </a>
-                    <a href="../demo.html" class="btn btn-outline">Request Demo</a>
+                    <a href="" class="btn-outline">Request Demo</a>
                 </div>
             </div>
             

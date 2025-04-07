@@ -183,6 +183,7 @@ img {
     transform: rotate(30deg) translateY(-30%);
 }
 
+
 .btn-primary {
     background: var(--gradient-red);
     color: var(--text-white);
@@ -1282,7 +1283,8 @@ img {
 }
 
 .mobile-app-image {
-    max-width: 300px;
+    height: 200px;
+    max-width: 600px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-xl);
     z-index: 1;

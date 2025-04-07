@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADAS/DMS Solutions - ek(one)</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/adas.css">
@@ -74,64 +73,67 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
-            </div>
-            
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
         
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
 
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero-section" class="hero adas-hero">
@@ -147,13 +149,11 @@
       <div class="container">
         <!-- Left side - text content -->
         <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
-          <div class="badge-container">
-            <span class="badge">Intelligent Safety Systems</span>
-          </div>
+          
           
           <h1 class="animated-heading">
             <span class="text-line">ADAS & DMS </span>
-            <span class="text-line accent-text">Safety <span class="highlight">Solutions</span></span>
+            <span class="text-line accent-text">Safety <span style="color: #ff0000;">Solutions</span></span>
           </h1>
           
           <p class="hero-description">
@@ -172,7 +172,7 @@
         <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
           <div class="dashboard-mockup">
             <div class="dashboard-content">
-              <img src="../assets/img/adas-dashboard.png" alt="ADAS Dashboard" class="dashboard-img">
+              <img src="../assets/images-web/adas.png" alt="ADAS Dashboard" class="dashboard-img">
               <div class="dark-overlay"></div>
             </div>
           </div>
@@ -197,8 +197,8 @@
         </div>
         
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Advanced Driver Assistance <span class="highlight-text">System</span></h2>
+            <div class="section-header" data-aos="fade-up" style="margin-bottom: 10px;">
+                <h2 class="animated-heading">Advanced<span class="highlight-text"> Driver Assistance </span>System</h2>
                 <p class="section-subtitle">Cutting-Edge Technology for Proactive Accident Prevention</p>
             </div>
             
@@ -300,7 +300,7 @@
         </div>
         
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header" data-aos="fade-up" style="margin-bottom: 10px;">
                 <h2 class="animated-heading">Driver Monitoring <span class="highlight-text">System</span></h2>
                 <p class="section-subtitle">AI-Powered Solutions for Enhanced Driver Safety and Compliance</p>
             </div>
@@ -388,7 +388,7 @@
         </div>
         
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header" data-aos="fade-up" style="margin-bottom: 10px;">
                 <h2 class="animated-heading">Comprehensive Safety & <span class="highlight-text">Efficiency Solution</span></h2>
                 <p class="section-subtitle">Seamless Integration with Your Fleet Management Systems</p>
             </div>

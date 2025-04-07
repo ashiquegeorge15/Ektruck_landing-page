@@ -101,7 +101,7 @@ img {
 }
 
 /* Button Styles */
-.btn {
+/* .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +116,7 @@ img {
     position: relative;
     overflow: hidden;
     z-index: 1;
-}
+} */
 
 .btn-primary {
     background-color: var(--primary-red);

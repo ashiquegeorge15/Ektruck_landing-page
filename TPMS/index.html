@@ -19,7 +19,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/tpms.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     
     <!-- Custom cursor styles -->
@@ -87,91 +87,114 @@
     </div>
 
      <!-- Navigation -->
-     <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
-            </div>
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
             
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                          
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
-
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </nav>
 
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="hero-content" data-aos="fade-up">
-                        <div class="hero-badge">
-                            <i class="fas fa-temperature-high"></i> Smart Temperature Monitoring
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="hero-title">
+                    Protect Your <span>Temperature</span> Sensitive Cargo
+                </h1>
+                <p class="hero-description">
+                    Our smart temperature monitoring solutions provide real-time tracking, instant alerts, and automated reporting to ensure your products maintain optimal temperature throughout the supply chain.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary btn-glow">
+                        Explore Features
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="btn-shine"></span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        Request Demo
+                        <i class="fas fa-headset"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right side hero image -->
+            <div class="hero-image-container" data-aos="fade-left" data-aos-delay="200">
+                <div class="hero-image-wrapper">
+                    <img src="../assets/images-web/tmps.png" alt="Temperature Monitoring System" class="hero-img">
+                    <div class="hero-image-overlay"></div>
+                    <div class="floating-elements">
+                        <div class="temp-indicator temp-cold">
+                            <i class="fas fa-thermometer-quarter"></i>
+                            <span>2°C</span>
                         </div>
-                        <h1 class="hero-title">
-                            Protect Your <span>Temperature</span> Sensitive Cargo
-                        </h1>
-                        <p class="hero-description">
-                            Our smart temperature monitoring solutions provide real-time tracking, instant alerts, and automated reporting to ensure your products maintain optimal temperature throughout the supply chain.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#" class="btn btn-primary">
-                                Request Demo <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="#features" class="btn btn-secondary">
-                                Explore Features <i class="fas fa-angle-down"></i>
-                            </a>
+                        <div class="temp-indicator temp-optimal">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>5°C</span>
                         </div>
-                        
-                    
-        
+                        <div class="temp-indicator temp-warm">
+                            <i class="fas fa-thermometer-three-quarters"></i>
+                            <span>8°C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Background Elements -->
         <div class="glow-orb glow-orb-1"></div>
         <div class="glow-orb glow-orb-2"></div>
@@ -187,6 +210,180 @@
         </div>
     </section>
 
+    <style>
+        .hero {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+            background: var(--bg-dark);
+        }
+
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-img {
+            max-width: 500px;
+            height: 300px;
+            display: block;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover .hero-img {
+            transform: scale(1.05);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(230, 46, 46, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .temp-indicator {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .temp-indicator i {
+            font-size: 1.2rem;
+        }
+
+        .temp-indicator span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .temp-cold {
+            top: 20%;
+            left: 10%;
+            color: #3498db;
+        }
+
+        .temp-optimal {
+            top: 50%;
+            right: 15%;
+            color: #2ecc71;
+        }
+
+        .temp-warm {
+            bottom: 20%;
+            left: 20%;
+            color: #e74c3c;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+                margin-top: 3rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .temp-indicator {
+                padding: 8px 12px;
+            }
+
+            .temp-indicator i {
+                font-size: 1rem;
+            }
+
+            .temp-indicator span {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <style>
+        /* Center alignment for features section */
+        .features .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .feature-grid {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
     <!-- Features Section -->
     <section class="features section" id="features">
         <div class="container">
@@ -277,7 +474,7 @@
     <!-- Benefits Section -->
     <section class="benefits section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Benefits of Our Temperature Monitoring Solution</h2>
+            <h2 class="section-title" data-aos="fade-up" style="color: red;">Benefits of Our Temperature Monitoring Solution</h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
                 Protect your temperature-sensitive cargo with an intelligent, real-time monitoring system that ensures quality, safety, and compliance at every stage of the supply chain.
             </p>
@@ -353,90 +550,107 @@
         <div class="bg-pattern"></div>
     </section>
 
-     <!-- Footer Section -->
-     <footer class="site-footer">
-        <div class="footer-background"></div>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Company Information -->
-                <div class="footer-col">
-                    <a href="/" class="footer-logo">
-                        <img src="/assets/logo.png" alt="Transport & Logistics Logo">
-                        <div class="logo-decoration"></div>
-                    </a>
-                    <p class="company-description">
-                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
-                    </p>
-             
-                </div>
-                
-                <!-- Solutions -->
-                <div class="footer-col">
-                    <h4>Solutions</h4>
-                    <ul class="footer-links">
-                      <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
-                        <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
-                        <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
-                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
-                        <li> <a href="/Fuel-managment/">Fuel Management</a></li>
-                        <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
-                        <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
-                        <li> <a href="/payment-solutions/">Payment Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Industries -->
-                <div class="footer-col">
-                    <h4>Industries</h4>
-                    <ul class="footer-links">
-                       <li><a href="/transport&logistics/">Transport & Logistics</a></li>
-                        <li><a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a></li>
-                        <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
-                        <li><a href="/government-authorities/">Government Authorities</a></li>
-                        <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
-                        <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
-                        <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
-                        <p><i class="fas fa-phone-alt"></i>080-68976911</p>
-                        <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+    
+   
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <div class="footer-background"></div>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Company Information -->
+                    <div class="footer-col">
+                        <a href="/" class="footer-logo">
+                            <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                            <div class="logo-decoration"></div>
+                        </a>
+                        <p class="company-description">
+                            India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                        </p>
                     </div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    
+                    <!-- Solutions -->
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul class="footer-links">
+                            <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
+                            <li><a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                            <li><a href="/TMS/">Transport Management Solution </a></li>
+                            <li><a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                            <li><a href="/Fuel-managment/">Fuel Management</a></li>
+                            <li><a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                            <li><a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions</a></li>
+                            <li><a href="/payment-solutions/">Payment Solutions</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Industries -->
+                    <div class="footer-col">
+                        <h4>Industries</h4>
+                        <ul class="footer-links">
+                            <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                            <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                            <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                            <li><a href="/government-authorities/">Government Authorities</a></li>
+                            <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                            <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                            <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/who-are-we/"><i class="fas fa-info-circle"></i> Who We Are</a></li>
+                            <li><a href="/careers"><i class="fas fa-briefcase"></i> Careers</a></li>
+                            <li><a href="/press"><i class="fas fa-newspaper"></i> Press</a></li>
+                            <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-contact-row" style="display: flex; justify-content: space-between;">
+                    <div class="footer-contact-col" style="width: 100%;">
+                        <div class="footer-contact" style="line-height: 0; display: flex; flex-direction: column; align-items: flex-start;">
+                   
+                            <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                            <p><i class="fas fa-phone-alt fa-rotate-90"></i>+91 8861867788</p>
+                            <p><i class="fas fa-envelope"></i>info@ektruck.com</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+        
+        
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>ektruck@2025. All rights reserved.</span>
+                    </div>
+                    <div class="footer-policies">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
+                        <a href="/sitemap">Sitemap</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <i class="far fa-copyright"></i>
-                    <span>ektruck. All rights reserved.</span>
-                </div>
-                <div class="footer-policies">
-                    <a href="/privacy-policy">Privacy Policy</a>
-                    <a href="/terms-of-service">Terms of Service</a>
-                    <a href="/sitemap">Sitemap</a>
-                </div>
+            <!-- Scroll to top button -->
+            <div class="scroll-top">
+                <i class="fas fa-chevron-up"></i>
             </div>
-        </div>
-        
-        <!-- Scroll to top button -->
-        <div class="scroll-top">
-            <i class="fas fa-chevron-up"></i>
-        </div>
-    </footer>
+        </footer>
     
     <!-- Simple JavaScript for scroll to top functionality -->
     <script>

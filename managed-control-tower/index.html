@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Managed Control Tower - ek(one)</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/mct.css">
     <link rel="stylesheet" href="../css/erp-integration.css">
@@ -72,64 +71,67 @@
     </div>
 
      <!-- Navigation -->
-     <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
-            </div>
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
             
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/" class="active">Managed Control Tower</a>
-                            <a href="/adas-dms/">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                       
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
-
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </nav>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero-section" class="hero mct-hero">
@@ -144,14 +146,12 @@
 
       <div class="container">
         <!-- Left side - text content -->
-        <div class="hero-content">
-          <div class="badge-container">
-            <span class="badge">Tailored Logistics Solutions</span>
-          </div>
+        <div class="hero-content-1">
+        
           
           <h1 class="animated-heading">
             <span class="text-line">Managed </span>
-            <span class="text-line accent-text">Control <span class="highlight">Tower</span></span>
+            <span class="text-line accent-text">Control <span style="color: #ff0000;">Tower</span></span>
           </h1>
           
           <p class="hero-description">
@@ -170,7 +170,7 @@
         <div class="hero-image">
           <div class="dashboard-mockup">
             <div class="dashboard-content">
-              <img src="../assets/img/control-tower-dashboard.png" alt="Control Tower Dashboard" class="dashboard-img">
+              <img src="../assets/images-web/mct.png" alt="Control Tower Dashboard" class="dashboard-img">
               <div class="dark-overlay"></div>
             </div>
           </div>
@@ -196,7 +196,7 @@
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="animated-heading">Managed Control Tower Integration with <span class="highlight-text">ERP</span></h2>
+                <h2 class="animated-heading">Managed Control Tower  <span class="highlight-text">Integration with ERP</span></h2>
                 <p class="section-subtitle">Creating a unified logistics ecosystem that enhances visibility, coordination, and decision-making</p>
             </div>
             
@@ -205,61 +205,108 @@
             </div>
             
             <div class="erp-visual-container" data-aos="fade-up" data-aos-delay="100">
-                <div class="integration-animation">
-                    <div class="erp-system" data-aos="fade-right" data-aos-delay="200">
-                        <h3>ERP System</h3>
-                        <div class="system-icon">
-                            <i class="fas fa-database"></i>
-                    </div>
-                        <div class="data-points">
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
+                <div class="erp-visual">
+                    <div class="integration-animation">
+                        <!-- ERP System -->
+                        <div class="erp-system" data-aos="fade-right" data-aos-delay="200">
+                            <h3>ERP System</h3>
+                            <div class="system-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="data-points">
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                            </div>
                         </div>
-                </div>
-                
-                    <div class="connection-path" data-aos="fade-up" data-aos-delay="300">
-                        <div class="data-packet packet-1"></div>
-                        <div class="data-packet packet-2"></div>
-                        <div class="data-packet packet-3"></div>
-                    </div>
-                    
-                    <div class="control-tower" data-aos="fade-left" data-aos-delay="200">
-                        <h3>Control Tower</h3>
-                        <div class="system-icon">
-                            <i class="fas fa-broadcast-tower"></i>
+                        
+                        <!-- Firewall System -->
+                        <div class="firewall-system" data-aos="fade-down" data-aos-delay="200">
+                            <h3>Firewall</h3>
+                            <div class="system-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="data-points">
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                            </div>
                         </div>
-                        <div class="data-points">
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
+                        
+                        <!-- API System -->
+                        <div class="api-system" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Third-Party API</h3>
+                            <div class="system-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <div class="data-points">
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="integration-dashboard" data-aos="fade-up" data-aos-delay="400">
-                    <img src="../assets/img/erp-dashboard.svg" alt="ERP Integration Dashboard" class="dashboard-img">
-                    <div class="pulse-point point-1">
-                        <div class="pulse-ripple"></div>
-                        <div class="point-label">Real-time Tracking</div>
-                    </div>
-                    <div class="pulse-point point-2">
-                        <div class="pulse-ripple"></div>
-                        <div class="point-label">AI Insights</div>
-                    </div>
-                    <div class="pulse-point point-3">
-                        <div class="pulse-ripple"></div>
-                        <div class="point-label">Automated Workflows</div>
+                        
+                        <!-- Control Tower -->
+                        <div class="control-tower" data-aos="fade-left" data-aos-delay="200">
+                            <h3>Control Tower</h3>
+                            <div class="system-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <div class="data-points">
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                                <div class="data-point"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Connection Paths -->
+
+                        <!-- ERP to Firewall -->
+                        <div class="connection-path connection-path-horizontal-top">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div>
+                        
+                        <!-- Firewall to Control Tower -->
+                        <div class="connection-path connection-path-horizontal-bottom">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div>
+                        
+                        <!-- Firewall to Control Tower (vertical) -->
+                        <!-- <div class="connection-path-vertical-right">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div> -->
+                        
+                        <!-- API to Control Tower (vertical) -->
+                        <div class="connection-path connection-path-vertical-left">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div>
+                        
+                        <!-- API to Control Tower (horizontal) -->
+                        <div class="connection-path connection-path-horizontal-middle">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div>
+                        
+                        <!-- Direct ERP to Control Tower -->
+                        <div class="connection-path connection-path-direct">
+                            <div class="data-packet packet-1"></div>
+                            <div class="data-packet packet-2"></div>
+                            <div class="data-packet packet-3"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="workflow-section" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="workflow-title">GENERIC WORKFLOW OF SYSTEM INTEGRATION</h3>
-                <div class="workflow-diagram">
-                    <!-- Workflow diagram will be filled with image or visual content -->
-                </div>
-            </div>
+    
             
             <div class="benefits-container" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="benefits-title">Key Benefits</h3>
@@ -273,12 +320,6 @@
                             <h4>End-to-End Visibility</h4>
                             <p>Monitor shipments, inventory, and logistics in real-time within your ERP dashboard.</p>
                         </div>
-                        <div class="benefit-image">
-                            <div class="image-container">
-                                <img src="../assets/img/visibility-icon.svg" alt="End-to-End Visibility">
-                                <div class="image-shine"></div>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
@@ -289,29 +330,17 @@
                             <h4>Data-Driven Decisions</h4>
                             <p>Leverage AI-powered insights for route optimization, cost reduction, and demand forecasting.</p>
                         </div>
-                        <div class="benefit-image">
-                            <div class="image-container">
-                                <img src="../assets/img/data-analytics-icon.svg" alt="Data-Driven Decisions">
-                                <div class="image-shine"></div>
-                        </div>
                     </div>
-                </div>
                 
                     <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit-icon">
+                        <div class="benefit-icon">
                             <i class="fas fa-robot"></i>
-                    </div>
+                        </div>
                         <div class="benefit-content">
                             <h4>Automated Processes</h4>
                             <p>Reduce manual effort with automated order management, exception handling, and compliance tracking.</p>
                         </div>
-                        <div class="benefit-image">
-                            <div class="image-container">
-                                <img src="../assets/img/automation-icon.svg" alt="Automated Processes">
-                                <div class="image-shine"></div>
-                            </div>
                     </div>
-                </div>
                 
                     <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="benefit-icon">
@@ -320,14 +349,8 @@
                         <div class="benefit-content">
                             <h4>Enhanced Collaboration</h4>
                             <p>Connect vendors, carriers, and teams for seamless communication and issue resolution.</p>
-                            </div>
-                        <div class="benefit-image">
-                            <div class="image-container">
-                                <img src="../assets/img/collaboration-icon.svg" alt="Enhanced Collaboration">
-                                <div class="image-shine"></div>
-                            </div>
+                        </div>
                     </div>
-                </div>
                 
                     <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="benefit-icon">
@@ -336,12 +359,6 @@
                         <div class="benefit-content">
                             <h4>Scalability & Compliance</h4>
                             <p>Adapt to business growth while ensuring regulatory adherence and data security.</p>
-                            </div>
-                        <div class="benefit-image">
-                            <div class="image-container">
-                                <img src="../assets/img/scalability-icon.svg" alt="Scalability & Compliance">
-                                <div class="image-shine"></div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -349,7 +366,7 @@
             
             <div class="erp-cta" data-aos="fade-up" data-aos-delay="300">
                 <div class="cta-pulse"></div>
-                <h3>Empower your supply chain with a Managed Control Tower that integrates seamlessly with your ERP, driving efficiency, cost savings, and operational excellence.</h3>
+                <h3 style="color: #ff0000;">Empower your supply chain with a Managed Control Tower that integrates seamlessly with your ERP, driving efficiency, cost savings, and operational excellence.</h3>
                 <a href="#contact" class="btn btn-glow">Schedule a Demo</a>
             </div>
         </div>

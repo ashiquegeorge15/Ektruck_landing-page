@@ -6055,8 +6055,10 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .hero-image img {
-  width: 100%;
-  height: auto;
+  width: 500px;
+  height: 300px;
+  /* width: 100%;
+  height: auto; */
   display: block;
   transition: transform 0.7s ease;
 }
