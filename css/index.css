@@ -1441,7 +1441,7 @@ a:hover {
   }
   
   .animated-heading {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 1.1;
     color: #fff;
@@ -5113,7 +5113,7 @@ lottie-player {
 }
 
 /* Interactive lighting effect */
-.dashboard-mockup::after {
+/* .dashboard-mockup::after {
   content: '';
   position: absolute;
   top: 0;
@@ -5122,7 +5122,7 @@ lottie-player {
   height: 100%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), transparent 60%);
   pointer-events: none;
-}
+} */
 
 /* Add dynamic elements */
 .dynamic-notification {
@@ -5955,7 +5955,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .hero-content {
   max-width: 650px;
   margin: 0 auto 0px;
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 10;
 }
@@ -6055,7 +6055,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .hero-image img {
-  width: 500px;
+  width: auto;
   height: 300px;
   /* width: 100%;
   height: auto; */

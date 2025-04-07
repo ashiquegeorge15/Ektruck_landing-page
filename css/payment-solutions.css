@@ -466,7 +466,7 @@ a:hover {
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: var(--text-light);
     margin-bottom: 30px;
     opacity: 0.9;
@@ -1082,7 +1082,7 @@ a:hover {
 
 .cta-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 20px;
 }
 

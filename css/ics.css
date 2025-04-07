@@ -533,7 +533,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+  
 }
 
 .hero-content {
@@ -587,9 +587,9 @@ img {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     margin-bottom: 30px;
-    color: #cccccc;
+    color: #ffffff;
     line-height: 1.8;
 }
 

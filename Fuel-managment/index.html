@@ -125,7 +125,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="/careers/" class="nav-link">Careers</a>
                 </li>
             </ul>
             
@@ -165,14 +165,12 @@
 
         <div class="container">
             <!-- Left side - text content -->
-            <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
-                <div class="badge-container">
-                    <span class="badge">Smart Fleet Solutions</span>
-                </div>
+            <div class="hero-content" data-aos="fade-right" data-aos-delay="100" style="text-align: left;">
+              
                 
                 <h1 class="animated-heading">
                     <span class="text-line">Fuel </span>
-                    <span class="text-line accent-text">Management <span class="highlight">Solutions</span></span>
+                    <span class="text-line accent-text">Management <span style="color: red;">Solutions</span></span>
                 </h1>
                 
                 <p class="hero-description">
@@ -186,117 +184,19 @@
                         <i class="fas fa-arrow-right"></i>
                         <span class="btn-shine"></span>
                     </a>
-                    <a href="" class="btn-outline">Request Demo</a>
+                    <a href="" class="btn">Request Demo</a>
                 </div>
             </div>
             
             <!-- Right side - image -->
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
-                <div class="dashboard-mockup" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="dashboard-header">
-                        <h3>Fuel Management Dashboard</h3>
-                        <div class="dashboard-controls">
-                            <span class="dashboard-date">Today, <span id="current-date">Jun 15</span></span>
-                            <div class="dashboard-actions">
-                                <i class="fas fa-bell"></i>
-                                <i class="fas fa-cog"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="dashboard-body">
-                        <!-- Fuel gauges -->
-                        <div class="fuel-gauge fuel-gauge-1">
-                            <svg class="gauge-animation" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#e62e2e" />
-                                        <stop offset="100%" stop-color="#ff5c5c" />
-                                    </linearGradient>
-                                    <filter id="gaugeGlow" x="-20%" y="-20%" width="140%" height="140%">
-                                        <feGaussianBlur stdDeviation="2" result="blur" />
-                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                    </filter>
-                                </defs>
-                                <!-- Gauge background -->
-                                <circle cx="60" cy="60" r="50" fill="#222" stroke="#333" stroke-width="2" />
-                                <!-- Gauge meter -->
-                                <path d="M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z" fill="url(#gaugeGradient)" filter="url(#gaugeGlow)">
-                                    <animate attributeName="d" 
-                                        values="M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z"
-                                        dur="8s" repeatCount="indefinite" />
-                                </path>
-                                <!-- Center point -->
-                                <circle cx="60" cy="60" r="5" fill="#444" stroke="#555" stroke-width="1" />
-                                <!-- Gauge value -->
-                                <text x="60" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                                    <tspan id="gaugeValue1">72%</tspan>
-                                    <animate attributeName="textContent" 
-                                        values="65%;72%;80%;65%" 
-                                        dur="8s" repeatCount="indefinite" />
-                                </text>
-                            </svg>
-                        </div>
-                        
-                        <div class="fuel-gauge fuel-gauge-2">
-                            <svg class="gauge-animation" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gaugeGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#e62e2e" />
-                                        <stop offset="100%" stop-color="#ff5c5c" />
-                                    </linearGradient>
-                                </defs>
-                                <!-- Gauge background -->
-                                <circle cx="60" cy="60" r="50" fill="#222" stroke="#333" stroke-width="2" />
-                                <!-- Gauge meter -->
-                                <path d="M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z" fill="url(#gaugeGradient2)" filter="url(#gaugeGlow)">
-                                    <animate attributeName="d" 
-                                        values="M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 60,110 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 104,82 Z; 
-                                                M 60,60 L 60,10 A 50,50 0 0,1 85,106 Z"
-                                        dur="8s" repeatCount="indefinite" />
-                                </path>
-                                <!-- Center point -->
-                                <circle cx="60" cy="60" r="5" fill="#444" stroke="#555" stroke-width="1" />
-                                <!-- Gauge value -->
-                                <text x="60" y="75" text-anchor="middle" fill="white" font-size="12" font-weight="bold">
-                                    <tspan id="gaugeValue2">85%</tspan>
-                                    <animate attributeName="textContent" 
-                                        values="85%;78%;90%;85%" 
-                                        dur="8s" repeatCount="indefinite" />
-                                </text>
-                            </svg>
-                        </div>
-                        
-                        <!-- Fuel level indicator -->
-                        <div class="fuel-level-indicator" data-level="75%"></div>
-                        
-                        <!-- Dashboard elements -->
-                        <div class="dashboard-element fuel-consumption" data-aos="fade-up" data-aos-delay="700">
-                            <div class="dashboard-value">5.6 L/100km</div>
-                            <div class="dashboard-label">AVG CONSUMPTION</div>
-                        </div>
-                        
-                        <div class="dashboard-element fuel-savings" data-aos="fade-up" data-aos-delay="800">
-                            <div class="dashboard-value">-15%</div>
-                            <div class="dashboard-label">COST REDUCTION</div>
-                        </div>
-                        
-                        <!-- Route and vehicle animation -->
-                        <div class="route-path" data-aos="fade-up" data-aos-delay="900"></div>
-                        <div class="route-vehicle" data-aos="fade-up" data-aos-delay="950"></div>
-                        
-                        <!-- Fuel droplets animation -->
-                        <div class="fuel-droplet droplet-1"></div>
-                        <div class="fuel-droplet droplet-2"></div>
-                        <div class="fuel-droplet droplet-3"></div>
-                    </div>
+            <div class="hero-image-container" data-aos="fade-left" data-aos-delay="200">
+                <div class="hero-image-wrapper">
+                    <img src="../assets/images-web/fuel management2.png" alt="Fuel Management System" class="hero-img">
+                    <div class="hero-image-overlay"></div>
+             
                 </div>
             </div>
+           
         </div>
     </section>
 
@@ -439,10 +339,80 @@
         </div>
     </section>
 
+    <style>
+        /* CTA Button Styles */
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 2rem;
+        }
+        
+        .cta-buttons .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-align: center;
+        }
+        
+        .cta-buttons .btn-glow {
+            background-color: var(--primary-red);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(230, 46, 46, 0.4);
+        }
+        
+        .cta-buttons .btn-glow:hover {
+            background-color: var(--primary-red-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 46, 46, 0.5);
+        }
+        
+        .cta-buttons .btn-glow i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-buttons .btn-glow:hover i {
+            transform: translateX(5px);
+        }
+        
+        .cta-buttons .btn-outline {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .cta-buttons .btn-outline:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
     <!-- CTA Section -->
     <section class="cta-section scroll-reveal">
         <div class="container cta-container">
-            <div class="cta-content" data-aos="fade-right">
+            <div class="cta-content" data-aos="fade-right" style="text-align: left;">
                 <h2 data-text="Enhance Your Fleet's Fuel Efficiency Today">Enhance Your Fleet's Fuel Efficiency Today</h2>
                 <p>Enhance your fleet's fuel efficiency with our intelligent, real-time fuel management system, ensuring cost control, transparency, and optimized performance.</p>
                 <div class="cta-buttons">
@@ -451,7 +421,7 @@
                 </div>
             </div>
             <div class="cta-image" data-aos="fade-left">
-                <img src="../assets/images/fuel-dashboard.jpg" alt="Fuel Dashboard">
+                <img src="../assets/images-web/fuel management.png" alt="Fuel Dashboard">
                 <div class="loading-spinner"></div>
                 <div class="cta-overlay"></div>
             </div>
@@ -470,90 +440,106 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="site-footer">
-        <div class="footer-background"></div>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <!-- Company Information -->
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-                    <a href="/" class="footer-logo">
-                        <img src="/assets/logo.png" alt="Transport & Logistics Logo">
-                        <div class="logo-decoration"></div>
-                    </a>
-                    <p class="company-description">
-                        India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
-                    </p>
-             
-                </div>
-                
-                <!-- Solutions -->
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Solutions</h4>
-                    <ul class="footer-links">
-                      <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
-                        <li> <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
-                        <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
-                        <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
-                        <li> <a href="/Fuel-managment/">Fuel Management</a></li>
-                        <li> <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
-                        <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
-                        <li> <a href="/payment-solutions/">Payment Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Industries -->
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-                    <h4>Industries</h4>
-                    <ul class="footer-links">
-                       <li><a href="/transport&logistics/">Transport & Logistics</a></li>
-                        <li><a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a></li>
-                        <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
-                        <li><a href="/government-authorities/">Government Authorities</a></li>
-                        <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
-                        <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
-                        <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact -->
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
-                    <h4>Contact Us</h4>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
-                        <p><i class="fas fa-phone-alt"></i>080-68976911</p>
-                        <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
+   
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <div class="footer-background"></div>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Company Information -->
+                    <div class="footer-col">
+                        <a href="/" class="footer-logo">
+                            <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                            <div class="logo-decoration"></div>
+                        </a>
+                        <p class="company-description">
+                            India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                        </p>
                     </div>
-                    <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    
+                    <!-- Solutions -->
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul class="footer-links">
+                            <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
+                            <li><a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                            <li><a href="/TMS/">Transport Management Solution </a></li>
+                            <li><a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                            <li><a href="/Fuel-managment/">Fuel Management</a></li>
+                            <li><a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                            <li><a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions</a></li>
+                            <li><a href="/payment-solutions/">Payment Solutions</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Industries -->
+                    <div class="footer-col">
+                        <h4>Industries</h4>
+                        <ul class="footer-links">
+                            <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                            <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                            <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                          
+                            <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                            <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                            <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/who-are-we/"><i class="fas fa-info-circle"></i> Who We Are</a></li>
+                            <li><a href="/careers"><i class="fas fa-briefcase"></i> Careers</a></li>
+                            <li><a href="/press"><i class="fas fa-newspaper"></i> Press</a></li>
+                            <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-contact-row" style="display: flex; justify-content: space-between;">
+                    <div class="footer-contact-col" style="width: 100%;">
+                        <div class="footer-contact" style="line-height: 0; display: flex; flex-direction: column; align-items: flex-start;">
+                   
+                            <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                            <p><i class="fas fa-phone-alt fa-rotate-90"></i>+91 8861867788</p>
+                            <p><i class="fas fa-envelope"></i>info@ektruck.com</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+        
+        
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>ektruck@2025. All rights reserved.</span>
+                    </div>
+                    <div class="footer-policies">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
+                        <a href="/sitemap">Sitemap</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Footer Bottom -->
-            <div class="footer-bottom" data-aos="fade-up" data-aos-delay="600">
-                <div class="copyright">
-                    <i class="far fa-copyright"></i>
-                    <span>ektruck. All rights reserved.</span>
-                </div>
-                <div class="footer-policies">
-                    <a href="/privacy-policy">Privacy Policy</a>
-                    <a href="/terms-of-service">Terms of Service</a>
-                    <a href="/sitemap">Sitemap</a>
-                </div>
+            <!-- Scroll to top button -->
+            <div class="scroll-top">
+                <i class="fas fa-chevron-up"></i>
             </div>
-        </div>
-        
-        <!-- Scroll to top button -->
-        <div class="scroll-top">
-            <i class="fas fa-chevron-up"></i>
-        </div>
-    </footer>
+        </footer>
     
     <!-- Simple JavaScript for scroll to top functionality -->
     <script>
@@ -575,7 +561,9 @@
                 });
             });
         });
-    </script>
+        </script>
+    
+        
     
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1047,5 +1035,275 @@
         }
     }
     </script>
+
+    <style>
+        .hero-image-container {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transform: scale(1);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover .hero-img {
+            transform: scale(1.05);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: linear-gradient(45deg, rgba(230, 46, 46, 0.2), transparent); */
+            pointer-events: none;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .fuel-indicator {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .fuel-indicator i {
+            font-size: 1.2rem;
+        }
+
+        .fuel-indicator span {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .fuel-high {
+            top: 20%;
+            left: 10%;
+            color: #2ecc71;
+        }
+
+        .fuel-optimal {
+            top: 50%;
+            right: 15%;
+            color: #3498db;
+        }
+
+        .fuel-low {
+            bottom: 20%;
+            left: 20%;
+            color: #e74c3c;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+                margin-top: 3rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+
+            .fuel-indicator {
+                padding: 8px 12px;
+            }
+
+            .fuel-indicator i {
+                font-size: 1rem;
+            }
+
+            .fuel-indicator span {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Center Feature Icon */
+        .feature-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem auto;
+        }
+        
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary-red);
+        }
+        /* Smaller Feature Cards */
+        .features-grid {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            /* flex-wrap: wrap; */
+        }
+        
+        .feature-card {
+            background-color: rgba(33, 37, 41, 0.7);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-dark);
+            width: 180px;
+            flex: 0 0 auto;
+        }
+        
+        .feature-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(230, 46, 46, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 0.5rem auto;
+        }
+        
+        .feature-icon i {
+            font-size: 1.2rem;
+            color: var(--primary-red);
+        }
+        
+        .feature-content h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .feature-content p {
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+        
+        /* Smaller Benefits Cards with Centered Content */
+        .benefits-grid {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            
+        }
+        
+        .benefit-card {
+            background-color: rgba(33, 37, 41, 0.7);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-dark);
+            width: 180px;
+            flex: 0 0 auto;
+        }
+        
+        .benefit-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(230, 46, 46, 0.1);
+            border-radius: 50%;
+            margin: 0 auto 0.5rem auto;
+        }
+        
+        .benefit-icon i {
+            font-size: 1.2rem;
+            color: var(--primary-red);
+        }
+        
+        .benefit-content h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+        }
+        
+        .benefit-content p {
+            color: #adb5bd;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 992px) {
+            .features-grid, .benefits-grid {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card {
+                width: 150px;
+                padding: 0.8rem;
+            }
+            
+            .feature-icon, .benefit-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .feature-content h3, .benefit-content h3 {
+                font-size: 0.85rem;
+            }
+            
+            .feature-content p, .benefit-content p {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
 </body>
 </html>

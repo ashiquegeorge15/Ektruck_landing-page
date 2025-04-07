@@ -63,7 +63,7 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1000px; */
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -319,8 +319,8 @@ img {
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    color: #adb5bd;
+    font-size: 1.0rem;
+    color: #ffffff;
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -404,7 +404,7 @@ img {
 
 /* Features Section */
 .features-section {
-    padding: 100px 0;
+
     position: relative;
     background-color: var(--bg-dark);
 }

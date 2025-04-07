@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent Cargo Solutions - EkTruck</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/navbar-only.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer-only.css">
     <link rel="stylesheet" href="../css/ics.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -290,6 +290,134 @@
                 padding-bottom: 20px;
             }
         }
+        
+        /* Minimal Hero Image Styles */
+        .hero-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .dashboard-mockup {
+            width: 100%;
+            /* max-width: 450px; */
+            background-color: transparent;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: none !important;
+            transition: none !important;
+        }
+        
+        .dashboard-content {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 65%;
+            overflow: hidden;
+        }
+        
+        .dashboard-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.9;
+            filter: none !important;
+            transition: none !important;
+        }
+        
+        .hero-content {
+            flex: 0 0 55%;
+            max-width: 55%;
+            padding-right: 5%;
+        }
+        
+        @media (max-width: 992px) {
+            .hero-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                justify-content: center;
+                margin-top: 40px;
+            }
+            
+            .dashboard-mockup {
+                max-width: 400px;
+                transform: none !important;
+            }
+            
+            .hero-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .dashboard-mockup {
+                max-width: 320px;
+            }
+            
+            .dashboard-content {
+                padding-bottom: 70%;
+            }
+        }
+        
+        /* Simple Static Hero Image */
+        .hero-image {
+            flex: 0 0 40%;
+            max-width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .simple-hero-img {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 992px) {
+            .hero-image {
+                flex: 0 0 100%;
+                max-width: 100%;
+                justify-content: center;
+                margin-top: 40px;
+            }
+            
+            .simple-hero-img {
+                width: 350px;
+            }
+            
+            .hero-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .simple-hero-img {
+                width: 280px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -308,70 +436,75 @@
     <!-- Cursor Tracker -->
     <div class="cursor-tracker"></div>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="../assets/logo.png" alt="ek(one) Logo">
-            </div>
-            
-            <div class="nav-menu">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="/ek(one)platform/" class="nav-link">ek(one) Platform</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a href="#solutions" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/managed-control-tower/">Managed Control Tower</a>
-                            <a href="/adas-dms/" class="active">ADAS/DMS Solutions</a>
-                            <a href="/TMS/">Transport Management Solution (TMS) </a>
-                            <a href="/TPMS/">Temperature Monitoring Solutions</a>
-                            <a href="/Fuel-managment/">Fuel Management</a>
-                            <a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a>
-                            <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a>
-                            <a href="/payment-solutions/">Payment Solutions</a>
-                        </div>
-                    </li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#industries" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-menu">
-                            <a href="/transport&logistics/">Transport & Logistics</a>
-                            <a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a>
-                            <a href="/infrastructre-projects/">Infrastructure Projects</a>
-                           
-                            <a href="/small&medium-business/">Small and Medium Businesses</a>
-                            <a href="/oil-gas-distribution/">Oil and Gas Distribution</a>
-                            <a href="/manufacturers-traders/">Manufacturers & Traders</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/case-study/" class="nav-link">Case Studies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-buttons">
-                    <button class="btn btn-primary">Login</button>
-                </div>
-            </div>
-
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+   
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <!-- Mobile menu content will be here -->
     </div>
+
+     <!-- Navigation -->
+ <nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo nav-logo">
+            <a href="/">
+                <img src="/assets/logo.png" alt="ek(one) Logo" width="120" height="40">
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="/ek(one)platform/" class="nav-link" id="ekone-platform">ek(one) Platform</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
+                        <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
+                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
+                        <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
+                        <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
+                        <a href="/sim-tracking/" class="dropdown-item">SIM/Mobile-Based Visibility Solutions</a>
+                        <a href="/payment-solutions/" class="dropdown-item">Payment Solutions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
+                        <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
+                        <a href="/infrastructre-projects/" class="dropdown-item">Infrastructure Projects</a>
+                        <a href="/small&medium-business/" class="dropdown-item">Small and Medium Businesses</a>
+                        <a href="/oil-gas-distribution/" class="dropdown-item">Oil and Gas Distribution</a>
+                        <a href="/manufacturers-traders/" class="dropdown-item">Manufacturers & Traders</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/case-study/" class="nav-link">Case Studies</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="/login" class="btn btn-primary">Sign In</a>
+            </div>
+        </div>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero-section" class="hero ics-hero">
@@ -392,13 +525,11 @@
         <div class="container">
             <!-- Left side - text content -->
             <div class="hero-content">
-                <div class="badge-container">
-                    <span class="badge">Smart Logistics</span>
-                </div>
+            
                 
                 <h1 class="animated-heading">
                     <span class="text-line">Intelligent </span>
-                    <span class="text-line accent-text">Cargo <span class="highlight">Solutions</span></span>
+                    <span class="text-line accent-text">Cargo <span style="color: red;">Solutions</span></span>
                 </h1>
                 
                 <p class="hero-description">
@@ -417,21 +548,7 @@
             
             <!-- Right side - image -->
             <div class="hero-image">
-                <div class="dashboard-mockup">
-                    <div class="dashboard-content">
-                        <img src="../assets/images/cargo-dashboard.jpg" class="dashboard-img" alt="Cargo Management Dashboard">
-                        
-                        <!-- Animated Network Lines -->
-                        <div class="network-lines">
-                            <!-- Lines will be generated by JavaScript -->
-                        </div>
-                        
-                        <!-- SVG Tracking Animation -->
-                        <div class="tracking-animation" id="cargo-tracking">
-                            <object type="image/svg+xml" data="../assets/svg/cargo-tracking-route.svg" class="svg-loader" id="tracking-svg"></object>
-                        </div>
-                    </div>
-                </div>
+                <img src="../assets/images-web/ics.png" alt="Intelligent Cargo Management" class="simple-hero-img">
             </div>
         </div>
     </section>
@@ -446,87 +563,185 @@
                 <p class="section-subheading">Innovative solutions to optimize your cargo logistics</p>
             </div>
             
-            <div class="features-container">
-                <div class="feature-item" data-aos="fade-right">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-map"></i>
-                        </div>
-                        <h3 class="feature-title">Real-Time Cargo Tracking</h3>
-                        <p class="feature-desc">Monitor shipment location, movement, and condition</p>
+            <style>
+                .features-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 15px;
+                    margin-top: 40px;
+                }
+                
+                .feature-card {
+                    background-color: var(--card-bg);
+                    border-radius: 8px;
+                    padding: 20px 15px;
+                    box-shadow: var(--shadow-md);
+                    border: 1px solid var(--card-border);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .feature-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: var(--shadow-lg);
+                }
+                
+                .feature-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+                }
+                
+                .feature-card-icon {
+                    font-size: 30px;
+                    color: var(--primary-color);
+                    margin-bottom: 15px;
+                    background-color: rgba(230, 46, 46, 0.1);
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+                }
+                
+                .feature-card:hover .feature-card-icon {
+                    background-color: rgba(230, 46, 46, 0.2);
+                }
+                
+                .feature-card-title {
+                    font-size: 1.1rem;
+                    margin-bottom: 10px;
+                    line-height: 1.3;
+                }
+                
+                .feature-card-desc {
+                    color: #cccccc;
+                    font-size: 0.85rem;
+                    line-height: 1.5;
+                }
+                
+                @media (max-width: 1200px) {
+                    .features-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+                
+                @media (max-width: 992px) {
+                    .features-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .features-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                    }
+                    
+                    .feature-card {
+                        padding: 15px 10px;
+                    }
+                    
+                    .feature-card-icon {
+                        font-size: 24px;
+                        width: 50px;
+                        height: 50px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .feature-card-title {
+                        font-size: 0.95rem;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .feature-card-desc {
+                        font-size: 0.8rem;
+                    }
+                }
+            </style>
+            
+            <div class="features-grid">
+                <!-- Real-Time Cargo Tracking -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-map"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/cargo-tracking-route.svg" class="svg-loader feature-animation"></object>
-                    </div>
+                    <h3 class="feature-card-title">Real-Time Tracking</h3>
+                    <p class="feature-card-desc">Monitor location, movement, and condition with instant status alerts.</p>
                 </div>
                 
-                <div class="feature-item reverse" data-aos="fade-left">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-shield-quarter"></i>
-                        </div>
-                        <h3 class="feature-title">Security & Tamper Alerts</h3>
-                        <p class="feature-desc">Detect unauthorized access or tampering in real time.</p>
+                <!-- Security & Tamper Alerts -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-shield-quarter"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/security-lock.svg" class="svg-loader feature-animation"></object>
-                    </div>
+                    <h3 class="feature-card-title">Security Alerts</h3>
+                    <p class="feature-card-desc">Detect unauthorized access with advanced security sensors.</p>
                 </div>
                 
-                <div class="feature-item" data-aos="fade-right">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-line-chart"></i>
-                        </div>
-                        <h3 class="feature-title">Environmental Monitoring</h3>
-                        <p class="feature-desc">Track temperature, humidity, and shock levels for sensitive goods.</p>
-                
+                <!-- Environmental Monitoring -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-line-chart"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/env-monitoring.svg" class="svg-loader feature-animation"></object>
-                    </div>
+                    <h3 class="feature-card-title">Environmental Monitoring</h3>
+                    <p class="feature-card-desc">Track temperature, humidity and shock levels for sensitive cargo.</p>
                 </div>
                 
-                <div class="feature-item reverse" data-aos="fade-left">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-analyse"></i>
-                        </div>
-                        <h3 class="feature-title">Predictive Analytics & AI</h3>
-                        <p class="feature-desc">Optimize routes, reduce delays, and improve supply chain efficiency.</p>
-                
+                <!-- Predictive Analytics & AI -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-analyse"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/predictive-analytics.svg" class="svg-loader feature-animation"></object>
-                    </div>
+                    <h3 class="feature-card-title">Predictive Analytics</h3>
+                    <p class="feature-card-desc">Optimize routes and predict issues with AI algorithms.</p>
                 </div>
                 
-                <div class="feature-item" data-aos="fade-right">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-link"></i>
-                        </div>
-                        <h3 class="feature-title">Seamless Integration</h3>
-                        <p class="feature-desc">Connect cargo data with your enterprise systems.</p>
-                  
+                <!-- Seamless Integration -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-link"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/integration-system.svg" class="svg-loader feature-animation"></object>
-                    </div>
+                    <h3 class="feature-card-title">Seamless Integration</h3>
+                    <p class="feature-card-desc">Connect with TMS, WMS, ERP and other supply chain systems.</p>
                 </div>
                 
-                <div class="feature-item reverse" data-aos="fade-left">
-                    <div class="feature-content">
-                        <div class="feature-icon">
-                            <i class="bx bx-battery"></i>
-                        </div>
-                        <h3 class="feature-title">Long Battery Life & Wireless Connectivity </h3>
-                        <p class="feature-desc">Reliable monitoring with minimal maintenance.</p>
-                  
+                <!-- Long Battery Life -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-battery"></i>
                     </div>
-                    <div class="feature-visual">
-                        <object type="image/svg+xml" data="../assets/svg/battery-life.svg" class="svg-loader feature-animation"></object>
+                    <h3 class="feature-card-title">Long Battery Life</h3>
+                    <p class="feature-card-desc">Reliable monitoring with minimal maintenance requirements.</p>
+                </div>
+                
+                <!-- Geofencing -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-map-alt"></i>
                     </div>
+                    <h3 class="feature-card-title">Geofencing</h3>
+                    <p class="feature-card-desc">Create virtual boundaries and receive alerts when crossed.</p>
+                </div>
+                
+                <!-- Mobile Access -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="feature-card-icon">
+                        <i class="bx bx-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-card-title">Mobile Access</h3>
+                    <p class="feature-card-desc">Manage your cargo from anywhere with our mobile app.</p>
                 </div>
             </div>
         </div>
@@ -544,140 +759,300 @@
         
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-heading" data-aos="fade-up">Real-Time Data Visualization</h2>
-                <p class="section-subheading" data-aos="fade-up" data-aos-delay="100">Assisting Decision-Making & Upgrading Management Through Intelligent Data Analysis</p>
+                <h2 class="section-heading">Real-Time Data Visualization</h2>
+                <p class="section-subheading">Assisting Decision-Making & Upgrading Management Through Intelligent Data Analysis</p>
             </div>
             
-            <div class="data-viz-grid">
+            <style>
+                .viz-cards-grid {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 15px;
+                    margin-top: 40px;
+                }
+                
+                .viz-card {
+                    background: linear-gradient(145deg, #151515, #1a1a1a);
+                    border-radius: 8px;
+                    padding: 20px 15px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    border: 1px solid rgba(255, 51, 51, 0.1);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .viz-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 35px rgba(255, 51, 51, 0.2);
+                    border-color: rgba(255, 51, 51, 0.3);
+                }
+                
+                .viz-card-header {
+                    position: relative;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                
+                .viz-card-icon {
+                    font-size: 30px;
+                    color: var(--primary-color);
+                    margin-bottom: 15px;
+                    background-color: rgba(230, 46, 46, 0.1);
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 2;
+                    transition: all 0.3s ease;
+                }
+                
+                .viz-card-icon::after {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), transparent);
+                    border-radius: 50%;
+                    z-index: -1;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .viz-card:hover .viz-card-icon::after {
+                    opacity: 1;
+                }
+                
+                .viz-card-title {
+                    font-size: 1.1rem;
+                    margin-bottom: 10px;
+                    color: #ffffff;
+                }
+                
+                .viz-card-desc {
+                    color: #cccccc;
+                    font-size: 0.85rem;
+                    line-height: 1.5;
+                    margin-bottom: 15px;
+                }
+                
+                .viz-card-footer {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-top: auto;
+                }
+                
+                .viz-card-stats {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+                    padding-top: 15px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                }
+                
+                .viz-stat {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .viz-stat-value {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    color: var(--primary-color);
+                }
+                
+                .viz-stat-label {
+                    font-size: 0.75rem;
+                    color: #999;
+                    margin-top: 3px;
+                }
+                
+                .viz-card.wide {
+                    grid-column: span 4;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: left;
+                    padding: 25px;
+                }
+                
+                .viz-card.wide .viz-card-content {
+                    margin-left: 20px;
+                    flex: 1;
+                }
+                
+                .viz-card.wide .viz-card-icon {
+                    margin-bottom: 0;
+                }
+                
+                .viz-card.wide .viz-card-desc {
+                    margin-bottom: 10px;
+                    max-width: 600px;
+                }
+                
+                .viz-card-badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin-top: 10px;
+                }
+                
+                .viz-badge {
+                    background-color: rgba(255, 51, 51, 0.1);
+                    color: var(--primary-color);
+                    padding: 4px 10px;
+                    border-radius: 20px;
+                    font-size: 0.75rem;
+                    display: inline-flex;
+                    align-items: center;
+                }
+                
+                .viz-badge i {
+                    margin-right: 4px;
+                    font-size: 0.8rem;
+                }
+                
+                @media (max-width: 1200px) {
+                    .viz-cards-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    
+                    .viz-card.wide {
+                        grid-column: span 3;
+                    }
+                }
+                
+                @media (max-width: 992px) {
+                    .viz-cards-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    
+                    .viz-card.wide {
+                        grid-column: span 2;
+                        flex-direction: column;
+                        text-align: center;
+                        padding: 20px;
+                    }
+                    
+                    .viz-card.wide .viz-card-content {
+                        margin-left: 0;
+                        margin-top: 15px;
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .viz-cards-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                    }
+                    
+                    .viz-card {
+                        padding: 15px 10px;
+                    }
+                    
+                    .viz-card-icon {
+                        font-size: 24px;
+                        width: 50px;
+                        height: 50px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .viz-card-title {
+                        font-size: 0.95rem;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .viz-card-desc {
+                        font-size: 0.8rem;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .viz-card.wide {
+                        grid-column: span 2;
+                    }
+                    
+                    .viz-card-stats {
+                        flex-direction: column;
+                        gap: 10px;
+                        align-items: center;
+                    }
+                }
+            </style>
+            
+            <div class="viz-cards-grid">
                 <!-- Cargo Vision -->
-                <div class="data-viz-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="data-viz-content">
-                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="bx bx-camera"></i>
-                        </div>
-                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="250">Cargo Vision</h3>
-                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="300">
-                            By integrating and analyzing data such as images, videos, cargo capacity, GPS, etc., we provide operators with one-stop web operations for complete visual monitoring of cargo.
-                        </p>
+                <div class="viz-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="viz-card-icon">
+                        <i class="bx bx-camera"></i>
                     </div>
-                    <div class="data-viz-visual" data-aos="fade-left" data-aos-delay="400">
-                        <div class="animated-svg-container">
-                            <svg class="cargo-vision-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Camera lens circles -->
-                                <circle class="pulse-circle" cx="150" cy="100" r="50" fill="rgba(255, 51, 51, 0.1)" stroke="#ff3333" stroke-width="2" />
-                                <circle class="pulse-circle-2" cx="150" cy="100" r="40" fill="none" stroke="#ff3333" stroke-width="1.5" />
-                                <circle cx="150" cy="100" r="30" fill="none" stroke="#ff3333" stroke-width="1" />
-                                <circle cx="150" cy="100" r="20" fill="#ff3333" fill-opacity="0.2" stroke="#ff3333" stroke-width="1" />
-                                
-                                <!-- Scanning line animation -->
-                                <line class="scanning-line" x1="100" y1="100" x2="200" y2="100" stroke="#ff3333" stroke-width="2" />
-                                
-                                <!-- Data points -->
-                                <circle class="data-point" cx="120" cy="80" r="3" fill="#ff3333" />
-                                <circle class="data-point" cx="180" cy="75" r="3" fill="#ff3333" />
-                                <circle class="data-point" cx="165" cy="130" r="3" fill="#ff3333" />
-                                <circle class="data-point" cx="135" cy="120" r="3" fill="#ff3333" />
-                                
-                                <!-- Data connection lines -->
-                                <line class="data-line" x1="120" y1="80" x2="180" y2="75" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
-                                <line class="data-line" x1="180" y1="75" x2="165" y2="130" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
-                                <line class="data-line" x1="165" y1="130" x2="135" y2="120" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
-                                <line class="data-line" x1="135" y1="120" x2="120" y2="80" stroke="#ff3333" stroke-width="1" stroke-dasharray="4,2" />
-                            </svg>
-                        </div>
-                    </div>
+                    <h3 class="viz-card-title">Cargo Vision</h3>
+                    <p class="viz-card-desc">
+                        Visual monitoring of cargo with integrated data analysis for complete visibility.
+                    </p>
+                 
                 </div>
                 
                 <!-- Cargo Alarm -->
-                <div class="data-viz-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="data-viz-content">
-                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="300">
-                            <i class="bx bx-bell"></i>
-                        </div>
-                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="350">Cargo Alarm</h3>
-                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="400">
-                            Retain and clearly display all cargo data by category, in real-time and conveniently, to facilitate efficient cargo capacity management.
-                        </p>
+                <div class="viz-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="viz-card-icon">
+                        <i class="bx bx-bell"></i>
                     </div>
-                    <div class="data-viz-visual" data-aos="fade-left" data-aos-delay="500">
-                        <div class="animated-svg-container">
-                            <svg class="cargo-alarm-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Alarm bell -->
-                                <path class="bell" d="M150,60 C130,60 115,75 115,95 L115,140 L115,145 L185,145 L185,140 L185,95 C185,75 170,60 150,60 Z" fill="none" stroke="#ff3333" stroke-width="2" />
-                                <circle class="bell-top" cx="150" cy="60" r="5" fill="#ff3333" />
-                                
-                                <!-- Bell bottom -->
-                                <path d="M130,145 C130,155 140,165 150,165 C160,165 170,155 170,145" fill="none" stroke="#ff3333" stroke-width="2" />
-                                
-                                <!-- Alarm waves -->
-                                <path class="alarm-wave" d="M110,100 C105,100 100,95 100,90 C100,85 105,80 110,80" fill="none" stroke="#ff3333" stroke-width="2" stroke-linecap="round" />
-                                <path class="alarm-wave" d="M190,100 C195,100 200,95 200,90 C200,85 195,80 190,80" fill="none" stroke="#ff3333" stroke-width="2" stroke-linecap="round" />
-                                
-                                <path class="alarm-wave-outer" d="M95,105 C88,105 80,97 80,90 C80,83 88,75 95,75" fill="none" stroke="#ff3333" stroke-width="1.5" stroke-linecap="round" />
-                                <path class="alarm-wave-outer" d="M205,105 C212,105 220,97 220,90 C220,83 212,75 205,75" fill="none" stroke="#ff3333" stroke-width="1.5" stroke-linecap="round" />
-                                
-                                <!-- Alert dot -->
-                                <circle class="alert-dot" cx="150" cy="110" r="10" fill="#ff3333" fill-opacity="0.8" />
-                                <text x="150" y="114" text-anchor="middle" fill="white" font-size="14" font-weight="bold">!</text>
-                            </svg>
-                        </div>
+                    <h3 class="viz-card-title">Cargo Alarm</h3>
+                    <p class="viz-card-desc">
+                        Real-time alerts and data display for efficient cargo capacity management.
+                    </p>
+                    <div class="viz-card-footer">
+                   
                     </div>
                 </div>
                 
-                <!-- Cargo Dashboard -->
-                <div class="data-viz-card full-width" data-aos="fade-up" data-aos-delay="300">
-                    <div class="data-viz-content">
-                        <div class="data-viz-icon" data-aos="zoom-in" data-aos-delay="400">
-                            <i class="bx bx-bar-chart-alt-2"></i>
-                        </div>
-                        <h3 class="data-viz-title" data-aos="fade-up" data-aos-delay="450">Cargo Dashboard</h3>
-                        <p class="data-viz-desc" data-aos="fade-up" data-aos-delay="500">
-                            One page webpage displays a panoramic view of data, summarizing, categorizing, and analyzing content to help improve management.
-                        </p>
+                <!-- Automated Reporting -->
+                <div class="viz-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="viz-card-icon">
+                        <i class="bx bx-file"></i>
                     </div>
-                    <div class="data-viz-visual full-width" data-aos="fade-left" data-aos-delay="600">
-                        <div class="animated-svg-container">
-                            <svg class="cargo-dashboard-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Dashboard outline -->
-                                <rect x="50" y="30" width="500" height="140" rx="5" ry="5" fill="#2d2d3f" stroke="#444" stroke-width="2" />
-                                
-                                <!-- Top header bar -->
-                                <rect x="50" y="30" width="500" height="25" rx="5" ry="5" fill="#444" />
-                                
-                                <!-- Dashboard widgets -->
-                                <rect class="dashboard-widget" x="65" y="65" width="140" height="90" rx="3" ry="3" fill="#3a3a58" />
-                                <rect class="dashboard-widget" x="220" y="65" width="140" height="90" rx="3" ry="3" fill="#3a3a58" />
-                                <rect class="dashboard-widget" x="375" y="65" width="160" height="90" rx="3" ry="3" fill="#3a3a58" />
-                                
-                                <!-- Chart elements -->
-                                <!-- Widget 1: Bar chart -->
-                                <rect class="chart-bar" x="80" y="130" width="15" height="15" fill="#ff3333" />
-                                <rect class="chart-bar" x="100" y="120" width="15" height="25" fill="#ff3333" />
-                                <rect class="chart-bar" x="120" y="100" width="15" height="45" fill="#ff3333" />
-                                <rect class="chart-bar" x="140" y="110" width="15" height="35" fill="#ff3333" />
-                                <rect class="chart-bar" x="160" y="105" width="15" height="40" fill="#ff3333" />
-                                
-                                <!-- Widget 2: Line chart -->
-                                <polyline class="chart-line" points="230,130 250,110 270,120 290,90 310,105 330,95" fill="none" stroke="#ff3333" stroke-width="2" />
-                                <circle class="chart-point" cx="230" cy="130" r="3" fill="#ff3333" />
-                                <circle class="chart-point" cx="250" cy="110" r="3" fill="#ff3333" />
-                                <circle class="chart-point" cx="270" cy="120" r="3" fill="#ff3333" />
-                                <circle class="chart-point" cx="290" cy="90" r="3" fill="#ff3333" />
-                                <circle class="chart-point" cx="310" cy="105" r="3" fill="#ff3333" />
-                                <circle class="chart-point" cx="330" cy="95" r="3" fill="#ff3333" />
-                                
-                                <!-- Widget 3: Map with route -->
-                                <rect x="385" y="75" width="140" height="70" rx="2" ry="2" fill="#2d2d3f" />
-                                <circle class="map-point" cx="405" cy="95" r="5" fill="#ff3333" fill-opacity="0.8" />
-                                <circle class="map-point-destination" cx="505" cy="115" r="5" fill="#32cd32" fill-opacity="0.8" />
-                                <path class="map-route" d="M405,95 Q455,75 505,115" fill="none" stroke="#ff3333" stroke-width="2" stroke-dasharray="4,2" />
-                                
-                                <!-- Data transmission animation -->
-                                <circle class="data-transmission" cx="300" cy="30" r="3" fill="#ff3333" />
-                            </svg>
-                        </div>
-                    </div>
+                    <h3 class="viz-card-title">Automated Reports</h3>
+                    <p class="viz-card-desc">
+                        Generate customized reports with real-time data and actionable insights.
+                    </p>
+                   
                 </div>
+                
+                <!-- Data Analytics -->
+                <div class="viz-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="viz-card-icon">
+                        <i class="bx bx-line-chart"></i>
+                    </div>
+                    <h3 class="viz-card-title">Data Analytics</h3>
+                    <p class="viz-card-desc">
+                        Advanced analytics tools to identify trends and optimize operations.
+                    </p>
+          
+                </div>
+                
+                <div class="viz-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="viz-card-icon">
+                        <i class="bx bx-line-chart"></i>
+                    </div>
+                    <h3 class="viz-card-title">Interactive Dashboard</h3>
+                    <p class="viz-card-desc">
+                        Panoramic view of cargo data with customizable widgets and real-time visualization for actionable insights.
+                    </p>
+          
+                </div>
+                
+     
             </div>
         </div>
     </section>
@@ -697,32 +1072,129 @@
                 <p class="section-subheading">Transforming logistics with smart technology and real-time insights</p>
             </div>
             
+            <style>
+                .benefits-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 15px;
+                    margin-top: 40px;
+                }
+                
+                .benefit-card {
+                    background-color: var(--card-bg);
+                    border-radius: 8px;
+                    padding: 20px 15px;
+                    box-shadow: var(--shadow-md);
+                    border: 1px solid var(--card-border);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    text-align: center;
+                }
+                
+                .benefit-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: var(--shadow-lg);
+                }
+                
+                .benefit-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+                    transition: height 0.3s ease;
+                }
+                
+                .benefit-card:hover::before {
+                    height: 3px;
+                }
+                
+                .benefit-icon {
+                    font-size: 30px;
+                    color: var(--primary-color);
+                    margin-bottom: 15px;
+                    display: inline-block;
+                }
+                
+                .benefit-title {
+                    font-size: 1.1rem;
+                    margin-bottom: 10px;
+                    line-height: 1.3;
+                }
+                
+                .benefit-desc {
+                    color: #cccccc;
+                    font-size: 0.85rem;
+                    line-height: 1.5;
+                }
+                
+                @media (max-width: 1200px) {
+                    .benefits-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+                
+                @media (max-width: 992px) {
+                    .benefits-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                
+                @media (max-width: 576px) {
+                    .benefits-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 10px;
+                    }
+                    
+                    .benefit-card {
+                        padding: 15px 10px;
+                    }
+                    
+                    .benefit-icon {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .benefit-title {
+                        font-size: 0.95rem;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .benefit-desc {
+                        font-size: 0.8rem;
+                    }
+                }
+            </style>
+            
             <div class="benefits-grid">
                 <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="benefit-icon">
                         <i class="bx bx-show"></i>
                     </div>
                     <h3 class="benefit-title">End-to-End Visibility</h3>
-                    <p class="benefit-desc">Gain full control over cargo movement.</p>
+                    <p class="benefit-desc">Gain full control over cargo movement with real-time tracking.</p>
                 </div>
                 
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="benefit-icon">
                         <i class="bx bx-lock"></i>
                     </div>
                     <h3 class="benefit-title">Enhanced Security</h3>
-                    <p class="benefit-desc">Prevent cargo theft, loss, and damage </p>
+                    <p class="benefit-desc">Prevent cargo theft, loss, and damage with tamper alerts.</p>
                 </div>
                 
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="benefit-icon">
                         <i class="bx bx-sort-up"></i>
                     </div>
                     <h3 class="benefit-title">Optimized Supply Chain</h3>
-                    <p class="benefit-desc">Improve efficiency with AI-driven insights </p>
+                    <p class="benefit-desc">Improve efficiency with AI-driven insights and analytics.</p>
                 </div>
                 
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="benefit-icon">
                         <i class="bx bx-check-shield"></i>
                     </div>
@@ -730,15 +1202,37 @@
                     <p class="benefit-desc">Ensure adherence to industry safety and quality standards.</p>
                 </div>
                 
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="benefit-icon">
                         <i class="bx bx-time-five"></i>
                     </div>
-                    <h3 class="benefit-title">Reduced Losses & Downtime</h3>
-                    <p class="benefit-desc">Minimize risks with proactive alerts and monitoring .</p>
+                    <h3 class="benefit-title">Reduced Downtime</h3>
+                    <p class="benefit-desc">Minimize risks with proactive alerts and monitoring systems.</p>
                 </div>
                 
- 
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="benefit-icon">
+                        <i class="bx bx-analyse"></i>
+                    </div>
+                    <h3 class="benefit-title">Data-Driven Decisions</h3>
+                    <p class="benefit-desc">Make informed choices based on accurate, real-time data.</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="benefit-icon">
+                        <i class="bx bx-dollar-circle"></i>
+                    </div>
+                    <h3 class="benefit-title">Cost Reduction</h3>
+                    <p class="benefit-desc">Lower operational costs through optimized resource allocation.</p>
+                </div>
+                
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="benefit-icon">
+                        <i class="bx bx-send"></i>
+                    </div>
+                    <h3 class="benefit-title">Faster Delivery</h3>
+                    <p class="benefit-desc">Accelerate logistics with optimized routes and planning.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -763,96 +1257,147 @@
         </div>
     </section>
 
-  <!-- Footer Section -->
-  <footer class="site-footer">
-    <div class="footer-background"></div>
-    <div class="footer-container">
-        <div class="footer-grid">
-            <!-- Company Information -->
-            <div class="footer-col">
-                <a href="/" class="footer-logo">
-                    <img src="/assets/logo.png" alt="Transport & Logistics Logo">
-                    <div class="logo-decoration"></div>
-                </a>
-                <p class="company-description">
-                    India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
-                </p>
-         
-            </div>
-            
-            <!-- Solutions -->
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <ul class="footer-links">
-                  <li> <a href="/managed-control-tower/">Managed Control Tower</a></li>
-                    <li> <a href="/adas-dms/">ADAS/DMS Solutions</a></li>
-                    <li> <a href="/TMS/">Transport Management Solution (TMS) </a></li>
-                    <li> <a href="/TPMS/">Temperature Monitoring Solutions</a></li>
-                    <li> <a href="/Fuel-managment/">Fuel Management</a></li>
-                    <li> <a href="/intelligent-cargo-solutions/" class="active">Intelligent Cargo Management</a></li>
-                    <li> <a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions </a></li>
-                    <li> <a href="/payment-solutions/">Payment Solutions</a></li>
-                </ul>
-            </div>
-            
-            <!-- Industries -->
-            <div class="footer-col">
-                <h4>Industries</h4>
-                <ul class="footer-links">
-                   <li><a href="/transport&logistics/">Transport & Logistics</a></li>
-                    <li><a href="/mining&heavy-equipment/">Mining & Heavy Equipment</a></li>
-                    <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
-                 
-                    <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
-                    <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
-                    <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
-                </ul>
-            </div>
-            
-            <!-- Contact -->
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <div class="footer-contact">
-                    <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
-                    <p><i class="fas fa-phone-alt"></i>080-68976911</p>
-                    <p><i class="fas fa-envelope"></i>  support@ektruck.com</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:30am-6pm</p>
-                </div>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
+  
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <div class="footer-background"></div>
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Company Information -->
+                    <div class="footer-col">
+                        <a href="/" class="footer-logo">
+                            <img src="/assets/logo.png" alt="Transport & Logistics Logo">
+                            <div class="logo-decoration"></div>
+                        </a>
+                        <p class="company-description">
+                            India's 1st Unified Trucking Platform built on the principles of simplicity, transparency and empowering controls to end users. Our SAAS based ERP enables fleet-owners and booking agents to conduct their trucking business more efficiently and cost effectively. Our freight procurement portal enables Shippers to source a truck from any where just on a click of a button.
+                        </p>
+                    </div>
+                    
+                    <!-- Solutions -->
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <ul class="footer-links">
+                            <li><a href="/managed-control-tower/">Managed Control Tower</a></li>
+                            <li><a href="/adas-dms/" class="active">ADAS/DMS Solutions</a></li>
+                            <li><a href="/TMS/">Transport Management Solution </a></li>
+                            <li><a href="/TPMS/">Temperature Monitoring Solutions</a></li>
+                            <li><a href="/Fuel-managment/">Fuel Management</a></li>
+                            <li><a href="/intelligent-cargo-solutions/">Intelligent Cargo Management</a></li>
+                            <li><a href="/sim-tracking/">SIM/Mobile-Based Visibility Solutions</a></li>
+                            <li><a href="/payment-solutions/">Payment Solutions</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Industries -->
+                    <div class="footer-col">
+                        <h4>Industries</h4>
+                        <ul class="footer-links">
+                            <li><a href="/transport&logistics/">Transport & Logistics</a></li>
+                            <li><a href="/mining&heavy-equipments/">Mining & Heavy Equipment</a></li>
+                            <li><a href="/infrastructre-projects/">Infrastructure Projects</a></li>
+                            
+                            <li><a href="/small&medium-business/">Small and Medium Businesses</a></li>
+                            <li><a href="/oil-gas-distribution/">Oil and Gas Distribution</a></li>
+                            <li><a href="/manufacturers-traders/">Manufacturers & Traders</a></li>
+                        </ul>
+                    </div>
         
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="copyright">
-                <i class="far fa-copyright"></i>
-                <span>ektruck. All rights reserved.</span>
-            </div>
-            <div class="footer-policies">
-                <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/terms-of-service">Terms of Service</a>
-                <a href="/sitemap">Sitemap</a>
-            </div>
-        </div>
-    </div>
+                    <!-- Company -->
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="/who-are-we/"><i class="fas fa-info-circle"></i> Who We Are</a></li>
+                            <li><a href="/careers"><i class="fas fa-briefcase"></i> Careers</a></li>
+                            <li><a href="/press"><i class="fas fa-newspaper"></i> Press</a></li>
+                            <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="footer-contact-row" style="display: flex; justify-content: space-between;">
+                    <div class="footer-contact-col" style="width: 100%;">
+                        <div class="footer-contact" style="line-height: 0; display: flex; flex-direction: column; align-items: flex-start;">
+                   
+                            <p><i class="fas fa-map-marker-alt"></i>Ekah Logitech Pvt Ltd</p>
+                            <p><i class="fas fa-phone-alt fa-rotate-90"></i>+91 8861867788</p>
+                            <p><i class="fas fa-envelope"></i>info@ektruck.com</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact-col">
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
     
-    <!-- Scroll to top button -->
-    <div class="scroll-top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-</footer>
-
-<!-- Simple JavaScript for scroll to top functionality -->
-<script>
+        
+        
+                
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        <i class="far fa-copyright"></i>
+                        <span>ektruck@2025. All rights reserved.</span>
+                    </div>
+                    <div class="footer-policies">
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-service">Terms of Service</a>
+                        <a href="/sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll to top button -->
+            <div class="scroll-top">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </footer>
+    
+    <!-- Simple JavaScript for scroll to top functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.querySelector('.scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        </script>
+    
+        
+    
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize footer components
+        initScrollToTop();
+        initNewsletterForm();
+        initAnimations();
+        initMobileOptimizations();
+    });
+    
+    /**
+     * Scroll to top button functionality
+     */
+    function initScrollToTop() {
         const scrollTopBtn = document.querySelector('.scroll-top');
         
+        // Show/hide button based on scroll position
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 scrollTopBtn.classList.add('active');
@@ -861,222 +1406,187 @@
             }
         });
         
+        // Smooth scroll to top when clicked
         scrollTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-    });
-    </script>
-
+    }
     
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize footer components
-    initScrollToTop();
-    initNewsletterForm();
-    initAnimations();
-    initMobileOptimizations();
-});
-
-/**
- * Scroll to top button functionality
- */
-function initScrollToTop() {
-    const scrollTopBtn = document.querySelector('.scroll-top');
-    
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('active');
-        } else {
-            scrollTopBtn.classList.remove('active');
-        }
-    });
-    
-    // Smooth scroll to top when clicked
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-/**
- * Newsletter form validation and submission
- */
-function initNewsletterForm() {
-    const newsletterForm = document.querySelector('.newsletter-form');
-    
-    if (newsletterForm) {
-        const emailInput = newsletterForm.querySelector('input[type="email"]');
-        const submitBtn = newsletterForm.querySelector('button');
+    /**
+     * Newsletter form validation and submission
+     */
+    function initNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
         
-        // Basic form validation
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+        if (newsletterForm) {
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const submitBtn = newsletterForm.querySelector('button');
             
-            const email = emailInput.value.trim();
-            if (!isValidEmail(email)) {
-                showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
-                emailInput.focus();
-                return;
-            }
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission with timeout
-            setTimeout(function() {
-                emailInput.value = '';
-                submitBtn.innerHTML = 'Subscribe';
-                submitBtn.disabled = false;
+            // Basic form validation
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
-            }, 1500);
-        });
-    }
-}
-
-/**
- * Check if email is valid
- */
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-/**
- * Show success or error message after form submission
- */
-function showFormMessage(form, message, type) {
-    // Remove any existing messages
-    const existingMessage = form.querySelector('.form-message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    // Create new message element
-    const messageElement = document.createElement('div');
-    messageElement.className = `form-message ${type}`;
-    messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
-    
-    // Add message to form
-    form.appendChild(messageElement);
-    
-    // Remove message after delay
-    setTimeout(function() {
-        messageElement.style.opacity = '0';
-        setTimeout(function() {
-            messageElement.remove();
-        }, 300);
-    }, 5000);
-}
-
-/**
- * Initialize animations for footer elements
- */
-function initAnimations() {
-    // Detect when elements enter viewport
-    const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
-    
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                const email = emailInput.value.trim();
+                if (!isValidEmail(email)) {
+                    showFormMessage(newsletterForm, 'Please enter a valid email address', 'error');
+                    emailInput.focus();
+                    return;
                 }
+                
+                // Show loading state
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission with timeout
+                setTimeout(function() {
+                    emailInput.value = '';
+                    submitBtn.innerHTML = 'Subscribe';
+                    submitBtn.disabled = false;
+                    
+                    showFormMessage(newsletterForm, 'Thank you for subscribing!', 'success');
+                }, 1500);
             });
-        }, { threshold: 0.1 });
-        
-        animateElements.forEach(el => observer.observe(el));
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        animateElements.forEach(el => el.classList.add('visible'));
+        }
     }
     
-    // Animate stats numbers
-    animateStatCounters();
-}
-
-/**
- * Animate the stat counter numbers with counting effect
- */
-function animateStatCounters() {
-    const statValues = document.querySelectorAll('.stat-value');
+    /**
+     * Check if email is valid
+     */
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
     
-    statValues.forEach(stat => {
-        const value = stat.innerText;
+    /**
+     * Show success or error message after form submission
+     */
+    function showFormMessage(form, message, type) {
+        // Remove any existing messages
+        const existingMessage = form.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
         
-        // Skip if not a purely numeric value (e.g., "24/7")
-        if (value.match(/[^0-9%]/)) return;
+        // Create new message element
+        const messageElement = document.createElement('div');
+        messageElement.className = `form-message ${type}`;
+        messageElement.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i> ${message}`;
         
-        const hasPercent = value.includes('%');
-        const numericValue = parseInt(value.replace(/\D/g, ''));
+        // Add message to form
+        form.appendChild(messageElement);
         
-        // Set starting value to 0
-        stat.innerText = hasPercent ? '0%' : '0';
-        
-        // Animate to final value
-        let current = 0;
-        const increment = Math.max(1, Math.floor(numericValue / 50));
-        const duration = 1500; // 1.5 seconds
-        const interval = Math.floor(duration / (numericValue / increment));
-        
-        const timer = setInterval(() => {
-            current += increment;
-            
-            if (current >= numericValue) {
-                clearInterval(timer);
-                current = numericValue;
-            }
-            
-            stat.innerText = hasPercent ? `${current}%` : current;
-        }, interval);
-    });
-}
-
-/**
- * Mobile-specific optimizations for better UX
- */
-function initMobileOptimizations() {
-    // Check if we're on mobile
-    const isMobile = window.innerWidth < 768;
+        // Remove message after delay
+        setTimeout(function() {
+            messageElement.style.opacity = '0';
+            setTimeout(function() {
+                messageElement.remove();
+            }, 300);
+        }, 5000);
+    }
     
-    if (isMobile) {
-        // Improve tap targets for mobile
-        const footerLinks = document.querySelectorAll('.footer-links a');
-        footerLinks.forEach(link => {
-            link.addEventListener('touchstart', function() {
-                this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-            });
-            
-            link.addEventListener('touchend', function() {
-                setTimeout(() => {
-                    this.style.backgroundColor = 'transparent';
-                }, 300);
-            });
-        });
+    /**
+     * Initialize animations for footer elements
+     */
+    function initAnimations() {
+        // Detect when elements enter viewport
+        const animateElements = document.querySelectorAll('.footer-col, .social-icons a, .transport-stats .stat-item');
         
-        // Add extra styling for form inputs on mobile
-        const inputs = document.querySelectorAll('.newsletter-form input');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.classList.add('focus');
-            });
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
             
-            input.addEventListener('blur', function() {
-                this.parentElement.classList.remove('focus');
-            });
+            animateElements.forEach(el => observer.observe(el));
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('visible'));
+        }
+        
+        // Animate stats numbers
+        animateStatCounters();
+    }
+    
+    /**
+     * Animate the stat counter numbers with counting effect
+     */
+    function animateStatCounters() {
+        const statValues = document.querySelectorAll('.stat-value');
+        
+        statValues.forEach(stat => {
+            const value = stat.innerText;
+            
+            // Skip if not a purely numeric value (e.g., "24/7")
+            if (value.match(/[^0-9%]/)) return;
+            
+            const hasPercent = value.includes('%');
+            const numericValue = parseInt(value.replace(/\D/g, ''));
+            
+            // Set starting value to 0
+            stat.innerText = hasPercent ? '0%' : '0';
+            
+            // Animate to final value
+            let current = 0;
+            const increment = Math.max(1, Math.floor(numericValue / 50));
+            const duration = 1500; // 1.5 seconds
+            const interval = Math.floor(duration / (numericValue / increment));
+            
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= numericValue) {
+                    clearInterval(timer);
+                    current = numericValue;
+                }
+                
+                stat.innerText = hasPercent ? `${current}%` : current;
+            }, interval);
         });
     }
-}
-</script>
+    
+    /**
+     * Mobile-specific optimizations for better UX
+     */
+    function initMobileOptimizations() {
+        // Check if we're on mobile
+        const isMobile = window.innerWidth < 768;
+        
+        if (isMobile) {
+            // Improve tap targets for mobile
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                link.addEventListener('touchstart', function() {
+                    this.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                });
+                
+                link.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'transparent';
+                    }, 300);
+                });
+            });
+            
+            // Add extra styling for form inputs on mobile
+            const inputs = document.querySelectorAll('.newsletter-form input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focus');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focus');
+                });
+            });
+        }
+    }
+    </script>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -1108,25 +1618,27 @@ function initMobileOptimizations() {
             
             // Create network lines for dashboard
             const networkLines = document.querySelector('.network-lines');
-            for (let i = 0; i < 8; i++) {
-                const line = document.createElement('div');
-                line.className = 'line';
-                line.style.top = `${20 + Math.random() * 60}%`;
-                line.style.left = `${Math.random() * 70}%`;
-                line.style.width = `${Math.random() * 100 + 50}px`;
-                line.style.transform = `rotate(${Math.random() * 180}deg)`;
-                line.style.animationDelay = `${Math.random() * 3}s`;
-                networkLines.appendChild(line);
-                
-                // Add some vertical lines
-                if (i % 2 === 0) {
-                    const vLine = document.createElement('div');
-                    vLine.className = 'line vertical';
-                    vLine.style.top = `${Math.random() * 80}%`;
-                    vLine.style.left = `${20 + Math.random() * 60}%`;
-                    vLine.style.setProperty('--line-length', `${Math.random() * 40 + 30}px`);
-                    vLine.style.animationDelay = `${Math.random() * 3}s`;
-                    networkLines.appendChild(vLine);
+            if (networkLines) {
+                for (let i = 0; i < 8; i++) {
+                    const line = document.createElement('div');
+                    line.className = 'line';
+                    line.style.top = `${20 + Math.random() * 60}%`;
+                    line.style.left = `${Math.random() * 70}%`;
+                    line.style.width = `${Math.random() * 100 + 50}px`;
+                    line.style.transform = `rotate(${Math.random() * 180}deg)`;
+                    line.style.animationDelay = `${Math.random() * 3}s`;
+                    networkLines.appendChild(line);
+                    
+                    // Add some vertical lines
+                    if (i % 2 === 0) {
+                        const vLine = document.createElement('div');
+                        vLine.className = 'line vertical';
+                        vLine.style.top = `${Math.random() * 80}%`;
+                        vLine.style.left = `${Math.random() * 80}%`;
+                        vLine.style.height = `${Math.random() * 100 + 50}px`;
+                        vLine.style.animationDelay = `${Math.random() * 3}s`;
+                        networkLines.appendChild(vLine);
+                    }
                 }
             }
             
@@ -1204,6 +1716,7 @@ function initMobileOptimizations() {
             
             // 3D effect for cargo dashboard
             const dashboard = document.querySelector('.dashboard-mockup');
+            /* Disable 3D effect
             dashboard.addEventListener('mousemove', function(e) {
                 const rect = dashboard.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -1218,6 +1731,11 @@ function initMobileOptimizations() {
             dashboard.addEventListener('mouseleave', function() {
                 dashboard.style.transform = 'perspective(1000px) rotateY(-15deg) rotateX(5deg)';
             });
+            */
+            // Reset any transforms that might have been applied by JavaScript
+            if (dashboard) {
+                dashboard.style.transform = 'none';
+            }
         });
     </script>
 </body>

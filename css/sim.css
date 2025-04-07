@@ -312,7 +312,7 @@ img {
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     margin-bottom: 2rem;
     max-width: 550px;
     color: var(--text-secondary);
@@ -459,7 +459,7 @@ img {
 
 .features-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
 }
 
