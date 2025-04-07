@@ -1,0 +1,69 @@
+/* Fix for cursor overflow in hero section */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.cursor-text {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    transform: translateY(-20px);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* Prevent overflow */
+body {
+    overflow-x: hidden;
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fix for screenshots container */
+#hero-screenshots-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.hero-screenshot {
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--rotate, -3deg));
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.hero-interactive-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    cursor: none;
+} 
