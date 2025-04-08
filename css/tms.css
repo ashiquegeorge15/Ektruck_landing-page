@@ -460,7 +460,7 @@ img {
     display: inline-block;
 }
 
-.highlight::after {
+/* .highlight::after {
     content: '';
     position: absolute;
     bottom: 5px;
@@ -470,7 +470,7 @@ img {
     background-color: rgba(230, 46, 46, 0.3);
     z-index: -1;
     transform: skewX(-15deg);
-}
+} */
 
 .hero-description {
     font-size: 1.125rem;

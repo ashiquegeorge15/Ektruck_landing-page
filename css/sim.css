@@ -62,8 +62,9 @@ a:hover {
 }
 
 img {
+    border-radius: 16px;
     width: 450px;
-    height: 250px;
+    height: 350px;
     filter: blur(0.5px);
 }
 

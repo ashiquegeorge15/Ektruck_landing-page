@@ -443,7 +443,7 @@ a:hover {
     z-index: 1;
 }
 
-.highlight::after {
+/* .highlight::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -454,7 +454,7 @@ a:hover {
     z-index: -1;
     transform: skewX(-10deg);
     animation: highlightGlow 4s infinite;
-}
+} */
 
 @keyframes highlightGlow {
     0%, 100% {
