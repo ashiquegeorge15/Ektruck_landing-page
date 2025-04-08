@@ -67,7 +67,13 @@ window.onload = function () {
 
 // Function to check if splash screen should be shown
 function shouldShowSplashScreen() {
-    // Always show splash screen
+    // Check if splash has been shown before
+    const splashData = localStorage.getItem('splashShown');
+    if (splashData === 'true') {
+        return false;
+    }
+    // Set flag in localStorage that splash has been shown
+    localStorage.setItem('splashShown', 'true');
     return true;
 }
 
@@ -77,11 +83,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const splashLogo = document.querySelector('.splash-logo');
     const changingText = document.querySelector('.changing-text');
     const logo = document.querySelector('.logo');
-    
-    // Check if we should show the splash screen
     const showSplash = shouldShowSplashScreen();
-    
-    if (!showSplash && splash && content) {
+    if (localStorage.getItem('showSplash/data')) {
+        const data = JSON.parse(localStorage.getItem('showSplash/data'));
+        if (data.ts > Date.now() - 1000 * 60 * 60 * 24 * 7) {
+        
+        }
+    }
+    localStorage.setItem('showSplash/data', JSON.stringify({
+        ts : Date.now(),
+        isShown : true
+    }));
+    if (!showSplash) {
         // Hide splash and show content immediately if we shouldn't show splash
         splash.style.display = 'none';
         content.style.display = 'block';
