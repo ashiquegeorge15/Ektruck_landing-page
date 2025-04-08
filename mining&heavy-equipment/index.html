@@ -962,7 +962,7 @@
                 
                 <!-- Right side: Dashboard Image Area -->
                 <div style="flex: 1; min-width: 300px; position: relative; z-index: 2; opacity:1 !important; visibility:visible !important;">
-                    <img src="../assets/images-web/mining 2.png" alt="Mining Equipment Dashboard" style="width:100%; max-width:100%; height:auto; object-fit:cover; display:block; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.4);">
+                    <img src="../assets/images-web/mining 2.png" alt="Mining Equipment Dashboard" style="width:550px; height:350px; filter: blur(0.5px); border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -1619,5 +1619,12 @@
             }
         });
     </script>
+<script>
+    // Disable right click functionality
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+</script>
 </body>
 </html> 

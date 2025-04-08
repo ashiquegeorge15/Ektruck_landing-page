@@ -1,3 +1,69 @@
+/**
+ * Right-click Protection Script
+ * Disables various ways users might try to copy content from the website
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Disable right-click on the entire document
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable dragging of images
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+        img.draggable = false;
+        img.style.webkitUserDrag = 'none';
+    });
+
+    // Prevent drag and drop of images
+    document.addEventListener('dragstart', e => {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    }, true);
+    
+    // Prevent keyboard shortcuts that might be used for saving
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+S, Ctrl+P, Ctrl+Shift+S, F12, PrtScn
+        if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || 
+            (e.shiftKey && e.key === 's'))) || 
+            e.key === 'F12' || e.key === 'PrintScreen') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Add CSS to prevent screenshots and text selection
+    const style = document.createElement('style');
+    style.textContent = `
+        body {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+        
+        /* Allow selection in form inputs and textareas */
+        input, textarea {
+            -webkit-user-select: auto !important;
+            -moz-user-select: auto !important;
+            -ms-user-select: auto !important;
+            user-select: auto !important;
+        }
+        
+        @media print {
+            body {
+                display: none !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    console.log('Content protection initialized');
+});
+
 // Fix for custom cursor overflow in hero section
 document.addEventListener('DOMContentLoaded', function() {
     // Find the existing custom cursor or create a new one if it doesn't exist

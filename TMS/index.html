@@ -97,11 +97,11 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link active">Solutions <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
                         <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
                         <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
-                        <a href="/TMS/" class="dropdown-item">Transport Management Solution (TMS)</a>
+                        <a href="/TMS/" class="dropdown-item active">Transport Management Solution (TMS)</a>
                         <a href="/TPMS/" class="dropdown-item">Temperature Monitoring Solutions</a>
                         <a href="/Fuel-managment/" class="dropdown-item">Fuel Management</a>
                         <a href="/intelligent-cargo-solutions/" class="dropdown-item">Intelligent Cargo Management</a>
@@ -132,7 +132,7 @@
             </ul>
             
             <div class="nav-buttons">
-                <a href="/login" class="btn btn-primary">Sign In</a>
+                <a href="/login" class="btn-primary">Sign In</a>
             </div>
         </div>
 
@@ -186,7 +186,7 @@
                 </div>
             </div>
             
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+            <!-- <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
                 <div class="logistics-dashboard">
                     <div class="dashboard-header">
                         <div class="dashboard-logo">
@@ -223,6 +223,10 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
+                <img src="../assets/images-web/tms.png" alt="TMS Dashboard" class="dashboard-img" style="width:450px; height:250px; filter: blur(100%);">
+                
             </div>
         </div>
     </section>
@@ -854,6 +858,14 @@
         // Initialize animations after page load
         window.addEventListener('load', function() {
             createDataPoints();
+        });
+    </script>
+
+    <script>
+        // Disable right click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
         });
     </script>
 </body>

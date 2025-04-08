@@ -106,7 +106,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link">Solutions <i class="fas fa-chevron-down" style="margin-left: 10px;"></i></a>
                         <div class="dropdown-menu">
                             <a href="/managed-control-tower/" class="dropdown-item">Managed Control Tower</a>
                             <a href="/adas-dms/" class="dropdown-item">ADAS/DMS Solutions</a>
@@ -120,7 +120,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link">Industries <i class="fas fa-chevron-down" style="margin-left: 10px;"></i></a>
                         <div class="dropdown-menu">
                             <a href="/transport&logistics/" class="dropdown-item">Transport & Logistics</a>
                             <a href="/mining&heavy-equipment/" class="dropdown-item">Mining & Heavy Equipment</a>
@@ -389,8 +389,8 @@
         </section>
 
         <!-- Integration Section -->
-        <section class="integration-section" id="integrations">
-            <div class="container section-container">
+        <section class="integration-section" id="integrations" style="background-color: #1a1a1a;">
+            <div class="container section-container" style="background-color: #1a1a1a;">
                 <div class="section-header" data-aos="fade-up">
                     <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Seamless Integration</h2>
                     <p class="text-grad" data-aos="fade-up" data-aos-delay="200">With major ERPs and tools</p>
@@ -1319,25 +1319,18 @@ function initMobileOptimizations() {
     <!-- Add image protection script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Disable right-click on the entire document
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
             // Disable right-click on all images
             const allImages = document.querySelectorAll('img');
             allImages.forEach(img => {
-                img.addEventListener('contextmenu', e => {
-                    e.preventDefault();
-                    return false;
-                });
                 img.draggable = false;
                 img.style.webkitUserDrag = 'none';
             });
-
-            // Disable context menu in hero section
-            const heroSection = document.querySelector('.hero-section');
-            if (heroSection) {
-                heroSection.addEventListener('contextmenu', e => {
-                    e.preventDefault();
-                    return false;
-                });
-            }
 
             // Prevent drag and drop of images
             document.addEventListener('dragstart', e => {
@@ -1348,22 +1341,24 @@ function initMobileOptimizations() {
             
             // Prevent keyboard shortcuts that might be used for saving
             document.addEventListener('keydown', function(e) {
-                // In the hero section context
-                if (e.target.closest('.hero-section') || 
-                    document.querySelector('.hero-screenshot')) {
-                    // Ctrl+S, Ctrl+P, Ctrl+Shift+S, F12, PrtScn
-                    if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || 
-                        (e.shiftKey && e.key === 's'))) || 
-                        e.key === 'F12' || e.key === 'PrintScreen') {
-                        e.preventDefault();
-                        return false;
-                    }
+                // Ctrl+S, Ctrl+P, Ctrl+Shift+S, F12, PrtScn
+                if ((e.ctrlKey && (e.key === 's' || e.key === 'p' || 
+                    (e.shiftKey && e.key === 's'))) || 
+                    e.key === 'F12' || e.key === 'PrintScreen') {
+                    e.preventDefault();
+                    return false;
                 }
             });
             
-            // Add CSS to prevent screenshots
+            // Add CSS to prevent screenshots and text selection
             const style = document.createElement('style');
             style.textContent = `
+                body {
+                    -webkit-user-select: none !important;
+                    -moz-user-select: none !important;
+                    -ms-user-select: none !important;
+                    user-select: none !important;
+                }
                 .hero-section * {
                     user-select: none !important;
                 }
@@ -1374,8 +1369,7 @@ function initMobileOptimizations() {
                     user-select: none !important;
                 }
                 @media print {
-                    .hero-section,
-                    .hero-screenshot {
+                    body {
                         display: none !important;
                     }
                 }

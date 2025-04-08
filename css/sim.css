@@ -62,8 +62,9 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 450px;
+    height: 250px;
+    filter: blur(0.5px);
 }
 
 .container {
@@ -232,6 +233,13 @@ img {
         opacity: 0;
     }
 }
+
+@keyframes rotateAndScale {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 
 /* Hero Section */
 .hero {
@@ -411,7 +419,7 @@ img {
     background: #333;
     border-radius: 50%;
 }
-
+/* 
 .hero-img-container {
     position: relative;
     width: 100%;
@@ -419,9 +427,9 @@ img {
     border-radius: 16px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
-}
+} */
 
-.hero-img-container::before {
+/* .hero-img-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -431,23 +439,23 @@ img {
     background: linear-gradient(135deg, rgba(230, 46, 46, 0.1), transparent);
     z-index: 2;
     pointer-events: none;
-}
+} */
 
-.hero-img-container:hover {
+/* .hero-img-container:hover {
     transform: translateY(-10px);
     box-shadow: 0 30px 60px rgba(230, 46, 46, 0.2);
-}
+} */
 
-.hero-img {
+/* .hero-img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.5s ease;
-}
-
+} */
+/* 
 .hero-img-container:hover .hero-img {
     transform: scale(1.03);
-}
+} */
 
 /* Features Section */
 .features-section {

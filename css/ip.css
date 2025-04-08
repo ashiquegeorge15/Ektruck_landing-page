@@ -667,7 +667,7 @@ a:hover {
     animation: shine 3s infinite;
 }
 
-.hero-image {
+/* .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -722,7 +722,7 @@ a:hover {
     height: 100%;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.7) 0%, transparent 70%);
     z-index: 1;
-}
+} */
 
 /* Animations */
 @keyframes orbFloat {
@@ -1471,10 +1471,9 @@ a:hover {
 }
 
 .benefits-cta-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ width: 450px;
+ height: 250px;
+ filter: blur(0.5px);
 }
 
 .cta-image {

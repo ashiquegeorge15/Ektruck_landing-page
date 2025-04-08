@@ -57,8 +57,9 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
 }
 
 .container {
@@ -572,7 +573,7 @@ img {
     box-shadow: var(--shadow-dark);
 }
 
-.cta-overlay {
+/* .cta-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -580,7 +581,7 @@ img {
     height: 100%;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), transparent);
     z-index: 1;
-}
+} */
 
 .cta-bg-elements {
     position: absolute;

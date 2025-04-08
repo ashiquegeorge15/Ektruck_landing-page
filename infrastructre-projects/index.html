@@ -220,14 +220,7 @@
             <div class="hero-image" data-aos="fade-left" data-aos-delay="300">
                 <div class="dashboard-mockup">
                     <div class="dashboard-content">
-                       <img src="/assets/images-web/ip.png" alt="Infrastructure Projects" style="width: 100%;
-                       display: block;
-                       position: relative;
-                       z-index: 2;
-                       transition: all 0.5s ease;
-                       height: auto;
-                       object-fit: cover;
-                       object-position: center;">
+                       <img src="/assets/images-web/ip.png" alt="Infrastructure Projects" style="width: 450px; height: 250px; filter: blur(0.5px);">
                     </div>
                 </div>
             </div>
@@ -1235,6 +1228,13 @@
             handleResponsiveMenu();
             window.addEventListener('resize', handleResponsiveMenu);
         }
+    </script>
+
+    <script>
+        // Disable right-click on the page
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
     </script>
 
 </html>

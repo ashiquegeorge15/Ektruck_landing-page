@@ -360,7 +360,7 @@
 
                 <div class="transformation-image" data-aos="fade-left" data-aos-delay="200" style="flex: 1; position: sticky; top: 100px;">
                     <div style="position: relative; padding: 20px;">
-                        <img class="img-side" src="/assets/images-web/ogd 2.png" alt="Oil and Gas Distribution Technology" style="height: 450px; min-width: 320px; border-radius: 16px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); transition: transform 0.5s ease, box-shadow 0.5s ease;">
+                        <img class="img-side" src="/assets/images-web/ogd 2.png" alt="Oil and Gas Distribution Technology" style="height: 450px; min-width: 320px; border-radius: 16px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); transition: transform 0.5s ease, box-shadow 0.5s ease; filter: blur(0.5px);">
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(230, 46, 46, 0.15), transparent 70%); border-radius: 16px; pointer-events: none;"></div>
                     </div>
                 </div>
@@ -997,6 +997,13 @@
             
             // Call the animation function
             animateElements();
+        });
+    </script>
+
+    <script>
+        // Disable right-click on the page
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
         });
     </script>
 </body>

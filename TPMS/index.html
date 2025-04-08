@@ -970,5 +970,13 @@
             animateTemperature('transport-temp', 5.8, 0.5);
         });
     </script>
+
+    <script>
+        // Disable right click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
 </body>
 </html>

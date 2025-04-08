@@ -485,7 +485,7 @@
                 </div>
                 <div class="solutions-visual">
                     <div class="solutions-image-wrapper">
-                        <img src="/assets/images-web/TRNASPORT 1.png" alt="EkTruck Logistics Solutions" class="solutions-image">
+                        <img src="/assets/images-web/TRNASPORT 1.png" alt="EkTruck Logistics Solutions" class="solutions-image" style="height: 250px; width: 450px; filter: blur(0.5px);">
                        
                     </div>
                 </div>
@@ -1058,6 +1058,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.custom-cursor').style.display = 'none';
     }
 });
+</script>
+
+<script>
+    // Disable right click functionality
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
 </script>
 
 </body>
